@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="算法概述 k最近邻,就是k个最近的邻居 一个样本在特征空间中的k个最近邻样本中大多数属于某一个类别&#x2F;则该样本也属于这一个类别 所有的邻居都是已知类别的&#x2F;而我们手上要进行分类的数据是不知道类别的  算法表述 计算测试数据和各个训练数据之间的距离 按照距离的递增关系进行排序 选择距离最小的k个点 确定前k个点所在类别的出现频率 返回前k个点中出现频率最高的类别作为测试数据的分类  K的取值 K:最邻近">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KNN">
 <meta property="og:url" content="http://yoursite.com/2020/07/26/KNN/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="算法概述 k最近邻,就是k个最近的邻居 一个样本在特征空间中的k个最近邻样本中大多数属于某一个类别&#x2F;则该样本也属于这一个类别 所有的邻居都是已知类别的&#x2F;而我们手上要进行分类的数据是不知道类别的  算法表述 计算测试数据和各个训练数据之间的距离 按照距离的递增关系进行排序 选择距离最小的k个点 确定前k个点所在类别的出现频率 返回前k个点中出现频率最高的类别作为测试数据的分类  K的取值 K:最邻近">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-26T11:31:05.000Z">
-<meta property="article:modified_time" content="2020-07-26T11:31:32.493Z">
+<meta property="article:modified_time" content="2020-07-26T12:28:25.658Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="Supervised Learning">
@@ -399,7 +399,39 @@
       
 
       
-        
+        <h3 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h3><ul>
+<li>k最近邻,就是k个最近的邻居</li>
+<li>一个样本在特征空间中的k个最近邻样本中大多数属于某一个类别/则该样本也属于这一个类别</li>
+<li>所有的邻居都是已知类别的/而我们手上要进行分类的数据是不知道类别的</li>
+</ul>
+<h3 id="算法表述"><a href="#算法表述" class="headerlink" title="算法表述"></a>算法表述</h3><ul>
+<li>计算测试数据和各个训练数据之间的距离</li>
+<li>按照距离的递增关系进行排序</li>
+<li>选择距离最小的k个点</li>
+<li>确定前k个点所在类别的出现频率</li>
+<li>返回前k个点中出现频率最高的类别作为测试数据的分类</li>
+</ul>
+<h3 id="K的取值"><a href="#K的取值" class="headerlink" title="K的取值"></a>K的取值</h3><ul>
+<li>K:最邻近的每次计算点的个数</li>
+<li>K太小:容易被噪点影响/比如k=1的时候/恰好这个数据是个噪点/那么就完全影响了这次分类</li>
+<li>k太大:误差会增大/k最近邻做法的意义就变小了</li>
+<li>k尽量取奇数/方便预测</li>
+</ul>
+<h3 id="距离怎么计算的"><a href="#距离怎么计算的" class="headerlink" title="距离怎么计算的"></a>距离怎么计算的</h3><ul>
+<li><p>欧几里得距离:$E(x,y)=\sqrt{\sum_{i=1}^{n}(x_{i}-y_{i})^{2}}$</p>
+</li>
+<li><p>曼哈顿距离:$D(x,y)=|x_{i}-x_{j}|+|y_{i}-y_{j}|$</p>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>knn是一个简单高效的分类算法并且容易实现</li>
+<li>当训练集很大的时候/需要大量的存储空间/并且计算某个点和所有数据的距离是非常耗时的</li>
+<li>对随机分布的数据分类效果差</li>
+<li>对类内距离小/类间距离大的数据分类效果好</li>
+<li>对样本不均匀的数据效果不好,可以进行权重改进,给近的测试点的权重更高</li>
+<li>KNN非常耗时,所以比较适合小规模数据</li>
+</ul>
+
       
     </div>
     
@@ -442,6 +474,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/26/Decision-Tree/" rel="prev" title="Decision Tree">
+                Decision Tree <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -493,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -509,7 +554,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -520,7 +565,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -531,7 +576,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -554,6 +599,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法概述"><span class="nav-number">1.</span> <span class="nav-text">算法概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法表述"><span class="nav-number">2.</span> <span class="nav-text">算法表述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K的取值"><span class="nav-number">3.</span> <span class="nav-text">K的取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#距离怎么计算的"><span class="nav-number">4.</span> <span class="nav-text">距离怎么计算的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1079,8 +1140,9 @@
 
 
   
-
-  <a href="https://github.com/XIN-von-SUN/" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 
+  <a href="https://github.com/XIN-von-SUN/" target="_blank" rel="noopener">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1">
+  </a>
 
 </body>
 </html>
