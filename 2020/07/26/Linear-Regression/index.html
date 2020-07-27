@@ -79,20 +79,29 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="What is RegressionRegression, its intuitive understanding is fitting. Let’s take linear regression as an example. There are a series of red points on a two-dimensional plane. We want to use a straight">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linear Regression">
+<meta property="og:title" content="(Non) Linear Regression">
 <meta property="og:url" content="http://yoursite.com/2020/07/26/Linear-Regression/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="What is RegressionRegression, its intuitive understanding is fitting. Let’s take linear regression as an example. There are a series of red points on a two-dimensional plane. We want to use a straight">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/linear_regression_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/linear_regression_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/linear_regression_3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/linear_regression_4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/linear_regression_5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/linear_regression_6.jpg">
+<meta property="og:image" content="http://yoursite.com/images/linear_regression_7.jpg">
+<meta property="og:image" content="http://yoursite.com/images/linear_regression_8.jpg">
 <meta property="article:published_time" content="2020-07-26T12:32:35.000Z">
-<meta property="article:modified_time" content="2020-07-26T12:41:47.785Z">
+<meta property="article:modified_time" content="2020-07-26T23:09:27.731Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="Supervised Learning">
 <meta property="article:tag" content="Regression">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/linear_regression_1.jpg">
 
 
 
@@ -128,7 +137,7 @@
 
 
 
-  <title>Linear Regression | XIN SUN</title>
+  <title>(Non) Linear Regression | XIN SUN</title>
   
 
 
@@ -305,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linear Regression</h1>
+          <h1 class="post-title" itemprop="name headline">(Non) Linear Regression</h1>
         
 
         <div class="post-meta">
@@ -399,7 +408,24 @@
       
 
       
-        
+        <h3 id="What-is-Regression"><a href="#What-is-Regression" class="headerlink" title="What is Regression"></a>What is Regression</h3><p>Regression, its intuitive understanding is fitting. Let’s take linear regression as an example. There are a series of red points on a two-dimensional plane. We want to use a straight line to fit these red points as much as possible. This is linear regression. The essence of regression is that our prediction results are as close as possible to the actual observation results.</p>
+<p><img src="/images/linear_regression_1.jpg" width="30%" height="30%" title="Linear Regression in 2 dimension" alt=""/></p>
+<p><img src="/images/linear_regression_2.jpg" width="30%" height="30%" title="Linear Regression in 3 dimension" alt=""/></p>
+<p>What is linear? The data fitting is linear, in other words a straight line.<br>What is regression? To predict an accurate output value based on previous data.</p>
+<p>The linear regression algorithm can be divided into two categories:</p>
+<ul>
+<li>Linear Regression with one variable </li>
+<li>Linear Regression with multiple variable </li>
+</ul>
+<p>The most obvious character of regression is that the output $y_i$ is a continuous variable (this continuous variable is generally a float number, but sometimes can also be integer). The classic formula of linear regression is:<br><img src="/images/linear_regression_3.jpg" width="30%" height="30%" title="" alt=""/></p>
+<h3 id="Loss-Function-MSE"><a href="#Loss-Function-MSE" class="headerlink" title="Loss Function - MSE"></a>Loss Function - MSE</h3><p>The goal of linear regression is to fit the target label as much as possible with the predicted results, and the most common Least square is used as Loss Function:<br><img src="/images/linear_regression_4.jpg" width="30%" height="30%" title="" alt=""/><br><br/></p>
+<h3 id="Why-use-MSE-as-Loss-Function"><a href="#Why-use-MSE-as-Loss-Function" class="headerlink" title="Why use MSE as Loss Function"></a>Why use MSE as Loss Function</h3><p>After the model is prepared, we send the training data into the model, and then final value can be predicted through the model.<br><img src="/images/linear_regression_5.jpg" width="30%" height="30%" title="" alt=""/></p>
+<p>Then there is an error $ε$ between the true value y and the predicted value of the sample in training data. According to the central limit law, $\sum ε$ satisfies the Gaussian distribution $(u, δ^2)$ if the amount of the training data is large; Also u =0, then the Gaussian distribution $(0, δ^2)$ is satisfied due to the intercept term in equation.<br><img src="/images/linear_regression_6.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>As we can see above, for each sample $x$, send it into $p(y|x;θ)$ will get a probability of y; And because the sample is assumed to be independent and identically distributed; Thus we can find the maximum likelihood function for it:<br><img src="/images/linear_regression_7.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>Simplify it as follows<br><img src="/images/linear_regression_8.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>Finally, we use optimizers (such as SGD) to make the value of loss function keep decreasing, and iteratively update the corresponding parameters to obtain a well-fitting regression function.<br><br></p>
+<h3 id="Non-Linear-Regression"><a href="#Non-Linear-Regression" class="headerlink" title="Non-Linear Regression"></a>Non-Linear Regression</h3><p>A non-linear regression model is called when the fitting function is a non-linear function, such as hyperbolic model, power function, exponential function, logarithmic function model, polynomial model, etc. To solve the non-linear regression model, we normally transfer the non-linear regression model into a linear model gradually, and then performs linear regression fitting.</p>
+
       
     </div>
     
@@ -433,8 +459,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/26/PLA/" rel="next" title="PLA">
-                <i class="fa fa-chevron-left"></i> PLA
+              <a href="/2020/07/26/PLA/" rel="next" title="PLA - Perceptron Learning Algorithm">
+                <i class="fa fa-chevron-left"></i> PLA - Perceptron Learning Algorithm
               </a>
             
           </div>
@@ -497,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -558,6 +593,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Regression"><span class="nav-number">1.</span> <span class="nav-text">What is Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loss-Function-MSE"><span class="nav-number">2.</span> <span class="nav-text">Loss Function - MSE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-use-MSE-as-Loss-Function"><span class="nav-number">3.</span> <span class="nav-text">Why use MSE as Loss Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-Linear-Regression"><span class="nav-number">4.</span> <span class="nav-text">Non-Linear Regression</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1076,6 +1127,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

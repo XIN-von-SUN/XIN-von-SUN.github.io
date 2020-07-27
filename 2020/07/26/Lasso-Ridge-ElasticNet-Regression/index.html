@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="Lasso Regression和岭回归类似，Lasso(least Absolute Shrinkage and Selection Operator)也是通过惩罚其回归系数的绝对值。看下面的公式：    Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0. 重点：1.其假设与最小二乘回归相同除了正态性。2.其能把系数收缩到0，使得">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lasso &#x2F; Ridge &#x2F; ElasticNet Regression">
 <meta property="og:url" content="http://yoursite.com/2020/07/26/Lasso-Ridge-ElasticNet-Regression/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="Lasso Regression和岭回归类似，Lasso(least Absolute Shrinkage and Selection Operator)也是通过惩罚其回归系数的绝对值。看下面的公式：    Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0. 重点：1.其假设与最小二乘回归相同除了正态性。2.其能把系数收缩到0，使得">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-26T12:33:29.000Z">
-<meta property="article:modified_time" content="2020-07-26T12:41:23.408Z">
+<meta property="article:modified_time" content="2020-07-26T23:10:50.686Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="Supervised Learning">
@@ -399,7 +399,13 @@
       
 
       
-        
+        <h3 id="Lasso-Regression"><a href="#Lasso-Regression" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p>和岭回归类似，Lasso(least Absolute Shrinkage and Selection Operator)也是通过惩罚其回归系数的绝对值。看下面的公式：</p>
+<pre><code>   Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0.
+</code></pre><p>重点：<br>1.其假设与最小二乘回归相同除了正态性。<br>2.其能把系数收缩到0，使得其能帮助特征选择。<br>3.这个正则化方法为l1正则化。<br>4.如果一组变量是高度相关的，lasso会选择其中的一个，然后把其他的都变为0.<br><br></p>
+<h3 id="Lasso-Regression-1"><a href="#Lasso-Regression-1" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p><br></p>
+<h3 id="Ridge-Regression"><a href="#Ridge-Regression" class="headerlink" title="Ridge Regression"></a>Ridge Regression</h3><p><br></p>
+<h3 id="ElasticNet-Regression"><a href="#ElasticNet-Regression" class="headerlink" title="ElasticNet Regression"></a>ElasticNet Regression</h3><p><br></p>
+
       
     </div>
     
@@ -497,8 +503,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -558,6 +573,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lasso-Regression"><span class="nav-number">1.</span> <span class="nav-text">Lasso Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lasso-Regression-1"><span class="nav-number">2.</span> <span class="nav-text">Lasso Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ridge-Regression"><span class="nav-number">3.</span> <span class="nav-text">Ridge Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ElasticNet-Regression"><span class="nav-number">4.</span> <span class="nav-text">ElasticNet Regression</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1076,6 +1107,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

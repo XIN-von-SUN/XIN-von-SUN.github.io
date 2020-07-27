@@ -79,20 +79,22 @@
 
 
 
-<meta name="description" content="算法概述 k最近邻,就是k个最近的邻居 一个样本在特征空间中的k个最近邻样本中大多数属于某一个类别&#x2F;则该样本也属于这一个类别 所有的邻居都是已知类别的&#x2F;而我们手上要进行分类的数据是不知道类别的  算法表述 计算测试数据和各个训练数据之间的距离 按照距离的递增关系进行排序 选择距离最小的k个点 确定前k个点所在类别的出现频率 返回前k个点中出现频率最高的类别作为测试数据的分类  K的取值 K:最邻近">
+<meta name="description" content="Principle of KNN k nearest neighbors are k nearest neighbors  Most of the k nearest neighbors of a sample in the feature space belong to a certain category, then this sample also belongs to this categ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KNN">
 <meta property="og:url" content="http://yoursite.com/2020/07/26/KNN/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="算法概述 k最近邻,就是k个最近的邻居 一个样本在特征空间中的k个最近邻样本中大多数属于某一个类别&#x2F;则该样本也属于这一个类别 所有的邻居都是已知类别的&#x2F;而我们手上要进行分类的数据是不知道类别的  算法表述 计算测试数据和各个训练数据之间的距离 按照距离的递增关系进行排序 选择距离最小的k个点 确定前k个点所在类别的出现频率 返回前k个点中出现频率最高的类别作为测试数据的分类  K的取值 K:最邻近">
+<meta property="og:description" content="Principle of KNN k nearest neighbors are k nearest neighbors  Most of the k nearest neighbors of a sample in the feature space belong to a certain category, then this sample also belongs to this categ">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/KNN.jpg">
 <meta property="article:published_time" content="2020-07-26T11:31:05.000Z">
-<meta property="article:modified_time" content="2020-07-26T12:28:25.658Z">
+<meta property="article:modified_time" content="2020-07-26T19:01:07.659Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="Supervised Learning">
 <meta property="article:tag" content="Classification">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/KNN.jpg">
 
 
 
@@ -399,37 +401,58 @@
       
 
       
-        <h3 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h3><ul>
-<li>k最近邻,就是k个最近的邻居</li>
-<li>一个样本在特征空间中的k个最近邻样本中大多数属于某一个类别/则该样本也属于这一个类别</li>
-<li>所有的邻居都是已知类别的/而我们手上要进行分类的数据是不知道类别的</li>
-</ul>
-<h3 id="算法表述"><a href="#算法表述" class="headerlink" title="算法表述"></a>算法表述</h3><ul>
-<li>计算测试数据和各个训练数据之间的距离</li>
-<li>按照距离的递增关系进行排序</li>
-<li>选择距离最小的k个点</li>
-<li>确定前k个点所在类别的出现频率</li>
-<li>返回前k个点中出现频率最高的类别作为测试数据的分类</li>
-</ul>
-<h3 id="K的取值"><a href="#K的取值" class="headerlink" title="K的取值"></a>K的取值</h3><ul>
-<li>K:最邻近的每次计算点的个数</li>
-<li>K太小:容易被噪点影响/比如k=1的时候/恰好这个数据是个噪点/那么就完全影响了这次分类</li>
-<li>k太大:误差会增大/k最近邻做法的意义就变小了</li>
-<li>k尽量取奇数/方便预测</li>
-</ul>
-<h3 id="距离怎么计算的"><a href="#距离怎么计算的" class="headerlink" title="距离怎么计算的"></a>距离怎么计算的</h3><ul>
-<li><p>欧几里得距离:$E(x,y)=\sqrt{\sum_{i=1}^{n}(x_{i}-y_{i})^{2}}$</p>
+        <h3 id="Principle-of-KNN"><a href="#Principle-of-KNN" class="headerlink" title="Principle of KNN"></a>Principle of KNN</h3><ul>
+<li><p>k nearest neighbors are k nearest neighbors</p>
 </li>
-<li><p>曼哈顿距离:$D(x,y)=|x_{i}-x_{j}|+|y_{i}-y_{j}|$</p>
+<li><p>Most of the k nearest neighbors of a sample in the feature space belong to a certain category, then this sample also belongs to this category</p>
+</li>
+<li><p>All neighbors of a sample have a known category, while the sample we want to classify has no category<br><br/></p>
 </li>
 </ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>knn是一个简单高效的分类算法并且容易实现</li>
-<li>当训练集很大的时候/需要大量的存储空间/并且计算某个点和所有数据的距离是非常耗时的</li>
-<li>对随机分布的数据分类效果差</li>
-<li>对类内距离小/类间距离大的数据分类效果好</li>
-<li>对样本不均匀的数据效果不好,可以进行权重改进,给近的测试点的权重更高</li>
-<li>KNN非常耗时,所以比较适合小规模数据</li>
+<p>As shown in the figure below, which class should be assigned to the green circle, red triangle or a blue square? </p>
+<p>If K=3, the green circle will be assigned the category of the red triangle since the proportion of the red triangle is 2/3.</p>
+<p>If K=5, the green circle will be assigned the blue square, since the proportion of the blue square is 3/5.<br><br/><br><img src="/images/KNN.jpg" width="30%" height="30%" title="How KNN works" alt="KNN"/></p>
+<h3 id="Workflow-of-KNN"><a href="#Workflow-of-KNN" class="headerlink" title="Workflow of KNN"></a>Workflow of KNN</h3><ul>
+<li><p>Calculate the distance between the test data and each training data </p>
+</li>
+<li><p>Sort candidate categories by increasing distance </p>
+</li>
+<li><p>Select the k points within the smallest distance</p>
+</li>
+<li><p>Determine the frequency of occurrence of the category for the first k points</p>
+</li>
+<li><p>Return the category with the highest frequency among the first k points as the classification result of the test data<br><br/></p>
+</li>
+</ul>
+<h3 id="How-to-choose-value-K"><a href="#How-to-choose-value-K" class="headerlink" title="How to choose value K"></a>How to choose value K</h3><ul>
+<li><p>K: The number of nearest neighbors for each calculation.</p>
+</li>
+<li><p>K is too small: easy to be affected by noise, for example, when k=1, then it will completely affects this classification result if this data point happens to be a noisy data.</p>
+</li>
+<li><p>K is too large: the error will increase, the meaning of the k nearest neighbor approach becomes smaller.</p>
+</li>
+<li><p>K is tried to be select as odd which will be convenient for prediction.<br><br/></p>
+</li>
+</ul>
+<h3 id="How-to-calculate-Distance"><a href="#How-to-calculate-Distance" class="headerlink" title="How to calculate Distance"></a>How to calculate Distance</h3><ul>
+<li><p>Euclidean distance: <script type="math/tex">E(x,y)=\sqrt{\sum_{i=1}^{n}(x_{i}-y_{i})^{2}}</script></p>
+</li>
+<li><p>Manhattan distance: <script type="math/tex">D(x,y)=|x_{i}-x_{j}|+|y_{i}-y_{j}|</script><br><br/></p>
+</li>
+</ul>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><ul>
+<li><p>KNN is a simple and efficient classification algorithm and easy to be implemented.</p>
+</li>
+<li><p>When the training set is quite large, a lot of storage space is needed, and calculating the distance between a certain point and all data is quite time-consuming.</p>
+</li>
+<li><p>Poor classification performance with randomly distributed data.</p>
+</li>
+<li><p>Good classification performance for data with small intra-class distance and large inter-class distance.</p>
+</li>
+<li><p>The performance is not good for the unbalanced data, the weight can be improved which can give the nearest test point higher weights.</p>
+</li>
+<li><p>KNN is quite time-consuming, so it is more suitable for small-scale data.</p>
+</li>
 </ul>
 
       
@@ -465,8 +488,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/26/Bayes/" rel="next" title="Bayes">
-                <i class="fa fa-chevron-left"></i> Bayes
+              <a href="/2020/07/26/Navie%20Bayes/" rel="next" title="Navie Bayes">
+                <i class="fa fa-chevron-left"></i> Navie Bayes
               </a>
             
           </div>
@@ -609,7 +632,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法概述"><span class="nav-number">1.</span> <span class="nav-text">算法概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法表述"><span class="nav-number">2.</span> <span class="nav-text">算法表述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K的取值"><span class="nav-number">3.</span> <span class="nav-text">K的取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#距离怎么计算的"><span class="nav-number">4.</span> <span class="nav-text">距离怎么计算的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Principle-of-KNN"><span class="nav-number">1.</span> <span class="nav-text">Principle of KNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Workflow-of-KNN"><span class="nav-number">2.</span> <span class="nav-text">Workflow of KNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-choose-value-K"><span class="nav-number">3.</span> <span class="nav-text">How to choose value K</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-calculate-Distance"><span class="nav-number">4.</span> <span class="nav-text">How to calculate Distance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
             
 
           </div>
@@ -1133,6 +1156,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

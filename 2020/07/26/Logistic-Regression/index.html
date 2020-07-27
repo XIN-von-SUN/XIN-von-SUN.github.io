@@ -79,20 +79,23 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="Aim For Binary Classification.  For a binary classification problem, we not only want to know that the classified category, but also want to know the probability for a certain category.   Sigmoid Func">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Logistic Regression">
 <meta property="og:url" content="http://yoursite.com/2020/07/26/Logistic-Regression/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="Aim For Binary Classification.  For a binary classification problem, we not only want to know that the classified category, but also want to know the probability for a certain category.   Sigmoid Func">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/acbd35f2-1878-44fa-aeb6-8e3b59f7ed03.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/327a0e48-37e3-4d94-bcc0-5087e44208fb.png">
 <meta property="article:published_time" content="2020-07-26T12:32:55.000Z">
-<meta property="article:modified_time" content="2020-07-26T12:39:08.576Z">
+<meta property="article:modified_time" content="2020-07-26T19:52:07.901Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="Supervised Learning">
 <meta property="article:tag" content="Classification">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imgkr.cn-bj.ufileos.com/acbd35f2-1878-44fa-aeb6-8e3b59f7ed03.png">
 
 
 
@@ -399,7 +402,79 @@
       
 
       
-        
+        <h3 id="Aim"><a href="#Aim" class="headerlink" title="Aim"></a>Aim</h3><ul>
+<li><p>For Binary Classification.</p>
+</li>
+<li><p>For a binary classification problem, we not only want to know that the classified category, but also want to know the probability for a certain category.<br><br></p>
+</li>
+</ul>
+<h3 id="Sigmoid-Function"><a href="#Sigmoid-Function" class="headerlink" title="Sigmoid Function"></a>Sigmoid Function</h3><p>Sigmoid Function: </p>
+<script type="math/tex; mode=display">g(z)=\frac{1}{1+e^{-z}}</script><p><img src="https://imgkr.cn-bj.ufileos.com/acbd35f2-1878-44fa-aeb6-8e3b59f7ed03.png" alt=""></p>
+<ul>
+<li><p>x $\subseteq$ $R$, y $\subseteq$ $[0, 1]$<br>Such a function is very conducive to the processing of two classification problems</p>
+</li>
+<li><p>$g(z)=\frac{1}{1+e^{-z}}$</p>
+</li>
+<li><p>$h_{\theta}(x)=g(\theta^{T}x)$</p>
+</li>
+<li><p>Therefore: $h_{\theta}=\frac{1}{1+e^{\theta^{T}x}}$ </p>
+</li>
+<li><p>$x$ is input data, while $\theta$ is the parameters<br><br></p>
+</li>
+</ul>
+<h3 id="Cost-Function-and-Derivation"><a href="#Cost-Function-and-Derivation" class="headerlink" title="Cost Function and Derivation"></a>Cost Function and Derivation</h3><ul>
+<li><p>Assuming that the data is in Bernoulli distribution.</p>
+</li>
+<li><p>Assuming we have training data which means we can know the probability for both category 1 or 0:</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+p(y=1|x,\theta) = h_{\theta}(x)</script><script type="math/tex; mode=display">
+p(y=0|x,\theta) = 1-h_{\theta}(x)</script><ul>
+<li>Combining above two formulas, assuming we know the posterior probability of y=1 and y=0, then we have:</li>
+</ul>
+<script type="math/tex; mode=display">
+P(y|x,{\theta}) = h_{\theta}(x)^{y} * (1-h_{\theta}(x))^{1-y}</script><ul>
+<li><p>Derive the loss function through maximum likelihood estimation, and inversely deduce ${\theta}$ through maximum likelihood estimation.</p>
+</li>
+<li><p>The probabilities of n samples are multiplied, the larger the value, the better $(\theta)$ will be, so we can get the formula of maximum likelihood estimation according to this:</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+L({\theta}) = \prod_{i=1}^{n}p(y^{(i)}|x^{(i)},{\theta})=\prod_{i=1}^{n}h_{\theta}(x^{(i)})^{y^{(i)}}(1-h_{\theta}(x^{(i)}))^{1-y^{(i)}}</script><ul>
+<li>Then take the logarithm which will become cumulative:</li>
+</ul>
+<script type="math/tex; mode=display">
+L({\theta}) =\sum_{i=1}^{n}y^{(i)}ln(h_{\theta}(x^{(i)}))+({1-y^{(i)}})ln(1-h_{\theta}(x^{(i)})</script><ul>
+<li>Now we want to take the maximum value. We take a negative number and write it in the form of a cost function since our usual cost function is the minimum value:</li>
+</ul>
+<script type="math/tex; mode=display">
+J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</script><ul>
+<li>Iterative formula for gradient descen:</li>
+</ul>
+<script type="math/tex; mode=display">
+{\theta}_{j} = {\theta}_{j} - {\alpha}\frac{\partial J({\theta})}{\partial{\theta}_{j}}</script><p><img src="https://imgkr.cn-bj.ufileos.com/327a0e48-37e3-4d94-bcc0-5087e44208fb.png" alt=""></p>
+<ul>
+<li>Then take back to the gradient descent formula again.<br><br></li>
+</ul>
+<h3 id="Pros-and-Cons"><a href="#Pros-and-Cons" class="headerlink" title="Pros and Cons"></a>Pros and Cons</h3><ul>
+<li><p>$Pros:$</p>
+<ul>
+<li><p>Simple and easy to explain. </p>
+</li>
+<li><p>Weights of different features have a direct effect on the performance of the final model.</p>
+</li>
+<li><p>In addition to simple classification, classified probability can also be obtained.</p>
+</li>
+</ul>
+</li>
+<li><p>$Cons:$</p>
+<ul>
+<li>Simpler model is quite difficult to fit complex data distribution</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
     
@@ -433,8 +508,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/26/Linear-Regression/" rel="next" title="Linear Regression">
-                <i class="fa fa-chevron-left"></i> Linear Regression
+              <a href="/2020/07/26/Linear-Regression/" rel="next" title="(Non) Linear Regression">
+                <i class="fa fa-chevron-left"></i> (Non) Linear Regression
               </a>
             
           </div>
@@ -497,8 +572,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -558,6 +642,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Aim"><span class="nav-number">1.</span> <span class="nav-text">Aim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sigmoid-Function"><span class="nav-number">2.</span> <span class="nav-text">Sigmoid Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cost-Function-and-Derivation"><span class="nav-number">3.</span> <span class="nav-text">Cost Function and Derivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pros-and-Cons"><span class="nav-number">4.</span> <span class="nav-text">Pros and Cons</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1076,6 +1176,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

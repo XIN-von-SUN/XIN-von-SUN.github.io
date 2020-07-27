@@ -3,53 +3,9 @@
   <entry>
     <title>Decision Tree</title>
     <url>/2020/07/26/Decision-Tree/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Supervised Learning</category>
-        <category>Classification</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Supervised Learning</tag>
-        <tag>Classification</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KNN</title>
-    <url>/2020/07/26/KNN/</url>
-    <content><![CDATA[<h3 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h3><ul>
-<li>k最近邻,就是k个最近的邻居</li>
-<li>一个样本在特征空间中的k个最近邻样本中大多数属于某一个类别/则该样本也属于这一个类别</li>
-<li>所有的邻居都是已知类别的/而我们手上要进行分类的数据是不知道类别的</li>
-</ul>
-<h3 id="算法表述"><a href="#算法表述" class="headerlink" title="算法表述"></a>算法表述</h3><ul>
-<li>计算测试数据和各个训练数据之间的距离</li>
-<li>按照距离的递增关系进行排序</li>
-<li>选择距离最小的k个点</li>
-<li>确定前k个点所在类别的出现频率</li>
-<li>返回前k个点中出现频率最高的类别作为测试数据的分类</li>
-</ul>
-<h3 id="K的取值"><a href="#K的取值" class="headerlink" title="K的取值"></a>K的取值</h3><ul>
-<li>K:最邻近的每次计算点的个数</li>
-<li>K太小:容易被噪点影响/比如k=1的时候/恰好这个数据是个噪点/那么就完全影响了这次分类</li>
-<li>k太大:误差会增大/k最近邻做法的意义就变小了</li>
-<li>k尽量取奇数/方便预测</li>
-</ul>
-<h3 id="距离怎么计算的"><a href="#距离怎么计算的" class="headerlink" title="距离怎么计算的"></a>距离怎么计算的</h3><ul>
-<li><p>欧几里得距离:$E(x,y)=\sqrt{\sum_{i=1}^{n}(x_{i}-y_{i})^{2}}$</p>
-</li>
-<li><p>曼哈顿距离:$D(x,y)=|x_{i}-x_{j}|+|y_{i}-y_{j}|$</p>
-</li>
-</ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>knn是一个简单高效的分类算法并且容易实现</li>
-<li>当训练集很大的时候/需要大量的存储空间/并且计算某个点和所有数据的距离是非常耗时的</li>
-<li>对随机分布的数据分类效果差</li>
-<li>对类内距离小/类间距离大的数据分类效果好</li>
-<li>对样本不均匀的数据效果不好,可以进行权重改进,给近的测试点的权重更高</li>
-<li>KNN非常耗时,所以比较适合小规模数据</li>
-</ul>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Decision Tree</a></p>
+<p>The note for Decision Tree is in OneNote /Machine Learning/Supervised Learning/决策树-Decision Tree</p>
+<p>I will re-organize the note here later……</p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
@@ -65,7 +21,10 @@
   <entry>
     <title>Hierarchical Agglomerative Clustering</title>
     <url>/2020/07/26/Hierarchical-Agglomerative-Clustering/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Hierarchical Agglomerative Clustering</a></p>
+<p>The note for Hierarchical Agglomerative Clustering is in /Machine Learning/Unsupervised Learning/Hierarchical Agglomerative Clustering</p>
+<p>I will re-organize the note here later……</p>
+]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Unsupervised Learning</category>
@@ -78,24 +37,62 @@
       </tags>
   </entry>
   <entry>
-    <title>Density-Based Clustering - DBSCAN / OPTICS</title>
-    <url>/2020/07/26/Density-Based-Clustering-DBSCAN-OPTICS/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Logistic Regression</title>
-    <url>/2020/07/26/Logistic-Regression/</url>
-    <content><![CDATA[]]></content>
+    <title>KNN</title>
+    <url>/2020/07/26/KNN/</url>
+    <content><![CDATA[<h3 id="Principle-of-KNN"><a href="#Principle-of-KNN" class="headerlink" title="Principle of KNN"></a>Principle of KNN</h3><ul>
+<li><p>k nearest neighbors are k nearest neighbors</p>
+</li>
+<li><p>Most of the k nearest neighbors of a sample in the feature space belong to a certain category, then this sample also belongs to this category</p>
+</li>
+<li><p>All neighbors of a sample have a known category, while the sample we want to classify has no category<br><br/></p>
+</li>
+</ul>
+<p>As shown in the figure below, which class should be assigned to the green circle, red triangle or a blue square? </p>
+<p>If K=3, the green circle will be assigned the category of the red triangle since the proportion of the red triangle is 2/3.</p>
+<p>If K=5, the green circle will be assigned the blue square, since the proportion of the blue square is 3/5.<br><br/><br><img src="/images/KNN.jpg" width="30%" height="30%" title="How KNN works" alt="KNN"/></p>
+<h3 id="Workflow-of-KNN"><a href="#Workflow-of-KNN" class="headerlink" title="Workflow of KNN"></a>Workflow of KNN</h3><ul>
+<li><p>Calculate the distance between the test data and each training data </p>
+</li>
+<li><p>Sort candidate categories by increasing distance </p>
+</li>
+<li><p>Select the k points within the smallest distance</p>
+</li>
+<li><p>Determine the frequency of occurrence of the category for the first k points</p>
+</li>
+<li><p>Return the category with the highest frequency among the first k points as the classification result of the test data<br><br/></p>
+</li>
+</ul>
+<h3 id="How-to-choose-value-K"><a href="#How-to-choose-value-K" class="headerlink" title="How to choose value K"></a>How to choose value K</h3><ul>
+<li><p>K: The number of nearest neighbors for each calculation.</p>
+</li>
+<li><p>K is too small: easy to be affected by noise, for example, when k=1, then it will completely affects this classification result if this data point happens to be a noisy data.</p>
+</li>
+<li><p>K is too large: the error will increase, the meaning of the k nearest neighbor approach becomes smaller.</p>
+</li>
+<li><p>K is tried to be select as odd which will be convenient for prediction.<br><br/></p>
+</li>
+</ul>
+<h3 id="How-to-calculate-Distance"><a href="#How-to-calculate-Distance" class="headerlink" title="How to calculate Distance"></a>How to calculate Distance</h3><ul>
+<li><p>Euclidean distance: <script type="math/tex">E(x,y)=\sqrt{\sum_{i=1}^{n}(x_{i}-y_{i})^{2}}</script></p>
+</li>
+<li><p>Manhattan distance: <script type="math/tex">D(x,y)=|x_{i}-x_{j}|+|y_{i}-y_{j}|</script><br><br/></p>
+</li>
+</ul>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><ul>
+<li><p>KNN is a simple and efficient classification algorithm and easy to be implemented.</p>
+</li>
+<li><p>When the training set is quite large, a lot of storage space is needed, and calculating the distance between a certain point and all data is quite time-consuming.</p>
+</li>
+<li><p>Poor classification performance with randomly distributed data.</p>
+</li>
+<li><p>Good classification performance for data with small intra-class distance and large inter-class distance.</p>
+</li>
+<li><p>The performance is not good for the unbalanced data, the weight can be improved which can give the nearest test point higher weights.</p>
+</li>
+<li><p>KNN is quite time-consuming, so it is more suitable for small-scale data.</p>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Supervised Learning</category>
@@ -110,7 +107,13 @@
   <entry>
     <title>Lasso / Ridge / ElasticNet Regression</title>
     <url>/2020/07/26/Lasso-Ridge-ElasticNet-Regression/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="Lasso-Regression"><a href="#Lasso-Regression" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p>和岭回归类似，Lasso(least Absolute Shrinkage and Selection Operator)也是通过惩罚其回归系数的绝对值。看下面的公式：</p>
+<pre><code>   Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0.
+</code></pre><p>重点：<br>1.其假设与最小二乘回归相同除了正态性。<br>2.其能把系数收缩到0，使得其能帮助特征选择。<br>3.这个正则化方法为l1正则化。<br>4.如果一组变量是高度相关的，lasso会选择其中的一个，然后把其他的都变为0.<br><br></p>
+<h3 id="Lasso-Regression-1"><a href="#Lasso-Regression-1" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p><br></p>
+<h3 id="Ridge-Regression"><a href="#Ridge-Regression" class="headerlink" title="Ridge Regression"></a>Ridge Regression</h3><p><br></p>
+<h3 id="ElasticNet-Regression"><a href="#ElasticNet-Regression" class="headerlink" title="ElasticNet Regression"></a>ElasticNet Regression</h3><p><br></p>
+]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Supervised Learning</category>
@@ -123,10 +126,80 @@
       </tags>
   </entry>
   <entry>
-    <title>Bayes</title>
-    <url>/2020/07/26/Bayes/</url>
-    <content><![CDATA[<p>贝叶斯分类是一类分类算法的总称，这类算法均以贝叶斯定理为基础，故统称为贝叶斯分类。而朴素朴素贝叶斯分类是<br>贝叶斯分类中最简单，也是常见的一种分类方法。<br>朴素贝叶斯是基于概率论的分类算法，通过考虑特征概率来预测分类，其原理简单，也很容易实现，多用于文本分类，比如垃圾邮件过滤。</p>
-<p>条件概率：<br>朴素贝叶斯最核心的部分是贝叶斯法则，而贝叶斯法则的基石是条件概率。贝叶斯法则如下：</p>
+    <title>Logistic Regression</title>
+    <url>/2020/07/26/Logistic-Regression/</url>
+    <content><![CDATA[<h3 id="Aim"><a href="#Aim" class="headerlink" title="Aim"></a>Aim</h3><ul>
+<li><p>For Binary Classification.</p>
+</li>
+<li><p>For a binary classification problem, we not only want to know that the classified category, but also want to know the probability for a certain category.<br><br></p>
+</li>
+</ul>
+<h3 id="Sigmoid-Function"><a href="#Sigmoid-Function" class="headerlink" title="Sigmoid Function"></a>Sigmoid Function</h3><p>Sigmoid Function: </p>
+<script type="math/tex; mode=display">g(z)=\frac{1}{1+e^{-z}}</script><p><img src="https://imgkr.cn-bj.ufileos.com/acbd35f2-1878-44fa-aeb6-8e3b59f7ed03.png" alt=""></p>
+<ul>
+<li><p>x $\subseteq$ $R$, y $\subseteq$ $[0, 1]$<br>Such a function is very conducive to the processing of two classification problems</p>
+</li>
+<li><p>$g(z)=\frac{1}{1+e^{-z}}$</p>
+</li>
+<li><p>$h_{\theta}(x)=g(\theta^{T}x)$</p>
+</li>
+<li><p>Therefore: $h_{\theta}=\frac{1}{1+e^{\theta^{T}x}}$ </p>
+</li>
+<li><p>$x$ is input data, while $\theta$ is the parameters<br><br></p>
+</li>
+</ul>
+<h3 id="Cost-Function-and-Derivation"><a href="#Cost-Function-and-Derivation" class="headerlink" title="Cost Function and Derivation"></a>Cost Function and Derivation</h3><ul>
+<li><p>Assuming that the data is in Bernoulli distribution.</p>
+</li>
+<li><p>Assuming we have training data which means we can know the probability for both category 1 or 0:</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+p(y=1|x,\theta) = h_{\theta}(x)</script><script type="math/tex; mode=display">
+p(y=0|x,\theta) = 1-h_{\theta}(x)</script><ul>
+<li>Combining above two formulas, assuming we know the posterior probability of y=1 and y=0, then we have:</li>
+</ul>
+<script type="math/tex; mode=display">
+P(y|x,{\theta}) = h_{\theta}(x)^{y} * (1-h_{\theta}(x))^{1-y}</script><ul>
+<li><p>Derive the loss function through maximum likelihood estimation, and inversely deduce ${\theta}$ through maximum likelihood estimation.</p>
+</li>
+<li><p>The probabilities of n samples are multiplied, the larger the value, the better $(\theta)$ will be, so we can get the formula of maximum likelihood estimation according to this:</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+L({\theta}) = \prod_{i=1}^{n}p(y^{(i)}|x^{(i)},{\theta})=\prod_{i=1}^{n}h_{\theta}(x^{(i)})^{y^{(i)}}(1-h_{\theta}(x^{(i)}))^{1-y^{(i)}}</script><ul>
+<li>Then take the logarithm which will become cumulative:</li>
+</ul>
+<script type="math/tex; mode=display">
+L({\theta}) =\sum_{i=1}^{n}y^{(i)}ln(h_{\theta}(x^{(i)}))+({1-y^{(i)}})ln(1-h_{\theta}(x^{(i)})</script><ul>
+<li>Now we want to take the maximum value. We take a negative number and write it in the form of a cost function since our usual cost function is the minimum value:</li>
+</ul>
+<script type="math/tex; mode=display">
+J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</script><ul>
+<li>Iterative formula for gradient descen:</li>
+</ul>
+<script type="math/tex; mode=display">
+{\theta}_{j} = {\theta}_{j} - {\alpha}\frac{\partial J({\theta})}{\partial{\theta}_{j}}</script><p><img src="https://imgkr.cn-bj.ufileos.com/327a0e48-37e3-4d94-bcc0-5087e44208fb.png" alt=""></p>
+<ul>
+<li>Then take back to the gradient descent formula again.<br><br></li>
+</ul>
+<h3 id="Pros-and-Cons"><a href="#Pros-and-Cons" class="headerlink" title="Pros and Cons"></a>Pros and Cons</h3><ul>
+<li><p>$Pros:$</p>
+<ul>
+<li><p>Simple and easy to explain. </p>
+</li>
+<li><p>Weights of different features have a direct effect on the performance of the final model.</p>
+</li>
+<li><p>In addition to simple classification, classified probability can also be obtained.</p>
+</li>
+</ul>
+</li>
+<li><p>$Cons:$</p>
+<ul>
+<li>Simpler model is quite difficult to fit complex data distribution</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
@@ -140,9 +213,26 @@
       </tags>
   </entry>
   <entry>
-    <title>Linear Regression</title>
+    <title>(Non) Linear Regression</title>
     <url>/2020/07/26/Linear-Regression/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="What-is-Regression"><a href="#What-is-Regression" class="headerlink" title="What is Regression"></a>What is Regression</h3><p>Regression, its intuitive understanding is fitting. Let’s take linear regression as an example. There are a series of red points on a two-dimensional plane. We want to use a straight line to fit these red points as much as possible. This is linear regression. The essence of regression is that our prediction results are as close as possible to the actual observation results.</p>
+<p><img src="/images/linear_regression_1.jpg" width="30%" height="30%" title="Linear Regression in 2 dimension" alt=""/></p>
+<p><img src="/images/linear_regression_2.jpg" width="30%" height="30%" title="Linear Regression in 3 dimension" alt=""/></p>
+<p>What is linear? The data fitting is linear, in other words a straight line.<br>What is regression? To predict an accurate output value based on previous data.</p>
+<p>The linear regression algorithm can be divided into two categories:</p>
+<ul>
+<li>Linear Regression with one variable </li>
+<li>Linear Regression with multiple variable </li>
+</ul>
+<p>The most obvious character of regression is that the output $y_i$ is a continuous variable (this continuous variable is generally a float number, but sometimes can also be integer). The classic formula of linear regression is:<br><img src="/images/linear_regression_3.jpg" width="30%" height="30%" title="" alt=""/></p>
+<h3 id="Loss-Function-MSE"><a href="#Loss-Function-MSE" class="headerlink" title="Loss Function - MSE"></a>Loss Function - MSE</h3><p>The goal of linear regression is to fit the target label as much as possible with the predicted results, and the most common Least square is used as Loss Function:<br><img src="/images/linear_regression_4.jpg" width="30%" height="30%" title="" alt=""/><br><br/></p>
+<h3 id="Why-use-MSE-as-Loss-Function"><a href="#Why-use-MSE-as-Loss-Function" class="headerlink" title="Why use MSE as Loss Function"></a>Why use MSE as Loss Function</h3><p>After the model is prepared, we send the training data into the model, and then final value can be predicted through the model.<br><img src="/images/linear_regression_5.jpg" width="30%" height="30%" title="" alt=""/></p>
+<p>Then there is an error $ε$ between the true value y and the predicted value of the sample in training data. According to the central limit law, $\sum ε$ satisfies the Gaussian distribution $(u, δ^2)$ if the amount of the training data is large; Also u =0, then the Gaussian distribution $(0, δ^2)$ is satisfied due to the intercept term in equation.<br><img src="/images/linear_regression_6.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>As we can see above, for each sample $x$, send it into $p(y|x;θ)$ will get a probability of y; And because the sample is assumed to be independent and identically distributed; Thus we can find the maximum likelihood function for it:<br><img src="/images/linear_regression_7.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>Simplify it as follows<br><img src="/images/linear_regression_8.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>Finally, we use optimizers (such as SGD) to make the value of loss function keep decreasing, and iteratively update the corresponding parameters to obtain a well-fitting regression function.<br><br></p>
+<h3 id="Non-Linear-Regression"><a href="#Non-Linear-Regression" class="headerlink" title="Non-Linear Regression"></a>Non-Linear Regression</h3><p>A non-linear regression model is called when the fitting function is a non-linear function, such as hyperbolic model, power function, exponential function, logarithmic function model, polynomial model, etc. To solve the non-linear regression model, we normally transfer the non-linear regression model into a linear model gradually, and then performs linear regression fitting.</p>
+]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Supervised Learning</category>
@@ -155,9 +245,21 @@
       </tags>
   </entry>
   <entry>
-    <title>PLA</title>
+    <title>PLA - Perceptron Learning Algorithm</title>
     <url>/2020/07/26/PLA/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="What-is-PLA"><a href="#What-is-PLA" class="headerlink" title="What is PLA"></a>What is PLA</h3><p>The perceptron (PLA) is an algorithm which can divide the positive and negative samples of training set into two parts, and then classify input data in the feature.<br><br></p>
+<h3 id="Limitation"><a href="#Limitation" class="headerlink" title="Limitation"></a>Limitation</h3><p>PLA can only be used to implement linearly separable functions.<br><br></p>
+<h3 id="Input-and-Output-of-PLA"><a href="#Input-and-Output-of-PLA" class="headerlink" title="Input and Output of PLA"></a>Input and Output of PLA</h3><p>The input space (feature space) of the PLA is:</p>
+<script type="math/tex; mode=display">X \subseteq R^n</script><p>That is a $n$-dimensional vector space, the output space is $Y={+1,−1}$, which means −1 represents a negative example, and +1 represents a positive example.</p>
+<p>For example: the input $x \subseteq X$ corresponds to a certain point in the input space $R^n$, and the output $y \subseteq Y$ represents the category of this input point. It should be noted that the input $x$ is a $n$-dimensional vector, that means, $x = (x^{(1)}, x^{(2)}, \cdots, x^{(n)})$.<br><br></p>
+<h3 id="Definition-of-PLA"><a href="#Definition-of-PLA" class="headerlink" title="Definition of PLA"></a>Definition of PLA</h3><p>现在已经有了输入和输出的定义，我们就可以给出感知机$f(x)$<br>的模型了：<br>Now we have the definition of input and output of PLA, then we can give the perceptron $f(x)$ model:</p>
+<script type="math/tex; mode=display">f(x)=sign(ω⋅x+b)</script><p>Among them, $sign$ is a sign function</p>
+<script type="math/tex; mode=display">sign(x) = \begin{cases}
++1 & x \geq n \\
+−1  & x < n
+\end{cases}</script><p>We call the above function $f(x)$ as the perceptron function.<br><br></p>
+<h3 id="Workflow-of-PLA"><a href="#Workflow-of-PLA" class="headerlink" title="Workflow of PLA"></a>Workflow of PLA</h3><p><img src="https://miro.medium.com/max/516/1*PbJBdf-WxR0Dd0xHvEoh4A.png" alt="PLA"></p>
+]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Supervised Learning</category>
@@ -170,24 +272,12 @@
       </tags>
   </entry>
   <entry>
-    <title>Model-based Clustering - EM / GMM</title>
-    <url>/2020/07/26/Model-based-Clustering-EM-GMM/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Partitioning based - K-Means / Medoids / Medians</title>
+    <title>Partitioning-based Clustering K-Means / Medoids / Medians</title>
     <url>/2020/07/26/Partitioning-based%20Clustering-K-Means-Medoids-Medians/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Partitioning-based Clustering K-Means / Medoids / Medians</a></p>
+<p>The note for Partitioning-based Clustering K-Means / Medoids / Medians is in /Machine Learning/Unsupervised Learning/Partitioning Methods—-K-Means/Medoids/Medians</p>
+<p>I will re-organize the note here later……</p>
+]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Unsupervised Learning</category>
@@ -198,29 +288,105 @@
         <tag>Unsupervised Learning</tag>
         <tag>Clustering</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/07/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>SVM</title>
     <url>/2020/07/26/SVM/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for SVM</a></p>
+<p>The note for SVM is in /Machine Learning/Supervised Learning/SVM</p>
+<p>I will re-organize the note here later……</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Supervised Learning</category>
+        <category>Classification</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Supervised Learning</tag>
+        <tag>Classification</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Usage of Hexo</title>
+    <url>/2020/07/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Model-based Clustering - EM / GMM</title>
+    <url>/2020/07/26/Model-based-Clustering-EM-GMM/</url>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Model Methods - EM - GMM Clustering</a></p>
+<p>The note for Model Methods - EM - GMMe Clustering is in /Machine Learning/Unsupervised Learning/Model Methods —- EM based GMM</p>
+<p>I will re-organize the note here later……</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Density-Based Clustering - DBSCAN / OPTICS</title>
+    <url>/2020/07/26/Density-Based-Clustering-DBSCAN-OPTICS/</url>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for DBSCAN / OPTICS Clustering</a></p>
+<p>The note for DBSCAN / OPTICS is in /Machine Learning/Unsupervised Learning/Density-Based Methods —- DBSCAN / OPTICS</p>
+<p>I will re-organize the note here later……</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Navie Bayes</title>
+    <url>/2020/07/26/Navie%20Bayes/</url>
+    <content><![CDATA[<p>Naive Bayes is a classification algorithm based on probability theory, which predicts classification by considering feature probabilities.</p>
+<h3 id="Bayesian-Theory-and-Conditional-Probability"><a href="#Bayesian-Theory-and-Conditional-Probability" class="headerlink" title="Bayesian Theory and Conditional Probability:"></a>Bayesian Theory and Conditional Probability:</h3><p>The core part of Naive Bayes is Bayes’ rule and Naive assumeption. And the cornerstone of Bayes’ rule is conditional probability. Bayes’ rule is as follows:</p>
+<script type="math/tex; mode=display">P(A|B)=\frac{P(A) * P(B|A)}{P(B)}</script><p><br/></p>
+<h3 id="Why-Naive"><a href="#Why-Naive" class="headerlink" title="Why Naive:"></a>Why Naive:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>We assume that all features (all events) are independent of each other. Simplicitly:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * P(F_1, F_2, \cdots, F_n|A)}{P(F_1, F_2, \cdots, F_n)}</script><p>According to the Naive assumeption, the probabilities of events are independent, so we have:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
+<h3 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use:"></a>How to use:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>According to Bayes’ theorem and the Naive assumeption, we have:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
+<h3 id="Naive-Bayes-Pros-Cons"><a href="#Naive-Bayes-Pros-Cons" class="headerlink" title="Naive Bayes Pros / Cons:"></a>Naive Bayes Pros / Cons:</h3><p>$Pros:$</p>
+<ul>
+<li><p>The algorithm logic is simple and easy to implement (the algorithm idea is very simple, just use the Bayesian formula to transform)</p>
+</li>
+<li><p>High learning and prediction efficiency, easy to implement, and small space-time overhead during the classification process (assuming that the features are independent of each other, only two-dimensional storage is involved)</p>
+</li>
+<li><p>Still effective in the case of less data and can handle multiple types of problems</p>
+</li>
+</ul>
+<p>$Cons:$</p>
+<ul>
+<li><p>The classification performance is not necessarily high. The assumption of feature independence will make Naive Bayes simple, but it will sacrifice a certain classification accuracy. Theoritically, the Naive Bayes model has the smallest error rate compared with other classification methods.</p>
+</li>
+<li><p>But this is not always true, because the Naive Bayes model assumes that the features are all independent of each other. This assumption is often invalid in practical applications. When the number of features is large or the correlation between features is relevant, The classification performance is not good. When the features correlation is small, Naive Bayes performs best.</p>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Supervised Learning</category>
