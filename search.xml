@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Adaboost</title>
-    <url>/2020/07/29/Ensemble%20Learning/Adaboost/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Ensemble Learning</category>
-        <category>Boosting</category>
-      </categories>
-      <tags>
-        <tag>Ensemble Learning</tag>
-        <tag>Boosting</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GBDT</title>
-    <url>/2020/07/29/Ensemble%20Learning/GBDT/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Ensemble Learning</category>
-        <category>Boosting</category>
-      </categories>
-      <tags>
-        <tag>Ensemble Learning</tag>
-        <tag>Boosting</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Random Forest</title>
     <url>/2020/07/29/Ensemble%20Learning/Random-Forest/</url>
     <content><![CDATA[]]></content>
@@ -37,6 +11,19 @@
       <tags>
         <tag>Ensemble Learning</tag>
         <tag>Bagging</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Adaboost</title>
+    <url>/2020/07/29/Ensemble%20Learning/Adaboost/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Ensemble Learning</category>
+        <category>Boosting</category>
+      </categories>
+      <tags>
+        <tag>Ensemble Learning</tag>
+        <tag>Boosting</tag>
       </tags>
   </entry>
   <entry>
@@ -53,8 +40,8 @@
       </tags>
   </entry>
   <entry>
-    <title>XGBoost</title>
-    <url>/2020/07/29/Ensemble%20Learning/XGBoost/</url>
+    <title>GBDT</title>
+    <url>/2020/07/29/Ensemble%20Learning/GBDT/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Ensemble Learning</category>
@@ -66,43 +53,16 @@
       </tags>
   </entry>
   <entry>
-    <title>How to develop Python Package as PyPI</title>
-    <url>/2020/07/28/Development/How-to-develop-Python-Package-as-PyPI/</url>
-    <content><![CDATA[<h3 id="Why-developing-own-Package"><a href="#Why-developing-own-Package" class="headerlink" title="Why developing own Package"></a>Why developing own Package</h3><p>There are a bunch of nifty tools that help you build, install and distribute packages.</p>
-<p>Using a well structured, standard layout for our own package makes it easy to use those tools.</p>
-<p>Even if you never want to give anyone else your code, a well structured package simplifies development.<br><br></p>
-<h3 id="What-is-a-Package"><a href="#What-is-a-Package" class="headerlink" title="What is a Package?"></a>What is a Package?</h3><p>A collection of modules:<br>… and the documentation<br>… and the tests<br>… and any top-level scripts<br>… and any data files required<br>… and a way to build and install it…<br><br></p>
-<h3 id="Steps-to-develop-Python-Package"><a href="#Steps-to-develop-Python-Package" class="headerlink" title="Steps to develop Python Package"></a>Steps to develop Python Package</h3><h5 id="1-We-should-install-the-necessary-packages-for-developing-our-own-python-package"><a href="#1-We-should-install-the-necessary-packages-for-developing-our-own-python-package" class="headerlink" title="1. We should install the necessary packages for developing our own python package:"></a>1. We should install the necessary packages for developing our own python package:</h5><p>pip install setuptools<br>pip install twine</p>
-<h5 id="2-We-should-construct-the-required-structure-for-python-package-as-follow"><a href="#2-We-should-construct-the-required-structure-for-python-package-as-follow" class="headerlink" title="2. We should construct the required structure for python package as follow:"></a>2. We should construct the required structure for python package as follow:</h5><p>Firstly we should build a new folder named: OurPyPI. Then the file we should build in this folder:<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">├── LICENSE  </span><br><span class="line">├── README.md   </span><br><span class="line">├── MANIFEST.<span class="keyword">in</span>  </span><br><span class="line">├── CHANGES.txt  </span><br><span class="line">├── OurPyPI  </span><br><span class="line">│ ├── __init__.py   </span><br><span class="line">│ ├── main.py  </span><br><span class="line">│ ├── ......</span><br><span class="line">├── setup.cfg  </span><br><span class="line">├── setup.py  </span><br><span class="line"></span><br><span class="line">CHANGES.txt: log of changes <span class="keyword">with</span> each release</span><br><span class="line"></span><br><span class="line">LICENSE.txt: text of the license you choose (do choose one!)</span><br><span class="line"></span><br><span class="line">MANIFEST.<span class="keyword">in</span>: description of what non-code files to include</span><br><span class="line"></span><br><span class="line">README.md: description of the package – should be written <span class="keyword">in</span> ReST <span class="keyword">or</span> Markdown </span><br><span class="line"></span><br><span class="line">setup.py: the script <span class="keyword">for</span> building/installing package.</span><br></pre></td></tr></table></figure></p>
-<h5 id="3-Then-we-should-write-content-in-file-setup-py"><a href="#3-Then-we-should-write-content-in-file-setup-py" class="headerlink" title="3. Then we should write content in file setup.py"></a>3. Then we should write content in file setup.py</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> setuptools <span class="keyword">import</span> setup, find_packages</span><br><span class="line"></span><br><span class="line"> setup(</span><br><span class="line">    name=<span class="string">'OurPyPI'</span>,  <span class="comment"># Our PackageName here</span></span><br><span class="line">    version=<span class="string">'0.0.1'</span>,</span><br><span class="line">    author=<span class="string">''</span>,</span><br><span class="line">    author_email=<span class="string">'aac@example.com'</span>,</span><br><span class="line">    packages=find_packages(),</span><br><span class="line">    url=<span class="string">'http://pypi.python.org/pypi/PackageName/'</span>,</span><br><span class="line">    license=<span class="string">'LICENSE.txt'</span>,</span><br><span class="line">    description=<span class="string">'An awesome package that does something'</span>,</span><br><span class="line">    long_description=open(<span class="string">'README.txt'</span>).read(),</span><br><span class="line">    install_requires=[<span class="string">'Here we should add the dependency packages which needed for our own packages'</span>],</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
-<h5 id="4-We-should-define-our-own-package-functions"><a href="#4-We-should-define-our-own-package-functions" class="headerlink" title="4. We should define our own package functions"></a>4. We should define our own package functions</h5><p>In folder OurPyPI/main.py file, we can add and define the functions or class we need in the package.</p>
-<p>For example, we define a function in file OurPyPI/main.py:<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greeting</span><span class="params">(name)</span>:</span></span><br><span class="line">    print(<span class="string">"Hi, "</span>, name)</span><br></pre></td></tr></table></figure></p>
-<h5 id="5-Package-and-Publish-our-own-Python-Package-on-PyPI"><a href="#5-Package-and-Publish-our-own-Python-Package-on-PyPI" class="headerlink" title="5. Package and Publish our own Python Package on PyPI"></a>5. Package and Publish our own Python Package on PyPI</h5><ul>
-<li><p>run ‘python setup.py check’, continue if no error reported.</p>
-</li>
-<li><p>run ‘python3 setup.py sdist bdist_wheel’ to package all files.</p>
-</li>
-<li><p>run ‘twine upload dist/*’ to publish our own developing package into Python Package PyPI. Before this step, we should register an account in PyPI.</p>
-</li>
-<li><p>Then we can use ‘pip install OurPyPI==.0.1’ to install our own package.</p>
-</li>
-</ul>
-<h5 id="6-Test-and-usage-of-our-own-package"><a href="#6-Test-and-usage-of-our-own-package" class="headerlink" title="6. Test and usage of our own package"></a>6. Test and usage of our own package</h5><ul>
-<li><p>How to test our own package locally.<br>In the same developing environment and fold OurPyPI, we can use command ‘pip install -e ./OurPyPI/‘ to install the package locally.</p>
-</li>
-<li><p>How to use our own package.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> OurPyPI imoprt main</span><br><span class="line">main.greeting(<span class="string">'Mike'</span>)</span><br></pre></td></tr></table></figure>
-<p>Then we can get print value ‘Hi, Mike’ in console.</p>
-</li>
-</ul>
-]]></content>
+    <title>XGBoost</title>
+    <url>/2020/07/29/Ensemble%20Learning/XGBoost/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>My Apps development</category>
-        <category>Python Package PyPI</category>
+        <category>Ensemble Learning</category>
+        <category>Boosting</category>
       </categories>
       <tags>
-        <tag>Apps development</tag>
-        <tag>PyPI</tag>
+        <tag>Ensemble Learning</tag>
+        <tag>Boosting</tag>
       </tags>
   </entry>
   <entry>
@@ -148,22 +108,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Attention in seq2seq</title>
-    <url>/2020/07/29/Seq2seq/Attention-in-seq2seq/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Deep Learning</category>
-        <category>Seq2seq</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>Seq2seq</tag>
-        <tag>Attention</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Beam Search</title>
-    <url>/2020/07/29/Seq2seq/Beam-Search/</url>
+    <title>Seq2seq - Encoder - Decoder</title>
+    <url>/2020/07/29/Seq2seq/Seq2seq-Encoder-Decoder/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Deep Learning</category>
@@ -173,7 +119,6 @@
         <tag>Deep Learning</tag>
         <tag>Seq2seq</tag>
         <tag>Encoder-Decoder</tag>
-        <tag>Beam Search</tag>
       </tags>
   </entry>
   <entry>
@@ -191,9 +136,60 @@
       </tags>
   </entry>
   <entry>
-    <title>Seq2seq - Encoder - Decoder</title>
-    <url>/2020/07/29/Seq2seq/Seq2seq-Encoder-Decoder/</url>
-    <content><![CDATA[]]></content>
+    <title>How to develop Python Package as PyPI</title>
+    <url>/2020/07/28/Development/How-to-develop-Python-Package-as-PyPI/</url>
+    <content><![CDATA[<h3 id="Why-developing-own-Package"><a href="#Why-developing-own-Package" class="headerlink" title="Why developing own Package"></a>Why developing own Package</h3><p>There are a bunch of nifty tools that help you build, install and distribute packages.</p>
+<p>Using a well structured, standard layout for our own package makes it easy to use those tools.</p>
+<p>Even if you never want to give anyone else your code, a well structured package simplifies development.<br><br></p>
+<h3 id="What-is-a-Package"><a href="#What-is-a-Package" class="headerlink" title="What is a Package?"></a>What is a Package?</h3><p>A collection of modules:<br>… and the documentation<br>… and the tests<br>… and any top-level scripts<br>… and any data files required<br>… and a way to build and install it…<br><br></p>
+<h3 id="Steps-to-develop-Python-Package"><a href="#Steps-to-develop-Python-Package" class="headerlink" title="Steps to develop Python Package"></a>Steps to develop Python Package</h3><h5 id="1-We-should-install-the-necessary-packages-for-developing-our-own-python-package"><a href="#1-We-should-install-the-necessary-packages-for-developing-our-own-python-package" class="headerlink" title="1. We should install the necessary packages for developing our own python package:"></a>1. We should install the necessary packages for developing our own python package:</h5><p>pip install setuptools<br>pip install twine</p>
+<h5 id="2-We-should-construct-the-required-structure-for-python-package-as-follow"><a href="#2-We-should-construct-the-required-structure-for-python-package-as-follow" class="headerlink" title="2. We should construct the required structure for python package as follow:"></a>2. We should construct the required structure for python package as follow:</h5><p>Firstly we should build a new folder named: OurPyPI. Then the file we should build in this folder:<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">├── LICENSE  </span><br><span class="line">├── README.md   </span><br><span class="line">├── MANIFEST.<span class="keyword">in</span>  </span><br><span class="line">├── CHANGES.txt  </span><br><span class="line">├── OurPyPI  </span><br><span class="line">│ ├── __init__.py   </span><br><span class="line">│ ├── main.py  </span><br><span class="line">│ ├── ......</span><br><span class="line">├── setup.cfg  </span><br><span class="line">├── setup.py  </span><br><span class="line"></span><br><span class="line">CHANGES.txt: log of changes <span class="keyword">with</span> each release</span><br><span class="line"></span><br><span class="line">LICENSE.txt: text of the license you choose (do choose one!)</span><br><span class="line"></span><br><span class="line">MANIFEST.<span class="keyword">in</span>: description of what non-code files to include</span><br><span class="line"></span><br><span class="line">README.md: description of the package – should be written <span class="keyword">in</span> ReST <span class="keyword">or</span> Markdown </span><br><span class="line"></span><br><span class="line">setup.py: the script <span class="keyword">for</span> building/installing package.</span><br></pre></td></tr></table></figure></p>
+<h5 id="3-Then-we-should-write-content-in-file-setup-py"><a href="#3-Then-we-should-write-content-in-file-setup-py" class="headerlink" title="3. Then we should write content in file setup.py"></a>3. Then we should write content in file setup.py</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> setuptools <span class="keyword">import</span> setup, find_packages</span><br><span class="line"></span><br><span class="line"> setup(</span><br><span class="line">    name=<span class="string">'OurPyPI'</span>,  <span class="comment"># Our PackageName here</span></span><br><span class="line">    version=<span class="string">'0.0.1'</span>,</span><br><span class="line">    author=<span class="string">''</span>,</span><br><span class="line">    author_email=<span class="string">'aac@example.com'</span>,</span><br><span class="line">    packages=find_packages(),</span><br><span class="line">    url=<span class="string">'http://pypi.python.org/pypi/PackageName/'</span>,</span><br><span class="line">    license=<span class="string">'LICENSE.txt'</span>,</span><br><span class="line">    description=<span class="string">'An awesome package that does something'</span>,</span><br><span class="line">    long_description=open(<span class="string">'README.txt'</span>).read(),</span><br><span class="line">    install_requires=[<span class="string">'Here we should add the dependency packages which needed for our own packages'</span>],</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<h5 id="4-We-should-define-our-own-package-functions"><a href="#4-We-should-define-our-own-package-functions" class="headerlink" title="4. We should define our own package functions"></a>4. We should define our own package functions</h5><p>In folder OurPyPI/main.py file, we can add and define the functions or class we need in the package.</p>
+<p>For example, we define a function in file OurPyPI/main.py:<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greeting</span><span class="params">(name)</span>:</span></span><br><span class="line">    print(<span class="string">"Hi, "</span>, name)</span><br></pre></td></tr></table></figure></p>
+<h5 id="5-Package-and-Publish-our-own-Python-Package-on-PyPI"><a href="#5-Package-and-Publish-our-own-Python-Package-on-PyPI" class="headerlink" title="5. Package and Publish our own Python Package on PyPI"></a>5. Package and Publish our own Python Package on PyPI</h5><ul>
+<li><p>run ‘python setup.py check’, continue if no error reported.</p>
+</li>
+<li><p>run ‘python3 setup.py sdist bdist_wheel’ to package all files.</p>
+</li>
+<li><p>run ‘twine upload dist/*’ to publish our own developing package into Python Package PyPI. Before this step, we should register an account in PyPI.</p>
+</li>
+<li><p>Then we can use ‘pip install OurPyPI==.0.1’ to install our own package.</p>
+</li>
+</ul>
+<h5 id="6-Test-and-usage-of-our-own-package"><a href="#6-Test-and-usage-of-our-own-package" class="headerlink" title="6. Test and usage of our own package"></a>6. Test and usage of our own package</h5><ul>
+<li><p>How to test our own package locally.<br>In the same developing environment and fold OurPyPI, we can use command ‘pip install -e ./OurPyPI/‘ to install the package locally.</p>
+</li>
+<li><p>How to use our own package.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> OurPyPI imoprt main</span><br><span class="line">main.greeting(<span class="string">'Mike'</span>)</span><br></pre></td></tr></table></figure>
+<p>Then we can get print value ‘Hi, Mike’ in console.</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>My Apps development</category>
+        <category>Python Package PyPI</category>
+      </categories>
+      <tags>
+        <tag>Apps development</tag>
+        <tag>PyPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Beam Search</title>
+    <url>/2020/07/29/Seq2seq/Beam-Search/</url>
+    <content><![CDATA[<h3 id="Beam-Search"><a href="#Beam-Search" class="headerlink" title="Beam Search"></a>Beam Search</h3><p>An approximate search strategy to choose better results from all possible candidates.</p>
+<p>Beam Search algorithm has a parameter called B, which is called the beam width. Let’s see how beam search works by using beam width of 3 in machine translation tasks.</p>
+<p>With beam width 3, beam search will consider three words to choose from for the first word. So, in order to perform this first step of Beam search, we run the input French sentence through the encoder network and then the first in the decoder network is a softmax output with overall 10,000 possibilities and we will store the top 3 words because of beam width 3.</p>
+<p><img src="/images/seq2seq/beam_search_1.png" width="50%" height="50%" title="" alt=""/></p>
+<p>Next, for each of the three choices, it will calculate the probability of second word given the first word and the input french sentence. As output of this step, we want to find the pair of the first and second words that is most likely. By the rules of conditional probability, this can be expressed as P of the first words times probability of the second word.</p>
+<p><img src="/images/seq2seq/beam_search_2.png" width="50%" height="50%" title="" alt=""/></p>
+<p>So for this second step of beam search since we have 10,000 words in our vocabulary, we would end up considering three times 10000 or thirty thousand possibilities and then pick the top three.</p>
+<p>Because of beam width is equal to three, at every step, we instantiate three copies of the network to evaluate partial sentence fragments and the output. So we will use three copies of the network with different choices for the first words, but these three copies of the network can be very efficiently used to evaluate all 30,000 options for the second word.</p>
+<p><img src="/images/seq2seq/beam_search_3.png" width="50%" height="50%" title="" alt=""/></p>
+<p>And the outcome of this process will be that adding one word at a time until Beam search will decide EOS as the best next symbol.<br>Notice, if the beam width was 1, then this essentially becomes the greedy search algorithm.</p>
+<p><a href="https://medium.com/@dhartidhami/beam-search-in-seq2seq-model-7606d55b21a5" target="_blank" rel="noopener">Ref</a></p>
+]]></content>
       <categories>
         <category>Deep Learning</category>
         <category>Seq2seq</category>
@@ -202,6 +198,7 @@
         <tag>Deep Learning</tag>
         <tag>Seq2seq</tag>
         <tag>Encoder-Decoder</tag>
+        <tag>Beam Search</tag>
       </tags>
   </entry>
   <entry>
@@ -221,9 +218,45 @@
       </tags>
   </entry>
   <entry>
+    <title>Attention in seq2seq</title>
+    <url>/2020/07/29/Seq2seq/Attention-in-seq2seq/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Deep Learning</category>
+        <category>Seq2seq</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+        <tag>Seq2seq</tag>
+        <tag>Attention</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LSTM</title>
     <url>/2020/07/29/Deep%20Learning/RNN/LSTM/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="Inspiration"><a href="#Inspiration" class="headerlink" title="Inspiration"></a>Inspiration</h3><p>To avoid the long-term dependency problem in RNN and solve gradient vanishing.<br><br></p>
+<h3 id="Novelty"><a href="#Novelty" class="headerlink" title="Novelty"></a>Novelty</h3><ul>
+<li>Forget gate</li>
+<li>Input gate</li>
+<li>Output gate</li>
+<li>Cell states<br><br></li>
+</ul>
+<h3 id="LSTM-process-detail"><a href="#LSTM-process-detail" class="headerlink" title="LSTM process detail"></a>LSTM process detail</h3><h6 id="Forget-gate-f-t"><a href="#Forget-gate-f-t" class="headerlink" title="Forget gate $f_t$:"></a>Forget gate $f_t$:</h6><p><img src="/images/RNN/lstm_1.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="Input-gate-i-t-and-new-candidate-cell-state-hat-C-t"><a href="#Input-gate-i-t-and-new-candidate-cell-state-hat-C-t" class="headerlink" title="Input gate $i_t$ and new candidate cell state $\hat{C_t}$"></a>Input gate $i_t$ and new candidate cell state $\hat{C_t}$</h6><p><img src="/images/RNN/lstm_2.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="New-cell-state-C-t"><a href="#New-cell-state-C-t" class="headerlink" title="New cell state $C_t$"></a>New cell state $C_t$</h6><p><img src="/images/RNN/lstm_3.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="Output-gate-o-t-and-current-hidden-state-h-t"><a href="#Output-gate-o-t-and-current-hidden-state-h-t" class="headerlink" title="Output gate $o_t$ and current hidden state $h_t$"></a>Output gate $o_t$ and current hidden state $h_t$</h6><p><img src="/images/RNN/lstm_4.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h3 id="Variant-LSTM-peephole"><a href="#Variant-LSTM-peephole" class="headerlink" title="Variant LSTM: peephole"></a>Variant LSTM: peephole</h3><p><img src="/images/RNN/lstm_5.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h4 id="RNN-Gradient-Vanishing"><a href="#RNN-Gradient-Vanishing" class="headerlink" title="RNN Gradient Vanishing"></a>RNN Gradient Vanishing</h4><p>RNN梯度消失是因为激活函数tanh函数的倒数在0到1之间，反向传播时更新前面时刻的参数时，当参数W初始化为小于1的数，则多个(tanh函数’ * W)相乘，将导致求得的偏导极小（小于1的数连乘），从而导致梯度消失。<br><br></p>
+<h4 id="RNN-Gradient-Exploding"><a href="#RNN-Gradient-Exploding" class="headerlink" title="RNN Gradient Exploding"></a>RNN Gradient Exploding</h4><p>当参数初始化为足够大，使得tanh函数的倒数乘以W大于1，则将导致偏导极大（大于1的数连乘），从而导致梯度爆炸。<br><br></p>
+<h4 id="RNN-Solve-gradient-problem"><a href="#RNN-Solve-gradient-problem" class="headerlink" title="RNN Solve gradient problem"></a>RNN Solve gradient problem</h4><ul>
+<li><p>合适地初始化W，即采用正则化</p>
+</li>
+<li><p>将tanh或sigmoid替换为ReLU</p>
+</li>
+<li><p>使用LSTM或者GRU, 使得RNN BP中的梯度连乘变成LSTM的梯度连加</p>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>Deep Learning</category>
         <category>RNN</category>
@@ -238,7 +271,31 @@
   <entry>
     <title>RNN - GRU</title>
     <url>/2020/07/29/Deep%20Learning/RNN/RNN-GRU/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>Architecture of a traditional RNN Recurrent neural networks, also known as RNNs, are a class of neural networks that allow previous outputs to be used as inputs while having hidden states. </p>
+<h3 id="Vanilla-RNN"><a href="#Vanilla-RNN" class="headerlink" title="Vanilla RNN"></a>Vanilla RNN</h3><ul>
+<li><p>Elman network accepts previous hidden state ht−1</p>
+</li>
+<li><p>Jordan network accepts previous output yt−1</p>
+</li>
+</ul>
+<p><img src="/images/RNN/vanilla_rnn_1.png" width="40%" height="40%" title="" alt=""/></p>
+<p><img src="/images/RNN/vanilla_rnn_2.jpg" width="40%" height="50%" title="Vanilla RNN" alt=""/></p>
+<h6 id="pros-and-cons-of-a-typical-RNN"><a href="#pros-and-cons-of-a-typical-RNN" class="headerlink" title="pros and cons of a typical RNN"></a>pros and cons of a typical RNN</h6><p><img src="/images/RNN/rnn_pros_cons.jpg" width="50%" height="60%" title="" alt=""/></p>
+<h6 id="Loss-function"><a href="#Loss-function" class="headerlink" title="Loss function"></a>Loss function</h6><p>In the case of a recurrent neural network, the loss function $L$ of all time steps is defined based on the loss at every time step as follows:</p>
+<script type="math/tex; mode=display">
+L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Commonly-used-activation-functions"><a href="#Commonly-used-activation-functions" class="headerlink" title="Commonly used activation functions"></a>Commonly used activation functions</h6><p><img src="/images/RNN/rnn_activation.jpg" width="60%" height="60%" title="" alt=""/></p>
+<h6 id="Vanishing-exploding-gradient"><a href="#Vanishing-exploding-gradient" class="headerlink" title="Vanishing/exploding gradient"></a>Vanishing/exploding gradient</h6><p>The vanishing and exploding gradient phenomena are often encountered in the context of RNNs. The reason why they happen is that it is difficult to capture long term dependencies because of multiplicative gradient that can be exponentially decreasing/increasing with respect to the number of layers.</p>
+<h6 id="Gradient-clipping"><a href="#Gradient-clipping" class="headerlink" title="Gradient clipping"></a>Gradient clipping</h6><p>It is a technique used to cope with the exploding gradient problem sometimes encountered when performing backpropagation. By capping the maximum value for the gradient, this phenomenon is controlled in practice.<br><br></p>
+<h3 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h3><p>GRU (Gated Recurrent Unit) aims to solve the vanishing gradient problem which comes with a standard recurrent neural network. GRU can also be considered as a variation on the LSTM.</p>
+<p>To solve the vanishing gradient problem of a standard RNN, GRU uses, so-called, Update gate and eset gate. Basically, these are two vectors which decide what information should be passed to the output. The special thing about them is that they can be trained to keep information from long ago, without washing it through time or remove information which is irrelevant to the prediction.</p>
+<p><img src="/images/RNN/gru.jpg" width="40%" height="40%" title="" alt=""/></p>
+<h6 id="pros-and-cons-of-GRU"><a href="#pros-and-cons-of-GRU" class="headerlink" title="pros and cons of GRU"></a>pros and cons of GRU</h6><ul>
+<li>Can remember long memory compared to RNN</li>
+<li>Solve the vanishing gradient problem</li>
+<li>Simpler structure and less parameters than LSTM</li>
+<li>Less gates than LSTM</li>
+</ul>
+]]></content>
       <categories>
         <category>Deep Learning</category>
         <category>RNN</category>
@@ -248,36 +305,6 @@
         <tag>RNN</tag>
         <tag>Neural Network</tag>
         <tag>GRU</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>EM Algorithm</title>
-    <url>/2020/07/29/Machine%20Learning/Unsupervised/EM-Algorithm/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Frequent Item Mining 1 - Association Rules / Apriori Method</title>
-    <url>/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-1-Association-Rules-Apriori-Method/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Frequent Item Mining</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Frequent Item Mining</tag>
       </tags>
   </entry>
   <entry>
@@ -293,21 +320,6 @@
         <tag>Machine Learning</tag>
         <tag>Unsupervised Learning</tag>
         <tag>Frequent Item Mining</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Outlier Detection</title>
-    <url>/2020/07/29/Machine%20Learning/Unsupervised/Outlier-Detection/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Outlier Detection</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Outlier Detection</tag>
       </tags>
   </entry>
   <entry>
@@ -343,17 +355,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Viterbi Algorithm</title>
-    <url>/2020/07/29/NLP/NER/Viterbi-Algorithm/</url>
+    <title>EM Algorithm</title>
+    <url>/2020/07/29/Machine%20Learning/Unsupervised/EM-Algorithm/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>NLP</category>
-        <category>Named Entity Recognition</category>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
       </categories>
       <tags>
-        <tag>NLP</tag>
-        <tag>Viterbi</tag>
-        <tag>CRF</tag>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
       </tags>
   </entry>
   <entry>
@@ -366,8 +379,22 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>CRF</tag>
         <tag>NER</tag>
+        <tag>CRF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Viterbi Algorithm</title>
+    <url>/2020/07/29/NLP/NER/Viterbi-Algorithm/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Named Entity Recognition</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>CRF</tag>
+        <tag>Viterbi</tag>
       </tags>
   </entry>
   <entry>
@@ -440,6 +467,36 @@
       </tags>
   </entry>
   <entry>
+    <title>Frequent Item Mining 1 - Association Rules / Apriori Method</title>
+    <url>/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-1-Association-Rules-Apriori-Method/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Frequent Item Mining</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Frequent Item Mining</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Outlier Detection</title>
+    <url>/2020/07/29/Machine%20Learning/Unsupervised/Outlier-Detection/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Outlier Detection</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Outlier Detection</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>KNN</title>
     <url>/2020/07/26/Machine%20Learning/Supervised/Classification/KNN/</url>
     <content><![CDATA[<h3 id="Principle-of-KNN"><a href="#Principle-of-KNN" class="headerlink" title="Principle of KNN"></a>Principle of KNN</h3><ul>
@@ -493,6 +550,47 @@
 <li><p>The performance is not good for the unbalanced data, the weight can be improved which can give the nearest test point higher weights.</p>
 </li>
 <li><p>KNN is quite time-consuming, so it is more suitable for small-scale data.</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Supervised Learning</category>
+        <category>Classification</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Supervised Learning</tag>
+        <tag>Classification</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Navie Bayes</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Navie%20Bayes/</url>
+    <content><![CDATA[<p>Naive Bayes is a classification algorithm based on probability theory, which predicts classification by considering feature probabilities.</p>
+<h3 id="Bayesian-Theory-and-Conditional-Probability"><a href="#Bayesian-Theory-and-Conditional-Probability" class="headerlink" title="Bayesian Theory and Conditional Probability:"></a>Bayesian Theory and Conditional Probability:</h3><p>The core part of Naive Bayes is Bayes’ rule and Naive assumeption. And the cornerstone of Bayes’ rule is conditional probability. Bayes’ rule is as follows:</p>
+<script type="math/tex; mode=display">P(A|B)=\frac{P(A) * P(B|A)}{P(B)}</script><p><br/></p>
+<h3 id="Why-Naive"><a href="#Why-Naive" class="headerlink" title="Why Naive:"></a>Why Naive:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>We assume that all features (all events) are independent of each other. Simplicitly:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * P(F_1, F_2, \cdots, F_n|A)}{P(F_1, F_2, \cdots, F_n)}</script><p>According to the Naive assumeption, the probabilities of events are independent, so we have:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
+<h3 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use:"></a>How to use:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>According to Bayes’ theorem and the Naive assumeption, we have:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
+<h3 id="Naive-Bayes-Pros-Cons"><a href="#Naive-Bayes-Pros-Cons" class="headerlink" title="Naive Bayes Pros / Cons:"></a>Naive Bayes Pros / Cons:</h3><p>$Pros:$</p>
+<ul>
+<li><p>The algorithm logic is simple and easy to implement (the algorithm idea is very simple, just use the Bayesian formula to transform)</p>
+</li>
+<li><p>High learning and prediction efficiency, easy to implement, and small space-time overhead during the classification process (assuming that the features are independent of each other, only two-dimensional storage is involved)</p>
+</li>
+<li><p>Still effective in the case of less data and can handle multiple types of problems</p>
+</li>
+</ul>
+<p>$Cons:$</p>
+<ul>
+<li><p>The classification performance is not necessarily high. The assumption of feature independence will make Naive Bayes simple, but it will sacrifice a certain classification accuracy. Theoritically, the Naive Bayes model has the smallest error rate compared with other classification methods.</p>
+</li>
+<li><p>But this is not always true, because the Naive Bayes model assumes that the features are all independent of each other. This assumption is often invalid in practical applications. When the number of features is large or the correlation between features is relevant, The classification performance is not good. When the features correlation is small, Naive Bayes performs best.</p>
 </li>
 </ul>
 ]]></content>
@@ -595,92 +693,6 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
       </tags>
   </entry>
   <entry>
-    <title>Decision Tree</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Decision-Tree/</url>
-    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Decision Tree</a></p>
-<p>The note for Decision Tree is in OneNote /Machine Learning/Supervised Learning/决策树-Decision Tree</p>
-<p>I will re-organize the note here later……</p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Supervised Learning</category>
-        <category>Classification</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Supervised Learning</tag>
-        <tag>Classification</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Navie Bayes</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Navie%20Bayes/</url>
-    <content><![CDATA[<p>Naive Bayes is a classification algorithm based on probability theory, which predicts classification by considering feature probabilities.</p>
-<h3 id="Bayesian-Theory-and-Conditional-Probability"><a href="#Bayesian-Theory-and-Conditional-Probability" class="headerlink" title="Bayesian Theory and Conditional Probability:"></a>Bayesian Theory and Conditional Probability:</h3><p>The core part of Naive Bayes is Bayes’ rule and Naive assumeption. And the cornerstone of Bayes’ rule is conditional probability. Bayes’ rule is as follows:</p>
-<script type="math/tex; mode=display">P(A|B)=\frac{P(A) * P(B|A)}{P(B)}</script><p><br/></p>
-<h3 id="Why-Naive"><a href="#Why-Naive" class="headerlink" title="Why Naive:"></a>Why Naive:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>We assume that all features (all events) are independent of each other. Simplicitly:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * P(F_1, F_2, \cdots, F_n|A)}{P(F_1, F_2, \cdots, F_n)}</script><p>According to the Naive assumeption, the probabilities of events are independent, so we have:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
-<h3 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use:"></a>How to use:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>According to Bayes’ theorem and the Naive assumeption, we have:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
-<h3 id="Naive-Bayes-Pros-Cons"><a href="#Naive-Bayes-Pros-Cons" class="headerlink" title="Naive Bayes Pros / Cons:"></a>Naive Bayes Pros / Cons:</h3><p>$Pros:$</p>
-<ul>
-<li><p>The algorithm logic is simple and easy to implement (the algorithm idea is very simple, just use the Bayesian formula to transform)</p>
-</li>
-<li><p>High learning and prediction efficiency, easy to implement, and small space-time overhead during the classification process (assuming that the features are independent of each other, only two-dimensional storage is involved)</p>
-</li>
-<li><p>Still effective in the case of less data and can handle multiple types of problems</p>
-</li>
-</ul>
-<p>$Cons:$</p>
-<ul>
-<li><p>The classification performance is not necessarily high. The assumption of feature independence will make Naive Bayes simple, but it will sacrifice a certain classification accuracy. Theoritically, the Naive Bayes model has the smallest error rate compared with other classification methods.</p>
-</li>
-<li><p>But this is not always true, because the Naive Bayes model assumes that the features are all independent of each other. This assumption is often invalid in practical applications. When the number of features is large or the correlation between features is relevant, The classification performance is not good. When the features correlation is small, Naive Bayes performs best.</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Supervised Learning</category>
-        <category>Classification</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Supervised Learning</tag>
-        <tag>Classification</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PLA - Perceptron Learning Algorithm</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/PLA/</url>
-    <content><![CDATA[<h3 id="What-is-PLA"><a href="#What-is-PLA" class="headerlink" title="What is PLA"></a>What is PLA</h3><p>The perceptron (PLA) is an algorithm which can divide the positive and negative samples of training set into two parts, and then classify input data in the feature.<br><br></p>
-<h3 id="Limitation"><a href="#Limitation" class="headerlink" title="Limitation"></a>Limitation</h3><p>PLA can only be used to implement linearly separable functions.<br><br></p>
-<h3 id="Input-and-Output-of-PLA"><a href="#Input-and-Output-of-PLA" class="headerlink" title="Input and Output of PLA"></a>Input and Output of PLA</h3><p>The input space (feature space) of the PLA is:</p>
-<script type="math/tex; mode=display">X \subseteq R^n</script><p>That is a $n$-dimensional vector space, the output space is $Y={+1,−1}$, which means −1 represents a negative example, and +1 represents a positive example.</p>
-<p>For example: the input $x \subseteq X$ corresponds to a certain point in the input space $R^n$, and the output $y \subseteq Y$ represents the category of this input point. It should be noted that the input $x$ is a $n$-dimensional vector, that means, $x = (x^{(1)}, x^{(2)}, \cdots, x^{(n)})$.<br><br></p>
-<h3 id="Definition-of-PLA"><a href="#Definition-of-PLA" class="headerlink" title="Definition of PLA"></a>Definition of PLA</h3><p>现在已经有了输入和输出的定义，我们就可以给出感知机$f(x)$<br>的模型了：<br>Now we have the definition of input and output of PLA, then we can give the perceptron $f(x)$ model:</p>
-<script type="math/tex; mode=display">f(x)=sign(ω⋅x+b)</script><p>Among them, $sign$ is a sign function</p>
-<script type="math/tex; mode=display">sign(x) = \begin{cases}
-+1 & x \geq n \\
-−1  & x < n
-\end{cases}</script><p>We call the above function $f(x)$ as the perceptron function.<br><br></p>
-<h3 id="Workflow-of-PLA"><a href="#Workflow-of-PLA" class="headerlink" title="Workflow of PLA"></a>Workflow of PLA</h3><p><img src="https://miro.medium.com/max/516/1*PbJBdf-WxR0Dd0xHvEoh4A.png" alt="PLA"></p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Supervised Learning</category>
-        <category>Classification</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Supervised Learning</tag>
-        <tag>Classification</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SVM</title>
     <url>/2020/07/26/Machine%20Learning/Supervised/Classification/SVM/</url>
     <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for SVM</a></p>
@@ -699,14 +711,106 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
       </tags>
   </entry>
   <entry>
+    <title>Decision Tree</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Decision-Tree/</url>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Decision Tree</a></p>
+<p>The note for Decision Tree is in OneNote /Machine Learning/Supervised Learning/决策树-Decision Tree</p>
+<p>I will re-organize the note here later……</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Supervised Learning</category>
+        <category>Classification</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Supervised Learning</tag>
+        <tag>Classification</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Density-Based Clustering - DBSCAN / OPTICS</title>
+    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Density-Based-Clustering-DBSCAN-OPTICS/</url>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for DBSCAN / OPTICS Clustering</a></p>
+<p>The note for DBSCAN / OPTICS is in /Machine Learning/Unsupervised Learning/Density-Based Methods —- DBSCAN / OPTICS</p>
+<p>I will re-organize the note here later……</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Partitioning-based Clustering K-Means / Medoids / Medians</title>
+    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Partitioning-based%20Clustering-K-Means-Medoids-Medians/</url>
+    <content><![CDATA[<h3 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h3><h5 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h5><ul>
+<li><p>Initialize k samples as the initial cluster center points</p>
+</li>
+<li><p>For each sample in the data set, calculate the distance to the k cluster center points and then select the category of the cluster center with the smallest distance</p>
+</li>
+<li><p>For the results from the previous clustering, calculate the average to get the new cluster center points of this category</p>
+</li>
+<li><p>Repeat the above two steps / until the end of the iteration</p>
+</li>
+</ul>
+<h5 id="Pros-and-Cons"><a href="#Pros-and-Cons" class="headerlink" title="Pros and Cons"></a>Pros and Cons</h5><ul>
+<li>Pros</li>
+</ul>
+<ol>
+<li>The effect is better when the sample space has Gaussian distribution</li>
+<li>Low time complexity</li>
+<li>Simple and easy, also the effect is acceptable</li>
+</ol>
+<ul>
+<li>Cons</li>
+</ul>
+<ol>
+<li>K value setting metaphysics</li>
+<li>The choice of cluster for the first trial will affect the results</li>
+<li>Not suitable for multiple classification</li>
+<li>Sensitive to outliers, outliers will greatly affect the entire algorithm<br><br></li>
+</ol>
+<h3 id="K-medoids"><a href="#K-medoids" class="headerlink" title="K-medoids"></a>K-medoids</h3><p>The medoid of a set is the object with the least distance to all others.</p>
+<p>Cons: </p>
+<ul>
+<li>k-means is sensitive to outliers</li>
+<li>k-means can not use arbitrary distance<br><br></li>
+</ul>
+<h3 id="K-medians"><a href="#K-medians" class="headerlink" title="K-medians"></a>K-medians</h3><p>Instead of the mean, we use the median in each dimension. For use with Manhattan norm $||x_i - m_j||_1$.</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Lasso / Ridge / ElasticNet Regression</title>
     <url>/2020/07/26/Machine%20Learning/Supervised/Regression/Lasso-Ridge-ElasticNet-Regression/</url>
-    <content><![CDATA[<h3 id="Lasso-Regression"><a href="#Lasso-Regression" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p>和岭回归类似，Lasso(least Absolute Shrinkage and Selection Operator)也是通过惩罚其回归系数的绝对值。看下面的公式：</p>
-<pre><code>   Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0.
-</code></pre><p>重点：<br>1.其假设与最小二乘回归相同除了正态性。<br>2.其能把系数收缩到0，使得其能帮助特征选择。<br>3.这个正则化方法为l1正则化。<br>4.如果一组变量是高度相关的，lasso会选择其中的一个，然后把其他的都变为0.<br><br></p>
-<h3 id="Lasso-Regression-1"><a href="#Lasso-Regression-1" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p><br></p>
-<h3 id="Ridge-Regression"><a href="#Ridge-Regression" class="headerlink" title="Ridge Regression"></a>Ridge Regression</h3><p><br></p>
-<h3 id="ElasticNet-Regression"><a href="#ElasticNet-Regression" class="headerlink" title="ElasticNet Regression"></a>ElasticNet Regression</h3><p><br></p>
+    <content><![CDATA[<h3 id="Lasso-Regression"><a href="#Lasso-Regression" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p>Lasso, or Least Absolute Shrinkage and Selection Operator, is quite similar conceptually to ridge regression. It also adds a penalty for non-zero coefficients, but unlike ridge regression which penalizes sum of squared coefficients (the so-called L2 penalty), lasso penalizes the sum of their absolute values (L1 penalty).<br><img src="/images/regression/lasso.jpg" width="50%" height="30%" title="" alt=""/><br><br></p>
+<h3 id="Ridge-Regression"><a href="#Ridge-Regression" class="headerlink" title="Ridge Regression"></a>Ridge Regression</h3><p>In Ridge Regression, the loss function is augmented in such a way that we not only minimize the sum of squared residuals but also penalize the size of parameter estimates, in order to shrink them towards zero:<br><img src="/images/regression/ridge.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h3 id="ElasticNet-Regression"><a href="#ElasticNet-Regression" class="headerlink" title="ElasticNet Regression"></a>ElasticNet Regression</h3><p>Elastic Net aims to combine the penalties of ridge regression and lasso to get the best of both worlds. Elastic Net aims at minimizing the following loss function:<br><img src="/images/regression/elastic.png" width="50%" height="50%" title="" alt=""/><br>where $\alpha$ is the mixing parameter between ridge ($\alpha$ = 0) and lasso ($\alpha$ = 1).<br><br></p>
+<h3 id="Points"><a href="#Points" class="headerlink" title="Points"></a>Points</h3><ul>
+<li><p>Lasso / Ridge regression are designed to solve regression with high collinearity and overfitting problems.</p>
+</li>
+<li><p>Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0</p>
+</li>
+<li><p>$\alpha$称为正则化参数，如果$\alpha$选取过大，会把所有参数$\theta$均最小化，造成欠拟合，如果$\alpha$选取过小，会导致对过拟合问题解决不当，因此$\alpha$的选取是一个技术活</p>
+</li>
+<li><p>岭回归与Lasso回归最大的区别在于岭回归引入的是L2范数惩罚项，Lasso回归引入的是L1范数惩罚项，Lasso回归能够使得损失函数中的许多$\theta$均变成0，这点要优于岭回归，因为岭回归是要所有的$\theta$均存在的，这样计算量Lasso回归将远远小于岭回归 </p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
@@ -752,39 +856,30 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
       </tags>
   </entry>
   <entry>
-    <title>Density-Based Clustering - DBSCAN / OPTICS</title>
-    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Density-Based-Clustering-DBSCAN-OPTICS/</url>
-    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for DBSCAN / OPTICS Clustering</a></p>
-<p>The note for DBSCAN / OPTICS is in /Machine Learning/Unsupervised Learning/Density-Based Methods —- DBSCAN / OPTICS</p>
-<p>I will re-organize the note here later……</p>
+    <title>PLA - Perceptron Learning Algorithm</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/PLA/</url>
+    <content><![CDATA[<h3 id="What-is-PLA"><a href="#What-is-PLA" class="headerlink" title="What is PLA"></a>What is PLA</h3><p>The perceptron (PLA) is an algorithm which can divide the positive and negative samples of training set into two parts, and then classify input data in the feature.<br><br></p>
+<h3 id="Limitation"><a href="#Limitation" class="headerlink" title="Limitation"></a>Limitation</h3><p>PLA can only be used to implement linearly separable functions.<br><br></p>
+<h3 id="Input-and-Output-of-PLA"><a href="#Input-and-Output-of-PLA" class="headerlink" title="Input and Output of PLA"></a>Input and Output of PLA</h3><p>The input space (feature space) of the PLA is:</p>
+<script type="math/tex; mode=display">X \subseteq R^n</script><p>That is a $n$-dimensional vector space, the output space is $Y={+1,−1}$, which means −1 represents a negative example, and +1 represents a positive example.</p>
+<p>For example: the input $x \subseteq X$ corresponds to a certain point in the input space $R^n$, and the output $y \subseteq Y$ represents the category of this input point. It should be noted that the input $x$ is a $n$-dimensional vector, that means, $x = (x^{(1)}, x^{(2)}, \cdots, x^{(n)})$.<br><br></p>
+<h3 id="Definition-of-PLA"><a href="#Definition-of-PLA" class="headerlink" title="Definition of PLA"></a>Definition of PLA</h3><p>现在已经有了输入和输出的定义，我们就可以给出感知机$f(x)$<br>的模型了：<br>Now we have the definition of input and output of PLA, then we can give the perceptron $f(x)$ model:</p>
+<script type="math/tex; mode=display">f(x)=sign(ω⋅x+b)</script><p>Among them, $sign$ is a sign function</p>
+<script type="math/tex; mode=display">sign(x) = \begin{cases}
++1 & x \geq n \\
+−1  & x < n
+\end{cases}</script><p>We call the above function $f(x)$ as the perceptron function.<br><br></p>
+<h3 id="Workflow-of-PLA"><a href="#Workflow-of-PLA" class="headerlink" title="Workflow of PLA"></a>Workflow of PLA</h3><p><img src="https://miro.medium.com/max/516/1*PbJBdf-WxR0Dd0xHvEoh4A.png" alt="PLA"></p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
+        <category>Supervised Learning</category>
+        <category>Classification</category>
       </categories>
       <tags>
         <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hierarchical Agglomerative Clustering</title>
-    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Hierarchical-Agglomerative-Clustering/</url>
-    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Hierarchical Agglomerative Clustering</a></p>
-<p>The note for Hierarchical Agglomerative Clustering is in /Machine Learning/Unsupervised Learning/Hierarchical Agglomerative Clustering</p>
-<p>I will re-organize the note here later……</p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
+        <tag>Supervised Learning</tag>
+        <tag>Classification</tag>
       </tags>
   </entry>
   <entry>
@@ -806,11 +901,9 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
       </tags>
   </entry>
   <entry>
-    <title>Partitioning-based Clustering K-Means / Medoids / Medians</title>
-    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Partitioning-based%20Clustering-K-Means-Medoids-Medians/</url>
-    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Partitioning-based Clustering K-Means / Medoids / Medians</a></p>
-<p>The note for Partitioning-based Clustering K-Means / Medoids / Medians is in /Machine Learning/Unsupervised Learning/Partitioning Methods—-K-Means/Medoids/Medians</p>
-<p>I will re-organize the note here later……</p>
+    <title>Hierarchical Agglomerative Clustering</title>
+    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Hierarchical-Agglomerative-Clustering/</url>
+    <content><![CDATA[<p><img src="/images/clustering/HAC.png" width="65%" height="65%" title="" alt=""/></p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>

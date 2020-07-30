@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="OneNote Note for Partitioning-based Clustering K-Means &#x2F; Medoids &#x2F; Medians The note for Partitioning-based Clustering K-Means &#x2F; Medoids &#x2F; Medians is in &#x2F;Machine Learning&#x2F;Unsupervised Learning&#x2F;Partitio">
+<meta name="description" content="K-MeansSteps Initialize k samples as the initial cluster center points  For each sample in the data set, calculate the distance to the k cluster center points and then select the category of the clust">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Partitioning-based Clustering K-Means &#x2F; Medoids &#x2F; Medians">
 <meta property="og:url" content="http://yoursite.com/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Partitioning-based%20Clustering-K-Means-Medoids-Medians/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="OneNote Note for Partitioning-based Clustering K-Means &#x2F; Medoids &#x2F; Medians The note for Partitioning-based Clustering K-Means &#x2F; Medoids &#x2F; Medians is in &#x2F;Machine Learning&#x2F;Unsupervised Learning&#x2F;Partitio">
+<meta property="og:description" content="K-MeansSteps Initialize k samples as the initial cluster center points  For each sample in the data set, calculate the distance to the k cluster center points and then select the category of the clust">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-26T12:36:32.000Z">
-<meta property="article:modified_time" content="2020-07-26T20:49:23.195Z">
+<meta property="article:modified_time" content="2020-07-29T23:47:57.044Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="Unsupervised Learning">
@@ -399,9 +399,40 @@
       
 
       
-        <p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Partitioning-based Clustering K-Means / Medoids / Medians</a></p>
-<p>The note for Partitioning-based Clustering K-Means / Medoids / Medians is in /Machine Learning/Unsupervised Learning/Partitioning Methods—-K-Means/Medoids/Medians</p>
-<p>I will re-organize the note here later……</p>
+        <h3 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h3><h5 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h5><ul>
+<li><p>Initialize k samples as the initial cluster center points</p>
+</li>
+<li><p>For each sample in the data set, calculate the distance to the k cluster center points and then select the category of the cluster center with the smallest distance</p>
+</li>
+<li><p>For the results from the previous clustering, calculate the average to get the new cluster center points of this category</p>
+</li>
+<li><p>Repeat the above two steps / until the end of the iteration</p>
+</li>
+</ul>
+<h5 id="Pros-and-Cons"><a href="#Pros-and-Cons" class="headerlink" title="Pros and Cons"></a>Pros and Cons</h5><ul>
+<li>Pros</li>
+</ul>
+<ol>
+<li>The effect is better when the sample space has Gaussian distribution</li>
+<li>Low time complexity</li>
+<li>Simple and easy, also the effect is acceptable</li>
+</ol>
+<ul>
+<li>Cons</li>
+</ul>
+<ol>
+<li>K value setting metaphysics</li>
+<li>The choice of cluster for the first trial will affect the results</li>
+<li>Not suitable for multiple classification</li>
+<li>Sensitive to outliers, outliers will greatly affect the entire algorithm<br><br></li>
+</ol>
+<h3 id="K-medoids"><a href="#K-medoids" class="headerlink" title="K-medoids"></a>K-medoids</h3><p>The medoid of a set is the object with the least distance to all others.</p>
+<p>Cons: </p>
+<ul>
+<li>k-means is sensitive to outliers</li>
+<li>k-means can not use arbitrary distance<br><br></li>
+</ul>
+<h3 id="K-medians"><a href="#K-medians" class="headerlink" title="K-medians"></a>K-medians</h3><p>Instead of the mean, we use the median in each dimension. For use with Manhattan norm $||x_i - m_j||_1$.</p>
 
       
     </div>
@@ -500,8 +531,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -561,6 +601,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#K-Means"><span class="nav-number">1.</span> <span class="nav-text">K-Means</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Steps"><span class="nav-number">1.0.1.</span> <span class="nav-text">Steps</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Pros-and-Cons"><span class="nav-number">1.0.2.</span> <span class="nav-text">Pros and Cons</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K-medoids"><span class="nav-number">2.</span> <span class="nav-text">K-medoids</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K-medians"><span class="nav-number">3.</span> <span class="nav-text">K-medians</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

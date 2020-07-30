@@ -79,21 +79,27 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="InspirationTo avoid the long-term dependency problem in RNN and solve gradient vanishing. Novelty Forget gate Input gate Output gate Cell states  LSTM process detailForget gate $f_t$: Input gate $i_t$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LSTM">
 <meta property="og:url" content="http://yoursite.com/2020/07/29/Deep%20Learning/RNN/LSTM/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="InspirationTo avoid the long-term dependency problem in RNN and solve gradient vanishing. Novelty Forget gate Input gate Output gate Cell states  LSTM process detailForget gate $f_t$: Input gate $i_t$">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/RNN/lstm_1.png">
+<meta property="og:image" content="http://yoursite.com/images/RNN/lstm_2.png">
+<meta property="og:image" content="http://yoursite.com/images/RNN/lstm_3.png">
+<meta property="og:image" content="http://yoursite.com/images/RNN/lstm_4.png">
+<meta property="og:image" content="http://yoursite.com/images/RNN/lstm_5.png">
 <meta property="article:published_time" content="2020-07-28T22:15:21.000Z">
-<meta property="article:modified_time" content="2020-07-28T22:27:57.661Z">
+<meta property="article:modified_time" content="2020-07-29T22:30:54.770Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Deep Learning">
 <meta property="article:tag" content="RNN">
 <meta property="article:tag" content="LSTM">
 <meta property="article:tag" content="Neural Network">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/RNN/lstm_1.png">
 
 
 
@@ -389,7 +395,29 @@
       
 
       
-        
+        <h3 id="Inspiration"><a href="#Inspiration" class="headerlink" title="Inspiration"></a>Inspiration</h3><p>To avoid the long-term dependency problem in RNN and solve gradient vanishing.<br><br></p>
+<h3 id="Novelty"><a href="#Novelty" class="headerlink" title="Novelty"></a>Novelty</h3><ul>
+<li>Forget gate</li>
+<li>Input gate</li>
+<li>Output gate</li>
+<li>Cell states<br><br></li>
+</ul>
+<h3 id="LSTM-process-detail"><a href="#LSTM-process-detail" class="headerlink" title="LSTM process detail"></a>LSTM process detail</h3><h6 id="Forget-gate-f-t"><a href="#Forget-gate-f-t" class="headerlink" title="Forget gate $f_t$:"></a>Forget gate $f_t$:</h6><p><img src="/images/RNN/lstm_1.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="Input-gate-i-t-and-new-candidate-cell-state-hat-C-t"><a href="#Input-gate-i-t-and-new-candidate-cell-state-hat-C-t" class="headerlink" title="Input gate $i_t$ and new candidate cell state $\hat{C_t}$"></a>Input gate $i_t$ and new candidate cell state $\hat{C_t}$</h6><p><img src="/images/RNN/lstm_2.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="New-cell-state-C-t"><a href="#New-cell-state-C-t" class="headerlink" title="New cell state $C_t$"></a>New cell state $C_t$</h6><p><img src="/images/RNN/lstm_3.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="Output-gate-o-t-and-current-hidden-state-h-t"><a href="#Output-gate-o-t-and-current-hidden-state-h-t" class="headerlink" title="Output gate $o_t$ and current hidden state $h_t$"></a>Output gate $o_t$ and current hidden state $h_t$</h6><p><img src="/images/RNN/lstm_4.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h3 id="Variant-LSTM-peephole"><a href="#Variant-LSTM-peephole" class="headerlink" title="Variant LSTM: peephole"></a>Variant LSTM: peephole</h3><p><img src="/images/RNN/lstm_5.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h4 id="RNN-Gradient-Vanishing"><a href="#RNN-Gradient-Vanishing" class="headerlink" title="RNN Gradient Vanishing"></a>RNN Gradient Vanishing</h4><p>RNN梯度消失是因为激活函数tanh函数的倒数在0到1之间，反向传播时更新前面时刻的参数时，当参数W初始化为小于1的数，则多个(tanh函数’ * W)相乘，将导致求得的偏导极小（小于1的数连乘），从而导致梯度消失。<br><br></p>
+<h4 id="RNN-Gradient-Exploding"><a href="#RNN-Gradient-Exploding" class="headerlink" title="RNN Gradient Exploding"></a>RNN Gradient Exploding</h4><p>当参数初始化为足够大，使得tanh函数的倒数乘以W大于1，则将导致偏导极大（大于1的数连乘），从而导致梯度爆炸。<br><br></p>
+<h4 id="RNN-Solve-gradient-problem"><a href="#RNN-Solve-gradient-problem" class="headerlink" title="RNN Solve gradient problem"></a>RNN Solve gradient problem</h4><ul>
+<li><p>合适地初始化W，即采用正则化</p>
+</li>
+<li><p>将tanh或sigmoid替换为ReLU</p>
+</li>
+<li><p>使用LSTM或者GRU, 使得RNN BP中的梯度连乘变成LSTM的梯度连加</p>
+</li>
+</ul>
+
       
     </div>
     
@@ -489,8 +517,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -550,6 +587,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Inspiration"><span class="nav-number">1.</span> <span class="nav-text">Inspiration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Novelty"><span class="nav-number">2.</span> <span class="nav-text">Novelty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM-process-detail"><span class="nav-number">3.</span> <span class="nav-text">LSTM process detail</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Forget-gate-f-t"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">Forget gate $f_t$:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Input-gate-i-t-and-new-candidate-cell-state-hat-C-t"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">Input gate $i_t$ and new candidate cell state $\hat{C_t}$</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#New-cell-state-C-t"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">New cell state $C_t$</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Output-gate-o-t-and-current-hidden-state-h-t"><span class="nav-number">3.0.0.4.</span> <span class="nav-text">Output gate $o_t$ and current hidden state $h_t$</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variant-LSTM-peephole"><span class="nav-number">4.</span> <span class="nav-text">Variant LSTM: peephole</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RNN-Gradient-Vanishing"><span class="nav-number">4.1.</span> <span class="nav-text">RNN Gradient Vanishing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RNN-Gradient-Exploding"><span class="nav-number">4.2.</span> <span class="nav-text">RNN Gradient Exploding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RNN-Solve-gradient-problem"><span class="nav-number">4.3.</span> <span class="nav-text">RNN Solve gradient problem</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

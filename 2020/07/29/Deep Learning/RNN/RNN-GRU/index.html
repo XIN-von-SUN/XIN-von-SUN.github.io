@@ -79,21 +79,27 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="Architecture of a traditional RNN Recurrent neural networks, also known as RNNs, are a class of neural networks that allow previous outputs to be used as inputs while having hidden states.  Vanilla RN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RNN - GRU">
 <meta property="og:url" content="http://yoursite.com/2020/07/29/Deep%20Learning/RNN/RNN-GRU/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="Architecture of a traditional RNN Recurrent neural networks, also known as RNNs, are a class of neural networks that allow previous outputs to be used as inputs while having hidden states.  Vanilla RN">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/RNN/vanilla_rnn_1.png">
+<meta property="og:image" content="http://yoursite.com/images/RNN/vanilla_rnn_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/RNN/rnn_pros_cons.jpg">
+<meta property="og:image" content="http://yoursite.com/images/RNN/rnn_activation.jpg">
+<meta property="og:image" content="http://yoursite.com/images/RNN/gru.jpg">
 <meta property="article:published_time" content="2020-07-28T22:15:13.000Z">
-<meta property="article:modified_time" content="2020-07-28T22:27:39.298Z">
+<meta property="article:modified_time" content="2020-07-29T22:02:10.729Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Deep Learning">
 <meta property="article:tag" content="RNN">
 <meta property="article:tag" content="Neural Network">
 <meta property="article:tag" content="GRU">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/RNN/vanilla_rnn_1.png">
 
 
 
@@ -389,7 +395,31 @@
       
 
       
-        
+        <p>Architecture of a traditional RNN Recurrent neural networks, also known as RNNs, are a class of neural networks that allow previous outputs to be used as inputs while having hidden states. </p>
+<h3 id="Vanilla-RNN"><a href="#Vanilla-RNN" class="headerlink" title="Vanilla RNN"></a>Vanilla RNN</h3><ul>
+<li><p>Elman network accepts previous hidden state ht−1</p>
+</li>
+<li><p>Jordan network accepts previous output yt−1</p>
+</li>
+</ul>
+<p><img src="/images/RNN/vanilla_rnn_1.png" width="40%" height="40%" title="" alt=""/></p>
+<p><img src="/images/RNN/vanilla_rnn_2.jpg" width="40%" height="50%" title="Vanilla RNN" alt=""/></p>
+<h6 id="pros-and-cons-of-a-typical-RNN"><a href="#pros-and-cons-of-a-typical-RNN" class="headerlink" title="pros and cons of a typical RNN"></a>pros and cons of a typical RNN</h6><p><img src="/images/RNN/rnn_pros_cons.jpg" width="50%" height="60%" title="" alt=""/></p>
+<h6 id="Loss-function"><a href="#Loss-function" class="headerlink" title="Loss function"></a>Loss function</h6><p>In the case of a recurrent neural network, the loss function $L$ of all time steps is defined based on the loss at every time step as follows:</p>
+<script type="math/tex; mode=display">
+L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Commonly-used-activation-functions"><a href="#Commonly-used-activation-functions" class="headerlink" title="Commonly used activation functions"></a>Commonly used activation functions</h6><p><img src="/images/RNN/rnn_activation.jpg" width="60%" height="60%" title="" alt=""/></p>
+<h6 id="Vanishing-exploding-gradient"><a href="#Vanishing-exploding-gradient" class="headerlink" title="Vanishing/exploding gradient"></a>Vanishing/exploding gradient</h6><p>The vanishing and exploding gradient phenomena are often encountered in the context of RNNs. The reason why they happen is that it is difficult to capture long term dependencies because of multiplicative gradient that can be exponentially decreasing/increasing with respect to the number of layers.</p>
+<h6 id="Gradient-clipping"><a href="#Gradient-clipping" class="headerlink" title="Gradient clipping"></a>Gradient clipping</h6><p>It is a technique used to cope with the exploding gradient problem sometimes encountered when performing backpropagation. By capping the maximum value for the gradient, this phenomenon is controlled in practice.<br><br></p>
+<h3 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h3><p>GRU (Gated Recurrent Unit) aims to solve the vanishing gradient problem which comes with a standard recurrent neural network. GRU can also be considered as a variation on the LSTM.</p>
+<p>To solve the vanishing gradient problem of a standard RNN, GRU uses, so-called, Update gate and eset gate. Basically, these are two vectors which decide what information should be passed to the output. The special thing about them is that they can be trained to keep information from long ago, without washing it through time or remove information which is irrelevant to the prediction.</p>
+<p><img src="/images/RNN/gru.jpg" width="40%" height="40%" title="" alt=""/></p>
+<h6 id="pros-and-cons-of-GRU"><a href="#pros-and-cons-of-GRU" class="headerlink" title="pros and cons of GRU"></a>pros and cons of GRU</h6><ul>
+<li>Can remember long memory compared to RNN</li>
+<li>Solve the vanishing gradient problem</li>
+<li>Simpler structure and less parameters than LSTM</li>
+<li>Less gates than LSTM</li>
+</ul>
+
       
     </div>
     
@@ -489,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -550,6 +589,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vanilla-RNN"><span class="nav-number">1.</span> <span class="nav-text">Vanilla RNN</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#pros-and-cons-of-a-typical-RNN"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">pros and cons of a typical RNN</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Loss-function"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Loss function</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Commonly-used-activation-functions"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Commonly used activation functions</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Vanishing-exploding-gradient"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Vanishing&#x2F;exploding gradient</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Gradient-clipping"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">Gradient clipping</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GRU"><span class="nav-number">2.</span> <span class="nav-text">GRU</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#pros-and-cons-of-GRU"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">pros and cons of GRU</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

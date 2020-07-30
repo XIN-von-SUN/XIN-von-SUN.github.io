@@ -79,20 +79,24 @@
 
 
 
-<meta name="description" content="Lasso Regression和岭回归类似，Lasso(least Absolute Shrinkage and Selection Operator)也是通过惩罚其回归系数的绝对值。看下面的公式：    Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0. 重点：1.其假设与最小二乘回归相同除了正态性。2.其能把系数收缩到0，使得">
+<meta name="description" content="Lasso RegressionLasso, or Least Absolute Shrinkage and Selection Operator, is quite similar conceptually to ridge regression. It also adds a penalty for non-zero coefficients, but unlike ridge regress">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lasso &#x2F; Ridge &#x2F; ElasticNet Regression">
 <meta property="og:url" content="http://yoursite.com/2020/07/26/Machine%20Learning/Supervised/Regression/Lasso-Ridge-ElasticNet-Regression/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Lasso Regression和岭回归类似，Lasso(least Absolute Shrinkage and Selection Operator)也是通过惩罚其回归系数的绝对值。看下面的公式：    Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0. 重点：1.其假设与最小二乘回归相同除了正态性。2.其能把系数收缩到0，使得">
+<meta property="og:description" content="Lasso RegressionLasso, or Least Absolute Shrinkage and Selection Operator, is quite similar conceptually to ridge regression. It also adds a penalty for non-zero coefficients, but unlike ridge regress">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/regression/lasso.jpg">
+<meta property="og:image" content="http://yoursite.com/images/regression/ridge.png">
+<meta property="og:image" content="http://yoursite.com/images/regression/elastic.png">
 <meta property="article:published_time" content="2020-07-26T12:33:29.000Z">
-<meta property="article:modified_time" content="2020-07-26T23:10:50.686Z">
+<meta property="article:modified_time" content="2020-07-29T22:57:21.957Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="Supervised Learning">
 <meta property="article:tag" content="Regression">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/regression/lasso.jpg">
 
 
 
@@ -399,12 +403,19 @@
       
 
       
-        <h3 id="Lasso-Regression"><a href="#Lasso-Regression" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p>和岭回归类似，Lasso(least Absolute Shrinkage and Selection Operator)也是通过惩罚其回归系数的绝对值。看下面的公式：</p>
-<pre><code>   Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0.
-</code></pre><p>重点：<br>1.其假设与最小二乘回归相同除了正态性。<br>2.其能把系数收缩到0，使得其能帮助特征选择。<br>3.这个正则化方法为l1正则化。<br>4.如果一组变量是高度相关的，lasso会选择其中的一个，然后把其他的都变为0.<br><br></p>
-<h3 id="Lasso-Regression-1"><a href="#Lasso-Regression-1" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p><br></p>
-<h3 id="Ridge-Regression"><a href="#Ridge-Regression" class="headerlink" title="Ridge Regression"></a>Ridge Regression</h3><p><br></p>
-<h3 id="ElasticNet-Regression"><a href="#ElasticNet-Regression" class="headerlink" title="ElasticNet Regression"></a>ElasticNet Regression</h3><p><br></p>
+        <h3 id="Lasso-Regression"><a href="#Lasso-Regression" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p>Lasso, or Least Absolute Shrinkage and Selection Operator, is quite similar conceptually to ridge regression. It also adds a penalty for non-zero coefficients, but unlike ridge regression which penalizes sum of squared coefficients (the so-called L2 penalty), lasso penalizes the sum of their absolute values (L1 penalty).<br><img src="/images/regression/lasso.jpg" width="50%" height="30%" title="" alt=""/><br><br></p>
+<h3 id="Ridge-Regression"><a href="#Ridge-Regression" class="headerlink" title="Ridge Regression"></a>Ridge Regression</h3><p>In Ridge Regression, the loss function is augmented in such a way that we not only minimize the sum of squared residuals but also penalize the size of parameter estimates, in order to shrink them towards zero:<br><img src="/images/regression/ridge.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h3 id="ElasticNet-Regression"><a href="#ElasticNet-Regression" class="headerlink" title="ElasticNet Regression"></a>ElasticNet Regression</h3><p>Elastic Net aims to combine the penalties of ridge regression and lasso to get the best of both worlds. Elastic Net aims at minimizing the following loss function:<br><img src="/images/regression/elastic.png" width="50%" height="50%" title="" alt=""/><br>where $\alpha$ is the mixing parameter between ridge ($\alpha$ = 0) and lasso ($\alpha$ = 1).<br><br></p>
+<h3 id="Points"><a href="#Points" class="headerlink" title="Points"></a>Points</h3><ul>
+<li><p>Lasso / Ridge regression are designed to solve regression with high collinearity and overfitting problems.</p>
+</li>
+<li><p>Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0</p>
+</li>
+<li><p>$\alpha$称为正则化参数，如果$\alpha$选取过大，会把所有参数$\theta$均最小化，造成欠拟合，如果$\alpha$选取过小，会导致对过拟合问题解决不当，因此$\alpha$的选取是一个技术活</p>
+</li>
+<li><p>岭回归与Lasso回归最大的区别在于岭回归引入的是L2范数惩罚项，Lasso回归引入的是L1范数惩罚项，Lasso回归能够使得损失函数中的许多$\theta$均变成0，这点要优于岭回归，因为岭回归是要所有的$\theta$均存在的，这样计算量Lasso回归将远远小于岭回归 </p>
+</li>
+</ul>
 
       
     </div>
@@ -583,7 +594,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lasso-Regression"><span class="nav-number">1.</span> <span class="nav-text">Lasso Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lasso-Regression-1"><span class="nav-number">2.</span> <span class="nav-text">Lasso Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ridge-Regression"><span class="nav-number">3.</span> <span class="nav-text">Ridge Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ElasticNet-Regression"><span class="nav-number">4.</span> <span class="nav-text">ElasticNet Regression</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lasso-Regression"><span class="nav-number">1.</span> <span class="nav-text">Lasso Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ridge-Regression"><span class="nav-number">2.</span> <span class="nav-text">Ridge Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ElasticNet-Regression"><span class="nav-number">3.</span> <span class="nav-text">ElasticNet Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Points"><span class="nav-number">4.</span> <span class="nav-text">Points</span></a></li></ol></div>
             
 
           </div>
