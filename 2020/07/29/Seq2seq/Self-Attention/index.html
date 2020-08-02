@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="Difference between Self Attention and classic AttentionSelf Attention is very different from the traditional Attention mechanism: The traditional Attention calculates Attention based on the hidden sta">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Self Attention">
 <meta property="og:url" content="http://yoursite.com/2020/07/29/Seq2seq/Self-Attention/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="Difference between Self Attention and classic AttentionSelf Attention is very different from the traditional Attention mechanism: The traditional Attention calculates Attention based on the hidden sta">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-28T22:12:42.000Z">
-<meta property="article:modified_time" content="2020-07-28T22:30:49.557Z">
+<meta property="article:modified_time" content="2020-08-02T01:27:37.899Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Deep Learning">
 <meta property="article:tag" content="Attention">
@@ -388,7 +388,8 @@
       
 
       
-        
+        <h3 id="Difference-between-Self-Attention-and-classic-Attention"><a href="#Difference-between-Self-Attention-and-classic-Attention" class="headerlink" title="Difference between Self Attention and classic Attention"></a>Difference between Self Attention and classic Attention</h3><p>Self Attention is very different from the traditional Attention mechanism: The traditional Attention calculates Attention based on the hidden state of the source and target, and the result is the dependence relation between each word on the source and each word on the target. However self Attention is different. It only happens on the source side and the target side respectively. Only the Self Attention related to the source input or the target input itself captures the dependency relations between the words on the source side or the target side; and then the self attention obtained in the source side is added to the self attention obtained on the target end to capture the dependency relation between the words on the source end and the target end. Therefore, self attention is better than the traditional attention mechanism. One of the main reasons is that the traditional attention mechanism ignores the dependency between words in the source or target sentence, respectively. In contrast, self Attention can not only get the dependence relationship between the words and words of the source and target ends, and at the same time, the dependence relationship between the words and words of the source or target end can be effectively obtained.</p>
+
       
     </div>
     
@@ -486,8 +487,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -547,6 +557,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference-between-Self-Attention-and-classic-Attention"><span class="nav-number">1.</span> <span class="nav-text">Difference between Self Attention and classic Attention</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

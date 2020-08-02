@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Deep Learning,Seq2seq,Attention," />
+  <meta name="keywords" content="Deep Learning,Attention,Seq2seq," />
 
 
 
@@ -79,20 +79,25 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="Limitation of classic Encoder-Decoder Compress all the information of the input X to a fixed-length hidden vector Z, ignoring the length of the input X. When the input sentence length is very long, es">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Attention in seq2seq">
 <meta property="og:url" content="http://yoursite.com/2020/07/29/Seq2seq/Attention-in-seq2seq/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="Limitation of classic Encoder-Decoder Compress all the information of the input X to a fixed-length hidden vector Z, ignoring the length of the input X. When the input sentence length is very long, es">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/attention_1.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/attention_2.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/attention_3.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/attention_4.png">
 <meta property="article:published_time" content="2020-07-28T22:12:24.000Z">
-<meta property="article:modified_time" content="2020-07-28T22:29:03.584Z">
+<meta property="article:modified_time" content="2020-08-01T23:08:42.709Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Deep Learning">
-<meta property="article:tag" content="Seq2seq">
 <meta property="article:tag" content="Attention">
+<meta property="article:tag" content="Seq2seq">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/seq2seq/attention_1.png">
 
 
 
@@ -388,7 +393,42 @@
       
 
       
-        
+        <h3 id="Limitation-of-classic-Encoder-Decoder"><a href="#Limitation-of-classic-Encoder-Decoder" class="headerlink" title="Limitation of classic Encoder-Decoder"></a>Limitation of classic Encoder-Decoder</h3><ul>
+<li><p>Compress all the information of the input X to a fixed-length hidden vector Z, ignoring the length of the input X. When the input sentence length is very long, especially when the length of inference sentences is longer than the length of the sentence in the training set, the performance of the model is sharp decline.</p>
+</li>
+<li><p>Encode the input X into a fixed length, and assign the same weight to each word in the sentence. This is unreasonable. For example in machine translation, there is often one input between the input sentence and the output sentence or several words correspond to one or several words of output. Therefore, there is no discrimination for assigning the same weight to each input word, and the performance of the model is often reduced.</p>
+</li>
+</ul>
+<h3 id="Types-of-Attention"><a href="#Types-of-Attention" class="headerlink" title="Types of Attention"></a>Types of Attention</h3><ul>
+<li><p>Soft Attention<br>Traditional attention, which can be embedded in the model for training and gradient propagation</p>
+</li>
+<li><p>Hard Attention<br>Hard Attention is a random process model. Hard Attention will not select the output of the entire encoder as its input. Hard Attention will sample the hidden state of the input according to the probability <script type="math/tex">S_i</script> for calculation, rather than the hidden state of the entire Encoder. In order to achieve the back propagation of the gradient, then Monte Carlo sampling method is used to estimate the gradient of the module</p>
+</li>
+<li><p>Global attention<br>Same as the traditional Attention model. All hidden states are used to calculate the weight of the context vector.</p>
+</li>
+<li><p>Local attention<br>One obvious disadvantage of Global Attention is that all hidden states on the encoder side must participate in the calculation. The calculation overhead will be relatively large, especially when the encoder sentence is too long, for example, a paragraph or an article, the efficiency is partial low. Therefore, in order to improve efficiency, we use Local Attention. Local Attention is an Attention method between Soft Attention and Hard Attention proposed by Kelvin Xu, which combines these two methods. </p>
+</li>
+<li><p>Self Attention<br>Self Attention is very different from the traditional Attention mechanism: The traditional Attention calculates Attention based on the hidden state of the source and target, and the result is the dependence relation between each word on the source and each word on the target. However self Attention is different. It only happens on the source side and the target side respectively. Only the Self Attention related to the source input or the target input itself captures the dependency relations between the words on the source side or the target side; and then the self attention obtained in the source side is added to the self attention obtained on the target end to capture the dependency relation between the words on the source end and the target end. Therefore, self attention is better than the traditional attention mechanism. One of the main reasons is that the traditional attention mechanism ignores the dependency between words in the source or target sentence, respectively. In contrast, self Attention can not only get the dependence relationship between the words and words of the source and target ends, and at the same time, the dependence relationship between the words and words of the source or target end can be effectively obtained.</p>
+</li>
+</ul>
+<h3 id="Soft-Attention-details"><a href="#Soft-Attention-details" class="headerlink" title="Soft Attention details"></a>Soft Attention details</h3><ul>
+<li><p><strong>Drawback of normal encoder-decoder mechanism:</strong> The only connection between Encoder and Decoder is intermediate vector $C$, which encodes the information of the entire input sequence into a fixed-size state vector and then decodes it, which can be seen as “loss compression” of the information. So the output sequence relies heavily on the context defined by the hidden state in the final output of the encoder, making it challenging for the model to deal with long sentences. Also the intermediate semantic vector cannot fully express the information of the entire input sequence. And as the length of the input information increases, the length of the vector is fixed, the previously encoded information will be overwritten by the later information, and a lot of information will be lost. In the case of long sequences, there is a high probability that the initial context has been lost by the end of the sequence.</p>
+</li>
+<li><p><strong>Solution:</strong> Bahdanau et al., 2014 and Luong et al., 2015 papers introduced and a technique called “Attention” which allows the model to focus on different parts of the input sequence at every stage of the output sequence allowing the context to be preserved from beginning to end.<br><strong>Therefore</strong> we can realize that Attention is the mechanism that forces the model to learn to focus (=to attend) on specific parts of the input sequence when decoding, instead of relying only on the hidden vector of the decoder’s RNNs. So here is the new representation.<br><img src="/images/seq2seq/attention_1.png" width="40%" height="40%" title="" alt=""/></p>
+</li>
+</ul>
+<ul>
+<li><p>Encoder calculation figure:<br><img src="/images/seq2seq/attention_2.png" width="40%" height="40%" title="" alt=""/></p>
+</li>
+<li><p>The input is ‘Cat, chase, mouse’, the hidden state in encoder is $h_1, h_2, h_3$, can be seen as the represention of words: Cat, chase, mouse.<br><img src="/images/seq2seq/attention_3.png" width="40%" height="40%" title="" alt=""/></p>
+</li>
+<li><p>Use <script type="math/tex">a_{ij}</script> to represent the correlation (attention) between <script type="math/tex">h_j</script> in the j-th stage of Encoder and the i-th stage in Decoder, and calculate the intermediate semantic vector <script type="math/tex">C_i</script> required for decoder. <script type="math/tex">C_1</script> has the closest relationship with “cat”, and the corresponding <script type="math/tex">a_{11}</script> is larger than <script type="math/tex">a_{12}</script> and <script type="math/tex">a_{13}</script>; while <script type="math/tex">C_2</script> has the closest relationship with “cat”, the corresponding <script type="math/tex">a_{22}</script> is larger than <script type="math/tex">a_{21}</script> and <script type="math/tex">a_{23}</script>; in the same way, <script type="math/tex">C_3</script> has the closest relationship with “mouse” and is similar The corresponding <script type="math/tex">a_{33}</script> is larger than <script type="math/tex">a_{31}</script> and <script type="math/tex">a_{32}</script>.<br><img src="/images/seq2seq/attention_4.png" width="40%" height="40%" title="" alt=""/></p>
+</li>
+</ul>
+<ul>
+<li><h5 id="How-to-calculate-Attention-a-ij"><a href="#How-to-calculate-Attention-a-ij" class="headerlink" title="How to calculate Attention $a_{ij}$"></a>How to calculate <strong>Attention $a_{ij}$</strong></h5>The j-th hidden layer unit <script type="math/tex">h_j</script> in the Encoder and the i-th hidden layer unit <script type="math/tex">s_{i-1}</script> of the Decoder are calculated to obtain <script type="math/tex">a_{ij}</script>.<br>Following is how we could calculate the <script type="math/tex">e_{ij}</script>, hidden state of decoder <script type="math/tex">s_{i}</script>, <script type="math/tex">c_i</script>:<script type="math/tex; mode=display">e_{ij} = a(s_{i-1}, h_j)</script><script type="math/tex; mode=display">a_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_x} exp(e_{ik})}</script><script type="math/tex; mode=display">c_{i} = \sum_{j=1}^{T_z} a_{ij} h_j</script><script type="math/tex; mode=display">s_i = f(s_{i-1}, y_{i-1}, c_i)</script><script type="math/tex; mode=display">y_i = g(y_{i-1}, s_{i}, c_i)</script></li>
+</ul>
+
       
     </div>
     
@@ -407,9 +447,9 @@
           
             <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
           
-            <a href="/tags/Seq2seq/" rel="tag"># Seq2seq</a>
-          
             <a href="/tags/Attention/" rel="tag"># Attention</a>
+          
+            <a href="/tags/Seq2seq/" rel="tag"># Seq2seq</a>
           
         </div>
       
@@ -486,8 +526,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -547,6 +596,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Limitation-of-classic-Encoder-Decoder"><span class="nav-number">1.</span> <span class="nav-text">Limitation of classic Encoder-Decoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Attention"><span class="nav-number">2.</span> <span class="nav-text">Types of Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Soft-Attention-details"><span class="nav-number">3.</span> <span class="nav-text">Soft Attention details</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#How-to-calculate-Attention-a-ij"><span class="nav-number">3.0.1.</span> <span class="nav-text">How to calculate Attention $a_{ij}$</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

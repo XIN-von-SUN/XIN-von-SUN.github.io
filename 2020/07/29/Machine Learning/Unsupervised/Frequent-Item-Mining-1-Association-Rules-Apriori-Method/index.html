@@ -79,20 +79,31 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="Definition: Support and Frequent Itemset  Itemset• A collection of one or more items• Example:{Milk,Bread,Diaper}• k-itemset: An itemset that contains k items  Support count ($\sigma$)• Frequency of o">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Frequent Item Mining 1 - Association Rules &#x2F; Apriori Method">
 <meta property="og:url" content="http://yoursite.com/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-1-Association-Rules-Apriori-Method/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="Definition: Support and Frequent Itemset  Itemset• A collection of one or more items• Example:{Milk,Bread,Diaper}• k-itemset: An itemset that contains k items  Support count ($\sigma$)• Frequency of o">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/clustering/associate_rule_1.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/apriori_1.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/apriori_2.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/associate_rule_2.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/associate_rule_3.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/associate_rule_4.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/associate_rule_5.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/associate_rule_6.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/interestingness.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/lift_1.png">
 <meta property="article:published_time" content="2020-07-28T22:04:59.000Z">
-<meta property="article:modified_time" content="2020-07-28T22:20:59.886Z">
+<meta property="article:modified_time" content="2020-08-02T01:27:09.991Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="Unsupervised Learning">
 <meta property="article:tag" content="Frequent Item Mining">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/clustering/associate_rule_1.png">
 
 
 
@@ -399,7 +410,51 @@
       
 
       
-        
+        <h3 id="Definition-Support-and-Frequent-Itemset"><a href="#Definition-Support-and-Frequent-Itemset" class="headerlink" title="Definition: Support and Frequent Itemset"></a>Definition: Support and Frequent Itemset</h3><p><img src="/images/clustering/associate_rule_1.png" width="35%" height="35%" title="" alt=""/></p>
+<ul>
+<li><p>Itemset<br>• A collection of one or more items<br>• Example:{Milk,Bread,Diaper}<br>• k-itemset: An itemset that contains k items</p>
+</li>
+<li><p>Support count ($\sigma$)<br>• Frequency of occurrence of an itemse<br>• E.g. $\sigma$({Milk, Bread, Diaper}) = 2</p>
+</li>
+<li><p>Support (s)<br>• Fraction of transactions that contain an itemset<br>• E.g. s({Milk, Bread, Diaper}) = 2/5 = 0.4</p>
+</li>
+<li><p>Frequent Itemset<br>• An itemset whose support is greater than or equal to a minimal support (minsup) threshold specified by the user</p>
+</li>
+</ul>
+<h3 id="Definition-Association-Rule"><a href="#Definition-Association-Rule" class="headerlink" title="Definition: Association Rule"></a>Definition: Association Rule</h3><ul>
+<li><p>Association Rule<br>• An implication expression of the form X $\rightarrow$ Y, where X and Y are itemsets<br>• An association rule states that when X occurs, Y occurs with certain probability.<br>• Example:<br>{Milk, Diaper} $\rightarrow$ {Beer}<br>Condition &nbsp; &nbsp; &nbsp; Consequent</p>
+</li>
+<li><p>Support(s)<br>Fraction of transaction that contain both X and Y.</p>
+<script type="math/tex; mode=display">s(X \rightarrow Y) = \frac{|X \bigcup Y|}{|T|}</script><script type="math/tex; mode=display">s = \frac{\sigma (Milk,Diaper,Beer)}{|T|} = \frac{2}{5}</script></li>
+<li><p>Confidence(c)<br>Measures how often items in Y appear in transactions that contain X</p>
+<script type="math/tex; mode=display">c(X \rightarrow Y) = \frac{\sigma (X \bigcup Y)}{\sigma (X)}</script><script type="math/tex; mode=display">c = \frac{\sigma (Milk,Diaper,Beer)}{\sigma (Milk,Diaper)} = \frac{2}{3}</script></li>
+</ul>
+<h3 id="The-Association-Rule-Mining-Task"><a href="#The-Association-Rule-Mining-Task" class="headerlink" title="The Association Rule Mining Task"></a>The Association Rule Mining Task</h3><ul>
+<li>Given a set of transactions T,the goal of association rule mining is to find all rules having:<br>• support $≥$ minsup threshold<br>• confidence $≥$ minconf threshold</li>
+<li>Minsup and minconf are provided by the user.</li>
+</ul>
+<h3 id="Mining-Association-Rules"><a href="#Mining-Association-Rules" class="headerlink" title="Mining Association Rules"></a>Mining Association Rules</h3><ol>
+<li>Frequent Itemset Generation<br>• Generate all itemsets whose support $≥$ minsup </li>
+<li>Rule Generation<br>• Generate high confidence rules from each frequent itemset, where each rule is a binary partitioning of a frequent itemset</li>
+</ol>
+<h3 id="Apriori-Algorithm-To-generate-frequent-Itemsets"><a href="#Apriori-Algorithm-To-generate-frequent-Itemsets" class="headerlink" title="Apriori Algorithm (To generate frequent Itemsets)"></a>Apriori Algorithm (To generate frequent Itemsets)</h3><ul>
+<li>Apriori principle holds due to the following property of the support measure:<script type="math/tex; mode=display">\bigvee X, Y: (X \subseteq Y) \Longrightarrow s(X) ≥ s(Y)</script>• <strong>If an itemset is infrequent, then all of its supersets must also be infrequent.</strong><br>• Support of an itemset never exceeds the support of its subsets<br>• This is known as the anti-monotone property of support</li>
+</ul>
+<h3 id="The-Apriori-Algorithm-steps"><a href="#The-Apriori-Algorithm-steps" class="headerlink" title="The Apriori Algorithm steps"></a>The Apriori Algorithm steps</h3><ol>
+<li>Let k=1</li>
+<li>Generate frequent itemsets of length 1</li>
+<li>Repeat until no new frequent itemsets are identified<br>• Generate length (k+1) candidate itemsets from length k frequent itemsets<br>• Prune candidate itemsets that can not be frequent because they contain subsets of length k that are infrequent (Apriori Principle)<br>• Count the support of each candidate by scanning the DB<br>• Eliminate candidates that are infrequent, leaving only those that are frequent<br><img src="/images/clustering/apriori_1.png" width="50%" height="50%" title="" alt=""/></li>
+</ol>
+<h3 id="Example-Apriori-Algorithm"><a href="#Example-Apriori-Algorithm" class="headerlink" title="Example: Apriori Algorithm"></a>Example: Apriori Algorithm</h3><p><img src="/images/clustering/apriori_2.png" width="45%" height="45%" title="" alt=""/></p>
+<h3 id="Associate-Rule-Generation"><a href="#Associate-Rule-Generation" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h3><p>Given a frequent itemset L, find all non-empty subsets fLsuch that f $\rightarrow$ L – f satisfies the minimum confidence requirement.<br><img src="/images/clustering/associate_rule_2.png" width="45%" height="45%" title="" alt=""/></p>
+<p><img src="/images/clustering/associate_rule_3.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_4.png" width="45%" height="45%" title="" alt=""/></p>
+<ul>
+<li><h5 id="Associate-Rule-Generation-1"><a href="#Associate-Rule-Generation-1" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h5><img src="/images/clustering/associate_rule_5.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_6.png" width="45%" height="45%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><h5 id="Interestingness-and-Lift-of-Associate-Rule"><a href="#Interestingness-and-Lift-of-Associate-Rule" class="headerlink" title="Interestingness and Lift of Associate Rule"></a>Interestingness and Lift of Associate Rule</h5><img src="/images/clustering/interestingness.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/lift_1.png" width="45%" height="45%" title="" alt=""/></li>
+</ul>
+
       
     </div>
     
@@ -497,8 +552,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -558,6 +622,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definition-Support-and-Frequent-Itemset"><span class="nav-number">1.</span> <span class="nav-text">Definition: Support and Frequent Itemset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Definition-Association-Rule"><span class="nav-number">2.</span> <span class="nav-text">Definition: Association Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Association-Rule-Mining-Task"><span class="nav-number">3.</span> <span class="nav-text">The Association Rule Mining Task</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mining-Association-Rules"><span class="nav-number">4.</span> <span class="nav-text">Mining Association Rules</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Apriori-Algorithm-To-generate-frequent-Itemsets"><span class="nav-number">5.</span> <span class="nav-text">Apriori Algorithm (To generate frequent Itemsets)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Apriori-Algorithm-steps"><span class="nav-number">6.</span> <span class="nav-text">The Apriori Algorithm steps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-Apriori-Algorithm"><span class="nav-number">7.</span> <span class="nav-text">Example: Apriori Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Associate-Rule-Generation"><span class="nav-number">8.</span> <span class="nav-text">Associate Rule Generation</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Associate-Rule-Generation-1"><span class="nav-number">8.0.1.</span> <span class="nav-text">Associate Rule Generation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Interestingness-and-Lift-of-Associate-Rule"><span class="nav-number">8.0.2.</span> <span class="nav-text">Interestingness and Lift of Associate Rule</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
