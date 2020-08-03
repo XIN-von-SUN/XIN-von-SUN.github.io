@@ -1284,4 +1284,18 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
         <tag>Regression</tag>
       </tags>
   </entry>
+  <entry>
+    <title>DevBot</title>
+    <url>/2020/08/03/Development/DevBot/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>My Apps development</category>
+        <category>VS Code Extension</category>
+      </categories>
+      <tags>
+        <tag>Apps development</tag>
+        <tag>PyPI</tag>
+        <tag>VS Code Extension</tag>
+      </tags>
+  </entry>
 </search>
