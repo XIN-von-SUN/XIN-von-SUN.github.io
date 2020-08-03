@@ -3,14 +3,14 @@
   <entry>
     <title>DevBot</title>
     <url>/2020/08/03/Development/DevBot/</url>
-    <content><![CDATA[<h3 id="Overview-of-DevBot"><a href="#Overview-of-DevBot" class="headerlink" title="Overview of DevBot"></a>Overview of DevBot</h3><ul>
+    <content><![CDATA[<h3 id="Overview-Function-of-DevBot"><a href="#Overview-Function-of-DevBot" class="headerlink" title="Overview (Function) of DevBot"></a>Overview (Function) of DevBot</h3><ul>
 <li>Translate natural language query to Pandas code</li>
-<li>Recommend next step data manipulations based on user historic processing</li>
+<li>Recommend next step data manipulations based on user historic processing<br><br></li>
 </ul>
-<h3 id="Intent-amp-Entity-resolution"><a href="#Intent-amp-Entity-resolution" class="headerlink" title="Intent \&amp; Entity resolution"></a>Intent \&amp; Entity resolution</h3><p>The DevBot can resolve the actual intent that user want to do which manipulations on data, also extract the entities as the required parameters in data manipulation functions.<br><img src="/images/App_dev/res1.png" width="60%" height="60%" title="Code recommendation"></p>
-<h3 id="Next-data-manipulation-recommendation"><a href="#Next-data-manipulation-recommendation" class="headerlink" title="Next data manipulation recommendation"></a>Next data manipulation recommendation</h3><p>DevBot use two different approaches for data manipulation recommendation. One is rule-based approach which recommend data manipulations based on user historic queries, which another approach apply NLG seq2seq model for next manipoulation generation.<br><img src="/images/App_dev/res3.png" width="60%" height="60%" title="Data manipulation recommendation"></p>
-<h3 id="Embeded-as-VS-Code-extention"><a href="#Embeded-as-VS-Code-extention" class="headerlink" title="Embeded as VS Code extention"></a>Embeded as VS Code extention</h3><p><img src="https://github.com/XIN-von-SUN/XIN-von-SUN.github.io/blob/master/images/App_dev/devbot_2.gif?raw=true" width="60%" height="60%" title="DevBot as PyPI"></p>
-<h3 id="Embedd-as-Python-package-PyPI"><a href="#Embedd-as-Python-package-PyPI" class="headerlink" title="Embedd as Python package PyPI"></a>Embedd as Python package PyPI</h3><p><img src="https://github.com/XIN-von-SUN/XIN-von-SUN.github.io/blob/master/images/App_dev/devbot_1.gif?raw=true" width="60%" height="60%" title="DevBot as PyPI"></p>
+<h3 id="Intent-amp-Entity-resolution"><a href="#Intent-amp-Entity-resolution" class="headerlink" title="Intent &amp; Entity resolution"></a>Intent &amp; Entity resolution</h3><p>The DevBot can resolve the actual intent that user want to do which manipulations on data, also extract the entities as the required parameters in data manipulation functions.<br><img src="/images/App_dev/res1.png" width="60%" height="60%" title="Code recommendation"><br><br></p>
+<h3 id="Next-data-manipulation-recommendation"><a href="#Next-data-manipulation-recommendation" class="headerlink" title="Next data manipulation recommendation"></a>Next data manipulation recommendation</h3><p>DevBot use two different approaches for data manipulation recommendation. One is rule-based approach which recommend data manipulations based on user historic queries, which another approach apply NLG seq2seq model for next manipoulation generation.<br><img src="/images/App_dev/res3.png" width="100%" height="100%" title="Data manipulation recommendation"><br><br></p>
+<h3 id="Embeded-as-VS-Code-extention"><a href="#Embeded-as-VS-Code-extention" class="headerlink" title="Embeded as VS Code extention"></a>Embeded as VS Code extention</h3><p><img src="https://github.com/XIN-von-SUN/XIN-von-SUN.github.io/blob/master/images/App_dev/devbot_2.gif?raw=true" width="60%" height="60%" title="DevBot as PyPI"><br><br></p>
+<h3 id="Embeded-as-Python-package-PyPI"><a href="#Embeded-as-Python-package-PyPI" class="headerlink" title="Embeded as Python package PyPI"></a>Embeded as Python package PyPI</h3><p><img src="https://github.com/XIN-von-SUN/XIN-von-SUN.github.io/blob/master/images/App_dev/devbot_1.gif?raw=true" width="60%" height="60%" title="DevBot as PyPI"></p>
 ]]></content>
       <categories>
         <category>My Apps development</category>
@@ -90,6 +90,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Random Forest</title>
+    <url>/2020/07/29/Ensemble%20Learning/Random-Forest/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Ensemble Learning</category>
+        <category>Bagging</category>
+      </categories>
+      <tags>
+        <tag>Ensemble Learning</tag>
+        <tag>Bagging</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GBDT</title>
     <url>/2020/07/29/Ensemble%20Learning/GBDT/</url>
     <content><![CDATA[]]></content>
@@ -116,16 +129,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Random Forest</title>
-    <url>/2020/07/29/Ensemble%20Learning/Random-Forest/</url>
+    <title>XGBoost</title>
+    <url>/2020/07/29/Ensemble%20Learning/XGBoost/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Ensemble Learning</category>
-        <category>Bagging</category>
+        <category>Boosting</category>
       </categories>
       <tags>
         <tag>Ensemble Learning</tag>
-        <tag>Bagging</tag>
+        <tag>Boosting</tag>
       </tags>
   </entry>
   <entry>
@@ -253,19 +266,6 @@
         <tag>Deep Learning</tag>
         <tag>Pre-trained</tag>
         <tag>XLNet</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>XGBoost</title>
-    <url>/2020/07/29/Ensemble%20Learning/XGBoost/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Ensemble Learning</category>
-        <category>Boosting</category>
-      </categories>
-      <tags>
-        <tag>Ensemble Learning</tag>
-        <tag>Boosting</tag>
       </tags>
   </entry>
   <entry>
@@ -478,43 +478,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LSTM</title>
-    <url>/2020/07/29/Deep%20Learning/RNN/LSTM/</url>
-    <content><![CDATA[<h3 id="Inspiration"><a href="#Inspiration" class="headerlink" title="Inspiration"></a>Inspiration</h3><p>To avoid the long-term dependency problem in RNN and solve gradient vanishing.<br><br></p>
-<h3 id="Novelty"><a href="#Novelty" class="headerlink" title="Novelty"></a>Novelty</h3><ul>
-<li>Forget gate</li>
-<li>Input gate</li>
-<li>Output gate</li>
-<li>Cell states<br><br></li>
-</ul>
-<h3 id="LSTM-process-detail"><a href="#LSTM-process-detail" class="headerlink" title="LSTM process detail"></a>LSTM process detail</h3><h6 id="Forget-gate-f-t"><a href="#Forget-gate-f-t" class="headerlink" title="Forget gate $f_t$:"></a>Forget gate $f_t$:</h6><p><img src="/images/RNN/lstm_1.png" width="50%" height="50%" title="" alt=""/></p>
-<h6 id="Input-gate-i-t-and-new-candidate-cell-state-hat-C-t"><a href="#Input-gate-i-t-and-new-candidate-cell-state-hat-C-t" class="headerlink" title="Input gate $i_t$ and new candidate cell state $\hat{C_t}$"></a>Input gate $i_t$ and new candidate cell state $\hat{C_t}$</h6><p><img src="/images/RNN/lstm_2.png" width="50%" height="50%" title="" alt=""/></p>
-<h6 id="New-cell-state-C-t"><a href="#New-cell-state-C-t" class="headerlink" title="New cell state $C_t$"></a>New cell state $C_t$</h6><p><img src="/images/RNN/lstm_3.png" width="50%" height="50%" title="" alt=""/></p>
-<h6 id="Output-gate-o-t-and-current-hidden-state-h-t"><a href="#Output-gate-o-t-and-current-hidden-state-h-t" class="headerlink" title="Output gate $o_t$ and current hidden state $h_t$"></a>Output gate $o_t$ and current hidden state $h_t$</h6><p><img src="/images/RNN/lstm_4.png" width="50%" height="50%" title="" alt=""/><br><br></p>
-<h3 id="Variant-LSTM-peephole"><a href="#Variant-LSTM-peephole" class="headerlink" title="Variant LSTM: peephole"></a>Variant LSTM: peephole</h3><p><img src="/images/RNN/lstm_5.png" width="50%" height="50%" title="" alt=""/><br><br></p>
-<h4 id="RNN-Gradient-Vanishing"><a href="#RNN-Gradient-Vanishing" class="headerlink" title="RNN Gradient Vanishing"></a>RNN Gradient Vanishing</h4><p>RNN梯度消失是因为激活函数tanh函数的倒数在0到1之间，反向传播时更新前面时刻的参数时，当参数W初始化为小于1的数，则多个(tanh函数’ * W)相乘，将导致求得的偏导极小（小于1的数连乘），从而导致梯度消失。<br><br></p>
-<h4 id="RNN-Gradient-Exploding"><a href="#RNN-Gradient-Exploding" class="headerlink" title="RNN Gradient Exploding"></a>RNN Gradient Exploding</h4><p>当参数初始化为足够大，使得tanh函数的倒数乘以W大于1，则将导致偏导极大（大于1的数连乘），从而导致梯度爆炸。<br><br></p>
-<h4 id="RNN-Solve-gradient-problem"><a href="#RNN-Solve-gradient-problem" class="headerlink" title="RNN Solve gradient problem"></a>RNN Solve gradient problem</h4><ul>
-<li><p>合适地初始化W，即采用正则化</p>
-</li>
-<li><p>将tanh或sigmoid替换为ReLU</p>
-</li>
-<li><p>使用LSTM或者GRU, 使得RNN BP中的梯度连乘变成LSTM的梯度连加</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-        <category>RNN</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>RNN</tag>
-        <tag>LSTM</tag>
-        <tag>Neural Network</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>RNN - GRU</title>
     <url>/2020/07/29/Deep%20Learning/RNN/RNN-GRU/</url>
     <content><![CDATA[<p>Architecture of a traditional RNN Recurrent neural networks, also known as RNNs, are a class of neural networks that allow previous outputs to be used as inputs while having hidden states. </p>
@@ -549,82 +512,174 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       <tags>
         <tag>Deep Learning</tag>
         <tag>RNN</tag>
-        <tag>Neural Network</tag>
         <tag>GRU</tag>
+        <tag>Neural Network</tag>
       </tags>
   </entry>
   <entry>
-    <title>EM Algorithm</title>
-    <url>/2020/07/29/Machine%20Learning/Unsupervised/EM-Algorithm/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Frequent Item Mining 1 - Association Rules / Apriori Method</title>
-    <url>/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-1-Association-Rules-Apriori-Method/</url>
-    <content><![CDATA[<h3 id="Definition-Support-and-Frequent-Itemset"><a href="#Definition-Support-and-Frequent-Itemset" class="headerlink" title="Definition: Support and Frequent Itemset"></a>Definition: Support and Frequent Itemset</h3><p><img src="/images/clustering/associate_rule_1.png" width="35%" height="35%" title="" alt=""/></p>
-<ul>
-<li><p>Itemset<br>• A collection of one or more items<br>• Example:{Milk,Bread,Diaper}<br>• k-itemset: An itemset that contains k items</p>
-</li>
-<li><p>Support count ($\sigma$)<br>• Frequency of occurrence of an itemse<br>• E.g. $\sigma$({Milk, Bread, Diaper}) = 2</p>
-</li>
-<li><p>Support (s)<br>• Fraction of transactions that contain an itemset<br>• E.g. s({Milk, Bread, Diaper}) = 2/5 = 0.4</p>
-</li>
-<li><p>Frequent Itemset<br>• An itemset whose support is greater than or equal to a minimal support (minsup) threshold specified by the user</p>
-</li>
+    <title>LSTM</title>
+    <url>/2020/07/29/Deep%20Learning/RNN/LSTM/</url>
+    <content><![CDATA[<h3 id="Inspiration"><a href="#Inspiration" class="headerlink" title="Inspiration"></a>Inspiration</h3><p>To avoid the long-term dependency problem in RNN and solve gradient vanishing.<br><br></p>
+<h3 id="Novelty"><a href="#Novelty" class="headerlink" title="Novelty"></a>Novelty</h3><ul>
+<li>Forget gate</li>
+<li>Input gate</li>
+<li>Output gate</li>
+<li>Cell states<br><br></li>
 </ul>
-<h3 id="Definition-Association-Rule"><a href="#Definition-Association-Rule" class="headerlink" title="Definition: Association Rule"></a>Definition: Association Rule</h3><ul>
-<li><p>Association Rule<br>• An implication expression of the form X $\rightarrow$ Y, where X and Y are itemsets<br>• An association rule states that when X occurs, Y occurs with certain probability.<br>• Example:<br>{Milk, Diaper} $\rightarrow$ {Beer}<br>Condition &nbsp; &nbsp; &nbsp; Consequent</p>
+<h3 id="LSTM-process-detail"><a href="#LSTM-process-detail" class="headerlink" title="LSTM process detail"></a>LSTM process detail</h3><h6 id="Forget-gate-f-t"><a href="#Forget-gate-f-t" class="headerlink" title="Forget gate $f_t$:"></a>Forget gate $f_t$:</h6><p><img src="/images/RNN/lstm_1.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="Input-gate-i-t-and-new-candidate-cell-state-hat-C-t"><a href="#Input-gate-i-t-and-new-candidate-cell-state-hat-C-t" class="headerlink" title="Input gate $i_t$ and new candidate cell state $\hat{C_t}$"></a>Input gate $i_t$ and new candidate cell state $\hat{C_t}$</h6><p><img src="/images/RNN/lstm_2.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="New-cell-state-C-t"><a href="#New-cell-state-C-t" class="headerlink" title="New cell state $C_t$"></a>New cell state $C_t$</h6><p><img src="/images/RNN/lstm_3.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="Output-gate-o-t-and-current-hidden-state-h-t"><a href="#Output-gate-o-t-and-current-hidden-state-h-t" class="headerlink" title="Output gate $o_t$ and current hidden state $h_t$"></a>Output gate $o_t$ and current hidden state $h_t$</h6><p><img src="/images/RNN/lstm_4.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h3 id="Variant-LSTM-peephole"><a href="#Variant-LSTM-peephole" class="headerlink" title="Variant LSTM: peephole"></a>Variant LSTM: peephole</h3><p><img src="/images/RNN/lstm_5.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h4 id="RNN-Gradient-Vanishing"><a href="#RNN-Gradient-Vanishing" class="headerlink" title="RNN Gradient Vanishing"></a>RNN Gradient Vanishing</h4><p>RNN梯度消失是因为激活函数tanh函数的倒数在0到1之间，反向传播时更新前面时刻的参数时，当参数W初始化为小于1的数，则多个(tanh函数’ * W)相乘，将导致求得的偏导极小（小于1的数连乘），从而导致梯度消失。<br><br></p>
+<h4 id="RNN-Gradient-Exploding"><a href="#RNN-Gradient-Exploding" class="headerlink" title="RNN Gradient Exploding"></a>RNN Gradient Exploding</h4><p>当参数初始化为足够大，使得tanh函数的倒数乘以W大于1，则将导致偏导极大（大于1的数连乘），从而导致梯度爆炸。<br><br></p>
+<h4 id="RNN-Solve-gradient-problem"><a href="#RNN-Solve-gradient-problem" class="headerlink" title="RNN Solve gradient problem"></a>RNN Solve gradient problem</h4><ul>
+<li><p>合适地初始化W，即采用正则化</p>
 </li>
-<li><p>Support(s)<br>Fraction of transaction that contain both X and Y.</p>
-<script type="math/tex; mode=display">s(X \rightarrow Y) = \frac{|X \bigcup Y|}{|T|}</script><script type="math/tex; mode=display">s = \frac{\sigma (Milk,Diaper,Beer)}{|T|} = \frac{2}{5}</script></li>
-<li><p>Confidence(c)<br>Measures how often items in Y appear in transactions that contain X</p>
-<script type="math/tex; mode=display">c(X \rightarrow Y) = \frac{\sigma (X \bigcup Y)}{\sigma (X)}</script><script type="math/tex; mode=display">c = \frac{\sigma (Milk,Diaper,Beer)}{\sigma (Milk,Diaper)} = \frac{2}{3}</script></li>
-</ul>
-<h3 id="The-Association-Rule-Mining-Task"><a href="#The-Association-Rule-Mining-Task" class="headerlink" title="The Association Rule Mining Task"></a>The Association Rule Mining Task</h3><ul>
-<li>Given a set of transactions T,the goal of association rule mining is to find all rules having:<br>• support $≥$ minsup threshold<br>• confidence $≥$ minconf threshold</li>
-<li>Minsup and minconf are provided by the user.</li>
-</ul>
-<h3 id="Mining-Association-Rules"><a href="#Mining-Association-Rules" class="headerlink" title="Mining Association Rules"></a>Mining Association Rules</h3><ol>
-<li>Frequent Itemset Generation<br>• Generate all itemsets whose support $≥$ minsup </li>
-<li>Rule Generation<br>• Generate high confidence rules from each frequent itemset, where each rule is a binary partitioning of a frequent itemset</li>
-</ol>
-<h3 id="Apriori-Algorithm-To-generate-frequent-Itemsets"><a href="#Apriori-Algorithm-To-generate-frequent-Itemsets" class="headerlink" title="Apriori Algorithm (To generate frequent Itemsets)"></a>Apriori Algorithm (To generate frequent Itemsets)</h3><ul>
-<li>Apriori principle holds due to the following property of the support measure:<script type="math/tex; mode=display">\bigvee X, Y: (X \subseteq Y) \Longrightarrow s(X) ≥ s(Y)</script>• <strong>If an itemset is infrequent, then all of its supersets must also be infrequent.</strong><br>• Support of an itemset never exceeds the support of its subsets<br>• This is known as the anti-monotone property of support</li>
-</ul>
-<h3 id="The-Apriori-Algorithm-steps"><a href="#The-Apriori-Algorithm-steps" class="headerlink" title="The Apriori Algorithm steps"></a>The Apriori Algorithm steps</h3><ol>
-<li>Let k=1</li>
-<li>Generate frequent itemsets of length 1</li>
-<li>Repeat until no new frequent itemsets are identified<br>• Generate length (k+1) candidate itemsets from length k frequent itemsets<br>• Prune candidate itemsets that can not be frequent because they contain subsets of length k that are infrequent (Apriori Principle)<br>• Count the support of each candidate by scanning the DB<br>• Eliminate candidates that are infrequent, leaving only those that are frequent<br><img src="/images/clustering/apriori_1.png" width="50%" height="50%" title="" alt=""/></li>
-</ol>
-<h3 id="Example-Apriori-Algorithm"><a href="#Example-Apriori-Algorithm" class="headerlink" title="Example: Apriori Algorithm"></a>Example: Apriori Algorithm</h3><p><img src="/images/clustering/apriori_2.png" width="45%" height="45%" title="" alt=""/></p>
-<h3 id="Associate-Rule-Generation"><a href="#Associate-Rule-Generation" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h3><p>Given a frequent itemset L, find all non-empty subsets fLsuch that f $\rightarrow$ L – f satisfies the minimum confidence requirement.<br><img src="/images/clustering/associate_rule_2.png" width="45%" height="45%" title="" alt=""/></p>
-<p><img src="/images/clustering/associate_rule_3.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_4.png" width="45%" height="45%" title="" alt=""/></p>
-<ul>
-<li><h5 id="Associate-Rule-Generation-1"><a href="#Associate-Rule-Generation-1" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h5><img src="/images/clustering/associate_rule_5.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_6.png" width="45%" height="45%" title="" alt=""/></li>
-</ul>
-<ul>
-<li><h5 id="Interestingness-and-Lift-of-Associate-Rule"><a href="#Interestingness-and-Lift-of-Associate-Rule" class="headerlink" title="Interestingness and Lift of Associate Rule"></a>Interestingness and Lift of Associate Rule</h5><img src="/images/clustering/interestingness.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/lift_1.png" width="45%" height="45%" title="" alt=""/></li>
+<li><p>将tanh或sigmoid替换为ReLU</p>
+</li>
+<li><p>使用LSTM或者GRU, 使得RNN BP中的梯度连乘变成LSTM的梯度连加</p>
+</li>
 </ul>
 ]]></content>
       <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Frequent Item Mining</category>
+        <category>Deep Learning</category>
+        <category>RNN</category>
       </categories>
       <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Frequent Item Mining</tag>
+        <tag>Deep Learning</tag>
+        <tag>RNN</tag>
+        <tag>Neural Network</tag>
+        <tag>LSTM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Intent Resolution</title>
+    <url>/2020/07/29/NLP/Dialogue%20System/Intent-Resolution/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Dialogue System</category>
+        <category>Natural Language Understanding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Dialogue System</tag>
+        <tag>NLU</tag>
+        <tag>Intent Resolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Entity Resolution</title>
+    <url>/2020/07/29/NLP/Dialogue%20System/Entity-Resolution/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Dialogue System</category>
+        <category>Natural Language Understanding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Dialogue System</tag>
+        <tag>NLU</tag>
+        <tag>Entity Resolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CRF - NER</title>
+    <url>/2020/07/29/NLP/NER/CRF-NER/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Named Entity Recognition</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>NER</tag>
+        <tag>CRF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>N-Gram</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/N-Gram/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Word Embedding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>N-Gram</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Viterbi Algorithm</title>
+    <url>/2020/07/29/NLP/NER/Viterbi-Algorithm/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Named Entity Recognition</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>CRF</tag>
+        <tag>Viterbi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sentiment Analysis</title>
+    <url>/2020/07/29/NLP/Sentiment-Analysis/Sentiment-Analysis/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Sentiment Analysis</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Sentiment Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Word Embedding - CBOW</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-CBOW/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Word Embedding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Word Embedding</tag>
+        <tag>CBOW</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Word Embedding - Skip gram</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Skip-gram/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Word Embedding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Word Embedding</tag>
+        <tag>Skip-gram</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Word Embedding - Word2Vec - GloVe</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Word2Vec-GloVe/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Word Embedding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Word Embedding</tag>
+        <tag>Word2Vec</tag>
+        <tag>GloVe</tag>
       </tags>
   </entry>
   <entry>
@@ -660,135 +715,6 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
         <tag>Machine Learning</tag>
         <tag>Unsupervised Learning</tag>
         <tag>Frequent Item Mining</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Viterbi Algorithm</title>
-    <url>/2020/07/29/NLP/NER/Viterbi-Algorithm/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Named Entity Recognition</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Viterbi</tag>
-        <tag>CRF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Intent Resolution</title>
-    <url>/2020/07/29/NLP/Dialogue%20System/Intent-Resolution/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Dialogue System</category>
-        <category>Natural Language Understanding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Dialogue System</tag>
-        <tag>NLU</tag>
-        <tag>Intent Resolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sentiment Analysis</title>
-    <url>/2020/07/29/NLP/Sentiment-Analysis/Sentiment-Analysis/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Sentiment Analysis</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Sentiment Analysis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>N-Gram</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/N-Gram/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Word Embedding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>N-Gram</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Word Embedding - Skip gram</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Skip-gram/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Word Embedding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Word Embedding</tag>
-        <tag>Skip-gram</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Word Embedding - CBOW</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-CBOW/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Word Embedding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Word Embedding</tag>
-        <tag>CBOW</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Entity Resolution</title>
-    <url>/2020/07/29/NLP/Dialogue%20System/Entity-Resolution/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Dialogue System</category>
-        <category>Natural Language Understanding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Dialogue System</tag>
-        <tag>NLU</tag>
-        <tag>Entity Resolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Word Embedding - Word2Vec - GloVe</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Word2Vec-GloVe/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Word Embedding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Word Embedding</tag>
-        <tag>Word2Vec</tag>
-        <tag>GloVe</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CRF - NER</title>
-    <url>/2020/07/29/NLP/NER/CRF-NER/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Named Entity Recognition</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>CRF</tag>
-        <tag>NER</tag>
       </tags>
   </entry>
   <entry>
@@ -887,12 +813,9 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </tags>
   </entry>
   <entry>
-    <title>Model-based Clustering - EM / GMM</title>
-    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Model-based-Clustering-EM-GMM/</url>
-    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Model Methods - EM - GMM Clustering</a></p>
-<p>The note for Model Methods - EM - GMMe Clustering is in /Machine Learning/Unsupervised Learning/Model Methods —- EM based GMM</p>
-<p>I will re-organize the note here later……</p>
-]]></content>
+    <title>EM Algorithm</title>
+    <url>/2020/07/29/Machine%20Learning/Unsupervised/EM-Algorithm/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Unsupervised Learning</category>
@@ -905,86 +828,62 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </tags>
   </entry>
   <entry>
-    <title>Density-Based Clustering - DBSCAN / OPTICS</title>
-    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Density-Based-Clustering-DBSCAN-OPTICS/</url>
-    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for DBSCAN / OPTICS Clustering</a></p>
-<p>The note for DBSCAN / OPTICS is in /Machine Learning/Unsupervised Learning/Density-Based Methods —- DBSCAN / OPTICS</p>
-<p>I will re-organize the note here later……</p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hierarchical Agglomerative Clustering</title>
-    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Hierarchical-Agglomerative-Clustering/</url>
-    <content><![CDATA[<p><img src="/images/clustering/HAC.png" width="65%" height="65%" title="" alt=""/></p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Partitioning-based Clustering K-Means / Medoids / Medians</title>
-    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Partitioning-based%20Clustering-K-Means-Medoids-Medians/</url>
-    <content><![CDATA[<h3 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h3><h5 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h5><ul>
-<li><p>Initialize k samples as the initial cluster center points</p>
-</li>
-<li><p>For each sample in the data set, calculate the distance to the k cluster center points and then select the category of the cluster center with the smallest distance</p>
-</li>
-<li><p>For the results from the previous clustering, calculate the average to get the new cluster center points of this category</p>
-</li>
-<li><p>Repeat the above two steps / until the end of the iteration</p>
-</li>
-</ul>
-<h5 id="Pros-and-Cons"><a href="#Pros-and-Cons" class="headerlink" title="Pros and Cons"></a>Pros and Cons</h5><ul>
-<li>Pros</li>
-</ul>
-<ol>
-<li>The effect is better when the sample space has Gaussian distribution</li>
-<li>Low time complexity</li>
-<li>Simple and easy, also the effect is acceptable</li>
-</ol>
+    <title>Frequent Item Mining 1 - Association Rules / Apriori Method</title>
+    <url>/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-1-Association-Rules-Apriori-Method/</url>
+    <content><![CDATA[<h3 id="Definition-Support-and-Frequent-Itemset"><a href="#Definition-Support-and-Frequent-Itemset" class="headerlink" title="Definition: Support and Frequent Itemset"></a>Definition: Support and Frequent Itemset</h3><p><img src="/images/clustering/associate_rule_1.png" width="35%" height="35%" title="" alt=""/></p>
 <ul>
-<li>Cons</li>
+<li><p>Itemset<br>• A collection of one or more items<br>• Example:{Milk,Bread,Diaper}<br>• k-itemset: An itemset that contains k items</p>
+</li>
+<li><p>Support count ($\sigma$)<br>• Frequency of occurrence of an itemse<br>• E.g. $\sigma$({Milk, Bread, Diaper}) = 2</p>
+</li>
+<li><p>Support (s)<br>• Fraction of transactions that contain an itemset<br>• E.g. s({Milk, Bread, Diaper}) = 2/5 = 0.4</p>
+</li>
+<li><p>Frequent Itemset<br>• An itemset whose support is greater than or equal to a minimal support (minsup) threshold specified by the user</p>
+</li>
 </ul>
-<ol>
-<li>K value setting metaphysics</li>
-<li>The choice of cluster for the first trial will affect the results</li>
-<li>Not suitable for multiple classification</li>
-<li>Sensitive to outliers, outliers will greatly affect the entire algorithm<br><br></li>
+<h3 id="Definition-Association-Rule"><a href="#Definition-Association-Rule" class="headerlink" title="Definition: Association Rule"></a>Definition: Association Rule</h3><ul>
+<li><p>Association Rule<br>• An implication expression of the form X $\rightarrow$ Y, where X and Y are itemsets<br>• An association rule states that when X occurs, Y occurs with certain probability.<br>• Example:<br>{Milk, Diaper} $\rightarrow$ {Beer}<br>Condition &nbsp; &nbsp; &nbsp; Consequent</p>
+</li>
+<li><p>Support(s)<br>Fraction of transaction that contain both X and Y.</p>
+<script type="math/tex; mode=display">s(X \rightarrow Y) = \frac{|X \bigcup Y|}{|T|}</script><script type="math/tex; mode=display">s = \frac{\sigma (Milk,Diaper,Beer)}{|T|} = \frac{2}{5}</script></li>
+<li><p>Confidence(c)<br>Measures how often items in Y appear in transactions that contain X</p>
+<script type="math/tex; mode=display">c(X \rightarrow Y) = \frac{\sigma (X \bigcup Y)}{\sigma (X)}</script><script type="math/tex; mode=display">c = \frac{\sigma (Milk,Diaper,Beer)}{\sigma (Milk,Diaper)} = \frac{2}{3}</script></li>
+</ul>
+<h3 id="The-Association-Rule-Mining-Task"><a href="#The-Association-Rule-Mining-Task" class="headerlink" title="The Association Rule Mining Task"></a>The Association Rule Mining Task</h3><ul>
+<li>Given a set of transactions T,the goal of association rule mining is to find all rules having:<br>• support $≥$ minsup threshold<br>• confidence $≥$ minconf threshold</li>
+<li>Minsup and minconf are provided by the user.</li>
+</ul>
+<h3 id="Mining-Association-Rules"><a href="#Mining-Association-Rules" class="headerlink" title="Mining Association Rules"></a>Mining Association Rules</h3><ol>
+<li>Frequent Itemset Generation<br>• Generate all itemsets whose support $≥$ minsup </li>
+<li>Rule Generation<br>• Generate high confidence rules from each frequent itemset, where each rule is a binary partitioning of a frequent itemset</li>
 </ol>
-<h3 id="K-medoids"><a href="#K-medoids" class="headerlink" title="K-medoids"></a>K-medoids</h3><p>The medoid of a set is the object with the least distance to all others.</p>
-<p>Cons: </p>
-<ul>
-<li>k-means is sensitive to outliers</li>
-<li>k-means can not use arbitrary distance<br><br></li>
+<h3 id="Apriori-Algorithm-To-generate-frequent-Itemsets"><a href="#Apriori-Algorithm-To-generate-frequent-Itemsets" class="headerlink" title="Apriori Algorithm (To generate frequent Itemsets)"></a>Apriori Algorithm (To generate frequent Itemsets)</h3><ul>
+<li>Apriori principle holds due to the following property of the support measure:<script type="math/tex; mode=display">\bigvee X, Y: (X \subseteq Y) \Longrightarrow s(X) ≥ s(Y)</script>• <strong>If an itemset is infrequent, then all of its supersets must also be infrequent.</strong><br>• Support of an itemset never exceeds the support of its subsets<br>• This is known as the anti-monotone property of support</li>
 </ul>
-<h3 id="K-medians"><a href="#K-medians" class="headerlink" title="K-medians"></a>K-medians</h3><p>Instead of the mean, we use the median in each dimension. For use with Manhattan norm $||x_i - m_j||_1$.</p>
+<h3 id="The-Apriori-Algorithm-steps"><a href="#The-Apriori-Algorithm-steps" class="headerlink" title="The Apriori Algorithm steps"></a>The Apriori Algorithm steps</h3><ol>
+<li>Let k=1</li>
+<li>Generate frequent itemsets of length 1</li>
+<li>Repeat until no new frequent itemsets are identified<br>• Generate length (k+1) candidate itemsets from length k frequent itemsets<br>• Prune candidate itemsets that can not be frequent because they contain subsets of length k that are infrequent (Apriori Principle)<br>• Count the support of each candidate by scanning the DB<br>• Eliminate candidates that are infrequent, leaving only those that are frequent<br><img src="/images/clustering/apriori_1.png" width="50%" height="50%" title="" alt=""/></li>
+</ol>
+<h3 id="Example-Apriori-Algorithm"><a href="#Example-Apriori-Algorithm" class="headerlink" title="Example: Apriori Algorithm"></a>Example: Apriori Algorithm</h3><p><img src="/images/clustering/apriori_2.png" width="45%" height="45%" title="" alt=""/></p>
+<h3 id="Associate-Rule-Generation"><a href="#Associate-Rule-Generation" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h3><p>Given a frequent itemset L, find all non-empty subsets fLsuch that f $\rightarrow$ L – f satisfies the minimum confidence requirement.<br><img src="/images/clustering/associate_rule_2.png" width="45%" height="45%" title="" alt=""/></p>
+<p><img src="/images/clustering/associate_rule_3.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_4.png" width="45%" height="45%" title="" alt=""/></p>
+<ul>
+<li><h5 id="Associate-Rule-Generation-1"><a href="#Associate-Rule-Generation-1" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h5><img src="/images/clustering/associate_rule_5.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_6.png" width="45%" height="45%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><h5 id="Interestingness-and-Lift-of-Associate-Rule"><a href="#Interestingness-and-Lift-of-Associate-Rule" class="headerlink" title="Interestingness and Lift of Associate Rule"></a>Interestingness and Lift of Associate Rule</h5><img src="/images/clustering/interestingness.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/lift_1.png" width="45%" height="45%" title="" alt=""/></li>
+</ul>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Unsupervised Learning</category>
-        <category>Clustering</category>
+        <category>Frequent Item Mining</category>
       </categories>
       <tags>
         <tag>Machine Learning</tag>
         <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
+        <tag>Frequent Item Mining</tag>
       </tags>
   </entry>
   <entry>
@@ -1041,6 +940,47 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
 <li><p>The performance is not good for the unbalanced data, the weight can be improved which can give the nearest test point higher weights.</p>
 </li>
 <li><p>KNN is quite time-consuming, so it is more suitable for small-scale data.</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Supervised Learning</category>
+        <category>Classification</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Supervised Learning</tag>
+        <tag>Classification</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Navie Bayes</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Navie%20Bayes/</url>
+    <content><![CDATA[<p>Naive Bayes is a classification algorithm based on probability theory, which predicts classification by considering feature probabilities.</p>
+<h3 id="Bayesian-Theory-and-Conditional-Probability"><a href="#Bayesian-Theory-and-Conditional-Probability" class="headerlink" title="Bayesian Theory and Conditional Probability:"></a>Bayesian Theory and Conditional Probability:</h3><p>The core part of Naive Bayes is Bayes’ rule and Naive assumeption. And the cornerstone of Bayes’ rule is conditional probability. Bayes’ rule is as follows:</p>
+<script type="math/tex; mode=display">P(A|B)=\frac{P(A) * P(B|A)}{P(B)}</script><p><br/></p>
+<h3 id="Why-Naive"><a href="#Why-Naive" class="headerlink" title="Why Naive:"></a>Why Naive:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>We assume that all features (all events) are independent of each other. Simplicitly:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * P(F_1, F_2, \cdots, F_n|A)}{P(F_1, F_2, \cdots, F_n)}</script><p>According to the Naive assumeption, the probabilities of events are independent, so we have:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
+<h3 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use:"></a>How to use:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>According to Bayes’ theorem and the Naive assumeption, we have:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
+<h3 id="Naive-Bayes-Pros-Cons"><a href="#Naive-Bayes-Pros-Cons" class="headerlink" title="Naive Bayes Pros / Cons:"></a>Naive Bayes Pros / Cons:</h3><p>$Pros:$</p>
+<ul>
+<li><p>The algorithm logic is simple and easy to implement (the algorithm idea is very simple, just use the Bayesian formula to transform)</p>
+</li>
+<li><p>High learning and prediction efficiency, easy to implement, and small space-time overhead during the classification process (assuming that the features are independent of each other, only two-dimensional storage is involved)</p>
+</li>
+<li><p>Still effective in the case of less data and can handle multiple types of problems</p>
+</li>
+</ul>
+<p>$Cons:$</p>
+<ul>
+<li><p>The classification performance is not necessarily high. The assumption of feature independence will make Naive Bayes simple, but it will sacrifice a certain classification accuracy. Theoritically, the Naive Bayes model has the smallest error rate compared with other classification methods.</p>
+</li>
+<li><p>But this is not always true, because the Naive Bayes model assumes that the features are all independent of each other. This assumption is often invalid in practical applications. When the number of features is large or the correlation between features is relevant, The classification performance is not good. When the features correlation is small, Naive Bayes performs best.</p>
 </li>
 </ul>
 ]]></content>
@@ -1161,47 +1101,6 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
       </tags>
   </entry>
   <entry>
-    <title>Navie Bayes</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Navie%20Bayes/</url>
-    <content><![CDATA[<p>Naive Bayes is a classification algorithm based on probability theory, which predicts classification by considering feature probabilities.</p>
-<h3 id="Bayesian-Theory-and-Conditional-Probability"><a href="#Bayesian-Theory-and-Conditional-Probability" class="headerlink" title="Bayesian Theory and Conditional Probability:"></a>Bayesian Theory and Conditional Probability:</h3><p>The core part of Naive Bayes is Bayes’ rule and Naive assumeption. And the cornerstone of Bayes’ rule is conditional probability. Bayes’ rule is as follows:</p>
-<script type="math/tex; mode=display">P(A|B)=\frac{P(A) * P(B|A)}{P(B)}</script><p><br/></p>
-<h3 id="Why-Naive"><a href="#Why-Naive" class="headerlink" title="Why Naive:"></a>Why Naive:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>We assume that all features (all events) are independent of each other. Simplicitly:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * P(F_1, F_2, \cdots, F_n|A)}{P(F_1, F_2, \cdots, F_n)}</script><p>According to the Naive assumeption, the probabilities of events are independent, so we have:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
-<h3 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use:"></a>How to use:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>According to Bayes’ theorem and the Naive assumeption, we have:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
-<h3 id="Naive-Bayes-Pros-Cons"><a href="#Naive-Bayes-Pros-Cons" class="headerlink" title="Naive Bayes Pros / Cons:"></a>Naive Bayes Pros / Cons:</h3><p>$Pros:$</p>
-<ul>
-<li><p>The algorithm logic is simple and easy to implement (the algorithm idea is very simple, just use the Bayesian formula to transform)</p>
-</li>
-<li><p>High learning and prediction efficiency, easy to implement, and small space-time overhead during the classification process (assuming that the features are independent of each other, only two-dimensional storage is involved)</p>
-</li>
-<li><p>Still effective in the case of less data and can handle multiple types of problems</p>
-</li>
-</ul>
-<p>$Cons:$</p>
-<ul>
-<li><p>The classification performance is not necessarily high. The assumption of feature independence will make Naive Bayes simple, but it will sacrifice a certain classification accuracy. Theoritically, the Naive Bayes model has the smallest error rate compared with other classification methods.</p>
-</li>
-<li><p>But this is not always true, because the Naive Bayes model assumes that the features are all independent of each other. This assumption is often invalid in practical applications. When the number of features is large or the correlation between features is relevant, The classification performance is not good. When the features correlation is small, Naive Bayes performs best.</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Supervised Learning</category>
-        <category>Classification</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Supervised Learning</tag>
-        <tag>Classification</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PLA - Perceptron Learning Algorithm</title>
     <url>/2020/07/26/Machine%20Learning/Supervised/Classification/PLA/</url>
     <content><![CDATA[<h3 id="What-is-PLA"><a href="#What-is-PLA" class="headerlink" title="What is PLA"></a>What is PLA</h3><p>The perceptron (PLA) is an algorithm which can divide the positive and negative samples of training set into two parts, and then classify input data in the feature.<br><br></p>
@@ -1304,6 +1203,107 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
         <tag>Machine Learning</tag>
         <tag>Supervised Learning</tag>
         <tag>Regression</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Model-based Clustering - EM / GMM</title>
+    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Model-based-Clustering-EM-GMM/</url>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Model Methods - EM - GMM Clustering</a></p>
+<p>The note for Model Methods - EM - GMMe Clustering is in /Machine Learning/Unsupervised Learning/Model Methods —- EM based GMM</p>
+<p>I will re-organize the note here later……</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hierarchical Agglomerative Clustering</title>
+    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Hierarchical-Agglomerative-Clustering/</url>
+    <content><![CDATA[<p><img src="/images/clustering/HAC.png" width="65%" height="65%" title="" alt=""/></p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Density-Based Clustering - DBSCAN / OPTICS</title>
+    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Density-Based-Clustering-DBSCAN-OPTICS/</url>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for DBSCAN / OPTICS Clustering</a></p>
+<p>The note for DBSCAN / OPTICS is in /Machine Learning/Unsupervised Learning/Density-Based Methods —- DBSCAN / OPTICS</p>
+<p>I will re-organize the note here later……</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Partitioning-based Clustering K-Means / Medoids / Medians</title>
+    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Partitioning-based%20Clustering-K-Means-Medoids-Medians/</url>
+    <content><![CDATA[<h3 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h3><h5 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h5><ul>
+<li><p>Initialize k samples as the initial cluster center points</p>
+</li>
+<li><p>For each sample in the data set, calculate the distance to the k cluster center points and then select the category of the cluster center with the smallest distance</p>
+</li>
+<li><p>For the results from the previous clustering, calculate the average to get the new cluster center points of this category</p>
+</li>
+<li><p>Repeat the above two steps / until the end of the iteration</p>
+</li>
+</ul>
+<h5 id="Pros-and-Cons"><a href="#Pros-and-Cons" class="headerlink" title="Pros and Cons"></a>Pros and Cons</h5><ul>
+<li>Pros</li>
+</ul>
+<ol>
+<li>The effect is better when the sample space has Gaussian distribution</li>
+<li>Low time complexity</li>
+<li>Simple and easy, also the effect is acceptable</li>
+</ol>
+<ul>
+<li>Cons</li>
+</ul>
+<ol>
+<li>K value setting metaphysics</li>
+<li>The choice of cluster for the first trial will affect the results</li>
+<li>Not suitable for multiple classification</li>
+<li>Sensitive to outliers, outliers will greatly affect the entire algorithm<br><br></li>
+</ol>
+<h3 id="K-medoids"><a href="#K-medoids" class="headerlink" title="K-medoids"></a>K-medoids</h3><p>The medoid of a set is the object with the least distance to all others.</p>
+<p>Cons: </p>
+<ul>
+<li>k-means is sensitive to outliers</li>
+<li>k-means can not use arbitrary distance<br><br></li>
+</ul>
+<h3 id="K-medians"><a href="#K-medians" class="headerlink" title="K-medians"></a>K-medians</h3><p>Instead of the mean, we use the median in each dimension. For use with Manhattan norm $||x_i - m_j||_1$.</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
       </tags>
   </entry>
 </search>
