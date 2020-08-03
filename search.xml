@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Adaboost</title>
-    <url>/2020/07/29/Ensemble%20Learning/Adaboost/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Ensemble Learning</category>
-        <category>Boosting</category>
-      </categories>
-      <tags>
-        <tag>Ensemble Learning</tag>
-        <tag>Boosting</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>How to develop Python Package as PyPI</title>
     <url>/2020/07/28/Development/How-to-develop-Python-Package-as-PyPI/</url>
     <content><![CDATA[<h3 id="Why-developing-own-Package"><a href="#Why-developing-own-Package" class="headerlink" title="Why developing own Package"></a>Why developing own Package</h3><p>There are a bunch of nifty tools that help you build, install and distribute packages.</p>
@@ -54,16 +41,30 @@
       </tags>
   </entry>
   <entry>
-    <title>Random Forest</title>
-    <url>/2020/07/29/Ensemble%20Learning/Random-Forest/</url>
+    <title>Usage of Hexo</title>
+    <url>/2020/07/26/Development/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>GBDT</title>
+    <url>/2020/07/29/Ensemble%20Learning/GBDT/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Ensemble Learning</category>
-        <category>Bagging</category>
+        <category>Boosting</category>
       </categories>
       <tags>
         <tag>Ensemble Learning</tag>
-        <tag>Bagging</tag>
+        <tag>Boosting</tag>
       </tags>
   </entry>
   <entry>
@@ -80,6 +81,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Random Forest</title>
+    <url>/2020/07/29/Ensemble%20Learning/Random-Forest/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Ensemble Learning</category>
+        <category>Bagging</category>
+      </categories>
+      <tags>
+        <tag>Ensemble Learning</tag>
+        <tag>Bagging</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Adaboost</title>
+    <url>/2020/07/29/Ensemble%20Learning/Adaboost/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Ensemble Learning</category>
+        <category>Boosting</category>
+      </categories>
+      <tags>
+        <tag>Ensemble Learning</tag>
+        <tag>Boosting</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>XGBoost</title>
     <url>/2020/07/29/Ensemble%20Learning/XGBoost/</url>
     <content><![CDATA[]]></content>
@@ -93,22 +120,50 @@
       </tags>
   </entry>
   <entry>
-    <title>GBDT</title>
-    <url>/2020/07/29/Ensemble%20Learning/GBDT/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Ensemble Learning</category>
-        <category>Boosting</category>
-      </categories>
-      <tags>
-        <tag>Ensemble Learning</tag>
-        <tag>Boosting</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>XLNet</title>
-    <url>/2020/07/29/Pre-trained/XLNet/</url>
-    <content><![CDATA[]]></content>
+    <title>BERT / XLNet / RoBERTa / DistillBERT / Albert</title>
+    <url>/2020/07/29/Pre-trained/BERT-XLNet-Bert-variants/</url>
+    <content><![CDATA[<p><img src="/images/pre_trained/xlnet_1.png" width="60%" height="60%" title="Comparison of BERT and recent improvements over it" alt=""/></p>
+<h3 id="RoBERTa"><a href="#RoBERTa" class="headerlink" title="RoBERTa"></a>RoBERTa</h3><ol>
+<li>In BERT, a 15% random mask is applied to sentences, which is a static mask. RoBERTa uses dynamic mask which samples the training corpus 10 times, and then uses 10 different masks for each sample.</li>
+<li>The experiment found that removing the NSP pre-trained task has a slight improvement in downstream tasks, so the NSP task is removed in RoBERTa.</li>
+<li>More training corpus and larger training batch.<br><br></li>
+</ol>
+<h3 id="ALBERT"><a href="#ALBERT" class="headerlink" title="ALBERT"></a>ALBERT</h3><p>The bert model is too large, and it will bring great challenges to online tasks with high speed and memory requirements. Albert uses some tricks to compress the parameters of BERT, which makes the model smaller.</p>
+<ul>
+<li><p><strong>Factorized Embedding Parameterization</strong><br>We know that a large number of parameters of the model are due to token embeddings. If the vocab is large, the model parameters will increase a lot. Assuming that V represents the total number of tokens and H represents the embeddings dimension, the entire token embeddings parameters that need to be learned are <script type="math/tex">O(V*H)</script>, and this matrix can be decomposed by two small matrices. <script type="math/tex">V × H = (V × E) × (E × H)</script>, then the parameters from <script type="math/tex">O(V * H)</script> to <script type="math/tex">O(V * E + E * H)</script>, because <script type="math/tex">H >> E</script>, entire parameter is reduced a lot.</p>
+</li>
+<li><p><strong>Cross-layer parameter sharing</strong><br>We know that bert is composed of 12 layers of transformers. Each layer of transformer has its own parameters. The entire parameter amount is relatively large. Albert shares all the layers of transformers with the first layer of transformer parameters, so the whole transformer parameters of ALBERT reduced by 12 times than BERT, and there is only one layer of transformer parameters.</p>
+</li>
+<li><p><strong>Change NSP to SOP</strong><br>Change NSP task to sentence-order prediction (SOP) task, which means that the two adjacent sentences in the article are positive samples, and the order of the two sentences is reversed as negative samples<br><br></p>
+</li>
+</ul>
+<h3 id="DistilBERT"><a href="#DistilBERT" class="headerlink" title="DistilBERT"></a>DistilBERT</h3><p>Knowledge distillation is to use small BERT model structure (student) to learn predictive ability of some big BERT model (teacher). And using some learning strategies to obtain a smaller, faster, but have equivanlent predictive effect to a large model.</p>
+<p><strong>Change point:</strong></p>
+<ol>
+<li><p>The DistilBert model and the Bert model have the same structure, but the number of layers is reduced by half, with only 6 layers of transformer structure</p>
+</li>
+<li><p>When training, let the distilBert model try to learn the effect of the original bert model. And the design of Loss consists of three parts, two of which are related to the output of the bert model.</p>
+<ul>
+<li><p>First: Use KL divergence to measure the probability distribution of the final output layer of bert and distilBert (to ensure that the probability distribution of each label predicted by the two models is as consistent as possible).</p>
+</li>
+<li><p>Second: The cos loss of the final output vector of bert and distilBert (to ensure that the output vector representation from the model is as similar as possible), represented by Lcos. The last part is the standard cross entropy, the cross entropy with the real label, represented by Lmlm. The final loss is obtained by adding three parts of weighted loss: <script type="math/tex">Loss = 5Lce + 3Lmlm + 2*Lcos</script><br><br></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="XLNet"><a href="#XLNet" class="headerlink" title="XLNet"></a>XLNet</h3><p>Auto Regressive model. The left-to-right language model task can only predict the next word based on the Context-before, or conversely Context-after.</p>
+<ul>
+<li><p><strong>Change point:</strong><br>Permutation Language Modeling instead of MLM in BERT.</p>
+</li>
+<li><p><strong>Reason:</strong></p>
+<ul>
+<li>When predicting words, masked words are independent of each other and can not take relationship of Masked words into consideration when doing prediction.</li>
+<li>BERT pre-trained and fine-tune are not consistent for Masked words. (No mask fine-tune)<br><br></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://zhuanlan.zhihu.com/p/70257427" target="_blank" rel="noopener">Ref</a></p>
+]]></content>
       <categories>
         <category>Deep Learning</category>
         <category>Pre-trained model</category>
@@ -120,38 +175,67 @@
       </tags>
   </entry>
   <entry>
-    <title>Usage of Hexo</title>
-    <url>/2020/07/26/Development/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>BERT / ELMo / GPT</title>
+    <url>/2020/07/29/Pre-trained/BERT-ELMo-GPT/</url>
+    <content><![CDATA[<h2 id="BERT"><a href="#BERT" class="headerlink" title="BERT"></a>BERT</h2><h4 id="Overview-of-BERT"><a href="#Overview-of-BERT" class="headerlink" title="Overview of BERT"></a>Overview of BERT</h4><p>The two steps of how BERT is developed. We can download the model pre-trained in step 1 (trained on un-annotated data), and only worry about fine-tuning it for step 2.</p>
+<p><img src="/images/pre_trained/bert_1.png" width="60%" height="60%" title="" alt=""/></p>
+<h4 id="BERT-Types"><a href="#BERT-Types" class="headerlink" title="BERT Types"></a>BERT Types</h4><p>BERT is basically a trained Transformer Encoder stack. The paper provides us 2 types of BERT:<br>• BERT BASE – L=12, Hidden units=768, heads=12, parameters:110M; Comparable in size to the OpenAI Transformer in order to compare performance<br>• BERT LARGE – L=24, Hidden units=1024, heads=16, parameters340M; A ridiculously huge model which achieved the state of the art results reported in the paper</p>
+<h4 id="How-BERT-works"><a href="#How-BERT-works" class="headerlink" title="How BERT works"></a>How BERT works</h4><p>BERT makes use of Transformer, an attention mechanism that learns contextual relations between words (or sub-words) in a text. Since BERT’s goal is to generate a language model, only the encoder mechanism is necessary.</p>
+<p>As opposed to directional models, which read the text input sequentially (left-to-right or right-to-left), the Transformer encoder reads the entire sequence of words at once. Therefore it is considered bidirectional, though it would be more accurate to say that it’s non-directional. This characteristic allows the model to learn the context of a word based on all of its surroundings (left and right of the word).</p>
+<p>BERT uses two training strategies to train the language model:</p>
+<ul>
+<li><h4 id="Masked-LM-MLM"><a href="#Masked-LM-MLM" class="headerlink" title="Masked LM (MLM)"></a>Masked LM (MLM)</h4>Before feeding word sequences into BERT, 15% of the words in each sequence are replaced with a [MASK] token. The model then attempts to predict the original value of the masked words, based on the context provided by the other, non-masked, words in the sequence. In technical terms, the prediction of the output words requires:</li>
+</ul>
+<ol>
+<li>Adding a classification layer on top of the encoder output.</li>
+<li>Multiplying the output vectors by the embedding matrix, transforming them into the vocabulary dimension.</li>
+<li><p>Calculating the probability of each word in the vocabulary with softmax.<br><img src="/images/pre_trained/bert_2.png" width="60%" height="60%" title="" alt=""/></p>
+<p> The BERT loss function takes into consideration only the prediction of the masked values and ignores the prediction of the non-masked words. As a consequence, the model converges slower than directional models, a characteristic which is offset by its increased context awareness.<br> Note: In practice, the BERT implementation is slightly more elaborate and doesn’t replace all of the 15% masked words.</p>
+</li>
+</ol>
+<ul>
+<li><h4 id="Next-Sentence-Prediction-NSP"><a href="#Next-Sentence-Prediction-NSP" class="headerlink" title="Next Sentence Prediction (NSP)"></a>Next Sentence Prediction (NSP)</h4><p>In the BERT training process, the model receives pairs of sentences as input and learns to predict if the second sentence in the pair is the subsequent sentence in the original document. During training, 50% of the inputs are a pair in which the second sentence is the subsequent sentence in the original document, while in the other 50% a random sentence from the corpus is chosen as the second sentence. The assumption is that the random sentence will be disconnected from the first sentence.</p>
+<p>  To help the model distinguish between the two sentences in training, the input is processed in the following way before entering the model:</p>
+</li>
+</ul>
+<ol>
+<li>A [CLS] token is inserted at the beginning of the first sentence and a [SEP] token is inserted at the end of each sentence.</li>
+<li>A sentence embedding indicating Sentence A or Sentence B is added to each token. Sentence embeddings are similar in concept to token embeddings with a vocabulary of 2.</li>
+<li><p>A positional embedding is added to each token to indicate its position in the sequence. The concept and implementation of positional embedding are presented in the Transformer paper.<br><img src="/images/pre_trained/bert_3.png" width="60%" height="60%" title="" alt=""/></p>
+<p> To predict if the second sentence is indeed connected to the first, the following steps are performed:</p>
+<ol>
+<li>The entire input sequence goes through the Transformer model.</li>
+<li>The output of the [CLS] token is transformed into a 2×1 shaped vector, using a simple classification layer (learned matrices of weights and biases).</li>
+<li>Calculating the probability of IsNextSequence with softmax.</li>
+</ol>
+</li>
+</ol>
+<p>When training the BERT model, Masked LM and Next Sentence Prediction are trained together, with the goal of minimizing the combined loss function of the two strategies.</p>
+<h4 id="How-to-use-BERT-Fine-tuning"><a href="#How-to-use-BERT-Fine-tuning" class="headerlink" title="How to use BERT (Fine-tuning)"></a>How to use BERT (Fine-tuning)</h4><p>Using BERT for a specific task is relatively straightforward:<br>BERT can be used for a wide variety of language tasks, while only adding a small layer to the core model:</p>
+<ol>
+<li>Classification tasks such as sentiment analysis are done similarly to Next Sentence classification, by adding a classification layer on top of the Transformer output for the [CLS] token.</li>
+<li>In Question Answering tasks (e.g. SQuAD v1.1), the software receives a question regarding a text sequence and is required to mark the answer in the sequence. Using BERT, a Q&amp;A model can be trained by learning two extra vectors that mark the beginning and the end of the answer.</li>
+<li>In Named Entity Recognition (NER), the software receives a text sequence and is required to mark the various types of entities (Person, Organization, Date, etc) that appear in the text. Using BERT, a NER model can be trained by feeding the output vector of each token into a classification layer that predicts the NER label.<br><img src="/images/pre_trained/bert_4.png" width="60%" height="60%" title="" alt=""/></li>
+</ol>
+<p><strong>Also, we can fine tune the BERT pre-trained model on our own corpus which will make BERT model more suitable for our tasks and data, thereby imporve the performance better.</strong></p>
+<p><a href="https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270" target="_blank" rel="noopener">Ref</a><br><br></p>
+<h2 id="ELMo"><a href="#ELMo" class="headerlink" title="ELMo"></a>ELMo</h2><p>ELMO is short for Embeddings from Language Model, ELMO is an RNN-based language model whose task is to learn what the next word or previous word in a sentence is.</p>
+<p>It is a bo-directional RNN, so that each word corresponds to two different hidden states, and the embedding representation of the word can be obtained by concatenation. When the context of the same word is different, the embedding is different.</p>
+<p>With such a multi-layered RNNs, the internal output of each layer is a representation of the word, so which layer of output do we take to represent the embedding of the word? ELMO’s approach is that it need all.<br><img src="/images/pre_trained/elmo_1.png" width="60%" height="60%" title="" alt=""/></p>
+<p>In ELMO, a word will get multiple embeddings, and the weighted summation of different embeddings can get the final embedding for downstream tasks. To illustrate the number of embedding here, the figure below only draws the hidden state of the two-layer RNN output. In fact, the original embedding input to the RNN is also needed, so you will see that the picture in the lower right corner contains three embedding. But different weights are learned based on downstream tasks. There are 5 different tasks in the lower right corner of the above figure, and the embedding weights obtained are different.<br><img src="/images/pre_trained/elmo_2.png" width="60%" height="60%" title="" alt=""/></p>
+<ul>
+<li><strong>Difference ELMo / BERT:</strong><br>• ELMo use LSTM as feature extractor, while BERT use transformer.<br><br></li>
+</ul>
+<h2 id="GPT-Generative-Pre-Training"><a href="#GPT-Generative-Pre-Training" class="headerlink" title="GPT (Generative Pre-Training)"></a>GPT (Generative Pre-Training)</h2><p>GPT is an Auto-regression model. It use Transformer Decoder side.<br>The GPT pre-trained tasks are: txt prediction与Task classifier。<br><img src="/images/pre_trained/gpt_1.png" width="60%" height="60%" title="" alt=""/></p>
+<ul>
+<li><strong>GPT has a two-stage process</strong><br>The first stage is to use the language model for pre-training,<br>The second stage solves downstream tasks through the Fine-tuning model.</li>
+</ul>
+<ul>
+<li><p>The picture above shows pre-training of GPT, which is similar to ELMO, with <strong>two differences (Pre_trained ELMo vs GPT)</strong>:<br>• First of all, the feature extractor is not RNN, but Transformer. As mentioned above, its feature extraction ability is stronger than RNN. This choice is obviously very wise.<br>• Secondly, although the pre-training of GPT still takes the language model as the target task, it uses a single directional language model. The so-called <strong>“single directional”</strong> means that the task of language model training aims to predict words based on the contextual word $W_i$. The words before $W_i$ is called Context-before, and the words after it is called Context-after. ELMO uses both Context-before and Context-after at the same time when doing language model pre-training for predicting the word $W_i$, while GPT only uses the Context-before to make predictions without Context-after.</p>
+<p>  Unlike ELMo, which only provides word vectors, GPT pre-trained models are also provided to downstream tasks. The vectors of the model here can be adjusted slightly with new downstream tasks, that is called, fine-tune<br><img src="/images/pre_trained/gpt_2.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+</ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Self Attention</title>
-    <url>/2020/07/29/Seq2seq/Self-Attention/</url>
-    <content><![CDATA[<h3 id="Difference-between-Self-Attention-and-classic-Attention"><a href="#Difference-between-Self-Attention-and-classic-Attention" class="headerlink" title="Difference between Self Attention and classic Attention"></a>Difference between Self Attention and classic Attention</h3><p>Self Attention is very different from the traditional Attention mechanism: The traditional Attention calculates Attention based on the hidden state of the source and target, and the result is the dependence relation between each word on the source and each word on the target. However self Attention is different. It only happens on the source side and the target side respectively. Only the Self Attention related to the source input or the target input itself captures the dependency relations between the words on the source side or the target side; and then the self attention obtained in the source side is added to the self attention obtained on the target end to capture the dependency relation between the words on the source end and the target end. Therefore, self attention is better than the traditional attention mechanism. One of the main reasons is that the traditional attention mechanism ignores the dependency between words in the source or target sentence, respectively. In contrast, self Attention can not only get the dependence relationship between the words and words of the source and target ends, and at the same time, the dependence relationship between the words and words of the source or target end can be effectively obtained.</p>
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-        <category>Seq2seq</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>Attention</tag>
-        <tag>Self Attention</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BERT</title>
-    <url>/2020/07/29/Pre-trained/BERT/</url>
-    <content><![CDATA[]]></content>
       <categories>
         <category>Deep Learning</category>
         <category>Pre-trained model</category>
@@ -160,42 +244,6 @@
         <tag>Deep Learning</tag>
         <tag>Pre-trained</tag>
         <tag>BERT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Seq2seq - Encoder - Decoder</title>
-    <url>/2020/07/29/Seq2seq/Seq2seq-Encoder-Decoder/</url>
-    <content><![CDATA[<h3 id="What-is-Seq2seq-model"><a href="#What-is-Seq2seq-model" class="headerlink" title="What is Seq2seq model?"></a>What is Seq2seq model?</h3><p>Sequence-to-sequence (Seq2Seq) models are deep learning models that have achieved a lot of success in tasks like machine translation, text summarization, and image captioning.</p>
-<p>And what is the Seq2Seq Model? More specifically, Seq2Seq model is a model that takes <strong>a sequence of items (words, letters, time series, etc) as inputs</strong> and <strong>outputs another sequence of items</strong>.</p>
-<p>In the case of Neural Machine Translation, the input is a series of words, and the output is the translated series of words.</p>
-<p>And the internal seq2seq model is composed of an encoder and a decoder. The encoder captures the context of the input sequence in the form of a hidden state vector and sends it to the decoder, which then produces the output sequence. Since the task is sequence based, both the encoder and decoder tend to use some form of RNNs, LSTMs, GRUs, etc.</p>
-<p>We could say:</p>
-<p>Encoder + Decoder = Seq2seq</p>
-<p><img src="/images/seq2seq/seq2seq_1.png" width="45%" height="45%" title="" alt=""/><br><br></p>
-<h3 id="Encoder-Decoder-Architecture"><a href="#Encoder-Decoder-Architecture" class="headerlink" title="Encoder-Decoder Architecture"></a>Encoder-Decoder Architecture</h3><p>The Seq2Seq framework relies on the encoder-decoder paradigm. The encoder encodes the input sequence, while the decoder produces the target sequence.</p>
-<p>The encoder-decoder architecture is a neural network design pattern. As shown in Figure, the architecture is partitioned into two parts, the encoder and the decoder. The encoder’s role is to encode the inputs into state, which often contains several tensors. Then the state is passed into the decoder to generate the outputs.</p>
-<ul>
-<li><h4 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h4>Our input sequence is “how are you”. Each word from the input sequence is associated to a vector $wR$ (via a lookup table). In our case, we have 3 words, thus our input will be transformed into R. Then, we simply run an LSTM over this sequence of vectors and store the last hidden state outputed by the LSTM: this will be our encoder representation $e$ vector.</li>
-</ul>
-<p><img src="/images/seq2seq/seq2seq_encoder.png" width="30%" height="30%" title="" alt=""/></p>
-<ul>
-<li><h4 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h4>Now that we have a vector $e$ that captures the meaning of the input sequence, we’ll use it to generate the target sequence word by word. Feed to another NN cell, normally we use LSTM or GRU. Like the following figure.</li>
-</ul>
-<p><img src="/images/seq2seq/seq2seq_decoder.png" width="50%" height="50%" title="" alt=""/></p>
-<ul>
-<li><h4 id="Normally-we-have-2-different-types-of-Encoder-Decoder-architecture"><a href="#Normally-we-have-2-different-types-of-Encoder-Decoder-architecture" class="headerlink" title="Normally we have 2 different types of Encoder-Decoder architecture:"></a>Normally we have 2 different types of Encoder-Decoder architecture:</h4></li>
-</ul>
-<p><img src="/images/seq2seq/encoder_decoder_1.png" width="45%" height="45%" title="" alt=""/></p>
-<p><img src="/images/seq2seq/encoder_decoder_2.png" width="45%" height="45%" title="" alt=""/></p>
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-        <category>Seq2seq</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>Seq2seq</tag>
-        <tag>Encoder-Decoder</tag>
       </tags>
   </entry>
   <entry>
@@ -243,24 +291,88 @@
       </categories>
       <tags>
         <tag>Deep Learning</tag>
-        <tag>Attention</tag>
         <tag>Seq2seq</tag>
+        <tag>Attention</tag>
       </tags>
   </entry>
   <entry>
-    <title>Transformer</title>
-    <url>/2020/07/29/Seq2seq/Transformer/</url>
-    <content><![CDATA[]]></content>
+    <title>Self Attention</title>
+    <url>/2020/07/29/Seq2seq/Self-Attention/</url>
+    <content><![CDATA[<h3 id="Difference-between-Self-Attention-and-classic-Attention"><a href="#Difference-between-Self-Attention-and-classic-Attention" class="headerlink" title="Difference between Self Attention and classic Attention"></a>Difference between Self Attention and classic Attention</h3><p>Self Attention is very different from the traditional Attention mechanism: The traditional Attention calculates Attention based on the hidden state of the source and target, and the result is the dependence relation between each word on the source and each word on the target. However self Attention is different. It only happens on the source side and the target side respectively. Only the Self Attention related to the source input or the target input itself captures the dependency relations between the words on the source side or the target side; and then the self attention obtained in the source side is added to the self attention obtained on the target end to capture the dependency relation between the words on the source end and the target end. Therefore, self attention is better than the traditional attention mechanism. One of the main reasons is that the traditional attention mechanism ignores the dependency between words in the source or target sentence, respectively. In contrast, self Attention can not only get the dependence relationship between the words and words of the source and target ends, and at the same time, the dependence relationship between the words and words of the source or target end can be effectively obtained.</p>
+<h3 id="Structure-of-Self-Attention"><a href="#Structure-of-Self-Attention" class="headerlink" title="Structure of Self-Attention"></a>Structure of Self-Attention</h3><p>Following figure is the structure of self-attention:<br><img src="/images/seq2seq/self_att_1.png" width="30%" height="30%" title="" alt=""/></p>
+<p>For self-attention, the three matrices Q(Query), K(Key), and V(Value) all come from the same input. Firstly, we need to calculate the dot product between Q and K, and then in order to avoid the result being too large, the result will be divided by a scale $\sqrt{d_k}$ , where $d_k$ is the dimension of the query and key vectors. Then use the Softmax operation to normalize the result into a probability distribution, and then multiply it by the value matrix V to get the weighted summation. This operation can be expressed as:</p>
+<script type="math/tex; mode=display">Attention(Q, K, V) = softmax(\frac{QK_T}{\sqrt{d_k}}) * V</script><h3 id="Concrete-steps-of-Self-Attention"><a href="#Concrete-steps-of-Self-Attention" class="headerlink" title="Concrete steps of Self-Attention"></a>Concrete steps of Self-Attention</h3><p>We can use a more descriptive example to show the concrete steps of self-attention: assuming we need to translate the phrase: “Thinking Machines”, and we use embedding vector $x_1$ to represent word “Thinking” and embedding vector $x_2$ to represent word “Machines”.<br>Then:</p>
+<ul>
+<li><strong>First step:</strong> to create three vectors from each of the encoder’s input vectors (in this case, the embedding of each word).<br><img src="/images/seq2seq/self_att_2.png" width="50%" height="50%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><strong>Second step:</strong> to calculate a scaled score and softmax it. Say we’re calculating the self-attention for the first word in this example, “Thinking”.<br><img src="/images/seq2seq/self_att_3.png" width="50%" height="50%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><strong>Third step:</strong> to multiply each value vector by the softmax score and then sum up the weighted value vectors.<br><img src="/images/seq2seq/self_att_4.png" width="50%" height="50%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><p><strong>Matrix Calculation of Self-Attention</strong><br>To calculate the Query, Key, and Value matrices. We do that by packing our embeddings into a matrix X, and multiplying it by the weight matrices we’ve trained $(W_Q, W_K, W_V)$.<br><img src="/images/seq2seq/self_att_5.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+<li><p><strong>Lastly</strong><br>since we’re dealing with matrices, we can condense steps in one formula to calculate the outputs of the self-attention layer.<br><img src="/images/seq2seq/self_att_6.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+</ul>
+<h3 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h3><ul>
+<li><p>Improvements:<br>• It expands the model’s ability to focus on different positions.<br>• It gives the attention layer multiple “representation subspaces”.<br><img src="/images/seq2seq/self_att_7.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+<li><p>If we do the same self-attention calculation we outlined above, just eight different times with different weight matrices, we end up with eight different Z matrices.<br><img src="/images/seq2seq/self_att_8.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+<li><p>This leaves us with a bit of a challenge. The feed-forward layer is not expecting eight matrices – it’s expecting a single matrix (a vector for each word). So we need a way to condense these eight down into a single matrix.<br>How do we do that? We concat the matrices then multiple them by an additional weights matrix $W_O$.<br><img src="/images/seq2seq/self_att_9.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+<li><p>Here we could see the overall steps of Multi-Head Attention:<br><img src="/images/seq2seq/self_att_10.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+</ul>
+<p><a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" rel="noopener">Ref</a></p>
+]]></content>
       <categories>
         <category>Deep Learning</category>
         <category>Seq2seq</category>
       </categories>
       <tags>
         <tag>Deep Learning</tag>
+        <tag>Attention</tag>
         <tag>Self Attention</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Seq2seq - Encoder - Decoder</title>
+    <url>/2020/07/29/Seq2seq/Seq2seq-Encoder-Decoder/</url>
+    <content><![CDATA[<h3 id="What-is-Seq2seq-model"><a href="#What-is-Seq2seq-model" class="headerlink" title="What is Seq2seq model?"></a>What is Seq2seq model?</h3><p>Sequence-to-sequence (Seq2Seq) models are deep learning models that have achieved a lot of success in tasks like machine translation, text summarization, and image captioning.</p>
+<p>And what is the Seq2Seq Model? More specifically, Seq2Seq model is a model that takes <strong>a sequence of items (words, letters, time series, etc) as inputs</strong> and <strong>outputs another sequence of items</strong>.</p>
+<p>In the case of Neural Machine Translation, the input is a series of words, and the output is the translated series of words.</p>
+<p>And the internal seq2seq model is composed of an encoder and a decoder. The encoder captures the context of the input sequence in the form of a hidden state vector and sends it to the decoder, which then produces the output sequence. Since the task is sequence based, both the encoder and decoder tend to use some form of RNNs, LSTMs, GRUs, etc.</p>
+<p>We could say:</p>
+<p>Encoder + Decoder = Seq2seq</p>
+<p><img src="/images/seq2seq/seq2seq_1.png" width="45%" height="45%" title="" alt=""/><br><br></p>
+<h3 id="Encoder-Decoder-Architecture"><a href="#Encoder-Decoder-Architecture" class="headerlink" title="Encoder-Decoder Architecture"></a>Encoder-Decoder Architecture</h3><p>The Seq2Seq framework relies on the encoder-decoder paradigm. The encoder encodes the input sequence, while the decoder produces the target sequence.</p>
+<p>The encoder-decoder architecture is a neural network design pattern. As shown in Figure, the architecture is partitioned into two parts, the encoder and the decoder. The encoder’s role is to encode the inputs into state, which often contains several tensors. Then the state is passed into the decoder to generate the outputs.</p>
+<ul>
+<li><h4 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h4>Our input sequence is “how are you”. Each word from the input sequence is associated to a vector $wR$ (via a lookup table). In our case, we have 3 words, thus our input will be transformed into R. Then, we simply run an LSTM over this sequence of vectors and store the last hidden state outputed by the LSTM: this will be our encoder representation $e$ vector.</li>
+</ul>
+<p><img src="/images/seq2seq/seq2seq_encoder.png" width="30%" height="30%" title="" alt=""/></p>
+<ul>
+<li><h4 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h4>Now that we have a vector $e$ that captures the meaning of the input sequence, we’ll use it to generate the target sequence word by word. Feed to another NN cell, normally we use LSTM or GRU. Like the following figure.</li>
+</ul>
+<p><img src="/images/seq2seq/seq2seq_decoder.png" width="50%" height="50%" title="" alt=""/></p>
+<ul>
+<li><h4 id="Normally-we-have-2-different-types-of-Encoder-Decoder-architecture"><a href="#Normally-we-have-2-different-types-of-Encoder-Decoder-architecture" class="headerlink" title="Normally we have 2 different types of Encoder-Decoder architecture:"></a>Normally we have 2 different types of Encoder-Decoder architecture:</h4></li>
+</ul>
+<p><img src="/images/seq2seq/encoder_decoder_1.png" width="45%" height="45%" title="" alt=""/></p>
+<p><img src="/images/seq2seq/encoder_decoder_2.png" width="45%" height="45%" title="" alt=""/></p>
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+        <category>Seq2seq</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
         <tag>Seq2seq</tag>
         <tag>Encoder-Decoder</tag>
-        <tag>Transformer</tag>
       </tags>
   </entry>
   <entry>
@@ -287,6 +399,60 @@
         <tag>Seq2seq</tag>
         <tag>Encoder-Decoder</tag>
         <tag>Beam Search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Transformer</title>
+    <url>/2020/07/29/Seq2seq/Transformer/</url>
+    <content><![CDATA[<h3 id="Architecture-of-Transformer"><a href="#Architecture-of-Transformer" class="headerlink" title="Architecture of Transformer"></a>Architecture of Transformer</h3><p>At first, we can see the <strong>overall architecture</strong> of Transformer below:<br><img src="/images/seq2seq/transformer_1.jpg" width="60%" height="60%" title="" alt=""/></p>
+<h3 id="The-Encoder-side"><a href="#The-Encoder-side" class="headerlink" title="The Encoder side"></a>The Encoder side</h3><p>The encoding component is a stack of encoders (the paper stacks six of them on top of each other – there’s nothing magical about the number six, one can definitely experiment with other arrangements). The decoding component is a stack of decoders of the same number.<br><img src="/images/seq2seq/transformer_2.png" width="60%" height="60%" title="" alt=""/></p>
+<p>The encoders are all identical in structure (yet they do not share weights). Each one is broken down into two sub-layers。<br>The encoder’s inputs first flow through a self-attention layer – a layer that helps the encoder look at other words in the input sentence as it encodes a specific word. We’ll look closer at self-attention later in the post.</p>
+<p>The outputs of the self-attention layer are fed to a feed-forward neural network. The exact same feed-forward network is independently applied to each position.</p>
+<p>The decoder has both those layers, but between them is an attention layer that helps the decoder focus on relevant parts of the input sentence (similar what attention does in seq2seq models).<br><img src="/images/seq2seq/transformer_3.png" width="60%" height="60%" title="" alt=""/></p>
+<p>For the encoder, there are two layers, a self-attention layer and a feedforward neural network layer. Self-attention can help the current state not only pay attention to the current word, so as to obtain the semantics of the context.</p>
+<p>The decoder also contains the two-layer network mentioned by the encoder, but there is also an attention layer between the two layers to help the current state get the current key content that needs to be paid attention to.</p>
+<p>After the end of Enmbedding, input embedding result to the encoder layer. After processing of self-attention, the data is sent to the feedforward neural network. And the calculation of the feedforward neural network can be parallelized, and the obtained output will be input to the next encoder.<br><img src="/images/seq2seq/transformer_4.png" width="60%" height="60%" title="" alt=""/></p>
+<ul>
+<li><h5 id="Positional-Embedding"><a href="#Positional-Embedding" class="headerlink" title="Positional Embedding"></a>Positional Embedding</h5><p>The transformer adds a vector to each input embedding. These vectors follow a specific pattern that the model learns, which helps it determine the position of each word, or the distance between different words in the sequence. The intuition here is that adding these values to the embeddings provides meaningful distances between the embedding vectors once they’re projected into Q/K/V vectors and during dot-product attention.<br><img src="/images/seq2seq/transformer_5.png" width="60%" height="60%" title="" alt=""/></p>
+<p>  Following formular is how to calculate positional embedding vectors.<br>  pos is the position of current word, i is the index for each value of vector. We can find that, we use sin in the even position, and cos in the odd position.<br><img src="/images/seq2seq/transformer_6.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+</ul>
+<ul>
+<li><h5 id="Layer-Normalization"><a href="#Layer-Normalization" class="headerlink" title="Layer Normalization"></a>Layer Normalization</h5><p>In the transformer, each sub-layer (self-attetion, ffnn) will be followed by a residual module, and there will also be a Layer normalization.<br><img src="/images/seq2seq/transformer_7.png" width="60%" height="60%" title="" alt=""/></p>
+<p>  This goes for the sub-layers of the decoder as well. If we’re to think of a Transformer of 2 stacked encoders and decoders, it would look something like this:<br><img src="/images/seq2seq/transformer_8.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+</ul>
+<h3 id="The-Decoder-side"><a href="#The-Decoder-side" class="headerlink" title="The Decoder side"></a>The Decoder side</h3><p>Now that we’ve covered most of the concepts on the encoder side, we basically know how the components of decoders work as well. But let’s take a look at how they work together.</p>
+<p>The encoder start by processing the input sequence. The output of the top encoder is then transformed into a set of attention vectors K and V. These are to be used by each decoder in its “encoder-decoder attention” layer which helps the decoder focus on appropriate places in the input sequence</p>
+<p>We can find that the decoder side is actually the same as the encoder side, but there is an additional <strong>masked mutil-head attetion</strong> at the bottom of Decoder. The mask here is also a key technology of the transformer. Let’s take a look below.</p>
+<h5 id="Mask"><a href="#Mask" class="headerlink" title="Mask"></a>Mask</h5><p>Mask represents a mask, which masks certain values so that it has no effect when the parameters are updated. There are two types of masks involved in the Transformer model: <strong>padding mask and sequence mask</strong>.<br>Among them, the padding mask needs to be used in all scaled dot-product attention, and the sequence mask is only used in the self-attention of the decoder.</p>
+<ul>
+<li><p>Padding Mask<br>What is a padding mask? Because the length of each batch of input sequence is different, which means, we have to align the input sequence. Specifically, we have to fill 0 after the shorter sequence while the content on the left is intercepted if the input sequence is too long and the excess is discarded directly. Because these filling positions are actually meaningless, our attention mechanism should not focus on these positions, so we need to do some processing.</p>
+<p>  The specific method is to add a very large negative number (negative infinity) to the value of these positions. In this case, the probability of these positions will be close to 0 after softmax. And our padding mask is actually a tensor, each value is a Boolean, the value of false is where we want to process.</p>
+</li>
+<li><p>Sequence mask<br>The sequence mask is to make the decoder unable to see future information. For instance, for a sequence at the moment time_step is t, our decoding output should only depend on the output before time t, and not on the output after t. Therefore, we need to find a way to hide the information after t.</p>
+<p>  So how can we do it? It’s also very simple: generate an upper triangular matrix, the values of the upper triangle are all set to 0. Apply this matrix to each sequence to achieve our goal.<br><img src="/images/seq2seq/transformer_9.png" width="40%" height="40%" title="" alt=""/></p>
+<p>  For the self-attention of the decoder, the scaled dot-product attention used in it also requires padding mask and sequence mask as attn_mask. The specific implementation is to add two masks as “attn_mask”. In other cases, “attn_mask” is equal to padding mask.</p>
+</li>
+</ul>
+<ul>
+<li><h5 id="Difference-on-mask-self-attention-and-encoder-decoder-attention"><a href="#Difference-on-mask-self-attention-and-encoder-decoder-attention" class="headerlink" title="Difference on mask-self-attention and encoder-decoder-attention"></a>Difference on mask-self-attention and encoder-decoder-attention</h5>Regarding these two attention layers in Decoder, it can be understood that: mask-self-attention aims to calculate the relationship between the currently translated content and the previous text that has been translated, while encoder-decoder-attention aims to calculate the relationship between current translation content and the feature vectors from Encoder.</li>
+</ul>
+<ul>
+<li><h5 id="Decoder-input-and-output"><a href="#Decoder-input-and-output" class="headerlink" title="Decoder input and output"></a>Decoder input and output</h5>• <strong>Output:</strong> the probability distribution of the output word corresponding to position i<br>• <strong>Input:</strong> the output of the encoder &amp; the output of the decoder at i-1 position. So the intermediate <strong>encoder-decoder-attention</strong> is not a self-attention, its K and V come from the encoder, and Q comes from the output of the previous state in Decoder.<br>• <strong>Decoder:</strong> Special attention should be paid here. The encoder can be calculated in parallel and all encoding is done at one time, but decoder is not solved on all sequences at once, but solved one by one like rnn, because the Query is used as attention of input at the previous position of Decoder.</li>
+</ul>
+<h3 id="Output-side"><a href="#Output-side" class="headerlink" title="Output side"></a>Output side</h3><p>When the decoder is all executed, how to map the obtained vector to the words we need? We just add a fully connected layer and a softmax layer at the end. </p>
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+        <category>Seq2seq</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+        <tag>Seq2seq</tag>
+        <tag>Self Attention</tag>
+        <tag>Encoder-Decoder</tag>
+        <tag>Transformer</tag>
       </tags>
   </entry>
   <entry>
@@ -366,6 +532,135 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </tags>
   </entry>
   <entry>
+    <title>CRF - NER</title>
+    <url>/2020/07/29/NLP/NER/CRF-NER/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Named Entity Recognition</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>NER</tag>
+        <tag>CRF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Entity Resolution</title>
+    <url>/2020/07/29/NLP/Dialogue%20System/Entity-Resolution/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Dialogue System</category>
+        <category>Natural Language Understanding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Dialogue System</tag>
+        <tag>NLU</tag>
+        <tag>Entity Resolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Intent Resolution</title>
+    <url>/2020/07/29/NLP/Dialogue%20System/Intent-Resolution/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Dialogue System</category>
+        <category>Natural Language Understanding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Dialogue System</tag>
+        <tag>NLU</tag>
+        <tag>Intent Resolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Viterbi Algorithm</title>
+    <url>/2020/07/29/NLP/NER/Viterbi-Algorithm/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Named Entity Recognition</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>CRF</tag>
+        <tag>Viterbi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>N-Gram</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/N-Gram/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Word Embedding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>N-Gram</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sentiment Analysis</title>
+    <url>/2020/07/29/NLP/Sentiment-Analysis/Sentiment-Analysis/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Sentiment Analysis</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Sentiment Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Word Embedding - Word2Vec - GloVe</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Word2Vec-GloVe/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Word Embedding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Word Embedding</tag>
+        <tag>Word2Vec</tag>
+        <tag>GloVe</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Word Embedding - CBOW</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-CBOW/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Word Embedding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Word Embedding</tag>
+        <tag>CBOW</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Word Embedding - Skip gram</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Skip-gram/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Word Embedding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Word Embedding</tag>
+        <tag>Skip-gram</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>EM Algorithm</title>
     <url>/2020/07/29/Machine%20Learning/Unsupervised/EM-Algorithm/</url>
     <content><![CDATA[]]></content>
@@ -442,7 +737,26 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
   <entry>
     <title>Frequent Item Mining 2 - FP Tree</title>
     <url>/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-2-FP-Tree/</url>
-    <content><![CDATA[<p>FP Tree </p>
+    <content><![CDATA[<p>As an algorithm for mining frequent itemsets, the Apriori algorithm requires multiple scans of data, and I/O efficiency is a big bottleneck. In order to solve this problem, the FP Tree algorithm (also known as the FP Growth algorithm) uses some tricks, and it only needs to scan the data set twice no matter how much data, thereby improving the efficiency of the algorithm.</p>
+<h3 id="FP-Tree-construction"><a href="#FP-Tree-construction" class="headerlink" title="FP-Tree construction"></a>FP-Tree construction</h3><p><img src="/images/clustering/fp_1.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_2.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_3.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_4.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_5.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_6.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_7.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_8.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_9.png" width="60%" height="60%" title="" alt=""/></p>
+<h3 id="Conditional-Pattern-Base"><a href="#Conditional-Pattern-Base" class="headerlink" title="Conditional Pattern Base"></a>Conditional Pattern Base</h3><p><img src="/images/clustering/fp_10.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_11.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_12.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_13.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_14.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_15.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_16.png" width="60%" height="60%" title="" alt=""/></p>
+<h3 id="Conditional-FP-Tree-and-get-frequent-itemsets"><a href="#Conditional-FP-Tree-and-get-frequent-itemsets" class="headerlink" title="Conditional FP-Tree and get frequent itemsets"></a>Conditional FP-Tree and get frequent itemsets</h3><p><img src="/images/clustering/fp_17.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_18.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_19.png" width="60%" height="60%" title="" alt=""/></p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
@@ -551,132 +865,44 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </tags>
   </entry>
   <entry>
-    <title>CRF - NER</title>
-    <url>/2020/07/29/NLP/NER/CRF-NER/</url>
-    <content><![CDATA[]]></content>
+    <title>Navie Bayes</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Navie%20Bayes/</url>
+    <content><![CDATA[<p>Naive Bayes is a classification algorithm based on probability theory, which predicts classification by considering feature probabilities.</p>
+<h3 id="Bayesian-Theory-and-Conditional-Probability"><a href="#Bayesian-Theory-and-Conditional-Probability" class="headerlink" title="Bayesian Theory and Conditional Probability:"></a>Bayesian Theory and Conditional Probability:</h3><p>The core part of Naive Bayes is Bayes’ rule and Naive assumeption. And the cornerstone of Bayes’ rule is conditional probability. Bayes’ rule is as follows:</p>
+<script type="math/tex; mode=display">P(A|B)=\frac{P(A) * P(B|A)}{P(B)}</script><p><br/></p>
+<h3 id="Why-Naive"><a href="#Why-Naive" class="headerlink" title="Why Naive:"></a>Why Naive:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>We assume that all features (all events) are independent of each other. Simplicitly:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * P(F_1, F_2, \cdots, F_n|A)}{P(F_1, F_2, \cdots, F_n)}</script><p>According to the Naive assumeption, the probabilities of events are independent, so we have:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
+<h3 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use:"></a>How to use:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>According to Bayes’ theorem and the Naive assumeption, we have:</p>
+<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
+<h3 id="Naive-Bayes-Pros-Cons"><a href="#Naive-Bayes-Pros-Cons" class="headerlink" title="Naive Bayes Pros / Cons:"></a>Naive Bayes Pros / Cons:</h3><p>$Pros:$</p>
+<ul>
+<li><p>The algorithm logic is simple and easy to implement (the algorithm idea is very simple, just use the Bayesian formula to transform)</p>
+</li>
+<li><p>High learning and prediction efficiency, easy to implement, and small space-time overhead during the classification process (assuming that the features are independent of each other, only two-dimensional storage is involved)</p>
+</li>
+<li><p>Still effective in the case of less data and can handle multiple types of problems</p>
+</li>
+</ul>
+<p>$Cons:$</p>
+<ul>
+<li><p>The classification performance is not necessarily high. The assumption of feature independence will make Naive Bayes simple, but it will sacrifice a certain classification accuracy. Theoritically, the Naive Bayes model has the smallest error rate compared with other classification methods.</p>
+</li>
+<li><p>But this is not always true, because the Naive Bayes model assumes that the features are all independent of each other. This assumption is often invalid in practical applications. When the number of features is large or the correlation between features is relevant, The classification performance is not good. When the features correlation is small, Naive Bayes performs best.</p>
+</li>
+</ul>
+]]></content>
       <categories>
-        <category>NLP</category>
-        <category>Named Entity Recognition</category>
+        <category>Machine Learning</category>
+        <category>Supervised Learning</category>
+        <category>Classification</category>
       </categories>
       <tags>
-        <tag>NLP</tag>
-        <tag>NER</tag>
-        <tag>CRF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Viterbi Algorithm</title>
-    <url>/2020/07/29/NLP/NER/Viterbi-Algorithm/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Named Entity Recognition</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>CRF</tag>
-        <tag>Viterbi</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Intent Resolution</title>
-    <url>/2020/07/29/NLP/Dialogue%20System/Intent-Resolution/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Dialogue System</category>
-        <category>Natural Language Understanding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Dialogue System</tag>
-        <tag>NLU</tag>
-        <tag>Intent Resolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>N-Gram</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/N-Gram/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Word Embedding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>N-Gram</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Word Embedding - CBOW</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-CBOW/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Word Embedding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Word Embedding</tag>
-        <tag>CBOW</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Word Embedding - Skip gram</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Skip-gram/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Word Embedding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Word Embedding</tag>
-        <tag>Skip-gram</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Word Embedding - Word2Vec - GloVe</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Word2Vec-GloVe/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Word Embedding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Word Embedding</tag>
-        <tag>Word2Vec</tag>
-        <tag>GloVe</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Entity Resolution</title>
-    <url>/2020/07/29/NLP/Dialogue%20System/Entity-Resolution/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Dialogue System</category>
-        <category>Natural Language Understanding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Dialogue System</tag>
-        <tag>NLU</tag>
-        <tag>Entity Resolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sentiment Analysis</title>
-    <url>/2020/07/29/NLP/Sentiment-Analysis/Sentiment-Analysis/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Sentiment Analysis</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Sentiment Analysis</tag>
+        <tag>Machine Learning</tag>
+        <tag>Supervised Learning</tag>
+        <tag>Classification</tag>
       </tags>
   </entry>
   <entry>
@@ -794,6 +1020,24 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
       </tags>
   </entry>
   <entry>
+    <title>Decision Tree</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Decision-Tree/</url>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Decision Tree</a></p>
+<p>The note for Decision Tree is in OneNote /Machine Learning/Supervised Learning/决策树-Decision Tree</p>
+<p>I will re-organize the note here later……</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Supervised Learning</category>
+        <category>Classification</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Supervised Learning</tag>
+        <tag>Classification</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>KNN</title>
     <url>/2020/07/26/Machine%20Learning/Supervised/Classification/KNN/</url>
     <content><![CDATA[<h3 id="Principle-of-KNN"><a href="#Principle-of-KNN" class="headerlink" title="Principle of KNN"></a>Principle of KNN</h3><ul>
@@ -880,72 +1124,6 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
       </tags>
   </entry>
   <entry>
-    <title>(Non) Linear Regression</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Regression/Linear-Regression/</url>
-    <content><![CDATA[<h3 id="What-is-Regression"><a href="#What-is-Regression" class="headerlink" title="What is Regression"></a>What is Regression</h3><p>Regression, its intuitive understanding is fitting. Let’s take linear regression as an example. There are a series of red points on a two-dimensional plane. We want to use a straight line to fit these red points as much as possible. This is linear regression. The essence of regression is that our prediction results are as close as possible to the actual observation results.</p>
-<p><img src="/images/linear_regression_1.jpg" width="30%" height="30%" title="Linear Regression in 2 dimension" alt=""/></p>
-<p><img src="/images/linear_regression_2.jpg" width="30%" height="30%" title="Linear Regression in 3 dimension" alt=""/></p>
-<p>What is linear? The data fitting is linear, in other words a straight line.<br>What is regression? To predict an accurate output value based on previous data.</p>
-<p>The linear regression algorithm can be divided into two categories:</p>
-<ul>
-<li>Linear Regression with one variable </li>
-<li>Linear Regression with multiple variable </li>
-</ul>
-<p>The most obvious character of regression is that the output $y_i$ is a continuous variable (this continuous variable is generally a float number, but sometimes can also be integer). The classic formula of linear regression is:<br><img src="/images/linear_regression_3.jpg" width="30%" height="30%" title="" alt=""/></p>
-<h3 id="Loss-Function-MSE"><a href="#Loss-Function-MSE" class="headerlink" title="Loss Function - MSE"></a>Loss Function - MSE</h3><p>The goal of linear regression is to fit the target label as much as possible with the predicted results, and the most common Least square is used as Loss Function:<br><img src="/images/linear_regression_4.jpg" width="30%" height="30%" title="" alt=""/><br><br/></p>
-<h3 id="Why-use-MSE-as-Loss-Function"><a href="#Why-use-MSE-as-Loss-Function" class="headerlink" title="Why use MSE as Loss Function"></a>Why use MSE as Loss Function</h3><p>After the model is prepared, we send the training data into the model, and then final value can be predicted through the model.<br><img src="/images/linear_regression_5.jpg" width="30%" height="30%" title="" alt=""/></p>
-<p>Then there is an error $ε$ between the true value y and the predicted value of the sample in training data. According to the central limit law, $\sum ε$ satisfies the Gaussian distribution $(u, δ^2)$ if the amount of the training data is large; Also u =0, then the Gaussian distribution $(0, δ^2)$ is satisfied due to the intercept term in equation.<br><img src="/images/linear_regression_6.jpg" width="40%" height="40%" title="" alt=""/></p>
-<p>As we can see above, for each sample $x$, send it into $p(y|x;θ)$ will get a probability of y; And because the sample is assumed to be independent and identically distributed; Thus we can find the maximum likelihood function for it:<br><img src="/images/linear_regression_7.jpg" width="40%" height="40%" title="" alt=""/></p>
-<p>Simplify it as follows<br><img src="/images/linear_regression_8.jpg" width="40%" height="40%" title="" alt=""/></p>
-<p>Finally, we use optimizers (such as SGD) to make the value of loss function keep decreasing, and iteratively update the corresponding parameters to obtain a well-fitting regression function.<br><br></p>
-<h3 id="Non-Linear-Regression"><a href="#Non-Linear-Regression" class="headerlink" title="Non-Linear Regression"></a>Non-Linear Regression</h3><p>A non-linear regression model is called when the fitting function is a non-linear function, such as hyperbolic model, power function, exponential function, logarithmic function model, polynomial model, etc. To solve the non-linear regression model, we normally transfer the non-linear regression model into a linear model gradually, and then performs linear regression fitting.</p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Supervised Learning</category>
-        <category>Regression</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Supervised Learning</tag>
-        <tag>Regression</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Density-Based Clustering - DBSCAN / OPTICS</title>
-    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Density-Based-Clustering-DBSCAN-OPTICS/</url>
-    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for DBSCAN / OPTICS Clustering</a></p>
-<p>The note for DBSCAN / OPTICS is in /Machine Learning/Unsupervised Learning/Density-Based Methods —- DBSCAN / OPTICS</p>
-<p>I will re-organize the note here later……</p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hierarchical Agglomerative Clustering</title>
-    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Hierarchical-Agglomerative-Clustering/</url>
-    <content><![CDATA[<p><img src="/images/clustering/HAC.png" width="65%" height="65%" title="" alt=""/></p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Model-based Clustering - EM / GMM</title>
     <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Model-based-Clustering-EM-GMM/</url>
     <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Model Methods - EM - GMM Clustering</a></p>
@@ -1013,62 +1191,69 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
       </tags>
   </entry>
   <entry>
-    <title>Decision Tree</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Decision-Tree/</url>
-    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Decision Tree</a></p>
-<p>The note for Decision Tree is in OneNote /Machine Learning/Supervised Learning/决策树-Decision Tree</p>
+    <title>Hierarchical Agglomerative Clustering</title>
+    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Hierarchical-Agglomerative-Clustering/</url>
+    <content><![CDATA[<p><img src="/images/clustering/HAC.png" width="65%" height="65%" title="" alt=""/></p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Density-Based Clustering - DBSCAN / OPTICS</title>
+    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Density-Based-Clustering-DBSCAN-OPTICS/</url>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for DBSCAN / OPTICS Clustering</a></p>
+<p>The note for DBSCAN / OPTICS is in /Machine Learning/Unsupervised Learning/Density-Based Methods —- DBSCAN / OPTICS</p>
 <p>I will re-organize the note here later……</p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
-        <category>Supervised Learning</category>
-        <category>Classification</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
       </categories>
       <tags>
         <tag>Machine Learning</tag>
-        <tag>Supervised Learning</tag>
-        <tag>Classification</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
       </tags>
   </entry>
   <entry>
-    <title>Navie Bayes</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Navie%20Bayes/</url>
-    <content><![CDATA[<p>Naive Bayes is a classification algorithm based on probability theory, which predicts classification by considering feature probabilities.</p>
-<h3 id="Bayesian-Theory-and-Conditional-Probability"><a href="#Bayesian-Theory-and-Conditional-Probability" class="headerlink" title="Bayesian Theory and Conditional Probability:"></a>Bayesian Theory and Conditional Probability:</h3><p>The core part of Naive Bayes is Bayes’ rule and Naive assumeption. And the cornerstone of Bayes’ rule is conditional probability. Bayes’ rule is as follows:</p>
-<script type="math/tex; mode=display">P(A|B)=\frac{P(A) * P(B|A)}{P(B)}</script><p><br/></p>
-<h3 id="Why-Naive"><a href="#Why-Naive" class="headerlink" title="Why Naive:"></a>Why Naive:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>We assume that all features (all events) are independent of each other. Simplicitly:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * P(F_1, F_2, \cdots, F_n|A)}{P(F_1, F_2, \cdots, F_n)}</script><p>According to the Naive assumeption, the probabilities of events are independent, so we have:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
-<h3 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use:"></a>How to use:</h3><p>Under the condition that event $(F_1, F_2, \cdots, F_n)$ occurs, estimate the probability of event A happening, which means calculate:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n)</script><p>According to Bayes’ theorem and the Naive assumeption, we have:</p>
-<script type="math/tex; mode=display">P(A|F_1, F_2, \cdots, F_n) = \frac{P(A) * \prod_{i=1}^n P(F_i|A)}{\prod_{i=1}^n P(F_i)}</script><p><br/></p>
-<h3 id="Naive-Bayes-Pros-Cons"><a href="#Naive-Bayes-Pros-Cons" class="headerlink" title="Naive Bayes Pros / Cons:"></a>Naive Bayes Pros / Cons:</h3><p>$Pros:$</p>
+    <title>(Non) Linear Regression</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Regression/Linear-Regression/</url>
+    <content><![CDATA[<h3 id="What-is-Regression"><a href="#What-is-Regression" class="headerlink" title="What is Regression"></a>What is Regression</h3><p>Regression, its intuitive understanding is fitting. Let’s take linear regression as an example. There are a series of red points on a two-dimensional plane. We want to use a straight line to fit these red points as much as possible. This is linear regression. The essence of regression is that our prediction results are as close as possible to the actual observation results.</p>
+<p><img src="/images/linear_regression_1.jpg" width="30%" height="30%" title="Linear Regression in 2 dimension" alt=""/></p>
+<p><img src="/images/linear_regression_2.jpg" width="30%" height="30%" title="Linear Regression in 3 dimension" alt=""/></p>
+<p>What is linear? The data fitting is linear, in other words a straight line.<br>What is regression? To predict an accurate output value based on previous data.</p>
+<p>The linear regression algorithm can be divided into two categories:</p>
 <ul>
-<li><p>The algorithm logic is simple and easy to implement (the algorithm idea is very simple, just use the Bayesian formula to transform)</p>
-</li>
-<li><p>High learning and prediction efficiency, easy to implement, and small space-time overhead during the classification process (assuming that the features are independent of each other, only two-dimensional storage is involved)</p>
-</li>
-<li><p>Still effective in the case of less data and can handle multiple types of problems</p>
-</li>
+<li>Linear Regression with one variable </li>
+<li>Linear Regression with multiple variable </li>
 </ul>
-<p>$Cons:$</p>
-<ul>
-<li><p>The classification performance is not necessarily high. The assumption of feature independence will make Naive Bayes simple, but it will sacrifice a certain classification accuracy. Theoritically, the Naive Bayes model has the smallest error rate compared with other classification methods.</p>
-</li>
-<li><p>But this is not always true, because the Naive Bayes model assumes that the features are all independent of each other. This assumption is often invalid in practical applications. When the number of features is large or the correlation between features is relevant, The classification performance is not good. When the features correlation is small, Naive Bayes performs best.</p>
-</li>
-</ul>
+<p>The most obvious character of regression is that the output $y_i$ is a continuous variable (this continuous variable is generally a float number, but sometimes can also be integer). The classic formula of linear regression is:<br><img src="/images/linear_regression_3.jpg" width="30%" height="30%" title="" alt=""/></p>
+<h3 id="Loss-Function-MSE"><a href="#Loss-Function-MSE" class="headerlink" title="Loss Function - MSE"></a>Loss Function - MSE</h3><p>The goal of linear regression is to fit the target label as much as possible with the predicted results, and the most common Least square is used as Loss Function:<br><img src="/images/linear_regression_4.jpg" width="30%" height="30%" title="" alt=""/><br><br/></p>
+<h3 id="Why-use-MSE-as-Loss-Function"><a href="#Why-use-MSE-as-Loss-Function" class="headerlink" title="Why use MSE as Loss Function"></a>Why use MSE as Loss Function</h3><p>After the model is prepared, we send the training data into the model, and then final value can be predicted through the model.<br><img src="/images/linear_regression_5.jpg" width="30%" height="30%" title="" alt=""/></p>
+<p>Then there is an error $ε$ between the true value y and the predicted value of the sample in training data. According to the central limit law, $\sum ε$ satisfies the Gaussian distribution $(u, δ^2)$ if the amount of the training data is large; Also u =0, then the Gaussian distribution $(0, δ^2)$ is satisfied due to the intercept term in equation.<br><img src="/images/linear_regression_6.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>As we can see above, for each sample $x$, send it into $p(y|x;θ)$ will get a probability of y; And because the sample is assumed to be independent and identically distributed; Thus we can find the maximum likelihood function for it:<br><img src="/images/linear_regression_7.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>Simplify it as follows<br><img src="/images/linear_regression_8.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>Finally, we use optimizers (such as SGD) to make the value of loss function keep decreasing, and iteratively update the corresponding parameters to obtain a well-fitting regression function.<br><br></p>
+<h3 id="Non-Linear-Regression"><a href="#Non-Linear-Regression" class="headerlink" title="Non-Linear Regression"></a>Non-Linear Regression</h3><p>A non-linear regression model is called when the fitting function is a non-linear function, such as hyperbolic model, power function, exponential function, logarithmic function model, polynomial model, etc. To solve the non-linear regression model, we normally transfer the non-linear regression model into a linear model gradually, and then performs linear regression fitting.</p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Supervised Learning</category>
-        <category>Classification</category>
+        <category>Regression</category>
       </categories>
       <tags>
         <tag>Machine Learning</tag>
         <tag>Supervised Learning</tag>
-        <tag>Classification</tag>
+        <tag>Regression</tag>
       </tags>
   </entry>
   <entry>

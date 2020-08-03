@@ -79,20 +79,40 @@
 
 
 
-<meta name="description" content="FP Tree">
+<meta name="description" content="As an algorithm for mining frequent itemsets, the Apriori algorithm requires multiple scans of data, and I&#x2F;O efficiency is a big bottleneck. In order to solve this problem, the FP Tree algorithm (also">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Frequent Item Mining 2 - FP Tree">
 <meta property="og:url" content="http://yoursite.com/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-2-FP-Tree/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="FP Tree">
+<meta property="og:description" content="As an algorithm for mining frequent itemsets, the Apriori algorithm requires multiple scans of data, and I&#x2F;O efficiency is a big bottleneck. In order to solve this problem, the FP Tree algorithm (also">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_1.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_2.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_3.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_4.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_5.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_6.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_7.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_8.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_9.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_10.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_11.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_12.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_13.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_14.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_15.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_16.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_17.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_18.png">
+<meta property="og:image" content="http://yoursite.com/images/clustering/fp_19.png">
 <meta property="article:published_time" content="2020-07-28T22:05:20.000Z">
-<meta property="article:modified_time" content="2020-08-02T01:27:36.006Z">
+<meta property="article:modified_time" content="2020-08-02T12:55:14.986Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="Unsupervised Learning">
 <meta property="article:tag" content="Frequent Item Mining">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/clustering/fp_1.png">
 
 
 
@@ -399,7 +419,26 @@
       
 
       
-        <p>FP Tree </p>
+        <p>As an algorithm for mining frequent itemsets, the Apriori algorithm requires multiple scans of data, and I/O efficiency is a big bottleneck. In order to solve this problem, the FP Tree algorithm (also known as the FP Growth algorithm) uses some tricks, and it only needs to scan the data set twice no matter how much data, thereby improving the efficiency of the algorithm.</p>
+<h3 id="FP-Tree-construction"><a href="#FP-Tree-construction" class="headerlink" title="FP-Tree construction"></a>FP-Tree construction</h3><p><img src="/images/clustering/fp_1.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_2.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_3.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_4.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_5.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_6.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_7.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_8.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_9.png" width="60%" height="60%" title="" alt=""/></p>
+<h3 id="Conditional-Pattern-Base"><a href="#Conditional-Pattern-Base" class="headerlink" title="Conditional Pattern Base"></a>Conditional Pattern Base</h3><p><img src="/images/clustering/fp_10.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_11.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_12.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_13.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_14.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_15.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_16.png" width="60%" height="60%" title="" alt=""/></p>
+<h3 id="Conditional-FP-Tree-and-get-frequent-itemsets"><a href="#Conditional-FP-Tree-and-get-frequent-itemsets" class="headerlink" title="Conditional FP-Tree and get frequent itemsets"></a>Conditional FP-Tree and get frequent itemsets</h3><p><img src="/images/clustering/fp_17.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_18.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_19.png" width="60%" height="60%" title="" alt=""/></p>
 
       
     </div>
@@ -498,8 +537,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -559,6 +607,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#FP-Tree-construction"><span class="nav-number">1.</span> <span class="nav-text">FP-Tree construction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conditional-Pattern-Base"><span class="nav-number">2.</span> <span class="nav-text">Conditional Pattern Base</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conditional-FP-Tree-and-get-frequent-itemsets"><span class="nav-number">3.</span> <span class="nav-text">Conditional FP-Tree and get frequent itemsets</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

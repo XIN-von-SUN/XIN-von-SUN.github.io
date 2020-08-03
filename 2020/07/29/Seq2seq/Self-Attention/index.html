@@ -86,13 +86,24 @@
 <meta property="og:site_name" content="XIN SUN">
 <meta property="og:description" content="Difference between Self Attention and classic AttentionSelf Attention is very different from the traditional Attention mechanism: The traditional Attention calculates Attention based on the hidden sta">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/self_att_1.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/self_att_2.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/self_att_3.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/self_att_4.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/self_att_5.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/self_att_6.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/self_att_7.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/self_att_8.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/self_att_9.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/self_att_10.png">
 <meta property="article:published_time" content="2020-07-28T22:12:42.000Z">
-<meta property="article:modified_time" content="2020-08-02T01:27:37.899Z">
+<meta property="article:modified_time" content="2020-08-02T17:59:18.148Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Deep Learning">
 <meta property="article:tag" content="Attention">
 <meta property="article:tag" content="Self Attention">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/seq2seq/self_att_1.png">
 
 
 
@@ -389,6 +400,35 @@
 
       
         <h3 id="Difference-between-Self-Attention-and-classic-Attention"><a href="#Difference-between-Self-Attention-and-classic-Attention" class="headerlink" title="Difference between Self Attention and classic Attention"></a>Difference between Self Attention and classic Attention</h3><p>Self Attention is very different from the traditional Attention mechanism: The traditional Attention calculates Attention based on the hidden state of the source and target, and the result is the dependence relation between each word on the source and each word on the target. However self Attention is different. It only happens on the source side and the target side respectively. Only the Self Attention related to the source input or the target input itself captures the dependency relations between the words on the source side or the target side; and then the self attention obtained in the source side is added to the self attention obtained on the target end to capture the dependency relation between the words on the source end and the target end. Therefore, self attention is better than the traditional attention mechanism. One of the main reasons is that the traditional attention mechanism ignores the dependency between words in the source or target sentence, respectively. In contrast, self Attention can not only get the dependence relationship between the words and words of the source and target ends, and at the same time, the dependence relationship between the words and words of the source or target end can be effectively obtained.</p>
+<h3 id="Structure-of-Self-Attention"><a href="#Structure-of-Self-Attention" class="headerlink" title="Structure of Self-Attention"></a>Structure of Self-Attention</h3><p>Following figure is the structure of self-attention:<br><img src="/images/seq2seq/self_att_1.png" width="30%" height="30%" title="" alt=""/></p>
+<p>For self-attention, the three matrices Q(Query), K(Key), and V(Value) all come from the same input. Firstly, we need to calculate the dot product between Q and K, and then in order to avoid the result being too large, the result will be divided by a scale $\sqrt{d_k}$ , where $d_k$ is the dimension of the query and key vectors. Then use the Softmax operation to normalize the result into a probability distribution, and then multiply it by the value matrix V to get the weighted summation. This operation can be expressed as:</p>
+<script type="math/tex; mode=display">Attention(Q, K, V) = softmax(\frac{QK_T}{\sqrt{d_k}}) * V</script><h3 id="Concrete-steps-of-Self-Attention"><a href="#Concrete-steps-of-Self-Attention" class="headerlink" title="Concrete steps of Self-Attention"></a>Concrete steps of Self-Attention</h3><p>We can use a more descriptive example to show the concrete steps of self-attention: assuming we need to translate the phrase: “Thinking Machines”, and we use embedding vector $x_1$ to represent word “Thinking” and embedding vector $x_2$ to represent word “Machines”.<br>Then:</p>
+<ul>
+<li><strong>First step:</strong> to create three vectors from each of the encoder’s input vectors (in this case, the embedding of each word).<br><img src="/images/seq2seq/self_att_2.png" width="50%" height="50%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><strong>Second step:</strong> to calculate a scaled score and softmax it. Say we’re calculating the self-attention for the first word in this example, “Thinking”.<br><img src="/images/seq2seq/self_att_3.png" width="50%" height="50%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><strong>Third step:</strong> to multiply each value vector by the softmax score and then sum up the weighted value vectors.<br><img src="/images/seq2seq/self_att_4.png" width="50%" height="50%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><p><strong>Matrix Calculation of Self-Attention</strong><br>To calculate the Query, Key, and Value matrices. We do that by packing our embeddings into a matrix X, and multiplying it by the weight matrices we’ve trained $(W_Q, W_K, W_V)$.<br><img src="/images/seq2seq/self_att_5.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+<li><p><strong>Lastly</strong><br>since we’re dealing with matrices, we can condense steps in one formula to calculate the outputs of the self-attention layer.<br><img src="/images/seq2seq/self_att_6.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+</ul>
+<h3 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h3><ul>
+<li><p>Improvements:<br>• It expands the model’s ability to focus on different positions.<br>• It gives the attention layer multiple “representation subspaces”.<br><img src="/images/seq2seq/self_att_7.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+<li><p>If we do the same self-attention calculation we outlined above, just eight different times with different weight matrices, we end up with eight different Z matrices.<br><img src="/images/seq2seq/self_att_8.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+<li><p>This leaves us with a bit of a challenge. The feed-forward layer is not expecting eight matrices – it’s expecting a single matrix (a vector for each word). So we need a way to condense these eight down into a single matrix.<br>How do we do that? We concat the matrices then multiple them by an additional weights matrix $W_O$.<br><img src="/images/seq2seq/self_att_9.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+<li><p>Here we could see the overall steps of Multi-Head Attention:<br><img src="/images/seq2seq/self_att_10.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+</ul>
+<p><a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" rel="noopener">Ref</a></p>
 
       
     </div>
@@ -567,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference-between-Self-Attention-and-classic-Attention"><span class="nav-number">1.</span> <span class="nav-text">Difference between Self Attention and classic Attention</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference-between-Self-Attention-and-classic-Attention"><span class="nav-number">1.</span> <span class="nav-text">Difference between Self Attention and classic Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Structure-of-Self-Attention"><span class="nav-number">2.</span> <span class="nav-text">Structure of Self-Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Concrete-steps-of-Self-Attention"><span class="nav-number">3.</span> <span class="nav-text">Concrete steps of Self-Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-Head-Attention"><span class="nav-number">4.</span> <span class="nav-text">Multi-Head Attention</span></a></li></ol></div>
             
 
           </div>

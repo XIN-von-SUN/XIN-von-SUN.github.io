@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Deep Learning,Pre-trained,BERT," />
+  <meta name="keywords" content="Deep Learning,Pre-trained,XLNet," />
 
 
 
@@ -79,20 +79,22 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="RoBERTa In BERT, a 15% random mask is applied to sentences, which is a static mask. RoBERTa uses dynamic mask which samples the training corpus 10 times, and then uses 10 different masks for each sam">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BERT">
-<meta property="og:url" content="http://yoursite.com/2020/07/29/Pre-trained/BERT/index.html">
+<meta property="og:title" content="BERT &#x2F; XLNet &#x2F; RoBERTa &#x2F; DistillBERT &#x2F; Albert">
+<meta property="og:url" content="http://yoursite.com/2020/07/29/Pre-trained/BERT-XLNet-Bert-variants/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="RoBERTa In BERT, a 15% random mask is applied to sentences, which is a static mask. RoBERTa uses dynamic mask which samples the training corpus 10 times, and then uses 10 different masks for each sam">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-28T22:13:23.000Z">
-<meta property="article:modified_time" content="2020-07-28T22:31:45.323Z">
+<meta property="og:image" content="http://yoursite.com/images/pre_trained/xlnet_1.png">
+<meta property="article:published_time" content="2020-07-28T22:13:31.000Z">
+<meta property="article:modified_time" content="2020-08-03T00:57:49.917Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Deep Learning">
 <meta property="article:tag" content="Pre-trained">
-<meta property="article:tag" content="BERT">
+<meta property="article:tag" content="XLNet">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/pre_trained/xlnet_1.png">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/29/Pre-trained/BERT/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/29/Pre-trained/BERT-XLNet-Bert-variants/"/>
 
 
 
 
 
-  <title>BERT | XIN SUN</title>
+  <title>BERT / XLNet / RoBERTa / DistillBERT / Albert | XIN SUN</title>
   
 
 
@@ -288,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/29/Pre-trained/BERT/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/29/Pre-trained/BERT-XLNet-Bert-variants/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XIN SUN">
@@ -305,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">BERT</h1>
+          <h1 class="post-title" itemprop="name headline">BERT / XLNet / RoBERTa / DistillBERT / Albert</h1>
         
 
         <div class="post-meta">
@@ -317,7 +319,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T00:13:23+02:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T00:13:31+02:00">
                 2020-07-29
               </time>
             
@@ -388,7 +390,48 @@
       
 
       
-        
+        <p><img src="/images/pre_trained/xlnet_1.png" width="60%" height="60%" title="Comparison of BERT and recent improvements over it" alt=""/></p>
+<h3 id="RoBERTa"><a href="#RoBERTa" class="headerlink" title="RoBERTa"></a>RoBERTa</h3><ol>
+<li>In BERT, a 15% random mask is applied to sentences, which is a static mask. RoBERTa uses dynamic mask which samples the training corpus 10 times, and then uses 10 different masks for each sample.</li>
+<li>The experiment found that removing the NSP pre-trained task has a slight improvement in downstream tasks, so the NSP task is removed in RoBERTa.</li>
+<li>More training corpus and larger training batch.<br><br></li>
+</ol>
+<h3 id="ALBERT"><a href="#ALBERT" class="headerlink" title="ALBERT"></a>ALBERT</h3><p>The bert model is too large, and it will bring great challenges to online tasks with high speed and memory requirements. Albert uses some tricks to compress the parameters of BERT, which makes the model smaller.</p>
+<ul>
+<li><p><strong>Factorized Embedding Parameterization</strong><br>We know that a large number of parameters of the model are due to token embeddings. If the vocab is large, the model parameters will increase a lot. Assuming that V represents the total number of tokens and H represents the embeddings dimension, the entire token embeddings parameters that need to be learned are <script type="math/tex">O(V*H)</script>, and this matrix can be decomposed by two small matrices. <script type="math/tex">V × H = (V × E) × (E × H)</script>, then the parameters from <script type="math/tex">O(V * H)</script> to <script type="math/tex">O(V * E + E * H)</script>, because <script type="math/tex">H >> E</script>, entire parameter is reduced a lot.</p>
+</li>
+<li><p><strong>Cross-layer parameter sharing</strong><br>We know that bert is composed of 12 layers of transformers. Each layer of transformer has its own parameters. The entire parameter amount is relatively large. Albert shares all the layers of transformers with the first layer of transformer parameters, so the whole transformer parameters of ALBERT reduced by 12 times than BERT, and there is only one layer of transformer parameters.</p>
+</li>
+<li><p><strong>Change NSP to SOP</strong><br>Change NSP task to sentence-order prediction (SOP) task, which means that the two adjacent sentences in the article are positive samples, and the order of the two sentences is reversed as negative samples<br><br></p>
+</li>
+</ul>
+<h3 id="DistilBERT"><a href="#DistilBERT" class="headerlink" title="DistilBERT"></a>DistilBERT</h3><p>Knowledge distillation is to use small BERT model structure (student) to learn predictive ability of some big BERT model (teacher). And using some learning strategies to obtain a smaller, faster, but have equivanlent predictive effect to a large model.</p>
+<p><strong>Change point:</strong></p>
+<ol>
+<li><p>The DistilBert model and the Bert model have the same structure, but the number of layers is reduced by half, with only 6 layers of transformer structure</p>
+</li>
+<li><p>When training, let the distilBert model try to learn the effect of the original bert model. And the design of Loss consists of three parts, two of which are related to the output of the bert model.</p>
+<ul>
+<li><p>First: Use KL divergence to measure the probability distribution of the final output layer of bert and distilBert (to ensure that the probability distribution of each label predicted by the two models is as consistent as possible).</p>
+</li>
+<li><p>Second: The cos loss of the final output vector of bert and distilBert (to ensure that the output vector representation from the model is as similar as possible), represented by Lcos. The last part is the standard cross entropy, the cross entropy with the real label, represented by Lmlm. The final loss is obtained by adding three parts of weighted loss: <script type="math/tex">Loss = 5Lce + 3Lmlm + 2*Lcos</script><br><br></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="XLNet"><a href="#XLNet" class="headerlink" title="XLNet"></a>XLNet</h3><p>Auto Regressive model. The left-to-right language model task can only predict the next word based on the Context-before, or conversely Context-after.</p>
+<ul>
+<li><p><strong>Change point:</strong><br>Permutation Language Modeling instead of MLM in BERT.</p>
+</li>
+<li><p><strong>Reason:</strong></p>
+<ul>
+<li>When predicting words, masked words are independent of each other and can not take relationship of Masked words into consideration when doing prediction.</li>
+<li>BERT pre-trained and fine-tune are not consistent for Masked words. (No mask fine-tune)<br><br></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://zhuanlan.zhihu.com/p/70257427" target="_blank" rel="noopener">Ref</a></p>
+
       
     </div>
     
@@ -409,7 +452,7 @@
           
             <a href="/tags/Pre-trained/" rel="tag"># Pre-trained</a>
           
-            <a href="/tags/BERT/" rel="tag"># BERT</a>
+            <a href="/tags/XLNet/" rel="tag"># XLNet</a>
           
         </div>
       
@@ -422,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/29/Seq2seq/Transformer/" rel="next" title="Transformer">
-                <i class="fa fa-chevron-left"></i> Transformer
+              <a href="/2020/07/29/Pre-trained/BERT-ELMo-GPT/" rel="next" title="BERT / ELMo / GPT">
+                <i class="fa fa-chevron-left"></i> BERT / ELMo / GPT
               </a>
             
           </div>
@@ -432,8 +475,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/29/Pre-trained/XLNet/" rel="prev" title="XLNet">
-                XLNet <i class="fa fa-chevron-right"></i>
+              <a href="/2020/07/29/Deep%20Learning/RNN/RNN-GRU/" rel="prev" title="RNN - GRU">
+                RNN - GRU <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -486,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -547,6 +599,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#RoBERTa"><span class="nav-number">1.</span> <span class="nav-text">RoBERTa</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ALBERT"><span class="nav-number">2.</span> <span class="nav-text">ALBERT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DistilBERT"><span class="nav-number">3.</span> <span class="nav-text">DistilBERT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XLNet"><span class="nav-number">4.</span> <span class="nav-text">XLNet</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Deep Learning,Pre-trained,XLNet," />
+  <meta name="keywords" content="Deep Learning,Pre-trained,BERT," />
 
 
 
@@ -79,20 +79,29 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="BERTOverview of BERTThe two steps of how BERT is developed. We can download the model pre-trained in step 1 (trained on un-annotated data), and only worry about fine-tuning it for step 2.  BERT TypesB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="XLNet">
-<meta property="og:url" content="http://yoursite.com/2020/07/29/Pre-trained/XLNet/index.html">
+<meta property="og:title" content="BERT &#x2F; ELMo &#x2F; GPT">
+<meta property="og:url" content="http://yoursite.com/2020/07/29/Pre-trained/BERT-ELMo-GPT/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="BERTOverview of BERTThe two steps of how BERT is developed. We can download the model pre-trained in step 1 (trained on un-annotated data), and only worry about fine-tuning it for step 2.  BERT TypesB">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-28T22:13:31.000Z">
-<meta property="article:modified_time" content="2020-07-28T22:32:01.282Z">
+<meta property="og:image" content="http://yoursite.com/images/pre_trained/bert_1.png">
+<meta property="og:image" content="http://yoursite.com/images/pre_trained/bert_2.png">
+<meta property="og:image" content="http://yoursite.com/images/pre_trained/bert_3.png">
+<meta property="og:image" content="http://yoursite.com/images/pre_trained/bert_4.png">
+<meta property="og:image" content="http://yoursite.com/images/pre_trained/elmo_1.png">
+<meta property="og:image" content="http://yoursite.com/images/pre_trained/elmo_2.png">
+<meta property="og:image" content="http://yoursite.com/images/pre_trained/gpt_1.png">
+<meta property="og:image" content="http://yoursite.com/images/pre_trained/gpt_2.png">
+<meta property="article:published_time" content="2020-07-28T22:13:23.000Z">
+<meta property="article:modified_time" content="2020-08-02T23:31:39.540Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Deep Learning">
 <meta property="article:tag" content="Pre-trained">
-<meta property="article:tag" content="XLNet">
+<meta property="article:tag" content="BERT">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/pre_trained/bert_1.png">
 
 
 
@@ -122,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/29/Pre-trained/XLNet/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/29/Pre-trained/BERT-ELMo-GPT/"/>
 
 
 
 
 
-  <title>XLNet | XIN SUN</title>
+  <title>BERT / ELMo / GPT | XIN SUN</title>
   
 
 
@@ -288,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/29/Pre-trained/XLNet/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/29/Pre-trained/BERT-ELMo-GPT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XIN SUN">
@@ -305,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">XLNet</h1>
+          <h1 class="post-title" itemprop="name headline">BERT / ELMo / GPT</h1>
         
 
         <div class="post-meta">
@@ -317,7 +326,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T00:13:31+02:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-29T00:13:23+02:00">
                 2020-07-29
               </time>
             
@@ -388,7 +397,65 @@
       
 
       
-        
+        <h2 id="BERT"><a href="#BERT" class="headerlink" title="BERT"></a>BERT</h2><h4 id="Overview-of-BERT"><a href="#Overview-of-BERT" class="headerlink" title="Overview of BERT"></a>Overview of BERT</h4><p>The two steps of how BERT is developed. We can download the model pre-trained in step 1 (trained on un-annotated data), and only worry about fine-tuning it for step 2.</p>
+<p><img src="/images/pre_trained/bert_1.png" width="60%" height="60%" title="" alt=""/></p>
+<h4 id="BERT-Types"><a href="#BERT-Types" class="headerlink" title="BERT Types"></a>BERT Types</h4><p>BERT is basically a trained Transformer Encoder stack. The paper provides us 2 types of BERT:<br>• BERT BASE – L=12, Hidden units=768, heads=12, parameters:110M; Comparable in size to the OpenAI Transformer in order to compare performance<br>• BERT LARGE – L=24, Hidden units=1024, heads=16, parameters340M; A ridiculously huge model which achieved the state of the art results reported in the paper</p>
+<h4 id="How-BERT-works"><a href="#How-BERT-works" class="headerlink" title="How BERT works"></a>How BERT works</h4><p>BERT makes use of Transformer, an attention mechanism that learns contextual relations between words (or sub-words) in a text. Since BERT’s goal is to generate a language model, only the encoder mechanism is necessary.</p>
+<p>As opposed to directional models, which read the text input sequentially (left-to-right or right-to-left), the Transformer encoder reads the entire sequence of words at once. Therefore it is considered bidirectional, though it would be more accurate to say that it’s non-directional. This characteristic allows the model to learn the context of a word based on all of its surroundings (left and right of the word).</p>
+<p>BERT uses two training strategies to train the language model:</p>
+<ul>
+<li><h4 id="Masked-LM-MLM"><a href="#Masked-LM-MLM" class="headerlink" title="Masked LM (MLM)"></a>Masked LM (MLM)</h4>Before feeding word sequences into BERT, 15% of the words in each sequence are replaced with a [MASK] token. The model then attempts to predict the original value of the masked words, based on the context provided by the other, non-masked, words in the sequence. In technical terms, the prediction of the output words requires:</li>
+</ul>
+<ol>
+<li>Adding a classification layer on top of the encoder output.</li>
+<li>Multiplying the output vectors by the embedding matrix, transforming them into the vocabulary dimension.</li>
+<li><p>Calculating the probability of each word in the vocabulary with softmax.<br><img src="/images/pre_trained/bert_2.png" width="60%" height="60%" title="" alt=""/></p>
+<p> The BERT loss function takes into consideration only the prediction of the masked values and ignores the prediction of the non-masked words. As a consequence, the model converges slower than directional models, a characteristic which is offset by its increased context awareness.<br> Note: In practice, the BERT implementation is slightly more elaborate and doesn’t replace all of the 15% masked words.</p>
+</li>
+</ol>
+<ul>
+<li><h4 id="Next-Sentence-Prediction-NSP"><a href="#Next-Sentence-Prediction-NSP" class="headerlink" title="Next Sentence Prediction (NSP)"></a>Next Sentence Prediction (NSP)</h4><p>In the BERT training process, the model receives pairs of sentences as input and learns to predict if the second sentence in the pair is the subsequent sentence in the original document. During training, 50% of the inputs are a pair in which the second sentence is the subsequent sentence in the original document, while in the other 50% a random sentence from the corpus is chosen as the second sentence. The assumption is that the random sentence will be disconnected from the first sentence.</p>
+<p>  To help the model distinguish between the two sentences in training, the input is processed in the following way before entering the model:</p>
+</li>
+</ul>
+<ol>
+<li>A [CLS] token is inserted at the beginning of the first sentence and a [SEP] token is inserted at the end of each sentence.</li>
+<li>A sentence embedding indicating Sentence A or Sentence B is added to each token. Sentence embeddings are similar in concept to token embeddings with a vocabulary of 2.</li>
+<li><p>A positional embedding is added to each token to indicate its position in the sequence. The concept and implementation of positional embedding are presented in the Transformer paper.<br><img src="/images/pre_trained/bert_3.png" width="60%" height="60%" title="" alt=""/></p>
+<p> To predict if the second sentence is indeed connected to the first, the following steps are performed:</p>
+<ol>
+<li>The entire input sequence goes through the Transformer model.</li>
+<li>The output of the [CLS] token is transformed into a 2×1 shaped vector, using a simple classification layer (learned matrices of weights and biases).</li>
+<li>Calculating the probability of IsNextSequence with softmax.</li>
+</ol>
+</li>
+</ol>
+<p>When training the BERT model, Masked LM and Next Sentence Prediction are trained together, with the goal of minimizing the combined loss function of the two strategies.</p>
+<h4 id="How-to-use-BERT-Fine-tuning"><a href="#How-to-use-BERT-Fine-tuning" class="headerlink" title="How to use BERT (Fine-tuning)"></a>How to use BERT (Fine-tuning)</h4><p>Using BERT for a specific task is relatively straightforward:<br>BERT can be used for a wide variety of language tasks, while only adding a small layer to the core model:</p>
+<ol>
+<li>Classification tasks such as sentiment analysis are done similarly to Next Sentence classification, by adding a classification layer on top of the Transformer output for the [CLS] token.</li>
+<li>In Question Answering tasks (e.g. SQuAD v1.1), the software receives a question regarding a text sequence and is required to mark the answer in the sequence. Using BERT, a Q&amp;A model can be trained by learning two extra vectors that mark the beginning and the end of the answer.</li>
+<li>In Named Entity Recognition (NER), the software receives a text sequence and is required to mark the various types of entities (Person, Organization, Date, etc) that appear in the text. Using BERT, a NER model can be trained by feeding the output vector of each token into a classification layer that predicts the NER label.<br><img src="/images/pre_trained/bert_4.png" width="60%" height="60%" title="" alt=""/></li>
+</ol>
+<p><strong>Also, we can fine tune the BERT pre-trained model on our own corpus which will make BERT model more suitable for our tasks and data, thereby imporve the performance better.</strong></p>
+<p><a href="https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270" target="_blank" rel="noopener">Ref</a><br><br></p>
+<h2 id="ELMo"><a href="#ELMo" class="headerlink" title="ELMo"></a>ELMo</h2><p>ELMO is short for Embeddings from Language Model, ELMO is an RNN-based language model whose task is to learn what the next word or previous word in a sentence is.</p>
+<p>It is a bo-directional RNN, so that each word corresponds to two different hidden states, and the embedding representation of the word can be obtained by concatenation. When the context of the same word is different, the embedding is different.</p>
+<p>With such a multi-layered RNNs, the internal output of each layer is a representation of the word, so which layer of output do we take to represent the embedding of the word? ELMO’s approach is that it need all.<br><img src="/images/pre_trained/elmo_1.png" width="60%" height="60%" title="" alt=""/></p>
+<p>In ELMO, a word will get multiple embeddings, and the weighted summation of different embeddings can get the final embedding for downstream tasks. To illustrate the number of embedding here, the figure below only draws the hidden state of the two-layer RNN output. In fact, the original embedding input to the RNN is also needed, so you will see that the picture in the lower right corner contains three embedding. But different weights are learned based on downstream tasks. There are 5 different tasks in the lower right corner of the above figure, and the embedding weights obtained are different.<br><img src="/images/pre_trained/elmo_2.png" width="60%" height="60%" title="" alt=""/></p>
+<ul>
+<li><strong>Difference ELMo / BERT:</strong><br>• ELMo use LSTM as feature extractor, while BERT use transformer.<br><br></li>
+</ul>
+<h2 id="GPT-Generative-Pre-Training"><a href="#GPT-Generative-Pre-Training" class="headerlink" title="GPT (Generative Pre-Training)"></a>GPT (Generative Pre-Training)</h2><p>GPT is an Auto-regression model. It use Transformer Decoder side.<br>The GPT pre-trained tasks are: txt prediction与Task classifier。<br><img src="/images/pre_trained/gpt_1.png" width="60%" height="60%" title="" alt=""/></p>
+<ul>
+<li><strong>GPT has a two-stage process</strong><br>The first stage is to use the language model for pre-training,<br>The second stage solves downstream tasks through the Fine-tuning model.</li>
+</ul>
+<ul>
+<li><p>The picture above shows pre-training of GPT, which is similar to ELMO, with <strong>two differences (Pre_trained ELMo vs GPT)</strong>:<br>• First of all, the feature extractor is not RNN, but Transformer. As mentioned above, its feature extraction ability is stronger than RNN. This choice is obviously very wise.<br>• Secondly, although the pre-training of GPT still takes the language model as the target task, it uses a single directional language model. The so-called <strong>“single directional”</strong> means that the task of language model training aims to predict words based on the contextual word $W_i$. The words before $W_i$ is called Context-before, and the words after it is called Context-after. ELMO uses both Context-before and Context-after at the same time when doing language model pre-training for predicting the word $W_i$, while GPT only uses the Context-before to make predictions without Context-after.</p>
+<p>  Unlike ELMo, which only provides word vectors, GPT pre-trained models are also provided to downstream tasks. The vectors of the model here can be adjusted slightly with new downstream tasks, that is called, fine-tune<br><img src="/images/pre_trained/gpt_2.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+</ul>
+
       
     </div>
     
@@ -409,7 +476,7 @@
           
             <a href="/tags/Pre-trained/" rel="tag"># Pre-trained</a>
           
-            <a href="/tags/XLNet/" rel="tag"># XLNet</a>
+            <a href="/tags/BERT/" rel="tag"># BERT</a>
           
         </div>
       
@@ -422,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/29/Pre-trained/BERT/" rel="next" title="BERT">
-                <i class="fa fa-chevron-left"></i> BERT
+              <a href="/2020/07/29/Seq2seq/Transformer/" rel="next" title="Transformer">
+                <i class="fa fa-chevron-left"></i> Transformer
               </a>
             
           </div>
@@ -432,8 +499,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/29/Deep%20Learning/RNN/RNN-GRU/" rel="prev" title="RNN - GRU">
-                RNN - GRU <i class="fa fa-chevron-right"></i>
+              <a href="/2020/07/29/Pre-trained/BERT-XLNet-Bert-variants/" rel="prev" title="BERT / XLNet / RoBERTa / DistillBERT / Albert">
+                BERT / XLNet / RoBERTa / DistillBERT / Albert <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -486,8 +553,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -547,6 +623,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BERT"><span class="nav-number">1.</span> <span class="nav-text">BERT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Overview-of-BERT"><span class="nav-number">1.0.1.</span> <span class="nav-text">Overview of BERT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BERT-Types"><span class="nav-number">1.0.2.</span> <span class="nav-text">BERT Types</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#How-BERT-works"><span class="nav-number">1.0.3.</span> <span class="nav-text">How BERT works</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Masked-LM-MLM"><span class="nav-number">1.0.4.</span> <span class="nav-text">Masked LM (MLM)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Next-Sentence-Prediction-NSP"><span class="nav-number">1.0.5.</span> <span class="nav-text">Next Sentence Prediction (NSP)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#How-to-use-BERT-Fine-tuning"><span class="nav-number">1.0.6.</span> <span class="nav-text">How to use BERT (Fine-tuning)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ELMo"><span class="nav-number">2.</span> <span class="nav-text">ELMo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPT-Generative-Pre-Training"><span class="nav-number">3.</span> <span class="nav-text">GPT (Generative Pre-Training)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

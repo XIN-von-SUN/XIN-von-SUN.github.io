@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Deep Learning,Self Attention,Seq2seq,Encoder-Decoder,Transformer," />
+  <meta name="keywords" content="Deep Learning,Seq2seq,Self Attention,Encoder-Decoder,Transformer," />
 
 
 
@@ -79,22 +79,32 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="Architecture of TransformerAt first, we can see the overall architecture of Transformer below: The Encoder sideThe encoding component is a stack of encoders (the paper stacks six of them on top of eac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Transformer">
 <meta property="og:url" content="http://yoursite.com/2020/07/29/Seq2seq/Transformer/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="Architecture of TransformerAt first, we can see the overall architecture of Transformer below: The Encoder sideThe encoding component is a stack of encoders (the paper stacks six of them on top of eac">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/transformer_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/transformer_2.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/transformer_3.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/transformer_4.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/transformer_5.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/transformer_6.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/transformer_7.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/transformer_8.png">
+<meta property="og:image" content="http://yoursite.com/images/seq2seq/transformer_9.png">
 <meta property="article:published_time" content="2020-07-28T22:13:13.000Z">
-<meta property="article:modified_time" content="2020-07-28T22:33:48.011Z">
+<meta property="article:modified_time" content="2020-08-02T17:59:16.381Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Deep Learning">
-<meta property="article:tag" content="Self Attention">
 <meta property="article:tag" content="Seq2seq">
+<meta property="article:tag" content="Self Attention">
 <meta property="article:tag" content="Encoder-Decoder">
 <meta property="article:tag" content="Transformer">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/seq2seq/transformer_1.jpg">
 
 
 
@@ -390,7 +400,45 @@
       
 
       
-        
+        <h3 id="Architecture-of-Transformer"><a href="#Architecture-of-Transformer" class="headerlink" title="Architecture of Transformer"></a>Architecture of Transformer</h3><p>At first, we can see the <strong>overall architecture</strong> of Transformer below:<br><img src="/images/seq2seq/transformer_1.jpg" width="60%" height="60%" title="" alt=""/></p>
+<h3 id="The-Encoder-side"><a href="#The-Encoder-side" class="headerlink" title="The Encoder side"></a>The Encoder side</h3><p>The encoding component is a stack of encoders (the paper stacks six of them on top of each other – there’s nothing magical about the number six, one can definitely experiment with other arrangements). The decoding component is a stack of decoders of the same number.<br><img src="/images/seq2seq/transformer_2.png" width="60%" height="60%" title="" alt=""/></p>
+<p>The encoders are all identical in structure (yet they do not share weights). Each one is broken down into two sub-layers。<br>The encoder’s inputs first flow through a self-attention layer – a layer that helps the encoder look at other words in the input sentence as it encodes a specific word. We’ll look closer at self-attention later in the post.</p>
+<p>The outputs of the self-attention layer are fed to a feed-forward neural network. The exact same feed-forward network is independently applied to each position.</p>
+<p>The decoder has both those layers, but between them is an attention layer that helps the decoder focus on relevant parts of the input sentence (similar what attention does in seq2seq models).<br><img src="/images/seq2seq/transformer_3.png" width="60%" height="60%" title="" alt=""/></p>
+<p>For the encoder, there are two layers, a self-attention layer and a feedforward neural network layer. Self-attention can help the current state not only pay attention to the current word, so as to obtain the semantics of the context.</p>
+<p>The decoder also contains the two-layer network mentioned by the encoder, but there is also an attention layer between the two layers to help the current state get the current key content that needs to be paid attention to.</p>
+<p>After the end of Enmbedding, input embedding result to the encoder layer. After processing of self-attention, the data is sent to the feedforward neural network. And the calculation of the feedforward neural network can be parallelized, and the obtained output will be input to the next encoder.<br><img src="/images/seq2seq/transformer_4.png" width="60%" height="60%" title="" alt=""/></p>
+<ul>
+<li><h5 id="Positional-Embedding"><a href="#Positional-Embedding" class="headerlink" title="Positional Embedding"></a>Positional Embedding</h5><p>The transformer adds a vector to each input embedding. These vectors follow a specific pattern that the model learns, which helps it determine the position of each word, or the distance between different words in the sequence. The intuition here is that adding these values to the embeddings provides meaningful distances between the embedding vectors once they’re projected into Q/K/V vectors and during dot-product attention.<br><img src="/images/seq2seq/transformer_5.png" width="60%" height="60%" title="" alt=""/></p>
+<p>  Following formular is how to calculate positional embedding vectors.<br>  pos is the position of current word, i is the index for each value of vector. We can find that, we use sin in the even position, and cos in the odd position.<br><img src="/images/seq2seq/transformer_6.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+</ul>
+<ul>
+<li><h5 id="Layer-Normalization"><a href="#Layer-Normalization" class="headerlink" title="Layer Normalization"></a>Layer Normalization</h5><p>In the transformer, each sub-layer (self-attetion, ffnn) will be followed by a residual module, and there will also be a Layer normalization.<br><img src="/images/seq2seq/transformer_7.png" width="60%" height="60%" title="" alt=""/></p>
+<p>  This goes for the sub-layers of the decoder as well. If we’re to think of a Transformer of 2 stacked encoders and decoders, it would look something like this:<br><img src="/images/seq2seq/transformer_8.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+</ul>
+<h3 id="The-Decoder-side"><a href="#The-Decoder-side" class="headerlink" title="The Decoder side"></a>The Decoder side</h3><p>Now that we’ve covered most of the concepts on the encoder side, we basically know how the components of decoders work as well. But let’s take a look at how they work together.</p>
+<p>The encoder start by processing the input sequence. The output of the top encoder is then transformed into a set of attention vectors K and V. These are to be used by each decoder in its “encoder-decoder attention” layer which helps the decoder focus on appropriate places in the input sequence</p>
+<p>We can find that the decoder side is actually the same as the encoder side, but there is an additional <strong>masked mutil-head attetion</strong> at the bottom of Decoder. The mask here is also a key technology of the transformer. Let’s take a look below.</p>
+<h5 id="Mask"><a href="#Mask" class="headerlink" title="Mask"></a>Mask</h5><p>Mask represents a mask, which masks certain values so that it has no effect when the parameters are updated. There are two types of masks involved in the Transformer model: <strong>padding mask and sequence mask</strong>.<br>Among them, the padding mask needs to be used in all scaled dot-product attention, and the sequence mask is only used in the self-attention of the decoder.</p>
+<ul>
+<li><p>Padding Mask<br>What is a padding mask? Because the length of each batch of input sequence is different, which means, we have to align the input sequence. Specifically, we have to fill 0 after the shorter sequence while the content on the left is intercepted if the input sequence is too long and the excess is discarded directly. Because these filling positions are actually meaningless, our attention mechanism should not focus on these positions, so we need to do some processing.</p>
+<p>  The specific method is to add a very large negative number (negative infinity) to the value of these positions. In this case, the probability of these positions will be close to 0 after softmax. And our padding mask is actually a tensor, each value is a Boolean, the value of false is where we want to process.</p>
+</li>
+<li><p>Sequence mask<br>The sequence mask is to make the decoder unable to see future information. For instance, for a sequence at the moment time_step is t, our decoding output should only depend on the output before time t, and not on the output after t. Therefore, we need to find a way to hide the information after t.</p>
+<p>  So how can we do it? It’s also very simple: generate an upper triangular matrix, the values of the upper triangle are all set to 0. Apply this matrix to each sequence to achieve our goal.<br><img src="/images/seq2seq/transformer_9.png" width="40%" height="40%" title="" alt=""/></p>
+<p>  For the self-attention of the decoder, the scaled dot-product attention used in it also requires padding mask and sequence mask as attn_mask. The specific implementation is to add two masks as “attn_mask”. In other cases, “attn_mask” is equal to padding mask.</p>
+</li>
+</ul>
+<ul>
+<li><h5 id="Difference-on-mask-self-attention-and-encoder-decoder-attention"><a href="#Difference-on-mask-self-attention-and-encoder-decoder-attention" class="headerlink" title="Difference on mask-self-attention and encoder-decoder-attention"></a>Difference on mask-self-attention and encoder-decoder-attention</h5>Regarding these two attention layers in Decoder, it can be understood that: mask-self-attention aims to calculate the relationship between the currently translated content and the previous text that has been translated, while encoder-decoder-attention aims to calculate the relationship between current translation content and the feature vectors from Encoder.</li>
+</ul>
+<ul>
+<li><h5 id="Decoder-input-and-output"><a href="#Decoder-input-and-output" class="headerlink" title="Decoder input and output"></a>Decoder input and output</h5>• <strong>Output:</strong> the probability distribution of the output word corresponding to position i<br>• <strong>Input:</strong> the output of the encoder &amp; the output of the decoder at i-1 position. So the intermediate <strong>encoder-decoder-attention</strong> is not a self-attention, its K and V come from the encoder, and Q comes from the output of the previous state in Decoder.<br>• <strong>Decoder:</strong> Special attention should be paid here. The encoder can be calculated in parallel and all encoding is done at one time, but decoder is not solved on all sequences at once, but solved one by one like rnn, because the Query is used as attention of input at the previous position of Decoder.</li>
+</ul>
+<h3 id="Output-side"><a href="#Output-side" class="headerlink" title="Output side"></a>Output side</h3><p>When the decoder is all executed, how to map the obtained vector to the words we need? We just add a fully connected layer and a softmax layer at the end. </p>
+
       
     </div>
     
@@ -409,9 +457,9 @@
           
             <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
           
-            <a href="/tags/Self-Attention/" rel="tag"># Self Attention</a>
-          
             <a href="/tags/Seq2seq/" rel="tag"># Seq2seq</a>
+          
+            <a href="/tags/Self-Attention/" rel="tag"># Self Attention</a>
           
             <a href="/tags/Encoder-Decoder/" rel="tag"># Encoder-Decoder</a>
           
@@ -438,8 +486,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/29/Pre-trained/BERT/" rel="prev" title="BERT">
-                BERT <i class="fa fa-chevron-right"></i>
+              <a href="/2020/07/29/Pre-trained/BERT-ELMo-GPT/" rel="prev" title="BERT / ELMo / GPT">
+                BERT / ELMo / GPT <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -492,8 +540,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -553,6 +610,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Architecture-of-Transformer"><span class="nav-number">1.</span> <span class="nav-text">Architecture of Transformer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Encoder-side"><span class="nav-number">2.</span> <span class="nav-text">The Encoder side</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Positional-Embedding"><span class="nav-number">2.0.1.</span> <span class="nav-text">Positional Embedding</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Layer-Normalization"><span class="nav-number">2.0.2.</span> <span class="nav-text">Layer Normalization</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Decoder-side"><span class="nav-number">3.</span> <span class="nav-text">The Decoder side</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Mask"><span class="nav-number">3.0.1.</span> <span class="nav-text">Mask</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Difference-on-mask-self-attention-and-encoder-decoder-attention"><span class="nav-number">3.0.2.</span> <span class="nav-text">Difference on mask-self-attention and encoder-decoder-attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Decoder-input-and-output"><span class="nav-number">3.0.3.</span> <span class="nav-text">Decoder input and output</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output-side"><span class="nav-number">4.</span> <span class="nav-text">Output side</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
