@@ -1,6 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Active Learning</title>
+    <url>/2020/08/03/Dataset%20construction%20and%20annotation/Active-Learning/</url>
+    <content><![CDATA[<h4 id="Overview-of-Active-Learning"><a href="#Overview-of-Active-Learning" class="headerlink" title="Overview of Active Learning"></a>Overview of Active Learning</h4><ul>
+<li><p><strong>Inspirated Scenario</strong><br>To classify a large amount of unlabeled data, but there is no labeled data available to train the classifier, and due to time / money cost constraints, it is difficult to label a large number of data sets for training the classifier.</p>
+</li>
+<li><p><strong>The key hypothesis</strong><br>Whether the learning algorithm is allowed to choose the data from which it learns—to be “curious,” if you will—it will perform better with less training. </p>
+</li>
+<li><p><strong>Goal</strong><br>Reduce labeling costs.</p>
+</li>
+<li><p><strong>Sample Information - Entropy</strong><br>Before introducing the concept of active learning, we can first talk about sample information.<br>Sample information can simply means: the information that each sample from training dataset brings to the training model is different. That is, each sample has a large or small different contribution to training model. </p>
+<p>  And we can quantify this information by <strong>Entropy</strong>. Normally the higher entropy, the larger information will be.</p>
+</li>
+<li><p><strong>Definition of Active Learning</strong><br>In some cases, the unlabeled data is quite abundant and the labeled data is quite rare, and the cost of manually labeling the data is quite high (both time and money). In this case, we can let the learning algorithm proactively propose which data should be labeled, and then we can send these data for labeling by experts, and finally add these new labeled data to the training dataset to train the algorithm. This process is called <strong>Active Learning</strong>.<br><br></p>
+</li>
+</ul>
+<h4 id="Active-learning-VS-semi-supervised-learning"><a href="#Active-learning-VS-semi-supervised-learning" class="headerlink" title="Active learning VS semi-supervised learning"></a>Active learning VS semi-supervised learning</h4><p>Many people think that active learning also belongs to semi-supervised learning, but in fact it is different. Semi-supervised learning, transductive learning and active learning are all learning techniques that use unlabeled data, but the principal idea behind them is different.</p>
+<p>As mentioned above, the “active” of active learning refers to be initiative to make a labeling request, that is to say, an external entity (usually a person in the relevant field) that can label the data is required, which means, active learning is an interactive process.</p>
+<p>Semi-supervised learning specifically refers to only use unlabeled data based on the learning algorithm self without manual intervention.<br><br></p>
+<h4 id="Active-learning-Scenarios"><a href="#Active-learning-Scenarios" class="headerlink" title="Active learning Scenarios"></a>Active learning Scenarios</h4><ul>
+<li><p><strong>Membership query synthesis</strong>, i.e., a generated sample is sent to an oracle for labeling.<br>This is a big term which simply means that the learner generates/constructs an instance (from some underlying natural distribution). For example, if the data is pictures of digits, the learner would create an image that is similar to a digit (it might be rotated or some piece of the digit excluded) and this created image is sent to the oracle to label.<br><img src="/images/dataset/active_3.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+<li><p><strong>Stream-Based selective sampling</strong>, i.e, each sample is considered separately - in our case for lable-querying or rejection. Similarly to online-learning, the data is not saved, there are no assumptions on data distribution, and therefore it is adaptive to change.<br><img src="/images/dataset/active_4.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+<li><p><strong>Pool-Based sampling</strong>, i.e., sampled are chosen from a pool of unlabeled data for the purpose of labeling. In this tutorial we use the third scenario. This setting assumes that there is a large pool of unlabelled data, as with the stream-based selective sampling. Instances are then drawn from the pool according to some informativeness measure. This measure is applied to all instances in the pool (or some subset if the pool is very large) and then the most informative instance(s) are selected. This is the most common scenario in the active learning community.<br><img src="/images/dataset/active_5.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+</ul>
+<p><br></p>
+<h4 id="Composition-and-stages-for-Active-learning"><a href="#Composition-and-stages-for-Active-learning" class="headerlink" title="Composition and stages for Active learning:"></a>Composition and stages for Active learning:</h4><ul>
+<li><p><strong>Composition</strong><br>Active learning algorithms can be modeled by following five components:</p>
+<script type="math/tex; mode=display">𝐴=(𝐶,𝐿,𝑆,𝑄,𝑈)</script><p>Where $C$ is a classifier or a group of classifiers; $𝐿$ is a set of labeled training samples; $𝑄$ is a query function or strategy used to query samples with large amounts of information in unlabeled samples; $𝑈$ is the entire unlabeled sample set; $𝑆$ is a expert who can label unlabeled samples.</p>
+</li>
+<li><p><strong>Stages</strong><br>First stage: the initialization stage.<br>A small part of the unlabeled samples is randomly selected and labeled by the experts as a training set to build an initial classifier model;<br>The second stage: the cyclic query stage.<br>In the unlabeled sample set $𝑈$, certain unlabeled samples are selected for labeling and added to the training sample set $𝐿$ according to a certain query standard $𝑄$, and the classifier is retrained until the training stop criteria is reached.</p>
+</li>
+</ul>
+<p><img src="/images/dataset/active_2.png" width="60%" height="60%" title="" alt=""/><br><br></p>
+<h4 id="Concrete-steps-for-Pool-Based-sampling-scenario"><a href="#Concrete-steps-for-Pool-Based-sampling-scenario" class="headerlink" title="Concrete steps for Pool-Based sampling scenario"></a>Concrete steps for Pool-Based sampling scenario</h4><ol>
+<li>Divide the data to a ‘pool’ and a test-set</li>
+<li>Select ‘k’ samples from the pool for the initial train-set and label them, the remaining data will be the validation-set</li>
+<li>Normalize all the sets</li>
+<li>Train the Model using the train-set, with balanced weights.</li>
+<li>Use the trained model with the validation-set, get probabilities per sample.</li>
+<li>Use the trained model with the test-set, get performance measures.</li>
+<li>Select ‘k’ most-informative samples based on per-sample-probabilities, i.e., those that the model was most uncertain about regarding their labelling.</li>
+<li>Move these ‘k’ samples from the validation set to the train-set and query their labels.</li>
+<li>Inverse normalization for all the data-sets</li>
+<li>Stop according to the stop criterion, otherwise go to 3.<br><br></li>
+</ol>
+<h4 id="Query-Selection-Strategy"><a href="#Query-Selection-Strategy" class="headerlink" title="Query / Selection Strategy"></a>Query / Selection Strategy</h4><p>I will use the table below to explain the query strategies. This table shows two data points (instances) and the probabilities that each instance has each label.<br><img src="/images/dataset/active_6.png" width="60%" height="60%" title="" alt=""/></p>
+<ul>
+<li><p><strong>Random selection:</strong> we just select ‘k’ random samples from the unlabeled dataset.</p>
+</li>
+<li><p><strong>Least Confidence (LC):</strong> in this strategy, the learner selects the instance for which it has the least confidence in its most likely label. Looking at the table, the leaner is pretty confident about the label for d1, since it thinks it should be labelled A with probability 0.9, however, it is less sure about the label of d2 since its probabilities are more spread and it thinks that it should be labelled B with a probability of only 0.5. Thus, using least confidence, the learner would select d2 to query it’s actual label.</p>
+</li>
+<li><p><strong>Margin Sampling:</strong> the shortcoming of the LC strategy, is that it only takes into consideration the most probable label and disregards the other label probabilities. The margin sampling strategy seeks to overcome this disadvantage by selecting the instance that has the smallest difference between the first and second most probable labels. Looking at d1, the difference between its first and second most probable labels is 0.81 (0.9 - 0.09) and for d2 it is 0.2 (0.5 - 0.3). Hence, the leaner will select d2 again.</p>
+</li>
+<li><p><strong>Entropy Sampling:</strong> in order to utilize all the possible label probabilities, we can also use a popular measure called entropy. The entropy formula is applied to each instance and the instance with the largest value is queried.<br><br></p>
+</li>
+</ul>
+<h4 id="Stopping-criteria"><a href="#Stopping-criteria" class="headerlink" title="Stopping criteria"></a>Stopping criteria</h4><ul>
+<li><p>All unlabeled data is running out.</p>
+</li>
+<li><p>No money or access for further labeling.</p>
+</li>
+<li><p>Required to stop progress.</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dataset construction and annotation</category>
+        <category>Active Learning</category>
+      </categories>
+      <tags>
+        <tag>Dataset construction and annotation</tag>
+        <tag>Active Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Data Augmentation in NLP</title>
+    <url>/2020/08/04/Dataset%20construction%20and%20annotation/Data-Augmentation-in-NLP/</url>
+    <content><![CDATA[<p>Data Augmentation is an effective way to expand the size of data samples. The larger the data size and the higher the quality we can get. And the model can have better generalization ability.<br>Unlike computer vision using images for data augmentation, text data augmentation in NLP is very rare, because some simple operations on the image, such as rotating the image or converting it to grayscale, do not change its semantics, while text data is not.<br><img src="/images/dataset/augmentation_1.png" width="60%" height="60%" title="" alt=""/></p>
+<p><br></p>
+<h2 id="Approaches-for-Data-Augmentation-in-NLP"><a href="#Approaches-for-Data-Augmentation-in-NLP" class="headerlink" title="Approaches for Data Augmentation in NLP"></a>Approaches for Data Augmentation in NLP</h2><h4 id="Easy-Data-Augmentation，EDA"><a href="#Easy-Data-Augmentation，EDA" class="headerlink" title="Easy Data Augmentation，EDA"></a>Easy Data Augmentation，EDA</h4><ul>
+<li><p><strong>Synonym Replacement</strong><br>Randomly select n words that are not in the stop word set from the sentence, and randomly select their synonyms to replace them;</p>
+</li>
+<li><p><strong>Random Insertion</strong><br>Randomly find a word in the sentence that does not belong to the stop word set, find its random synonyms, and insert the synonyms into a random position in the sentence. Repeat n times;<br><img src="/images/dataset/augmentation_13.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+<li><p><strong>Random Swap</strong><br>Randomly choose two words in the sentence and swap their positions. Repeat n times;<br><img src="/images/dataset/augmentation_14.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+<li><p><strong>Random Deletion</strong><br>Randomly remove each word in the sentence with the probability p<br><img src="/images/dataset/augmentation_15.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+</ul>
+<h4 id="Lexical-Substitution"><a href="#Lexical-Substitution" class="headerlink" title="Lexical Substitution"></a>Lexical Substitution</h4><ul>
+<li><p><strong>Words dictionary-based substitution</strong><br>In this technique, we take a random word from the sentence and replace it with its synonym using a Thesaurus (Words dictionary). For example, we could use the WordNet database for English to look up the synonyms and then perform the replacement. It is a manually curated database with relations between words.<br><img src="/images/dataset/augmentation_2.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+<li><p><strong>Word-Embeddings Substitution</strong><br>In this approach, we take pre-trained word embeddings such as Word2Vec, GloVe, FastText, Sent2Vec, and use the nearest neighbor words in the embedding space as the replacement for some word in the sentence.<br><img src="/images/dataset/augmentation_3.png" width="40%" height="30%" title="" alt=""/></p>
+<p>  It’s easy to use packages like Gensim to access pre-trained word vectors and get the nearest neighbors. For example, here we find the synonyms for the word ‘awesome’ using word vectors trained on tweets.</p>
+  <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># pip install gensim</span></span><br><span class="line"><span class="keyword">import</span> gensim.downloader <span class="keyword">as</span> api</span><br><span class="line"></span><br><span class="line">model = api.load(<span class="string">'glove-twitter-25'</span>)  </span><br><span class="line">model.most_similar(<span class="string">'awesome'</span>, topn=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p>  You will get back the 5 most similar words along with the cosine similarities.</p>
+  <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[(<span class="string">'amazing'</span>, <span class="number">0.9687871932983398</span>),</span><br><span class="line">(<span class="string">'best'</span>, <span class="number">0.9600659608840942</span>),</span><br><span class="line">(<span class="string">'fun'</span>, <span class="number">0.9331520795822144</span>),</span><br><span class="line">(<span class="string">'fantastic'</span>, <span class="number">0.9313924312591553</span>),</span><br><span class="line">(<span class="string">'perfect'</span>, <span class="number">0.9243415594100952</span>)]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Masked Language Model</strong><br>Transformer models such as BERT, ROBERTA and ALBERT have been trained on a large amount of text using a pretext task called “Masked Language Modeling” where the model has to predict masked words based on the context.<br>This can be used to augment some text. For example, we could use a pre-trained BERT model, mask some parts of the text and ask the BERT model to predict the token for the mask.<br><img src="/images/dataset/augmentation_4.png" width="40%" height="25%" title="" alt=""/></p>
+<p>  hus, we can generate variations of a text using the mask predictions. Compared to previous approaches, the generated text is more grammatically coherent as the model takes context into account when making predictions.<br><img src="/images/dataset/augmentation_5.png" width="60%" height="60%" title="" alt=""/></p>
+<p>  This is easy to implement with open-source libraries such as transformers by Hugging Face. You can set the token you want to replace with <mask> and generate predictions.</p>
+  <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> transformers <span class="keyword">import</span> pipeline</span><br><span class="line">nlp = pipeline(<span class="string">'fill-mask'</span>)</span><br><span class="line">nlp(<span class="string">'This is &lt;mask&gt; cool'</span>)</span><br><span class="line"></span><br><span class="line">[&#123;<span class="string">'score'</span>: <span class="number">0.515411913394928</span>,</span><br><span class="line"><span class="string">'sequence'</span>: <span class="string">'&lt;s&gt; This is pretty cool&lt;/s&gt;'</span>,</span><br><span class="line"><span class="string">'token'</span>: <span class="number">1256</span>&#125;,</span><br><span class="line">&#123;<span class="string">'score'</span>: <span class="number">0.1166248694062233</span>,</span><br><span class="line"><span class="string">'sequence'</span>: <span class="string">'&lt;s&gt; This is really cool&lt;/s&gt;'</span>,</span><br><span class="line"><span class="string">'token'</span>: <span class="number">269</span>&#125;,</span><br><span class="line">&#123;<span class="string">'score'</span>: <span class="number">0.07387523353099823</span>,</span><br><span class="line"><span class="string">'sequence'</span>: <span class="string">'&lt;s&gt; This is super cool&lt;/s&gt;'</span>,</span><br><span class="line"><span class="string">'token'</span>: <span class="number">2422</span>&#125;,</span><br><span class="line">&#123;<span class="string">'score'</span>: <span class="number">0.04272908344864845</span>,</span><br><span class="line"><span class="string">'sequence'</span>: <span class="string">'&lt;s&gt; This is kinda cool&lt;/s&gt;'</span>,</span><br><span class="line"><span class="string">'token'</span>: <span class="number">24282</span>&#125;,</span><br><span class="line">&#123;<span class="string">'score'</span>: <span class="number">0.034715913236141205</span>,</span><br><span class="line"><span class="string">'sequence'</span>: <span class="string">'&lt;s&gt; This is very cool&lt;/s&gt;'</span>,</span><br><span class="line"><span class="string">'token'</span>: <span class="number">182</span>&#125;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>TF-IDF based word replacement</strong><br>The basic idea is that words that have low TF-IDF scores are uninformative and thus can be replaced without affecting the ground-truth labels of the sentence.<br>The words that replaces the original word are chosen by calculating TF-IDF scores of words over the whole document and taking the lowest ones.<br><img src="/images/dataset/augmentation_6.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+</ul>
+<h4 id="Back-Translation"><a href="#Back-Translation" class="headerlink" title="Back Translation"></a>Back Translation</h4><p>In this approach, we leverage machine translation to paraphrase a text while retraining the meaning.</p>
+<p>The back-translation process is as follows:</p>
+<ul>
+<li>Take some sentence (e.g. in English) and translate to another Language e.g. French</li>
+<li>Translate the French sentence back into English sentence</li>
+<li>Check if the new sentence is different from our original sentence. If it is, then we use this new sentence as an augmented version of the original text.<br><img src="/images/dataset/augmentation_7.png" width="45%" height="50%" title="" alt=""/></li>
+</ul>
+<p>You can also run back-translation using different languages at once to generate more variations. As shown below, we translate an English sentence to a target language and back again to English for three target languages: French, Mandarin and Italian.<br><img src="/images/dataset/augmentation_8.png" width="45%" height="50%" title="" alt=""/></p>
+<h4 id="Text-Surface-Transformation"><a href="#Text-Surface-Transformation" class="headerlink" title="Text Surface Transformation"></a>Text Surface Transformation</h4><p>These are simple pattern matching transformations applied using regex and was introduced by Claude Coulombe in his paper.</p>
+<p>In the paper, he gives an example of transforming verbal forms from contraction to expansion and vice versa. We can generate augmented texts by applying this.<br><img src="/images/dataset/augmentation_9.png" width="50%" height="50%" title="" alt=""/></p>
+<p>Since the transformation should not change the meaning of the sentence, we can see that this can fail in case of expanding ambiguous verbal forms like:<br><img src="/images/dataset/augmentation_10.png" width="40%" height="40%" title="" alt=""/></p>
+<h4 id="Random-Noise-Injection"><a href="#Random-Noise-Injection" class="headerlink" title="Random Noise Injection"></a>Random Noise Injection</h4><p>The idea of these methods is to inject noise in the text so that the model trained is robust to perturbations.</p>
+<ul>
+<li><p><strong>Spelling error injection</strong><br>In this method, we add spelling errors to some random word in the sentence. These spelling errors can be added programmatically or using a mapping of common spelling errors such as this list for English.<br><img src="/images/dataset/augmentation_11.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+<li><p><strong>QWERTY Keyboard Error Injection</strong></p>
+</li>
+<li><p><strong>Unigram Noising</strong></p>
+</li>
+<li><p><strong>Blank Noising</strong><br>The idea is to replace some random word with a placeholder token. The paper uses “_” as the placeholder token.</p>
+</li>
+<li><p><strong>Sentence Shuffling</strong><br>This is a naive technique where we shuffle sentences present in a training text to create an augmented version.<br><img src="/images/dataset/augmentation_12.png" width="60%" height="60%" title="" alt=""/></p>
+</li>
+</ul>
+<h4 id="Instance-Crossover-Augmentation"><a href="#Instance-Crossover-Augmentation" class="headerlink" title="Instance Crossover Augmentation"></a>Instance Crossover Augmentation</h4><p>This technique was inspired by the chromosome crossover operation that happens in genetics.<br>In the method, a tweet are divided into two halves and two random tweets of the same polarity(i.e. positive/negative) have their halves swapped. The hypothesis is that even though the result will be ungrammatical and semantically unsound, the new text will still preserve the sentiment.<br><img src="/images/dataset/augmentation_16.png" width="60%" height="60%" title="" alt=""/></p>
+<h4 id="Syntax-tree-Manipulation"><a href="#Syntax-tree-Manipulation" class="headerlink" title="Syntax-tree Manipulation"></a>Syntax-tree Manipulation</h4><p>The idea is to parse and generate the dependency tree of the original sentence, transform it using rules and generate a paraphrased sentence.<br>For example, one transformation that doesn’t change the meaning of the sentence is the transformation from active voice to the passive voice of sentence and vice versa.<br><img src="/images/dataset/augmentation_17.png" width="60%" height="60%" title="" alt=""/></p>
+<h4 id="MixUp-for-Text"><a href="#MixUp-for-Text" class="headerlink" title="MixUp for Text"></a>MixUp for Text</h4><p>Mixup is a simple yet effective image augmentation technique introduced by Zhang et al. in 2017. The idea is to combine two random images in a mini-batch in some proportion to generate synthetic examples for training.</p>
+<ul>
+<li><strong>wordMixup</strong><br>In this method, two random sentences in a mini-batch are taken and they are zero-padded to the same length. Then, their word embeddings are combined in some proportion. The resulting word embedding is passed to the usual flow for text classification. The cross-entropy loss is calculated for both the labels of the original text in the given proportion.<br><img src="/images/dataset/augmentation_18.png" width="60%" height="60%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><strong>sentMixup</strong><br>In this method, two sentences are taken and they are zero-padded to the same length. Then, their word embeddings are passed through LSTM/CNN encoder and we take the last hidden state as sentence embedding. These embeddings are combined in a certain proportion and then passed to the final classification layer. The cross-entropy loss is calculated based on both the labels of original sentences in the given proportion.<br><img src="/images/dataset/augmentation_19.png" width="60%" height="60%" title="" alt=""/></li>
+</ul>
+<h4 id="Generative-Methods"><a href="#Generative-Methods" class="headerlink" title="Generative Methods"></a>Generative Methods</h4><ul>
+<li><strong>Conditional Pre-trained Language Models</strong><br>• Prepend the class label to each text in your training data<br><img src="/images/dataset/augmentation_20.png" width="60%" height="60%" title="" alt=""/><br>• Finetune a large pre-trained language model(BERT/GPT2/BART) on this modified training data. For GPT2, the fine-tuning task is generation while for BERT, the goal would be masked token prediction.<br><img src="/images/dataset/augmentation_21.png" width="40%" height="40%" title="" alt=""/><br>• Using the fine-tuned language model, new samples can be generated by using the class label and few initial words as the prompt for the model. The paper uses 3 initial words of each training text and also generates one synthetic example for each point in the training data.<br><img src="/images/dataset/augmentation_22.png" width="40%" height="40%" title="" alt=""/></li>
+</ul>
+<p><a href="https://amitness.com/2020/05/data-augmentation-for-nlp/" target="_blank" rel="noopener">Ref-1</a><br><a href="https://github.com/quincyliang/nlp-data-augmentation" target="_blank" rel="noopener">Ref-2</a></p>
+]]></content>
+      <categories>
+        <category>Dataset construction and annotation</category>
+        <category>Data Augmentation</category>
+      </categories>
+      <tags>
+        <tag>Dataset construction and annotation</tag>
+        <tag>Data Augmentation</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>How to develop Python Package as PyPI</title>
     <url>/2020/07/28/Development/How-to-develop-Python-Package-as-PyPI/</url>
     <content><![CDATA[<h3 id="Why-developing-own-Package"><a href="#Why-developing-own-Package" class="headerlink" title="Why developing own Package"></a>Why developing own Package</h3><p>There are a bunch of nifty tools that help you build, install and distribute packages.</p>
@@ -41,29 +197,6 @@
       </tags>
   </entry>
   <entry>
-    <title>DevBot</title>
-    <url>/2020/08/03/Development/DevBot/</url>
-    <content><![CDATA[<h3 id="Overview-Function-of-DevBot"><a href="#Overview-Function-of-DevBot" class="headerlink" title="Overview (Function) of DevBot"></a>Overview (Function) of DevBot</h3><ul>
-<li>Translate natural language query to Pandas code</li>
-<li>Recommend next step data manipulations based on user historic processing<br><br></li>
-</ul>
-<h3 id="Intent-amp-Entity-resolution"><a href="#Intent-amp-Entity-resolution" class="headerlink" title="Intent &amp; Entity resolution"></a>Intent &amp; Entity resolution</h3><p>The DevBot can resolve the actual intent that user want to do which manipulations on data, also extract the entities as the required parameters in data manipulation functions.<br><img src="/images/App_dev/res1.png" width="60%" height="60%" title="Code recommendation"><br><br></p>
-<h3 id="Next-data-manipulation-recommendation"><a href="#Next-data-manipulation-recommendation" class="headerlink" title="Next data manipulation recommendation"></a>Next data manipulation recommendation</h3><p>DevBot use two different approaches for data manipulation recommendation. One is rule-based approach which recommend data manipulations based on user historic queries, which another approach apply NLG seq2seq model for next manipoulation generation.<br><img src="/images/App_dev/res3.png" width="100%" height="100%" title="Data manipulation recommendation"><br><br></p>
-<h3 id="More-Interactive"><a href="#More-Interactive" class="headerlink" title="More Interactive"></a>More Interactive</h3><p>The DevBot can provide us more interactive responses for asking us required or necessary entities as parameters.<br><img src="/images/App_dev/res4.png" width="60%" height="60%" title="Interaction"><br><br></p>
-<h3 id="Embeded-as-VS-Code-extention"><a href="#Embeded-as-VS-Code-extention" class="headerlink" title="Embeded as VS Code extention"></a>Embeded as VS Code extention</h3><p><img src="https://github.com/XIN-von-SUN/XIN-von-SUN.github.io/blob/master/images/App_dev/devbot_2.gif?raw=true" width="60%" height="60%" title="DevBot as PyPI"><br><br></p>
-<h3 id="Embeded-as-Python-package-PyPI"><a href="#Embeded-as-Python-package-PyPI" class="headerlink" title="Embeded as Python package PyPI"></a>Embeded as Python package PyPI</h3><p><img src="https://github.com/XIN-von-SUN/XIN-von-SUN.github.io/blob/master/images/App_dev/devbot_1.gif?raw=true" width="60%" height="60%" title="DevBot as PyPI"></p>
-]]></content>
-      <categories>
-        <category>My Apps development</category>
-        <category>VS Code Extension</category>
-      </categories>
-      <tags>
-        <tag>Apps development</tag>
-        <tag>PyPI</tag>
-        <tag>VS Code Extension</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Usage of Hexo</title>
     <url>/2020/07/26/Development/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -76,6 +209,19 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>GBDT</title>
+    <url>/2020/07/29/Ensemble%20Learning/GBDT/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Ensemble Learning</category>
+        <category>Boosting</category>
+      </categories>
+      <tags>
+        <tag>Ensemble Learning</tag>
+        <tag>Boosting</tag>
+      </tags>
   </entry>
   <entry>
     <title>Adaboost</title>
@@ -91,16 +237,26 @@
       </tags>
   </entry>
   <entry>
-    <title>GBDT</title>
-    <url>/2020/07/29/Ensemble%20Learning/GBDT/</url>
-    <content><![CDATA[]]></content>
+    <title>DevBot</title>
+    <url>/2020/08/03/Development/DevBot/</url>
+    <content><![CDATA[<h3 id="Overview-Function-of-DevBot"><a href="#Overview-Function-of-DevBot" class="headerlink" title="Overview (Function) of DevBot"></a>Overview (Function) of DevBot</h3><ul>
+<li>Translate natural language query to Pandas code</li>
+<li>Recommend next step data manipulations based on user historic processing<br><br></li>
+</ul>
+<h3 id="Intent-amp-Entity-resolution"><a href="#Intent-amp-Entity-resolution" class="headerlink" title="Intent &amp; Entity resolution"></a>Intent &amp; Entity resolution</h3><p>The DevBot can resolve the actual intent that user want to do which manipulations on data, also extract the entities as the required parameters in data manipulation functions.<br><img src="/images/App_dev/res1.png" width="60%" height="60%" title="Code recommendation"><br><br></p>
+<h3 id="Next-data-manipulation-recommendation"><a href="#Next-data-manipulation-recommendation" class="headerlink" title="Next data manipulation recommendation"></a>Next data manipulation recommendation</h3><p>DevBot use two different approaches for data manipulation recommendation. One is rule-based approach which recommend data manipulations based on user historic queries, which another approach apply NLG seq2seq model for next manipoulation generation.<br><img src="/images/App_dev/res3.png" width="100%" height="100%" title="Data manipulation recommendation"><br><br></p>
+<h3 id="More-Interactive"><a href="#More-Interactive" class="headerlink" title="More Interactive"></a>More Interactive</h3><p>The DevBot can provide us more interactive responses for asking us required or necessary entities as parameters.<br><img src="/images/App_dev/res4.png" width="60%" height="60%" title="Interaction"><br><br></p>
+<h3 id="Embeded-as-VS-Code-extention"><a href="#Embeded-as-VS-Code-extention" class="headerlink" title="Embeded as VS Code extention"></a>Embeded as VS Code extention</h3><p><img src="https://github.com/XIN-von-SUN/XIN-von-SUN.github.io/blob/master/images/App_dev/devbot_2.gif?raw=true" width="60%" height="60%" title="DevBot as VS Code extension"><br><br></p>
+<h3 id="Embeded-as-Python-package-PyPI"><a href="#Embeded-as-Python-package-PyPI" class="headerlink" title="Embeded as Python package PyPI"></a>Embeded as Python package PyPI</h3><p><img src="https://github.com/XIN-von-SUN/XIN-von-SUN.github.io/blob/master/images/App_dev/devbot_1.gif?raw=true" width="60%" height="60%" title="DevBot as PyPI"></p>
+]]></content>
       <categories>
-        <category>Ensemble Learning</category>
-        <category>Boosting</category>
+        <category>My Apps development</category>
+        <category>VS Code Extension</category>
       </categories>
       <tags>
-        <tag>Ensemble Learning</tag>
-        <tag>Boosting</tag>
+        <tag>Apps development</tag>
+        <tag>PyPI</tag>
+        <tag>VS Code Extension</tag>
       </tags>
   </entry>
   <entry>
@@ -198,6 +354,50 @@
       </tags>
   </entry>
   <entry>
+    <title>Self Attention</title>
+    <url>/2020/07/29/Seq2seq/Self-Attention/</url>
+    <content><![CDATA[<h3 id="Difference-between-Self-Attention-and-classic-Attention"><a href="#Difference-between-Self-Attention-and-classic-Attention" class="headerlink" title="Difference between Self Attention and classic Attention"></a>Difference between Self Attention and classic Attention</h3><p>Self Attention is very different from the traditional Attention mechanism: The traditional Attention calculates Attention based on the hidden state of the source and target, and the result is the dependence relation between each word on the source and each word on the target. However self Attention is different. It only happens on the source side and the target side respectively. Only the Self Attention related to the source input or the target input itself captures the dependency relations between the words on the source side or the target side; and then the self attention obtained in the source side is added to the self attention obtained on the target end to capture the dependency relation between the words on the source end and the target end. Therefore, self attention is better than the traditional attention mechanism. One of the main reasons is that the traditional attention mechanism ignores the dependency between words in the source or target sentence, respectively. In contrast, self Attention can not only get the dependence relationship between the words and words of the source and target ends, and at the same time, the dependence relationship between the words and words of the source or target end can be effectively obtained.</p>
+<h3 id="Structure-of-Self-Attention"><a href="#Structure-of-Self-Attention" class="headerlink" title="Structure of Self-Attention"></a>Structure of Self-Attention</h3><p>Following figure is the structure of self-attention:<br><img src="/images/seq2seq/self_att_1.png" width="30%" height="30%" title="" alt=""/></p>
+<p>For self-attention, the three matrices Q(Query), K(Key), and V(Value) all come from the same input. Firstly, we need to calculate the dot product between Q and K, and then in order to avoid the result being too large, the result will be divided by a scale $\sqrt{d_k}$ , where $d_k$ is the dimension of the query and key vectors. Then use the Softmax operation to normalize the result into a probability distribution, and then multiply it by the value matrix V to get the weighted summation. This operation can be expressed as:</p>
+<script type="math/tex; mode=display">Attention(Q, K, V) = softmax(\frac{QK_T}{\sqrt{d_k}}) * V</script><h3 id="Concrete-steps-of-Self-Attention"><a href="#Concrete-steps-of-Self-Attention" class="headerlink" title="Concrete steps of Self-Attention"></a>Concrete steps of Self-Attention</h3><p>We can use a more descriptive example to show the concrete steps of self-attention: assuming we need to translate the phrase: “Thinking Machines”, and we use embedding vector $x_1$ to represent word “Thinking” and embedding vector $x_2$ to represent word “Machines”.<br>Then:</p>
+<ul>
+<li><strong>First step:</strong> to create three vectors from each of the encoder’s input vectors (in this case, the embedding of each word).<br><img src="/images/seq2seq/self_att_2.png" width="50%" height="50%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><strong>Second step:</strong> to calculate a scaled score and softmax it. Say we’re calculating the self-attention for the first word in this example, “Thinking”.<br><img src="/images/seq2seq/self_att_3.png" width="50%" height="50%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><strong>Third step:</strong> to multiply each value vector by the softmax score and then sum up the weighted value vectors.<br><img src="/images/seq2seq/self_att_4.png" width="50%" height="50%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><p><strong>Matrix Calculation of Self-Attention</strong><br>To calculate the Query, Key, and Value matrices. We do that by packing our embeddings into a matrix X, and multiplying it by the weight matrices we’ve trained $(W_Q, W_K, W_V)$.<br><img src="/images/seq2seq/self_att_5.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+<li><p><strong>Lastly</strong><br>since we’re dealing with matrices, we can condense steps in one formula to calculate the outputs of the self-attention layer.<br><img src="/images/seq2seq/self_att_6.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+</ul>
+<h3 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h3><ul>
+<li><p>Improvements:<br>• It expands the model’s ability to focus on different positions.<br>• It gives the attention layer multiple “representation subspaces”.<br><img src="/images/seq2seq/self_att_7.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+<li><p>If we do the same self-attention calculation we outlined above, just eight different times with different weight matrices, we end up with eight different Z matrices.<br><img src="/images/seq2seq/self_att_8.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+<li><p>This leaves us with a bit of a challenge. The feed-forward layer is not expecting eight matrices – it’s expecting a single matrix (a vector for each word). So we need a way to condense these eight down into a single matrix.<br>How do we do that? We concat the matrices then multiple them by an additional weights matrix $W_O$.<br><img src="/images/seq2seq/self_att_9.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+<li><p>Here we could see the overall steps of Multi-Head Attention:<br><img src="/images/seq2seq/self_att_10.png" width="50%" height="50%" title="" alt=""/></p>
+</li>
+</ul>
+<p><a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" rel="noopener">Ref</a></p>
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+        <category>Seq2seq</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+        <tag>Attention</tag>
+        <tag>Self Attention</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>BERT / ELMo / GPT</title>
     <url>/2020/07/29/Pre-trained/BERT-ELMo-GPT/</url>
     <content><![CDATA[<h2 id="BERT"><a href="#BERT" class="headerlink" title="BERT"></a>BERT</h2><h4 id="Overview-of-BERT"><a href="#Overview-of-BERT" class="headerlink" title="Overview of BERT"></a>Overview of BERT</h4><p>The two steps of how BERT is developed. We can download the model pre-trained in step 1 (trained on un-annotated data), and only worry about fine-tuning it for step 2.</p>
@@ -270,6 +470,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Beam Search</title>
+    <url>/2020/07/29/Seq2seq/Beam-Search/</url>
+    <content><![CDATA[<h3 id="Beam-Search"><a href="#Beam-Search" class="headerlink" title="Beam Search"></a>Beam Search</h3><p>An approximate search strategy to choose better results from all possible candidates.</p>
+<p>Beam Search algorithm has a parameter called B, which is called the beam width. Let’s see how beam search works by using beam width of 3 in machine translation tasks.</p>
+<p>With beam width 3, beam search will consider three words to choose from for the first word. So, in order to perform this first step of Beam search, we run the input French sentence through the encoder network and then the first in the decoder network is a softmax output with overall 10,000 possibilities and we will store the top 3 words because of beam width 3.</p>
+<p><img src="/images/seq2seq/beam_search_1.png" width="50%" height="50%" title="" alt=""/></p>
+<p>Next, for each of the three choices, it will calculate the probability of second word given the first word and the input french sentence. As output of this step, we want to find the pair of the first and second words that is most likely. By the rules of conditional probability, this can be expressed as P of the first words times probability of the second word.</p>
+<p><img src="/images/seq2seq/beam_search_2.png" width="50%" height="50%" title="" alt=""/></p>
+<p>So for this second step of beam search since we have 10,000 words in our vocabulary, we would end up considering three times 10000 or thirty thousand possibilities and then pick the top three.</p>
+<p>Because of beam width is equal to three, at every step, we instantiate three copies of the network to evaluate partial sentence fragments and the output. So we will use three copies of the network with different choices for the first words, but these three copies of the network can be very efficiently used to evaluate all 30,000 options for the second word.</p>
+<p><img src="/images/seq2seq/beam_search_3.png" width="50%" height="50%" title="" alt=""/></p>
+<p>And the outcome of this process will be that adding one word at a time until Beam search will decide EOS as the best next symbol.<br>Notice, if the beam width was 1, then this essentially becomes the greedy search algorithm.</p>
+<p><a href="https://medium.com/@dhartidhami/beam-search-in-seq2seq-model-7606d55b21a5" target="_blank" rel="noopener">Ref</a></p>
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+        <category>Seq2seq</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+        <tag>Seq2seq</tag>
+        <tag>Encoder-Decoder</tag>
+        <tag>Beam Search</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Attention in seq2seq</title>
     <url>/2020/07/29/Seq2seq/Attention-in-seq2seq/</url>
     <content><![CDATA[<h3 id="Limitation-of-classic-Encoder-Decoder"><a href="#Limitation-of-classic-Encoder-Decoder" class="headerlink" title="Limitation of classic Encoder-Decoder"></a>Limitation of classic Encoder-Decoder</h3><ul>
@@ -314,8 +540,8 @@
       </categories>
       <tags>
         <tag>Deep Learning</tag>
-        <tag>Seq2seq</tag>
         <tag>Attention</tag>
+        <tag>Seq2seq</tag>
       </tags>
   </entry>
   <entry>
@@ -366,54 +592,10 @@
       </categories>
       <tags>
         <tag>Deep Learning</tag>
+        <tag>Self Attention</tag>
         <tag>Seq2seq</tag>
-        <tag>Self Attention</tag>
-        <tag>Transformer</tag>
         <tag>Encoder-Decoder</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Self Attention</title>
-    <url>/2020/07/29/Seq2seq/Self-Attention/</url>
-    <content><![CDATA[<h3 id="Difference-between-Self-Attention-and-classic-Attention"><a href="#Difference-between-Self-Attention-and-classic-Attention" class="headerlink" title="Difference between Self Attention and classic Attention"></a>Difference between Self Attention and classic Attention</h3><p>Self Attention is very different from the traditional Attention mechanism: The traditional Attention calculates Attention based on the hidden state of the source and target, and the result is the dependence relation between each word on the source and each word on the target. However self Attention is different. It only happens on the source side and the target side respectively. Only the Self Attention related to the source input or the target input itself captures the dependency relations between the words on the source side or the target side; and then the self attention obtained in the source side is added to the self attention obtained on the target end to capture the dependency relation between the words on the source end and the target end. Therefore, self attention is better than the traditional attention mechanism. One of the main reasons is that the traditional attention mechanism ignores the dependency between words in the source or target sentence, respectively. In contrast, self Attention can not only get the dependence relationship between the words and words of the source and target ends, and at the same time, the dependence relationship between the words and words of the source or target end can be effectively obtained.</p>
-<h3 id="Structure-of-Self-Attention"><a href="#Structure-of-Self-Attention" class="headerlink" title="Structure of Self-Attention"></a>Structure of Self-Attention</h3><p>Following figure is the structure of self-attention:<br><img src="/images/seq2seq/self_att_1.png" width="30%" height="30%" title="" alt=""/></p>
-<p>For self-attention, the three matrices Q(Query), K(Key), and V(Value) all come from the same input. Firstly, we need to calculate the dot product between Q and K, and then in order to avoid the result being too large, the result will be divided by a scale $\sqrt{d_k}$ , where $d_k$ is the dimension of the query and key vectors. Then use the Softmax operation to normalize the result into a probability distribution, and then multiply it by the value matrix V to get the weighted summation. This operation can be expressed as:</p>
-<script type="math/tex; mode=display">Attention(Q, K, V) = softmax(\frac{QK_T}{\sqrt{d_k}}) * V</script><h3 id="Concrete-steps-of-Self-Attention"><a href="#Concrete-steps-of-Self-Attention" class="headerlink" title="Concrete steps of Self-Attention"></a>Concrete steps of Self-Attention</h3><p>We can use a more descriptive example to show the concrete steps of self-attention: assuming we need to translate the phrase: “Thinking Machines”, and we use embedding vector $x_1$ to represent word “Thinking” and embedding vector $x_2$ to represent word “Machines”.<br>Then:</p>
-<ul>
-<li><strong>First step:</strong> to create three vectors from each of the encoder’s input vectors (in this case, the embedding of each word).<br><img src="/images/seq2seq/self_att_2.png" width="50%" height="50%" title="" alt=""/></li>
-</ul>
-<ul>
-<li><strong>Second step:</strong> to calculate a scaled score and softmax it. Say we’re calculating the self-attention for the first word in this example, “Thinking”.<br><img src="/images/seq2seq/self_att_3.png" width="50%" height="50%" title="" alt=""/></li>
-</ul>
-<ul>
-<li><strong>Third step:</strong> to multiply each value vector by the softmax score and then sum up the weighted value vectors.<br><img src="/images/seq2seq/self_att_4.png" width="50%" height="50%" title="" alt=""/></li>
-</ul>
-<ul>
-<li><p><strong>Matrix Calculation of Self-Attention</strong><br>To calculate the Query, Key, and Value matrices. We do that by packing our embeddings into a matrix X, and multiplying it by the weight matrices we’ve trained $(W_Q, W_K, W_V)$.<br><img src="/images/seq2seq/self_att_5.png" width="50%" height="50%" title="" alt=""/></p>
-</li>
-<li><p><strong>Lastly</strong><br>since we’re dealing with matrices, we can condense steps in one formula to calculate the outputs of the self-attention layer.<br><img src="/images/seq2seq/self_att_6.png" width="50%" height="50%" title="" alt=""/></p>
-</li>
-</ul>
-<h3 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h3><ul>
-<li><p>Improvements:<br>• It expands the model’s ability to focus on different positions.<br>• It gives the attention layer multiple “representation subspaces”.<br><img src="/images/seq2seq/self_att_7.png" width="50%" height="50%" title="" alt=""/></p>
-</li>
-<li><p>If we do the same self-attention calculation we outlined above, just eight different times with different weight matrices, we end up with eight different Z matrices.<br><img src="/images/seq2seq/self_att_8.png" width="50%" height="50%" title="" alt=""/></p>
-</li>
-<li><p>This leaves us with a bit of a challenge. The feed-forward layer is not expecting eight matrices – it’s expecting a single matrix (a vector for each word). So we need a way to condense these eight down into a single matrix.<br>How do we do that? We concat the matrices then multiple them by an additional weights matrix $W_O$.<br><img src="/images/seq2seq/self_att_9.png" width="50%" height="50%" title="" alt=""/></p>
-</li>
-<li><p>Here we could see the overall steps of Multi-Head Attention:<br><img src="/images/seq2seq/self_att_10.png" width="50%" height="50%" title="" alt=""/></p>
-</li>
-</ul>
-<p><a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" rel="noopener">Ref</a></p>
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-        <category>Seq2seq</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>Attention</tag>
-        <tag>Self Attention</tag>
+        <tag>Transformer</tag>
       </tags>
   </entry>
   <entry>
@@ -453,175 +635,174 @@
       </tags>
   </entry>
   <entry>
-    <title>Beam Search</title>
-    <url>/2020/07/29/Seq2seq/Beam-Search/</url>
-    <content><![CDATA[<h3 id="Beam-Search"><a href="#Beam-Search" class="headerlink" title="Beam Search"></a>Beam Search</h3><p>An approximate search strategy to choose better results from all possible candidates.</p>
-<p>Beam Search algorithm has a parameter called B, which is called the beam width. Let’s see how beam search works by using beam width of 3 in machine translation tasks.</p>
-<p>With beam width 3, beam search will consider three words to choose from for the first word. So, in order to perform this first step of Beam search, we run the input French sentence through the encoder network and then the first in the decoder network is a softmax output with overall 10,000 possibilities and we will store the top 3 words because of beam width 3.</p>
-<p><img src="/images/seq2seq/beam_search_1.png" width="50%" height="50%" title="" alt=""/></p>
-<p>Next, for each of the three choices, it will calculate the probability of second word given the first word and the input french sentence. As output of this step, we want to find the pair of the first and second words that is most likely. By the rules of conditional probability, this can be expressed as P of the first words times probability of the second word.</p>
-<p><img src="/images/seq2seq/beam_search_2.png" width="50%" height="50%" title="" alt=""/></p>
-<p>So for this second step of beam search since we have 10,000 words in our vocabulary, we would end up considering three times 10000 or thirty thousand possibilities and then pick the top three.</p>
-<p>Because of beam width is equal to three, at every step, we instantiate three copies of the network to evaluate partial sentence fragments and the output. So we will use three copies of the network with different choices for the first words, but these three copies of the network can be very efficiently used to evaluate all 30,000 options for the second word.</p>
-<p><img src="/images/seq2seq/beam_search_3.png" width="50%" height="50%" title="" alt=""/></p>
-<p>And the outcome of this process will be that adding one word at a time until Beam search will decide EOS as the best next symbol.<br>Notice, if the beam width was 1, then this essentially becomes the greedy search algorithm.</p>
-<p><a href="https://medium.com/@dhartidhami/beam-search-in-seq2seq-model-7606d55b21a5" target="_blank" rel="noopener">Ref</a></p>
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-        <category>Seq2seq</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>Seq2seq</tag>
-        <tag>Encoder-Decoder</tag>
-        <tag>Beam Search</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LSTM</title>
-    <url>/2020/07/29/Deep%20Learning/RNN/LSTM/</url>
-    <content><![CDATA[<h3 id="Inspiration"><a href="#Inspiration" class="headerlink" title="Inspiration"></a>Inspiration</h3><p>To avoid the long-term dependency problem in RNN and solve gradient vanishing.<br><br></p>
-<h3 id="Novelty"><a href="#Novelty" class="headerlink" title="Novelty"></a>Novelty</h3><ul>
-<li>Forget gate</li>
-<li>Input gate</li>
-<li>Output gate</li>
-<li>Cell states<br><br></li>
-</ul>
-<h3 id="LSTM-process-detail"><a href="#LSTM-process-detail" class="headerlink" title="LSTM process detail"></a>LSTM process detail</h3><h6 id="Forget-gate-f-t"><a href="#Forget-gate-f-t" class="headerlink" title="Forget gate $f_t$:"></a>Forget gate $f_t$:</h6><p><img src="/images/RNN/lstm_1.png" width="50%" height="50%" title="" alt=""/></p>
-<h6 id="Input-gate-i-t-and-new-candidate-cell-state-hat-C-t"><a href="#Input-gate-i-t-and-new-candidate-cell-state-hat-C-t" class="headerlink" title="Input gate $i_t$ and new candidate cell state $\hat{C_t}$"></a>Input gate $i_t$ and new candidate cell state $\hat{C_t}$</h6><p><img src="/images/RNN/lstm_2.png" width="50%" height="50%" title="" alt=""/></p>
-<h6 id="New-cell-state-C-t"><a href="#New-cell-state-C-t" class="headerlink" title="New cell state $C_t$"></a>New cell state $C_t$</h6><p><img src="/images/RNN/lstm_3.png" width="50%" height="50%" title="" alt=""/></p>
-<h6 id="Output-gate-o-t-and-current-hidden-state-h-t"><a href="#Output-gate-o-t-and-current-hidden-state-h-t" class="headerlink" title="Output gate $o_t$ and current hidden state $h_t$"></a>Output gate $o_t$ and current hidden state $h_t$</h6><p><img src="/images/RNN/lstm_4.png" width="50%" height="50%" title="" alt=""/><br><br></p>
-<h3 id="Variant-LSTM-peephole"><a href="#Variant-LSTM-peephole" class="headerlink" title="Variant LSTM: peephole"></a>Variant LSTM: peephole</h3><p><img src="/images/RNN/lstm_5.png" width="50%" height="50%" title="" alt=""/><br><br></p>
-<h4 id="RNN-Gradient-Vanishing"><a href="#RNN-Gradient-Vanishing" class="headerlink" title="RNN Gradient Vanishing"></a>RNN Gradient Vanishing</h4><p>RNN梯度消失是因为激活函数tanh函数的倒数在0到1之间，反向传播时更新前面时刻的参数时，当参数W初始化为小于1的数，则多个(tanh函数’ * W)相乘，将导致求得的偏导极小（小于1的数连乘），从而导致梯度消失。<br><br></p>
-<h4 id="RNN-Gradient-Exploding"><a href="#RNN-Gradient-Exploding" class="headerlink" title="RNN Gradient Exploding"></a>RNN Gradient Exploding</h4><p>当参数初始化为足够大，使得tanh函数的倒数乘以W大于1，则将导致偏导极大（大于1的数连乘），从而导致梯度爆炸。<br><br></p>
-<h4 id="RNN-Solve-gradient-problem"><a href="#RNN-Solve-gradient-problem" class="headerlink" title="RNN Solve gradient problem"></a>RNN Solve gradient problem</h4><ul>
-<li><p>合适地初始化W，即采用正则化</p>
-</li>
-<li><p>将tanh或sigmoid替换为ReLU</p>
-</li>
-<li><p>使用LSTM或者GRU, 使得RNN BP中的梯度连乘变成LSTM的梯度连加</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-        <category>RNN</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>RNN</tag>
-        <tag>LSTM</tag>
-        <tag>Neural Network</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>EM Algorithm</title>
-    <url>/2020/07/29/Machine%20Learning/Unsupervised/EM-Algorithm/</url>
+    <title>Dimension reduction</title>
+    <url>/2020/08/04/Machine%20Learning/Foundation/Dimension-reduction/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
+        <category>Machine Learning Foundations</category>
       </categories>
       <tags>
         <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
+        <tag>ML Foundations</tag>
+        <tag>Dimension reduction</tag>
+        <tag>PCA</tag>
+        <tag>SVD</tag>
       </tags>
   </entry>
   <entry>
-    <title>Frequent Item Mining 2 - FP Tree</title>
-    <url>/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-2-FP-Tree/</url>
-    <content><![CDATA[<p>As an algorithm for mining frequent itemsets, the Apriori algorithm requires multiple scans of data, and I/O efficiency is a big bottleneck. In order to solve this problem, the FP Tree algorithm (also known as the FP Growth algorithm) uses some tricks, and it only needs to scan the data set twice no matter how much data, thereby improving the efficiency of the algorithm.</p>
-<h3 id="FP-Tree-construction"><a href="#FP-Tree-construction" class="headerlink" title="FP-Tree construction"></a>FP-Tree construction</h3><p><img src="/images/clustering/fp_1.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_2.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_3.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_4.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_5.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_6.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_7.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_8.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_9.png" width="60%" height="60%" title="" alt=""/></p>
-<h3 id="Conditional-Pattern-Base"><a href="#Conditional-Pattern-Base" class="headerlink" title="Conditional Pattern Base"></a>Conditional Pattern Base</h3><p><img src="/images/clustering/fp_10.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_11.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_12.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_13.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_14.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_15.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_16.png" width="60%" height="60%" title="" alt=""/></p>
-<h3 id="Conditional-FP-Tree-and-get-frequent-itemsets"><a href="#Conditional-FP-Tree-and-get-frequent-itemsets" class="headerlink" title="Conditional FP-Tree and get frequent itemsets"></a>Conditional FP-Tree and get frequent itemsets</h3><p><img src="/images/clustering/fp_17.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_18.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/clustering/fp_19.png" width="60%" height="60%" title="" alt=""/></p>
+    <title>Activation Function</title>
+    <url>/2020/08/04/Machine%20Learning/Foundation/Activation-Function/</url>
+    <content><![CDATA[<p><img src="/images/ml/activation_func_1.png" width="80%" height="80%" title="" alt=""/></p>
+<p><img src="/images/ml/activation_func_2.png" width="80%" height="80%" title="" alt=""/></p>
+<p><img src="/images/ml/activation_func_3.png" width="80%" height="80%" title="" alt=""/></p>
+<p><img src="/images/ml/activation_func_4.png" width="80%" height="80%" title="" alt=""/></p>
+<p><img src="/images/ml/activation_func_5.png" width="80%" height="80%" title="" alt=""/></p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Frequent Item Mining</category>
+        <category>Machine Learning Foundations</category>
       </categories>
       <tags>
         <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Frequent Item Mining</tag>
+        <tag>ML Foundations</tag>
+        <tag>Activation Function</tag>
       </tags>
   </entry>
   <entry>
-    <title>Frequent Item Mining 1 - Association Rules / Apriori Method</title>
-    <url>/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-1-Association-Rules-Apriori-Method/</url>
-    <content><![CDATA[<h3 id="Definition-Support-and-Frequent-Itemset"><a href="#Definition-Support-and-Frequent-Itemset" class="headerlink" title="Definition: Support and Frequent Itemset"></a>Definition: Support and Frequent Itemset</h3><p><img src="/images/clustering/associate_rule_1.png" width="35%" height="35%" title="" alt=""/></p>
+    <title>Feature Engineering</title>
+    <url>/2020/08/04/Machine%20Learning/Foundation/Feature-Engineering/</url>
+    <content><![CDATA[<p><img src="/images/ml/feature_engineering_1.png" width="80%" height="80%" title="" alt=""/></p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Machine Learning Foundations</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>ML Foundations</tag>
+        <tag>Feature Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>L0 / L1 / L2 Regularization</title>
+    <url>/2020/08/04/Machine%20Learning/Foundation/L1-L2-Regularization/</url>
+    <content><![CDATA[<h3 id="L0-Regularization"><a href="#L0-Regularization" class="headerlink" title="L0 Regularization"></a>L0 Regularization</h3><p>The value of L0 regularization is the number of non-zero parameters in the model parameters (NP problem).</p>
+<h3 id="L1-Regularization"><a href="#L1-Regularization" class="headerlink" title="L1 Regularization"></a>L1 Regularization</h3><p><img src="/images/ml/l1.png" width="25%" height="25%" title="" alt=""/></p>
+<h3 id="L2-Regularization"><a href="#L2-Regularization" class="headerlink" title="L2 Regularization"></a>L2 Regularization</h3><p><img src="/images/ml/l2.png" width="25%" height="25%" title="" alt=""/></p>
+<h3 id="Why-L1-can-do-Feature-slection-while-L2-can-not"><a href="#Why-L1-can-do-Feature-slection-while-L2-can-not" class="headerlink" title="Why L1 can do Feature slection while L2 can not"></a>Why L1 can do Feature slection while L2 can not</h3><ul>
+<li>From the derivative formula of L1, we can find the all parameters of L1 can be decreased to 0 which can eliminate some features.</li>
+</ul>
+<p><img src="/images/ml/l1_dt.png" width="45%" height="50%" title="" alt=""/></p>
 <ul>
-<li><p>Itemset<br>• A collection of one or more items<br>• Example:{Milk,Bread,Diaper}<br>• k-itemset: An itemset that contains k items</p>
-</li>
-<li><p>Support count ($\sigma$)<br>• Frequency of occurrence of an itemse<br>• E.g. $\sigma$({Milk, Bread, Diaper}) = 2</p>
-</li>
-<li><p>Support (s)<br>• Fraction of transactions that contain an itemset<br>• E.g. s({Milk, Bread, Diaper}) = 2/5 = 0.4</p>
-</li>
-<li><p>Frequent Itemset<br>• An itemset whose support is greater than or equal to a minimal support (minsup) threshold specified by the user</p>
-</li>
-</ul>
-<h3 id="Definition-Association-Rule"><a href="#Definition-Association-Rule" class="headerlink" title="Definition: Association Rule"></a>Definition: Association Rule</h3><ul>
-<li><p>Association Rule<br>• An implication expression of the form X $\rightarrow$ Y, where X and Y are itemsets<br>• An association rule states that when X occurs, Y occurs with certain probability.<br>• Example:<br>{Milk, Diaper} $\rightarrow$ {Beer}<br>Condition &nbsp; &nbsp; &nbsp; Consequent</p>
-</li>
-<li><p>Support(s)<br>Fraction of transaction that contain both X and Y.</p>
-<script type="math/tex; mode=display">s(X \rightarrow Y) = \frac{|X \bigcup Y|}{|T|}</script><script type="math/tex; mode=display">s = \frac{\sigma (Milk,Diaper,Beer)}{|T|} = \frac{2}{5}</script></li>
-<li><p>Confidence(c)<br>Measures how often items in Y appear in transactions that contain X</p>
-<script type="math/tex; mode=display">c(X \rightarrow Y) = \frac{\sigma (X \bigcup Y)}{\sigma (X)}</script><script type="math/tex; mode=display">c = \frac{\sigma (Milk,Diaper,Beer)}{\sigma (Milk,Diaper)} = \frac{2}{3}</script></li>
-</ul>
-<h3 id="The-Association-Rule-Mining-Task"><a href="#The-Association-Rule-Mining-Task" class="headerlink" title="The Association Rule Mining Task"></a>The Association Rule Mining Task</h3><ul>
-<li>Given a set of transactions T,the goal of association rule mining is to find all rules having:<br>• support $≥$ minsup threshold<br>• confidence $≥$ minconf threshold</li>
-<li>Minsup and minconf are provided by the user.</li>
-</ul>
-<h3 id="Mining-Association-Rules"><a href="#Mining-Association-Rules" class="headerlink" title="Mining Association Rules"></a>Mining Association Rules</h3><ol>
-<li>Frequent Itemset Generation<br>• Generate all itemsets whose support $≥$ minsup </li>
-<li>Rule Generation<br>• Generate high confidence rules from each frequent itemset, where each rule is a binary partitioning of a frequent itemset</li>
-</ol>
-<h3 id="Apriori-Algorithm-To-generate-frequent-Itemsets"><a href="#Apriori-Algorithm-To-generate-frequent-Itemsets" class="headerlink" title="Apriori Algorithm (To generate frequent Itemsets)"></a>Apriori Algorithm (To generate frequent Itemsets)</h3><ul>
-<li>Apriori principle holds due to the following property of the support measure:<script type="math/tex; mode=display">\bigvee X, Y: (X \subseteq Y) \Longrightarrow s(X) ≥ s(Y)</script>• <strong>If an itemset is infrequent, then all of its supersets must also be infrequent.</strong><br>• Support of an itemset never exceeds the support of its subsets<br>• This is known as the anti-monotone property of support</li>
-</ul>
-<h3 id="The-Apriori-Algorithm-steps"><a href="#The-Apriori-Algorithm-steps" class="headerlink" title="The Apriori Algorithm steps"></a>The Apriori Algorithm steps</h3><ol>
-<li>Let k=1</li>
-<li>Generate frequent itemsets of length 1</li>
-<li>Repeat until no new frequent itemsets are identified<br>• Generate length (k+1) candidate itemsets from length k frequent itemsets<br>• Prune candidate itemsets that can not be frequent because they contain subsets of length k that are infrequent (Apriori Principle)<br>• Count the support of each candidate by scanning the DB<br>• Eliminate candidates that are infrequent, leaving only those that are frequent<br><img src="/images/clustering/apriori_1.png" width="50%" height="50%" title="" alt=""/></li>
-</ol>
-<h3 id="Example-Apriori-Algorithm"><a href="#Example-Apriori-Algorithm" class="headerlink" title="Example: Apriori Algorithm"></a>Example: Apriori Algorithm</h3><p><img src="/images/clustering/apriori_2.png" width="45%" height="45%" title="" alt=""/></p>
-<h3 id="Associate-Rule-Generation"><a href="#Associate-Rule-Generation" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h3><p>Given a frequent itemset L, find all non-empty subsets fLsuch that f $\rightarrow$ L – f satisfies the minimum confidence requirement.<br><img src="/images/clustering/associate_rule_2.png" width="45%" height="45%" title="" alt=""/></p>
-<p><img src="/images/clustering/associate_rule_3.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_4.png" width="45%" height="45%" title="" alt=""/></p>
-<ul>
-<li><h5 id="Associate-Rule-Generation-1"><a href="#Associate-Rule-Generation-1" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h5><img src="/images/clustering/associate_rule_5.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_6.png" width="45%" height="45%" title="" alt=""/></li>
-</ul>
-<ul>
-<li><h5 id="Interestingness-and-Lift-of-Associate-Rule"><a href="#Interestingness-and-Lift-of-Associate-Rule" class="headerlink" title="Interestingness and Lift of Associate Rule"></a>Interestingness and Lift of Associate Rule</h5><img src="/images/clustering/interestingness.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/lift_1.png" width="45%" height="45%" title="" alt=""/></li>
+<li>From the derivative formula of L2, we can find the all parameters of L2 can not be decreased to 0 which can lead to the sparsity of features.<br><img src="/images/ml/l2_dt.png" width="50%" height="50%" title="" alt=""/></li>
 </ul>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Frequent Item Mining</category>
+        <category>Machine Learning Foundations</category>
       </categories>
       <tags>
         <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Frequent Item Mining</tag>
+        <tag>ML Foundations</tag>
+        <tag>L1</tag>
+        <tag>L2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Loss Function</title>
+    <url>/2020/08/04/Machine%20Learning/Foundation/Loss-Function/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Machine Learning Foundations</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>ML Foundations</tag>
+        <tag>Loss Function</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Normalization / Standardization / Regularization</title>
+    <url>/2020/08/04/Machine%20Learning/Foundation/Normalization-Standardization-Regularization/</url>
+    <content><![CDATA[<h3 id="Normalization"><a href="#Normalization" class="headerlink" title="Normalization"></a>Normalization</h3><p><strong>Normalization usually rescales features to [0,1].</strong><br>It will be useful when we are sure enough that there are no anomalies (i.e. outliers) with extremely large or small values. For example, in a recommender system, the ratings made by users are limited to a small finite set like {1,2,3,4,5}.</p>
+<p>In some situations, we may prefer to map data to a range like [−1,1] with zero-mean.</p>
+<p>In this way, it will be more convenient for us to use other techniques like matrix factorization.<br><br></p>
+<h3 id="Standardization"><a href="#Standardization" class="headerlink" title="Standardization"></a>Standardization</h3><p>Standardization is widely used as a preprocessing step in many learning algorithms to <strong>rescale the features to zero-mean and unit-variance.</strong><br><br></p>
+<h3 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h3><p>Different from the feature scaling techniques mentioned above, regularization is intended to solve the overfitting problem. By adding an extra part to the loss function, the parameters in learning algorithms are more likely to converge to smaller values, which can significantly reduce overfitting.</p>
+<p>There are mainly two basic types of regularization: <strong>L1-norm (lasso) and L2-norm (ridge regression).</strong></p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Machine Learning Foundations</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>ML Foundations</tag>
+        <tag>Normalization</tag>
+        <tag>Standardization</tag>
+        <tag>Regularization</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ML Metrics</title>
+    <url>/2020/08/04/Machine%20Learning/Foundation/ML-Metrics/</url>
+    <content><![CDATA[<p><img src="/images/ml/metrics_1.png" width="50%" height="50%" title="" alt=""/></p>
+<h3 id="Accuracy-Recall-F1-F-Measure"><a href="#Accuracy-Recall-F1-F-Measure" class="headerlink" title="Accuracy / Recall / F1 / F-Measure"></a>Accuracy / Recall / F1 / F-Measure</h3><p>Accuracy = $\frac{TP+TN}{TP+FN+FP+TN}$</p>
+<p>Precision) = $\frac{TP}{TP+FP}$  查准率</p>
+<p>Recall = $\frac{TP}{TP+FN}$  查全率</p>
+<p>F1-Score = $\frac{P*R}{2(P+R)}$, P is precision and R is recall</p>
+<p>F-Measure = $\frac{(a^2+1)P*R}{a^2(P+R)}$, F-Measure is F1 when a=1</p>
+<p><br></p>
+<h3 id="ROC-Receiver-Operating-Characteristic-Curve"><a href="#ROC-Receiver-Operating-Characteristic-Curve" class="headerlink" title="ROC (Receiver Operating Characteristic Curve)"></a>ROC (Receiver Operating Characteristic Curve)</h3><p>The curve is drawn by two variables 1-specificity and Sensitivity. 1-specificity = FPR, that is, false positive rate. Sensitivity is the true class rate, TPR (True positive rate), which reflects the degree of positive class coverage.</p>
+<p><strong>The closer the curve to the upper left corner, the better performance of the classifier.</strong></p>
+<p><img src="/images/ml/roc.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h3 id="AUC-Area-Under-the-Receiver-Operating-Characteristics-Curve"><a href="#AUC-Area-Under-the-Receiver-Operating-Characteristics-Curve" class="headerlink" title="AUC (Area Under the Receiver Operating Characteristics Curve)"></a>AUC (Area Under the Receiver Operating Characteristics Curve)</h3><p>The AUC value is the area covered by the ROC curve. Obviously, the larger the AUC, the better the classification effect of the classifier.</p>
+<ul>
+<li><p>AUC = 1, a perfect classifier. When using this model, a perfect prediction can be obtained no matter what threshold is set. In most prediction situations, there is no perfect classifier.</p>
+</li>
+<li><p>0.5 &lt; AUC &lt; 1, better than random guessing. This classifier (model) can have predictive value if the threshold is properly set.</p>
+</li>
+<li><p>AUC = 0.5, same as randomly guess (for example: lost copper), the model has no predictive value.
+　</p>
+</li>
+<li>AUC &lt; 0.5, which is worse than random guessing; but it will be better than random guessing as long as you always go against prediction result of this model.</li>
+</ul>
+<p><strong>The physical meaning of AUC</strong><br>Assuming that the output of the classifier is the socre (confidence) that the sample belongs to the positive class, then the physical meaning of AUC is the probability that positive sample score is greater than the negative sample score when we sample any pair of (positive and negative) samples.</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Machine Learning Foundations</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>ML Foundations</tag>
+        <tag>Metrics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Various Distance</title>
+    <url>/2020/08/04/Machine%20Learning/Foundation/Various-Distance-Similarity/</url>
+    <content><![CDATA[<p><img src="/images/ml/distance_1.png" width="60%" height="60%" title="" alt=""/></p>
+<h5 id="计算文本相似度为什么用余弦不用欧式"><a href="#计算文本相似度为什么用余弦不用欧式" class="headerlink" title="计算文本相似度为什么用余弦不用欧式"></a>计算文本相似度为什么用余弦不用欧式</h5><p>Why prefer Cosine than Euclidean distance when computing text similarity</p>
+<ul>
+<li>余弦相似度和欧氏距离的区别就在于, 余弦相似度消除了向量长度的影响.</li>
+<li>余弦注重方向, 欧式样注重绝对数值.</li>
+<li>对于稀疏数据, 余弦相似度好于欧式距离.</li>
+</ul>
+<h5 id="莱文斯坦距离-Levenshtein-distance"><a href="#莱文斯坦距离-Levenshtein-distance" class="headerlink" title="莱文斯坦距离(Levenshtein distance)"></a>莱文斯坦距离(Levenshtein distance)</h5><p>莱文斯坦距离用于衡量两个字符串之间的相似度. 以下我们称这两个字符串分别为a(原字符串)和b(目标字符串). 莱文斯坦距离被定义为将字符串a变换为字符串b所需的删除、插入、替换操作的次数.</p>
+<h5 id="汉明距离-Hanming-distance"><a href="#汉明距离-Hanming-distance" class="headerlink" title="汉明距离(Hanming distance)"></a>汉明距离(Hanming distance)</h5><p>在信息论中, 两个等长字符串之间的汉明距离是两个字符串对应位置的不同字符的个数.例如, 1011101与1001001之间的汉明距离是2.</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Machine Learning Foundations</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>ML Foundations</tag>
+        <tag>Distance</tag>
+        <tag>Similarity</tag>
       </tags>
   </entry>
   <entry>
@@ -720,9 +901,210 @@
       </tags>
   </entry>
   <entry>
+    <title>Frequent Item Mining 1 - Association Rules / Apriori Method</title>
+    <url>/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-1-Association-Rules-Apriori-Method/</url>
+    <content><![CDATA[<h3 id="Definition-Support-and-Frequent-Itemset"><a href="#Definition-Support-and-Frequent-Itemset" class="headerlink" title="Definition: Support and Frequent Itemset"></a>Definition: Support and Frequent Itemset</h3><p><img src="/images/clustering/associate_rule_1.png" width="35%" height="35%" title="" alt=""/></p>
+<ul>
+<li><p>Itemset<br>• A collection of one or more items<br>• Example:{Milk,Bread,Diaper}<br>• k-itemset: An itemset that contains k items</p>
+</li>
+<li><p>Support count ($\sigma$)<br>• Frequency of occurrence of an itemse<br>• E.g. $\sigma$({Milk, Bread, Diaper}) = 2</p>
+</li>
+<li><p>Support (s)<br>• Fraction of transactions that contain an itemset<br>• E.g. s({Milk, Bread, Diaper}) = 2/5 = 0.4</p>
+</li>
+<li><p>Frequent Itemset<br>• An itemset whose support is greater than or equal to a minimal support (minsup) threshold specified by the user</p>
+</li>
+</ul>
+<h3 id="Definition-Association-Rule"><a href="#Definition-Association-Rule" class="headerlink" title="Definition: Association Rule"></a>Definition: Association Rule</h3><ul>
+<li><p>Association Rule<br>• An implication expression of the form X $\rightarrow$ Y, where X and Y are itemsets<br>• An association rule states that when X occurs, Y occurs with certain probability.<br>• Example:<br>{Milk, Diaper} $\rightarrow$ {Beer}<br>Condition &nbsp; &nbsp; &nbsp; Consequent</p>
+</li>
+<li><p>Support(s)<br>Fraction of transaction that contain both X and Y.</p>
+<script type="math/tex; mode=display">s(X \rightarrow Y) = \frac{|X \bigcup Y|}{|T|}</script><script type="math/tex; mode=display">s = \frac{\sigma (Milk,Diaper,Beer)}{|T|} = \frac{2}{5}</script></li>
+<li><p>Confidence(c)<br>Measures how often items in Y appear in transactions that contain X</p>
+<script type="math/tex; mode=display">c(X \rightarrow Y) = \frac{\sigma (X \bigcup Y)}{\sigma (X)}</script><script type="math/tex; mode=display">c = \frac{\sigma (Milk,Diaper,Beer)}{\sigma (Milk,Diaper)} = \frac{2}{3}</script></li>
+</ul>
+<h3 id="The-Association-Rule-Mining-Task"><a href="#The-Association-Rule-Mining-Task" class="headerlink" title="The Association Rule Mining Task"></a>The Association Rule Mining Task</h3><ul>
+<li>Given a set of transactions T,the goal of association rule mining is to find all rules having:<br>• support $≥$ minsup threshold<br>• confidence $≥$ minconf threshold</li>
+<li>Minsup and minconf are provided by the user.</li>
+</ul>
+<h3 id="Mining-Association-Rules"><a href="#Mining-Association-Rules" class="headerlink" title="Mining Association Rules"></a>Mining Association Rules</h3><ol>
+<li>Frequent Itemset Generation<br>• Generate all itemsets whose support $≥$ minsup </li>
+<li>Rule Generation<br>• Generate high confidence rules from each frequent itemset, where each rule is a binary partitioning of a frequent itemset</li>
+</ol>
+<h3 id="Apriori-Algorithm-To-generate-frequent-Itemsets"><a href="#Apriori-Algorithm-To-generate-frequent-Itemsets" class="headerlink" title="Apriori Algorithm (To generate frequent Itemsets)"></a>Apriori Algorithm (To generate frequent Itemsets)</h3><ul>
+<li>Apriori principle holds due to the following property of the support measure:<script type="math/tex; mode=display">\bigvee X, Y: (X \subseteq Y) \Longrightarrow s(X) ≥ s(Y)</script>• <strong>If an itemset is infrequent, then all of its supersets must also be infrequent.</strong><br>• Support of an itemset never exceeds the support of its subsets<br>• This is known as the anti-monotone property of support</li>
+</ul>
+<h3 id="The-Apriori-Algorithm-steps"><a href="#The-Apriori-Algorithm-steps" class="headerlink" title="The Apriori Algorithm steps"></a>The Apriori Algorithm steps</h3><ol>
+<li>Let k=1</li>
+<li>Generate frequent itemsets of length 1</li>
+<li>Repeat until no new frequent itemsets are identified<br>• Generate length (k+1) candidate itemsets from length k frequent itemsets<br>• Prune candidate itemsets that can not be frequent because they contain subsets of length k that are infrequent (Apriori Principle)<br>• Count the support of each candidate by scanning the DB<br>• Eliminate candidates that are infrequent, leaving only those that are frequent<br><img src="/images/clustering/apriori_1.png" width="50%" height="50%" title="" alt=""/></li>
+</ol>
+<h3 id="Example-Apriori-Algorithm"><a href="#Example-Apriori-Algorithm" class="headerlink" title="Example: Apriori Algorithm"></a>Example: Apriori Algorithm</h3><p><img src="/images/clustering/apriori_2.png" width="45%" height="45%" title="" alt=""/></p>
+<h3 id="Associate-Rule-Generation"><a href="#Associate-Rule-Generation" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h3><p>Given a frequent itemset L, find all non-empty subsets fLsuch that f $\rightarrow$ L – f satisfies the minimum confidence requirement.<br><img src="/images/clustering/associate_rule_2.png" width="45%" height="45%" title="" alt=""/></p>
+<p><img src="/images/clustering/associate_rule_3.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_4.png" width="45%" height="45%" title="" alt=""/></p>
+<ul>
+<li><h5 id="Associate-Rule-Generation-1"><a href="#Associate-Rule-Generation-1" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h5><img src="/images/clustering/associate_rule_5.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_6.png" width="45%" height="45%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><h5 id="Interestingness-and-Lift-of-Associate-Rule"><a href="#Interestingness-and-Lift-of-Associate-Rule" class="headerlink" title="Interestingness and Lift of Associate Rule"></a>Interestingness and Lift of Associate Rule</h5><img src="/images/clustering/interestingness.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/lift_1.png" width="45%" height="45%" title="" alt=""/></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Frequent Item Mining</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Frequent Item Mining</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>EM Algorithm</title>
+    <url>/2020/07/29/Machine%20Learning/Unsupervised/EM-Algorithm/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Frequent Item Mining 2 - FP Tree</title>
+    <url>/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-2-FP-Tree/</url>
+    <content><![CDATA[<p>As an algorithm for mining frequent itemsets, the Apriori algorithm requires multiple scans of data, and I/O efficiency is a big bottleneck. In order to solve this problem, the FP Tree algorithm (also known as the FP Growth algorithm) uses some tricks, and it only needs to scan the data set twice no matter how much data, thereby improving the efficiency of the algorithm.</p>
+<h3 id="FP-Tree-construction"><a href="#FP-Tree-construction" class="headerlink" title="FP-Tree construction"></a>FP-Tree construction</h3><p><img src="/images/clustering/fp_1.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_2.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_3.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_4.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_5.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_6.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_7.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_8.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_9.png" width="60%" height="60%" title="" alt=""/></p>
+<h3 id="Conditional-Pattern-Base"><a href="#Conditional-Pattern-Base" class="headerlink" title="Conditional Pattern Base"></a>Conditional Pattern Base</h3><p><img src="/images/clustering/fp_10.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_11.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_12.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_13.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_14.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_15.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_16.png" width="60%" height="60%" title="" alt=""/></p>
+<h3 id="Conditional-FP-Tree-and-get-frequent-itemsets"><a href="#Conditional-FP-Tree-and-get-frequent-itemsets" class="headerlink" title="Conditional FP-Tree and get frequent itemsets"></a>Conditional FP-Tree and get frequent itemsets</h3><p><img src="/images/clustering/fp_17.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_18.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/clustering/fp_19.png" width="60%" height="60%" title="" alt=""/></p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Frequent Item Mining</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Frequent Item Mining</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Least Square Method</title>
+    <url>/2020/08/04/Mathematics-Algorithms/Mathematics/Least-Square-Method/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Mathematics-Algorithms</category>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+        <tag>MSE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sentiment Analysis</title>
+    <url>/2020/07/29/NLP/Sentiment-Analysis/Sentiment-Analysis/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Sentiment Analysis</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Sentiment Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(Named) Entity Resolution</title>
+    <url>/2020/07/29/NLP/Dialogue%20System/Entity-Resolution/</url>
+    <content><![CDATA[<h3 id="Entity-resolution"><a href="#Entity-resolution" class="headerlink" title="Entity resolution"></a>Entity resolution</h3><p>Entity resolution (ER) is the task of disambiguating records that correspond to real world entities across and within datasets. The applications of entity resolution are tremendous, particularly for public sector and federal datasets related to health, trans- portation, finance, law enforcement, and antiterrorism, etc.</p>
+<p>NER is a basic task in natural language processing and has a wide range of applications. Named entities generally refer to entities with specific meanings or strong referrals in the text, usually including names of people, places, names of organizations, dates, and proper nouns. The NER system aims to extract the above entities from the unstructured input text and can identify more types of entities according to scenario needs, such as product name, model, price, etc. Therefore, the concept of entity can be quite broad, as long as the special text fragments required by the specific scenario can all be called entities.</p>
+<p>Academically, the named entities involved in NER generally include 3 categories (entity category, time category, number category) and 7 subcategories (person name, place name, organization name, time, date, currency, percentage).</p>
+<p>NER is a basic key task in NLP. From the perspective of natural language process- ing, NER can be regarded as a type of unregistered word recognition in lexical analysis, which is the problem has most unrecognized word, the most difficulties to recognize, and the biggest influence on the effect of word segmentation. At the same time, NER is also the basis of many NLP tasks such as relation extraction, event extraction, knowl- edge graph, machine translation, question answering system and so on.</p>
+<h3 id="Approaches-for-Entity-resolution"><a href="#Approaches-for-Entity-resolution" class="headerlink" title="Approaches for Entity resolution"></a>Approaches for Entity resolution</h3><p>The early recognition methods of named entities are basically based on rules. Later, a large number of machine learning methods have also appeared in named entity class recognition tasks because statistical methods based on large-scale corpora have achieved good results in all aspects of natural language processing. Therefore Named entity recognition methods based on machine learning can be divided into the following categories:</p>
+<ul>
+<li><p><strong>Supervised learning methods</strong><br>This type of method requires the use of large- scale labeled corpus for parameter training of the model. Currently commonly used models or methods include hidden Markov models, language models, maxi- mum entropy models, support vector machines, decision trees, and conditional random fields. It is worth mentioning that the method based on conditional ran- dom field is the most successful method in named entity recognition currently.</p>
+</li>
+<li><p><strong>Semi-supervised learning method</strong><br>This type of method uses labeled small data sets (seed data) for bootstrap learning.</p>
+</li>
+<li><p><strong>Unsupervised learning methods</strong><br>This type of method uses vocabulary re- sources (such as WordNet) for context clustering.</p>
+</li>
+<li><p><strong>Mixed methods</strong><br>Combining several models or using statistical methods and a manually summarized knowledge base.</p>
+</li>
+</ul>
+<p>It is worth mentioning that due to the wide application of deep learning in natural language, deep learning based named entity recognition methods also show good results. Such methods basically use named entity recognition as a <strong>sequence labeling task</strong>, which is more classic. The method frequently used is <strong>LSTM+CRF</strong> and <strong>BiLSTM+CRF</strong>.</p>
+]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Dialogue System</category>
+        <category>Natural Language Understanding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Dialogue System</tag>
+        <tag>NLU</tag>
+        <tag>Entity Resolution</tag>
+        <tag>NER</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Viterbi Algorithm</title>
+    <url>/2020/07/29/NLP/Dialogue%20System/Viterbi-Algorithm/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Dialogue System</category>
+        <category>Natural Language Understanding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Viterbi</tag>
+        <tag>CRF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Intent Resolution</title>
     <url>/2020/07/29/NLP/Dialogue%20System/Intent-Resolution/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="Intent-Resolution"><a href="#Intent-Resolution" class="headerlink" title="Intent Resolution"></a>Intent Resolution</h3><p>The Natural Language Processing (NLP) enables chatbots to understand the user re- quests. But it is conversation engine unit in NLP that is key in making the chatbot to be more contextual and offer personalized conversation experiences to users. The major aspect of this chatbot conversation engine is intent classification. As simple as it may sound, it is actually quite a complex process. Text input is identified by a software function referred to as a “classifier”, which will associate the information provided with a specific “intent”, producing a detailed explanation of the words for the computer to understand.</p>
+<p>A classifier is a way to categorize pieces of data - in this case, a sentence - into several different categories. Much alike how humans will classify objects into sets, such as a violin is an instrument, a shirt is a type of clothing, and happy is an emotion. Chatbots will classify each section of a sentence into broken down categories to understand the intention behind the input it has received.</p>
+<ul>
+<li><strong>For example</strong>, imagine that we are interested in subscribing to cloud service pCloud and drop them a line asking about their paid subscription plans:<br><strong>“Hi, I’m a photographer and work with a significant amount of raw files. What kind of storage do you offer? Is it a lifetime membership? For the right price, I’d love to purchase cloud storage.”</strong><br>With an intent classifier, we could automatically categorize it as a clear Purchase intent.</li>
+</ul>
+<h3 id="How-we-classify-intent"><a href="#How-we-classify-intent" class="headerlink" title="How we classify intent?"></a>How we classify intent?</h3><p>Think about how humans classify everything – jeans are an item of clothing, a guitar is an instrument, a song with a soft rhythm is relaxing. In the same way, an intent classifier is able to categorize text based on the intent, goal, or purpose expressed in its content. It does this by using mathematic algorithms that can associate words or expressions with a particular intent. For example, a machine learning model can learn that words such as buy or acquire are often associated with a Purchase intent.</p>
+<h3 id="Approaches-for-Intent-Resolution"><a href="#Approaches-for-Intent-Resolution" class="headerlink" title="Approaches for Intent Resolution"></a>Approaches for Intent Resolution</h3><p>There are several options available to developers for intent resolution:</p>
+<ul>
+<li><p><strong>Pattern Matching:</strong> Pattern matching involves using regex to find patterns in the incoming text, and classify it into different intents.</p>
+</li>
+<li><p><strong>Machine Learning Algorithms:</strong> Use various machine learning algorithms to cre- ate multi-class classification. Machine learning platforms help the chatbots to be more contextual and analyse about the prospective clients, improvements in processes, and more.</p>
+</li>
+<li><p><strong>Neural Networks:</strong> These networks are used to learn from text using word embedding. These involve deep learning, which in turn is a sort of machine learning technique that uses Artificial Neural Network (ANN) concept. ANN is a computing system inspired by the biological neural networks. These systems are taught and “learn” by improving their performance without task-specific programming.</p>
+</li>
+</ul>
+<h3 id="Tags-for-Intent-Resolution"><a href="#Tags-for-Intent-Resolution" class="headerlink" title="Tags for Intent Resolution"></a>Tags for Intent Resolution</h3><p>These machine learning classifiers need to be trained first with examples. First, we need to define tags or categories that are relevant to the matter at hand. For in- tent classification, these tags typically refer to actions that customers intend to perform.</p>
+<p>For example, if we’re analyzing customer emails, our tags might be something like Interested, Need Information, Unsubscribe, Wrong Person, Email Bounce, Autoreply,etc. With tags in place, we can begin to train our model and feed it relevant examples for each tag. This way, we’ll teach the classifier how to tag new data appropriately. For example: “I tried to make a purchase through the site but I don’t know where to start, could you help me out? I’m really interested in shopping the new collection.” This email can be tagged as Interested. Now, imagine that we are doing outbound sales and reaching out to potential customers via email. Eventually, we may receive a response like “I’m not the right person for evaluating this solution, usually our manager gets to decide which tools we use.” This email can be tagged as Wrong Person. You may also receive a response such as “I am out of the office until next week. I’ll try and reach you once I get back. Thanks.” This email can be tagged as Out Of Office.</p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>The more examples we provide the model, the smarter our intent classifier will be since it has more information to learn from. To take intent detection one step further, we can combine an intent classifier with the results of a text extractor. This type of text analysis model can identify specific data from text, such as locations, dates, organization or person names, that are related to a user’s intent. For example, if you receive a message like, “I want to book a flight from New York to Las Vegas, but my card has been declined” an intent classifier would categorize this message as intent to Book a Flight, and a text extractor would extract the entities New York and Las Vegas. And this is called entity resolution technique, which I will also introduce in next section.</p>
+]]></content>
       <categories>
         <category>NLP</category>
         <category>Dialogue System</category>
@@ -733,6 +1115,128 @@
         <tag>Dialogue System</tag>
         <tag>NLU</tag>
         <tag>Intent Resolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CRF - NER</title>
+    <url>/2020/07/29/NLP/Dialogue%20System/CRF-NER/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Dialogue System</category>
+        <category>Natural Language Understanding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>NER</tag>
+        <tag>CRF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>N-Gram</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/N-Gram/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Word Embedding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>N-Gram</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Word Embedding - Skip gram</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Skip-gram/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Word Embedding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Word Embedding</tag>
+        <tag>Skip-gram</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Word Embedding - CBOW</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-CBOW/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Word Embedding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Word Embedding</tag>
+        <tag>CBOW</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sorting Algorithms</title>
+    <url>/2020/08/04/Mathematics-Algorithms/Algorithms-Data-Structure/Sorting-Algorithms/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Mathematics-Algorithms</category>
+        <category>Algorithms-Data-Structure</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+        <tag>Algorithms</tag>
+        <tag>Data Structure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LSTM</title>
+    <url>/2020/07/29/Deep%20Learning/RNN/LSTM/</url>
+    <content><![CDATA[<h3 id="Inspiration"><a href="#Inspiration" class="headerlink" title="Inspiration"></a>Inspiration</h3><p>To avoid the long-term dependency problem in RNN and solve gradient vanishing.<br><br></p>
+<h3 id="Novelty"><a href="#Novelty" class="headerlink" title="Novelty"></a>Novelty</h3><ul>
+<li>Forget gate</li>
+<li>Input gate</li>
+<li>Output gate</li>
+<li>Cell states<br><br></li>
+</ul>
+<h3 id="LSTM-process-detail"><a href="#LSTM-process-detail" class="headerlink" title="LSTM process detail"></a>LSTM process detail</h3><h6 id="Forget-gate-f-t"><a href="#Forget-gate-f-t" class="headerlink" title="Forget gate $f_t$:"></a>Forget gate $f_t$:</h6><p><img src="/images/RNN/lstm_1.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="Input-gate-i-t-and-new-candidate-cell-state-hat-C-t"><a href="#Input-gate-i-t-and-new-candidate-cell-state-hat-C-t" class="headerlink" title="Input gate $i_t$ and new candidate cell state $\hat{C_t}$"></a>Input gate $i_t$ and new candidate cell state $\hat{C_t}$</h6><p><img src="/images/RNN/lstm_2.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="New-cell-state-C-t"><a href="#New-cell-state-C-t" class="headerlink" title="New cell state $C_t$"></a>New cell state $C_t$</h6><p><img src="/images/RNN/lstm_3.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="Output-gate-o-t-and-current-hidden-state-h-t"><a href="#Output-gate-o-t-and-current-hidden-state-h-t" class="headerlink" title="Output gate $o_t$ and current hidden state $h_t$"></a>Output gate $o_t$ and current hidden state $h_t$</h6><p><img src="/images/RNN/lstm_4.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h3 id="Variant-LSTM-peephole"><a href="#Variant-LSTM-peephole" class="headerlink" title="Variant LSTM: peephole"></a>Variant LSTM: peephole</h3><p><img src="/images/RNN/lstm_5.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h4 id="RNN-Gradient-Vanishing"><a href="#RNN-Gradient-Vanishing" class="headerlink" title="RNN Gradient Vanishing"></a>RNN Gradient Vanishing</h4><p>RNN梯度消失是因为激活函数tanh函数的倒数在0到1之间，反向传播时更新前面时刻的参数时，当参数W初始化为小于1的数，则多个(tanh函数’ * W)相乘，将导致求得的偏导极小（小于1的数连乘），从而导致梯度消失。<br><br></p>
+<h4 id="RNN-Gradient-Exploding"><a href="#RNN-Gradient-Exploding" class="headerlink" title="RNN Gradient Exploding"></a>RNN Gradient Exploding</h4><p>当参数初始化为足够大，使得tanh函数的倒数乘以W大于1，则将导致偏导极大（大于1的数连乘），从而导致梯度爆炸。<br><br></p>
+<h4 id="RNN-Solve-gradient-problem"><a href="#RNN-Solve-gradient-problem" class="headerlink" title="RNN Solve gradient problem"></a>RNN Solve gradient problem</h4><ul>
+<li><p>合适地初始化W，即采用正则化</p>
+</li>
+<li><p>将tanh或sigmoid替换为ReLU</p>
+</li>
+<li><p>使用LSTM或者GRU, 使得RNN BP中的梯度连乘变成LSTM的梯度连加</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+        <category>RNN</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+        <tag>RNN</tag>
+        <tag>LSTM</tag>
+        <tag>Neural Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Word Embedding - Word2Vec - GloVe</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Word2Vec-GloVe/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Word Embedding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Word Embedding</tag>
+        <tag>Word2Vec</tag>
+        <tag>GloVe</tag>
       </tags>
   </entry>
   <entry>
@@ -772,119 +1276,6 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
         <tag>RNN</tag>
         <tag>Neural Network</tag>
         <tag>GRU</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Viterbi Algorithm</title>
-    <url>/2020/07/29/NLP/NER/Viterbi-Algorithm/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Named Entity Recognition</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Viterbi</tag>
-        <tag>CRF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CRF - NER</title>
-    <url>/2020/07/29/NLP/NER/CRF-NER/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Named Entity Recognition</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>CRF</tag>
-        <tag>NER</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>N-Gram</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/N-Gram/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Word Embedding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>N-Gram</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sentiment Analysis</title>
-    <url>/2020/07/29/NLP/Sentiment-Analysis/Sentiment-Analysis/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Sentiment Analysis</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Sentiment Analysis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Word Embedding - CBOW</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-CBOW/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Word Embedding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Word Embedding</tag>
-        <tag>CBOW</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Word Embedding - Skip gram</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Skip-gram/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Word Embedding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Word Embedding</tag>
-        <tag>Skip-gram</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Entity Resolution</title>
-    <url>/2020/07/29/NLP/Dialogue%20System/Entity-Resolution/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Dialogue System</category>
-        <category>Natural Language Understanding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Dialogue System</tag>
-        <tag>NLU</tag>
-        <tag>Entity Resolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Word Embedding - Word2Vec - GloVe</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Word2Vec-GloVe/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Word Embedding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>Word Embedding</tag>
-        <tag>Word2Vec</tag>
-        <tag>GloVe</tag>
       </tags>
   </entry>
   <entry>
@@ -962,24 +1353,6 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
 </ul>
 </li>
 </ul>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Supervised Learning</category>
-        <category>Classification</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Supervised Learning</tag>
-        <tag>Classification</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Decision Tree</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Decision-Tree/</url>
-    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Decision Tree</a></p>
-<p>The note for Decision Tree is in OneNote /Machine Learning/Supervised Learning/决策树-Decision Tree</p>
-<p>I will re-organize the note here later……</p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
@@ -1131,9 +1504,7 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
   <entry>
     <title>SVM</title>
     <url>/2020/07/26/Machine%20Learning/Supervised/Classification/SVM/</url>
-    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for SVM</a></p>
-<p>The note for SVM is in /Machine Learning/Supervised Learning/SVM</p>
-<p>I will re-organize the note here later……</p>
+    <content><![CDATA[<p><img src="/images/ml/" width="80%" height="80%" title="" alt=""/></p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
@@ -1147,69 +1518,26 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
       </tags>
   </entry>
   <entry>
-    <title>Lasso / Ridge / ElasticNet Regression</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Regression/Lasso-Ridge-ElasticNet-Regression/</url>
-    <content><![CDATA[<h3 id="Lasso-Regression"><a href="#Lasso-Regression" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p>Lasso, or Least Absolute Shrinkage and Selection Operator, is quite similar conceptually to ridge regression. It also adds a penalty for non-zero coefficients, but unlike ridge regression which penalizes sum of squared coefficients (the so-called L2 penalty), lasso penalizes the sum of their absolute values (L1 penalty).<br><img src="/images/regression/lasso.jpg" width="50%" height="30%" title="" alt=""/><br><br></p>
-<h3 id="Ridge-Regression"><a href="#Ridge-Regression" class="headerlink" title="Ridge Regression"></a>Ridge Regression</h3><p>In Ridge Regression, the loss function is augmented in such a way that we not only minimize the sum of squared residuals but also penalize the size of parameter estimates, in order to shrink them towards zero:<br><img src="/images/regression/ridge.png" width="50%" height="50%" title="" alt=""/><br><br></p>
-<h3 id="ElasticNet-Regression"><a href="#ElasticNet-Regression" class="headerlink" title="ElasticNet Regression"></a>ElasticNet Regression</h3><p>Elastic Net aims to combine the penalties of ridge regression and lasso to get the best of both worlds. Elastic Net aims at minimizing the following loss function:<br><img src="/images/regression/elastic.png" width="50%" height="50%" title="" alt=""/><br>where $\alpha$ is the mixing parameter between ridge ($\alpha$ = 0) and lasso ($\alpha$ = 1).<br><br></p>
-<h3 id="Points"><a href="#Points" class="headerlink" title="Points"></a>Points</h3><ul>
-<li><p>Lasso / Ridge regression are designed to solve regression with high collinearity and overfitting problems.</p>
-</li>
-<li><p>Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0</p>
-</li>
-<li><p>$\alpha$称为正则化参数，如果$\alpha$选取过大，会把所有参数$\theta$均最小化，造成欠拟合，如果$\alpha$选取过小，会导致对过拟合问题解决不当，因此$\alpha$的选取是一个技术活</p>
-</li>
-<li><p>岭回归与Lasso回归最大的区别在于岭回归引入的是L2范数惩罚项，Lasso回归引入的是L1范数惩罚项，Lasso回归能够使得损失函数中的许多$\theta$均变成0，这点要优于岭回归，因为岭回归是要所有的$\theta$均存在的，这样计算量Lasso回归将远远小于岭回归 </p>
-</li>
-</ul>
-]]></content>
+    <title>Decision Tree</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Decision-Tree/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Supervised Learning</category>
-        <category>Regression</category>
+        <category>Classification</category>
       </categories>
       <tags>
         <tag>Machine Learning</tag>
         <tag>Supervised Learning</tag>
-        <tag>Regression</tag>
+        <tag>Classification</tag>
       </tags>
   </entry>
   <entry>
-    <title>(Non) Linear Regression</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Regression/Linear-Regression/</url>
-    <content><![CDATA[<h3 id="What-is-Regression"><a href="#What-is-Regression" class="headerlink" title="What is Regression"></a>What is Regression</h3><p>Regression, its intuitive understanding is fitting. Let’s take linear regression as an example. There are a series of red points on a two-dimensional plane. We want to use a straight line to fit these red points as much as possible. This is linear regression. The essence of regression is that our prediction results are as close as possible to the actual observation results.</p>
-<p><img src="/images/linear_regression_1.jpg" width="30%" height="30%" title="Linear Regression in 2 dimension" alt=""/></p>
-<p><img src="/images/linear_regression_2.jpg" width="30%" height="30%" title="Linear Regression in 3 dimension" alt=""/></p>
-<p>What is linear? The data fitting is linear, in other words a straight line.<br>What is regression? To predict an accurate output value based on previous data.</p>
-<p>The linear regression algorithm can be divided into two categories:</p>
-<ul>
-<li>Linear Regression with one variable </li>
-<li>Linear Regression with multiple variable </li>
-</ul>
-<p>The most obvious character of regression is that the output $y_i$ is a continuous variable (this continuous variable is generally a float number, but sometimes can also be integer). The classic formula of linear regression is:<br><img src="/images/linear_regression_3.jpg" width="30%" height="30%" title="" alt=""/></p>
-<h3 id="Loss-Function-MSE"><a href="#Loss-Function-MSE" class="headerlink" title="Loss Function - MSE"></a>Loss Function - MSE</h3><p>The goal of linear regression is to fit the target label as much as possible with the predicted results, and the most common Least square is used as Loss Function:<br><img src="/images/linear_regression_4.jpg" width="30%" height="30%" title="" alt=""/><br><br/></p>
-<h3 id="Why-use-MSE-as-Loss-Function"><a href="#Why-use-MSE-as-Loss-Function" class="headerlink" title="Why use MSE as Loss Function"></a>Why use MSE as Loss Function</h3><p>After the model is prepared, we send the training data into the model, and then final value can be predicted through the model.<br><img src="/images/linear_regression_5.jpg" width="30%" height="30%" title="" alt=""/></p>
-<p>Then there is an error $ε$ between the true value y and the predicted value of the sample in training data. According to the central limit law, $\sum ε$ satisfies the Gaussian distribution $(u, δ^2)$ if the amount of the training data is large; Also u =0, then the Gaussian distribution $(0, δ^2)$ is satisfied due to the intercept term in equation.<br><img src="/images/linear_regression_6.jpg" width="40%" height="40%" title="" alt=""/></p>
-<p>As we can see above, for each sample $x$, send it into $p(y|x;θ)$ will get a probability of y; And because the sample is assumed to be independent and identically distributed; Thus we can find the maximum likelihood function for it:<br><img src="/images/linear_regression_7.jpg" width="40%" height="40%" title="" alt=""/></p>
-<p>Simplify it as follows<br><img src="/images/linear_regression_8.jpg" width="40%" height="40%" title="" alt=""/></p>
-<p>Finally, we use optimizers (such as SGD) to make the value of loss function keep decreasing, and iteratively update the corresponding parameters to obtain a well-fitting regression function.<br><br></p>
-<h3 id="Non-Linear-Regression"><a href="#Non-Linear-Regression" class="headerlink" title="Non-Linear Regression"></a>Non-Linear Regression</h3><p>A non-linear regression model is called when the fitting function is a non-linear function, such as hyperbolic model, power function, exponential function, logarithmic function model, polynomial model, etc. To solve the non-linear regression model, we normally transfer the non-linear regression model into a linear model gradually, and then performs linear regression fitting.</p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Supervised Learning</category>
-        <category>Regression</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Supervised Learning</tag>
-        <tag>Regression</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hierarchical Agglomerative Clustering</title>
-    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Hierarchical-Agglomerative-Clustering/</url>
-    <content><![CDATA[<p><img src="/images/clustering/HAC.png" width="65%" height="65%" title="" alt=""/></p>
+    <title>Model-based Clustering - EM / GMM</title>
+    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Model-based-Clustering-EM-GMM/</url>
+    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Model Methods - EM - GMM Clustering</a></p>
+<p>The note for Model Methods - EM - GMMe Clustering is in /Machine Learning/Unsupervised Learning/Model Methods —- EM based GMM</p>
+<p>I will re-organize the note here later……</p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
@@ -1227,24 +1555,6 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
     <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Density-Based-Clustering-DBSCAN-OPTICS/</url>
     <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for DBSCAN / OPTICS Clustering</a></p>
 <p>The note for DBSCAN / OPTICS is in /Machine Learning/Unsupervised Learning/Density-Based Methods —- DBSCAN / OPTICS</p>
-<p>I will re-organize the note here later……</p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Model-based Clustering - EM / GMM</title>
-    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Model-based-Clustering-EM-GMM/</url>
-    <content><![CDATA[<p><a href="https://1drv.ms/u/s!An1MquH6U669am-qGzLp7_Vo1xk" target="_blank" rel="noopener">OneNote Note for Model Methods - EM - GMM Clustering</a></p>
-<p>The note for Model Methods - EM - GMMe Clustering is in /Machine Learning/Unsupervised Learning/Model Methods —- EM based GMM</p>
 <p>I will re-organize the note here later……</p>
 ]]></content>
       <categories>
@@ -1305,6 +1615,82 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
         <tag>Machine Learning</tag>
         <tag>Unsupervised Learning</tag>
         <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hierarchical Agglomerative Clustering</title>
+    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Hierarchical-Agglomerative-Clustering/</url>
+    <content><![CDATA[<p><img src="/images/clustering/HAC.png" width="65%" height="65%" title="" alt=""/></p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(Non) Linear Regression</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Regression/Linear-Regression/</url>
+    <content><![CDATA[<h3 id="What-is-Regression"><a href="#What-is-Regression" class="headerlink" title="What is Regression"></a>What is Regression</h3><p>Regression, its intuitive understanding is fitting. Let’s take linear regression as an example. There are a series of red points on a two-dimensional plane. We want to use a straight line to fit these red points as much as possible. This is linear regression. The essence of regression is that our prediction results are as close as possible to the actual observation results.</p>
+<p><img src="/images/linear_regression_1.jpg" width="30%" height="30%" title="Linear Regression in 2 dimension" alt=""/></p>
+<p><img src="/images/linear_regression_2.jpg" width="30%" height="30%" title="Linear Regression in 3 dimension" alt=""/></p>
+<p>What is linear? The data fitting is linear, in other words a straight line.<br>What is regression? To predict an accurate output value based on previous data.</p>
+<p>The linear regression algorithm can be divided into two categories:</p>
+<ul>
+<li>Linear Regression with one variable </li>
+<li>Linear Regression with multiple variable </li>
+</ul>
+<p>The most obvious character of regression is that the output $y_i$ is a continuous variable (this continuous variable is generally a float number, but sometimes can also be integer). The classic formula of linear regression is:<br><img src="/images/linear_regression_3.jpg" width="30%" height="30%" title="" alt=""/></p>
+<h3 id="Loss-Function-MSE"><a href="#Loss-Function-MSE" class="headerlink" title="Loss Function - MSE"></a>Loss Function - MSE</h3><p>The goal of linear regression is to fit the target label as much as possible with the predicted results, and the most common Least square is used as Loss Function:<br><img src="/images/linear_regression_4.jpg" width="30%" height="30%" title="" alt=""/><br><br/></p>
+<h3 id="Why-use-MSE-as-Loss-Function"><a href="#Why-use-MSE-as-Loss-Function" class="headerlink" title="Why use MSE as Loss Function"></a>Why use MSE as Loss Function</h3><p>After the model is prepared, we send the training data into the model, and then final value can be predicted through the model.<br><img src="/images/linear_regression_5.jpg" width="30%" height="30%" title="" alt=""/></p>
+<p>Then there is an error $ε$ between the true value y and the predicted value of the sample in training data. According to the central limit law, $\sum ε$ satisfies the Gaussian distribution $(u, δ^2)$ if the amount of the training data is large; Also u =0, then the Gaussian distribution $(0, δ^2)$ is satisfied due to the intercept term in equation.<br><img src="/images/linear_regression_6.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>As we can see above, for each sample $x$, send it into $p(y|x;θ)$ will get a probability of y; And because the sample is assumed to be independent and identically distributed; Thus we can find the maximum likelihood function for it:<br><img src="/images/linear_regression_7.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>Simplify it as follows<br><img src="/images/linear_regression_8.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>Finally, we use optimizers (such as SGD) to make the value of loss function keep decreasing, and iteratively update the corresponding parameters to obtain a well-fitting regression function.<br><br></p>
+<h3 id="Non-Linear-Regression"><a href="#Non-Linear-Regression" class="headerlink" title="Non-Linear Regression"></a>Non-Linear Regression</h3><p>A non-linear regression model is called when the fitting function is a non-linear function, such as hyperbolic model, power function, exponential function, logarithmic function model, polynomial model, etc. To solve the non-linear regression model, we normally transfer the non-linear regression model into a linear model gradually, and then performs linear regression fitting.</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Supervised Learning</category>
+        <category>Regression</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Supervised Learning</tag>
+        <tag>Regression</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Lasso / Ridge / ElasticNet Regression</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Regression/Lasso-Ridge-ElasticNet-Regression/</url>
+    <content><![CDATA[<h3 id="Lasso-Regression"><a href="#Lasso-Regression" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p>Lasso, or Least Absolute Shrinkage and Selection Operator, is quite similar conceptually to ridge regression. It also adds a penalty for non-zero coefficients, but unlike ridge regression which penalizes sum of squared coefficients (the so-called L2 penalty), lasso penalizes the sum of their absolute values (L1 penalty).<br><img src="/images/regression/lasso.jpg" width="50%" height="30%" title="" alt=""/><br><br></p>
+<h3 id="Ridge-Regression"><a href="#Ridge-Regression" class="headerlink" title="Ridge Regression"></a>Ridge Regression</h3><p>In Ridge Regression, the loss function is augmented in such a way that we not only minimize the sum of squared residuals but also penalize the size of parameter estimates, in order to shrink them towards zero:<br><img src="/images/regression/ridge.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h3 id="ElasticNet-Regression"><a href="#ElasticNet-Regression" class="headerlink" title="ElasticNet Regression"></a>ElasticNet Regression</h3><p>Elastic Net aims to combine the penalties of ridge regression and lasso to get the best of both worlds. Elastic Net aims at minimizing the following loss function:<br><img src="/images/regression/elastic.png" width="50%" height="50%" title="" alt=""/><br>where $\alpha$ is the mixing parameter between ridge ($\alpha$ = 0) and lasso ($\alpha$ = 1).<br><br></p>
+<h3 id="Points"><a href="#Points" class="headerlink" title="Points"></a>Points</h3><ul>
+<li><p>Lasso / Ridge regression are designed to solve regression with high collinearity and overfitting problems.</p>
+</li>
+<li><p>Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0</p>
+</li>
+<li><p>$\alpha$称为正则化参数，如果$\alpha$选取过大，会把所有参数$\theta$均最小化，造成欠拟合，如果$\alpha$选取过小，会导致对过拟合问题解决不当，因此$\alpha$的选取是一个技术活</p>
+</li>
+<li><p>岭回归与Lasso回归最大的区别在于岭回归引入的是L2范数惩罚项，Lasso回归引入的是L1范数惩罚项，Lasso回归能够使得损失函数中的许多$\theta$均变成0，这点要优于岭回归，因为岭回归是要所有的$\theta$均存在的，这样计算量Lasso回归将远远小于岭回归 </p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Supervised Learning</category>
+        <category>Regression</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Supervised Learning</tag>
+        <tag>Regression</tag>
       </tags>
   </entry>
 </search>

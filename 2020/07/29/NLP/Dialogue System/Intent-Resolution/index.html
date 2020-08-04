@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="Intent ResolutionThe Natural Language Processing (NLP) enables chatbots to understand the user re- quests. But it is conversation engine unit in NLP that is key in making the chatbot to be more contex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Intent Resolution">
 <meta property="og:url" content="http://yoursite.com/2020/07/29/NLP/Dialogue%20System/Intent-Resolution/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="Intent ResolutionThe Natural Language Processing (NLP) enables chatbots to understand the user re- quests. But it is conversation engine unit in NLP that is key in making the chatbot to be more contex">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-28T23:41:57.000Z">
-<meta property="article:modified_time" content="2020-07-28T23:44:55.925Z">
+<meta property="article:modified_time" content="2020-08-04T00:50:08.184Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="NLP">
 <meta property="article:tag" content="Dialogue System">
@@ -400,7 +400,25 @@
       
 
       
-        
+        <h3 id="Intent-Resolution"><a href="#Intent-Resolution" class="headerlink" title="Intent Resolution"></a>Intent Resolution</h3><p>The Natural Language Processing (NLP) enables chatbots to understand the user re- quests. But it is conversation engine unit in NLP that is key in making the chatbot to be more contextual and offer personalized conversation experiences to users. The major aspect of this chatbot conversation engine is intent classification. As simple as it may sound, it is actually quite a complex process. Text input is identified by a software function referred to as a “classifier”, which will associate the information provided with a specific “intent”, producing a detailed explanation of the words for the computer to understand.</p>
+<p>A classifier is a way to categorize pieces of data - in this case, a sentence - into several different categories. Much alike how humans will classify objects into sets, such as a violin is an instrument, a shirt is a type of clothing, and happy is an emotion. Chatbots will classify each section of a sentence into broken down categories to understand the intention behind the input it has received.</p>
+<ul>
+<li><strong>For example</strong>, imagine that we are interested in subscribing to cloud service pCloud and drop them a line asking about their paid subscription plans:<br><strong>“Hi, I’m a photographer and work with a significant amount of raw files. What kind of storage do you offer? Is it a lifetime membership? For the right price, I’d love to purchase cloud storage.”</strong><br>With an intent classifier, we could automatically categorize it as a clear Purchase intent.</li>
+</ul>
+<h3 id="How-we-classify-intent"><a href="#How-we-classify-intent" class="headerlink" title="How we classify intent?"></a>How we classify intent?</h3><p>Think about how humans classify everything – jeans are an item of clothing, a guitar is an instrument, a song with a soft rhythm is relaxing. In the same way, an intent classifier is able to categorize text based on the intent, goal, or purpose expressed in its content. It does this by using mathematic algorithms that can associate words or expressions with a particular intent. For example, a machine learning model can learn that words such as buy or acquire are often associated with a Purchase intent.</p>
+<h3 id="Approaches-for-Intent-Resolution"><a href="#Approaches-for-Intent-Resolution" class="headerlink" title="Approaches for Intent Resolution"></a>Approaches for Intent Resolution</h3><p>There are several options available to developers for intent resolution:</p>
+<ul>
+<li><p><strong>Pattern Matching:</strong> Pattern matching involves using regex to find patterns in the incoming text, and classify it into different intents.</p>
+</li>
+<li><p><strong>Machine Learning Algorithms:</strong> Use various machine learning algorithms to cre- ate multi-class classification. Machine learning platforms help the chatbots to be more contextual and analyse about the prospective clients, improvements in processes, and more.</p>
+</li>
+<li><p><strong>Neural Networks:</strong> These networks are used to learn from text using word embedding. These involve deep learning, which in turn is a sort of machine learning technique that uses Artificial Neural Network (ANN) concept. ANN is a computing system inspired by the biological neural networks. These systems are taught and “learn” by improving their performance without task-specific programming.</p>
+</li>
+</ul>
+<h3 id="Tags-for-Intent-Resolution"><a href="#Tags-for-Intent-Resolution" class="headerlink" title="Tags for Intent Resolution"></a>Tags for Intent Resolution</h3><p>These machine learning classifiers need to be trained first with examples. First, we need to define tags or categories that are relevant to the matter at hand. For in- tent classification, these tags typically refer to actions that customers intend to perform.</p>
+<p>For example, if we’re analyzing customer emails, our tags might be something like Interested, Need Information, Unsubscribe, Wrong Person, Email Bounce, Autoreply,etc. With tags in place, we can begin to train our model and feed it relevant examples for each tag. This way, we’ll teach the classifier how to tag new data appropriately. For example: “I tried to make a purchase through the site but I don’t know where to start, could you help me out? I’m really interested in shopping the new collection.” This email can be tagged as Interested. Now, imagine that we are doing outbound sales and reaching out to potential customers via email. Eventually, we may receive a response like “I’m not the right person for evaluating this solution, usually our manager gets to decide which tools we use.” This email can be tagged as Wrong Person. You may also receive a response such as “I am out of the office until next week. I’ll try and reach you once I get back. Thanks.” This email can be tagged as Out Of Office.</p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>The more examples we provide the model, the smarter our intent classifier will be since it has more information to learn from. To take intent detection one step further, we can combine an intent classifier with the results of a text extractor. This type of text analysis model can identify specific data from text, such as locations, dates, organization or person names, that are related to a user’s intent. For example, if you receive a message like, “I want to book a flight from New York to Las Vegas, but my card has been declined” an intent classifier would categorize this message as intent to Book a Flight, and a text extractor would extract the entities New York and Las Vegas. And this is called entity resolution technique, which I will also introduce in next section.</p>
+
       
     </div>
     
@@ -446,8 +464,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/29/NLP/Dialogue%20System/Entity-Resolution/" rel="prev" title="Entity Resolution">
-                Entity Resolution <i class="fa fa-chevron-right"></i>
+              <a href="/2020/07/29/NLP/Dialogue%20System/Entity-Resolution/" rel="prev" title="(Named) Entity Resolution">
+                (Named) Entity Resolution <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -500,8 +518,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -516,7 +543,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -527,7 +554,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -538,7 +565,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -561,6 +588,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Intent-Resolution"><span class="nav-number">1.</span> <span class="nav-text">Intent Resolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-we-classify-intent"><span class="nav-number">2.</span> <span class="nav-text">How we classify intent?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Approaches-for-Intent-Resolution"><span class="nav-number">3.</span> <span class="nav-text">Approaches for Intent Resolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tags-for-Intent-Resolution"><span class="nav-number">4.</span> <span class="nav-text">Tags for Intent Resolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

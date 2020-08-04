@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="NLP,Dialogue System,NLU,Entity Resolution," />
+  <meta name="keywords" content="NLP,Dialogue System,NLU,Entity Resolution,NER," />
 
 
 
@@ -79,20 +79,21 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="Entity resolutionEntity resolution (ER) is the task of disambiguating records that correspond to real world entities across and within datasets. The applications of entity resolution are tremendous, p">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Entity Resolution">
+<meta property="og:title" content="(Named) Entity Resolution">
 <meta property="og:url" content="http://yoursite.com/2020/07/29/NLP/Dialogue%20System/Entity-Resolution/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="Entity resolutionEntity resolution (ER) is the task of disambiguating records that correspond to real world entities across and within datasets. The applications of entity resolution are tremendous, p">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-28T23:42:05.000Z">
-<meta property="article:modified_time" content="2020-07-28T23:44:32.218Z">
+<meta property="article:modified_time" content="2020-08-04T09:02:59.057Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="NLP">
 <meta property="article:tag" content="Dialogue System">
 <meta property="article:tag" content="NLU">
 <meta property="article:tag" content="Entity Resolution">
+<meta property="article:tag" content="NER">
 <meta name="twitter:card" content="summary">
 
 
@@ -129,7 +130,7 @@
 
 
 
-  <title>Entity Resolution | XIN SUN</title>
+  <title>(Named) Entity Resolution | XIN SUN</title>
   
 
 
@@ -306,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Entity Resolution</h1>
+          <h1 class="post-title" itemprop="name headline">(Named) Entity Resolution</h1>
         
 
         <div class="post-meta">
@@ -400,7 +401,23 @@
       
 
       
-        
+        <h3 id="Entity-resolution"><a href="#Entity-resolution" class="headerlink" title="Entity resolution"></a>Entity resolution</h3><p>Entity resolution (ER) is the task of disambiguating records that correspond to real world entities across and within datasets. The applications of entity resolution are tremendous, particularly for public sector and federal datasets related to health, trans- portation, finance, law enforcement, and antiterrorism, etc.</p>
+<p>NER is a basic task in natural language processing and has a wide range of applications. Named entities generally refer to entities with specific meanings or strong referrals in the text, usually including names of people, places, names of organizations, dates, and proper nouns. The NER system aims to extract the above entities from the unstructured input text and can identify more types of entities according to scenario needs, such as product name, model, price, etc. Therefore, the concept of entity can be quite broad, as long as the special text fragments required by the specific scenario can all be called entities.</p>
+<p>Academically, the named entities involved in NER generally include 3 categories (entity category, time category, number category) and 7 subcategories (person name, place name, organization name, time, date, currency, percentage).</p>
+<p>NER is a basic key task in NLP. From the perspective of natural language process- ing, NER can be regarded as a type of unregistered word recognition in lexical analysis, which is the problem has most unrecognized word, the most difficulties to recognize, and the biggest influence on the effect of word segmentation. At the same time, NER is also the basis of many NLP tasks such as relation extraction, event extraction, knowl- edge graph, machine translation, question answering system and so on.</p>
+<h3 id="Approaches-for-Entity-resolution"><a href="#Approaches-for-Entity-resolution" class="headerlink" title="Approaches for Entity resolution"></a>Approaches for Entity resolution</h3><p>The early recognition methods of named entities are basically based on rules. Later, a large number of machine learning methods have also appeared in named entity class recognition tasks because statistical methods based on large-scale corpora have achieved good results in all aspects of natural language processing. Therefore Named entity recognition methods based on machine learning can be divided into the following categories:</p>
+<ul>
+<li><p><strong>Supervised learning methods</strong><br>This type of method requires the use of large- scale labeled corpus for parameter training of the model. Currently commonly used models or methods include hidden Markov models, language models, maxi- mum entropy models, support vector machines, decision trees, and conditional random fields. It is worth mentioning that the method based on conditional ran- dom field is the most successful method in named entity recognition currently.</p>
+</li>
+<li><p><strong>Semi-supervised learning method</strong><br>This type of method uses labeled small data sets (seed data) for bootstrap learning.</p>
+</li>
+<li><p><strong>Unsupervised learning methods</strong><br>This type of method uses vocabulary re- sources (such as WordNet) for context clustering.</p>
+</li>
+<li><p><strong>Mixed methods</strong><br>Combining several models or using statistical methods and a manually summarized knowledge base.</p>
+</li>
+</ul>
+<p>It is worth mentioning that due to the wide application of deep learning in natural language, deep learning based named entity recognition methods also show good results. Such methods basically use named entity recognition as a <strong>sequence labeling task</strong>, which is more classic. The method frequently used is <strong>LSTM+CRF</strong> and <strong>BiLSTM+CRF</strong>.</p>
+
       
     </div>
     
@@ -424,6 +441,8 @@
             <a href="/tags/NLU/" rel="tag"># NLU</a>
           
             <a href="/tags/Entity-Resolution/" rel="tag"># Entity Resolution</a>
+          
+            <a href="/tags/NER/" rel="tag"># NER</a>
           
         </div>
       
@@ -500,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -516,7 +544,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -527,7 +555,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -538,7 +566,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -561,6 +589,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Entity-resolution"><span class="nav-number">1.</span> <span class="nav-text">Entity resolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Approaches-for-Entity-resolution"><span class="nav-number">2.</span> <span class="nav-text">Approaches for Entity resolution</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
