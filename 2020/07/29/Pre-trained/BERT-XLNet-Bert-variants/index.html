@@ -88,7 +88,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/images/pre_trained/xlnet_1.png">
 <meta property="article:published_time" content="2020-07-28T22:13:31.000Z">
-<meta property="article:modified_time" content="2020-08-03T00:57:49.917Z">
+<meta property="article:modified_time" content="2020-08-05T19:11:18.142Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Deep Learning">
 <meta property="article:tag" content="Pre-trained">
@@ -412,7 +412,7 @@
 </li>
 <li><p>When training, let the distilBert model try to learn the effect of the original bert model. And the design of Loss consists of three parts, two of which are related to the output of the bert model.</p>
 <ul>
-<li><p>First: Use KL divergence to measure the probability distribution of the final output layer of bert and distilBert (to ensure that the probability distribution of each label predicted by the two models is as consistent as possible).</p>
+<li><p>First: Use KL divergence to measure the probability distribution of the final output layer of bert and distilBert (to ensure that the probability distribution of each label predicted by the two models is as consistent as possible)</p>
 </li>
 <li><p>Second: The cos loss of the final output vector of bert and distilBert (to ensure that the output vector representation from the model is as similar as possible), represented by Lcos. The last part is the standard cross entropy, the cross entropy with the real label, represented by Lmlm. The final loss is obtained by adding three parts of weighted loss: <script type="math/tex">Loss = 5Lce + 3Lmlm + 2*Lcos</script><br><br></p>
 </li>

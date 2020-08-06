@@ -79,15 +79,16 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="Concrete steps of PCAInput: n-dimensional sample set $X &#x3D; (x_1, …, x_m)$, the dimensionality to be reduced is $k$.Output: the sample set $Y$ after dimension reduction  Centralize all samples $xi &#x3D; x_i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dimension reduction">
 <meta property="og:url" content="http://yoursite.com/2020/08/04/Machine%20Learning/Foundation/Dimension-reduction/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="Concrete steps of PCAInput: n-dimensional sample set $X &#x3D; (x_1, …, x_m)$, the dimensionality to be reduced is $k$.Output: the sample set $Y$ after dimension reduction  Centralize all samples $xi &#x3D; x_i">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/ml/svd_1.png">
 <meta property="article:published_time" content="2020-08-04T18:27:27.000Z">
-<meta property="article:modified_time" content="2020-08-04T18:28:32.486Z">
+<meta property="article:modified_time" content="2020-08-05T22:12:01.891Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="ML Foundations">
@@ -95,6 +96,7 @@
 <meta property="article:tag" content="PCA">
 <meta property="article:tag" content="SVD">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/ml/svd_1.png">
 
 
 
@@ -390,7 +392,48 @@
       
 
       
-        
+        <h3 id="Concrete-steps-of-PCA"><a href="#Concrete-steps-of-PCA" class="headerlink" title="Concrete steps of PCA"></a>Concrete steps of PCA</h3><p><strong>Input:</strong> n-dimensional sample set $X = (x_1, …, x_m)$, the dimensionality to be reduced is $k$.<br><strong>Output:</strong> the sample set $Y$ after dimension reduction</p>
+<ol>
+<li><p>Centralize all samples $x<em>i = x_i - \frac{1}{m} \sum</em>{j=1}^m x_j$</p>
+</li>
+<li><p>Calculate the <strong>covariance matrix</strong> of the sample $C = \frac{1}{m} X*X^T$</p>
+</li>
+<li><p>Find the <strong>eigenvalues</strong> of the covariance matrix and the corresponding <strong>eigenvectors</strong></p>
+</li>
+<li><p>Arrange the eigenvectors in rows from top to bottom according to the corresponding eigenvalues into a matrix, and take the first k rows to form a matrix P</p>
+</li>
+<li><p>$Y=PX$ is the data after dimension reduction to $k$ dimension</p>
+</li>
+</ol>
+<p><strong>Note:</strong><br>Sometimes, we do not specify the value of the k after dimensionality reduction, but in another way, specify a dimensionality-reduced principal component proportion threshold t. This threshold t is between [0, 1]. If we have n eigenvalues: $\lambda<em>1 \geq \lambda_2 \geq … \lambda_n$, then k can be obtained by the following formula:<br>$\frac{\sum</em>{i=1}^k \lambda<em>i}{\sum</em>{i=1}^n \lambda_i} \geq t$</p>
+<p>The main advantages of the PCA algorithm are:</p>
+<ul>
+<li>nsupervised learning dimensionality reduction method</li>
+<li>It only needs to measure the amount of information by variance, and is not affected by factors outside the data set. </li>
+<li>The calculation method is simple, and the main operation is eigenvalue decomposition, which is easy to implement.</li>
+<li>The orthogonality between the principal components can eliminate the mutual influence factors between the original data.</li>
+</ul>
+<p>The main disadvantages of the PCA algorithm are:</p>
+<ul>
+<li>The meaning of each feature dimension of the principal component is ambigious, which is not as explanatory as the original sample feature.</li>
+<li>Non-principal components with small variance may also contain important information about sample differences, may have an impact on subsequent data processing because dimensionality reduction and discarding.<br><br></li>
+</ul>
+<h3 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h3><p>SVD also aims to decomposes the matrix, but unlike eigen decomposition. SVD does not require the matrix to be a square matrix which need to be decomposed. </p>
+<p>Suppose our matrix A is a $m×n$ matrix, then we define the SVD of matrix A as:<br>$A=UΣV^𝑇$.</p>
+<p>Among them:</p>
+<ul>
+<li>U is a $m×m$ matrix</li>
+<li>$Σ$ is $𝑚×𝑛$ matrix, which are all 0, except for the elements on the main diagonal, and each element on the main diagonal is called a singular value</li>
+<li>V is $𝑛×𝑛$ matrix</li>
+<li>U and V are both unitary matrices, which satisfy $𝑈𝑇𝑈=𝐼, \quad 𝑉𝑇𝑉=𝐼$</li>
+</ul>
+<p>The following figure can clearly see the definition of SVD above:<br><img src="/images/ml/svd_1.png" width="50%" height="50%" title="" alt=""/></p>
+<p>If we take the transpose of A and A^T to do matrix multiplication, we will get $𝑛×𝑛$ matrix $𝐴^𝑇𝐴$, which is a square matrix that we can perform feature decomposition.</p>
+<p><script type="math/tex">(𝐴^𝑇𝐴)v_i=\lambda_i vi</script>.<br>This way we can get the n eigenvalues and the corresponding n eigenvectors of matrix $𝐴^𝑇𝐴$. This the matrix $V$.</p>
+<p>The same way we could solve the matrix $U$.</p>
+<p>Then we can solve the Singular value $\sigma$ in following:</p>
+<p><script type="math/tex">A=UΣV^T \quad \Longrightarrow \quad AV=UΣV^TV \quad \Longrightarrow \quad AV=UΣ \quad \Longrightarrow \quad Av_i=\sigma_iu_i \quad \Longrightarrow \quad \sigma_i=\frac{Av_i}{u_i}</script>.</p>
+
       
     </div>
     
@@ -492,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -553,6 +605,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Concrete-steps-of-PCA"><span class="nav-number">1.</span> <span class="nav-text">Concrete steps of PCA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVD"><span class="nav-number">2.</span> <span class="nav-text">SVD</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

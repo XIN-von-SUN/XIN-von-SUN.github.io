@@ -79,20 +79,33 @@
 
 
 
+<meta name="description" content="Lagrange MultiplierAssuming we have following programming problem which has 2 constraints: We use Lagrange Multiplier method to transform the constraints into the Objective function as follow: More ge">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SVM">
 <meta property="og:url" content="http://yoursite.com/2020/07/26/Machine%20Learning/Supervised/Classification/SVM/index.html">
 <meta property="og:site_name" content="XIN SUN">
+<meta property="og:description" content="Lagrange MultiplierAssuming we have following programming problem which has 2 constraints: We use Lagrange Multiplier method to transform the constraints into the Objective function as follow: More ge">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/images/ml/">
+<meta property="og:image" content="http://yoursite.com/images/ml/svm_2.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/svm_3.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/svm_4.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/svm_5.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/svm_1.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/svm_6.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/svm_7.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/svm_8.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/svm_9.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/svm_10.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/svm_11.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/svm_12.png">
 <meta property="article:published_time" content="2020-07-26T12:31:42.000Z">
-<meta property="article:modified_time" content="2020-08-04T21:49:58.796Z">
+<meta property="article:modified_time" content="2020-08-05T21:19:49.560Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="Supervised Learning">
 <meta property="article:tag" content="Classification">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/ml/">
+<meta name="twitter:image" content="http://yoursite.com/images/ml/svm_2.png">
 
 
 
@@ -399,7 +412,38 @@
       
 
       
-        <p><img src="/images/ml/" width="80%" height="80%" title="" alt=""/></p>
+        <h3 id="Lagrange-Multiplier"><a href="#Lagrange-Multiplier" class="headerlink" title="Lagrange Multiplier"></a>Lagrange Multiplier</h3><p>Assuming we have following programming problem which has 2 constraints:<br><img src="/images/ml/svm_2.png" width="50%" height="50%" title="" alt=""/></p>
+<p>We use <strong>Lagrange Multiplier</strong> method to transform the constraints into the Objective function as follow:<br><img src="/images/ml/svm_3.png" width="50%" height="50%" title="" alt=""/></p>
+<p>More generally:<br><img src="/images/ml/svm_4.png" width="50%" height="50%" title="" alt=""/></p>
+<p>among them:</p>
+<ul>
+<li>$\alpha$ and $\beta$: Lagrange Multipliers</li>
+<li>$g$: Inequality constraints</li>
+<li>$h$: Equality constraints</li>
+</ul>
+<p>Above transformation we call Lagrange Multiplier method.<br><br></p>
+<h3 id="KKT"><a href="#KKT" class="headerlink" title="KKT"></a>KKT</h3><p>Regrading above programming problem, we can use KKT conditions to solve the optimal of Object function.</p>
+<p>The KKT condition has following 3 points:</p>
+<ul>
+<li>Solve derivative of Object function $L$</li>
+<li>$h(x) = 0$</li>
+<li>$\sum \alpha_i * g_i(x) = 0, \quad a_i &gt; 0$</li>
+</ul>
+<p>For example, we have derivative of above Object function as follow:<br><img src="/images/ml/svm_5.png" width="50%" height="50%" title="" alt=""/></p>
+<p>Then we can get the optimal of Object function under KKT conditions.<br><br></p>
+<h3 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h3><p>We could say (binary SVM): <strong>SVM = Hingo loss + L2 regularization</strong></p>
+<p><img src="/images/ml/svm_1.png" width="50%" height="50%" title="" alt=""/></p>
+<p>SVM should maximizes the margins GAP from both points. In other words: the hyperplane (remember it’s a line in 2-dimensional case) whose distance GAP=d to the nearest element of each points is the largest.</p>
+<p>Assuming the functions of 3 hyper planes are as follow:<br><img src="/images/ml/svm_6.png" width="50%" height="50%" title="" alt=""/></p>
+<p>Then what we want to do is:</p>
+<script type="math/tex; mode=display">max \quad \frac{2}{|w|},</script><script type="math/tex; mode=display">s.t. \quad y_i(w^Tx_i+b) \geq 1, \quad i=1,2,...,n</script><p>And above programming is equvient to:</p>
+<script type="math/tex; mode=display">min \quad \frac{1}{2} w^Tw,</script><script type="math/tex; mode=display">s.t. \quad 1-y_i(w^Tx_i+b) \leq 1, \quad i=1,2,...,n</script><p>And we can get the transformation by Lagrange Multiplier method:<br><img src="/images/ml/svm_7.png" width="50%" height="50%" title="" alt=""/></p>
+<p>And the derivative is:<br><img src="/images/ml/svm_8.png" width="50%" height="50%" title="" alt=""/></p>
+<p><img src="/images/ml/svm_9.png" width="50%" height="50%" title="" alt=""/></p>
+<p>This is how SVM works.<br><br></p>
+<h3 id="Why-SVM-approx-Hingo-loss-L2-regularization"><a href="#Why-SVM-approx-Hingo-loss-L2-regularization" class="headerlink" title="Why SVM $\approx$ Hingo loss + L2 regularization"></a>Why SVM $\approx$ Hingo loss + L2 regularization</h3><p>Hingo loss with L2 regularization:<br><img src="/images/ml/svm_10.png" width="50%" height="50%" title="" alt=""/></p>
+<p>It equals to:<br><img src="/images/ml/svm_11.png" width="50%" height="35%" title="" alt=""/></p>
+<p>Then we can re-write the Hingo loss with L2 as follow, which is same as SVM:<br><img src="/images/ml/svm_12.png" width="50%" height="50%" title="" alt=""/></p>
 
       
     </div>
@@ -498,8 +542,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -559,6 +612,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lagrange-Multiplier"><span class="nav-number">1.</span> <span class="nav-text">Lagrange Multiplier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KKT"><span class="nav-number">2.</span> <span class="nav-text">KKT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM"><span class="nav-number">3.</span> <span class="nav-text">SVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-SVM-approx-Hingo-loss-L2-regularization"><span class="nav-number">4.</span> <span class="nav-text">Why SVM $\approx$ Hingo loss + L2 regularization</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

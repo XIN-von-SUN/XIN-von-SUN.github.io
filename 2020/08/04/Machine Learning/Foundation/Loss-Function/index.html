@@ -79,20 +79,25 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="Loss for regressionMSE Loss (L2)L(Y, f(x)) &#x3D; \frac{1}{n} \sum (Y - f(x))^2 Simple and easy to calculate; Euclidean distance is a good measure of similarity; The feature properties remain unchanged aft">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Loss Function">
 <meta property="og:url" content="http://yoursite.com/2020/08/04/Machine%20Learning/Foundation/Loss-Function/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="Loss for regressionMSE Loss (L2)L(Y, f(x)) &#x3D; \frac{1}{n} \sum (Y - f(x))^2 Simple and easy to calculate; Euclidean distance is a good measure of similarity; The feature properties remain unchanged aft">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/ml/huber_loss.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/0_1_loss.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/huber_loss.png">
+<meta property="og:image" content="http://yoursite.com/images/ml/exp_loss.png">
 <meta property="article:published_time" content="2020-08-04T18:19:30.000Z">
-<meta property="article:modified_time" content="2020-08-04T18:23:39.604Z">
+<meta property="article:modified_time" content="2020-08-05T19:48:46.433Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="ML Foundations">
 <meta property="article:tag" content="Loss Function">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/ml/huber_loss.png">
 
 
 
@@ -388,7 +393,69 @@
       
 
       
-        
+        <h3 id="Loss-for-regression"><a href="#Loss-for-regression" class="headerlink" title="Loss for regression"></a>Loss for regression</h3><h5 id="MSE-Loss-L2"><a href="#MSE-Loss-L2" class="headerlink" title="MSE Loss (L2)"></a>MSE Loss (L2)</h5><script type="math/tex; mode=display">L(Y, f(x)) = \frac{1}{n} \sum (Y - f(x))^2</script><ul>
+<li>Simple and easy to calculate;</li>
+<li>Euclidean distance is a good measure of similarity;</li>
+<li>The feature properties remain unchanged after transformation in different representation domains.<br><br></li>
+</ul>
+<h5 id="MAE-Loss-L1"><a href="#MAE-Loss-L1" class="headerlink" title="MAE Loss (L1)"></a>MAE Loss (L1)</h5><script type="math/tex; mode=display">L(Y, f(x)) = \frac{1}{n} \sum |Y - f(x)|</script><p><br></p>
+<h5 id="MAE-VS-MSE"><a href="#MAE-VS-MSE" class="headerlink" title="MAE VS MSE"></a>MAE VS MSE</h5><ul>
+<li><p>Calculation of MSE is simple, but MAE has better robustness to abnormal points: when there are abnormal points in the data, the model that uses RMSE to calculate the loss will sacrifice the errors of other samples, and move towards reducing the error of abnormal points. However, this will reduce the overall performance of the model.</p>
+</li>
+<li><p>Intuitively, it can be understood like this: if we minimize the MSE to give only one predicted value for all sample points, then this value must be the average of all target values. But if it aims to minimize the MAE, then this value will be the median of the target value of all sample points. As we all know, for outliers, the median is more robust than the mean, so MAE is also more stable for outliers than MSE.</p>
+</li>
+<li><p>The update gradient of MAE in NN is always the same, but MSE is different: the gradient of MSE loss increases as the loss increases, and when the loss tends to 0, it decreases.</p>
+</li>
+<li><p>Loss selection suggestion<br>MSE: If the abnormal point represents an abnormal situation that is important in scenaria and needs to be detected.<br>MAE: If only outliers are treated as damaged data.<br><br></p>
+</li>
+</ul>
+<h5 id="Huber-Loss"><a href="#Huber-Loss" class="headerlink" title="Huber Loss"></a>Huber Loss</h5><p><img src="/images/ml/huber_loss.png" width="40%" height="40%" title="" alt=""/></p>
+<ul>
+<li><p>Huber Loss is less sensitive to data outliers than the squared error loss. It can also be guided at 0. Basically it is an absolute error. When the error is very small, the error is quadratic.</p>
+</li>
+<li><p>When the error needs to become a quadratic depends on a hyperparameter $\delta$, which can be fine-tuned. When $\delta \rightarrow 0$, Huber Loss is close to MAE, when $\delta \rightarrow \infty$ (a very large number), Huber Loss is close to MSE.<br><br><br><br></p>
+</li>
+</ul>
+<h3 id="Loss-for-classification"><a href="#Loss-for-classification" class="headerlink" title="Loss for classification"></a>Loss for classification</h3><h5 id="0-1-Loss"><a href="#0-1-Loss" class="headerlink" title="0-1 Loss"></a>0-1 Loss</h5><p><img src="/images/ml/0_1_loss.png" width="40%" height="40%" title="" alt=""/></p>
+<ul>
+<li>The 0-1 loss function directly corresponds to the number of classification errors, but it is a non-convex function.<br><br></li>
+</ul>
+<h5 id="Log-Loss"><a href="#Log-Loss" class="headerlink" title="Log Loss"></a>Log Loss</h5><p><img src="/images/ml/huber_loss.png" width="40%" height="40%" title="" alt=""/></p>
+<ul>
+<li><p>The log loss function can represent the probability distribution quite well. In many scenarios, especially multi-classification, it is very suitable if you need to know the confidence that the result belongs to each category.</p>
+</li>
+<li><p>The robustness is not strong, and it is more sensitive to noise than Hinge loss.</p>
+</li>
+<li><p>Used in logistic regression.<br><br></p>
+</li>
+</ul>
+<h5 id="Hingo-Loss-SVM"><a href="#Hingo-Loss-SVM" class="headerlink" title="Hingo Loss (SVM)"></a>Hingo Loss (SVM)</h5><script type="math/tex; mode=display">L(Y, f(x)) =  max(0, (1 - Yf(x)))</script><ul>
+<li><p>Hinge loss function is 0 if it is classified correctly, otherwise the loss is $(1 - Yf(x)$. SVM uses this loss function.</p>
+</li>
+<li><p>The $f(x)$ is the predicted value, between -1 and 1, and the $Y$ is the target value (-1 or 1). </p>
+</li>
+<li><p>The robustness is relatively high, and it is not sensitive to abnormal points and noise, but it does not have a good probability explanation.<br><br></p>
+</li>
+</ul>
+<h5 id="Perceptron-Loss"><a href="#Perceptron-Loss" class="headerlink" title="Perceptron Loss"></a>Perceptron Loss</h5><script type="math/tex; mode=display">L(Y, f(x)) =  max(0, -f(x))</script><ul>
+<li>It is a variant of Hinge loss function. The generalization ability of the model is not as strong as hinge loss.<br><br></li>
+</ul>
+<h5 id="Cross-Entropy-Loss"><a href="#Cross-Entropy-Loss" class="headerlink" title="Cross-Entropy Loss"></a>Cross-Entropy Loss</h5><p>Binary classification: </p>
+<script type="math/tex; mode=display">Loss = - \frac{1}{n} \sum_x [y*Ina + (1-y)*In(1-a)]</script><p>Multi-class classification: </p>
+<script type="math/tex; mode=display">Loss = - \frac{1}{n} \sum_i [y_i*Ina_i + (1-y)*In(1-a)]</script><ul>
+<li><p>It is also a log-likelihood function essencially, which can be used in binary classification and multi-classification tasks.</p>
+</li>
+<li><p>The cross-entropy loss is often used instead of the mean square error loss function when using sigmoid as the activation function, because it can perfectly solve the problem of slow update of the mse loss weight. </p>
+</li>
+<li><p>When the error is large, the weight update is fast; When the error is small, the weight update is low.<br><br></p>
+</li>
+</ul>
+<h5 id="Exponential-Loss"><a href="#Exponential-Loss" class="headerlink" title="Exponential Loss"></a>Exponential Loss</h5><p><img src="/images/ml/exp_loss.png" width="40%" height="40%" title="" alt=""/></p>
+<ul>
+<li>Quite sensitive to outliers and noise. </li>
+<li>Often used in <strong>AdaBoost</strong> algorithm.</li>
+</ul>
+
       
     </div>
     
@@ -486,8 +553,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -547,6 +623,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Loss-for-regression"><span class="nav-number">1.</span> <span class="nav-text">Loss for regression</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MSE-Loss-L2"><span class="nav-number">1.0.1.</span> <span class="nav-text">MSE Loss (L2)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MAE-Loss-L1"><span class="nav-number">1.0.2.</span> <span class="nav-text">MAE Loss (L1)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MAE-VS-MSE"><span class="nav-number">1.0.3.</span> <span class="nav-text">MAE VS MSE</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Huber-Loss"><span class="nav-number">1.0.4.</span> <span class="nav-text">Huber Loss</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loss-for-classification"><span class="nav-number">2.</span> <span class="nav-text">Loss for classification</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#0-1-Loss"><span class="nav-number">2.0.1.</span> <span class="nav-text">0-1 Loss</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Log-Loss"><span class="nav-number">2.0.2.</span> <span class="nav-text">Log Loss</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hingo-Loss-SVM"><span class="nav-number">2.0.3.</span> <span class="nav-text">Hingo Loss (SVM)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Perceptron-Loss"><span class="nav-number">2.0.4.</span> <span class="nav-text">Perceptron Loss</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Cross-Entropy-Loss"><span class="nav-number">2.0.5.</span> <span class="nav-text">Cross-Entropy Loss</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Exponential-Loss"><span class="nav-number">2.0.6.</span> <span class="nav-text">Exponential Loss</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
