@@ -79,19 +79,23 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="What is Boosting?The mechanism of Boosting algorithm aims to firstly train a weak learner 1 from the training set with initial weights, and update the weights of the training set according to the perf">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Adaboost">
-<meta property="og:url" content="http://yoursite.com/2020/07/29/Ensemble%20Learning/Adaboost/index.html">
+<meta property="og:title" content="Boosting - Adaboost">
+<meta property="og:url" content="http://yoursite.com/2020/07/29/Ensemble%20Learning/Boosting-Adaboost/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="What is Boosting?The mechanism of Boosting algorithm aims to firstly train a weak learner 1 from the training set with initial weights, and update the weights of the training set according to the perf">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/ensemble/boosting_2.png">
+<meta property="og:image" content="http://yoursite.com/images/ensemble/boosting_4.png">
+<meta property="og:image" content="http://yoursite.com/images/ensemble/boosting_3.png">
 <meta property="article:published_time" content="2020-07-28T22:38:38.000Z">
-<meta property="article:modified_time" content="2020-07-28T22:40:45.949Z">
+<meta property="article:modified_time" content="2020-08-10T00:16:01.732Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Ensemble Learning">
 <meta property="article:tag" content="Boosting">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/ensemble/boosting_2.png">
 
 
 
@@ -121,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/29/Ensemble Learning/Adaboost/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/29/Ensemble Learning/Boosting-Adaboost/"/>
 
 
 
 
 
-  <title>Adaboost | XIN SUN</title>
+  <title>Boosting - Adaboost | XIN SUN</title>
   
 
 
@@ -287,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/29/Ensemble%20Learning/Adaboost/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/29/Ensemble%20Learning/Boosting-Adaboost/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XIN SUN">
@@ -304,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Adaboost</h1>
+          <h1 class="post-title" itemprop="name headline">Boosting - Adaboost</h1>
         
 
         <div class="post-meta">
@@ -387,7 +391,22 @@
       
 
       
-        
+        <h3 id="What-is-Boosting"><a href="#What-is-Boosting" class="headerlink" title="What is Boosting?"></a>What is Boosting?</h3><p>The mechanism of Boosting algorithm aims to firstly train a weak learner 1 from the training set with initial weights, and update the weights of the training set according to the performance of the weak learner 1 on learning error rate, so that the previous weak learner 1 learns the training samples with a high error rate. Also the weight becomes higher which makes these sample points with high error rate get more attention in the later weak learner 2. Then train the weak learner 2 based on the training set after adjusting the weights, and repeat this process until the number of weak learners reaches the pre-specified number T, and finally these T weak learners are integrated through the set strategy (average, voting, etc) to obtain the final strong Learners.</p>
+<p><img src="/images/ensemble/boosting_2.png" width="60%" height="60%" title="" alt=""/><br><br></p>
+<h3 id="What-is-Adaboost"><a href="#What-is-Adaboost" class="headerlink" title="What is Adaboost?"></a>What is Adaboost?</h3><p>AdaBoost (Adaptive Boosting) is a very popular boosting technique that aims at combining multiple weak classifiers to build one strong classifier.</p>
+<p>A single classifier may not be able to accurately predict the class of an object, but when we group multiple weak classifiers with each one progressively learning from the others’ wrongly classified objects, we can build one such strong model. The classifier mentioned here could be any of your basic classifiers, from Decision Trees (often the default) to Logistic Regression, etc.</p>
+<p><img src="/images/ensemble/boosting_4.png" width="60%" height="60%" title="Adaboost updates weights of the observations at each iteration. Weights of well classified observations decrease relatively to weights of misclassified observations. Models that perform better have higher weights in the final ensemble model." alt=""/></p>
+<p><br></p>
+<h3 id="Steps-of-Adaboost"><a href="#Steps-of-Adaboost" class="headerlink" title="Steps of Adaboost"></a>Steps of Adaboost</h3><p>Step 1: A weak classifier (e.g. a decision stump) is made on top of the training data based on the weighted samples. Here, the weights of each sample indicate how important it is to be correctly classified. Initially, for the first stump, we give all the samples equal weights.</p>
+<p>Step 2: We create a decision stump for each variable and see how well each stump classifies samples to their target classes. </p>
+<p>Step 3: More weight is assigned to the incorrectly classified samples so that they’re classified correctly in the next decision stump. Weight is also assigned to each classifier based on the accuracy of the classifier, which means high accuracy = high weight!</p>
+<p>Step 4: Reiterate from Step 2 until all the data points have been correctly classified, or the maximum iteration level has been reached.<br><br></p>
+<h3 id="Two-import-coefficients"><a href="#Two-import-coefficients" class="headerlink" title="Two import coefficients"></a>Two import coefficients</h3><ul>
+<li>Weight coefficient $e_i$ for Training data set.</li>
+<li>Weight coefficient $a_i$ Classifier.<br><br></li>
+</ul>
+<h3 id="Concrete-calculation-steps-of-Adaboost"><a href="#Concrete-calculation-steps-of-Adaboost" class="headerlink" title="Concrete calculation steps of Adaboost"></a>Concrete calculation steps of Adaboost</h3><p><img src="/images/ensemble/boosting_3.png" width="60%" height="60%" title="" alt=""/></p>
+
       
     </div>
     
@@ -483,8 +502,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -544,6 +572,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Boosting"><span class="nav-number">1.</span> <span class="nav-text">What is Boosting?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Adaboost"><span class="nav-number">2.</span> <span class="nav-text">What is Adaboost?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Steps-of-Adaboost"><span class="nav-number">3.</span> <span class="nav-text">Steps of Adaboost</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-import-coefficients"><span class="nav-number">4.</span> <span class="nav-text">Two import coefficients</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Concrete-calculation-steps-of-Adaboost"><span class="nav-number">5.</span> <span class="nav-text">Concrete calculation steps of Adaboost</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

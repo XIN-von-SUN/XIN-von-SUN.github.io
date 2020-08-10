@@ -24,6 +24,74 @@
       </tags>
   </entry>
   <entry>
+    <title>Usage of Hexo</title>
+    <url>/2020/07/26/Development/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Bagging - Random Forest</title>
+    <url>/2020/07/29/Ensemble%20Learning/Bagging-Random-Forest/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Ensemble Learning</category>
+        <category>Bagging</category>
+      </categories>
+      <tags>
+        <tag>Ensemble Learning</tag>
+        <tag>Bagging</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Boosting - Adaboost</title>
+    <url>/2020/07/29/Ensemble%20Learning/Boosting-Adaboost/</url>
+    <content><![CDATA[<h3 id="What-is-Boosting"><a href="#What-is-Boosting" class="headerlink" title="What is Boosting?"></a>What is Boosting?</h3><p>The mechanism of Boosting algorithm aims to firstly train a weak learner 1 from the training set with initial weights, and update the weights of the training set according to the performance of the weak learner 1 on learning error rate, so that the previous weak learner 1 learns the training samples with a high error rate. Also the weight becomes higher which makes these sample points with high error rate get more attention in the later weak learner 2. Then train the weak learner 2 based on the training set after adjusting the weights, and repeat this process until the number of weak learners reaches the pre-specified number T, and finally these T weak learners are integrated through the set strategy (average, voting, etc) to obtain the final strong Learners.</p>
+<p><img src="/images/ensemble/boosting_2.png" width="60%" height="60%" title="" alt=""/><br><br></p>
+<h3 id="What-is-Adaboost"><a href="#What-is-Adaboost" class="headerlink" title="What is Adaboost?"></a>What is Adaboost?</h3><p>AdaBoost (Adaptive Boosting) is a very popular boosting technique that aims at combining multiple weak classifiers to build one strong classifier.</p>
+<p>A single classifier may not be able to accurately predict the class of an object, but when we group multiple weak classifiers with each one progressively learning from the others’ wrongly classified objects, we can build one such strong model. The classifier mentioned here could be any of your basic classifiers, from Decision Trees (often the default) to Logistic Regression, etc.</p>
+<p><img src="/images/ensemble/boosting_4.png" width="60%" height="60%" title="Adaboost updates weights of the observations at each iteration. Weights of well classified observations decrease relatively to weights of misclassified observations. Models that perform better have higher weights in the final ensemble model." alt=""/></p>
+<p><br></p>
+<h3 id="Steps-of-Adaboost"><a href="#Steps-of-Adaboost" class="headerlink" title="Steps of Adaboost"></a>Steps of Adaboost</h3><p>Step 1: A weak classifier (e.g. a decision stump) is made on top of the training data based on the weighted samples. Here, the weights of each sample indicate how important it is to be correctly classified. Initially, for the first stump, we give all the samples equal weights.</p>
+<p>Step 2: We create a decision stump for each variable and see how well each stump classifies samples to their target classes. </p>
+<p>Step 3: More weight is assigned to the incorrectly classified samples so that they’re classified correctly in the next decision stump. Weight is also assigned to each classifier based on the accuracy of the classifier, which means high accuracy = high weight!</p>
+<p>Step 4: Reiterate from Step 2 until all the data points have been correctly classified, or the maximum iteration level has been reached.<br><br></p>
+<h3 id="Two-import-coefficients"><a href="#Two-import-coefficients" class="headerlink" title="Two import coefficients"></a>Two import coefficients</h3><ul>
+<li>Weight coefficient $e_i$ for Training data set.</li>
+<li>Weight coefficient $a_i$ Classifier.<br><br></li>
+</ul>
+<h3 id="Concrete-calculation-steps-of-Adaboost"><a href="#Concrete-calculation-steps-of-Adaboost" class="headerlink" title="Concrete calculation steps of Adaboost"></a>Concrete calculation steps of Adaboost</h3><p><img src="/images/ensemble/boosting_3.png" width="60%" height="60%" title="" alt=""/></p>
+]]></content>
+      <categories>
+        <category>Ensemble Learning</category>
+        <category>Boosting</category>
+      </categories>
+      <tags>
+        <tag>Ensemble Learning</tag>
+        <tag>Boosting</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GBDT - XGBoost</title>
+    <url>/2020/07/29/Ensemble%20Learning/GBDT-XGBoost/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Ensemble Learning</category>
+        <category>Boosting</category>
+      </categories>
+      <tags>
+        <tag>Ensemble Learning</tag>
+        <tag>Boosting</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>How to develop Python Package as PyPI</title>
     <url>/2020/07/28/Development/How-to-develop-Python-Package-as-PyPI/</url>
     <content><![CDATA[<h3 id="Why-developing-own-Package"><a href="#Why-developing-own-Package" class="headerlink" title="Why developing own Package"></a>Why developing own Package</h3><p>There are a bunch of nifty tools that help you build, install and distribute packages.</p>
@@ -61,6 +129,38 @@
       <tags>
         <tag>Apps development</tag>
         <tag>PyPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Stacking</title>
+    <url>/2020/07/29/Ensemble%20Learning/Stacking/</url>
+    <content><![CDATA[<h3 id="What-is-Stack"><a href="#What-is-Stack" class="headerlink" title="What is Stack?"></a>What is Stack?</h3><p>Using another different machine learning algorithm to combine the results of individual machine learners, we call it as Stacking ensemble.</p>
+<p>By stacking method, we call call each individual learner as primary learner, the learner used for combination is called the secondary learner or meta-learner, and the data used for training by the secondary learner is called the secondary training set. The secondary training set is obtained by using the primary learner on the primary training set, which mean the secondary training set is the prediction result of the primary learner.</p>
+<p><img src="/images/ensemble/stacking_1.png" width="60%" height="60%" title="" alt=""/></p>
+<ul>
+<li>Process 1-3: to train individual learners - primary learners.</li>
+<li>Process 5-9: to use the trained individual learner to obtain the predicted result, and this predicted result is used as the training set for the secondary learner.</li>
+<li>Process 11: to train the secondary learner with the prediction result of the primary learner, and the get the final model we want.<br><br></li>
+</ul>
+<h3 id="Stacking-Implement"><a href="#Stacking-Implement" class="headerlink" title="Stacking Implement"></a>Stacking Implement</h3><p>The first method that comes to mind is:</p>
+<ol>
+<li>Use data set D to train primary learners h1, h2, h3…,</li>
+<li>Use these trained primary learners to make predictions on the data set D to obtain the secondary training set.</li>
+<li>Use the secondary training set to train the secondary learners.</li>
+</ol>
+<p>But this method has big flaws. The model trained on the original data set D, and then the secondary training set obtained by using these models to predict on D has definitely good quality which will lead to overfitting.</p>
+<p>Then we can have following method which avoid to overfitting.<br>The composition of the secondary training set is not directly predicted by the model on training set D. Instead, the cross-validation method is used to divide the training set D into k parts. For each part, use the remaining data set to train the model, and then predict the result of this part. Repeat above steps until each part is predicted. In this way, the overfitting problem will not happen. And the secondary test set was also constructed in the process of constructing the secondary training set,</p>
+<p>For all of our primary trainers, we must repeat the above steps to construct the final secondary training set and secondary test set.</p>
+<p><strong>Note:</strong> For the 5-fold of each model in primary learners, each model must be trained and predicted 5 times of 5-fold. And the primary learners can be consist of several different models.</p>
+<p><img src="/images/ensemble/stacking_2.png" width="75%" height="75%" title="" alt=""/></p>
+]]></content>
+      <categories>
+        <category>Ensemble Learning</category>
+        <category>Stacking</category>
+      </categories>
+      <tags>
+        <tag>Ensemble Learning</tag>
+        <tag>Stacking</tag>
       </tags>
   </entry>
   <entry>
@@ -127,8 +227,7 @@
 </li>
 <li><p>No money or access for further labeling.</p>
 </li>
-<li><p>Required to stop progress.</p>
-</li>
+<li>Required to stop progress.</li>
 </ul>
 ]]></content>
       <categories>
@@ -138,19 +237,6 @@
       <tags>
         <tag>Dataset construction and annotation</tag>
         <tag>Active Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GBDT - XGBoost</title>
-    <url>/2020/07/29/Ensemble%20Learning/GBDT-XGBoost/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Ensemble Learning</category>
-        <category>Boosting</category>
-      </categories>
-      <tags>
-        <tag>Ensemble Learning</tag>
-        <tag>Boosting</tag>
       </tags>
   </entry>
   <entry>
@@ -233,56 +319,24 @@
       </tags>
   </entry>
   <entry>
-    <title>Adaboost</title>
-    <url>/2020/07/29/Ensemble%20Learning/Adaboost/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Ensemble Learning</category>
-        <category>Boosting</category>
-      </categories>
-      <tags>
-        <tag>Ensemble Learning</tag>
-        <tag>Boosting</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Usage of Hexo</title>
-    <url>/2020/07/26/Development/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>Do NLP Models Know Numbers? Probing Numeracy in Embeddings</title>
+    <url>/2020/08/07/Papers/Do-NLP-Models-Know-Numbers-Probing-Numeracy-in-Embeddings/</url>
+    <content><![CDATA[
+
+	<div class="row">
+    <embed src="/pdf/Do-NLP-Models-Know-Numbers-Probing-Numeracy-in-Embeddings.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
 ]]></content>
-  </entry>
-  <entry>
-    <title>Random Forest</title>
-    <url>/2020/07/29/Ensemble%20Learning/Random-Forest/</url>
-    <content><![CDATA[]]></content>
       <categories>
-        <category>Ensemble Learning</category>
-        <category>Bagging</category>
+        <category>Paper Notes</category>
       </categories>
       <tags>
-        <tag>Ensemble Learning</tag>
-        <tag>Bagging</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Stacking</title>
-    <url>/2020/07/29/Ensemble%20Learning/Stacking/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Ensemble Learning</category>
-        <category>Stacking</category>
-      </categories>
-      <tags>
-        <tag>Ensemble Learning</tag>
-        <tag>Stacking</tag>
+        <tag>Paper Notes</tag>
+        <tag>NLP</tag>
+        <tag>Embedding</tag>
       </tags>
   </entry>
   <entry>
@@ -323,47 +377,6 @@
         <tag>Active Learning</tag>
         <tag>Paper Notes</tag>
         <tag>NLP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Do NLP Models Know Numbers? Probing Numeracy in Embeddings</title>
-    <url>/2020/08/07/Papers/Do-NLP-Models-Know-Numbers-Probing-Numeracy-in-Embeddings/</url>
-    <content><![CDATA[
-
-	<div class="row">
-    <embed src="/pdf/Do-NLP-Models-Know-Numbers-Probing-Numeracy-in-Embeddings.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-]]></content>
-      <categories>
-        <category>Paper Notes</category>
-      </categories>
-      <tags>
-        <tag>Paper Notes</tag>
-        <tag>NLP</tag>
-        <tag>Embedding</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recursive Visual Attention in Visual Dialog</title>
-    <url>/2020/08/07/Papers/Recursive-Visual-Attention-in-Visual-Dialog/</url>
-    <content><![CDATA[
-
-	<div class="row">
-    <embed src="/pdf/Recursive-Visual-Attention-in-Visual-Dialog.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-]]></content>
-      <categories>
-        <category>Paper Notes</category>
-      </categories>
-      <tags>
-        <tag>Paper Notes</tag>
-        <tag>NLP</tag>
-        <tag>Visual Dialog</tag>
       </tags>
   </entry>
   <entry>
@@ -422,43 +435,50 @@
       </tags>
   </entry>
   <entry>
-    <title>Attention in seq2seq</title>
-    <url>/2020/07/29/Seq2seq/Attention-in-seq2seq/</url>
-    <content><![CDATA[<h3 id="Limitation-of-classic-Encoder-Decoder"><a href="#Limitation-of-classic-Encoder-Decoder" class="headerlink" title="Limitation of classic Encoder-Decoder"></a>Limitation of classic Encoder-Decoder</h3><ul>
-<li><p>Compress all the information of the input X to a fixed-length hidden vector Z, ignoring the length of the input X. When the input sentence length is very long, especially when the length of inference sentences is longer than the length of the sentence in the training set, the performance of the model is sharp decline.</p>
-</li>
-<li><p>Encode the input X into a fixed length, and assign the same weight to each word in the sentence. This is unreasonable. For example in machine translation, there is often one input between the input sentence and the output sentence or several words correspond to one or several words of output. Therefore, there is no discrimination for assigning the same weight to each input word, and the performance of the model is often reduced.</p>
-</li>
-</ul>
-<h3 id="Types-of-Attention"><a href="#Types-of-Attention" class="headerlink" title="Types of Attention"></a>Types of Attention</h3><ul>
-<li><p>Soft Attention<br>Traditional attention, which can be embedded in the model for training and gradient propagation</p>
-</li>
-<li><p>Hard Attention<br>Hard Attention is a random process model. Hard Attention will not select the output of the entire encoder as its input. Hard Attention will sample the hidden state of the input according to the probability <script type="math/tex">S_i</script> for calculation, rather than the hidden state of the entire Encoder. In order to achieve the back propagation of the gradient, then Monte Carlo sampling method is used to estimate the gradient of the module</p>
-</li>
-<li><p>Global attention<br>Same as the traditional Attention model. All hidden states are used to calculate the weight of the context vector.</p>
-</li>
-<li><p>Local attention<br>One obvious disadvantage of Global Attention is that all hidden states on the encoder side must participate in the calculation. The calculation overhead will be relatively large, especially when the encoder sentence is too long, for example, a paragraph or an article, the efficiency is partial low. Therefore, in order to improve efficiency, we use Local Attention. Local Attention is an Attention method between Soft Attention and Hard Attention proposed by Kelvin Xu, which combines these two methods. </p>
-</li>
-<li><p>Self Attention<br>Self Attention is very different from the traditional Attention mechanism: The traditional Attention calculates Attention based on the hidden state of the source and target, and the result is the dependence relation between each word on the source and each word on the target. However self Attention is different. It only happens on the source side and the target side respectively. Only the Self Attention related to the source input or the target input itself captures the dependency relations between the words on the source side or the target side; and then the self attention obtained in the source side is added to the self attention obtained on the target end to capture the dependency relation between the words on the source end and the target end. Therefore, self attention is better than the traditional attention mechanism. One of the main reasons is that the traditional attention mechanism ignores the dependency between words in the source or target sentence, respectively. In contrast, self Attention can not only get the dependence relationship between the words and words of the source and target ends, and at the same time, the dependence relationship between the words and words of the source or target end can be effectively obtained.</p>
-</li>
-</ul>
-<h3 id="Soft-Attention-details"><a href="#Soft-Attention-details" class="headerlink" title="Soft Attention details"></a>Soft Attention details</h3><ul>
-<li><p><strong>Drawback of normal encoder-decoder mechanism:</strong> The only connection between Encoder and Decoder is intermediate vector $C$, which encodes the information of the entire input sequence into a fixed-size state vector and then decodes it, which can be seen as “loss compression” of the information. So the output sequence relies heavily on the context defined by the hidden state in the final output of the encoder, making it challenging for the model to deal with long sentences. Also the intermediate semantic vector cannot fully express the information of the entire input sequence. And as the length of the input information increases, the length of the vector is fixed, the previously encoded information will be overwritten by the later information, and a lot of information will be lost. In the case of long sequences, there is a high probability that the initial context has been lost by the end of the sequence.</p>
-</li>
-<li><p><strong>Solution:</strong> Bahdanau et al., 2014 and Luong et al., 2015 papers introduced and a technique called “Attention” which allows the model to focus on different parts of the input sequence at every stage of the output sequence allowing the context to be preserved from beginning to end.<br><strong>Therefore</strong> we can realize that Attention is the mechanism that forces the model to learn to focus (=to attend) on specific parts of the input sequence when decoding, instead of relying only on the hidden vector of the decoder’s RNNs. So here is the new representation.<br><img src="/images/seq2seq/attention_1.png" width="40%" height="40%" title="" alt=""/></p>
-</li>
-</ul>
+    <title>Recursive Visual Attention in Visual Dialog</title>
+    <url>/2020/08/07/Papers/Recursive-Visual-Attention-in-Visual-Dialog/</url>
+    <content><![CDATA[
+
+	<div class="row">
+    <embed src="/pdf/Recursive-Visual-Attention-in-Visual-Dialog.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+]]></content>
+      <categories>
+        <category>Paper Notes</category>
+      </categories>
+      <tags>
+        <tag>Paper Notes</tag>
+        <tag>NLP</tag>
+        <tag>Visual Dialog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Seq2seq - Encoder - Decoder</title>
+    <url>/2020/07/29/Seq2seq/Seq2seq-Encoder-Decoder/</url>
+    <content><![CDATA[<h3 id="What-is-Seq2seq-model"><a href="#What-is-Seq2seq-model" class="headerlink" title="What is Seq2seq model?"></a>What is Seq2seq model?</h3><p>Sequence-to-sequence (Seq2Seq) models are deep learning models that have achieved a lot of success in tasks like machine translation, text summarization, and image captioning.</p>
+<p>And what is the Seq2Seq Model? More specifically, Seq2Seq model is a model that takes <strong>a sequence of items (words, letters, time series, etc) as inputs</strong> and <strong>outputs another sequence of items</strong>.</p>
+<p>In the case of Neural Machine Translation, the input is a series of words, and the output is the translated series of words.</p>
+<p>And the internal seq2seq model is composed of an encoder and a decoder. The encoder captures the context of the input sequence in the form of a hidden state vector and sends it to the decoder, which then produces the output sequence. Since the task is sequence based, both the encoder and decoder tend to use some form of RNNs, LSTMs, GRUs, etc.</p>
+<p>We could say:</p>
+<p>Encoder + Decoder = Seq2seq</p>
+<p><img src="/images/seq2seq/seq2seq_1.png" width="45%" height="45%" title="" alt=""/><br><br></p>
+<h3 id="Encoder-Decoder-Architecture"><a href="#Encoder-Decoder-Architecture" class="headerlink" title="Encoder-Decoder Architecture"></a>Encoder-Decoder Architecture</h3><p>The Seq2Seq framework relies on the encoder-decoder paradigm. The encoder encodes the input sequence, while the decoder produces the target sequence.</p>
+<p>The encoder-decoder architecture is a neural network design pattern. As shown in Figure, the architecture is partitioned into two parts, the encoder and the decoder. The encoder’s role is to encode the inputs into state, which often contains several tensors. Then the state is passed into the decoder to generate the outputs.</p>
 <ul>
-<li><p>Encoder calculation figure:<br><img src="/images/seq2seq/attention_2.png" width="40%" height="40%" title="" alt=""/></p>
-</li>
-<li><p>The input is ‘Cat, chase, mouse’, the hidden state in encoder is $h_1, h_2, h_3$, can be seen as the represention of words: Cat, chase, mouse.<br><img src="/images/seq2seq/attention_3.png" width="40%" height="40%" title="" alt=""/></p>
-</li>
-<li><p>Use <script type="math/tex">a_{ij}</script> to represent the correlation (attention) between <script type="math/tex">h_j</script> in the j-th stage of Encoder and the i-th stage in Decoder, and calculate the intermediate semantic vector <script type="math/tex">C_i</script> required for decoder. <script type="math/tex">C_1</script> has the closest relationship with “cat”, and the corresponding <script type="math/tex">a_{11}</script> is larger than <script type="math/tex">a_{12}</script> and <script type="math/tex">a_{13}</script>; while <script type="math/tex">C_2</script> has the closest relationship with “cat”, the corresponding <script type="math/tex">a_{22}</script> is larger than <script type="math/tex">a_{21}</script> and <script type="math/tex">a_{23}</script>; in the same way, <script type="math/tex">C_3</script> has the closest relationship with “mouse” and is similar The corresponding <script type="math/tex">a_{33}</script> is larger than <script type="math/tex">a_{31}</script> and <script type="math/tex">a_{32}</script>.<br><img src="/images/seq2seq/attention_4.png" width="40%" height="40%" title="" alt=""/></p>
-</li>
+<li><h4 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h4>Our input sequence is “how are you”. Each word from the input sequence is associated to a vector $wR$ (via a lookup table). In our case, we have 3 words, thus our input will be transformed into R. Then, we simply run an LSTM over this sequence of vectors and store the last hidden state outputed by the LSTM: this will be our encoder representation $e$ vector.</li>
 </ul>
+<p><img src="/images/seq2seq/seq2seq_encoder.png" width="30%" height="30%" title="" alt=""/></p>
 <ul>
-<li><h5 id="How-to-calculate-Attention-a-ij"><a href="#How-to-calculate-Attention-a-ij" class="headerlink" title="How to calculate Attention $a_{ij}$"></a>How to calculate <strong>Attention $a_{ij}$</strong></h5>The j-th hidden layer unit <script type="math/tex">h_j</script> in the Encoder and the i-th hidden layer unit <script type="math/tex">s_{i-1}</script> of the Decoder are calculated to obtain <script type="math/tex">a_{ij}</script>.<br>Following is how we could calculate the <script type="math/tex">e_{ij}</script>, hidden state of decoder <script type="math/tex">s_{i}</script>, <script type="math/tex">c_i</script>:<script type="math/tex; mode=display">e_{ij} = a(s_{i-1}, h_j)</script><script type="math/tex; mode=display">a_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_x} exp(e_{ik})}</script><script type="math/tex; mode=display">c_{i} = \sum_{j=1}^{T_z} a_{ij} h_j</script><script type="math/tex; mode=display">s_i = f(s_{i-1}, y_{i-1}, c_i)</script><script type="math/tex; mode=display">y_i = g(y_{i-1}, s_{i}, c_i)</script></li>
+<li><h4 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h4>Now that we have a vector $e$ that captures the meaning of the input sequence, we’ll use it to generate the target sequence word by word. Feed to another NN cell, normally we use LSTM or GRU. Like the following figure.</li>
 </ul>
+<p><img src="/images/seq2seq/seq2seq_decoder.png" width="50%" height="50%" title="" alt=""/></p>
+<ul>
+<li><h4 id="Normally-we-have-2-different-types-of-Encoder-Decoder-architecture"><a href="#Normally-we-have-2-different-types-of-Encoder-Decoder-architecture" class="headerlink" title="Normally we have 2 different types of Encoder-Decoder architecture:"></a>Normally we have 2 different types of Encoder-Decoder architecture:</h4></li>
+</ul>
+<p><img src="/images/seq2seq/encoder_decoder_1.png" width="45%" height="45%" title="" alt=""/></p>
+<p><img src="/images/seq2seq/encoder_decoder_2.png" width="45%" height="45%" title="" alt=""/></p>
 ]]></content>
       <categories>
         <category>Deep Learning</category>
@@ -467,7 +487,7 @@
       <tags>
         <tag>Deep Learning</tag>
         <tag>Seq2seq</tag>
-        <tag>Attention</tag>
+        <tag>Encoder-Decoder</tag>
       </tags>
   </entry>
   <entry>
@@ -587,19 +607,43 @@
       </tags>
   </entry>
   <entry>
-    <title>Beam Search</title>
-    <url>/2020/07/29/Seq2seq/Beam-Search/</url>
-    <content><![CDATA[<h3 id="Beam-Search"><a href="#Beam-Search" class="headerlink" title="Beam Search"></a>Beam Search</h3><p>An approximate search strategy to choose better results from all possible candidates.</p>
-<p>Beam Search algorithm has a parameter called B, which is called the beam width. Let’s see how beam search works by using beam width of 3 in machine translation tasks.</p>
-<p>With beam width 3, beam search will consider three words to choose from for the first word. So, in order to perform this first step of Beam search, we run the input French sentence through the encoder network and then the first in the decoder network is a softmax output with overall 10,000 possibilities and we will store the top 3 words because of beam width 3.</p>
-<p><img src="/images/seq2seq/beam_search_1.png" width="50%" height="50%" title="" alt=""/></p>
-<p>Next, for each of the three choices, it will calculate the probability of second word given the first word and the input french sentence. As output of this step, we want to find the pair of the first and second words that is most likely. By the rules of conditional probability, this can be expressed as P of the first words times probability of the second word.</p>
-<p><img src="/images/seq2seq/beam_search_2.png" width="50%" height="50%" title="" alt=""/></p>
-<p>So for this second step of beam search since we have 10,000 words in our vocabulary, we would end up considering three times 10000 or thirty thousand possibilities and then pick the top three.</p>
-<p>Because of beam width is equal to three, at every step, we instantiate three copies of the network to evaluate partial sentence fragments and the output. So we will use three copies of the network with different choices for the first words, but these three copies of the network can be very efficiently used to evaluate all 30,000 options for the second word.</p>
-<p><img src="/images/seq2seq/beam_search_3.png" width="50%" height="50%" title="" alt=""/></p>
-<p>And the outcome of this process will be that adding one word at a time until Beam search will decide EOS as the best next symbol.<br>Notice, if the beam width was 1, then this essentially becomes the greedy search algorithm.</p>
-<p><a href="https://medium.com/@dhartidhami/beam-search-in-seq2seq-model-7606d55b21a5" target="_blank" rel="noopener">Ref</a></p>
+    <title>Attention in seq2seq</title>
+    <url>/2020/07/29/Seq2seq/Attention-in-seq2seq/</url>
+    <content><![CDATA[<h3 id="Limitation-of-classic-Encoder-Decoder"><a href="#Limitation-of-classic-Encoder-Decoder" class="headerlink" title="Limitation of classic Encoder-Decoder"></a>Limitation of classic Encoder-Decoder</h3><ul>
+<li><p>Compress all the information of the input X to a fixed-length hidden vector Z, ignoring the length of the input X. When the input sentence length is very long, especially when the length of inference sentences is longer than the length of the sentence in the training set, the performance of the model is sharp decline.</p>
+</li>
+<li><p>Encode the input X into a fixed length, and assign the same weight to each word in the sentence. This is unreasonable. For example in machine translation, there is often one input between the input sentence and the output sentence or several words correspond to one or several words of output. Therefore, there is no discrimination for assigning the same weight to each input word, and the performance of the model is often reduced.</p>
+</li>
+</ul>
+<h3 id="Types-of-Attention"><a href="#Types-of-Attention" class="headerlink" title="Types of Attention"></a>Types of Attention</h3><ul>
+<li><p>Soft Attention<br>Traditional attention, which can be embedded in the model for training and gradient propagation</p>
+</li>
+<li><p>Hard Attention<br>Hard Attention is a random process model. Hard Attention will not select the output of the entire encoder as its input. Hard Attention will sample the hidden state of the input according to the probability <script type="math/tex">S_i</script> for calculation, rather than the hidden state of the entire Encoder. In order to achieve the back propagation of the gradient, then Monte Carlo sampling method is used to estimate the gradient of the module</p>
+</li>
+<li><p>Global attention<br>Same as the traditional Attention model. All hidden states are used to calculate the weight of the context vector.</p>
+</li>
+<li><p>Local attention<br>One obvious disadvantage of Global Attention is that all hidden states on the encoder side must participate in the calculation. The calculation overhead will be relatively large, especially when the encoder sentence is too long, for example, a paragraph or an article, the efficiency is partial low. Therefore, in order to improve efficiency, we use Local Attention. Local Attention is an Attention method between Soft Attention and Hard Attention proposed by Kelvin Xu, which combines these two methods. </p>
+</li>
+<li><p>Self Attention<br>Self Attention is very different from the traditional Attention mechanism: The traditional Attention calculates Attention based on the hidden state of the source and target, and the result is the dependence relation between each word on the source and each word on the target. However self Attention is different. It only happens on the source side and the target side respectively. Only the Self Attention related to the source input or the target input itself captures the dependency relations between the words on the source side or the target side; and then the self attention obtained in the source side is added to the self attention obtained on the target end to capture the dependency relation between the words on the source end and the target end. Therefore, self attention is better than the traditional attention mechanism. One of the main reasons is that the traditional attention mechanism ignores the dependency between words in the source or target sentence, respectively. In contrast, self Attention can not only get the dependence relationship between the words and words of the source and target ends, and at the same time, the dependence relationship between the words and words of the source or target end can be effectively obtained.</p>
+</li>
+</ul>
+<h3 id="Soft-Attention-details"><a href="#Soft-Attention-details" class="headerlink" title="Soft Attention details"></a>Soft Attention details</h3><ul>
+<li><p><strong>Drawback of normal encoder-decoder mechanism:</strong> The only connection between Encoder and Decoder is intermediate vector $C$, which encodes the information of the entire input sequence into a fixed-size state vector and then decodes it, which can be seen as “loss compression” of the information. So the output sequence relies heavily on the context defined by the hidden state in the final output of the encoder, making it challenging for the model to deal with long sentences. Also the intermediate semantic vector cannot fully express the information of the entire input sequence. And as the length of the input information increases, the length of the vector is fixed, the previously encoded information will be overwritten by the later information, and a lot of information will be lost. In the case of long sequences, there is a high probability that the initial context has been lost by the end of the sequence.</p>
+</li>
+<li><p><strong>Solution:</strong> Bahdanau et al., 2014 and Luong et al., 2015 papers introduced and a technique called “Attention” which allows the model to focus on different parts of the input sequence at every stage of the output sequence allowing the context to be preserved from beginning to end.<br><strong>Therefore</strong> we can realize that Attention is the mechanism that forces the model to learn to focus (=to attend) on specific parts of the input sequence when decoding, instead of relying only on the hidden vector of the decoder’s RNNs. So here is the new representation.<br><img src="/images/seq2seq/attention_1.png" width="40%" height="40%" title="" alt=""/></p>
+</li>
+</ul>
+<ul>
+<li><p>Encoder calculation figure:<br><img src="/images/seq2seq/attention_2.png" width="40%" height="40%" title="" alt=""/></p>
+</li>
+<li><p>The input is ‘Cat, chase, mouse’, the hidden state in encoder is $h_1, h_2, h_3$, can be seen as the represention of words: Cat, chase, mouse.<br><img src="/images/seq2seq/attention_3.png" width="40%" height="40%" title="" alt=""/></p>
+</li>
+<li><p>Use <script type="math/tex">a_{ij}</script> to represent the correlation (attention) between <script type="math/tex">h_j</script> in the j-th stage of Encoder and the i-th stage in Decoder, and calculate the intermediate semantic vector <script type="math/tex">C_i</script> required for decoder. <script type="math/tex">C_1</script> has the closest relationship with “cat”, and the corresponding <script type="math/tex">a_{11}</script> is larger than <script type="math/tex">a_{12}</script> and <script type="math/tex">a_{13}</script>; while <script type="math/tex">C_2</script> has the closest relationship with “cat”, the corresponding <script type="math/tex">a_{22}</script> is larger than <script type="math/tex">a_{21}</script> and <script type="math/tex">a_{23}</script>; in the same way, <script type="math/tex">C_3</script> has the closest relationship with “mouse” and is similar The corresponding <script type="math/tex">a_{33}</script> is larger than <script type="math/tex">a_{31}</script> and <script type="math/tex">a_{32}</script>.<br><img src="/images/seq2seq/attention_4.png" width="40%" height="40%" title="" alt=""/></p>
+</li>
+</ul>
+<ul>
+<li><h5 id="How-to-calculate-Attention-a-ij"><a href="#How-to-calculate-Attention-a-ij" class="headerlink" title="How to calculate Attention $a_{ij}$"></a>How to calculate <strong>Attention $a_{ij}$</strong></h5>The j-th hidden layer unit <script type="math/tex">h_j</script> in the Encoder and the i-th hidden layer unit <script type="math/tex">s_{i-1}</script> of the Decoder are calculated to obtain <script type="math/tex">a_{ij}</script>.<br>Following is how we could calculate the <script type="math/tex">e_{ij}</script>, hidden state of decoder <script type="math/tex">s_{i}</script>, <script type="math/tex">c_i</script>:<script type="math/tex; mode=display">e_{ij} = a(s_{i-1}, h_j)</script><script type="math/tex; mode=display">a_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_x} exp(e_{ik})}</script><script type="math/tex; mode=display">c_{i} = \sum_{j=1}^{T_z} a_{ij} h_j</script><script type="math/tex; mode=display">s_i = f(s_{i-1}, y_{i-1}, c_i)</script><script type="math/tex; mode=display">y_i = g(y_{i-1}, s_{i}, c_i)</script></li>
+</ul>
 ]]></content>
       <categories>
         <category>Deep Learning</category>
@@ -608,44 +652,7 @@
       <tags>
         <tag>Deep Learning</tag>
         <tag>Seq2seq</tag>
-        <tag>Encoder-Decoder</tag>
-        <tag>Beam Search</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Seq2seq - Encoder - Decoder</title>
-    <url>/2020/07/29/Seq2seq/Seq2seq-Encoder-Decoder/</url>
-    <content><![CDATA[<h3 id="What-is-Seq2seq-model"><a href="#What-is-Seq2seq-model" class="headerlink" title="What is Seq2seq model?"></a>What is Seq2seq model?</h3><p>Sequence-to-sequence (Seq2Seq) models are deep learning models that have achieved a lot of success in tasks like machine translation, text summarization, and image captioning.</p>
-<p>And what is the Seq2Seq Model? More specifically, Seq2Seq model is a model that takes <strong>a sequence of items (words, letters, time series, etc) as inputs</strong> and <strong>outputs another sequence of items</strong>.</p>
-<p>In the case of Neural Machine Translation, the input is a series of words, and the output is the translated series of words.</p>
-<p>And the internal seq2seq model is composed of an encoder and a decoder. The encoder captures the context of the input sequence in the form of a hidden state vector and sends it to the decoder, which then produces the output sequence. Since the task is sequence based, both the encoder and decoder tend to use some form of RNNs, LSTMs, GRUs, etc.</p>
-<p>We could say:</p>
-<p>Encoder + Decoder = Seq2seq</p>
-<p><img src="/images/seq2seq/seq2seq_1.png" width="45%" height="45%" title="" alt=""/><br><br></p>
-<h3 id="Encoder-Decoder-Architecture"><a href="#Encoder-Decoder-Architecture" class="headerlink" title="Encoder-Decoder Architecture"></a>Encoder-Decoder Architecture</h3><p>The Seq2Seq framework relies on the encoder-decoder paradigm. The encoder encodes the input sequence, while the decoder produces the target sequence.</p>
-<p>The encoder-decoder architecture is a neural network design pattern. As shown in Figure, the architecture is partitioned into two parts, the encoder and the decoder. The encoder’s role is to encode the inputs into state, which often contains several tensors. Then the state is passed into the decoder to generate the outputs.</p>
-<ul>
-<li><h4 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h4>Our input sequence is “how are you”. Each word from the input sequence is associated to a vector $wR$ (via a lookup table). In our case, we have 3 words, thus our input will be transformed into R. Then, we simply run an LSTM over this sequence of vectors and store the last hidden state outputed by the LSTM: this will be our encoder representation $e$ vector.</li>
-</ul>
-<p><img src="/images/seq2seq/seq2seq_encoder.png" width="30%" height="30%" title="" alt=""/></p>
-<ul>
-<li><h4 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h4>Now that we have a vector $e$ that captures the meaning of the input sequence, we’ll use it to generate the target sequence word by word. Feed to another NN cell, normally we use LSTM or GRU. Like the following figure.</li>
-</ul>
-<p><img src="/images/seq2seq/seq2seq_decoder.png" width="50%" height="50%" title="" alt=""/></p>
-<ul>
-<li><h4 id="Normally-we-have-2-different-types-of-Encoder-Decoder-architecture"><a href="#Normally-we-have-2-different-types-of-Encoder-Decoder-architecture" class="headerlink" title="Normally we have 2 different types of Encoder-Decoder architecture:"></a>Normally we have 2 different types of Encoder-Decoder architecture:</h4></li>
-</ul>
-<p><img src="/images/seq2seq/encoder_decoder_1.png" width="45%" height="45%" title="" alt=""/></p>
-<p><img src="/images/seq2seq/encoder_decoder_2.png" width="45%" height="45%" title="" alt=""/></p>
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-        <category>Seq2seq</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>Seq2seq</tag>
-        <tag>Encoder-Decoder</tag>
+        <tag>Attention</tag>
       </tags>
   </entry>
   <entry>
@@ -697,85 +704,35 @@
       <tags>
         <tag>Deep Learning</tag>
         <tag>Seq2seq</tag>
-        <tag>Self Attention</tag>
         <tag>Encoder-Decoder</tag>
+        <tag>Self Attention</tag>
         <tag>Transformer</tag>
       </tags>
   </entry>
   <entry>
-    <title>LSTM</title>
-    <url>/2020/07/29/Deep%20Learning/RNN/LSTM/</url>
-    <content><![CDATA[<h3 id="Inspiration"><a href="#Inspiration" class="headerlink" title="Inspiration"></a>Inspiration</h3><p>To avoid the long-term dependency problem in RNN and solve gradient vanishing.<br><br></p>
-<h3 id="Novelty"><a href="#Novelty" class="headerlink" title="Novelty"></a>Novelty</h3><ul>
-<li>Forget gate</li>
-<li>Input gate</li>
-<li>Output gate</li>
-<li>Cell states<br><br></li>
-</ul>
-<h3 id="LSTM-process-detail"><a href="#LSTM-process-detail" class="headerlink" title="LSTM process detail"></a>LSTM process detail</h3><h6 id="Forget-gate-f-t"><a href="#Forget-gate-f-t" class="headerlink" title="Forget gate $f_t$:"></a>Forget gate $f_t$:</h6><p><img src="/images/RNN/lstm_1.png" width="50%" height="50%" title="" alt=""/></p>
-<h6 id="Input-gate-i-t-and-new-candidate-cell-state-hat-C-t"><a href="#Input-gate-i-t-and-new-candidate-cell-state-hat-C-t" class="headerlink" title="Input gate $i_t$ and new candidate cell state $\hat{C_t}$"></a>Input gate $i_t$ and new candidate cell state $\hat{C_t}$</h6><p><img src="/images/RNN/lstm_2.png" width="50%" height="50%" title="" alt=""/></p>
-<h6 id="New-cell-state-C-t"><a href="#New-cell-state-C-t" class="headerlink" title="New cell state $C_t$"></a>New cell state $C_t$</h6><p><img src="/images/RNN/lstm_3.png" width="50%" height="50%" title="" alt=""/></p>
-<h6 id="Output-gate-o-t-and-current-hidden-state-h-t"><a href="#Output-gate-o-t-and-current-hidden-state-h-t" class="headerlink" title="Output gate $o_t$ and current hidden state $h_t$"></a>Output gate $o_t$ and current hidden state $h_t$</h6><p><img src="/images/RNN/lstm_4.png" width="50%" height="50%" title="" alt=""/><br><br></p>
-<h3 id="Variant-LSTM-peephole"><a href="#Variant-LSTM-peephole" class="headerlink" title="Variant LSTM: peephole"></a>Variant LSTM: peephole</h3><p><img src="/images/RNN/lstm_5.png" width="50%" height="50%" title="" alt=""/><br><br></p>
-<h4 id="RNN-Gradient-Vanishing"><a href="#RNN-Gradient-Vanishing" class="headerlink" title="RNN Gradient Vanishing"></a>RNN Gradient Vanishing</h4><p>RNN梯度消失是因为激活函数tanh函数的倒数在0到1之间，反向传播时更新前面时刻的参数时，当参数W初始化为小于1的数，则多个(tanh函数’ * W)相乘，将导致求得的偏导极小（小于1的数连乘），从而导致梯度消失。<br><br></p>
-<h4 id="RNN-Gradient-Exploding"><a href="#RNN-Gradient-Exploding" class="headerlink" title="RNN Gradient Exploding"></a>RNN Gradient Exploding</h4><p>当参数初始化为足够大，使得tanh函数的倒数乘以W大于1，则将导致偏导极大（大于1的数连乘），从而导致梯度爆炸。<br><br></p>
-<h4 id="RNN-Solve-gradient-problem"><a href="#RNN-Solve-gradient-problem" class="headerlink" title="RNN Solve gradient problem"></a>RNN Solve gradient problem</h4><ul>
-<li><p>合适地初始化W，即采用正则化</p>
-</li>
-<li><p>将tanh或sigmoid替换为ReLU</p>
-</li>
-<li><p>使用LSTM或者GRU, 使得RNN BP中的梯度连乘变成LSTM的梯度连加</p>
-</li>
-</ul>
+    <title>Beam Search</title>
+    <url>/2020/07/29/Seq2seq/Beam-Search/</url>
+    <content><![CDATA[<h3 id="Beam-Search"><a href="#Beam-Search" class="headerlink" title="Beam Search"></a>Beam Search</h3><p>An approximate search strategy to choose better results from all possible candidates.</p>
+<p>Beam Search algorithm has a parameter called B, which is called the beam width. Let’s see how beam search works by using beam width of 3 in machine translation tasks.</p>
+<p>With beam width 3, beam search will consider three words to choose from for the first word. So, in order to perform this first step of Beam search, we run the input French sentence through the encoder network and then the first in the decoder network is a softmax output with overall 10,000 possibilities and we will store the top 3 words because of beam width 3.</p>
+<p><img src="/images/seq2seq/beam_search_1.png" width="50%" height="50%" title="" alt=""/></p>
+<p>Next, for each of the three choices, it will calculate the probability of second word given the first word and the input french sentence. As output of this step, we want to find the pair of the first and second words that is most likely. By the rules of conditional probability, this can be expressed as P of the first words times probability of the second word.</p>
+<p><img src="/images/seq2seq/beam_search_2.png" width="50%" height="50%" title="" alt=""/></p>
+<p>So for this second step of beam search since we have 10,000 words in our vocabulary, we would end up considering three times 10000 or thirty thousand possibilities and then pick the top three.</p>
+<p>Because of beam width is equal to three, at every step, we instantiate three copies of the network to evaluate partial sentence fragments and the output. So we will use three copies of the network with different choices for the first words, but these three copies of the network can be very efficiently used to evaluate all 30,000 options for the second word.</p>
+<p><img src="/images/seq2seq/beam_search_3.png" width="50%" height="50%" title="" alt=""/></p>
+<p>And the outcome of this process will be that adding one word at a time until Beam search will decide EOS as the best next symbol.<br>Notice, if the beam width was 1, then this essentially becomes the greedy search algorithm.</p>
+<p><a href="https://medium.com/@dhartidhami/beam-search-in-seq2seq-model-7606d55b21a5" target="_blank" rel="noopener">Ref</a></p>
 ]]></content>
       <categories>
         <category>Deep Learning</category>
-        <category>RNN</category>
+        <category>Seq2seq</category>
       </categories>
       <tags>
         <tag>Deep Learning</tag>
-        <tag>RNN</tag>
-        <tag>LSTM</tag>
-        <tag>Neural Network</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>RNN - GRU</title>
-    <url>/2020/07/29/Deep%20Learning/RNN/RNN-GRU/</url>
-    <content><![CDATA[<p>Architecture of a traditional RNN Recurrent neural networks, also known as RNNs, are a class of neural networks that allow previous outputs to be used as inputs while having hidden states. </p>
-<h3 id="Vanilla-RNN"><a href="#Vanilla-RNN" class="headerlink" title="Vanilla RNN"></a>Vanilla RNN</h3><ul>
-<li><p>Elman network accepts previous hidden state ht−1</p>
-</li>
-<li><p>Jordan network accepts previous output yt−1</p>
-</li>
-</ul>
-<p><img src="/images/RNN/vanilla_rnn_1.png" width="40%" height="40%" title="" alt=""/></p>
-<p><img src="/images/RNN/vanilla_rnn_2.jpg" width="40%" height="50%" title="Vanilla RNN" alt=""/></p>
-<h6 id="pros-and-cons-of-a-typical-RNN"><a href="#pros-and-cons-of-a-typical-RNN" class="headerlink" title="pros and cons of a typical RNN"></a>pros and cons of a typical RNN</h6><p><img src="/images/RNN/rnn_pros_cons.jpg" width="50%" height="60%" title="" alt=""/></p>
-<h6 id="Loss-function"><a href="#Loss-function" class="headerlink" title="Loss function"></a>Loss function</h6><p>In the case of a recurrent neural network, the loss function $L$ of all time steps is defined based on the loss at every time step as follows:</p>
-<script type="math/tex; mode=display">
-L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Commonly-used-activation-functions"><a href="#Commonly-used-activation-functions" class="headerlink" title="Commonly used activation functions"></a>Commonly used activation functions</h6><p><img src="/images/RNN/rnn_activation.jpg" width="60%" height="60%" title="" alt=""/></p>
-<h6 id="Vanishing-exploding-gradient"><a href="#Vanishing-exploding-gradient" class="headerlink" title="Vanishing/exploding gradient"></a>Vanishing/exploding gradient</h6><p>The vanishing and exploding gradient phenomena are often encountered in the context of RNNs. The reason why they happen is that it is difficult to capture long term dependencies because of multiplicative gradient that can be exponentially decreasing/increasing with respect to the number of layers.</p>
-<h6 id="Gradient-clipping"><a href="#Gradient-clipping" class="headerlink" title="Gradient clipping"></a>Gradient clipping</h6><p>It is a technique used to cope with the exploding gradient problem sometimes encountered when performing backpropagation. By capping the maximum value for the gradient, this phenomenon is controlled in practice.<br><br></p>
-<h3 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h3><p>GRU (Gated Recurrent Unit) aims to solve the vanishing gradient problem which comes with a standard recurrent neural network. GRU can also be considered as a variation on the LSTM.</p>
-<p>To solve the vanishing gradient problem of a standard RNN, GRU uses, so-called, Update gate and eset gate. Basically, these are two vectors which decide what information should be passed to the output. The special thing about them is that they can be trained to keep information from long ago, without washing it through time or remove information which is irrelevant to the prediction.</p>
-<p><img src="/images/RNN/gru.jpg" width="40%" height="40%" title="" alt=""/></p>
-<h6 id="pros-and-cons-of-GRU"><a href="#pros-and-cons-of-GRU" class="headerlink" title="pros and cons of GRU"></a>pros and cons of GRU</h6><ul>
-<li>Can remember long memory compared to RNN</li>
-<li>Solve the vanishing gradient problem</li>
-<li>Simpler structure and less parameters than LSTM</li>
-<li>Less gates than LSTM</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-        <category>RNN</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>RNN</tag>
-        <tag>Neural Network</tag>
-        <tag>GRU</tag>
+        <tag>Seq2seq</tag>
+        <tag>Encoder-Decoder</tag>
+        <tag>Beam Search</tag>
       </tags>
   </entry>
   <entry>
@@ -791,25 +748,6 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
         <tag>Machine Learning</tag>
         <tag>ML Foundations</tag>
         <tag>Feature Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Activation Function</title>
-    <url>/2020/08/04/Machine%20Learning/Foundation/Activation-Function/</url>
-    <content><![CDATA[<p><img src="/images/ml/activation_func_1.png" width="80%" height="80%" title="" alt=""/></p>
-<p><img src="/images/ml/activation_func_2.png" width="80%" height="80%" title="" alt=""/></p>
-<p><img src="/images/ml/activation_func_3.png" width="80%" height="80%" title="" alt=""/></p>
-<p><img src="/images/ml/activation_func_4.png" width="80%" height="80%" title="" alt=""/></p>
-<p><img src="/images/ml/activation_func_5.png" width="80%" height="80%" title="" alt=""/></p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Machine Learning Foundations</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>ML Foundations</tag>
-        <tag>Activation Function</tag>
       </tags>
   </entry>
   <entry>
@@ -931,28 +869,6 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </tags>
   </entry>
   <entry>
-    <title>Normalization / Standardization / Regularization</title>
-    <url>/2020/08/04/Machine%20Learning/Foundation/Normalization-Standardization-Regularization/</url>
-    <content><![CDATA[<h3 id="Normalization"><a href="#Normalization" class="headerlink" title="Normalization"></a>Normalization</h3><p><strong>Normalization usually rescales features to [0,1].</strong><br>It will be useful when we are sure enough that there are no anomalies (i.e. outliers) with extremely large or small values. For example, in a recommender system, the ratings made by users are limited to a small finite set like {1,2,3,4,5}.</p>
-<p>In some situations, we may prefer to map data to a range like [−1,1] with zero-mean.</p>
-<p>In this way, it will be more convenient for us to use other techniques like matrix factorization.<br><br></p>
-<h3 id="Standardization"><a href="#Standardization" class="headerlink" title="Standardization"></a>Standardization</h3><p>Standardization is widely used as a preprocessing step in many learning algorithms to <strong>rescale the features to zero-mean and unit-variance.</strong><br><br></p>
-<h3 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h3><p>Different from the feature scaling techniques mentioned above, regularization is intended to solve the overfitting problem. By adding an extra part to the loss function, the parameters in learning algorithms are more likely to converge to smaller values, which can significantly reduce overfitting.</p>
-<p>There are mainly two basic types of regularization: <strong>L1-norm (lasso) and L2-norm (ridge regression).</strong></p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Machine Learning Foundations</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>ML Foundations</tag>
-        <tag>Normalization</tag>
-        <tag>Standardization</tag>
-        <tag>Regularization</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Loss Function</title>
     <url>/2020/08/04/Machine%20Learning/Foundation/Loss-Function/</url>
     <content><![CDATA[<h3 id="Loss-for-regression"><a href="#Loss-for-regression" class="headerlink" title="Loss for regression"></a>Loss for regression</h3><h5 id="MSE-Loss-L2"><a href="#MSE-Loss-L2" class="headerlink" title="MSE Loss (L2)"></a>MSE Loss (L2)</h5><script type="math/tex; mode=display">L(Y, f(x)) = \frac{1}{n} \sum (Y - f(x))^2</script><ul>
@@ -1029,21 +945,6 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </tags>
   </entry>
   <entry>
-    <title>EM Algorithm</title>
-    <url>/2020/07/29/Machine%20Learning/Unsupervised/EM-Algorithm/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Various Distance</title>
     <url>/2020/08/04/Machine%20Learning/Foundation/Various-Distance-Similarity/</url>
     <content><![CDATA[<p><img src="/images/ml/distance_1.png" width="60%" height="60%" title="" alt=""/></p>
@@ -1068,62 +969,120 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </tags>
   </entry>
   <entry>
-    <title>Frequent Item Mining 1 - Association Rules / Apriori Method</title>
-    <url>/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-1-Association-Rules-Apriori-Method/</url>
-    <content><![CDATA[<h3 id="Definition-Support-and-Frequent-Itemset"><a href="#Definition-Support-and-Frequent-Itemset" class="headerlink" title="Definition: Support and Frequent Itemset"></a>Definition: Support and Frequent Itemset</h3><p><img src="/images/clustering/associate_rule_1.png" width="35%" height="35%" title="" alt=""/></p>
-<ul>
-<li><p>Itemset<br>• A collection of one or more items<br>• Example:{Milk,Bread,Diaper}<br>• k-itemset: An itemset that contains k items</p>
-</li>
-<li><p>Support count ($\sigma$)<br>• Frequency of occurrence of an itemse<br>• E.g. $\sigma$({Milk, Bread, Diaper}) = 2</p>
-</li>
-<li><p>Support (s)<br>• Fraction of transactions that contain an itemset<br>• E.g. s({Milk, Bread, Diaper}) = 2/5 = 0.4</p>
-</li>
-<li><p>Frequent Itemset<br>• An itemset whose support is greater than or equal to a minimal support (minsup) threshold specified by the user</p>
-</li>
+    <title>LSTM</title>
+    <url>/2020/07/29/Deep%20Learning/RNN/LSTM/</url>
+    <content><![CDATA[<h3 id="Inspiration"><a href="#Inspiration" class="headerlink" title="Inspiration"></a>Inspiration</h3><p>To avoid the long-term dependency problem in RNN and solve gradient vanishing.<br><br></p>
+<h3 id="Novelty"><a href="#Novelty" class="headerlink" title="Novelty"></a>Novelty</h3><ul>
+<li>Forget gate</li>
+<li>Input gate</li>
+<li>Output gate</li>
+<li>Cell states<br><br></li>
 </ul>
-<h3 id="Definition-Association-Rule"><a href="#Definition-Association-Rule" class="headerlink" title="Definition: Association Rule"></a>Definition: Association Rule</h3><ul>
-<li><p>Association Rule<br>• An implication expression of the form X $\rightarrow$ Y, where X and Y are itemsets<br>• An association rule states that when X occurs, Y occurs with certain probability.<br>• Example:<br>{Milk, Diaper} $\rightarrow$ {Beer}<br>Condition &nbsp; &nbsp; &nbsp; Consequent</p>
+<h3 id="LSTM-process-detail"><a href="#LSTM-process-detail" class="headerlink" title="LSTM process detail"></a>LSTM process detail</h3><h6 id="Forget-gate-f-t"><a href="#Forget-gate-f-t" class="headerlink" title="Forget gate $f_t$:"></a>Forget gate $f_t$:</h6><p><img src="/images/RNN/lstm_1.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="Input-gate-i-t-and-new-candidate-cell-state-hat-C-t"><a href="#Input-gate-i-t-and-new-candidate-cell-state-hat-C-t" class="headerlink" title="Input gate $i_t$ and new candidate cell state $\hat{C_t}$"></a>Input gate $i_t$ and new candidate cell state $\hat{C_t}$</h6><p><img src="/images/RNN/lstm_2.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="New-cell-state-C-t"><a href="#New-cell-state-C-t" class="headerlink" title="New cell state $C_t$"></a>New cell state $C_t$</h6><p><img src="/images/RNN/lstm_3.png" width="50%" height="50%" title="" alt=""/></p>
+<h6 id="Output-gate-o-t-and-current-hidden-state-h-t"><a href="#Output-gate-o-t-and-current-hidden-state-h-t" class="headerlink" title="Output gate $o_t$ and current hidden state $h_t$"></a>Output gate $o_t$ and current hidden state $h_t$</h6><p><img src="/images/RNN/lstm_4.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h3 id="Variant-LSTM-peephole"><a href="#Variant-LSTM-peephole" class="headerlink" title="Variant LSTM: peephole"></a>Variant LSTM: peephole</h3><p><img src="/images/RNN/lstm_5.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h4 id="RNN-Gradient-Vanishing"><a href="#RNN-Gradient-Vanishing" class="headerlink" title="RNN Gradient Vanishing"></a>RNN Gradient Vanishing</h4><p>RNN梯度消失是因为激活函数tanh函数的倒数在0到1之间，反向传播时更新前面时刻的参数时，当参数W初始化为小于1的数，则多个(tanh函数’ * W)相乘，将导致求得的偏导极小（小于1的数连乘），从而导致梯度消失。<br><br></p>
+<h4 id="RNN-Gradient-Exploding"><a href="#RNN-Gradient-Exploding" class="headerlink" title="RNN Gradient Exploding"></a>RNN Gradient Exploding</h4><p>当参数初始化为足够大，使得tanh函数的倒数乘以W大于1，则将导致偏导极大（大于1的数连乘），从而导致梯度爆炸。<br><br></p>
+<h4 id="RNN-Solve-gradient-problem"><a href="#RNN-Solve-gradient-problem" class="headerlink" title="RNN Solve gradient problem"></a>RNN Solve gradient problem</h4><ul>
+<li><p>合适地初始化W，即采用正则化</p>
 </li>
-<li><p>Support(s)<br>Fraction of transaction that contain both X and Y.</p>
-<script type="math/tex; mode=display">s(X \rightarrow Y) = \frac{|X \bigcup Y|}{|T|}</script><script type="math/tex; mode=display">s = \frac{\sigma (Milk,Diaper,Beer)}{|T|} = \frac{2}{5}</script></li>
-<li><p>Confidence(c)<br>Measures how often items in Y appear in transactions that contain X</p>
-<script type="math/tex; mode=display">c(X \rightarrow Y) = \frac{\sigma (X \bigcup Y)}{\sigma (X)}</script><script type="math/tex; mode=display">c = \frac{\sigma (Milk,Diaper,Beer)}{\sigma (Milk,Diaper)} = \frac{2}{3}</script></li>
-</ul>
-<h3 id="The-Association-Rule-Mining-Task"><a href="#The-Association-Rule-Mining-Task" class="headerlink" title="The Association Rule Mining Task"></a>The Association Rule Mining Task</h3><ul>
-<li>Given a set of transactions T,the goal of association rule mining is to find all rules having:<br>• support $≥$ minsup threshold<br>• confidence $≥$ minconf threshold</li>
-<li>Minsup and minconf are provided by the user.</li>
-</ul>
-<h3 id="Mining-Association-Rules"><a href="#Mining-Association-Rules" class="headerlink" title="Mining Association Rules"></a>Mining Association Rules</h3><ol>
-<li>Frequent Itemset Generation<br>• Generate all itemsets whose support $≥$ minsup </li>
-<li>Rule Generation<br>• Generate high confidence rules from each frequent itemset, where each rule is a binary partitioning of a frequent itemset</li>
-</ol>
-<h3 id="Apriori-Algorithm-To-generate-frequent-Itemsets"><a href="#Apriori-Algorithm-To-generate-frequent-Itemsets" class="headerlink" title="Apriori Algorithm (To generate frequent Itemsets)"></a>Apriori Algorithm (To generate frequent Itemsets)</h3><ul>
-<li>Apriori principle holds due to the following property of the support measure:<script type="math/tex; mode=display">\bigvee X, Y: (X \subseteq Y) \Longrightarrow s(X) ≥ s(Y)</script>• <strong>If an itemset is infrequent, then all of its supersets must also be infrequent.</strong><br>• Support of an itemset never exceeds the support of its subsets<br>• This is known as the anti-monotone property of support</li>
-</ul>
-<h3 id="The-Apriori-Algorithm-steps"><a href="#The-Apriori-Algorithm-steps" class="headerlink" title="The Apriori Algorithm steps"></a>The Apriori Algorithm steps</h3><ol>
-<li>Let k=1</li>
-<li>Generate frequent itemsets of length 1</li>
-<li>Repeat until no new frequent itemsets are identified<br>• Generate length (k+1) candidate itemsets from length k frequent itemsets<br>• Prune candidate itemsets that can not be frequent because they contain subsets of length k that are infrequent (Apriori Principle)<br>• Count the support of each candidate by scanning the DB<br>• Eliminate candidates that are infrequent, leaving only those that are frequent<br><img src="/images/clustering/apriori_1.png" width="50%" height="50%" title="" alt=""/></li>
-</ol>
-<h3 id="Example-Apriori-Algorithm"><a href="#Example-Apriori-Algorithm" class="headerlink" title="Example: Apriori Algorithm"></a>Example: Apriori Algorithm</h3><p><img src="/images/clustering/apriori_2.png" width="45%" height="45%" title="" alt=""/></p>
-<h3 id="Associate-Rule-Generation"><a href="#Associate-Rule-Generation" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h3><p>Given a frequent itemset L, find all non-empty subsets fLsuch that f $\rightarrow$ L – f satisfies the minimum confidence requirement.<br><img src="/images/clustering/associate_rule_2.png" width="45%" height="45%" title="" alt=""/></p>
-<p><img src="/images/clustering/associate_rule_3.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_4.png" width="45%" height="45%" title="" alt=""/></p>
-<ul>
-<li><h5 id="Associate-Rule-Generation-1"><a href="#Associate-Rule-Generation-1" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h5><img src="/images/clustering/associate_rule_5.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_6.png" width="45%" height="45%" title="" alt=""/></li>
-</ul>
-<ul>
-<li><h5 id="Interestingness-and-Lift-of-Associate-Rule"><a href="#Interestingness-and-Lift-of-Associate-Rule" class="headerlink" title="Interestingness and Lift of Associate Rule"></a>Interestingness and Lift of Associate Rule</h5><img src="/images/clustering/interestingness.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/lift_1.png" width="45%" height="45%" title="" alt=""/></li>
+<li><p>将tanh或sigmoid替换为ReLU</p>
+</li>
+<li><p>使用LSTM或者GRU, 使得RNN BP中的梯度连乘变成LSTM的梯度连加</p>
+</li>
 </ul>
 ]]></content>
       <categories>
+        <category>Deep Learning</category>
+        <category>RNN</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+        <tag>RNN</tag>
+        <tag>LSTM</tag>
+        <tag>Neural Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Activation Function</title>
+    <url>/2020/08/04/Machine%20Learning/Foundation/Activation-Function/</url>
+    <content><![CDATA[<p><img src="/images/ml/activation_func_1.png" width="80%" height="80%" title="" alt=""/></p>
+<p><img src="/images/ml/activation_func_2.png" width="80%" height="80%" title="" alt=""/></p>
+<p><img src="/images/ml/activation_func_3.png" width="80%" height="80%" title="" alt=""/></p>
+<p><img src="/images/ml/activation_func_4.png" width="80%" height="80%" title="" alt=""/></p>
+<p><img src="/images/ml/activation_func_5.png" width="80%" height="80%" title="" alt=""/></p>
+]]></content>
+      <categories>
         <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Frequent Item Mining</category>
+        <category>Machine Learning Foundations</category>
       </categories>
       <tags>
         <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Frequent Item Mining</tag>
+        <tag>ML Foundations</tag>
+        <tag>Activation Function</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Normalization / Standardization / Regularization</title>
+    <url>/2020/08/04/Machine%20Learning/Foundation/Normalization-Standardization-Regularization/</url>
+    <content><![CDATA[<h3 id="Normalization"><a href="#Normalization" class="headerlink" title="Normalization"></a>Normalization</h3><p><strong>Normalization usually rescales features to [0,1].</strong><br>It will be useful when we are sure enough that there are no anomalies (i.e. outliers) with extremely large or small values. For example, in a recommender system, the ratings made by users are limited to a small finite set like {1,2,3,4,5}.</p>
+<p>In some situations, we may prefer to map data to a range like [−1,1] with zero-mean.</p>
+<p>In this way, it will be more convenient for us to use other techniques like matrix factorization.<br><br></p>
+<h3 id="Standardization"><a href="#Standardization" class="headerlink" title="Standardization"></a>Standardization</h3><p>Standardization is widely used as a preprocessing step in many learning algorithms to <strong>rescale the features to zero-mean and unit-variance.</strong><br><br></p>
+<h3 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h3><p>Different from the feature scaling techniques mentioned above, regularization is intended to solve the overfitting problem. By adding an extra part to the loss function, the parameters in learning algorithms are more likely to converge to smaller values, which can significantly reduce overfitting.</p>
+<p>There are mainly two basic types of regularization: <strong>L1-norm (lasso) and L2-norm (ridge regression).</strong></p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Machine Learning Foundations</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>ML Foundations</tag>
+        <tag>Normalization</tag>
+        <tag>Standardization</tag>
+        <tag>Regularization</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RNN - GRU</title>
+    <url>/2020/07/29/Deep%20Learning/RNN/RNN-GRU/</url>
+    <content><![CDATA[<p>Architecture of a traditional RNN Recurrent neural networks, also known as RNNs, are a class of neural networks that allow previous outputs to be used as inputs while having hidden states. </p>
+<h3 id="Vanilla-RNN"><a href="#Vanilla-RNN" class="headerlink" title="Vanilla RNN"></a>Vanilla RNN</h3><ul>
+<li><p>Elman network accepts previous hidden state ht−1</p>
+</li>
+<li><p>Jordan network accepts previous output yt−1</p>
+</li>
+</ul>
+<p><img src="/images/RNN/vanilla_rnn_1.png" width="40%" height="40%" title="" alt=""/></p>
+<p><img src="/images/RNN/vanilla_rnn_2.jpg" width="40%" height="50%" title="Vanilla RNN" alt=""/></p>
+<h6 id="pros-and-cons-of-a-typical-RNN"><a href="#pros-and-cons-of-a-typical-RNN" class="headerlink" title="pros and cons of a typical RNN"></a>pros and cons of a typical RNN</h6><p><img src="/images/RNN/rnn_pros_cons.jpg" width="50%" height="60%" title="" alt=""/></p>
+<h6 id="Loss-function"><a href="#Loss-function" class="headerlink" title="Loss function"></a>Loss function</h6><p>In the case of a recurrent neural network, the loss function $L$ of all time steps is defined based on the loss at every time step as follows:</p>
+<script type="math/tex; mode=display">
+L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Commonly-used-activation-functions"><a href="#Commonly-used-activation-functions" class="headerlink" title="Commonly used activation functions"></a>Commonly used activation functions</h6><p><img src="/images/RNN/rnn_activation.jpg" width="60%" height="60%" title="" alt=""/></p>
+<h6 id="Vanishing-exploding-gradient"><a href="#Vanishing-exploding-gradient" class="headerlink" title="Vanishing/exploding gradient"></a>Vanishing/exploding gradient</h6><p>The vanishing and exploding gradient phenomena are often encountered in the context of RNNs. The reason why they happen is that it is difficult to capture long term dependencies because of multiplicative gradient that can be exponentially decreasing/increasing with respect to the number of layers.</p>
+<h6 id="Gradient-clipping"><a href="#Gradient-clipping" class="headerlink" title="Gradient clipping"></a>Gradient clipping</h6><p>It is a technique used to cope with the exploding gradient problem sometimes encountered when performing backpropagation. By capping the maximum value for the gradient, this phenomenon is controlled in practice.<br><br></p>
+<h3 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h3><p>GRU (Gated Recurrent Unit) aims to solve the vanishing gradient problem which comes with a standard recurrent neural network. GRU can also be considered as a variation on the LSTM.</p>
+<p>To solve the vanishing gradient problem of a standard RNN, GRU uses, so-called, Update gate and eset gate. Basically, these are two vectors which decide what information should be passed to the output. The special thing about them is that they can be trained to keep information from long ago, without washing it through time or remove information which is irrelevant to the prediction.</p>
+<p><img src="/images/RNN/gru.jpg" width="40%" height="40%" title="" alt=""/></p>
+<h6 id="pros-and-cons-of-GRU"><a href="#pros-and-cons-of-GRU" class="headerlink" title="pros and cons of GRU"></a>pros and cons of GRU</h6><ul>
+<li>Can remember long memory compared to RNN</li>
+<li>Solve the vanishing gradient problem</li>
+<li>Simpler structure and less parameters than LSTM</li>
+<li>Less gates than LSTM</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+        <category>RNN</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+        <tag>RNN</tag>
+        <tag>Neural Network</tag>
+        <tag>GRU</tag>
       </tags>
   </entry>
   <entry>
@@ -1257,57 +1216,6 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </tags>
   </entry>
   <entry>
-    <title>Sorting - Search Algorithms</title>
-    <url>/2020/08/04/Mathematics-Algorithms/Algorithms-Data-Structure/Sorting-Algorithms/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Search Algorithms - 搜索算法:</span><br><span class="line">- 无序列表的顺序查找，时间复杂度O(N)</span><br><span class="line">- 二分查找，时间复杂度O(logN)</span><br><span class="line">- Fibonacci查找，时间复杂度O(logN)</span><br><span class="line">- 插值查找，时间复杂度O(log(logN))</span><br><span class="line">- 哈希查找，时间复杂度O(<span class="number">1</span>)</span><br><span class="line">- 二叉树查找</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">遍历无序列表的顺序查找算法</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def sequential_search(lis, key):</span></span><br><span class="line"><span class="string">    length = len(lis)</span></span><br><span class="line"><span class="string">    for i in range(length):</span></span><br><span class="line"><span class="string">        if lis[i] == key:</span></span><br><span class="line"><span class="string">            return i</span></span><br><span class="line"><span class="string">    else:</span></span><br><span class="line"><span class="string">        return False</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">二分查找 - Binary Search</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def binarysearch(sorted_sequence,target):</span></span><br><span class="line"><span class="string">    left=0</span></span><br><span class="line"><span class="string">    right=len(sorted_sequence)-1</span></span><br><span class="line"><span class="string">    while(left&lt;=right):</span></span><br><span class="line"><span class="string">        midpoint=(left+right)//2</span></span><br><span class="line"><span class="string">        current_item=sorted_sequence[midpoint]</span></span><br><span class="line"><span class="string">        if current_item==target:</span></span><br><span class="line"><span class="string">            return midpoint</span></span><br><span class="line"><span class="string">        elif target&lt;current_item:</span></span><br><span class="line"><span class="string">            right=midpoint-1</span></span><br><span class="line"><span class="string">        else:</span></span><br><span class="line"><span class="string">            left=midpoint+1</span></span><br><span class="line"><span class="string">    return None</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">插值查找 - Interpolation Search</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def Interpolationsearch(sorted_sequence,target):</span></span><br><span class="line"><span class="string">    left=0</span></span><br><span class="line"><span class="string">    right=len(sorted_sequence)-1</span></span><br><span class="line"><span class="string">    while(left&lt;=right):</span></span><br><span class="line"><span class="string">        midpoint= left + int((right - left) * (target - sorted_sequence[left]) / (sorted_sequence[right] - sorted_sequence[left]))</span></span><br><span class="line"><span class="string">        current_item=sorted_sequence[midpoint]</span></span><br><span class="line"><span class="string">        if current_item==target:</span></span><br><span class="line"><span class="string">            return midpoint</span></span><br><span class="line"><span class="string">        elif target&lt;current_item:</span></span><br><span class="line"><span class="string">            right=midpoint-1</span></span><br><span class="line"><span class="string">        else:</span></span><br><span class="line"><span class="string">            left=midpoint+1</span></span><br><span class="line"><span class="string">    return None</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">Fibonacci查找，前提是已经有一个包含斐波那契数据的列表</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">import copy</span></span><br><span class="line"><span class="string">def fibonacci_search(ord_data, target_value, max_size):</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        ord_data: ordered data</span></span><br><span class="line"><span class="string">        target_value: value that be searched</span></span><br><span class="line"><span class="string">        max_size: max size of fibonacci number</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"><span class="string">    # 0：首选深度复制数据</span></span><br><span class="line"><span class="string">    D = copy.deepcopy(ord_data)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    # 1：构建斐波那契数列</span></span><br><span class="line"><span class="string">    F = [0, 1] + [fibonacci(i) for i in range(2, max_size)]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    # 2：计算数据长度对应斐波那契数列元素</span></span><br><span class="line"><span class="string">    index = 0</span></span><br><span class="line"><span class="string">    while(F[index]&lt;len(D)):</span></span><br><span class="line"><span class="string">        index += 1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    # 3：对数据进行填充</span></span><br><span class="line"><span class="string">    for i in range(len(D), F[index]):</span></span><br><span class="line"><span class="string">        D.append(D[len(D)-1])</span></span><br><span class="line"><span class="string">   </span></span><br><span class="line"><span class="string">    # 4：对区间不断分割</span></span><br><span class="line"><span class="string">    left = 0</span></span><br><span class="line"><span class="string">    right = F[index]</span></span><br><span class="line"><span class="string">    while left &lt;= right and index&gt;0:</span></span><br><span class="line"><span class="string">        # 计算分割位置，左区间长度为F(n-2)，右区间长度为F(n-1)</span></span><br><span class="line"><span class="string">        # -1是因为下标从0开始，即D[0]到D[20]对应21个元素</span></span><br><span class="line"><span class="string">        mid = left + F[index-1] - 1</span></span><br><span class="line"><span class="string">           </span></span><br><span class="line"><span class="string">        # 判断中间值和目标值的关系</span></span><br><span class="line"><span class="string">        if D[mid] == target_value:</span></span><br><span class="line"><span class="string">            # 此时搜索到的目标值是填充的值</span></span><br><span class="line"><span class="string">            if mid &gt; len(ord_data):</span></span><br><span class="line"><span class="string">                return len(ord_data)-1</span></span><br><span class="line"><span class="string">            else:</span></span><br><span class="line"><span class="string">                return mid</span></span><br><span class="line"><span class="string">                </span></span><br><span class="line"><span class="string">        elif D[mid] &lt; target_value:</span></span><br><span class="line"><span class="string">            left = mid + 1</span></span><br><span class="line"><span class="string">            index = index - 2</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        elif D[mid] &gt; target_value:</span></span><br><span class="line"><span class="string">            right = mid - 1</span></span><br><span class="line"><span class="string">            index = index - 1</span></span><br><span class="line"><span class="string">    return None</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">快速查找 - Fast Search</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">哈希查找 - Hash Search</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">二叉树查找 - Binary Tree Search</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span>--------------------------------------------------------------------------------------------------------------------<span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">- 冒泡排序, 时间O(n2), 空间O(<span class="number">1</span>), 稳定</span><br><span class="line">- 选择排序, 时间O(n2), 空间O(<span class="number">1</span>), 不稳定</span><br><span class="line">- 快速排序, 时间O(nlogn), 空间O(nlogn), 不稳定</span><br><span class="line">- 插入排序, 时间O(n2), 空间O(<span class="number">1</span>), 稳定</span><br><span class="line">- 归并排序, 时间O(nlogn), 空间O(n), 稳定</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">冒泡排序</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def bubbleSort(nums):</span></span><br><span class="line"><span class="string">    for i in range(len(nums) - 1): # 遍历 len(nums)-1 次</span></span><br><span class="line"><span class="string">        for j in range(len(nums) - i - 1): # 已排好序的部分不用再次遍历</span></span><br><span class="line"><span class="string">            if nums[j] &gt; nums[j+1]:</span></span><br><span class="line"><span class="string">                nums[j], nums[j+1] = nums[j+1], nums[j] # Python 交换两个数不用中间变量</span></span><br><span class="line"><span class="string">    return nums</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">选择排序</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def selectionSort(nums):</span></span><br><span class="line"><span class="string">    for i in range(len(nums) - 1):  # 遍历 len(nums)-1 次</span></span><br><span class="line"><span class="string">        minIndex = i</span></span><br><span class="line"><span class="string">        for j in range(i + 1, len(nums)):</span></span><br><span class="line"><span class="string">            if nums[j] &lt; nums[minIndex]:  # 更新最小值索引</span></span><br><span class="line"><span class="string">                minIndex = j  </span></span><br><span class="line"><span class="string">        nums[i], nums[minIndex] = nums[minIndex], nums[i] # 把最小数交换到前面</span></span><br><span class="line"><span class="string">    return nums</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">快速排序</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def quicksort(lst):</span></span><br><span class="line"><span class="string">    less = []</span></span><br><span class="line"><span class="string">    greater = []</span></span><br><span class="line"><span class="string">    if len(lst) &lt;= 1:</span></span><br><span class="line"><span class="string">        return lst</span></span><br><span class="line"><span class="string">    else:</span></span><br><span class="line"><span class="string">        pivot = lst[-1]</span></span><br><span class="line"><span class="string">        for num in lst[:-1]:</span></span><br><span class="line"><span class="string">            if num &lt; pivot:</span></span><br><span class="line"><span class="string">                less.append(num)</span></span><br><span class="line"><span class="string">            if num &gt;= pivot:</span></span><br><span class="line"><span class="string">                greater.append(num)</span></span><br><span class="line"><span class="string">    return quicksort(less) + [pivot] + quicksort(greater)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">插入排序</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def insertionSort(nums):</span></span><br><span class="line"><span class="string">    for i in range(len(nums) - 1):  # 遍历 len(nums)-1 次</span></span><br><span class="line"><span class="string">        curNum, preIndex = nums[i+1], i  # curNum 保存当前待插入的数</span></span><br><span class="line"><span class="string">        while preIndex &gt;= 0 and curNum &lt; nums[preIndex]: # 将比 curNum 大的元素向后移动</span></span><br><span class="line"><span class="string">            nums[preIndex + 1] = nums[preIndex]</span></span><br><span class="line"><span class="string">            preIndex -= 1</span></span><br><span class="line"><span class="string">        nums[preIndex + 1] = curNum  # 待插入的数的正确位置   </span></span><br><span class="line"><span class="string">    return nums</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">归并排序</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def MergeSort(lst):</span></span><br><span class="line"><span class="string">    #合并左右子序列函数</span></span><br><span class="line"><span class="string">    def merge(arr,left,mid,right):</span></span><br><span class="line"><span class="string">        temp=[]     #中间数组</span></span><br><span class="line"><span class="string">        i=left          #左段子序列起始</span></span><br><span class="line"><span class="string">        j=mid+1   #右段子序列起始</span></span><br><span class="line"><span class="string">        while i&lt;=mid and j&lt;=right:</span></span><br><span class="line"><span class="string">            if arr[i]&lt;=arr[j]:</span></span><br><span class="line"><span class="string">                temp.append(arr[i])</span></span><br><span class="line"><span class="string">                i+=1</span></span><br><span class="line"><span class="string">            else:</span></span><br><span class="line"><span class="string">                temp.append(arr[j])</span></span><br><span class="line"><span class="string">                j+=1</span></span><br><span class="line"><span class="string">        while i&lt;=mid:</span></span><br><span class="line"><span class="string">            temp.append(arr[i])</span></span><br><span class="line"><span class="string">            i+=1</span></span><br><span class="line"><span class="string">        while j&lt;=right:</span></span><br><span class="line"><span class="string">            temp.append(arr[j])</span></span><br><span class="line"><span class="string">            j+=1</span></span><br><span class="line"><span class="string">        for i in range(left,right+1):    #  !注意这里，不能直接arr=temp,他俩大小都不一定一样</span></span><br><span class="line"><span class="string">            arr[i]=temp[i-left]</span></span><br><span class="line"><span class="string">    #递归调用归并排序</span></span><br><span class="line"><span class="string">    def mSort(arr,left,right):</span></span><br><span class="line"><span class="string">        if left&gt;=right:</span></span><br><span class="line"><span class="string">            return</span></span><br><span class="line"><span class="string">        mid=(left+right)//2</span></span><br><span class="line"><span class="string">        mSort(arr,left,mid)</span></span><br><span class="line"><span class="string">        mSort(arr,mid+1,right)</span></span><br><span class="line"><span class="string">        merge(arr,left,mid,right)</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">    n=len(lst)</span></span><br><span class="line"><span class="string">    if n&lt;=1:</span></span><br><span class="line"><span class="string">        return lst</span></span><br><span class="line"><span class="string">    mSort(lst,0,n-1)</span></span><br><span class="line"><span class="string">    return lst</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Mathematics-Algorithms</category>
-        <category>Algorithms-Data-Structure</category>
-      </categories>
-      <tags>
-        <tag>Mathematics</tag>
-        <tag>Algorithms</tag>
-        <tag>Data Structure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Least Square Method</title>
-    <url>/2020/08/04/Mathematics-Algorithms/Mathematics/Least-Square-Method/</url>
-    <content><![CDATA[<p>We assume we want to find a hyper line which has closed distance to all points in the figure above.<br><img src="/images/maths/mse_1.png" width="50%" height="50%" title="" alt=""/></p>
-<p>The distance between point and line is: </p>
-<script type="math/tex; mode=display">|y - y_1| \Longrightarrow (y - y_i)^2</script><p>Can be formed as: </p>
-<script type="math/tex; mode=display">S^2 = \sum (y - y_i)^2</script><p>We assume we have a line:</p>
-<script type="math/tex; mode=display">f(x) = ax + b</script><p><img src="/images/maths/mse_2.png" width="50%" height="50%" title="" alt=""/></p>
-<p>The we have can solve derivative of function below:<br><img src="/images/maths/mse_3.png" width="50%" height="50%" title="" alt=""/></p>
-<p><img src="/images/maths/mse_4.png" width="50%" height="50%" title="" alt=""/></p>
-<p>After that we can solve the actual value of parameters $a$ and $b$ which can make the distance between line and points is minimal.</p>
-]]></content>
-      <categories>
-        <category>Mathematics-Algorithms</category>
-        <category>Mathematics</category>
-      </categories>
-      <tags>
-        <tag>Mathematics</tag>
-        <tag>MSE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CRF - NER</title>
-    <url>/2020/07/29/NLP/Dialogue%20System/CRF-NER/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Dialogue System</category>
-        <category>Natural Language Understanding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>NER</tag>
-        <tag>CRF</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(Named) Entity Resolution</title>
     <url>/2020/07/29/NLP/Dialogue%20System/Entity-Resolution/</url>
     <content><![CDATA[<h3 id="Entity-resolution"><a href="#Entity-resolution" class="headerlink" title="Entity resolution"></a>Entity resolution</h3><p>Entity resolution (ER) is the task of disambiguating records that correspond to real world entities across and within datasets. The applications of entity resolution are tremendous, particularly for public sector and federal datasets related to health, trans- portation, finance, law enforcement, and antiterrorism, etc.</p>
@@ -1334,10 +1242,99 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>NER</tag>
         <tag>Dialogue System</tag>
         <tag>NLU</tag>
         <tag>Entity Resolution</tag>
+        <tag>NER</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Frequent Item Mining 1 - Association Rules / Apriori Method</title>
+    <url>/2020/07/29/Machine%20Learning/Unsupervised/Frequent-Item-Mining-1-Association-Rules-Apriori-Method/</url>
+    <content><![CDATA[<h3 id="Definition-Support-and-Frequent-Itemset"><a href="#Definition-Support-and-Frequent-Itemset" class="headerlink" title="Definition: Support and Frequent Itemset"></a>Definition: Support and Frequent Itemset</h3><p><img src="/images/clustering/associate_rule_1.png" width="35%" height="35%" title="" alt=""/></p>
+<ul>
+<li><p>Itemset<br>• A collection of one or more items<br>• Example:{Milk,Bread,Diaper}<br>• k-itemset: An itemset that contains k items</p>
+</li>
+<li><p>Support count ($\sigma$)<br>• Frequency of occurrence of an itemse<br>• E.g. $\sigma$({Milk, Bread, Diaper}) = 2</p>
+</li>
+<li><p>Support (s)<br>• Fraction of transactions that contain an itemset<br>• E.g. s({Milk, Bread, Diaper}) = 2/5 = 0.4</p>
+</li>
+<li><p>Frequent Itemset<br>• An itemset whose support is greater than or equal to a minimal support (minsup) threshold specified by the user</p>
+</li>
+</ul>
+<h3 id="Definition-Association-Rule"><a href="#Definition-Association-Rule" class="headerlink" title="Definition: Association Rule"></a>Definition: Association Rule</h3><ul>
+<li><p>Association Rule<br>• An implication expression of the form X $\rightarrow$ Y, where X and Y are itemsets<br>• An association rule states that when X occurs, Y occurs with certain probability.<br>• Example:<br>{Milk, Diaper} $\rightarrow$ {Beer}<br>Condition &nbsp; &nbsp; &nbsp; Consequent</p>
+</li>
+<li><p>Support(s)<br>Fraction of transaction that contain both X and Y.</p>
+<script type="math/tex; mode=display">s(X \rightarrow Y) = \frac{|X \bigcup Y|}{|T|}</script><script type="math/tex; mode=display">s = \frac{\sigma (Milk,Diaper,Beer)}{|T|} = \frac{2}{5}</script></li>
+<li><p>Confidence(c)<br>Measures how often items in Y appear in transactions that contain X</p>
+<script type="math/tex; mode=display">c(X \rightarrow Y) = \frac{\sigma (X \bigcup Y)}{\sigma (X)}</script><script type="math/tex; mode=display">c = \frac{\sigma (Milk,Diaper,Beer)}{\sigma (Milk,Diaper)} = \frac{2}{3}</script></li>
+</ul>
+<h3 id="The-Association-Rule-Mining-Task"><a href="#The-Association-Rule-Mining-Task" class="headerlink" title="The Association Rule Mining Task"></a>The Association Rule Mining Task</h3><ul>
+<li>Given a set of transactions T,the goal of association rule mining is to find all rules having:<br>• support $≥$ minsup threshold<br>• confidence $≥$ minconf threshold</li>
+<li>Minsup and minconf are provided by the user.</li>
+</ul>
+<h3 id="Mining-Association-Rules"><a href="#Mining-Association-Rules" class="headerlink" title="Mining Association Rules"></a>Mining Association Rules</h3><ol>
+<li>Frequent Itemset Generation<br>• Generate all itemsets whose support $≥$ minsup </li>
+<li>Rule Generation<br>• Generate high confidence rules from each frequent itemset, where each rule is a binary partitioning of a frequent itemset</li>
+</ol>
+<h3 id="Apriori-Algorithm-To-generate-frequent-Itemsets"><a href="#Apriori-Algorithm-To-generate-frequent-Itemsets" class="headerlink" title="Apriori Algorithm (To generate frequent Itemsets)"></a>Apriori Algorithm (To generate frequent Itemsets)</h3><ul>
+<li>Apriori principle holds due to the following property of the support measure:<script type="math/tex; mode=display">\bigvee X, Y: (X \subseteq Y) \Longrightarrow s(X) ≥ s(Y)</script>• <strong>If an itemset is infrequent, then all of its supersets must also be infrequent.</strong><br>• Support of an itemset never exceeds the support of its subsets<br>• This is known as the anti-monotone property of support</li>
+</ul>
+<h3 id="The-Apriori-Algorithm-steps"><a href="#The-Apriori-Algorithm-steps" class="headerlink" title="The Apriori Algorithm steps"></a>The Apriori Algorithm steps</h3><ol>
+<li>Let k=1</li>
+<li>Generate frequent itemsets of length 1</li>
+<li>Repeat until no new frequent itemsets are identified<br>• Generate length (k+1) candidate itemsets from length k frequent itemsets<br>• Prune candidate itemsets that can not be frequent because they contain subsets of length k that are infrequent (Apriori Principle)<br>• Count the support of each candidate by scanning the DB<br>• Eliminate candidates that are infrequent, leaving only those that are frequent<br><img src="/images/clustering/apriori_1.png" width="50%" height="50%" title="" alt=""/></li>
+</ol>
+<h3 id="Example-Apriori-Algorithm"><a href="#Example-Apriori-Algorithm" class="headerlink" title="Example: Apriori Algorithm"></a>Example: Apriori Algorithm</h3><p><img src="/images/clustering/apriori_2.png" width="45%" height="45%" title="" alt=""/></p>
+<h3 id="Associate-Rule-Generation"><a href="#Associate-Rule-Generation" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h3><p>Given a frequent itemset L, find all non-empty subsets fLsuch that f $\rightarrow$ L – f satisfies the minimum confidence requirement.<br><img src="/images/clustering/associate_rule_2.png" width="45%" height="45%" title="" alt=""/></p>
+<p><img src="/images/clustering/associate_rule_3.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_4.png" width="45%" height="45%" title="" alt=""/></p>
+<ul>
+<li><h5 id="Associate-Rule-Generation-1"><a href="#Associate-Rule-Generation-1" class="headerlink" title="Associate Rule Generation"></a>Associate Rule Generation</h5><img src="/images/clustering/associate_rule_5.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/associate_rule_6.png" width="45%" height="45%" title="" alt=""/></li>
+</ul>
+<ul>
+<li><h5 id="Interestingness-and-Lift-of-Associate-Rule"><a href="#Interestingness-and-Lift-of-Associate-Rule" class="headerlink" title="Interestingness and Lift of Associate Rule"></a>Interestingness and Lift of Associate Rule</h5><img src="/images/clustering/interestingness.png" width="45%" height="45%" title="" alt=""/><br><img src="/images/clustering/lift_1.png" width="45%" height="45%" title="" alt=""/></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Frequent Item Mining</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Frequent Item Mining</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CRF - NER</title>
+    <url>/2020/07/29/NLP/Dialogue%20System/CRF-NER/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Dialogue System</category>
+        <category>Natural Language Understanding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>NER</tag>
+        <tag>CRF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Viterbi Algorithm</title>
+    <url>/2020/07/29/NLP/Dialogue%20System/Viterbi-Algorithm/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Dialogue System</category>
+        <category>Natural Language Understanding</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>CRF</tag>
+        <tag>Viterbi</tag>
       </tags>
   </entry>
   <entry>
@@ -1375,21 +1372,6 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </tags>
   </entry>
   <entry>
-    <title>Viterbi Algorithm</title>
-    <url>/2020/07/29/NLP/Dialogue%20System/Viterbi-Algorithm/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>NLP</category>
-        <category>Dialogue System</category>
-        <category>Natural Language Understanding</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>CRF</tag>
-        <tag>Viterbi</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Sentiment Analysis</title>
     <url>/2020/07/29/NLP/Sentiment-Analysis/Sentiment-Analysis/</url>
     <content><![CDATA[]]></content>
@@ -1416,8 +1398,8 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </tags>
   </entry>
   <entry>
-    <title>Word Embedding - CBOW</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-CBOW/</url>
+    <title>Word Embedding - Word2Vec - GloVe</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Word2Vec-GloVe/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>NLP</category>
@@ -1426,7 +1408,8 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       <tags>
         <tag>NLP</tag>
         <tag>Word Embedding</tag>
-        <tag>CBOW</tag>
+        <tag>Word2Vec</tag>
+        <tag>GloVe</tag>
       </tags>
   </entry>
   <entry>
@@ -1444,8 +1427,57 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </tags>
   </entry>
   <entry>
-    <title>Word Embedding - Word2Vec - GloVe</title>
-    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-Word2Vec-GloVe/</url>
+    <title>EM Algorithm</title>
+    <url>/2020/07/29/Mathematics-Algorithms/Mathematics/EM-Algorithm/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Mathematics-Algorithms</category>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sorting - Search Algorithms</title>
+    <url>/2020/08/04/Mathematics-Algorithms/Algorithms-Data-Structure/Sorting-Algorithms/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Search Algorithms - 搜索算法:</span><br><span class="line">- 无序列表的顺序查找，时间复杂度O(N)</span><br><span class="line">- 二分查找，时间复杂度O(logN)</span><br><span class="line">- Fibonacci查找，时间复杂度O(logN)</span><br><span class="line">- 插值查找，时间复杂度O(log(logN))</span><br><span class="line">- 哈希查找，时间复杂度O(<span class="number">1</span>)</span><br><span class="line">- 二叉树查找</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">遍历无序列表的顺序查找算法</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def sequential_search(lis, key):</span></span><br><span class="line"><span class="string">    length = len(lis)</span></span><br><span class="line"><span class="string">    for i in range(length):</span></span><br><span class="line"><span class="string">        if lis[i] == key:</span></span><br><span class="line"><span class="string">            return i</span></span><br><span class="line"><span class="string">    else:</span></span><br><span class="line"><span class="string">        return False</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">二分查找 - Binary Search</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def binarysearch(sorted_sequence,target):</span></span><br><span class="line"><span class="string">    left=0</span></span><br><span class="line"><span class="string">    right=len(sorted_sequence)-1</span></span><br><span class="line"><span class="string">    while(left&lt;=right):</span></span><br><span class="line"><span class="string">        midpoint=(left+right)//2</span></span><br><span class="line"><span class="string">        current_item=sorted_sequence[midpoint]</span></span><br><span class="line"><span class="string">        if current_item==target:</span></span><br><span class="line"><span class="string">            return midpoint</span></span><br><span class="line"><span class="string">        elif target&lt;current_item:</span></span><br><span class="line"><span class="string">            right=midpoint-1</span></span><br><span class="line"><span class="string">        else:</span></span><br><span class="line"><span class="string">            left=midpoint+1</span></span><br><span class="line"><span class="string">    return None</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">插值查找 - Interpolation Search</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def Interpolationsearch(sorted_sequence,target):</span></span><br><span class="line"><span class="string">    left=0</span></span><br><span class="line"><span class="string">    right=len(sorted_sequence)-1</span></span><br><span class="line"><span class="string">    while(left&lt;=right):</span></span><br><span class="line"><span class="string">        midpoint= left + int((right - left) * (target - sorted_sequence[left]) / (sorted_sequence[right] - sorted_sequence[left]))</span></span><br><span class="line"><span class="string">        current_item=sorted_sequence[midpoint]</span></span><br><span class="line"><span class="string">        if current_item==target:</span></span><br><span class="line"><span class="string">            return midpoint</span></span><br><span class="line"><span class="string">        elif target&lt;current_item:</span></span><br><span class="line"><span class="string">            right=midpoint-1</span></span><br><span class="line"><span class="string">        else:</span></span><br><span class="line"><span class="string">            left=midpoint+1</span></span><br><span class="line"><span class="string">    return None</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">Fibonacci查找，前提是已经有一个包含斐波那契数据的列表</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">import copy</span></span><br><span class="line"><span class="string">def fibonacci_search(ord_data, target_value, max_size):</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        ord_data: ordered data</span></span><br><span class="line"><span class="string">        target_value: value that be searched</span></span><br><span class="line"><span class="string">        max_size: max size of fibonacci number</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"><span class="string">    # 0：首选深度复制数据</span></span><br><span class="line"><span class="string">    D = copy.deepcopy(ord_data)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    # 1：构建斐波那契数列</span></span><br><span class="line"><span class="string">    F = [0, 1] + [fibonacci(i) for i in range(2, max_size)]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    # 2：计算数据长度对应斐波那契数列元素</span></span><br><span class="line"><span class="string">    index = 0</span></span><br><span class="line"><span class="string">    while(F[index]&lt;len(D)):</span></span><br><span class="line"><span class="string">        index += 1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    # 3：对数据进行填充</span></span><br><span class="line"><span class="string">    for i in range(len(D), F[index]):</span></span><br><span class="line"><span class="string">        D.append(D[len(D)-1])</span></span><br><span class="line"><span class="string">   </span></span><br><span class="line"><span class="string">    # 4：对区间不断分割</span></span><br><span class="line"><span class="string">    left = 0</span></span><br><span class="line"><span class="string">    right = F[index]</span></span><br><span class="line"><span class="string">    while left &lt;= right and index&gt;0:</span></span><br><span class="line"><span class="string">        # 计算分割位置，左区间长度为F(n-2)，右区间长度为F(n-1)</span></span><br><span class="line"><span class="string">        # -1是因为下标从0开始，即D[0]到D[20]对应21个元素</span></span><br><span class="line"><span class="string">        mid = left + F[index-1] - 1</span></span><br><span class="line"><span class="string">           </span></span><br><span class="line"><span class="string">        # 判断中间值和目标值的关系</span></span><br><span class="line"><span class="string">        if D[mid] == target_value:</span></span><br><span class="line"><span class="string">            # 此时搜索到的目标值是填充的值</span></span><br><span class="line"><span class="string">            if mid &gt; len(ord_data):</span></span><br><span class="line"><span class="string">                return len(ord_data)-1</span></span><br><span class="line"><span class="string">            else:</span></span><br><span class="line"><span class="string">                return mid</span></span><br><span class="line"><span class="string">                </span></span><br><span class="line"><span class="string">        elif D[mid] &lt; target_value:</span></span><br><span class="line"><span class="string">            left = mid + 1</span></span><br><span class="line"><span class="string">            index = index - 2</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        elif D[mid] &gt; target_value:</span></span><br><span class="line"><span class="string">            right = mid - 1</span></span><br><span class="line"><span class="string">            index = index - 1</span></span><br><span class="line"><span class="string">    return None</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">快速查找 - Fast Search</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">哈希查找 - Hash Search</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">二叉树查找 - Binary Tree Search</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span>--------------------------------------------------------------------------------------------------------------------<span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">- 冒泡排序, 时间O(n2), 空间O(<span class="number">1</span>), 稳定</span><br><span class="line">- 选择排序, 时间O(n2), 空间O(<span class="number">1</span>), 不稳定</span><br><span class="line">- 快速排序, 时间O(nlogn), 空间O(nlogn), 不稳定</span><br><span class="line">- 插入排序, 时间O(n2), 空间O(<span class="number">1</span>), 稳定</span><br><span class="line">- 归并排序, 时间O(nlogn), 空间O(n), 稳定</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">冒泡排序</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def bubbleSort(nums):</span></span><br><span class="line"><span class="string">    for i in range(len(nums) - 1): # 遍历 len(nums)-1 次</span></span><br><span class="line"><span class="string">        for j in range(len(nums) - i - 1): # 已排好序的部分不用再次遍历</span></span><br><span class="line"><span class="string">            if nums[j] &gt; nums[j+1]:</span></span><br><span class="line"><span class="string">                nums[j], nums[j+1] = nums[j+1], nums[j] # Python 交换两个数不用中间变量</span></span><br><span class="line"><span class="string">    return nums</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">选择排序</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def selectionSort(nums):</span></span><br><span class="line"><span class="string">    for i in range(len(nums) - 1):  # 遍历 len(nums)-1 次</span></span><br><span class="line"><span class="string">        minIndex = i</span></span><br><span class="line"><span class="string">        for j in range(i + 1, len(nums)):</span></span><br><span class="line"><span class="string">            if nums[j] &lt; nums[minIndex]:  # 更新最小值索引</span></span><br><span class="line"><span class="string">                minIndex = j  </span></span><br><span class="line"><span class="string">        nums[i], nums[minIndex] = nums[minIndex], nums[i] # 把最小数交换到前面</span></span><br><span class="line"><span class="string">    return nums</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">快速排序</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def quicksort(lst):</span></span><br><span class="line"><span class="string">    less = []</span></span><br><span class="line"><span class="string">    greater = []</span></span><br><span class="line"><span class="string">    if len(lst) &lt;= 1:</span></span><br><span class="line"><span class="string">        return lst</span></span><br><span class="line"><span class="string">    else:</span></span><br><span class="line"><span class="string">        pivot = lst[-1]</span></span><br><span class="line"><span class="string">        for num in lst[:-1]:</span></span><br><span class="line"><span class="string">            if num &lt; pivot:</span></span><br><span class="line"><span class="string">                less.append(num)</span></span><br><span class="line"><span class="string">            if num &gt;= pivot:</span></span><br><span class="line"><span class="string">                greater.append(num)</span></span><br><span class="line"><span class="string">    return quicksort(less) + [pivot] + quicksort(greater)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">插入排序</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def insertionSort(nums):</span></span><br><span class="line"><span class="string">    for i in range(len(nums) - 1):  # 遍历 len(nums)-1 次</span></span><br><span class="line"><span class="string">        curNum, preIndex = nums[i+1], i  # curNum 保存当前待插入的数</span></span><br><span class="line"><span class="string">        while preIndex &gt;= 0 and curNum &lt; nums[preIndex]: # 将比 curNum 大的元素向后移动</span></span><br><span class="line"><span class="string">            nums[preIndex + 1] = nums[preIndex]</span></span><br><span class="line"><span class="string">            preIndex -= 1</span></span><br><span class="line"><span class="string">        nums[preIndex + 1] = curNum  # 待插入的数的正确位置   </span></span><br><span class="line"><span class="string">    return nums</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">归并排序</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">def MergeSort(lst):</span></span><br><span class="line"><span class="string">    #合并左右子序列函数</span></span><br><span class="line"><span class="string">    def merge(arr,left,mid,right):</span></span><br><span class="line"><span class="string">        temp=[]     #中间数组</span></span><br><span class="line"><span class="string">        i=left          #左段子序列起始</span></span><br><span class="line"><span class="string">        j=mid+1   #右段子序列起始</span></span><br><span class="line"><span class="string">        while i&lt;=mid and j&lt;=right:</span></span><br><span class="line"><span class="string">            if arr[i]&lt;=arr[j]:</span></span><br><span class="line"><span class="string">                temp.append(arr[i])</span></span><br><span class="line"><span class="string">                i+=1</span></span><br><span class="line"><span class="string">            else:</span></span><br><span class="line"><span class="string">                temp.append(arr[j])</span></span><br><span class="line"><span class="string">                j+=1</span></span><br><span class="line"><span class="string">        while i&lt;=mid:</span></span><br><span class="line"><span class="string">            temp.append(arr[i])</span></span><br><span class="line"><span class="string">            i+=1</span></span><br><span class="line"><span class="string">        while j&lt;=right:</span></span><br><span class="line"><span class="string">            temp.append(arr[j])</span></span><br><span class="line"><span class="string">            j+=1</span></span><br><span class="line"><span class="string">        for i in range(left,right+1):    #  !注意这里，不能直接arr=temp,他俩大小都不一定一样</span></span><br><span class="line"><span class="string">            arr[i]=temp[i-left]</span></span><br><span class="line"><span class="string">    #递归调用归并排序</span></span><br><span class="line"><span class="string">    def mSort(arr,left,right):</span></span><br><span class="line"><span class="string">        if left&gt;=right:</span></span><br><span class="line"><span class="string">            return</span></span><br><span class="line"><span class="string">        mid=(left+right)//2</span></span><br><span class="line"><span class="string">        mSort(arr,left,mid)</span></span><br><span class="line"><span class="string">        mSort(arr,mid+1,right)</span></span><br><span class="line"><span class="string">        merge(arr,left,mid,right)</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">    n=len(lst)</span></span><br><span class="line"><span class="string">    if n&lt;=1:</span></span><br><span class="line"><span class="string">        return lst</span></span><br><span class="line"><span class="string">    mSort(lst,0,n-1)</span></span><br><span class="line"><span class="string">    return lst</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Mathematics-Algorithms</category>
+        <category>Algorithms-Data-Structure</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+        <tag>Algorithms</tag>
+        <tag>Data Structure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Least Square Method</title>
+    <url>/2020/08/04/Mathematics-Algorithms/Mathematics/Least-Square-Method/</url>
+    <content><![CDATA[<p>We assume we want to find a hyper line which has closed distance to all points in the figure above.<br><img src="/images/maths/mse_1.png" width="50%" height="50%" title="" alt=""/></p>
+<p>The distance between point and line is: </p>
+<script type="math/tex; mode=display">|y - y_1| \Longrightarrow (y - y_i)^2</script><p>Can be formed as: </p>
+<script type="math/tex; mode=display">S^2 = \sum (y - y_i)^2</script><p>We assume we have a line:</p>
+<script type="math/tex; mode=display">f(x) = ax + b</script><p><img src="/images/maths/mse_2.png" width="50%" height="50%" title="" alt=""/></p>
+<p>The we have can solve derivative of function below:<br><img src="/images/maths/mse_3.png" width="50%" height="50%" title="" alt=""/></p>
+<p><img src="/images/maths/mse_4.png" width="50%" height="50%" title="" alt=""/></p>
+<p>After that we can solve the actual value of parameters $a$ and $b$ which can make the distance between line and points is minimal.</p>
+]]></content>
+      <categories>
+        <category>Mathematics-Algorithms</category>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+        <tag>MSE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Word Embedding - CBOW</title>
+    <url>/2020/07/29/NLP/Word%20Embedding/Word-Embedding-CBOW/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>NLP</category>
@@ -1454,67 +1486,13 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       <tags>
         <tag>NLP</tag>
         <tag>Word Embedding</tag>
-        <tag>Word2Vec</tag>
-        <tag>GloVe</tag>
+        <tag>CBOW</tag>
       </tags>
   </entry>
   <entry>
-    <title>KNN</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/KNN/</url>
-    <content><![CDATA[<h3 id="Principle-of-KNN"><a href="#Principle-of-KNN" class="headerlink" title="Principle of KNN"></a>Principle of KNN</h3><ul>
-<li><p>k nearest neighbors are k nearest neighbors</p>
-</li>
-<li><p>Most of the k nearest neighbors of a sample in the feature space belong to a certain category, then this sample also belongs to this category</p>
-</li>
-<li><p>All neighbors of a sample have a known category, while the sample we want to classify has no category<br><br/></p>
-</li>
-</ul>
-<p>As shown in the figure below, which class should be assigned to the green circle, red triangle or a blue square? </p>
-<p>If K=3, the green circle will be assigned the category of the red triangle since the proportion of the red triangle is 2/3.</p>
-<p>If K=5, the green circle will be assigned the blue square, since the proportion of the blue square is 3/5.<br><br/><br><img src="/images/KNN.jpg" width="30%" height="30%" title="How KNN works" alt="KNN"/></p>
-<h3 id="Workflow-of-KNN"><a href="#Workflow-of-KNN" class="headerlink" title="Workflow of KNN"></a>Workflow of KNN</h3><ul>
-<li><p>Calculate the distance between the test data and each training data </p>
-</li>
-<li><p>Sort candidate categories by increasing distance </p>
-</li>
-<li><p>Select the k points within the smallest distance</p>
-</li>
-<li><p>Determine the frequency of occurrence of the category for the first k points</p>
-</li>
-<li><p>Return the category with the highest frequency among the first k points as the classification result of the test data<br><br/></p>
-</li>
-</ul>
-<h3 id="How-to-choose-value-K"><a href="#How-to-choose-value-K" class="headerlink" title="How to choose value K"></a>How to choose value K</h3><ul>
-<li><p>K: The number of nearest neighbors for each calculation.</p>
-</li>
-<li><p>K is too small: easy to be affected by noise, for example, when k=1, then it will completely affects this classification result if this data point happens to be a noisy data.</p>
-</li>
-<li><p>K is too large: the error will increase, the meaning of the k nearest neighbor approach becomes smaller.</p>
-</li>
-<li><p>K is tried to be select as odd which will be convenient for prediction.<br><br/></p>
-</li>
-</ul>
-<h3 id="How-to-calculate-Distance"><a href="#How-to-calculate-Distance" class="headerlink" title="How to calculate Distance"></a>How to calculate Distance</h3><ul>
-<li><p>Euclidean distance: <script type="math/tex">E(x,y)=\sqrt{\sum_{i=1}^{n}(x_{i}-y_{i})^{2}}</script></p>
-</li>
-<li><p>Manhattan distance: <script type="math/tex">D(x,y)=|x_{i}-x_{j}|+|y_{i}-y_{j}|</script><br><br/></p>
-</li>
-</ul>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><ul>
-<li><p>KNN is a simple and efficient classification algorithm and easy to be implemented.</p>
-</li>
-<li><p>When the training set is quite large, a lot of storage space is needed, and calculating the distance between a certain point and all data is quite time-consuming.</p>
-</li>
-<li><p>Poor classification performance with randomly distributed data.</p>
-</li>
-<li><p>Good classification performance for data with small intra-class distance and large inter-class distance.</p>
-</li>
-<li><p>The performance is not good for the unbalanced data, the weight can be improved which can give the nearest test point higher weights.</p>
-</li>
-<li><p>KNN is quite time-consuming, so it is more suitable for small-scale data.</p>
-</li>
-</ul>
-]]></content>
+    <title>Decision Tree</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Decision-Tree/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Supervised Learning</category>
@@ -1527,9 +1505,21 @@ L(\hat{y}, y) = \sum_{t=1}^{T_y}L(\hat{y}^{<t>}, y^{<t>})</script><h6 id="Common
       </tags>
   </entry>
   <entry>
-    <title>Decision Tree</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/Decision-Tree/</url>
-    <content><![CDATA[]]></content>
+    <title>PLA - Perceptron Learning Algorithm</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/PLA/</url>
+    <content><![CDATA[<h3 id="What-is-PLA"><a href="#What-is-PLA" class="headerlink" title="What is PLA"></a>What is PLA</h3><p>The perceptron (PLA) is an algorithm which can divide the positive and negative samples of training set into two parts, and then classify input data in the feature.<br><br></p>
+<h3 id="Limitation"><a href="#Limitation" class="headerlink" title="Limitation"></a>Limitation</h3><p>PLA can only be used to implement linearly separable functions.<br><br></p>
+<h3 id="Input-and-Output-of-PLA"><a href="#Input-and-Output-of-PLA" class="headerlink" title="Input and Output of PLA"></a>Input and Output of PLA</h3><p>The input space (feature space) of the PLA is:</p>
+<script type="math/tex; mode=display">X \subseteq R^n</script><p>That is a $n$-dimensional vector space, the output space is $Y={+1,−1}$, which means −1 represents a negative example, and +1 represents a positive example.</p>
+<p>For example: the input $x \subseteq X$ corresponds to a certain point in the input space $R^n$, and the output $y \subseteq Y$ represents the category of this input point. It should be noted that the input $x$ is a $n$-dimensional vector, that means, $x = (x^{(1)}, x^{(2)}, \cdots, x^{(n)})$.<br><br></p>
+<h3 id="Definition-of-PLA"><a href="#Definition-of-PLA" class="headerlink" title="Definition of PLA"></a>Definition of PLA</h3><p>现在已经有了输入和输出的定义，我们就可以给出感知机$f(x)$<br>的模型了：<br>Now we have the definition of input and output of PLA, then we can give the perceptron $f(x)$ model:</p>
+<script type="math/tex; mode=display">f(x)=sign(ω⋅x+b)</script><p>Among them, $sign$ is a sign function</p>
+<script type="math/tex; mode=display">sign(x) = \begin{cases}
++1 & x \geq n \\
+−1  & x < n
+\end{cases}</script><p>We call the above function $f(x)$ as the perceptron function.<br><br></p>
+<h3 id="Workflow-of-PLA"><a href="#Workflow-of-PLA" class="headerlink" title="Workflow of PLA"></a>Workflow of PLA</h3><p><img src="https://miro.medium.com/max/516/1*PbJBdf-WxR0Dd0xHvEoh4A.png" alt="PLA"></p>
+]]></content>
       <categories>
         <category>Machine Learning</category>
         <category>Supervised Learning</category>
@@ -1669,20 +1659,61 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
       </tags>
   </entry>
   <entry>
-    <title>PLA - Perceptron Learning Algorithm</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/PLA/</url>
-    <content><![CDATA[<h3 id="What-is-PLA"><a href="#What-is-PLA" class="headerlink" title="What is PLA"></a>What is PLA</h3><p>The perceptron (PLA) is an algorithm which can divide the positive and negative samples of training set into two parts, and then classify input data in the feature.<br><br></p>
-<h3 id="Limitation"><a href="#Limitation" class="headerlink" title="Limitation"></a>Limitation</h3><p>PLA can only be used to implement linearly separable functions.<br><br></p>
-<h3 id="Input-and-Output-of-PLA"><a href="#Input-and-Output-of-PLA" class="headerlink" title="Input and Output of PLA"></a>Input and Output of PLA</h3><p>The input space (feature space) of the PLA is:</p>
-<script type="math/tex; mode=display">X \subseteq R^n</script><p>That is a $n$-dimensional vector space, the output space is $Y={+1,−1}$, which means −1 represents a negative example, and +1 represents a positive example.</p>
-<p>For example: the input $x \subseteq X$ corresponds to a certain point in the input space $R^n$, and the output $y \subseteq Y$ represents the category of this input point. It should be noted that the input $x$ is a $n$-dimensional vector, that means, $x = (x^{(1)}, x^{(2)}, \cdots, x^{(n)})$.<br><br></p>
-<h3 id="Definition-of-PLA"><a href="#Definition-of-PLA" class="headerlink" title="Definition of PLA"></a>Definition of PLA</h3><p>现在已经有了输入和输出的定义，我们就可以给出感知机$f(x)$<br>的模型了：<br>Now we have the definition of input and output of PLA, then we can give the perceptron $f(x)$ model:</p>
-<script type="math/tex; mode=display">f(x)=sign(ω⋅x+b)</script><p>Among them, $sign$ is a sign function</p>
-<script type="math/tex; mode=display">sign(x) = \begin{cases}
-+1 & x \geq n \\
-−1  & x < n
-\end{cases}</script><p>We call the above function $f(x)$ as the perceptron function.<br><br></p>
-<h3 id="Workflow-of-PLA"><a href="#Workflow-of-PLA" class="headerlink" title="Workflow of PLA"></a>Workflow of PLA</h3><p><img src="https://miro.medium.com/max/516/1*PbJBdf-WxR0Dd0xHvEoh4A.png" alt="PLA"></p>
+    <title>KNN</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Classification/KNN/</url>
+    <content><![CDATA[<h3 id="Principle-of-KNN"><a href="#Principle-of-KNN" class="headerlink" title="Principle of KNN"></a>Principle of KNN</h3><ul>
+<li><p>k nearest neighbors are k nearest neighbors</p>
+</li>
+<li><p>Most of the k nearest neighbors of a sample in the feature space belong to a certain category, then this sample also belongs to this category</p>
+</li>
+<li><p>All neighbors of a sample have a known category, while the sample we want to classify has no category<br><br/></p>
+</li>
+</ul>
+<p>As shown in the figure below, which class should be assigned to the green circle, red triangle or a blue square? </p>
+<p>If K=3, the green circle will be assigned the category of the red triangle since the proportion of the red triangle is 2/3.</p>
+<p>If K=5, the green circle will be assigned the blue square, since the proportion of the blue square is 3/5.<br><br/><br><img src="/images/KNN.jpg" width="30%" height="30%" title="How KNN works" alt="KNN"/></p>
+<h3 id="Workflow-of-KNN"><a href="#Workflow-of-KNN" class="headerlink" title="Workflow of KNN"></a>Workflow of KNN</h3><ul>
+<li><p>Calculate the distance between the test data and each training data </p>
+</li>
+<li><p>Sort candidate categories by increasing distance </p>
+</li>
+<li><p>Select the k points within the smallest distance</p>
+</li>
+<li><p>Determine the frequency of occurrence of the category for the first k points</p>
+</li>
+<li><p>Return the category with the highest frequency among the first k points as the classification result of the test data<br><br/></p>
+</li>
+</ul>
+<h3 id="How-to-choose-value-K"><a href="#How-to-choose-value-K" class="headerlink" title="How to choose value K"></a>How to choose value K</h3><ul>
+<li><p>K: The number of nearest neighbors for each calculation.</p>
+</li>
+<li><p>K is too small: easy to be affected by noise, for example, when k=1, then it will completely affects this classification result if this data point happens to be a noisy data.</p>
+</li>
+<li><p>K is too large: the error will increase, the meaning of the k nearest neighbor approach becomes smaller.</p>
+</li>
+<li><p>K is tried to be select as odd which will be convenient for prediction.<br><br/></p>
+</li>
+</ul>
+<h3 id="How-to-calculate-Distance"><a href="#How-to-calculate-Distance" class="headerlink" title="How to calculate Distance"></a>How to calculate Distance</h3><ul>
+<li><p>Euclidean distance: <script type="math/tex">E(x,y)=\sqrt{\sum_{i=1}^{n}(x_{i}-y_{i})^{2}}</script></p>
+</li>
+<li><p>Manhattan distance: <script type="math/tex">D(x,y)=|x_{i}-x_{j}|+|y_{i}-y_{j}|</script><br><br/></p>
+</li>
+</ul>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><ul>
+<li><p>KNN is a simple and efficient classification algorithm and easy to be implemented.</p>
+</li>
+<li><p>When the training set is quite large, a lot of storage space is needed, and calculating the distance between a certain point and all data is quite time-consuming.</p>
+</li>
+<li><p>Poor classification performance with randomly distributed data.</p>
+</li>
+<li><p>Good classification performance for data with small intra-class distance and large inter-class distance.</p>
+</li>
+<li><p>The performance is not good for the unbalanced data, the weight can be improved which can give the nearest test point higher weights.</p>
+</li>
+<li><p>KNN is quite time-consuming, so it is more suitable for small-scale data.</p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
@@ -1693,6 +1724,25 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
         <tag>Machine Learning</tag>
         <tag>Supervised Learning</tag>
         <tag>Classification</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Model-based Clustering - EM / GMM</title>
+    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Model-based-Clustering-EM-GMM/</url>
+    <content><![CDATA[<p><img src="/images/ml/gmm_1.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/ml/gmm_2.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/ml/gmm_3.png" width="60%" height="60%" title="" alt=""/></p>
+<p><img src="/images/ml/gmm_4.png" width="60%" height="60%" title="" alt=""/></p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Unsupervised Learning</category>
+        <category>Clustering</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Unsupervised Learning</tag>
+        <tag>Clustering</tag>
       </tags>
   </entry>
   <entry>
@@ -1743,66 +1793,6 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
       </tags>
   </entry>
   <entry>
-    <title>Lasso / Ridge / ElasticNet Regression</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Regression/Lasso-Ridge-ElasticNet-Regression/</url>
-    <content><![CDATA[<h3 id="Lasso-Regression"><a href="#Lasso-Regression" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p>Lasso, or Least Absolute Shrinkage and Selection Operator, is quite similar conceptually to ridge regression. It also adds a penalty for non-zero coefficients, but unlike ridge regression which penalizes sum of squared coefficients (the so-called L2 penalty), lasso penalizes the sum of their absolute values (L1 penalty).<br><img src="/images/regression/lasso.jpg" width="50%" height="30%" title="" alt=""/><br><br></p>
-<h3 id="Ridge-Regression"><a href="#Ridge-Regression" class="headerlink" title="Ridge Regression"></a>Ridge Regression</h3><p>In Ridge Regression, the loss function is augmented in such a way that we not only minimize the sum of squared residuals but also penalize the size of parameter estimates, in order to shrink them towards zero:<br><img src="/images/regression/ridge.png" width="50%" height="50%" title="" alt=""/><br><br></p>
-<h3 id="ElasticNet-Regression"><a href="#ElasticNet-Regression" class="headerlink" title="ElasticNet Regression"></a>ElasticNet Regression</h3><p>Elastic Net aims to combine the penalties of ridge regression and lasso to get the best of both worlds. Elastic Net aims at minimizing the following loss function:<br><img src="/images/regression/elastic.png" width="50%" height="50%" title="" alt=""/><br>where $\alpha$ is the mixing parameter between ridge ($\alpha$ = 0) and lasso ($\alpha$ = 1).<br><br></p>
-<h3 id="Points"><a href="#Points" class="headerlink" title="Points"></a>Points</h3><ul>
-<li><p>Lasso / Ridge regression are designed to solve regression with high collinearity and overfitting problems.</p>
-</li>
-<li><p>Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0</p>
-</li>
-<li><p>$\alpha$称为正则化参数，如果$\alpha$选取过大，会把所有参数$\theta$均最小化，造成欠拟合，如果$\alpha$选取过小，会导致对过拟合问题解决不当，因此$\alpha$的选取是一个技术活</p>
-</li>
-<li><p>岭回归与Lasso回归最大的区别在于岭回归引入的是L2范数惩罚项，Lasso回归引入的是L1范数惩罚项，Lasso回归能够使得损失函数中的许多$\theta$均变成0，这点要优于岭回归，因为岭回归是要所有的$\theta$均存在的，这样计算量Lasso回归将远远小于岭回归 </p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Supervised Learning</category>
-        <category>Regression</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Supervised Learning</tag>
-        <tag>Regression</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(Non) Linear Regression</title>
-    <url>/2020/07/26/Machine%20Learning/Supervised/Regression/Linear-Regression/</url>
-    <content><![CDATA[<h3 id="What-is-Regression"><a href="#What-is-Regression" class="headerlink" title="What is Regression"></a>What is Regression</h3><p>Regression, its intuitive understanding is fitting. Let’s take linear regression as an example. There are a series of red points on a two-dimensional plane. We want to use a straight line to fit these red points as much as possible. This is linear regression. The essence of regression is that our prediction results are as close as possible to the actual observation results.</p>
-<p><img src="/images/linear_regression_1.jpg" width="30%" height="30%" title="Linear Regression in 2 dimension" alt=""/></p>
-<p><img src="/images/linear_regression_2.jpg" width="30%" height="30%" title="Linear Regression in 3 dimension" alt=""/></p>
-<p>What is linear? The data fitting is linear, in other words a straight line.<br>What is regression? To predict an accurate output value based on previous data.</p>
-<p>The linear regression algorithm can be divided into two categories:</p>
-<ul>
-<li>Linear Regression with one variable </li>
-<li>Linear Regression with multiple variable </li>
-</ul>
-<p>The most obvious character of regression is that the output $y_i$ is a continuous variable (this continuous variable is generally a float number, but sometimes can also be integer). The classic formula of linear regression is:<br><img src="/images/linear_regression_3.jpg" width="30%" height="30%" title="" alt=""/></p>
-<h3 id="Loss-Function-MSE"><a href="#Loss-Function-MSE" class="headerlink" title="Loss Function - MSE"></a>Loss Function - MSE</h3><p>The goal of linear regression is to fit the target label as much as possible with the predicted results, and the most common Least square is used as Loss Function:<br><img src="/images/linear_regression_4.jpg" width="30%" height="30%" title="" alt=""/><br><br/></p>
-<h3 id="Why-use-MSE-as-Loss-Function"><a href="#Why-use-MSE-as-Loss-Function" class="headerlink" title="Why use MSE as Loss Function"></a>Why use MSE as Loss Function</h3><p>After the model is prepared, we send the training data into the model, and then final value can be predicted through the model.<br><img src="/images/linear_regression_5.jpg" width="30%" height="30%" title="" alt=""/></p>
-<p>Then there is an error $ε$ between the true value y and the predicted value of the sample in training data. According to the central limit law, $\sum ε$ satisfies the Gaussian distribution $(u, δ^2)$ if the amount of the training data is large; Also u =0, then the Gaussian distribution $(0, δ^2)$ is satisfied due to the intercept term in equation.<br><img src="/images/linear_regression_6.jpg" width="40%" height="40%" title="" alt=""/></p>
-<p>As we can see above, for each sample $x$, send it into $p(y|x;θ)$ will get a probability of y; And because the sample is assumed to be independent and identically distributed; Thus we can find the maximum likelihood function for it:<br><img src="/images/linear_regression_7.jpg" width="40%" height="40%" title="" alt=""/></p>
-<p>Simplify it as follows<br><img src="/images/linear_regression_8.jpg" width="40%" height="40%" title="" alt=""/></p>
-<p>Finally, we use optimizers (such as SGD) to make the value of loss function keep decreasing, and iteratively update the corresponding parameters to obtain a well-fitting regression function.<br><br></p>
-<h3 id="Non-Linear-Regression"><a href="#Non-Linear-Regression" class="headerlink" title="Non-Linear Regression"></a>Non-Linear Regression</h3><p>A non-linear regression model is called when the fitting function is a non-linear function, such as hyperbolic model, power function, exponential function, logarithmic function model, polynomial model, etc. To solve the non-linear regression model, we normally transfer the non-linear regression model into a linear model gradually, and then performs linear regression fitting.</p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Supervised Learning</category>
-        <category>Regression</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Supervised Learning</tag>
-        <tag>Regression</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Density-Based Clustering - DBSCAN / OPTICS</title>
     <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Density-Based-Clustering-DBSCAN-OPTICS/</url>
     <content><![CDATA[<p><img src="/images/ml/dbscan_1.png" width="50%" height="50%" title="" alt=""/></p>
@@ -1826,25 +1816,6 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
     <title>Hierarchical Agglomerative Clustering</title>
     <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Hierarchical-Agglomerative-Clustering/</url>
     <content><![CDATA[<p><img src="/images/clustering/HAC.png" width="65%" height="65%" title="" alt=""/></p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Unsupervised Learning</category>
-        <category>Clustering</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Unsupervised Learning</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Model-based Clustering - EM / GMM</title>
-    <url>/2020/07/26/Machine%20Learning/Unsupervised/Clustering/Model-based-Clustering-EM-GMM/</url>
-    <content><![CDATA[<p><img src="/images/ml/gmm_1.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/ml/gmm_2.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/ml/gmm_3.png" width="60%" height="60%" title="" alt=""/></p>
-<p><img src="/images/ml/gmm_4.png" width="60%" height="60%" title="" alt=""/></p>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
@@ -1904,6 +1875,66 @@ J(h_{\theta}|y,{\theta}) = -yln(h_{\theta}(x)) - (1-y)ln(1-h_{\theta}(x))</scrip
         <tag>Machine Learning</tag>
         <tag>Unsupervised Learning</tag>
         <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(Non) Linear Regression</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Regression/Linear-Regression/</url>
+    <content><![CDATA[<h3 id="What-is-Regression"><a href="#What-is-Regression" class="headerlink" title="What is Regression"></a>What is Regression</h3><p>Regression, its intuitive understanding is fitting. Let’s take linear regression as an example. There are a series of red points on a two-dimensional plane. We want to use a straight line to fit these red points as much as possible. This is linear regression. The essence of regression is that our prediction results are as close as possible to the actual observation results.</p>
+<p><img src="/images/linear_regression_1.jpg" width="30%" height="30%" title="Linear Regression in 2 dimension" alt=""/></p>
+<p><img src="/images/linear_regression_2.jpg" width="30%" height="30%" title="Linear Regression in 3 dimension" alt=""/></p>
+<p>What is linear? The data fitting is linear, in other words a straight line.<br>What is regression? To predict an accurate output value based on previous data.</p>
+<p>The linear regression algorithm can be divided into two categories:</p>
+<ul>
+<li>Linear Regression with one variable </li>
+<li>Linear Regression with multiple variable </li>
+</ul>
+<p>The most obvious character of regression is that the output $y_i$ is a continuous variable (this continuous variable is generally a float number, but sometimes can also be integer). The classic formula of linear regression is:<br><img src="/images/linear_regression_3.jpg" width="30%" height="30%" title="" alt=""/></p>
+<h3 id="Loss-Function-MSE"><a href="#Loss-Function-MSE" class="headerlink" title="Loss Function - MSE"></a>Loss Function - MSE</h3><p>The goal of linear regression is to fit the target label as much as possible with the predicted results, and the most common Least square is used as Loss Function:<br><img src="/images/linear_regression_4.jpg" width="30%" height="30%" title="" alt=""/><br><br/></p>
+<h3 id="Why-use-MSE-as-Loss-Function"><a href="#Why-use-MSE-as-Loss-Function" class="headerlink" title="Why use MSE as Loss Function"></a>Why use MSE as Loss Function</h3><p>After the model is prepared, we send the training data into the model, and then final value can be predicted through the model.<br><img src="/images/linear_regression_5.jpg" width="30%" height="30%" title="" alt=""/></p>
+<p>Then there is an error $ε$ between the true value y and the predicted value of the sample in training data. According to the central limit law, $\sum ε$ satisfies the Gaussian distribution $(u, δ^2)$ if the amount of the training data is large; Also u =0, then the Gaussian distribution $(0, δ^2)$ is satisfied due to the intercept term in equation.<br><img src="/images/linear_regression_6.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>As we can see above, for each sample $x$, send it into $p(y|x;θ)$ will get a probability of y; And because the sample is assumed to be independent and identically distributed; Thus we can find the maximum likelihood function for it:<br><img src="/images/linear_regression_7.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>Simplify it as follows<br><img src="/images/linear_regression_8.jpg" width="40%" height="40%" title="" alt=""/></p>
+<p>Finally, we use optimizers (such as SGD) to make the value of loss function keep decreasing, and iteratively update the corresponding parameters to obtain a well-fitting regression function.<br><br></p>
+<h3 id="Non-Linear-Regression"><a href="#Non-Linear-Regression" class="headerlink" title="Non-Linear Regression"></a>Non-Linear Regression</h3><p>A non-linear regression model is called when the fitting function is a non-linear function, such as hyperbolic model, power function, exponential function, logarithmic function model, polynomial model, etc. To solve the non-linear regression model, we normally transfer the non-linear regression model into a linear model gradually, and then performs linear regression fitting.</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Supervised Learning</category>
+        <category>Regression</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Supervised Learning</tag>
+        <tag>Regression</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Lasso / Ridge / ElasticNet Regression</title>
+    <url>/2020/07/26/Machine%20Learning/Supervised/Regression/Lasso-Ridge-ElasticNet-Regression/</url>
+    <content><![CDATA[<h3 id="Lasso-Regression"><a href="#Lasso-Regression" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h3><p>Lasso, or Least Absolute Shrinkage and Selection Operator, is quite similar conceptually to ridge regression. It also adds a penalty for non-zero coefficients, but unlike ridge regression which penalizes sum of squared coefficients (the so-called L2 penalty), lasso penalizes the sum of their absolute values (L1 penalty).<br><img src="/images/regression/lasso.jpg" width="50%" height="30%" title="" alt=""/><br><br></p>
+<h3 id="Ridge-Regression"><a href="#Ridge-Regression" class="headerlink" title="Ridge Regression"></a>Ridge Regression</h3><p>In Ridge Regression, the loss function is augmented in such a way that we not only minimize the sum of squared residuals but also penalize the size of parameter estimates, in order to shrink them towards zero:<br><img src="/images/regression/ridge.png" width="50%" height="50%" title="" alt=""/><br><br></p>
+<h3 id="ElasticNet-Regression"><a href="#ElasticNet-Regression" class="headerlink" title="ElasticNet Regression"></a>ElasticNet Regression</h3><p>Elastic Net aims to combine the penalties of ridge regression and lasso to get the best of both worlds. Elastic Net aims at minimizing the following loss function:<br><img src="/images/regression/elastic.png" width="50%" height="50%" title="" alt=""/><br>where $\alpha$ is the mixing parameter between ridge ($\alpha$ = 0) and lasso ($\alpha$ = 1).<br><br></p>
+<h3 id="Points"><a href="#Points" class="headerlink" title="Points"></a>Points</h3><ul>
+<li><p>Lasso / Ridge regression are designed to solve regression with high collinearity and overfitting problems.</p>
+</li>
+<li><p>Lasso回归和岭回归不同的是，Lasso回归在惩罚方程中用的是绝对值，而不是平方。这就使得惩罚后的值可能会变成0</p>
+</li>
+<li><p>$\alpha$称为正则化参数，如果$\alpha$选取过大，会把所有参数$\theta$均最小化，造成欠拟合，如果$\alpha$选取过小，会导致对过拟合问题解决不当，因此$\alpha$的选取是一个技术活</p>
+</li>
+<li><p>岭回归与Lasso回归最大的区别在于岭回归引入的是L2范数惩罚项，Lasso回归引入的是L1范数惩罚项，Lasso回归能够使得损失函数中的许多$\theta$均变成0，这点要优于岭回归，因为岭回归是要所有的$\theta$均存在的，这样计算量Lasso回归将远远小于岭回归 </p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Supervised Learning</category>
+        <category>Regression</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Supervised Learning</tag>
+        <tag>Regression</tag>
       </tags>
   </entry>
 </search>
