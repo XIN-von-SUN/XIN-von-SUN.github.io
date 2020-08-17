@@ -89,7 +89,7 @@
 <meta property="og:image" content="http://yoursite.com/images/ml/metrics_1.png">
 <meta property="og:image" content="http://yoursite.com/images/ml/roc.png">
 <meta property="article:published_time" content="2020-08-04T18:09:49.000Z">
-<meta property="article:modified_time" content="2020-08-04T22:13:28.200Z">
+<meta property="article:modified_time" content="2020-08-16T11:29:11.804Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="ML Foundations">
@@ -397,7 +397,8 @@
 <p>Recall = $\frac{TP}{TP+FN}$  查全率</p>
 <p>F1-Score = $\frac{P*R}{2(P+R)}$, P is precision and R is recall</p>
 <p>F-Measure = $\frac{(a^2+1)P*R}{a^2(P+R)}$, F-Measure is F1 when a=1</p>
-<p><br></p>
+<p>F1-Micro: 不需要区分类别, 直接使用总体样本的准召计算f1 score</p>
+<p>F1-Marco: 先计算出每一个类别的准召及其f1 score, 然后通过求均值得到在整个样本上的f1 score<br><br></p>
 <h3 id="ROC-Receiver-Operating-Characteristic-Curve"><a href="#ROC-Receiver-Operating-Characteristic-Curve" class="headerlink" title="ROC (Receiver Operating Characteristic Curve)"></a>ROC (Receiver Operating Characteristic Curve)</h3><p>The curve is drawn by two variables 1-specificity and Sensitivity. 1-specificity = FPR, that is, false positive rate. Sensitivity is the true class rate, TPR (True positive rate), which reflects the degree of positive class coverage.</p>
 <p><strong>The closer the curve to the upper left corner, the better performance of the classifier.</strong></p>
 <p><img src="/images/ml/roc.png" width="50%" height="50%" title="" alt=""/><br><br></p>

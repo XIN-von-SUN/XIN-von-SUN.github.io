@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="BaggingThe input is the sample set 𝐷&#x3D;{(𝑥,𝑦1),(𝑥2,𝑦2),…(𝑥𝑚,𝑦𝑚)}, weak learner algorithm 𝐺𝑡(𝑥), weak classifier iteration number T. The output is the final strong classifier 𝑓(𝑥)1) For t&#x3D;1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bagging - Random Forest">
 <meta property="og:url" content="http://yoursite.com/2020/07/29/Ensemble%20Learning/Bagging-Random-Forest/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="BaggingThe input is the sample set 𝐷&#x3D;{(𝑥,𝑦1),(𝑥2,𝑦2),…(𝑥𝑚,𝑦𝑚)}, weak learner algorithm 𝐺𝑡(𝑥), weak classifier iteration number T. The output is the final strong classifier 𝑓(𝑥)1) For t&#x3D;1">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-28T22:39:14.000Z">
-<meta property="article:modified_time" content="2020-08-10T00:21:01.038Z">
+<meta property="article:modified_time" content="2020-08-16T15:27:24.284Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Ensemble Learning">
 <meta property="article:tag" content="Bagging">
@@ -387,7 +387,41 @@
       
 
       
-        
+        <h3 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h3><p>The input is the sample set 𝐷={(𝑥,𝑦1),(𝑥2,𝑦2),…(𝑥𝑚,𝑦𝑚)}, weak learner algorithm 𝐺𝑡(𝑥), weak classifier iteration number T.</p>
+<p>The output is the final strong classifier 𝑓(𝑥)<br>1) For t=1,2…,T:</p>
+<ul>
+<li><p>a) Randomly sampling the training set for the t-th time, collecting m times in total, and obtaining a sampling set containing m samples 𝐷𝑡.</p>
+</li>
+<li><p>b) Use the sample set 𝐷𝑡 to train the t-th weak learner 𝐺𝑡(𝑥).</p>
+</li>
+</ul>
+<p>2) If it is a classification algorithm prediction, the category or one of the categories with the most votes cast by T weak learners is the final category. If it is a regression algorithm, the arithmetic average of the regression results obtained by T weak learners is the final model output.</p>
+<p><br></p>
+<h3 id="Random-Forest"><a href="#Random-Forest" class="headerlink" title="Random Forest"></a>Random Forest</h3><p>First of all, RF uses the CART decision tree as a weak learner, which reminds us of the gradient boosting tree GBDT. </p>
+<p>Second, based on the use of decision trees, RF has made improvements to the establishment of decision trees. For ordinary decision trees, we will select an optimal feature from <strong>all</strong> n sample features on the node to make the decision tree and the left and right subtrees are divided, but RF randomly selects <strong>a part of the sample features</strong> on the node, this number is less than n, suppose it is Subtree division. This further enhances the generalization ability of the model.　　　　</p>
+<p>If <script type="math/tex">n_{sub}=n</script>, then the RF CART decision tree is no different from the ordinary CART decision tree. The smaller the <script type="math/tex">n_{sub}=n</script>, the more robust the model. Of course, the fit to the training set will be worse at this time. That is to say, the smaller the <script type="math/tex">n_{sub}=n</script> is, the variance of the model will decrease, but the bias will increase. In actual cases, a suitable <script type="math/tex">n_{sub}=n</script> value is generally obtained through cross-validation tuning.</p>
+<p>Except for the above two points, RF is no different from ordinary bagging algorithms. </p>
+<p><strong>The following briefly summarizes the RF algorithm.</strong></p>
+<p>The input is the sample set 𝐷={(𝑥,𝑦1),(𝑥2,𝑦2),…(𝑥𝑚,𝑦𝑚)}, the number of weak classifier iterations is T.</p>
+<p>The output is the final strong classifier 𝑓(𝑥).</p>
+<p>1) For t=1,2…,T:</p>
+<ul>
+<li><p>a) Randomly sampling the training set for the t-th time, collecting m times in total, and obtaining a sampling set containing m samples 𝐷𝑡</p>
+</li>
+<li><p>b) Use the sampling set 𝐷𝑡 to train the t-th decision tree model 𝐺𝑡(𝑥). When training the node of the decision tree model, select a part of the sample features from all the sample features on the node, and among these randomly selected part of the sample features Choose an optimal feature to divide the left and right subtrees of the decision tree</p>
+</li>
+</ul>
+<p>2) If it is a classification algorithm prediction, the category or one of the categories with the most votes cast by T weak learners is the final category. If it is a regression algorithm, the arithmetic average of the regression results obtained by T weak learners is the final model output.</p>
+<p><br></p>
+<h3 id="Advantages-of-RF"><a href="#Advantages-of-RF" class="headerlink" title="Advantages of RF"></a>Advantages of RF</h3><p>1) Training can be highly parallelized, which has advantages for the training speed of large samples in the era of big data. The main advantage.</p>
+<p>2) Since the decision tree nodes can be randomly selected to divide the features, the model can still be trained efficiently when the sample feature dimension is high.</p>
+<p>3) After training, the importance of each feature to the output can be given</p>
+<p>4) Due to the use of random sampling, the trained model has small variance and strong generalization ability.</p>
+<p>5) Compared with Adaboost and GBDT of the Boosting series, RF implementation is relatively simple.</p>
+<p>6) Not sensitive to missing some features.<br>　　<br><br></p>
+<h3 id="Disadvantages-of-RF"><a href="#Disadvantages-of-RF" class="headerlink" title="Disadvantages of RF"></a>Disadvantages of RF</h3><p>1) On some sample sets with relatively large noise, the RF model is prone to overfitting.</p>
+<p>2) Features with more value divisions are likely to have a greater impact on RF decision-making, thereby affecting the effect of the fitted model.</p>
+
       
     </div>
     
@@ -483,8 +517,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -544,6 +587,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bagging"><span class="nav-number">1.</span> <span class="nav-text">Bagging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Random-Forest"><span class="nav-number">2.</span> <span class="nav-text">Random Forest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advantages-of-RF"><span class="nav-number">3.</span> <span class="nav-text">Advantages of RF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disadvantages-of-RF"><span class="nav-number">4.</span> <span class="nav-text">Disadvantages of RF</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

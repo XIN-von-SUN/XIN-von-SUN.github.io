@@ -79,20 +79,22 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="Entroy我们需要熟悉信息论中熵的概念。熵度量了事物的不确定性，越不确定的事物，它的熵就越大。具体的，随机变量X的熵的表达式如下: H(X) &#x3D; - \sum_{i&#x3D;1}^n p_ilogp_i其中n代表X的n种不同的离散取值。而$p_i$代表了X取值为i的概率，log为以2或者e为底的对数。 熟悉了一个变量X的熵，很容易推广到多个个变量的联合熵，这里给出两个变量X和Y的联合熵表达式： H(X">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Decision Tree">
+<meta property="og:title" content="Decision Tree - ID3 &#x2F; C4.5 &#x2F; Cart">
 <meta property="og:url" content="http://yoursite.com/2020/07/26/Machine%20Learning/Supervised/Classification/Decision-Tree/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="Entroy我们需要熟悉信息论中熵的概念。熵度量了事物的不确定性，越不确定的事物，它的熵就越大。具体的，随机变量X的熵的表达式如下: H(X) &#x3D; - \sum_{i&#x3D;1}^n p_ilogp_i其中n代表X的n种不同的离散取值。而$p_i$代表了X取值为i的概率，log为以2或者e为底的对数。 熟悉了一个变量X的熵，很容易推广到多个个变量的联合熵，这里给出两个变量X和Y的联合熵表达式： H(X">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/ml/dt_1.png">
 <meta property="article:published_time" content="2020-07-26T12:31:28.000Z">
-<meta property="article:modified_time" content="2020-08-04T18:36:14.548Z">
+<meta property="article:modified_time" content="2020-08-16T14:37:43.224Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="Supervised Learning">
 <meta property="article:tag" content="Classification">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/ml/dt_1.png">
 
 
 
@@ -128,7 +130,7 @@
 
 
 
-  <title>Decision Tree | XIN SUN</title>
+  <title>Decision Tree - ID3 / C4.5 / Cart | XIN SUN</title>
   
 
 
@@ -305,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Decision Tree</h1>
+          <h1 class="post-title" itemprop="name headline">Decision Tree - ID3 / C4.5 / Cart</h1>
         
 
         <div class="post-meta">
@@ -399,7 +401,64 @@
       
 
       
-        
+        <p><img src="/images/ml/dt_1.png" width="50%" height="50%" title="" alt=""/></p>
+<h3 id="Entroy"><a href="#Entroy" class="headerlink" title="Entroy"></a>Entroy</h3><p>我们需要熟悉信息论中熵的概念。熵度量了事物的不确定性，越不确定的事物，它的熵就越大。具体的，随机变量X的熵的表达式如下:</p>
+<script type="math/tex; mode=display">H(X) = - \sum_{i=1}^n p_ilogp_i</script><p>其中n代表X的n种不同的离散取值。而$p_i$代表了X取值为i的概率，log为以2或者e为底的对数。</p>
+<p>熟悉了一个变量X的熵，很容易推广到多个个变量的联合熵，这里给出两个变量X和Y的联合熵表达式：</p>
+<script type="math/tex; mode=display">H(X, Y) = - \sum_{x_i \in X}\sum_{y_i \in Y} p(x_i, y_i)logp(x_i, y_i)</script><p>有了联合熵，又可以得到条件熵的表达式H(X|Y)，条件熵类似于条件概率,它度量了我们的X在知道Y以后剩下的不确定性:</p>
+<script type="math/tex; mode=display">H(X|Y) = - \sum_{x_i \in X}\sum_{y_i \in Y} p(x_i, y_i)logp(x_i | y_i) = \sum_{j=1}^n p(y_j)H(X|y_i)</script><p>回到ID3算法。我们刚才提到H(X)度量了X的不确定性，条件熵H(X|Y)度量了我们在知道Y以后X剩下的不确定性，那么H(X)-H(X|Y)呢？从上面的描述大家可以看出，它度量了X在知道Y以后不确定性减少程度，这个度量我们在信息论中称为<strong>互信息</strong>, 记为I(X,Y)。在决策树ID3算法中叫做<strong>信息增益</strong>。ID3算法就是用信息增益来判断当前节点应该用什么特征来构建决策树。信息增益大，则越适合用来分类。</p>
+<p><br></p>
+<h3 id="Decision-Tree-ID3-Information-Gain"><a href="#Decision-Tree-ID3-Information-Gain" class="headerlink" title="Decision Tree - ID3 - Information Gain"></a>Decision Tree - ID3 - Information Gain</h3><p>输入的是m个样本，样本输出集合为D，每个样本有n个离散特征，特征集合即为A，输出为决策树T。算法的过程为：</p>
+<p>1）初始化信息增益的阈值𝜖</p>
+<p>2）判断样本是否为同一类输出𝐷𝑖，如果是则返回单节点树T。标记类别为𝐷𝑖</p>
+<p>3) 判断特征是否为空，如果是则返回单节点树T，标记类别为样本中输出类别D实例数最多的类别。</p>
+<p>4）计算A中的各个特征（一共n个）对输出D的信息增益，选择信息增益最大的特征𝐴𝑔</p>
+<p>5) 如果𝐴𝑔的信息增益小于阈值𝜖，则返回单节点树T，标记类别为样本中输出类别D实例数最多的类别。</p>
+<p>6）否则，按特征𝐴𝑔的不同取值𝐴𝑔𝑖将对应的样本输出D分成不同的类别𝐷𝑖。每个类别产生一个子节点。对应特征值为𝐴𝑔𝑖。返回增加了节点的数T。</p>
+<p>7）对于所有的子节点，令𝐷=𝐷𝑖,𝐴=𝐴−{𝐴𝑔} 递归调用2-6步，得到子树𝑇𝑖并返回。</p>
+<p><br></p>
+<h3 id="ID3-Disadvantages"><a href="#ID3-Disadvantages" class="headerlink" title="ID3 Disadvantages"></a>ID3 Disadvantages</h3><p>ID3算法虽然提出了新思路，但是还是有很多值得改进的地方。　　</p>
+<p>a) ID3没有考虑连续特征，比如长度，密度都是连续值，无法在ID3运用。这大大限制了ID3的用途。</p>
+<p>b) ID3采用信息增益大的特征优先建立决策树的节点。很快就被人发现，在相同条件下，取值比较多的特征比取值少的特征信息增益大。比如一个变量有2个值，各为1/2，另一个变量为3个值，各为1/3，其实他们都是完全不确定的变量，但是取3个值的比取2个值的信息增益大。如果校正这个问题呢？</p>
+<p>c) ID3算法对于缺失值的情况没有做考虑</p>
+<p>d) 没有考虑过拟合的问题</p>
+<p><br></p>
+<h3 id="Decision-Tree-C4-5"><a href="#Decision-Tree-C4-5" class="headerlink" title="Decision Tree - C4.5"></a>Decision Tree - C4.5</h3><p>ID3主要的问题有4个:<br>一是不能处理连续特征，第二个就是用信息增益作为标准容易偏向于取值较多的特征，最后两个是缺失值处理的问题和过拟合问题</p>
+<h5 id="C4-5-steps"><a href="#C4-5-steps" class="headerlink" title="C4.5 steps"></a>C4.5 steps</h5><p><strong>不能处理连续特征:</strong> C4.5的思路是将连续的特征离散化。比如m个样本的连续特征A有m个，从小到大排列为𝑎1,𝑎2,…,𝑎𝑚,则C4.5取相邻两样本值的平均数，一共取得m-1个划分点，其中第i个划分点𝑇𝑖表示为：𝑇𝑖=𝑎𝑖+𝑎𝑖+12。对于这m-1个点，分别计算以该点作为二元分类点时的信息增益。选择信息增益最大的点作为该连续特征的二元离散分类点。比如取到的增益最大的点为𝑎𝑡,则小于𝑎𝑡的值为类别1，大于𝑎𝑡的值为类别2，这样我们就做到了连续特征的离散化。要注意的是，与离散属性不同的是，如果当前节点为连续属性，则该属性后面还可以参与子节点的产生选择过程。</p>
+<p><strong>用信息增益比作为标准:</strong> 信息增益作为标准容易偏向于取值较多的特征的问题。我们引入一个信息增益比的变量𝐼𝑅(𝑋,𝑌)，它是信息增益和特征熵的比值。表达式如下：</p>
+<script type="math/tex; mode=display">I_R(D,A) = \frac{I(A,D)}{H_AD}</script><p>其中D为样本特征输出的集合，A为样本特征，对于特征熵𝐻𝐴(𝐷), 表达式如下</p>
+<script type="math/tex; mode=display">H_A(D) = −\sum_{i=1}^n \frac{|D_i|}{|D|} log_2 \frac{|D_i|}{|D|}</script><p>其中n为特征A的类别数， 𝐷𝑖为特征A的第i个取值对应的样本个数。|𝐷|为样本个数。<br>特征数越多的特征对应的特征熵越大，它作为分母，可以校正信息增益容易偏向于取值较多的特征的问题。</p>
+<p><strong>对于第三个缺失值处理的问题:</strong> 主要需要解决的是两个问题，一是在样本某些特征缺失的情况下选择划分的属性，二是选定了划分属性，对于在该属性上缺失特征的样本的处理。</p>
+<p>对于第一个子问题，对于某一个有缺失特征值的特征A。C4.5的思路是将数据分成两部分，对每个样本设置一个权重（初始可以都为1），然后划分数据，一部分是有特征值A的数据D1，另一部分是没有特征A的数据D2. 然后对于没有缺失特征A的数据集D1来和对应的A特征的各个特征值一起计算加权重后的信息增益比，最后乘上一个系数，这个系数是无特征A缺失的样本加权后所占加权总样本的比例。</p>
+<p>对于第二个子问题，可以将缺失特征的样本同时划分入所有的子节点，不过将该样本的权重按各个子节点样本的数量比例来分配。比如缺失特征A的样本a之前权重为1，特征A有3个特征值A1,A2,A3。 3个特征值对应的无缺失A特征的样本个数为2,3,4.则a同时划分入A1，A2，A3。对应权重调节为2/9,3/9, 4/9。</p>
+<p><strong>对于第4个问题:</strong> C4.5引入了正则化系数进行初步的剪枝。具体方法这里不讨论。除了上面的4点，C4.5和ID的思路区别不大。</p>
+<p><br></p>
+<h3 id="C4-5-Disadvantages"><a href="#C4-5-Disadvantages" class="headerlink" title="C4.5 Disadvantages"></a>C4.5 Disadvantages</h3><p>1) 由于决策树算法非常容易过拟合，因此对于生成的决策树必须要进行剪枝。剪枝的算法有非常多，C4.5的剪枝方法有优化的空间。思路主要是两种，一种是预剪枝，即在生成决策树的时候就决定是否剪枝。另一个是后剪枝，即先生成决策树，再通过交叉验证来剪枝。后面在下篇讲CART树的时候我们会专门讲决策树的减枝思路，主要采用的是后剪枝加上交叉验证选择最合适的决策树。</p>
+<p>2) C4.5生成的是多叉树，即一个父节点可以有多个节点。很多时候，在计算机中二叉树模型会比多叉树运算效率高。如果采用二叉树，可以提高效率。</p>
+<p><strong>3) C4.5只能用于分类，如果能将决策树用于回归的话可以扩大它的使用范围。</strong></p>
+<p>4) C4.5由于使用了熵模型，里面有大量的耗时的对数运算,如果是连续值还有大量的排序运算。如果能够加以模型简化可以减少运算强度但又不牺牲太多准确性的话，那就更好了。</p>
+<p><br></p>
+<h3 id="CART"><a href="#CART" class="headerlink" title="CART"></a>CART</h3><p>CART分类树算法使用基尼系数来代替信息增益比，基尼系数代表了模型的不纯度，基尼系数越小，则不纯度越低，特征越好。这和信息增益(比)是相反的。</p>
+<p>具体的，在分类问题中，假设有K个类别，第k个类别的概率为p_k, 则基尼系数的表达式为：</p>
+<script type="math/tex; mode=display">Gini(p) = \sum _{k=1}^K p_k(1-p_k) = 1- \sum _{k=1}^K p_k^2</script><p>如果是二类分类问题，计算就更加简单了，如果属于第一个样本输出的概率是p，则基尼系数的表达式为：</p>
+<script type="math/tex; mode=display">Gini(p) = 2p(1-p)</script><p>对于个给定的样本D,假设有K个类别, 第k个类别的数量为C_k,则样本D的基尼系数表达式为：</p>
+<script type="math/tex; mode=display">Gini(D) = 1 - \sum _{k=1}^K (\frac{|C_k|}{|D|})^2</script><p>特别的，对于样本D,如果根据特征A的某个值a,把D分成D1和D2两部分，则在特征A的条件下，D的基尼系数表达式为：</p>
+<script type="math/tex; mode=display">Gini(D, A) = \frac{|D_1|}{|D|}Gini(D_1) + \frac{|D_2|}{|D|}Gini(D_2)</script><p><br></p>
+<h3 id="决策树算法的优点"><a href="#决策树算法的优点" class="headerlink" title="决策树算法的优点"></a>决策树算法的优点</h3><p>　　　　1）简单直观，生成的决策树很直观。</p>
+<p>　　　　2）基本不需要预处理，不需要提前归一化，处理缺失值。</p>
+<p>　　　　3）使用决策树预测的代价是𝑂(𝑙𝑜𝑔2𝑚)。 m为样本数。</p>
+<p>　　　　4）既可以处理离散值也可以处理连续值。很多算法只是专注于离散值或者连续值。</p>
+<p>　　　　5）可以处理多维度输出的分类问题。</p>
+<p>　　　　6）相比于神经网络之类的黑盒分类模型，决策树在逻辑上可以得到很好的解释</p>
+<p>　　　　7）可以交叉验证的剪枝来选择模型，从而提高泛化能力。</p>
+<p>　　　　8） 对于异常点的容错能力好，健壮性高。</p>
+<p><br></p>
+<h3 id="决策树算法的缺点"><a href="#决策树算法的缺点" class="headerlink" title="决策树算法的缺点"></a>决策树算法的缺点</h3><p>　　　　1）决策树算法非常容易过拟合，导致泛化能力不强。可以通过设置节点最少样本数量和限制决策树深度来改进。</p>
+<p>　　　　2）决策树会因为样本发生一点点的改动，就会导致树结构的剧烈改变。这个可以通过集成学习之类的方法解决。</p>
+<p>　　　　3）寻找最优的决策树是一个NP难的问题，我们一般是通过启发式方法，容易陷入局部最优。可以通过集成学习之类的方法来改善。</p>
+<p>　　　　4）有些比较复杂的关系，决策树很难学习，比如异或。这个就没有办法了，一般这种关系可以换神经网络分类方法来解决。</p>
+<p>　　　　5）如果某些特征的样本比例过大，生成决策树容易偏向于这些特征。这个可以通过调节样本权重来改善。</p>
+
       
     </div>
     
@@ -497,8 +556,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -558,6 +626,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Entroy"><span class="nav-number">1.</span> <span class="nav-text">Entroy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decision-Tree-ID3-Information-Gain"><span class="nav-number">2.</span> <span class="nav-text">Decision Tree - ID3 - Information Gain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ID3-Disadvantages"><span class="nav-number">3.</span> <span class="nav-text">ID3 Disadvantages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decision-Tree-C4-5"><span class="nav-number">4.</span> <span class="nav-text">Decision Tree - C4.5</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C4-5-steps"><span class="nav-number">4.0.1.</span> <span class="nav-text">C4.5 steps</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C4-5-Disadvantages"><span class="nav-number">5.</span> <span class="nav-text">C4.5 Disadvantages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CART"><span class="nav-number">6.</span> <span class="nav-text">CART</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树算法的优点"><span class="nav-number">7.</span> <span class="nav-text">决策树算法的优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树算法的缺点"><span class="nav-number">8.</span> <span class="nav-text">决策树算法的缺点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

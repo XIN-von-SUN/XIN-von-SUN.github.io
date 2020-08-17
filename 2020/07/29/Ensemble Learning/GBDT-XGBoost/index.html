@@ -79,19 +79,21 @@
 
 
 
-<meta name="description" content="Xin SUN">
+<meta name="description" content="GBDT steps AdaBoost V.S. GBDTAdaBoost用错分数据点来识别问题,通过调整错分数据点的权重来改进模型. Gradient Boosting通过负梯度来识别问题，通过计算负梯度来改进模型. Ref 1Ref 2Ref 3  XGB V.S. GBDT: XGB对loss函数做泰勒二次展开, GBDT做泰勒一次展开. XGB对loss函数添加了L2正则. XGB可自定义">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GBDT - XGBoost">
 <meta property="og:url" content="http://yoursite.com/2020/07/29/Ensemble%20Learning/GBDT-XGBoost/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Xin SUN">
+<meta property="og:description" content="GBDT steps AdaBoost V.S. GBDTAdaBoost用错分数据点来识别问题,通过调整错分数据点的权重来改进模型. Gradient Boosting通过负梯度来识别问题，通过计算负梯度来改进模型. Ref 1Ref 2Ref 3  XGB V.S. GBDT: XGB对loss函数做泰勒二次展开, GBDT做泰勒一次展开. XGB对loss函数添加了L2正则. XGB可自定义">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/ensemble/gbdt_1.png">
 <meta property="article:published_time" content="2020-07-28T22:39:03.000Z">
-<meta property="article:modified_time" content="2020-08-07T16:07:45.445Z">
+<meta property="article:modified_time" content="2020-08-17T00:29:22.737Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Ensemble Learning">
 <meta property="article:tag" content="Boosting">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/ensemble/gbdt_1.png">
 
 
 
@@ -387,7 +389,17 @@
       
 
       
-        
+        <h3 id="GBDT-steps"><a href="#GBDT-steps" class="headerlink" title="GBDT steps"></a>GBDT steps</h3><p><img src="/images/ensemble/gbdt_1.png" width="60%" height="60%" title="" alt=""/></p>
+<h3 id="AdaBoost-V-S-GBDT"><a href="#AdaBoost-V-S-GBDT" class="headerlink" title="AdaBoost V.S. GBDT"></a>AdaBoost V.S. GBDT</h3><p>AdaBoost用错分数据点来识别问题,通过调整错分数据点的权重来改进模型. Gradient Boosting通过负梯度来识别问题，通过计算负梯度来改进模型.</p>
+<p><a href="https://zhuanlan.zhihu.com/p/29765582" target="_blank" rel="noopener">Ref 1</a><br><a href="https://zhuanlan.zhihu.com/p/53980138" target="_blank" rel="noopener">Ref 2</a><br><a href="https://www.jianshu.com/p/005a4e6ac775" target="_blank" rel="noopener">Ref 3</a></p>
+<p><br></p>
+<h3 id="XGB-V-S-GBDT"><a href="#XGB-V-S-GBDT" class="headerlink" title="XGB V.S. GBDT:"></a>XGB V.S. GBDT:</h3><ol>
+<li>XGB对loss函数做泰勒二次展开, GBDT做泰勒一次展开.</li>
+<li>XGB对loss函数添加了L2正则.</li>
+<li>XGB可自定义代价函数，只要可以一二阶可导.</li>
+</ol>
+<p><a href="https://www.jianshu.com/p/37963d5eb19f" target="_blank" rel="noopener">Ref 1</a></p>
+
       
     </div>
     
@@ -483,8 +495,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -544,6 +565,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GBDT-steps"><span class="nav-number">1.</span> <span class="nav-text">GBDT steps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AdaBoost-V-S-GBDT"><span class="nav-number">2.</span> <span class="nav-text">AdaBoost V.S. GBDT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XGB-V-S-GBDT"><span class="nav-number">3.</span> <span class="nav-text">XGB V.S. GBDT:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
