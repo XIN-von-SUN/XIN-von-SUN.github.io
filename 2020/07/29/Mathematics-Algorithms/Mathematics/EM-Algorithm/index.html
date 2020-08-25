@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="估计有很多入门机器学习的同学在看到EM算法的时候会有种种疑惑：EM算法到底是个什么玩意？它能做什么？它的应用场景是什么？网上的公式推导怎么看不懂？ 下面我会从一个案例开始讲解极大似然估计，然后过渡到EM算法，讲解EM算法到底是个什么玩意儿以及它的核心的idea是什么。之后讲解EM算法的推导公式，鉴于网上很多博客文章都是直接翻译吴恩达的课程笔记内容，有很多推导步骤都是跳跃性的，我会把这些中间步骤弥补">
+<meta name="description" content="This article will be written in Chinese for reviewing by myself. 估计有很多入门机器学习的同学在看到EM算法的时候会有种种疑惑：EM算法到底是个什么玩意？它能做什么？它的应用场景是什么？网上的公式推导怎么看不懂？ 下面我会从一个案例开始讲解极大似然估计，然后过渡到EM算法，讲解EM算法到底是个什么玩意儿以及它的核心的idea是什么。之">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EM Algorithm">
 <meta property="og:url" content="http://yoursite.com/2020/07/29/Mathematics-Algorithms/Mathematics/EM-Algorithm/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="估计有很多入门机器学习的同学在看到EM算法的时候会有种种疑惑：EM算法到底是个什么玩意？它能做什么？它的应用场景是什么？网上的公式推导怎么看不懂？ 下面我会从一个案例开始讲解极大似然估计，然后过渡到EM算法，讲解EM算法到底是个什么玩意儿以及它的核心的idea是什么。之后讲解EM算法的推导公式，鉴于网上很多博客文章都是直接翻译吴恩达的课程笔记内容，有很多推导步骤都是跳跃性的，我会把这些中间步骤弥补">
+<meta property="og:description" content="This article will be written in Chinese for reviewing by myself. 估计有很多入门机器学习的同学在看到EM算法的时候会有种种疑惑：EM算法到底是个什么玩意？它能做什么？它的应用场景是什么？网上的公式推导怎么看不懂？ 下面我会从一个案例开始讲解极大似然估计，然后过渡到EM算法，讲解EM算法到底是个什么玩意儿以及它的核心的idea是什么。之">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=L(%5Ctheta)+%253D+L(x_1%252C+x_2%252C+%5Ccdots+%252C+x_n%253B+%5Ctheta)+%253D+%5Cprod+%5Climits+_%7Bi%253D1%7D%5E%7Bn%7Dp(x_i%7C%5Ctheta)%252C+%5Cquad+%5Ctheta+%5Cin+%5CTheta+%5C%5C">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=H(%5Ctheta)+%253D+%5Ctext%7Bln%7D+%5C+L(%5Ctheta)+%253D+%5Ctext%7Bln%7D+%5Cprod+%5Climits+_%7Bi%253D1%7D%5E%7Bn%7Dp(x_i%7C%5Ctheta)+%253D+%5Csum+%5Climits+_%7Bi%253D1%7D%5E%7Bn%7D%5Ctext%7Bln%7D+p(x_i%7C%5Ctheta)+%5C%5C">
@@ -250,7 +250,7 @@
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Chat%7B%5Ctheta%7D_A%5E%7B(1)%7D%252C+%5Chat%7B%5Ctheta%7D_B%5E%7B(1)%7D">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Chat%7B%5Ctheta%7D_A%5E%7B(10)%7D+%253D+0.8%252C+%5Chat%7B%5Ctheta%7D_B%5E%7B(10)%7D+%253D+0.52">
 <meta property="article:published_time" content="2020-07-28T22:06:40.000Z">
-<meta property="article:modified_time" content="2020-08-22T12:51:11.984Z">
+<meta property="article:modified_time" content="2020-08-22T13:51:41.033Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Mathematics">
 <meta property="article:tag" content="Clustering">
@@ -551,7 +551,8 @@
       
 
       
-        <p><strong>估计有很多入门机器学习的同学在看到EM算法的时候会有种种疑惑：EM算法到底是个什么玩意？它能做什么？它的应用场景是什么？网上的公式推导怎么看不懂？</strong></p>
+        <p><strong>This article will be written in Chinese for reviewing by myself.</strong><br><br></p>
+<p><strong>估计有很多入门机器学习的同学在看到EM算法的时候会有种种疑惑：EM算法到底是个什么玩意？它能做什么？它的应用场景是什么？网上的公式推导怎么看不懂？</strong></p>
 <p><strong>下面我会从一个案例开始讲解极大似然估计，然后过渡到EM算法，讲解EM算法到底是个什么玩意儿以及它的核心的idea是什么。之后讲解EM算法的推导公式，鉴于网上很多博客文章都是直接翻译吴恩达的课程笔记内容，有很多推导步骤都是跳跃性的，我会把这些中间步骤弥补上，让大家都能看懂EM算法的推导过程。最后以一个二硬币模型作为EM算法的一个实例收尾。希望阅读本篇文章之后能对EM算法有更深的了解和认识。</strong></p>
 <p><strong>极大似然和EM(Expectation Maximization)算法，与其说是一种算法，不如说是一种解决问题的思想，解决一类问题的框架，和线性回归，逻辑回归，决策树等一些具体的算法不同，极大似然和EM算法更加抽象，是很多具体算法的基础。</strong></p>
 <h2 id="1-从极大似然到EM"><a href="#1-从极大似然到EM" class="headerlink" title="1. 从极大似然到EM"></a>1. 从极大似然到EM</h2><h2 id="1-1-极大似然"><a href="#1-1-极大似然" class="headerlink" title="1.1 极大似然"></a>1.1 极大似然</h2><h2 id="1-1-1-问题描述"><a href="#1-1-1-问题描述" class="headerlink" title="1.1.1 问题描述"></a>1.1.1 问题描述</h2><p>假设我们需要调查我们学校学生的身高分布。我们先假设学校所有学生的身高服从正态分布$N(\mu,\sigma^{2})$ 。(<strong>注意：极大似然估计的前提一定是要假设数据总体的分布，如果不知道数据分布，是无法使用极大似然估计的</strong>)，这个分布的均值 $\mu$ 和方差$\sigma^{2}$ 未知，如果我们估计出这两个参数，那我们就得到了最终的结果。那么怎样估计这两个参数呢？</p>
@@ -860,7 +861,7 @@ H^{''}>=0</script><p>是凸函数。特别地，如果 $f^{‘’}&gt;0$ 或者$
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">60</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
