@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Software-Dev-Test," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="This article will be written in Chinese for reviewing by myself. 进程与线程异同一个程序至少有一个进程,一个进程至少有一个线程.线程的划分尺度小于进程，使得多线程程序的并发性高。另外，进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。进程和线程的主要差别在于它们是不同的操作系统资源管理方式。进程有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Software-Dev-Test">
+<meta property="og:url" content="http://yoursite.com/2020/08/22/Interview%20Related/Software-Dev-Test/index.html">
+<meta property="og:site_name" content="XIN SUN">
+<meta property="og:description" content="This article will be written in Chinese for reviewing by myself. 进程与线程异同一个程序至少有一个进程,一个进程至少有一个线程.线程的划分尺度小于进程，使得多线程程序的并发性高。另外，进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。进程和线程的主要差别在于它们是不同的操作系统资源管理方式。进程有">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-22T09:50:06.000Z">
+<meta property="article:modified_time" content="2020-11-22T16:58:52.134Z">
+<meta property="article:author" content="XIN SUN">
+<meta property="article:tag" content="Software-Dev-Test">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/08/22/Interview Related/Software-Dev-Test/"/>
+
+
+
+
+
+  <title>Software-Dev-Test | XIN SUN</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XIN SUN</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/22/Interview%20Related/Software-Dev-Test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XIN SUN">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XIN SUN">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Software-Dev-Test</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-22T11:50:06+02:00">
+                2020-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Interview-Related/" itemprop="url" rel="index">
+                    <span itemprop="name">Interview Related</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>This article will be written in Chinese for reviewing by myself.</strong></p>
+<h4 id="进程与线程异同"><a href="#进程与线程异同" class="headerlink" title="进程与线程异同"></a>进程与线程异同</h4><p>一个程序至少有一个进程,一个进程至少有一个线程.<br>线程的划分尺度小于进程，使得多线程程序的并发性高。另外，进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。<br>进程和线程的主要差别在于它们是不同的操作系统资源管理方式。进程有独立的地址空间，一个进程崩溃后，在保护模式下不会对其它进程产生影响，而线程只是一个进程中的不同执行路径。线程有自己的堆栈和局部变量，但线程之间没有单独的地址空间，一个线程死掉就等于整个进程死掉，所以多进程的程序要比多线程的程序健壮，但在进程切换时，耗费资源较大，效率要差一些。但对于一些要求同时进行并且又要共享某些变量的并发操作，只能用线程，不能用进程。</p>
+<h4 id="创建线程的几种方法"><a href="#创建线程的几种方法" class="headerlink" title="创建线程的几种方法"></a>创建线程的几种方法</h4><pre><code>1. 继承Thread类，并复写run方法，创建该类对象，调用start方法开启线程。此方式没有返回值。
+2. 实现Runnable接口，复写run方法，创建Thread类对象，将Runnable子类对象传递给Thread类对象。调用start方法开启线程。此方法2较之方法1好，将线程对象和线程任务对象分离开。降低了耦合性，利于维护。此方式没有返回值。
+3. 创建FutureTask对象，创建Callable子类对象，复写call(相当于run)方法，将其传递给FutureTask对象（相当于一个Runnable）。 创建Thread类对象，将FutureTask对象传递给Thread对象。调用start方法开启线程。这种方式可以获得线程执行完之后的返回值。该方法使用Runnable功能更加强大的一个子类.这个子类是具有返回值类型的任务方法。
+4. 线程池
+• 提供了一个线程队列，队列中保存着所有等待状态的线程。避免了创建与销毁额外开销，提高了响应的速度。
+• 线程池的体系结构：
+    java.util.concurrent.Executor : 负责线程的使用与调度的根接口
+    |--**ExecutorService 子接口: 线程池的主要接口
+    |--ThreadPoolExecutor 线程池的实现类
+    |--ScheduledExecutorService 子接口：负责线程的调度
+    |--ScheduledThreadPoolExecutor ：继承 ThreadPoolExecutor， 实现 ScheduledExecutorService
+• 工具类 : Executors
+    a) ExecutorService newFixedThreadPool() : 创建固定大小的线程池
+    b) ExecutorService newCachedThreadPool() : 缓存线程池，线程池的数量不固定，可以根据需求自动的更改数量。
+    c) ExecutorService newSingleThreadExecutor() : 创建单个线程池。线程池中只有一个线程
+    d) ScheduledExecutorService newScheduledThreadPool() : 创建固定大小的线程，`ExecutorService 的区别是还可以延迟或定时的执行任务*。
+</code></pre><h4 id="单元测试、集成测试、系统测试、验收测试、回归测试"><a href="#单元测试、集成测试、系统测试、验收测试、回归测试" class="headerlink" title="单元测试、集成测试、系统测试、验收测试、回归测试"></a>单元测试、集成测试、系统测试、验收测试、回归测试</h4><p><a href="https://blog.csdn.net/youngyunq/article/details/50041885" target="_blank" rel="noopener">https://blog.csdn.net/youngyunq/article/details/50041885</a><br>1.单元测试：是对软件中最小可测试单元(人为规定的最小必测功能模块)进行检查和验证。单元测试是在软件开发过程中要进行的最低级别的测试活动，软件的独立单元将在与程序的其他部分相隔离的情况下进行测试。<br>2.集成测试：也叫组装测试或联合测试。在单元测试的基础上将所有模块按照要求设计组装成为子系统或系统，进行集成测试。<br>3.系统测试：对整个系统的测试，将硬件、软件、操作人员看作一个整体，检验它是否有不复合系统说明书的地方。系统测试可以发下系统分析和设计中的错误。<br>4.验收测试：是部署软件之前的最后一个测试操作。在上述步骤完成之后，产品发布之前所进行的测试活动。验收测试是技术测试的最后一个阶段，也称交付测试。目的是确保软件准备就绪，并且可以让最终用户将其用于执行软件的既定功能和任务。<br>5.回归测试：修改了了旧代码之后重新进行测试以确认修改没有引入新的错误或导致其他代码产生错误。</p>
+<h4 id="单元测试、集成测试、系统测试、验收测试、回归测试这几步中最重要的是哪一步"><a href="#单元测试、集成测试、系统测试、验收测试、回归测试这几步中最重要的是哪一步" class="headerlink" title="单元测试、集成测试、系统测试、验收测试、回归测试这几步中最重要的是哪一步"></a>单元测试、集成测试、系统测试、验收测试、回归测试这几步中最重要的是哪一步</h4><p>系统测试<br>这些测试步骤分别在软件开发的不同阶段对软件进行测试，对软件完整功能进行测试的系统测试很重要，因为此时单元测试和集成测试已完成，能够对软件所有功能进行功能测试，能够覆盖系统所有联合的部件，是针对整个产品系统进行的测试，能够验证系统是否满足了需求规格的定义，因此系统测试很重要。</p>
+<h4 id="集成测试和系统测试的区别，以及它们的应用场景主要是什么？"><a href="#集成测试和系统测试的区别，以及它们的应用场景主要是什么？" class="headerlink" title="集成测试和系统测试的区别，以及它们的应用场景主要是什么？"></a>集成测试和系统测试的区别，以及它们的应用场景主要是什么？</h4><p>集成测试主要是: 针对程序内部结构进行测试，特别是对程序之间的接口进行测试 集成测试对测试人员编写脚本能力要求较高。测试方法一般选用黑盒测试和白盒测试相结合。<br>系统测试最主要的就是功能测试，测试软件《需求规格说明书》中提到的功能是否有遗漏，是否正确的实现。测试方法一般都使用—黑盒测试。<br>（1）集成测试的主要依据概要设计说明书，系统测试的主要依据是需求设计说明书；<br>（2）集成测试是系统模块的测试，系统测试是对整个系统的测试，包括相关的软硬件平台、网络以及相关外设的测试。 </p>
+<p>黑盒与白盒的测试方法 </p>
+<ol>
+<li>黑盒测试<br> 黑盒测试也称功能测试或数据驱动测试，它是在已知产品所应具有的功能，通过测试来检测每个功能是否都能正常使用，在测试时，把程序看作一个不能打开的黑盆子，在完全不考虑程序内部结构和内部特性的情况下，测试者在程序接口进行测试，它只检查程序功能是否按照需求规格说明书的规定正常使用，程序是否能适当地接收输入数锯而产生正确的输出信息，并且保持外部信息（如数据库或文件）的完整性。<br> 黑盒测试方法主要有等价类划分、边值分析、因—果图、错误推测等，主要用于软件确认测试。“黑盒”法着眼于程序外部结构、不考虑内部逻辑结构、针对软件界面和软件功能进行测试。“黑盒”法是穷举输入测试，只有把所有可能的输入都作为测试情况使用，才能以这种方法查出程序中所有的错误。实际上测试情况有无穷多个，人们不仅要测试所有合法的输入，而且还要对那些不合法但是可能的输入进行测试。</li>
+<li>白盒测试<br> 白盒测试也称结构测试或逻辑驱动测试，它是知道产品内部工作过程，可通过测试来检测产品内部动作是否按照规格说明书的规定正常进行，按照程序内部的结构测试程序，检验程序中的每条通路是否都有能按预定要求正确工作，而不顾它的功能，白盒测试的主要方法有逻辑驱动、基路测试等，主要用于软件验证。<br> “白盒”法全面了解程序内部逻辑结构、对所有逻辑路径进行测试。“白盒”法是穷举路径测试。在使用这一方案时，测试者必须检查程序的内部结构，从检查程序的逻辑着手，得出测试数据。贯穿程序的独立路径数是天文数字。但即使每条路径都测试了仍然可能有错误。第一，穷举路径测试决不能查出程序违反了设计规范，即程序本身是个错误的程序。第二，穷举路径测试不可能查出程序中因遗漏路径而出错。第三，穷举路径测试可能发现不了一些与数据相关的错误。</li>
+<li>灰盒测试<br> 灰盒测试，确实是介于二者之间的，可以这样理解，灰盒测试关注输出对于输入的正确性，同时也关注内部表现，但这种关注不象白盒那样详细、完整，只是通过一些表征性的现象、事件、标志来判断内部的运行状态，有时候输出是正确的，但内部其实已经错误了，这种情况非常多，如果每次都通过白盒测试来操作，效率会很低，因此需要采取这样的一种灰盒的方法。<br> 灰盒测试结合了白盒测试盒黑盒测试的要素.它考虑了用户端、特定的系统知识和操作环境。它在系统组件的协同性环境中评价应用软件的设计。<br> 灰盒测试由方法和工具组成，这些方法和工具取材于应用程序的内部知识盒与之交互的环境，能够用于黑盒测试以增强测试效率、错误发现和错误分析的效率。<br> 灰盒测试涉及输入和输出，但使用关于代码和程序操作等通常在测试人员视野之外的信息设计测试。</li>
+</ol>
+<h4 id="测试的常用方法"><a href="#测试的常用方法" class="headerlink" title="测试的常用方法"></a>测试的常用方法</h4><p><a href="https://blog.csdn.net/ZWE7616175/article/details/81486683" target="_blank" rel="noopener">https://blog.csdn.net/ZWE7616175/article/details/81486683</a><br><a href="https://blog.csdn.net/u014745194/article/details/79919756" target="_blank" rel="noopener">https://blog.csdn.net/u014745194/article/details/79919756</a><br>等价类、边界值、错误推断法、场景法、因果图、判定表</p>
+<h4 id="设计测试用例的方法"><a href="#设计测试用例的方法" class="headerlink" title="设计测试用例的方法"></a>设计测试用例的方法</h4><p><a href="https://blog.csdn.net/vip_lvkang/article/details/76614380" target="_blank" rel="noopener">https://blog.csdn.net/vip_lvkang/article/details/76614380</a><br>测试用例是为特定的目的而设定的一组测试输入、执行条件和预期的结果。简单的来说而是用例就是设计一个场景，使测试程序在这种场景下运行并且达到程序所设计的结果。<br>1.等价类划分法<br>    等价划分法定义：把所有可能输入数据，即程序的输入域划分若干部分（子集），然后从每个子集中选取少量具有代表性的数据作为测试用例。等价类可以划分为有效等价类和无效等价类。<br>    如果输入条件确定了取值范围，或者说是值得个数，那么我们就可以确定一个有效等价类和2个无效等价类。<br>    例如：排序值可以从1到100 ，一个有效等价类就是:1&lt;=排序值&lt;=100,两个无效等价类：排序值<1.排序值>100.<br>    如果输入条件是一个布尔量，那么就可以确定一个有效等价类和一个无效等价类；<br>    如果输入条件是一组数组，那么程序就要为每一个输入值进行判断处理，从而每一个输入值都要设计一个等价类，这组数据之外的值也需要设计一个等价类；<br>2.边界值<br>    长期测试工作经验告诉我们，大量的错误是发生在输入或输出的范围上，而不是发生在输入输出范围的内部，例如:输入范围给定了是1-100，我们可以输入-1,0，1,2,99,100,101等数值来进行测试，这就是边界值的测试方法。报表的第一行和最后一行；屏幕光标最左边和最右边等等。<br>3.判定表分析法<br>    基本概念：判定表就是分析和表达多种逻辑状态下得不同执行情况<br>    判定表方法较为复杂，此处不做详细介绍，感兴趣的同学可以查阅资料。<br>4.错误推测法<br>    基本概念：根据工作经验和直觉来猜测程序有可能出现的问题，此类方法适合比较有经验的测试工程师。</p>
+<h4 id="自动化测试框架"><a href="#自动化测试框架" class="headerlink" title="自动化测试框架"></a>自动化测试框架</h4><p><a href="https://developer.51cto.com/art/201904/595162.htm" target="_blank" rel="noopener">https://developer.51cto.com/art/201904/595162.htm</a><br>Pytest / Unittest</p>
+<h4 id="手动测试与自动化测试的优缺点"><a href="#手动测试与自动化测试的优缺点" class="headerlink" title="手动测试与自动化测试的优缺点"></a>手动测试与自动化测试的优缺点</h4><p><a href="https://www.nowcoder.com/questionTerminal/0b0389219c1e4bbf8e34d918dca886f8?orderByHotValue=0&amp;mutiTagIds=1386&amp;page=1&amp;onlyReference=false" target="_blank" rel="noopener">https://www.nowcoder.com/questionTerminal/0b0389219c1e4bbf8e34d918dca886f8?orderByHotValue=0&amp;mutiTagIds=1386&amp;page=1&amp;onlyReference=false</a><br>• 自动化测试的优点：<br>    1、减少人力成本，提高测试效率<br>    2、完成大量重复性工作<br>    3、完成手工不能完成的工作<br>    4、有效利用资源<br>    5、保证工作的一致性，增加信任度<br>• 自动化测试的缺点：<br>    1、不能取代手工测试<br>    2、手工测试比自动化测试发现缺陷更多<br>    3、对测试质量的依赖性极大<br>    4、测试自动化不能够提高有效性<br>    5、测试自动化可能会制约软件开发。由于自动化测试比手工测试更脆弱，所以维护会受到限制，从而制约软件开发。<br>    6、工具本身并无想象力<br>    综上所述，可以归结为自动化完成不了的，手工测试都能弥补，两者有效的结合是测试质量保证的关键。<br>• 手工测试缺点：<br>    1、重复的手工回归测试，代价昂贵、容易出错。<br>    2、依赖于软件测试人员的能力。<br>• 手工测试优点：<br>    1、测试人员具有经验和对错误的猜测能力。<br>    2、测试人员具有审美能力和心理体验。<br>    3、测试人员具有是非判断和逻辑推理能力。</p>
+<h4 id="测试的相关流程是什么"><a href="#测试的相关流程是什么" class="headerlink" title="测试的相关流程是什么"></a>测试的相关流程是什么</h4><p><a href="https://www.zhihu.com/question/42023056" target="_blank" rel="noopener">https://www.zhihu.com/question/42023056</a><br>一、测试需求分析阶段：阅读需求，理解需求，主要就是对业务的学习，分析需求点。<br>参与需求评审会议<br>二、测试计划阶段：主要任务是编写测试计划，参考软件需求规格说明书、项目总体计划，内容包括测试范围(来自需求文档)、进度的安排，人力物力的分配，整体测试策略的制定，和风险的评估与规避措施有一个制定，一般有测试负责人编写，当然我们也会参与相关的评审工作。<br>三、测试设计阶段：主要任务是编写测试用例，会参考需求文档(原型图)、概要设计、详细设计等文档，有不明确的也会及时和开发、产品经理沟通。用例编写完成后会进行评审。<br>四、测试执行阶段：首先搭建测试环境，执行预测(冒烟)，以判定当前版本可测与否，如果预测通过，正式进入系统测试，遇到问题提交Bug到缺陷管理平台，并对bug进行跟踪，直到被测软件达到测试需求要求，没有重大bug，测试结束。<br>五、测试评估阶段：出测试报告，对整个测试的过程和版本质量做一个详细的评估。确认是否可以上线。</p>
+<h4 id="异步同步"><a href="#异步同步" class="headerlink" title="异步同步"></a>异步同步</h4><p>同步在一定程度上可以看做是单线程，这个线程请求一个方法后就待这个方法给他回复，否则他不往下执行（死心眼）。<br>异步在一定程度上可以看做是多线程的，请求一个方法后，就不管了，继续执行其他方法。<br>同步和异步关注的是消息通信机制 (synchronous communication/ asynchronous communication)<br>所谓同步，就是在发出一个<em>调用</em>时，在没有得到结果之前，该<em>调用</em>就不返回。但是一旦调用返回，就得到返回值了。<br>换句话说，就是由<em>调用者</em>主动等待这个<em>调用</em>的结果。<br>而异步则是相反，<em>调用</em>在发出之后，这个调用就直接返回了，所以没有返回结果。换句话说，当一个异步过程调用发出后，调用者不会立刻得到结果。而是在<em>调用</em>发出后，<em>被调用者</em>通过状态、通知来通知调用者，或通过回调函数处理这个调用。</p>
+<h4 id="阻塞与非阻塞"><a href="#阻塞与非阻塞" class="headerlink" title="阻塞与非阻塞"></a>阻塞与非阻塞</h4><p>阻塞和非阻塞关注的是程序在等待调用结果（消息，返回值）时的状态.<br>阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。<br>非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程。<br>还是上面的例子，<br>你打电话问书店老板有没有《分布式系统》这本书，你如果是阻塞式调用，你会一直把自己“挂起”，直到得到这本书有没有的结果，如果是非阻塞式调用，你不管老板有没有告诉你，你自己先一边去玩了， 当然你也要偶尔过几分钟check一下老板有没有返回结果。<br>在这里阻塞与非阻塞与是否同步异步无关。跟老板通过什么方式回答你结果无关。</p>
+<h4 id="Python多线程"><a href="#Python多线程" class="headerlink" title="Python多线程"></a>Python多线程</h4><p><a href="https://www.cnblogs.com/fnng/p/3670789.html" target="_blank" rel="noopener">https://www.cnblogs.com/fnng/p/3670789.html</a><br>python提供了两个模块来实现多线程thread 和threading ，thread 有一些缺点，在threading 得到了弥补，为了不浪费你和时间，所以我们直接学习threading 就可以了</p>
+<h4 id="Python多进程"><a href="#Python多进程" class="headerlink" title="Python多进程"></a>Python多进程</h4><p>multiprocessing 是一个支持使用与 threading 模块类似的 API 来产生进程的包。 multiprocessing 包同时提供了本地和远程并发操作，通过使用子进程而非线程有效地绕过了 全局解释器</p>
+<h4 id="Python的深拷贝与浅拷贝"><a href="#Python的深拷贝与浅拷贝" class="headerlink" title="Python的深拷贝与浅拷贝"></a>Python的深拷贝与浅拷贝</h4><p>浅拷贝，拷贝副本，容器内部元素地址一致<br>深拷贝，完全拷贝了一个副本，容器内部元素地址都不一样</p>
+<h4 id="Python装饰器及应用场景"><a href="#Python装饰器及应用场景" class="headerlink" title="Python装饰器及应用场景"></a>Python装饰器及应用场景</h4><p>装饰器用于日志记录<br>装饰器用于身份认证<br>装饰器用于输入合理性检查</p>
+<h4 id="堆和栈的区别"><a href="#堆和栈的区别" class="headerlink" title="堆和栈的区别"></a>堆和栈的区别</h4><p>堆栈（英语：stack）又称为栈或堆叠，是计算机科学中一种特殊的串列形式的抽象数据类型，其特殊之处在于只能允许在链表或数组的一端（称为堆栈顶端指针，英语：top）进行加入数据（英语：push）和输出数据（英语：pop）的运算。另外堆栈也可以用一维数组或链表的形式来完成。堆栈的另外一个相对的操作方式称为队列。<br>堆栈数据结构使用两种基本操作：推入（压栈，push）和弹出（弹栈，pop）：<br>推入：将数据放入堆栈的顶端（数组形式或串列形式），堆栈顶端top指针加一。<br>弹出：将顶端数据数据输出（回传），堆栈顶端数据减一。<br>堆的概念：<br>堆（英语：Heap）是计算机科学中的一种特别的树状数据结构。若是满足以下特性，即可称为堆：“给定堆中任意节点 P 和 C，若 P 是 C 的父节点，那么 P 的值会小于等于（或大于等于） C 的值”。若父节点的值恒小于等于子节点的值，此堆称为最小堆（英语：min heap）；反之，若父节点的值恒大于等于子节点的值，此堆称为最大堆（英语：max heap）。在堆中最顶端的那一个节点，称作根节点（英语：root node），根节点本身没有父节点（英语：parent node）</p>
+<h4 id="海量字符串数据，查找词频最高的50个单词-Hash-分治"><a href="#海量字符串数据，查找词频最高的50个单词-Hash-分治" class="headerlink" title="海量字符串数据，查找词频最高的50个单词 - Hash + 分治"></a>海量字符串数据，查找词频最高的50个单词 - Hash + 分治</h4><h4 id="链表有环判断-快慢指针"><a href="#链表有环判断-快慢指针" class="headerlink" title="链表有环判断 - 快慢指针"></a>链表有环判断 - 快慢指针</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Software-Dev-Test/" rel="tag"># Software-Dev-Test</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/07/Papers/Recursive-Visual-Attention-in-Visual-Dialog/" rel="next" title="Recursive Visual Attention in Visual Dialog">
+                <i class="fa fa-chevron-left"></i> Recursive Visual Attention in Visual Dialog
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/22/Interview%20Related/NLP/" rel="prev" title="Natural Language Processing Foundations">
+                Natural Language Processing Foundations <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XIN SUN</p>
+              <p class="site-description motion-element" itemprop="description">Xin SUN</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#进程与线程异同"><span class="nav-number">1.</span> <span class="nav-text">进程与线程异同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建线程的几种方法"><span class="nav-number">2.</span> <span class="nav-text">创建线程的几种方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单元测试、集成测试、系统测试、验收测试、回归测试"><span class="nav-number">3.</span> <span class="nav-text">单元测试、集成测试、系统测试、验收测试、回归测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单元测试、集成测试、系统测试、验收测试、回归测试这几步中最重要的是哪一步"><span class="nav-number">4.</span> <span class="nav-text">单元测试、集成测试、系统测试、验收测试、回归测试这几步中最重要的是哪一步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集成测试和系统测试的区别，以及它们的应用场景主要是什么？"><span class="nav-number">5.</span> <span class="nav-text">集成测试和系统测试的区别，以及它们的应用场景主要是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试的常用方法"><span class="nav-number">6.</span> <span class="nav-text">测试的常用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设计测试用例的方法"><span class="nav-number">7.</span> <span class="nav-text">设计测试用例的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动化测试框架"><span class="nav-number">8.</span> <span class="nav-text">自动化测试框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手动测试与自动化测试的优缺点"><span class="nav-number">9.</span> <span class="nav-text">手动测试与自动化测试的优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试的相关流程是什么"><span class="nav-number">10.</span> <span class="nav-text">测试的相关流程是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步同步"><span class="nav-number">11.</span> <span class="nav-text">异步同步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#阻塞与非阻塞"><span class="nav-number">12.</span> <span class="nav-text">阻塞与非阻塞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python多线程"><span class="nav-number">13.</span> <span class="nav-text">Python多线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python多进程"><span class="nav-number">14.</span> <span class="nav-text">Python多进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python的深拷贝与浅拷贝"><span class="nav-number">15.</span> <span class="nav-text">Python的深拷贝与浅拷贝</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python装饰器及应用场景"><span class="nav-number">16.</span> <span class="nav-text">Python装饰器及应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆和栈的区别"><span class="nav-number">17.</span> <span class="nav-text">堆和栈的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#海量字符串数据，查找词频最高的50个单词-Hash-分治"><span class="nav-number">18.</span> <span class="nav-text">海量字符串数据，查找词频最高的50个单词 - Hash + 分治</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链表有环判断-快慢指针"><span class="nav-number">19.</span> <span class="nav-text">链表有环判断 - 快慢指针</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XIN SUN</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+
+<span id="busuanzi_container_site_pv" class="theme-info">
+&nbsp;&nbsp;|&nbsp;&nbsp;Views: <span id="busuanzi_value_site_pv"></span>
+</span>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+  
+  <a href="https://github.com/XIN-von-SUN/" target="_blank" rel="noopener">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1">
+  </a>
+
+
+
+</body>
+</html>

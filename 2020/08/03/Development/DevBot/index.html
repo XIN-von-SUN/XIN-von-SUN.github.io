@@ -79,28 +79,34 @@
 
 
 
-<meta name="description" content="Overview (Function) of DevBot Code recommendation: Translate natural language query to Pandas &#x2F; pySpark code Data manipulation recommendation: Recommend next step data manipulations based on user hist">
+<meta name="description" content="Overview of DataBotFollowing figure shows the overall workflow of developed extension, including Natural language to Code translation module and Data manipulation recommendation module.  Natural langu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DevBot">
+<meta property="og:title" content="DataBot">
 <meta property="og:url" content="http://yoursite.com/2020/08/03/Development/DevBot/index.html">
 <meta property="og:site_name" content="XIN SUN">
-<meta property="og:description" content="Overview (Function) of DevBot Code recommendation: Translate natural language query to Pandas &#x2F; pySpark code Data manipulation recommendation: Recommend next step data manipulations based on user hist">
+<meta property="og:description" content="Overview of DataBotFollowing figure shows the overall workflow of developed extension, including Natural language to Code translation module and Data manipulation recommendation module.  Natural langu">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/images/App_dev/extension_workflow.png">
-<meta property="og:image" content="http://yoursite.com/images/App_dev/recommender_part.png">
-<meta property="og:image" content="http://yoursite.com/images/App_dev/res1.png">
-<meta property="og:image" content="http://yoursite.com/images/App_dev/res3.png">
+<meta property="og:image" content="http://yoursite.com/images/App_dev/extension_workflow%202.png">
+<meta property="og:image" content="http://yoursite.com/images/App_dev/code_rec_workflow.png">
+<meta property="og:image" content="http://yoursite.com/images/App_dev/generative_workflow.png">
+<meta property="og:image" content="http://yoursite.com/images/App_dev/eval1.png">
+<meta property="og:image" content="http://yoursite.com/images/App_dev/eval2.png">
+<meta property="og:image" content="http://yoursite.com/images/App_dev/code_completion_big.png">
+<meta property="og:image" content="http://yoursite.com/images/App_dev/manipulation_rec.png">
+<meta property="og:image" content="http://yoursite.com/images/App_dev/manipulation_rec_2.png">
+<meta property="og:image" content="http://yoursite.com/images/App_dev/available_manipulatin_big.png">
+<meta property="og:image" content="http://yoursite.com/images/App_dev/template_guide.png">
 <meta property="og:image" content="http://yoursite.com/images/App_dev/res4.png">
 <meta property="og:image" content="https://github.com/XIN-von-SUN/XIN-von-SUN.github.io/blob/master/images/App_dev/devbot_2.gif?raw=true">
 <meta property="og:image" content="https://github.com/XIN-von-SUN/XIN-von-SUN.github.io/blob/master/images/App_dev/devbot_1.gif?raw=true">
 <meta property="article:published_time" content="2020-08-03T08:36:33.000Z">
-<meta property="article:modified_time" content="2020-09-03T18:14:59.721Z">
+<meta property="article:modified_time" content="2020-11-22T16:50:58.704Z">
 <meta property="article:author" content="XIN SUN">
 <meta property="article:tag" content="Apps development">
 <meta property="article:tag" content="PyPI">
 <meta property="article:tag" content="VS Code Extension">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/App_dev/extension_workflow.png">
+<meta name="twitter:image" content="http://yoursite.com/images/App_dev/extension_workflow%202.png">
 
 
 
@@ -136,7 +142,7 @@
 
 
 
-  <title>DevBot | XIN SUN</title>
+  <title>DataBot | XIN SUN</title>
   
 
 
@@ -313,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DevBot</h1>
+          <h1 class="post-title" itemprop="name headline">DataBot</h1>
         
 
         <div class="post-meta">
@@ -396,15 +402,18 @@
       
 
       
-        <h3 id="Overview-Function-of-DevBot"><a href="#Overview-Function-of-DevBot" class="headerlink" title="Overview (Function) of DevBot"></a>Overview (Function) of DevBot</h3><ul>
-<li>Code recommendation: Translate natural language query to Pandas / pySpark code</li>
-<li>Data manipulation recommendation: Recommend next step data manipulations based on user historic processing and queries</li>
+        <h3 id="Overview-of-DataBot"><a href="#Overview-of-DataBot" class="headerlink" title="Overview of DataBot"></a>Overview of DataBot</h3><p>Following figure shows the overall workflow of developed extension, including Natural language to Code translation module and Data manipulation recommendation module.<br><img src="/images/App_dev/extension_workflow 2.png" width="60%" height="60%" title="Extension Workflow"></p>
+<ul>
+<li><p>Natural language to Code translation module: Transform natural language query to Pandas / PySpark code.<br><img src="/images/App_dev/code_rec_workflow.png" width="60%" height="60%" title="How Natural Language to Code Translation module works"></p>
+</li>
+<li><p>Data manipulation recommendation module: Recommend the data manipulations in next step based on user historic manipulation and query records.<br><img src="/images/App_dev/generative_workflow.png" width="60%" height="60%" title="How Data Manipulation Recommendation module works"><br><br></p>
+</li>
 </ul>
-<p><img src="/images/App_dev/extension_workflow.png" width="60%" height="60%" title="Extension Workflow"></p>
-<p><img src="/images/App_dev/recommender_part.png" width="60%" height="60%" title="How Recommender works"><br><br></p>
-<h3 id="Intent-amp-Entity-resolution"><a href="#Intent-amp-Entity-resolution" class="headerlink" title="Intent &amp; Entity resolution"></a>Intent &amp; Entity resolution</h3><p>The DevBot can resolve the actual intent that user want to do which manipulations on data, also extract the entities as the required parameters in data manipulation functions.<br><img src="/images/App_dev/res1.png" width="60%" height="60%" title="Code recommendation"><br><br></p>
-<h3 id="Next-data-manipulation-recommendation"><a href="#Next-data-manipulation-recommendation" class="headerlink" title="Next data manipulation recommendation"></a>Next data manipulation recommendation</h3><p>DevBot use two different approaches for data manipulation recommendation. One is rule-based approach which recommend data manipulations based on user historic queries, which another approach apply NLG seq2seq model for next manipoulation generation.<br><img src="/images/App_dev/res3.png" width="100%" height="100%" title="Data manipulation recommendation"><br><br></p>
-<h3 id="More-Interactive"><a href="#More-Interactive" class="headerlink" title="More Interactive"></a>More Interactive</h3><p>The DevBot can provide us more interactive responses for asking us required or necessary entities as parameters.<br><img src="/images/App_dev/res4.png" width="60%" height="60%" title="Interaction"><br><br></p>
+<h3 id="Natural-Language-to-Code-Translation-by-Intent-amp-Entity-resolution"><a href="#Natural-Language-to-Code-Translation-by-Intent-amp-Entity-resolution" class="headerlink" title="Natural Language to Code Translation by Intent &amp; Entity resolution"></a>Natural Language to Code Translation by Intent &amp; Entity resolution</h3><p>The DataBot can resolve the actual intent that user want to perform manipulations on data, also extract the entities as the required parameters in data manipulation functions.<br><img src="/images/App_dev/eval1.png" width="60%" height="60%" title="Pandas: 'fill\_na'"><br><img src="/images/App_dev/eval2.png" width="60%" height="60%" title="PySpark: 'spark\_filter\_by\_conditions'"><br><br></p>
+<h3 id="Parameter-Recommendation"><a href="#Parameter-Recommendation" class="headerlink" title="Parameter Recommendation"></a>Parameter Recommendation</h3><p>In addition to the NL to code translation by intent and entity resolution, the developed extension can also make parameters recommendation by code completion approach. As the following example figure 6.7, the parameters in function can be recommended by code completion API provided by VS Code. And the ‘Source’ and ‘Target’ in the following figure 6.7 are the columns name of the loaded raw dataset.<br><img src="/images/App_dev/code_completion_big.png" width="60%" height="60%" title="Parameters Recommendation by Code Completion Approach"><br><br></p>
+<h3 id="Data-Manipulation-Recommendation"><a href="#Data-Manipulation-Recommendation" class="headerlink" title="Data Manipulation Recommendation"></a>Data Manipulation Recommendation</h3><p>DataBot use two different approaches for data manipulation recommendation ultimately. One is similarity-based approach which recommend data manipulations based on the similarity of user historic records, another approach apply generative model for next manipoulation generation.<br><img src="/images/App_dev/manipulation_rec.png" width="60%" height="60%" title="Data Manipulation Recommendation"><br><img src="/images/App_dev/manipulation_rec_2.png" width="60%" height="60%" title="More accurate Data Manipulation Recommendation"><br><br></p>
+<h3 id="Helper-Functions-and-More-Interaction"><a href="#Helper-Functions-and-More-Interaction" class="headerlink" title="Helper Functions and More Interaction"></a>Helper Functions and More Interaction</h3><p>In the natural language to code translation module, I defined a total of 94 intents, of which 56 are the intents for Pandas, 35 are the intents for PySpark, and the rest three intents are Helper functions. More specifically, we can ask the developed extension about the available manipulations we can inquire in this natural language to code translation module by these Helper functions. Also, we can specify the concrete phase of these manipulations in a complete data science project to get more accurate instructions. For instance, we can ask the extension: “Which manipulations I can inquire in the pre-processing phase?”. Then the extension can return the available predefined manipulations (intents) only from the pre-processing phase to users, thereby can immensely simplify the usage of this developed extension and allow users to learn how to use this extension more quickly.<br><img src="/images/App_dev/available_manipulatin_big.png" width="60%" height="60%" title="Query for the Available Manipulations (Intents)"><br><img src="/images/App_dev/template_guide.png" width="60%" height="60%" title="Query for the Usage of Manipulation Functions"></p>
+<p>Moreover, The DataBot can provide us more interactive responses for asking us required or necessary entities as parameters.<br><img src="/images/App_dev/res4.png" width="60%" height="60%" title="Interaction"><br><br></p>
 <h3 id="Embeded-as-VS-Code-extention"><a href="#Embeded-as-VS-Code-extention" class="headerlink" title="Embeded as VS Code extention"></a>Embeded as VS Code extention</h3><p><img src="https://github.com/XIN-von-SUN/XIN-von-SUN.github.io/blob/master/images/App_dev/devbot_2.gif?raw=true" width="60%" height="60%" title="DevBot as VS Code extension"><br><br></p>
 <h3 id="Embeded-as-Python-package-PyPI"><a href="#Embeded-as-Python-package-PyPI" class="headerlink" title="Embeded as Python package PyPI"></a>Embeded as Python package PyPI</h3><p><img src="https://github.com/XIN-von-SUN/XIN-von-SUN.github.io/blob/master/images/App_dev/devbot_1.gif?raw=true" width="60%" height="60%" title="DevBot as PyPI"></p>
 
@@ -530,7 +539,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -541,7 +550,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -552,7 +561,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -585,7 +594,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview-Function-of-DevBot"><span class="nav-number">1.</span> <span class="nav-text">Overview (Function) of DevBot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Intent-amp-Entity-resolution"><span class="nav-number">2.</span> <span class="nav-text">Intent &amp; Entity resolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Next-data-manipulation-recommendation"><span class="nav-number">3.</span> <span class="nav-text">Next data manipulation recommendation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More-Interactive"><span class="nav-number">4.</span> <span class="nav-text">More Interactive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Embeded-as-VS-Code-extention"><span class="nav-number">5.</span> <span class="nav-text">Embeded as VS Code extention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Embeded-as-Python-package-PyPI"><span class="nav-number">6.</span> <span class="nav-text">Embeded as Python package PyPI</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview-of-DataBot"><span class="nav-number">1.</span> <span class="nav-text">Overview of DataBot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Natural-Language-to-Code-Translation-by-Intent-amp-Entity-resolution"><span class="nav-number">2.</span> <span class="nav-text">Natural Language to Code Translation by Intent &amp; Entity resolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parameter-Recommendation"><span class="nav-number">3.</span> <span class="nav-text">Parameter Recommendation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Manipulation-Recommendation"><span class="nav-number">4.</span> <span class="nav-text">Data Manipulation Recommendation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Helper-Functions-and-More-Interaction"><span class="nav-number">5.</span> <span class="nav-text">Helper Functions and More Interaction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Embeded-as-VS-Code-extention"><span class="nav-number">6.</span> <span class="nav-text">Embeded as VS Code extention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Embeded-as-Python-package-PyPI"><span class="nav-number">7.</span> <span class="nav-text">Embeded as Python package PyPI</span></a></li></ol></div>
             
 
           </div>
