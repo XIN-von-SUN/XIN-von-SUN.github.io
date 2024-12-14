@@ -27,6 +27,7 @@ organizations:
   - name: University of Amsterdam
     url: 'https://www.uva.nl/'
 
+
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
@@ -48,22 +49,22 @@ interests:
 education:
   - area: PhD 
     institution: University of Amsterdam
-    date_start: 2021
-    date_end: 2025
+    date_start: 2021-04
+    date_end: 2025-03
     # summary: |
     #   Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). 
     # button:
     #   text: 'Read Thesis'
     #   url: 'https://example.com'
-  - area: MSc Artificial Intelligence and Optimization
+  - area: MSc AI (NLP) and Optimization
     institution: Heidelberg University
-    date_start: 2017
-    date_end: 2020
+    date_start: 2017-11
+    date_end: 2020-12
     
   - area: BSc Computational Mathematics
     institution: XiDian University
-    date_start: 2011
-    date_end: 2015
+    date_start: 2011-09
+    date_end: 2015-07
   
 work:
   - position: Director of Cloud Infrastructure
@@ -112,13 +113,15 @@ skills:
         percent: 80
         icon: camera
 
+
 languages:
-  - name: English
-    percent: 100
   - name: Chinese
-    percent: 75
-  - name: Portuguese
-    percent: 25
+  #  percent: 100
+  - name: English
+  #  percent: 100
+  - name: Germany
+  #  percent: 25
+
 
 # Awards.
 #   Add/remove as many awards below as you like.
