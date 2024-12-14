@@ -43,17 +43,6 @@ sections:
     design:
       columns: '1'
   
-  # - block: collection
-  #   id: papers
-  #   content:
-  #     title: Publications
-  #     filters:
-  #       folders:
-  #         - publication
-  #       featured_only: true
-  #   design:
-  #     view: article-grid
-  #     columns: 2
   - block: collection
     id: papers
     content:
@@ -72,15 +61,12 @@ sections:
       title: Working Experience
       text: "Internship"
     
-
   - block: collection
     id: supervision
     content:
       title: Teaching Experience
       text: "Supervision"
       summary: Supervision of Thesis
-      type: landing
-
     
   - block: collection
     id: news
