@@ -64,7 +64,8 @@ sections:
       filters:
         folders:
           - experience
-        exclude_featured: false
+      design:
+        columns: '1'
     
   # - block: collection
   #  id: news
