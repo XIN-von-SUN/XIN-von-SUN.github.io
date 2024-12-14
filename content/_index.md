@@ -75,8 +75,8 @@ sections:
   - block: collection
     id: supervision
     content:
-      title: Teaching
-      text: "Supervision Experience"
+      title: Teaching Experience
+      text: "Supervision"
     
   - block: collection
     id: news
