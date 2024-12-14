@@ -64,8 +64,6 @@ sections:
       filters:
         folders:
           - experience
-      design:
-        columns: '1'
     
   # - block: collection
   #  id: news
