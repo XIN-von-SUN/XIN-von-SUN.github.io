@@ -55,24 +55,24 @@ sections:
     design:
       view: citation
 
-  - block: markdown
-    id: working
-    content:
-      title: Working Experience
-      subtitle: 'Internship'
-       text: |-
-          "Alibaba Group, New Retail Technology Group , China"
-       text: |-
-          "SAP, Intelligent Data & Analytics group, Germany"
-       text: |-
-          "Applied Technology Research Institute of Tsinghua University in Wuxi, China"
+  #- block: markdown
+  #  id: working
+  #  content:
+  #    title: Working Experience
+  #    subtitle: 'Internship'
+  #     text: |-
+  #        "Alibaba Group, New Retail Technology Group , China"
+  #     text: |-
+  #        "SAP, Intelligent Data & Analytics group, Germany"
+  #     text: |-
+  #        "Applied Technology Research Institute of Tsinghua University in Wuxi, China"
       
-  - block: markdown
-    id: supervision
-    content:
-      title: Teaching Experience
-      text: "Supervision"
-      summary: Supervision of Thesis
+  #- block: markdown
+  #  id: supervision
+  #  content:
+  #    title: Teaching Experience
+  #    text: "Supervision"
+  #    summary: Supervision of Thesis
     
   - block: collection
     id: news
