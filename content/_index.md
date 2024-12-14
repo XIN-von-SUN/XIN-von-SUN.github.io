@@ -55,6 +55,17 @@ sections:
         exclude_featured: false
     design:
       view: citation
+
+  - block: collection
+    id: experience
+    content:
+      title: Experience
+      text: ""
+      filters:
+        folders:
+          - experience
+    design:
+      columns: '1'
     
   # - block: collection
   #  id: news
