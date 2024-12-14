@@ -69,9 +69,14 @@ sections:
   - block: collection
     id: experiences
     content:
-      title: Experience
-      text: "Working and Teaching"
-    
+      title: Working Experience
+      text: "Internship"
+
+  - block: collection
+    id: teaching
+    content:
+      title: Teaching
+      text: "Supervision"
     
   - block: collection
     id: news
