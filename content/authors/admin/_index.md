@@ -47,24 +47,25 @@ interests:
   - Human Cognition
 
 education:
-  - area: PhD 
+  - area: PhD in NLP-HCI-Psychology 2021-2025
     institution: University of Amsterdam
-    date_start: 2021-04
-    date_end: 2025-03
+    date_start: 2021
+    date_end: 2025
     # summary: |
     #   Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). 
     # button:
     #   text: 'Read Thesis'
     #   url: 'https://example.com'
-  - area: MSc AI (NLP) and Optimization
+  
+  - area: MSc in AI (NLP) 2017-2020
     institution: Heidelberg University
-    date_start: 2017-11
-    date_end: 2020-12
+    date_start: 2017
+    date_end: 2020
     
-  - area: BSc Computational Mathematics
+  - area: BSc in Computational Mathematics 2011-2015
     institution: XiDian University
-    date_start: 2011-09
-    date_end: 2015-07
+    date_start: 2011
+    date_end: 2015
   
 work:
   - position: Director of Cloud Infrastructure
