@@ -16,12 +16,12 @@ main:
   - name: Experience
     url: experience/
     weight: 20
-  - name: Projects
-    url: projects/
-    weight: 30
-  - name: Activities
-    url: /#news
-    weight: 13
+  # - name: Activities
+  #   url: /#news
+  #   weight: 13
   - name: Teaching
     url: teaching/
     weight: 40
+  - name: Projects
+    url: projects/
+    weight: 30
