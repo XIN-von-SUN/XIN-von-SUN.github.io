@@ -6,7 +6,7 @@ type: landing
 
 design:
   # Default section spacing
-  spacing: "6rem"
+  spacing: "8rem"
 
 sections:
   - block: resume-biography-3
@@ -42,6 +42,7 @@ sections:
         Please reach out to collaborate 😃
     design:
       columns: '1'
+  
   # - block: collection
   #   id: papers
   #   content:
@@ -54,6 +55,7 @@ sections:
   #     view: article-grid
   #     columns: 2
   - block: collection
+    id: papers
     content:
       title: Publications
       text: ""
@@ -63,17 +65,14 @@ sections:
         exclude_featured: false
     design:
       view: citation
-#         - block: collection
-#           id: talks
-#           content:
-#             title: Recent & Upcoming Talks
-#             filters:
-#               folders:
-#                 - event
-#           design:
-#             view: article-grid
-#             columns: 1
-  
+
+  - block: collection
+    id: experiences
+    content:
+      title: Experience
+      text: "Working and Teaching"
+    
+    
   - block: collection
     id: news
     content:
@@ -103,7 +102,18 @@ sections:
       # Reduce spacing
       spacing:
         padding: [0, 0, 0, 0]
-  
+
+#         - block: collection
+#           id: talks
+#           content:
+#             title: Recent & Upcoming Talks
+#             filters:
+#               folders:
+#                 - event
+#           design:
+#             view: article-grid
+#             columns: 1
+
   - block: cta-card
     demo: true # Only display this section in the Hugo Blox Builder demo site
     content:
