@@ -25,7 +25,7 @@ role: PhD Candidate
 # Organizations/Affiliations to display in Biography blox
 organizations:
   - name: University of Amsterdam
-    url:
+    url: 'https://www.uva.nl/'
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -46,28 +46,24 @@ interests:
   - Human Cognition
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). 
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.8/4.0
+  - area: PhD 
+    institution: University of Amsterdam
+    date_start: 2021
+    date_end: 2025
+    # summary: |
+    #   Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). 
+    # button:
+    #   text: 'Read Thesis'
+    #   url: 'https://example.com'
+  - area: MSc Artificial Intelligence and Optimization
+    institution: Heidelberg University
+    date_start: 2017
+    date_end: 2020
     
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.4/4.0
+  - area: BSc Computational Mathematics
+    institution: XiDian University
+    date_start: 2011
+    date_end: 2015
   
 work:
   - position: Director of Cloud Infrastructure
