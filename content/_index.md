@@ -59,7 +59,11 @@ sections:
     id: working
     content:
       title: Working Experience
-      text: "Internship"
+      subtitle: 'Internship'
+      text: "Alibaba Group, New Retail Technology Group , China"
+      text: "SAP, Intelligent Data & Analytics group, Germany"
+      text: "Applied Technology Research Institute of Tsinghua University in Wuxi, China"
+      
     
   - block: collection
     id: supervision
