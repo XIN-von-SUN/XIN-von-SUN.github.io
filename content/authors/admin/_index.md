@@ -115,13 +115,13 @@ skills:
         icon: camera
 
 
-# languages:
-#  - name: Chinese
-  #  percent: 100
-#  - name: English
-  #  percent: 100
-#  - name: Germany
-  #  percent: 25
+languages:
+  - name: Chinese
+    percent: 100
+  - name: English
+    percent: 85
+  - name: Germany
+    percent: 50
 
 
 ---
