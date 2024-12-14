@@ -11,7 +11,7 @@ main:
     url: /#papers
     weight: 11
   - name: Working
-    url: /#working_experience
+    url: /#working
     weight: 20
   - name: Teaching
     url: /#supervision
