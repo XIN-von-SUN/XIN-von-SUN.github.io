@@ -10,18 +10,18 @@ main:
   - name: Publications
     url: /#papers
     weight: 11
-  - name: Experience
-    url: /#experience
+  - name: Working
+    url: /#working_experience
     weight: 20
+  - name: Teaching
+    url: /#supervision
+    weight: 40
+  - name: Projects
+    url: projects/
+    weight: 30
   # - name: Talks
   #   url: /#talks
   #   weight: 12
   # - name: Activities
   #   url: /#news
   #   weight: 13
-  - name: Teaching
-    url: /#teaching
-    weight: 40
-  - name: Projects
-    url: projects/
-    weight: 30
