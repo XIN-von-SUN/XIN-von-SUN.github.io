@@ -71,12 +71,16 @@ sections:
     content:
       title: Working Experience
       text: "Internship"
+    
 
   - block: collection
     id: supervision
     content:
       title: Teaching Experience
       text: "Supervision"
+      summary: Supervision of Thesis
+      type: landing
+
     
   - block: collection
     id: news
