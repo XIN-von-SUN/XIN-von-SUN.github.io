@@ -114,7 +114,6 @@ skills:
         percent: 80
         icon: camera
 
-
 languages:
   - name: Chinese
     percent: 100
