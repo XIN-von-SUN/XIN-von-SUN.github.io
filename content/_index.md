@@ -67,16 +67,16 @@ sections:
       view: citation
 
   - block: collection
-    id: experiences
+    id: working
     content:
       title: Working Experience
       text: "Internship"
 
   - block: collection
-    id: teaching
+    id: supervision
     content:
       title: Teaching
-      text: "Supervision"
+      text: "Supervision Experience"
     
   - block: collection
     id: news
