@@ -127,4 +127,4 @@ languages:
 
 ## About Me
 
-I am a PhD candidate.
+I am a PhD candidate, interested in NLP/AI and human-computer interaction, focusing on the trustworthiness, controllability, and explainability of generative AI in applications such as psychotherapy, health intervention, and emotional companionship. 
