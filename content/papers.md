@@ -7,7 +7,9 @@ type: landing
 design:
   # Default section spacing
   spacing: "6rem"
-  
+
+# Page sections
+sections:
   - block: collection
     id: papers
     content:
