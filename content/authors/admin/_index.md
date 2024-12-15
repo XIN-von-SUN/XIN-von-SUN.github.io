@@ -32,14 +32,15 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'mailto:xin.von.sun@gmail.com'
     label: E-mail Me
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/
   - icon: brands/github
     url: https://github.com/gcushen
   - icon: brands/linkedin
     url: https://www.linkedin.com/
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/
+
 
 interests:
   - NLP / NLG / LLMs
@@ -50,7 +51,7 @@ interests:
 
 education:
   - area: PhD in NLP-HCI-Psychology
-    institution: University of Amsterdam
+    institution: University of Amsterdam, Netherlands
     date_start: 2021
     date_end: 2025
     # summary: |
@@ -60,12 +61,12 @@ education:
     #   url: 'https://example.com'
   
   - area: MSc in Optimization and AI (NLP)
-    institution: Heidelberg University
+    institution: Heidelberg University, Germany
     date_start: 2017
     date_end: 2020
     
   - area: BSc in Computational Mathematics 
-    institution: XiDian University
+    institution: XiDian University, China
     date_start: 2011
     date_end: 2015
   
