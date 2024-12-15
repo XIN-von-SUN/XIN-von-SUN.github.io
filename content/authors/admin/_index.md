@@ -42,10 +42,9 @@ profiles:
     url: https://scholar.google.com/
 
 interests:
-  - Natural Language Processing / Generation
-  - Large Language Models
+  - NLP / NLG / LLMs
   - Human Cognition 
-  - Behavioral and Physiological sensing
+  - Physiological Sensing
   - User Experience
 
 education:
