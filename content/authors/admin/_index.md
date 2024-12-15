@@ -45,7 +45,8 @@ interests:
   - NLP / NLG / LLMs
   - Human Cognition 
   - Physiological Sensing
-  - User Experience
+  - Behavioral Tracking
+  - User Interfaces
 
 education:
   - area: PhD in NLP-HCI-Psychology
