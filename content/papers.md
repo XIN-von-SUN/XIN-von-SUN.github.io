@@ -9,16 +9,25 @@ design:
   spacing: "6rem"
 
 # Page sections
+# sections:
+#  - block: collection
+#    id: papers
+#    content:
+#      title: Publications
+#      text: ""
+#      filters:
+#        folders:
+#          - publication
+#        exclude_featured: false
+#    design:
+#      view: citation
+
 sections:
   - block: collection
     id: papers
     content:
       title: Publications
-      text: ""
-      filters:
-        folders:
-          - publication
-        exclude_featured: false
-    design:
-      view: citation
+      text:
+    asdc, ds,sdf sdf
+
 ---
