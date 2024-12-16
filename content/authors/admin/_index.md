@@ -122,7 +122,7 @@ skills:
         description: ''
         percent: 90
         icon: code-bracket
-      - name: Quanti / Qualitative Data Analysis
+      - name: Quanti / Qualitative Analysis
         description: ''
         percent: 90
         icon: chart-bar
