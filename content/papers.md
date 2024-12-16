@@ -28,5 +28,7 @@ sections:
     content:
       title: Publications
       text: |-
-    asdc, ds,sdf sdf
+        asdc, ds,sdf sdf
+
+        sada. sdf. .sd
 ---
