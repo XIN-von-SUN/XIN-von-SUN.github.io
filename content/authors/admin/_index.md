@@ -48,7 +48,7 @@ interests:
   - LLMs Alignment-Evaluation
   - User Interfaces 
   - Cognition-Physiology
-  - Behavioral Tracking
+  # - Behavioral Tracking
 
 
 education:
