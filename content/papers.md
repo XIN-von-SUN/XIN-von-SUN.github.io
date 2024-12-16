@@ -27,7 +27,5 @@ sections:
     id: papers
     content:
       title: Publications
-      text:
-    asdc, ds,sdf sdf
-
+      text: asdc, ds,sdf sdf
 ---
