@@ -122,14 +122,18 @@ skills:
         description: ''
         percent: 90
         icon: code-bracket
-      - name: Quanti / Qualitative Analysis
-        description: ''
-        percent: 90
-        icon: chart-bar
-      - name: User Interfaces Design
+      - name: Multimodal Interfaces
         description: ''
         percent: 90
         icon: circle-stack
+      - name: Quantitative Data Analysis
+        description: ''
+        percent: 90
+        icon: chart-bar
+      - name: Qualitative Data Analysis
+        description: ''
+        percent: 90
+        icon: chart-bar
       - name: User Experiement
         description: ''
         percent: 90
@@ -138,7 +142,7 @@ skills:
         description: ''
         percent: 90
         icon: circle-stack
-      - name: Eye-tracking 
+      - name: Eye-tracking Study
         description: ''
         percent: 90
         icon: circle-stack
