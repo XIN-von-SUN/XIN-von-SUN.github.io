@@ -23,9 +23,10 @@ design:
 #      view: citation
 
 sections:
-  - block: collection
+  - block: markdown
     id: papers
     content:
       title: Publications
-      text: asdc, ds,sdf sdf
+      text: |-
+    asdc, ds,sdf sdf
 ---
