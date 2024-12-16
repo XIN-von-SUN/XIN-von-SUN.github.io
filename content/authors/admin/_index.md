@@ -44,9 +44,10 @@ profiles:
 
 interests:
   - NLP / NLG / LLMs
-  - User Interfaces
-  - Human Cognition 
-  - Physiological Sensing
+  - Dialogue System
+  - LLMs Alignment-Evaluation
+  - User Interfaces 
+  - Cognition-Physiology
   - Behavioral Tracking
 
 
