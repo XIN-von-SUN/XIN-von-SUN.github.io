@@ -130,6 +130,8 @@ skills:
         description: ''
         percent: 90
         icon: circle-stack
+    design:
+      columns: '1'
   
   # - name: Hobbies
   #  color: '#eeac02'
