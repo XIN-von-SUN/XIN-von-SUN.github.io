@@ -104,8 +104,8 @@ work:
     company_name: Applied Technology Research Institute of Tsinghua University, China
     company_url: ''
     company_logo: ''
-    date_start: 2019-10-01
-    date_end: 2019-04-01
+    date_start: 2018-09-01
+    date_end: 2018-07-01
     summary: |
       ECG data prediction and Knowledge Graph construction for heart states
 
