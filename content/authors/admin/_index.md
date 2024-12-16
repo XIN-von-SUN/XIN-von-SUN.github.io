@@ -73,52 +73,81 @@ education:
 
   
 work:
-  - position: Director of Cloud Infrastructure
-    company_name: GenCoin
+  - position: Visiting Scholar
+    company_name: Centrum Wiskunde & Informatica (CWI), the Netherlands
     company_url: ''
     company_logo: ''
-    date_start: 2021-01-01
-    date_end: ''
-    summary: |2-
-      Responsibilities include:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    date_start: 2023-08-30
+    date_end: 2025-03-30
+    summary: |
+      Physio and psychological perception in human interactions with LLMs and generative AI-driven multimodal interfaces
 
+  - position: NLP Algorithm Engineer (Full-time Internship)
+    company_name: Alibaba Group, China
+    company_url: ''
+    company_logo: ''
+    date_start: 2020-10-01
+    date_end: 2020-05-01
+    summary: |
+      Key phrases extraction and summary generation-Active learning-Data augmentation
+
+  - position: Data Scientist (Full-time Internship)
+    company_name: SAP, Intelligent Data & Analytics group, Germany
+    company_url: ''
+    company_logo: ''
+    date_start: 2019-10-01
+    date_end: 2019-04-01
+    summary: |
+      Stochastic data forecasting-Feature engineering-Data visualization
+
+  - position: Machine Learning Researcher (Full-time Internship)
+    company_name: Applied Technology Research Institute of Tsinghua University, China
+    company_url: ''
+    company_logo: ''
+    date_start: 2019-10-01
+    date_end: 2019-04-01
+    summary: |
+      ECG data prediction and Knowledge Graph construction for heart states
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
   - name: Technical Skills
     items:
-      - name: Python
+      - name: Python / JS / SQL / PyTorch
         description: ''
-        percent: 80
+        percent: 90
         icon: code-bracket
-      - name: Data Science
+      - name: Quantitative / Qualitative Data Analysis
         description: ''
-        percent: 100
+        percent: 90
         icon: chart-bar
-      - name: SQL
+      - name: User Experiement
         description: ''
-        percent: 40
+        percent: 90
         icon: circle-stack
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: Hiking
+      - name: User Experiement
         description: ''
-        percent: 60
-        icon: person-simple-walk
-      - name: Cats
-        description: ''
-        percent: 100
-        icon: cat
-      - name: Photography
-        description: ''
-        percent: 80
-        icon: camera
+        percent: 90
+        icon: circle-stack
+  
+  # - name: Hobbies
+  #  color: '#eeac02'
+  #  color_border: '#f0bf23'
+  #  items:
+  #    - name: Hiking
+  #      description: ''
+  #      percent: 60
+  #      icon: person-simple-walk
+  #    - name: Cats
+  #      description: ''
+  #      percent: 100
+  #      icon: cat
+  #    - name: Photography
+  #      description: ''
+  #      percent: 80
+  #      icon: camera
+
 
 languages:
   - name: Chinese
