@@ -50,9 +50,9 @@ sections:
 
         **Xin Sun**, Jan de Wit, Zhuying Li, Jiahuan Pei, Abdallah El Ali, Jos A Bosch. Script-Strategy Aligned Generation: Aligning LLMs with Expert-Crafted Dialogue Scripts and Therapeutic Strategies for Psychotherapy. Pre-printed on arXiv. Under review (Anonymous)
 
-        **Xin Sun** et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (\textbf{Eye-tracking and Physiological Study}). Under review, as the first author.
+        **Xin Sun** et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (Eye-tracking and Physiological Study). Under review, as the first author.
 
-        **Xin Sun** et al. From Agents to Interfaces: Understanding Trust in Health Information from Conversational Search (\textbf{Mixed-methods}). Under review, as the first author.
+        **Xin Sun** et al. From Agents to Interfaces: Understanding Trust in Health Information from Conversational Search (Mixed-methods). Under review, as the first author.
 
     
   - block: markdown
