@@ -118,15 +118,31 @@ skills:
         description: ''
         percent: 90
         icon: code-bracket
-      - name: Quantitative / Qualitative Data Analysis
+      - name: Machine & Deep learning
+        description: ''
+        percent: 90
+        icon: code-bracket
+      - name: Quanti / Qualitative Data Analysis
         description: ''
         percent: 90
         icon: chart-bar
-      - name: User Experiement
+      - name: User Interfaces Design
         description: ''
         percent: 90
         icon: circle-stack
       - name: User Experiement
+        description: ''
+        percent: 90
+        icon: circle-stack
+      - name: Survey / Interviews
+        description: ''
+        percent: 90
+        icon: circle-stack
+      - name: Eye-tracking 
+        description: ''
+        percent: 90
+        icon: circle-stack
+      - name: Physiological Study
         description: ''
         percent: 90
         icon: circle-stack
