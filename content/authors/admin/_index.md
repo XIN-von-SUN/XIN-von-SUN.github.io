@@ -44,16 +44,17 @@ profiles:
 
 interests:
   - NLP / NLG / LLMs
+  - User Interfaces
   - Human Cognition 
   - Physiological Sensing
   - Behavioral Tracking
-  - User Interfaces
+
 
 education:
   - area: PhD in NLP-HCI-Psychology
     institution: University of Amsterdam, Netherlands
-    date_start: 2021
-    date_end: 2025
+    date_start: 2021-05-01
+    date_end: 2024-03-01
     # summary: |
     #   Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). 
     # button:
@@ -62,13 +63,14 @@ education:
   
   - area: MSc in Optimization and AI (NLP)
     institution: Heidelberg University, Germany
-    date_start: 2017
-    date_end: 2020
+    date_start: 2017-11-01
+    date_end: 2020-12-30
     
   - area: BSc in Computational Mathematics 
     institution: XiDian University, China
-    date_start: 2011
-    date_end: 2015
+    date_start: 2011-09-01
+    date_end: 2015-07-01
+
   
 work:
   - position: Director of Cloud Infrastructure
@@ -82,6 +84,7 @@ work:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
+
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
