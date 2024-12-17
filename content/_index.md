@@ -33,7 +33,7 @@ sections:
   
   - block: markdown
     content:
-      title: '📚 My Research'
+      title: 'My Research'
       subtitle: ''
       text: |-
         <div style="text-align: justify; max-width: 100%; margin: 0 auto; padding: 0 2rem;">
