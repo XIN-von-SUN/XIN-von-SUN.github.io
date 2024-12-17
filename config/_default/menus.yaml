@@ -17,8 +17,9 @@ main:
     url: projects/
     weight: 56
   - name: CV
-    url: /uploads/resume.pdf/
+    url: /uploads/resume.pdf
     weight: 70
+    target: _blank
   # - name: Projects
   #   url: projects/
   #   weight: 30
