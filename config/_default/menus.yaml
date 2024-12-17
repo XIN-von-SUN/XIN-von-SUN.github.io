@@ -17,7 +17,7 @@ main:
     url: projects/
     weight: 56
   - name: CV
-    url: uploads/resume.pdf
+    url: cv/
     weight: 70
   # - name: Projects
   #   url: projects/
