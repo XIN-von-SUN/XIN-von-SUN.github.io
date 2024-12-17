@@ -44,7 +44,6 @@ sections:
 
         Please reach out to collaborate 😃
     design:
-      columns: '2'  # 设置为双栏
       width: 'wide' # 增加文本宽度
   
   # - block: collection
