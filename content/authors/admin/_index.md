@@ -184,8 +184,6 @@ languages:
 ---
 
 ## About Me
-<div style="text-align: justify;">
 I am a PhD candidate at the University of Amsterdam (UvA), supervised by Prof. Dr. Jos A.Bosch, Ass. Prof Dr. Abdallah El Ali, and Ass. Prof Dr. Jan de Wit. Prior to that, I received my BSc in Mathematics from Xidian University and MSc in Computer Science from Heidelberg University under the supervision of Prof. Dr. Artur Andrzejak.
 
 My research is about NLG/LLMs and human-computer interaction, with a focus on the trustworthiness, controllability, and explainability of generative AI in applications such as psychotherapy, health intervention, and emotional companionship. 
-<div/>
