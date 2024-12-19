@@ -1,5 +1,5 @@
 ---
-title: Trust Perception in Multimodal User Interfaces
+title: Trust perception in multimodal user interfaces
 date: 2024-09-01
 external_link: 
 tags:
