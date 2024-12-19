@@ -3,7 +3,7 @@ title: TIMELY-EU Horizon-Project (AI-driven platform for CVD rehabilitation)
 date: 2021-02-01
 external_link: https://www.timely-project.com
 tags:
-  - Wowchemy
+  #- Wowchemy
   - Markdown
 ---
 
