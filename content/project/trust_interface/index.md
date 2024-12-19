@@ -1,6 +1,6 @@
 ---
 title: Trust perception in multimodal user interfaces
-date: 2024-09-01
+date: 2023-12-01
 external_link: 
 tags:
   #- Wowchemy
