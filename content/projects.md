@@ -22,6 +22,6 @@ sections:
           - project
     design:
       view: article-grid
-      fill_image: false
-      columns: 2
+      fill_image: true
+      columns: 1
 ---
