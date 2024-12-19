@@ -1,7 +1,7 @@
 ---
-title: PyTorch
-date: 2023-10-26
-external_link: https://github.com/pytorch/pytorch
+title: TIMELY-EU Horizon-Project
+date: 2021-02-01
+external_link: [https://github.com/pytorch/pytorch](https://www.timely-project.com/)
 tags:
   - Hugo
   - Wowchemy
