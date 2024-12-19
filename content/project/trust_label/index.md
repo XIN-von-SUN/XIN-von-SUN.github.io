@@ -1,5 +1,5 @@
 ---
-title: Trust Perception manipulated by information source and the labeling of the source
+title: Trust perception manipulated by information source and the labeling of the source
 date: 2024-09-01
 external_link: 
 tags:
