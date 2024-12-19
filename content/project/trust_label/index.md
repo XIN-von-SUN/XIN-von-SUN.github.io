@@ -1,6 +1,6 @@
 ---
 title: Trust perception manipulated by information source and the labeling of the source
-date: 2024-09-01
+date: 2024-07-01
 external_link: 
 tags:
   #- Wowchemy
