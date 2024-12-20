@@ -8,10 +8,6 @@ appearance:
   mode: system
   color: emerald
 
-avatar:
-  width: "400px"
-  height: "400px"
-
 # SEO
 marketing:
   seo:
