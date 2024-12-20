@@ -8,7 +8,7 @@ appearance:
   mode: system
   color: emerald
 
-profile_picture:
+avatar:
   width: "400px"
   height: "400px"
 
