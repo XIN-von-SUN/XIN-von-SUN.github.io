@@ -74,7 +74,7 @@ education:
 
   
 work:
-  - position: Visiting Scholar
+  - position: Scholar
     company_name: Centrum Wiskunde & Informatica (CWI), the Netherlands
     company_url: ''
     company_logo: ''
