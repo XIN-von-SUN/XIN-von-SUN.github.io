@@ -26,7 +26,7 @@ sections:
   - block: markdown
     id: papers
     content:
-      title: Publications (First Author Only)
+      title: Conference Publications
       text: |-
         1. <u>***Xin Sun***</u>, Xiao Tang, Abdallah El Ali, Zhuying Li, Pengjie Ren, Jan de Wit, Jiahuan Pei, Jos Bosch.  Rethinking the Alignment of Psychotherapy Dialogue Generation with Motivational Interviewing Strategies. *International Conference on Computational Linguistics (COLING 2025)*
 
@@ -50,23 +50,26 @@ sections:
 
         11. <u>***Xin Sun***</u>, Jan de Wit, Zhuying Li, Jiahuan Pei, Abdallah El Ali, Jos A Bosch. Script-Strategy Aligned Generation: Aligning LLMs with Expert-Crafted Dialogue Scripts and Therapeutic Strategies for Psychotherapy. Pre-printed on arXiv. Under review (Anonymous)
 
-        12. <u>***Xin Sun***</u> et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (Eye-tracking and Physiological Study). Under review, as the first author.
+        12. Yuto Mandai, Katie Seaborn, Tomoyasu Nakano, <u>***Xin Sun***</u>, Yijia Wang, Jun Kato. Super Kawaii Vocalics: Amplifying the “Cute” Factor in Computer Voice. ACM Conference on Human Factors in Computing Systems (CHI 2025).
 
-        13. <u>***Xin Sun***</u> et al. From Agents to Interfaces: Understanding Trust in Health Information from Conversational Search (Mixed-methods). Under review, as the first author.
+        13. Zhuying Li, Si Cheng, Zhenhuan Chen, <u>***Xin Sun***</u>, Jiatong Li, Ding Ding. SleepyFlora: Supporting Sleep Sharing and Augmentation over a Distance for Social Bonding across Time Zones. *Computer-Supported Cooperative Work And Social Computing (CSCW 2023)*
+
+        14. Benjamin Beilharz, <u>***Xin Sun***</u>, Sariya Karimova, and Stefan Riezler. LibriVoxDeEn - A Corpus for German-to-English Speech-Translation and Speech Recognition. *International Conference on Language Resources and Evaluation (LREC 2020)*
+
 
     
   - block: markdown
     id: papers
     content:
-      title: Publications (Collaboration)
+      title: Journal and Book Publications
       text: |-
-        1. Yuto Mandai, Katie Seaborn, Tomoyasu Nakano, <u>***Xin Sun***</u>, Yijia Wang, Jun Kato. Super Kawaii Vocalics: Amplifying the “Cute” Factor in Computer Voice. ACM Conference on Human Factors in Computing Systems (CHI 2025).
+        1. Gert-Jan de Bruijn, Divyaa Balaji and <u>***Xin Sun***</u>. Book Publication: "Chapter 16 Chatbots for health communication". Book: Health, Media, and Communication, De Gruyter Mouton, 2025, pp. 309-332.
 
-        2. Gert-Jan de Bruijn, Divyaa Balaji and <u>***Xin Sun***</u>. Book Publication: "Chapter 16 Chatbots for health communication". Book: Health, Media, and Communication, De Gruyter Mouton, 2025, pp. 309-332.
+        2. <u>***Xin Sun***</u> et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (Eye-tracking and Physiological Study). ACM Transactions on Computer-Human Interaction (SCI-1). Under review, as the first author.
 
-        3. Zhuying Li, Si Cheng, Zhenhuan Chen, <u>***Xin Sun***</u>, Jiatong Li, Ding Ding. SleepyFlora: Supporting Sleep Sharing and Augmentation over a Distance for Social Bonding across Time Zones. *Computer-Supported Cooperative Work And Social Computing (CSCW 2023)*
+        3. <u>***Xin Sun***</u> et al. From Agents to Interfaces: Understanding Trust in Health Information from Conversational Search (Mixed-methods). International Journal of Human-Computer Studies (SCI-1). Under review, as the first author.
 
-        4. Benjamin Beilharz, <u>***Xin Sun***</u>, Sariya Karimova, and Stefan Riezler. LibriVoxDeEn - A Corpus for German-to-English Speech-Translation and Speech Recognition. *International Conference on Language Resources and Evaluation (LREC 2020)*
+        4. Zhuying Li, Yan Wang, <u>***Xin Sun***</u>. Integrating Culture in Human-Food Interaction: A Study of Cultural and Creative Food Experiences and Technological Interactions. International Journal of Human-Computer Studies (SCI-1). Major revision.
 
         5. Mirela Habibovic, Emma Douma, Hendrik Schäfer, Manuela Sestayo-Fernandez, Tom Roovers, <u>***Xin Sun***</u>, ... Boris Schmitz. A patient-centered risk prediction, prevention and intervention platform to support the continuum of care in coronary artery disease using eHealth and artificial intelligence. *Journal of Medical Internet Research (SCI-1)*. Major revision.
 
