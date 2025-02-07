@@ -35,11 +35,11 @@ profiles:
     url: 'mailto:xin.von.sun@gmail.com'
     label: E-mail Me
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/
+    url: https://scholar.google.com/citations?user=fy_JeXUAAAAJ&hl=en
   - icon: brands/github
-    url: https://github.com/gcushen
+    url: https://github.com/XIN-von-SUN
   - icon: brands/linkedin
-    url: https://www.linkedin.com/
+    url: https://www.linkedin.com/in/xin-sun-b6669b184/
 
 
 interests:
