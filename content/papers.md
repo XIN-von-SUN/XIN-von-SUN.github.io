@@ -51,10 +51,12 @@ sections:
         11. <u>***Xin Sun***</u>, Jan de Wit, Zhuying Li, Jiahuan Pei, Abdallah El Ali, Jos A Bosch. Script-Strategy Aligned Generation: Aligning LLMs with Expert-Crafted Dialogue Scripts and Therapeutic Strategies for Psychotherapy. Pre-printed on arXiv. Under review (Anonymous)
 
         12. Yuto Mandai, Katie Seaborn, Tomoyasu Nakano, <u>***Xin Sun***</u>, Yijia Wang, Jun Kato. Super Kawaii Vocalics: Amplifying the “Cute” Factor in Computer Voice. ACM Conference on Human Factors in Computing Systems (CHI 2025).
+    
+        13. Xiao Tang, Zhuying Li, <u>***Xin Sun***</u>, Xuhai "Orson" Xu, Min-Ling Zhang. ZzzMate: Designing an Empathetic Chatbot for Addressing Self-Conscious Emotions for Sleep Adherence. (Poster) ACM Conference on Human Factors in Computing Systems (CHI 2025).
 
-        13. Zhuying Li, Si Cheng, Zhenhuan Chen, <u>***Xin Sun***</u>, Jiatong Li, Ding Ding. SleepyFlora: Supporting Sleep Sharing and Augmentation over a Distance for Social Bonding across Time Zones. *Computer-Supported Cooperative Work And Social Computing (CSCW 2023)*
+        14. Zhuying Li, Si Cheng, Zhenhuan Chen, <u>***Xin Sun***</u>, Jiatong Li, Ding Ding. SleepyFlora: Supporting Sleep Sharing and Augmentation over a Distance for Social Bonding across Time Zones. *Computer-Supported Cooperative Work And Social Computing (CSCW 2023)*
 
-        14. Benjamin Beilharz, <u>***Xin Sun***</u>, Sariya Karimova, and Stefan Riezler. LibriVoxDeEn - A Corpus for German-to-English Speech-Translation and Speech Recognition. *International Conference on Language Resources and Evaluation (LREC 2020)*
+        15. Benjamin Beilharz, <u>***Xin Sun***</u>, Sariya Karimova, and Stefan Riezler. LibriVoxDeEn - A Corpus for German-to-English Speech-Translation and Speech Recognition. *International Conference on Language Resources and Evaluation (LREC 2020)*
 
 
     
