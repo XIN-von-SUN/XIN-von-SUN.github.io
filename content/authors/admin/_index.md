@@ -79,7 +79,7 @@ work:
     company_url: ''
     company_logo: ''
     date_start: 2025-03-15
-    date_end: Present
+    # date_end: Present
     summary: |
       HCI-NLP-Psychology
     
