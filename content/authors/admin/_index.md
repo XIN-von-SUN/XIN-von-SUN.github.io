@@ -53,7 +53,7 @@ interests:
 
 education:
   - area: PhD in NLP-HCI-Psychology
-    institution: University of Amsterdam, Netherlands
+    institution: University of Amsterdam, the Netherlands
     date_start: 2021-05-01
     date_end: 2024-03-01
     # summary: |
@@ -74,6 +74,13 @@ education:
 
   
 work:
+  - position: Postdoctoral Researcher
+    company_name: University of Amsterdam, the Netherlands
+    company_url: ''
+    company_logo: ''
+    date_start: 2025-03-15
+    date_end: Present
+    
   - position: Scholar
     company_name: Centrum Wiskunde & Informatica (CWI), the Netherlands
     company_url: ''
