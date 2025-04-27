@@ -55,7 +55,7 @@ education:
   - area: PhD in NLP-HCI-Psychology
     institution: University of Amsterdam, the Netherlands
     date_start: 2021-05-01
-    date_end: 2025-04-01
+    date_end: 2025-03-01
     # summary: |
     #   Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). 
     # button:
