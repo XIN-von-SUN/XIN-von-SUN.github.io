@@ -74,21 +74,21 @@ education:
 
   
 work:
-  - position: Postdoctoral Researcher
+  - position: Guest Researcher (Postdoctoral)
     company_name: University of Amsterdam, the Netherlands
     company_url: ''
     company_logo: ''
-    date_start: 2025-03-15
+    date_start: 2025-04-15
     # date_end: Present
     summary: |
       HCI-NLP-Psychology
     
-  - position: Scholar
+  - position: Researcher
     company_name: Centrum Wiskunde & Informatica (CWI), the Netherlands
     company_url: ''
     company_logo: ''
     date_start: 2023-08-30
-    date_end: 2025-03-30
+    date_end: 2025-04-30
     summary: |
       Physio and psychological perception in human interactions with LLMs and generative AI-driven multimodal interfaces
 
