@@ -66,7 +66,7 @@ sections:
       title: Recent Activity
       subtitle: ''
       text: |-
-        <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 20vw; box-sizing: border-box; text-align: justify;">
+        <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 24vw; box-sizing: border-box; text-align: justify;">
         
         **July 2025** - Presenting research on AI trustworthiness at International HCI Conference  
         
