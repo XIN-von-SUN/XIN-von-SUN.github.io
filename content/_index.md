@@ -61,36 +61,19 @@ sections:
   #   design:
   #     view: citation
     
-  - block: collection
-    id: recent-activity
+  - block: markdown
     content:
       title: Recent Activity
       subtitle: ''
-      text: ''
-      # Page type to display. E.g. post, talk, publication...
-      page_type: post
-      # Choose how many pages you would like to display (0 = all pages)
-      count: 3
-      # Filter on criteria
-      filters:
-        author: ""
-        category: ""
-        tag: ""
-        exclude_featured: false
-        exclude_future: false
-        exclude_past: false
-        publication_type: ""
-      # Choose how many pages you would like to offset by
-      offset: 0
-      # Page order: descending (desc) or ascending (asc) date.
-      order: desc
+      text: |-
+        **July 2025** - Presenting research on AI trustworthiness at International HCI Conference  
+        **June 2025** - Published paper on multimodal interfaces for psychotherapy applications  
+        **May 2025** - Started collaboration with UvA Psychology Department on emotional AI  
+        **April 2025** - Joined EU Horizon project TIMELY for trust-aware AI systems  
+        **March 2025** - Workshop on explainable AI for healthcare at Amsterdam AI Summit
     design:
-      # Choose a layout view
-      # view: card
-      view: date-title-summary
-      # Reduce spacing
       spacing:
-        padding: [0, 0, 0, 0]
+        padding: ["20px", "0", "20px", "0"]
 
   - block: cta-card
     demo: true # Only display this section in the Hugo Blox Builder demo site
