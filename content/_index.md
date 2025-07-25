@@ -86,7 +86,8 @@ sections:
       order: desc
     design:
       # Choose a layout view
-      view: card
+      # view: card
+      view: date-title-summary
       # Reduce spacing
       spacing:
         padding: [0, 0, 0, 0]
