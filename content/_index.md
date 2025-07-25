@@ -66,22 +66,22 @@ sections:
       title: Recent Activity
       subtitle: ''
       text: |-
-        # <div style="max-width: 1400px; width: 100%; margin: 0 auto; padding: 0 20px;">
-                
-        #   # <div style="width: 80vw; margin-left: calc(-50vw + 50%); padding: 0 5vw; box-sizing: border-box;">
-        
         <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 5vw; box-sizing: border-box; text-align: justify;">
-        **July 2025** - Presenting research on AI trustworthiness at International HCI Conference  
-        **June 2025** - Published paper on multimodal interfaces for psychotherapy applications  
-        **May 2025** - Started collaboration with UvA Psychology Department on emotional AI  
-        **April 2025** - Joined EU Horizon project TIMELY for trust-aware AI systems  
-        **March 2025** - Workshop on explainable AI for healthcare at Amsterdam AI Summit
         
+        **July 2025** - Presenting research on AI trustworthiness at International HCI Conference  
+        
+        **June 2025** - Published paper on multimodal interfaces for psychotherapy applications  
+        
+        **May 2025** - Started collaboration with UvA Psychology Department on emotional AI  
+
+        **April 2025** - Joined EU Horizon project TIMELY for trust-aware AI systems  
+        
+        **March 2025** - Workshop on explainable AI for healthcare at Amsterdam AI Summit
         </div>
     design:
       width: 'full' # 增加文本宽度
-      spacing:
-        padding: ["20px", "0", "20px", "0"]
+      # spacing:
+        # padding: ["20px", "0", "20px", "0"]
 
   - block: cta-card
     demo: true # Only display this section in the Hugo Blox Builder demo site
