@@ -36,7 +36,7 @@ sections:
       title: 'My Research'
       subtitle: ''
       text: |-
-        <div style="text-align: justify; max-width: 300%; margin: -10 auto; padding: 0 -10rem;">
+        <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 5vw; box-sizing: border-box; text-align: justify;">
 
         I am a researcher specializing in AI and human-computer interaction, focusing on the trustworthiness, controllability, and explainability of generative AI in applications such as psychotherapy, health intervention, and emotional companionship.
         
@@ -66,11 +66,15 @@ sections:
       title: Recent Activity
       subtitle: ''
       text: |-
+        <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 5vw; box-sizing: border-box;">
+        
         **July 2025** - Presenting research on AI trustworthiness at International HCI Conference  
         **June 2025** - Published paper on multimodal interfaces for psychotherapy applications  
         **May 2025** - Started collaboration with UvA Psychology Department on emotional AI  
         **April 2025** - Joined EU Horizon project TIMELY for trust-aware AI systems  
         **March 2025** - Workshop on explainable AI for healthcare at Amsterdam AI Summit
+        
+        </div>
     design:
       width: 'full' # 增加文本宽度
       spacing:
