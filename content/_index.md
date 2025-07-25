@@ -36,6 +36,8 @@ sections:
       title: 'My Research'
       subtitle: ''
       text: |-
+        <div style="text-align: justify; max-width: 300%; margin: -10 auto; padding: 0 -10rem;">
+
         I am a researcher specializing in AI and human-computer interaction, focusing on the trustworthiness, controllability, and explainability of generative AI in applications such as psychotherapy, health intervention, and emotional companionship.
         
         With a background spanning mathematics, computer science, and experimental psychology, my work integrates generative AI, NLP, HCI, and multimodal user interfaces to enhance user trust and interaction quality in sensitive scenarios.
@@ -43,6 +45,7 @@ sections:
         Moving forward, I am interested in advancing multimodal interfaces or embodied intelligence and generative AI by developing adaptive models that integrate human cognition and emotions, delivering innovative and impactful solutions for health, learning, and psychotherapy.
 
         Please reach out to collaborate 😃
+        </div>
     design:
       width: 'full' # 增加文本宽度
   
@@ -70,8 +73,8 @@ sections:
         **March 2025** - Workshop on explainable AI for healthcare at Amsterdam AI Summit
     design:
       width: 'full' # 增加文本宽度
-    #   spacing:
-    #     padding: ["20px", "0", "20px", "0"]
+      spacing:
+        padding: ["20px", "0", "20px", "0"]
 
   - block: cta-card
     demo: true # Only display this section in the Hugo Blox Builder demo site
