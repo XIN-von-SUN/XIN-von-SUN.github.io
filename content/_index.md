@@ -70,11 +70,11 @@ sections:
         
         **July 2025** - A new work "Talking-to-Build: How LLM-Assisted Interface Shapes Player Performance and Experience in Minecraft" is accepted by International Conference of Multimodal Interaction (ICMI 2025).
         
-        **March 2025** - A new work "Integrating Culture in Human-Food Interaction: A Study of Cultural and Creative Food Experiences and Technological Interactions" is accepted by the International Journal of Human-Computer Studies.
+        **April 2025** - A new work "Integrating Culture in Human-Food Interaction: A Study of Cultural and Creative Food Experiences and Technological Interactions" is accepted by the International Journal of Human-Computer Studies.
 
-        **January 2025** - A new work "Super Kawaii Vocalics: Amplifying the 'Cute' Factor in Computer Voice" is accpeted by ACM Conference on Human Factors in Computing Systems (CHI 2025).
+        **March 2025** - A new work "Super Kawaii Vocalics: Amplifying the 'Cute' Factor in Computer Voice" is accpeted by ACM Conference on Human Factors in Computing Systems (CHI 2025).
 
-        **April 2025** - Two work "Rethinking the Alignment of Psychotherapy Dialogue Generation with Motivational Interviewing Strategies" and "How Well Can LLMs Reflect? A Human Evaluation of LLM-generated Reflections for Motivational Interviewing Dialogues." are accpeted as both oral presentation by International Conference on Computational Linguistics (COLING 2025).
+        **January 2025** - Two work "Rethinking the Alignment of Psychotherapy Dialogue Generation with Motivational Interviewing Strategies" and "How Well Can LLMs Reflect? A Human Evaluation of LLM-generated Reflections for Motivational Interviewing Dialogues." are accpeted as both oral presentation by International Conference on Computational Linguistics (COLING 2025).
         </div>
     design:
       width: 'full' # 增加文本宽度
