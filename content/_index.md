@@ -36,7 +36,7 @@ sections:
       title: 'My Research'
       subtitle: ''
       text: |-
-        <div style="width: 100vw; margin-left: calc(-40vw + 40%); padding: 0 30vw; box-sizing: border-box; text-align: justify;">
+        <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 20vw; box-sizing: border-box; text-align: justify;">
         
         I am a researcher specializing in AI and human-computer interaction, focusing on the trustworthiness, controllability, and explainability of generative AI in applications such as psychotherapy, health intervention, and emotional companionship.
         
