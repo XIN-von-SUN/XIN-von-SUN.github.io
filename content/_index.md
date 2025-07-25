@@ -68,21 +68,13 @@ sections:
       text: |-
         <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 20vw; box-sizing: border-box; text-align: justify;">
         
-        **July 2025** - A new work "Aligning LLMs with Domain Expertise and Therapeutic Strategies in Delivering Psychotherapy" is accepted by ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW 2025).
-
         **July 2025** - A new work "Talking-to-Build: How LLM-Assisted Interface Shapes Player Performance and Experience in Minecraft" is accepted by International Conference of Multimodal Interaction (ICMI 2025).
-
-        **June 2025** - A new work "MultiJustice: A Chinese Dataset for Multi-Party, Multi-Charge Legal Prediction" is accpeted by CCF International Conference on Natural Language Processing and Chinese Computing (NLPCC 2025). 
         
-        **April 2025** - A new work "ZzzMate: Designing an Empathetic Chatbot for Addressing Self-Conscious Emotions for Sleep Adherence" is accpeted by ACM Conference on Human Factors in Computing Systems (CHI 2025 LBW).
-
         **March 2025** - A new work "Integrating Culture in Human-Food Interaction: A Study of Cultural and Creative Food Experiences and Technological Interactions" is accepted by the International Journal of Human-Computer Studies.
 
         **January 2025** - A new work "Super Kawaii Vocalics: Amplifying the 'Cute' Factor in Computer Voice" is accpeted by ACM Conference on Human Factors in Computing Systems (CHI 2025).
 
         **April 2025** - Two work "Rethinking the Alignment of Psychotherapy Dialogue Generation with Motivational Interviewing Strategies" and "How Well Can LLMs Reflect? A Human Evaluation of LLM-generated Reflections for Motivational Interviewing Dialogues." are accpeted as both oral presentation by International Conference on Computational Linguistics (COLING 2025).
-
-        **July 2025** - A new work "Interface Matters: Exploring Trust Perception in Health Information from Large Language Models via Text, Speech, and Embodiment" is accepted by ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW 2024).
         </div>
     design:
       width: 'full' # 增加文本宽度
