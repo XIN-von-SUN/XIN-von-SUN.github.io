@@ -66,12 +66,17 @@ sections:
       title: Recent Activity
       subtitle: ''
       text: |-
+        <div style="text-align: justify; max-width: 300%; margin: -10 auto; padding: 0 -10rem;">
+        
         **July 2025** - Presenting research on AI trustworthiness at International HCI Conference  
         **June 2025** - Published paper on multimodal interfaces for psychotherapy applications  
         **May 2025** - Started collaboration with UvA Psychology Department on emotional AI  
         **April 2025** - Joined EU Horizon project TIMELY for trust-aware AI systems  
         **March 2025** - Workshop on explainable AI for healthcare at Amsterdam AI Summit
+        
+        </div>
     design:
+      width: 'wide'
       spacing:
         padding: ["20px", "0", "20px", "0"]
 
