@@ -36,8 +36,7 @@ sections:
       title: 'My Research'
       subtitle: ''
       text: |-
-        <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 20vw; box-sizing: border-box; text-align: justify;">
-
+        <div style="max-width: 1400px; width: 95%; margin: 0 auto; text-align: justify;">
         I am a researcher specializing in AI and human-computer interaction, focusing on the trustworthiness, controllability, and explainability of generative AI in applications such as psychotherapy, health intervention, and emotional companionship.
         
         With a background spanning mathematics, computer science, and experimental psychology, my work integrates generative AI, NLP, HCI, and multimodal user interfaces to enhance user trust and interaction quality in sensitive scenarios.
