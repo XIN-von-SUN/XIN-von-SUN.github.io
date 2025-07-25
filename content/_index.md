@@ -36,7 +36,7 @@ sections:
       title: 'My Research'
       subtitle: ''
       text: |-
-        <div style="text-align: justify; max-width: 100%; margin: 0 auto; padding: 0;">
+        <div style="text-align: justify; max-width: 300%; margin: 0 auto; padding: 0 -10rem;">
 
         I am a researcher specializing in AI and human-computer interaction, focusing on the trustworthiness, controllability, and explainability of generative AI in applications such as psychotherapy, health intervention, and emotional companionship.
         
@@ -73,8 +73,8 @@ sections:
         **March 2025** - Workshop on explainable AI for healthcare at Amsterdam AI Summit
     design:
       width: 'full' # 增加文本宽度
-      spacing:
-        padding: ["20px", "0", "20px", "0"]
+    #   spacing:
+    #     padding: ["20px", "0", "20px", "0"]
 
   - block: cta-card
     demo: true # Only display this section in the Hugo Blox Builder demo site
