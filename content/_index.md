@@ -66,12 +66,11 @@ sections:
       title: Recent Activity
       subtitle: ''
       text: |-
-        <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 24vw; box-sizing: border-box; text-align: justify;">
+        <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 20vw; box-sizing: border-box; text-align: justify;">
         
-        **July 2025** - A new work "Aligning LLMs with Domain Expertise and Therapeutic Strategies in Delivering Psychotherapy" is accepted by ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW 2025)
+        **July 2025** - A new work "Aligning LLMs with Domain Expertise and Therapeutic Strategies in Delivering Psychotherapy" is accepted by ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW 2025).
 
-        **July 2025** - A new work "Talking-to-Build: How LLM-Assisted Interface Shapes Player Performance and Experience in Minecraft" is accepted by International Conference of Multimodal Interaction (ICMI 2025) 
-
+        **July 2025** - A new work "Talking-to-Build: How LLM-Assisted Interface Shapes Player Performance and Experience in Minecraft" is accepted by International Conference of Multimodal Interaction (ICMI 2025).
         </div>
     design:
       width: 'full' # 增加文本宽度
