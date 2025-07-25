@@ -36,7 +36,7 @@ sections:
       title: 'My Research'
       subtitle: ''
       text: |-
-        <div style="width: 80vw; margin-left: calc(-50vw + 50%); padding: 0 5vw; box-sizing: border-box; text-align: justify;">
+        <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 10vw; box-sizing: border-box; text-align: justify;">
 
         I am a researcher specializing in AI and human-computer interaction, focusing on the trustworthiness, controllability, and explainability of generative AI in applications such as psychotherapy, health intervention, and emotional companionship.
         
@@ -66,7 +66,7 @@ sections:
       title: Recent Activity
       subtitle: ''
       text: |-
-        <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 5vw; box-sizing: border-box; text-align: justify;">
+        <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 10vw; box-sizing: border-box; text-align: justify;">
         
         **July 2025** - Presenting research on AI trustworthiness at International HCI Conference  
         
