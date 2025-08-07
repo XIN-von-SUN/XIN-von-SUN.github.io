@@ -74,7 +74,7 @@ sections:
         
         **April 2025** - A new work is accepted by the International Journal of Human-Computer Studies.
 
-        **March 2025** - A new work is accepted by the ACM Conference on Human Factors in Computing Systems (CHI 2025).
+        **March 2025** - A new full paper and an LBW work are accepted by the ACM Conference on Human Factors in Computing Systems (CHI 2025).
 
         **January 2025** - Two works are accepted as oral presentations by the International Conference on Computational Linguistics (COLING 2025).
 
