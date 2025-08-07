@@ -78,7 +78,7 @@ sections:
 
         **January 2025** - Two works are accepted as oral presentations by the International Conference on Computational Linguistics (COLING 2025).
 
-        **October 2045** - A new work is accepted by the ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2024).
+        **October 2024** - A new work is accepted by the ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2024).
 
         </div>
     design:
