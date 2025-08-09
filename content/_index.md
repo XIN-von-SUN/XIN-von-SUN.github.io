@@ -68,7 +68,6 @@ sections:
       text: |-
         <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 20vw; box-sizing: border-box; text-align: justify;">
 
-
         **August 2025** - Our Wellcome AI Accelerator project has been selected for the first-round incubation funding!
         
         **August 2025** - A new work is accepted by the ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2025).
