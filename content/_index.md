@@ -68,19 +68,21 @@ sections:
       text: |-
         <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 20vw; box-sizing: border-box; text-align: justify;">
 
+        **September 2025** - A new work is accepted by the Conference on Empirical Methods in Natural Language Processing (EMNLP 2025)！
+
         **August 2025** - Our project has been selected for the first-round incubation funding from the Wellcome AI Accelerator!
         
-        **August 2025** - A new work is accepted by the ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2025).
+        **August 2025** - A new work is accepted by the ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2025)！
 
-        **July 2025** - A new work is accepted by the ACM International Conference of Multimodal Interaction (ICMI 2025).
+        **July 2025** - A new work is accepted by the ACM International Conference of Multimodal Interaction (ICMI 2025)！
         
-        **April 2025** - A new work is accepted by the International Journal of Human-Computer Studies.
+        **April 2025** - A new work is accepted by the International Journal of Human-Computer Studies！
 
-        **March 2025** - A new full paper and an LBW work are accepted by the ACM Conference on Human Factors in Computing Systems (CHI 2025).
+        **March 2025** - A new full paper and an LBW work are accepted by the ACM Conference on Human Factors in Computing Systems (CHI 2025)！
 
-        **January 2025** - Two works are accepted as oral presentations by the International Conference on Computational Linguistics (COLING 2025).
+        **January 2025** - Two works are accepted as oral presentations by the International Conference on Computational Linguistics (COLING 2025)！
 
-        **October 2024** - A new work is accepted by the ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2024).
+        **October 2024** - A new work is accepted by the ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2024)！
 
         </div>
     design:
