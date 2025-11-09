@@ -193,7 +193,7 @@ languages:
 ---
 
 ## About Me
-I am a postdoctoral researcher at the University of Amsterdam (UvA), the Netherlands, and a researcher at the National Institute of Informatics (NII), Japan, working on Trustworthy human-LLM interaction. I received my PhD at the University of Amsterdam, supervised by Prof. Dr. Jos A. Bosch, Assoc. Prof. Dr. Abdallah El Ali, and Assoc. Prof. Dr. Jan de Wit. Prior to my PhD, I obtained a BSc in Mathematics from Xidian University and an MSc in Computer Science from Heidelberg University under the supervision of Prof. Dr. Artur Andrzejak.
+I am a postdoctoral researcher at the University of Amsterdam (UvA), the Netherlands, and a researcher at the National Institute of Informatics (NII), Japan, working on Trustworthy human-LLM interaction. I received my PhD at the University of Amsterdam, supervised by Prof. Dr. Jos A. Bosch, Dr. Abdallah El Ali, and Dr. Jan de Wit. Prior to my PhD, I obtained a BSc in Mathematics from Xidian University and an MSc in Computer Science from Heidelberg University under the supervision of Prof. Dr. Artur Andrzejak.
 
 My research lies at the intersection of natural language generation and human–computer interaction, focusing on how large language models can be made trustworthy and explainable in sensitive contexts such as healthcare and mental support.
 Specifically, I study how LLMs interact with humans in psychological and health-related scenarios, from generating explainable and domain-aligned therapeutic dialogue, to designing transparent and trustworthy interfaces, and modeling human trust perception through behavioral and physiological signals.
