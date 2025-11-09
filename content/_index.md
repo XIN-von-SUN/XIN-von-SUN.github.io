@@ -38,11 +38,11 @@ sections:
       text: |-
         <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 20vw; box-sizing: border-box; text-align: justify;">
         
-        I am a researcher specializing in AI and human-computer interaction, focusing on the trustworthiness, controllability, and explainability of generative AI in applications such as psychotherapy, health intervention, and emotional companionship.
-        
-        With a background spanning mathematics, computer science, and experimental psychology, my work integrates generative AI, NLP, HCI, and multimodal user interfaces to enhance user trust and interaction quality in sensitive scenarios.
+        I am a researcher in human–computer interaction (HCI) and natural language generation (NLG), focusing on building trustworthy, controllable, and explainable interactions with large language models (LLMs) in sensitive contexts such as psychotherapy, health intervention, and mental support. With a background spanning mathematics, computer science, and cognitive psychology, I strive to bridge how AI thinks with how humans feel and trust.
 
-        Moving forward, I am interested in advancing multimodal interfaces or embodied intelligence and generative AI by developing adaptive models that integrate human cognition and emotions, delivering innovative and impactful solutions for health, learning, and psychotherapy.
+        My research takes a three-dimensional perspective on trust in human–LLM interaction, integrating model alignment, interface transparency, and human trust perception. By combining generative AI, NLG, HCI, and multimodal human sensing, my work aims to make LLMs not only technically reliable but also perceptually and socially trustworthy.
+
+        Moving forward, my research focuses on making LLMs more adaptive to human behavior and physiological signals, enabling them to align dynamically with users’ cognitive and emotional states. In parallel, I aim to explore the implicit interpretability mechanisms of LLMs, uncovering how these models internally represent, infer, and explain human behaviors in interaction. Also, I am interested in advancing multimodal interfaces or embodied intelligence powered by generative AI, delivering innovative and impactful solutions for health, learning, and psychotherapy.
 
         Please reach out to collaborate 😃
         </div>
