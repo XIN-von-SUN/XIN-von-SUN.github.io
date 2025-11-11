@@ -71,7 +71,7 @@ sections:
 
         Zhuying Li, Yan Wang, <u>***Xin Sun***</u>. Integrating Culture in Human-Food Interaction: A Study of Cultural and Creative Food Experiences and Technological Interactions. *International Journal of Human-Computer Studies (JCR-1)*
 
-        Mirela Habibovic, Emma Douma, Hendrik Schäfer, Manuela Sestayo-Fernandez, Tom Roovers, <u>***Xin Sun***</u>, ... Boris Schmitz. A patient-centered risk prediction, prevention and intervention platform to support the continuum of care in coronary artery disease using eHealth and artificial intelligence. *Journal of Medical Internet Research (SCI-1)*
+        Mirela Habibovic, Emma Douma, Hendrik Schäfer, Manuela Sestayo-Fernandez, Tom Roovers, <u>***Xin Sun***</u>, ... Boris Schmitz. A patient-centered risk prediction, prevention and intervention platform to support the continuum of care in coronary artery disease using eHealth and artificial intelligence. *Journal of Medical Internet Research (JCR-1)*
 
         <u>***Xin Sun***</u> et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (Eye-tracking and Physiological Study). *ACM Transactions on Computer-Human Studies (JCR-1). Under review, as the first author*
 
