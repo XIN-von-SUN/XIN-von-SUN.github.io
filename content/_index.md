@@ -70,25 +70,27 @@ sections:
 
         **December 2025** - A new work is accepted by the International Journal of Human-Computer Studies (IJHCS)！
 
-        **December 2025** - A new work is accepted by the ACM Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2026)！
+        **December 2025** - A new work is accepted by the ACM Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2026) in Salt Lake City, Utah, USA！
 
         **November 2025** - A new work is accepted by the International Journal of Human-Computer Interaction (IJHCI)！
 
-        **September 2025** - A new work is accepted by the Conference on Empirical Methods in Natural Language Processing (EMNLP 2025)！
+        **September 2025** - A new work is accepted by the Conference on Empirical Methods in Natural Language Processing (EMNLP 2025) in Suzhou, China！
 
         **August 2025** - Our project on VR and AI has been selected for the first-round incubation funding from the Wellcome Trust AI Accelerator!
         
-        **August 2025** - A new work is accepted by the ACM Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2025)！
+        **August 2025** - A new work is accepted by the ACM Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2025) in Bergen, Norway！
 
-        **July 2025** - A new work is accepted by the ACM International Conference of Multimodal Interaction (ICMI 2025)！
+        **July 2025** - A new work is accepted by the ACM International Conference of Multimodal Interaction (ICMI 2025) in Canberra, Australia！
         
-        **April 2025** - A new work is accepted by the International Journal of Human-Computer Studies！
+        **April 2025** - A new work is accepted by the International Journal of Human-Computer Studies (IJHCS)！
 
-        **March 2025** - A new full paper and an LBW work are accepted by the ACM Conference on Human Factors in Computing Systems (CHI 2025)！
+        **March 2025** - A new full paper and an LBW work are accepted by the ACM Conference on Human Factors in Computing Systems (CHI 2025) in Yokohama, Japan！
 
-        **January 2025** - Two works are accepted as oral presentations by the International Conference on Computational Linguistics (COLING 2025)！
+        **January 2025** - Two works are accepted as oral presentations by the International Conference on Computational Linguistics (COLING 2025) in Abu Dhabi！
 
         **October 2024** - A new work is accepted by the ACM Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2024)！
+
+        **May 2024** - A new work is accepted as oral presentation by the International Conference on Computational Linguistics (COLING 2024) in Turin, Italy！
 
         </div>
     design:
