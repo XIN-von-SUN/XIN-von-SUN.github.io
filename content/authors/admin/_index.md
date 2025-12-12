@@ -83,7 +83,7 @@ work:
     summary: |
       Explainable and trustworthy human-LLM interaction and human-inspired AI.
 
-  - position: Guest Researcher (Postdoctoral)
+  - position: Guest Postdoctoral Researcher
     company_name: University of Amsterdam, the Netherlands
     company_url: ''
     company_logo: ''
@@ -92,11 +92,11 @@ work:
     summary: |
       Human trust and cognitive mechanisms in perceiving LLM-generated information.
     
-  - position: Researcher
+  - position: PhD Researcher
     company_name: Centrum Wiskunde & Informatica (CWI), the Netherlands
     company_url: ''
     company_logo: ''
-    date_start: 2023-08-30
+    date_start: 2023-08-01
     date_end: 2025-04-30
     summary: |
       Development of LLMs and design of UIs with behavioral and physiological sensing for trustworthy health intervention.
