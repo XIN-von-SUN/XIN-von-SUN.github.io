@@ -58,7 +58,7 @@ sections:
         
         Xiao Tang, Zhuying Li, <u>***Xin Sun***</u>, Xuhai "Orson" Xu, Min-Ling Zhang. ZzzMate: Designing an Empathetic Chatbot for Addressing Self-Conscious Emotions for Sleep Adherence. (Poster) *ACM Conference on Human Factors in Computing Systems (CHI 2025)*
 
-        Xiao Wang, Jiahuan Pei, Diancheng Shui, Zhiguang Han, <u>***Xin Sun***</u>, Dawei Zhu, Xiaoyu Shen MultiJustice: A Chinese Dataset for Multi-Party, Multi-Charge Legal Prediction. CCF International Conference on Natural Language Processing and Chinese Computing (NLPCC 2025)
+        Xiao Wang, Jiahuan Pei, Diancheng Shui, Zhiguang Han, <u>***Xin Sun***</u>, Dawei Zhu, Xiaoyu Shen. MultiJustice: A Chinese Dataset for Multi-Party, Multi-Charge Legal Prediction. CCF International Conference on Natural Language Processing and Chinese Computing (NLPCC 2025)
 
         Jiahuan Pei, Fanghua Ye, <u>***Xin Sun***</u>, Wentao Deng, Koen Hindriks, Junxiao Wang. Conversational Education at Scale: A Multi-LLM Agent Workflow for Procedural Learning and Pedagogic Quality Assessment (EMNLP 2025)
 
@@ -73,17 +73,17 @@ sections:
     content:
       title: Journal and Book Publications
       text: |-
-        <u>***Xin Sun***</u>, Rongjun Ma, Shu Wei, Pablo César Garcia, Jos A. Bosch, Abdallah El Ali. Understanding Trust Perception in AIGenerated Information with Behavioral and Physiological Sensing (Eye-tracking and Physiological Study). International Journal of Human-Computer Studies
+        <u>***Xin Sun***</u>, Rongjun Ma, Shu Wei, Pablo César Garcia, Jos A. Bosch, Abdallah El Ali. Understanding Trust Perception in AIGenerated Information with Behavioral and Physiological Sensing (Eye-tracking and Physiological Study). International Journal of Human-Computer Studies (IJHCS) (JCR-1)
 
-        Xiao Tang, Zhuying Li, <u>***Xin Sun***</u>, Xuhai "Orson" Xu, Min-Ling Zhang. ZzzMate: Designing an Empathetic Chatbot for Addressing Self-Conscious Emotions for Sleep Adherence. *International Journal of Human-Computer Interaction (JCR-1)*
+        Xiao Tang, Zhuying Li, <u>***Xin Sun***</u>, Xuhai "Orson" Xu, Min-Ling Zhang. ZzzMate: Designing an Empathetic Chatbot for Addressing Self-Conscious Emotions for Sleep Adherence. *International Journal of Human-Computer Interaction (IJHCI) (JCR-1)*
 
         Gert-Jan de Bruijn, Divyaa Balaji and <u>***Xin Sun***</u>. Book Publication: "Chapter 16 Chatbots for health communication". Book: Health, Media, and Communication, De Gruyter Mouton, 2025, pp. 309-332.
 
-        Zhuying Li, Yan Wang, <u>***Xin Sun***</u>. Integrating Culture in Human-Food Interaction: A Study of Cultural and Creative Food Experiences and Technological Interactions. *International Journal of Human-Computer Studies (JCR-1)*
+        Zhuying Li, Yan Wang, <u>***Xin Sun***</u>. Integrating Culture in Human-Food Interaction: A Study of Cultural and Creative Food Experiences and Technological Interactions. *International Journal of Human-Computer Studies (IJHCS) (JCR-1)*
 
         Mirela Habibovic, Emma Douma, Hendrik Schäfer, Manuela Sestayo-Fernandez, Tom Roovers, <u>***Xin Sun***</u>, ... Boris Schmitz. A patient-centered risk prediction, prevention and intervention platform to support the continuum of care in coronary artery disease using eHealth and artificial intelligence. *Journal of Medical Internet Research (JCR-1)*
 
-        <u>***Xin Sun***</u> et al. From Agents to Interfaces: Understanding Trust in Health Information from Conversational Search (Mixed-methods). *International Journal of Human-Computer Interaction (JCR-1). Under review, as the first author*
+        <u>***Xin Sun***</u> et al. From Agents to Interfaces: Understanding Trust in Health Information from Conversational Search (Mixed-methods). *Behaviour \& Information Technology (BIT). Under review, as the first author*
 
 
 ---
