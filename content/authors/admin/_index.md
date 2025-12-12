@@ -74,14 +74,6 @@ education:
 
   
 work:
-  - position: Researcher
-    company_name: National Institute of Informatics, Japan
-    company_url: ''
-    company_logo: ''
-    date_start: 2025-06-01
-    summary: |
-      Explainable and trustworthy human-LLM interaction and human-inspired AI.
-
   - position: Guest Researcher (Postdoctoral)
     company_name: University of Amsterdam, the Netherlands
     company_url: ''
