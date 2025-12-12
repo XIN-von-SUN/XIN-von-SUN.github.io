@@ -68,11 +68,17 @@ sections:
       text: |-
         <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 20vw; box-sizing: border-box; text-align: justify;">
 
+        **December 2025** - A new work is accepted by the International Journal of Human-Computer Studies (IJHCS)！
+
+        **December 2025** - A new work is accepted by the ACM Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2026)！
+
+        **November 2025** - A new work is accepted by the International Journal of Human-Computer Interaction (IJHCI)！
+
         **September 2025** - A new work is accepted by the Conference on Empirical Methods in Natural Language Processing (EMNLP 2025)！
 
-        **August 2025** - Our project has been selected for the first-round incubation funding from the Wellcome AI Accelerator!
+        **August 2025** - Our project on VR and AI has been selected for the first-round incubation funding from the Wellcome Trust AI Accelerator!
         
-        **August 2025** - A new work is accepted by the ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2025)！
+        **August 2025** - A new work is accepted by the ACM Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2025)！
 
         **July 2025** - A new work is accepted by the ACM International Conference of Multimodal Interaction (ICMI 2025)！
         
@@ -82,7 +88,7 @@ sections:
 
         **January 2025** - Two works are accepted as oral presentations by the International Conference on Computational Linguistics (COLING 2025)！
 
-        **October 2024** - A new work is accepted by the ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2024)！
+        **October 2024** - A new work is accepted by the ACM Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2024)！
 
         </div>
     design:
