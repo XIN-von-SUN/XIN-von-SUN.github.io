@@ -79,7 +79,6 @@ work:
     company_url: ''
     company_logo: ''
     date_start: 2025-06-01
-    date_end: Present
     summary: |
       Explainable and trustworthy human-LLM interaction and human-inspired AI.
 
