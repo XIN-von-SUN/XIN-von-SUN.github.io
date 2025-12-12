@@ -74,7 +74,7 @@ education:
 
   
 work:
- - position: Researcher
+  - position: Researcher
     company_name: National Institute of Informatics, Japan
     company_url: ''
     company_logo: ''
