@@ -20,7 +20,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: PhD Candidate
+role: PhD
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -55,7 +55,7 @@ education:
   - area: PhD in NLP-HCI-Psychology
     institution: University of Amsterdam, the Netherlands
     date_start: 2021-05-01
-    date_end: 2025-03-01
+    date_end: 2025-10-01
     # summary: |
     #   Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). 
     # button:
@@ -74,6 +74,15 @@ education:
 
   
 work:
+  - position: Researcher
+    company_name: National Institute of Informatics, Japan
+    company_url: ''
+    company_logo: ''
+    date_start: 2025-06-01
+    date_end: Present
+    summary: |
+      Explainable and trustworthy human-LLM interaction and human-inspired AI.
+
   - position: Guest Researcher (Postdoctoral)
     company_name: University of Amsterdam, the Netherlands
     company_url: ''
@@ -81,7 +90,7 @@ work:
     date_start: 2025-04-15
     # date_end: Present
     summary: |
-      HCI-NLP-Psychology
+      Human trust and cognitive mechanisms in perceiving LLM-generated information.
     
   - position: Researcher
     company_name: Centrum Wiskunde & Informatica (CWI), the Netherlands
@@ -90,7 +99,7 @@ work:
     date_start: 2023-08-30
     date_end: 2025-04-30
     summary: |
-      Physio and psychological perception in human interactions with LLMs and generative AI-driven multimodal interfaces
+      Development of LLMs and design of UIs with behavioral and physiological sensing for trustworthy health intervention.
 
   - position: NLP Algorithm Engineer (Full-time Internship)
     company_name: Alibaba Group, China
