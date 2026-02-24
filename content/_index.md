@@ -68,7 +68,7 @@ sections:
       text: |-
         <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 0 20vw; box-sizing: border-box; text-align: justify;">
 
-        **Jan 2026** - A new full paper and a Poster work are accepted by the ACM Conference on Human Factors in Computing Systems (CHI 2026) in Barcelona, Spain!
+        **January 2026** - A full paper and a Poster work are accepted by the ACM Conference on Human Factors in Computing Systems (CHI 2026) in Barcelona, Spain!
     
         **December 2025** - A new work is accepted by the International Journal of Human-Computer Studies (IJHCS)！
 
