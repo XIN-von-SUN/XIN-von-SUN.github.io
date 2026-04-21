@@ -49,37 +49,25 @@
     margin: 0 auto;
     max-width: min(76vw, 1380px);
     padding-inline: 1.5rem;
-    position: relative;
-  }
-
-  .home-hero-section .resume-biography::before {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.04));
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 36px;
-    box-shadow: 0 30px 90px rgba(27, 41, 41, 0.08);
-    content: "";
-    inset: -1.25rem 0;
-    position: absolute;
-    z-index: 0;
   }
 
   .home-hero-section .resume-biography > * {
     position: relative;
-    z-index: 1;
   }
 
   .home-hero-section .resume-biography > .flex-none {
     display: flex;
     justify-content: center;
+    padding-top: 0.5rem;
   }
 
   .home-hero-section #profile {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.84) 0%, rgba(247, 244, 238, 0.74) 100%);
-    border: 1px solid rgba(26, 74, 74, 0.08);
-    border-radius: 32px;
-    box-shadow: 0 24px 64px rgba(27, 41, 41, 0.08);
-    min-width: 280px;
-    padding: 1.5rem 1.4rem 1.35rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.76) 0%, rgba(251, 249, 245, 0.54) 100%);
+    border: 0;
+    border-radius: 28px;
+    box-shadow: 0 20px 54px rgba(27, 41, 41, 0.06);
+    min-width: 272px;
+    padding: 1.25rem 1.2rem 1.15rem;
   }
 
   .home-hero-section .resume-biography > .flex-auto {
@@ -110,6 +98,10 @@
     overflow: hidden;
   }
 
+  .home-hero-section .wg-resume-biography-3 .flex.flex-col.items-center {
+    align-items: flex-start;
+  }
+
   .home-hero-section .wg-resume-biography-3 .portrait-title,
   .home-hero-section .wg-resume-biography-3 .bio-text,
   .home-hero-section .wg-resume-biography-3 .network-icon {
@@ -117,36 +109,48 @@
   }
 
   .home-hero-section .wg-resume-biography-3 .portrait-title h2 {
-    font-size: clamp(2.8rem, 5vw, 4.6rem);
-    line-height: 0.95;
-    margin-bottom: 0.6rem;
+    font-size: clamp(3rem, 5.2vw, 4.8rem);
+    font-weight: 700;
+    line-height: 0.92;
+    margin-bottom: 0.55rem;
   }
 
   .home-hero-section .avatar-wrapper {
-    margin-top: 0.5rem;
+    margin-top: 0.35rem;
     position: relative;
   }
 
   .home-hero-section .avatar-wrapper::after {
-    background: radial-gradient(circle, rgba(23, 107, 107, 0.18) 0%, rgba(23, 107, 107, 0) 72%);
+    background: radial-gradient(circle, rgba(181, 154, 109, 0.18) 0%, rgba(181, 154, 109, 0) 74%);
     content: "";
-    inset: -18px;
+    inset: -14px;
     position: absolute;
     z-index: -1;
   }
 
   .home-hero-section .wg-resume-biography-3 .portrait-title h3,
   .home-hero-section .wg-resume-biography-3 .portrait-title .article-metadata {
-    color: var(--home-muted);
-    font-size: 1rem;
-    letter-spacing: 0.04em;
+    color: #6b6155;
+    font-size: 0.96rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
+  }
+
+  .home-hero-section .wg-resume-biography-3 .portrait-title {
+    margin-top: 1rem;
+  }
+
+  .home-hero-section .wg-resume-biography-3 .portrait-title p,
+  .home-hero-section .wg-resume-biography-3 .portrait-title div {
+    line-height: 1.6;
   }
 
   .home-hero-section .wg-resume-biography-3 .bio-text {
     max-width: min(75vw, 1100px);
-    font-size: 1.08rem;
-    line-height: 1.95;
+    color: #334646;
+    font-size: 1.14rem;
+    line-height: 1.9;
+    padding-top: 0.45rem;
   }
 
   .home-hero-section .grid.grid-cols-1.md\:grid-cols-2 {
@@ -158,18 +162,19 @@
   }
 
   .home-hero-section .grid.grid-cols-1.md\:grid-cols-2 > div {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.42) 100%);
-    border: 1px solid rgba(26, 74, 74, 0.08);
-    border-radius: 22px;
-    padding: 1.35rem 1.45rem;
-    box-shadow: 0 14px 34px rgba(27, 41, 41, 0.05);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(250, 247, 242, 0.78) 100%);
+    border: 1px solid rgba(26, 74, 74, 0.06);
+    border-radius: 24px;
+    padding: 1.55rem 1.65rem;
+    box-shadow: 0 18px 46px rgba(27, 41, 41, 0.055);
+    backdrop-filter: blur(12px);
   }
 
   .home-hero-section .section-subheading {
     color: var(--home-text);
     font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     letter-spacing: -0.02em;
     margin-bottom: 0.8rem;
   }
@@ -196,8 +201,8 @@
   }
 
   .home-hero-section .avatar {
-    border: 8px solid rgba(255, 255, 255, 0.86);
-    box-shadow: 0 24px 60px rgba(27, 41, 41, 0.14);
+    border: 6px solid rgba(255, 255, 255, 0.92);
+    box-shadow: 0 22px 50px rgba(27, 41, 41, 0.12);
   }
 
   .home-hero-section .network-icon {
@@ -208,14 +213,14 @@
 
   .home-hero-section .network-icon li a {
     align-items: center;
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(26, 74, 74, 0.08);
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(26, 74, 74, 0.06);
     border-radius: 999px;
     display: inline-flex;
-    height: 2.7rem;
+    height: 2.8rem;
     justify-content: center;
     transition: transform 0.2s ease, background-color 0.2s ease;
-    width: 2.7rem;
+    width: 2.8rem;
   }
 
   .home-hero-section .network-icon li a:hover {
@@ -393,11 +398,30 @@
     margin-top: 4.5rem;
   }
 
+  .page-body .blox-resume-experience .w-full {
+    margin-inline: auto;
+  }
+
+  .page-body .blox-resume-experience h3 {
+    text-align: center;
+  }
+
+  .page-body .blox-resume-experience ol {
+    margin-inline: auto;
+    max-width: 34rem;
+    width: min(100%, 34rem);
+  }
+
   .page-body .blox-resume-experience .w-full,
-  .page-body .blox-resume-experience h3,
   .page-body .blox-resume-experience ol,
   .page-body .blox-resume-experience li {
     text-align: left;
+  }
+
+  .page-body .blox-resume-experience h3 + ol li,
+  .page-body .blox-resume-experience ol li {
+    margin-left: 0;
+    padding-left: 0;
   }
 
   .page-body .blox-resume-skills .mb-5.text-xl {
