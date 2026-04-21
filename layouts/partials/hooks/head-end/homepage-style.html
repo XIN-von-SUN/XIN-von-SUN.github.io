@@ -80,6 +80,10 @@
     width: 100%;
   }
 
+  .home-hero-section .resume-biography > .flex-auto {
+    display: contents;
+  }
+
   .home-hero-section #profile {
     align-items: center;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.84) 0%, rgba(247, 245, 241, 0.72) 100%);
@@ -93,12 +97,6 @@
     min-height: 340px;
     padding: 1.6rem 1.35rem 1.3rem;
     text-align: center;
-    width: 100%;
-  }
-
-  .home-hero-section .resume-biography > .flex-auto {
-    flex: 1 1 auto;
-    max-width: none;
     width: 100%;
   }
 
@@ -123,10 +121,6 @@
   .home-hero-section .wg-resume-biography-3 {
     position: relative;
     overflow: hidden;
-  }
-
-  .home-hero-section .resume-biography > .flex-auto .flex.flex-col.items-center {
-    align-items: flex-start;
   }
 
   .home-hero-section #profile.flex.flex-col.items-center {
@@ -186,13 +180,10 @@
   }
 
   .home-hero-section .grid.grid-cols-1.md\:grid-cols-2 {
-    display: grid;
     align-items: stretch;
-    gap: 1.5rem;
+    display: contents;
     margin-top: 0;
     max-width: none;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    height: 100%;
     width: 100%;
   }
 
@@ -205,6 +196,7 @@
     padding: 1.55rem 1.65rem;
     box-shadow: 0 10px 24px rgba(31, 42, 49, 0.032);
     backdrop-filter: blur(12px);
+    width: 100%;
   }
 
   .home-hero-section .grid.grid-cols-1.md\:grid-cols-2 > :first-child {
@@ -438,8 +430,9 @@
     }
 
     .home-hero-section .grid.grid-cols-1.md\:grid-cols-2 {
+      display: grid;
+      gap: 1.5rem;
       grid-template-columns: 1fr;
-      height: auto;
     }
 
     .home-hero-section #profile,
