@@ -279,3 +279,57 @@
   }
 </style>
 {{ end }}
+
+{{ if or (eq .RelPermalink "/papers/") (eq .RelPermalink "/experience/") }}
+<style>
+  :root {
+    --page-wide-width: min(75vw, 1320px);
+  }
+
+  .page-body .blox-markdown > .flex.flex-col.items-center.max-w-prose.mx-auto,
+  .page-body .blox-resume-experience > .flex.flex-col.items-center.max-w-prose.mx-auto,
+  .page-body .blox-resume-skills > .flex.flex-col.items-center.max-w-prose.mx-auto,
+  .page-body .blox-resume-languages > .flex.flex-col.items-center.max-w-prose.mx-auto,
+  .page-body .blox-resume-skills > .flex.flex-col.lg\:flex-row.items-center.max-w-prose.mx-auto.gap-3 {
+    margin-inline: auto;
+    max-width: var(--page-wide-width);
+    width: var(--page-wide-width);
+  }
+
+  .page-body .blox-markdown .prose.max-w-prose,
+  .page-body .blox-resume-experience .prose.max-w-prose,
+  .page-body .blox-resume-skills .prose.max-w-prose,
+  .page-body .blox-resume-languages .prose.max-w-prose,
+  .page-body .blox-markdown .prose,
+  .page-body .blox-resume-experience .prose,
+  .page-body .blox-resume-skills .prose,
+  .page-body .blox-resume-languages .prose {
+    max-width: none;
+    width: 100%;
+  }
+
+  .page-body .blox-markdown .mb-6.text-3xl,
+  .page-body .blox-resume-experience .text-3xl,
+  .page-body .blox-resume-skills .text-3xl,
+  .page-body .blox-resume-languages .text-3xl {
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: clamp(2.25rem, 3.4vw, 3.2rem);
+    letter-spacing: -0.035em;
+  }
+
+  .page-body .blox-markdown p {
+    line-height: 1.9;
+  }
+
+  @media (max-width: 991.98px) {
+    .page-body .blox-markdown > .flex.flex-col.items-center.max-w-prose.mx-auto,
+    .page-body .blox-resume-experience > .flex.flex-col.items-center.max-w-prose.mx-auto,
+    .page-body .blox-resume-skills > .flex.flex-col.items-center.max-w-prose.mx-auto,
+    .page-body .blox-resume-languages > .flex.flex-col.items-center.max-w-prose.mx-auto,
+    .page-body .blox-resume-skills > .flex.flex-col.lg\:flex-row.items-center.max-w-prose.mx-auto.gap-3 {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+</style>
+{{ end }}
