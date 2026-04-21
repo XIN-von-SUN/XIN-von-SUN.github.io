@@ -45,4 +45,6 @@ sections:
             <p>Basic</p>
           </div>
         </div>
+    design:
+      css_class: experience-language-section
 ---
