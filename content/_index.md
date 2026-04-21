@@ -59,6 +59,14 @@ sections:
         <div class="home-timeline home-timeline-primary">
           <!-- Keep the first 8 highlight items in this visible section. -->
           <div class="home-timeline-item">
+            <span>April 2026</span>
+            <p>Two full papers were accepted to ACL 2026 (One Main, One Findings) in San Diego, USA.</p>
+          </div>
+          <div class="home-timeline-item">
+            <span>March 2026</span>
+            <p>One full papers were accepted to ACM UMAP 2026 in Gothenburg, Sweden.</p>
+          </div>
+          <div class="home-timeline-item">
             <span>January 2026</span>
             <p>A full paper and a poster were accepted to CHI 2026 in Barcelona.</p>
           </div>
@@ -75,11 +83,14 @@ sections:
             <p>A full paper and an LBW contribution were accepted to CHI 2025 in Yokohama.</p>
           </div>
         </div>
+
         <details class="home-timeline-more">
           <summary>See All</summary>
           <div class="home-timeline home-timeline-extra">
-            <span>2024 to 2025</span>
-            <p>Ongoing publications and presentations across COLING, CSCW, ICMI, and leading HCI venues.</p>
+            <div class="home-timeline-item">
+              <span>2024 to 2025</span>
+              <p>Ongoing publications and presentations across COLING, CSCW, ICMI, and leading HCI venues.</p>
+            </div>
           </div>
         </details>
     design:
