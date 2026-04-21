@@ -44,11 +44,12 @@ profiles:
 
 interests:
   - NLP / NLG / LLMs
-  - Dialogue System
   - LLMs Alignment-Evaluation
-  - User Interfaces 
-  - Cognition-Physiology
+  - Conversational Agents
+  - Cognitive Psychology
+  - Physiological Sensing
   - Behavioral Tracking
+  - User Interfaces 
 
 
 education:
@@ -74,14 +75,14 @@ education:
 
   
 work:
-  - position: Researcher
-    company_name: National Institute of Informatics, Japan
+  - position: Specially Appointed Assistant Professor
+    company_name: National Institute of Informatics (NII), Tokyo, Japan
     company_url: ''
     company_logo: ''
     date_start: 2025-06-01
     # date_end: Present
     summary: |
-      Explainable and trustworthy human-LLM interaction and human-inspired AI.
+      Perception of human language processing and alignment of AI models with intervention design for human augmentation.
 
   - position: Guest Postdoctoral Researcher
     company_name: University of Amsterdam, the Netherlands
@@ -90,7 +91,7 @@ work:
     date_start: 2025-04-15
     # date_end: Present
     summary: |
-      Human trust and cognitive mechanisms in perceiving LLM-generated information.
+      Human trust and cognitive mechanisms in perceiving LLM-generated vs Human-authored information.
     
   - position: PhD Researcher
     company_name: Centrum Wiskunde & Informatica (CWI), the Netherlands
