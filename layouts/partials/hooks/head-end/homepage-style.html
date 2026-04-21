@@ -106,7 +106,49 @@
   }
 
   .home-hero-section .grid.grid-cols-1.md\:grid-cols-2 {
-    display: none;
+    display: grid;
+    gap: 1.75rem 2.5rem;
+    margin-top: 2rem;
+    max-width: min(72vw, 1100px);
+    width: 100%;
+  }
+
+  .home-hero-section .grid.grid-cols-1.md\:grid-cols-2 > div {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.42) 100%);
+    border: 1px solid rgba(26, 74, 74, 0.08);
+    border-radius: 22px;
+    padding: 1.35rem 1.45rem;
+    box-shadow: 0 14px 34px rgba(27, 41, 41, 0.05);
+    backdrop-filter: blur(10px);
+  }
+
+  .home-hero-section .section-subheading {
+    color: var(--home-text);
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8rem;
+  }
+
+  .home-hero-section ul.list-disc,
+  .home-hero-section .description,
+  .home-hero-section .text-sm,
+  .home-hero-section .course {
+    color: var(--home-muted);
+  }
+
+  .home-hero-section ul.list-disc {
+    line-height: 1.8;
+  }
+
+  .home-hero-section ul > li.flex.items-start.gap-3 {
+    margin-bottom: 0.9rem;
+  }
+
+  .home-hero-section .course {
+    font-weight: 600;
+    color: var(--home-text);
+    margin-bottom: 0.15rem;
   }
 
   .home-hero-section .avatar {
@@ -218,6 +260,7 @@
     .home-focus-section > .flex,
     .home-timeline-section > .flex,
     .home-hero-section .wg-resume-biography-3 .bio-text,
+    .home-hero-section .grid.grid-cols-1.md\:grid-cols-2,
     .home-lead-copy {
       max-width: 100%;
       width: 100%;
