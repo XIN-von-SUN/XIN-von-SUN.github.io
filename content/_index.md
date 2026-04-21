@@ -29,16 +29,16 @@ sections:
       text: |-
         <div class="home-grid home-focus-grid">
           <div class="home-card home-focus-card">
-            <h3>Human Language-Processing</h3>
+            <h3>Human Understanding</h3>
             <p>Using language, behavioral and physiological sensing to understand how people perceive AI/LLMs output.</p>
           </div>
           <div class="home-card home-focus-card">
             <h3>LLM Alignment</h3>
-            <p>Aligning LLMs or AI systems with human needs, domain-specific expertise.</p>
+            <p>Aligning LLMs or AI systems with human needs and domain-specific expertise.</p>
           </div>
           <div class="home-card home-focus-card">
-            <h3>Human Augmentation</h3>
-            <p>Design interventions and UIs for trustworthy Human-AI Coupling.</p>
+            <h3>Human-AI Coupling</h3>
+            <p>Designing interventions and UIs for trustworthy Human-AI Coupling and in turn, to augment humans.</p>
           </div>
         </div>
         <div class="home-lead-copy">
