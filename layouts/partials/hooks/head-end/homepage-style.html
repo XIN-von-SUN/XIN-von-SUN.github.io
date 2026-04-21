@@ -44,12 +44,6 @@
     border-bottom: 1px solid rgba(26, 74, 74, 0.08);
   }
 
-  .navbar .container,
-  .navbar .container-fluid,
-  .navbar .max-w-screen-xl {
-    padding-inline: clamp(1.4rem, 4vw, 3.5rem);
-  }
-
   .home-section {
     position: relative;
   }
@@ -539,6 +533,24 @@
   }
 </style>
 {{ end }}
+
+<style>
+  .navbar .container,
+  .navbar .container-fluid,
+  .navbar .container-sm,
+  .navbar .container-md,
+  .navbar .container-lg,
+  .navbar .container-xl,
+  .navbar .container-2xl,
+  .navbar .max-w-screen-xl,
+  .navbar .max-w-screen-2xl {
+    padding-inline: clamp(1.4rem, 4vw, 3.5rem);
+  }
+
+  .navbar .navbar-brand {
+    margin-left: clamp(0.3rem, 1vw, 0.9rem);
+  }
+</style>
 
 {{ if or (eq .RelPermalink "/papers/") (eq .RelPermalink "/experience/") }}
 <style>
