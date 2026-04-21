@@ -42,8 +42,7 @@ sections:
           </div>
         </div>
         <div class="home-lead-copy">
-          <p>I work at the intersection of natural language generation, human-computer interaction, and cognitive psychology. The goal is to make large language models not only technically strong, but also perceptually clear, socially appropriate, and usable in high-stakes settings such as psychotherapy and health support.</p>
-          <p>My current direction focuses on adaptive LLM systems that respond to human behavior and multimodal signals, while also uncovering how trust emerges through both model behavior and interface design.</p>
+          <p>My current direction focuses on human-AI coupling that 1) LLMs can align with human processing needs; 2) AI-generated language can support humans with appropriate reliance.</p>
         </div>
     design:
       css_class: home-focus-section
