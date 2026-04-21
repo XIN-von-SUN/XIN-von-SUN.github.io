@@ -41,9 +41,13 @@ sections:
             <p>Designing interventions and UIs for trustworthy Human-AI Coupling and in turn, to augment humans.</p>
           </div>
         </div>
+        <div class="home-overview-image">
+          <img src="/static/uploads/research_overview.png" alt="Research overview visual">
+        </div>
         <div class="home-lead-copy">
           <p>My current direction focuses on human-AI coupling that 1) LLMs can align with human processing needs; 2) AI-generated language can support humans with appropriate reliance.</p>
         </div>
+        
     design:
       css_class: home-focus-section
 
