@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+
+# Hugo build output and caches
+/public/
+/resources/_gen/
+/.hugo_build.lock
+
+# Local editor and OS files
+.idea/
+.vscode/

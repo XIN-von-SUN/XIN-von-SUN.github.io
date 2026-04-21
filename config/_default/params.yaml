@@ -5,7 +5,7 @@
 
 # Appearance
 appearance:
-  mode: system
+  mode: light
   color: emerald
 
 # SEO
@@ -14,7 +14,7 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website.'
+    description: 'Xin Sun researches trustworthy human-LLM interaction, explainable interfaces, and multimodal trust in AI-supported health and psychotherapy contexts.'
     twitter: 'GetResearchDev'
   analytics:
     google_analytics: ''
@@ -32,10 +32,10 @@ header:
     enable: true
     blox: "navbar"
     fixed_to_top: true
-    show_search: true
-    show_theme_chooser: true
+    show_search: false
+    show_theme_chooser: false
     logo:
-      text: "Xin  Sun"
+      text: "Xin Sun"
 
 # Site footer
 footer:

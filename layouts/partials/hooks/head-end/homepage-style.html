@@ -1,0 +1,278 @@
+{{ if .IsHome }}
+<style>
+  :root {
+    --home-bg: #f6f3ed;
+    --home-surface: rgba(255, 255, 255, 0.82);
+    --home-surface-strong: rgba(255, 255, 255, 0.94);
+    --home-border: rgba(26, 74, 74, 0.12);
+    --home-text: #1b2929;
+    --home-muted: #566666;
+    --home-accent: #176b6b;
+    --home-accent-soft: #deeeea;
+    --home-shadow: 0 24px 70px rgba(27, 41, 41, 0.08);
+    --home-radius-lg: 28px;
+    --home-radius-md: 22px;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(225, 240, 235, 0.85), transparent 32%),
+      radial-gradient(circle at top right, rgba(233, 229, 247, 0.55), transparent 26%),
+      linear-gradient(180deg, #fbfaf7 0%, var(--home-bg) 100%);
+    color: var(--home-text);
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+  }
+
+  h1, h2, h3, .article-title {
+    color: var(--home-text);
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+
+  .navbar {
+    background: rgba(251, 250, 247, 0.84);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(26, 74, 74, 0.08);
+  }
+
+  .home-section {
+    position: relative;
+  }
+
+  .home-hero-section {
+    padding-top: 2rem;
+  }
+
+  .home-hero-section .home-section-bg {
+    opacity: 0.25;
+  }
+
+  .home-hero-section .wg-resume-biography-3 {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .home-hero-section .wg-resume-biography-3 .portrait-title,
+  .home-hero-section .wg-resume-biography-3 .bio-text,
+  .home-hero-section .wg-resume-biography-3 .network-icon {
+    color: var(--home-text);
+  }
+
+  .home-hero-section .wg-resume-biography-3 .portrait-title h2 {
+    font-size: clamp(2.8rem, 5vw, 4.6rem);
+    line-height: 0.95;
+    margin-bottom: 0.6rem;
+  }
+
+  .home-hero-section .wg-resume-biography-3 .portrait-title h3,
+  .home-hero-section .wg-resume-biography-3 .portrait-title .article-metadata {
+    color: var(--home-muted);
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .home-hero-section .wg-resume-biography-3 .bio-text {
+    max-width: 42rem;
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  .home-hero-section .btn {
+    border-radius: 999px;
+    border: 1px solid transparent;
+    box-shadow: none;
+    font-weight: 600;
+    padding: 0.82rem 1.4rem;
+  }
+
+  .home-hero-section .btn-primary {
+    background: var(--home-accent);
+    color: #fff;
+  }
+
+  .home-hero-section .avatar {
+    border: 6px solid rgba(255, 255, 255, 0.65);
+    box-shadow: var(--home-shadow);
+  }
+
+  .home-summary-section .section-heading,
+  .home-focus-section .section-heading,
+  .home-projects-section .section-heading,
+  .home-timeline-section .section-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .home-summary-section .section-subheading,
+  .home-focus-section .section-subheading,
+  .home-projects-section .section-subheading,
+  .home-timeline-section .section-subheading {
+    color: var(--home-muted);
+    font-size: 1rem;
+  }
+
+  .home-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .home-stats-grid,
+  .home-focus-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .home-card {
+    background: var(--home-surface);
+    border: 1px solid var(--home-border);
+    border-radius: var(--home-radius-md);
+    box-shadow: var(--home-shadow);
+    backdrop-filter: blur(10px);
+  }
+
+  .home-stat-card,
+  .home-focus-card {
+    padding: 1.6rem;
+  }
+
+  .home-stat-value {
+    color: var(--home-accent);
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: 2.4rem;
+    line-height: 1;
+    margin-bottom: 0.55rem;
+  }
+
+  .home-stat-label {
+    color: var(--home-text);
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.55rem;
+    text-transform: uppercase;
+  }
+
+  .home-card p,
+  .home-lead-copy p,
+  .home-timeline-item p {
+    color: var(--home-muted);
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .home-focus-card h3 {
+    font-size: 1.28rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .home-lead-copy {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.6rem;
+    max-width: 56rem;
+  }
+
+  .home-projects-section .card-simple,
+  .home-projects-section .view-card {
+    background: var(--home-surface-strong);
+    border: 1px solid var(--home-border);
+    border-radius: var(--home-radius-md);
+    box-shadow: var(--home-shadow);
+    overflow: hidden;
+  }
+
+  .home-projects-section .article-title a,
+  .home-projects-section .summary-link {
+    color: var(--home-text);
+  }
+
+  .home-projects-section .article-style,
+  .home-projects-section .article-metadata,
+  .home-projects-section .article-tags {
+    color: var(--home-muted);
+  }
+
+  .home-timeline {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .home-timeline-item {
+    background: var(--home-surface-strong);
+    border: 1px solid var(--home-border);
+    border-radius: var(--home-radius-md);
+    box-shadow: var(--home-shadow);
+    padding: 1.25rem 1.4rem;
+  }
+
+  .home-timeline-item span {
+    color: var(--home-accent);
+    display: inline-block;
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.45rem;
+    text-transform: uppercase;
+  }
+
+  .home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.75rem;
+  }
+
+  .home-button {
+    align-items: center;
+    border-radius: 999px;
+    display: inline-flex;
+    font-weight: 600;
+    justify-content: center;
+    padding: 0.88rem 1.35rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+
+  .home-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .home-button-primary {
+    background: var(--home-accent);
+    box-shadow: 0 16px 36px rgba(23, 107, 107, 0.2);
+    color: #fff;
+  }
+
+  .home-button-secondary {
+    background: var(--home-accent-soft);
+    border: 1px solid rgba(23, 107, 107, 0.12);
+    color: var(--home-accent);
+  }
+
+  @media (max-width: 991.98px) {
+    .home-stats-grid,
+    .home-focus-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .home-hero-section .wg-resume-biography-3 .portrait-title h2 {
+      font-size: clamp(2.3rem, 10vw, 3.5rem);
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .home-stat-card,
+    .home-focus-card,
+    .home-timeline-item {
+      padding: 1.2rem;
+    }
+
+    .home-actions {
+      flex-direction: column;
+    }
+
+    .home-button {
+      width: 100%;
+    }
+  }
+</style>
+{{ end }}
