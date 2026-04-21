@@ -11,9 +11,6 @@ sections:
     content:
       username: admin
       text: "Researching trustworthy human-LLM interaction across alignment, interfaces, and human trust perception."
-      button:
-        text: View Projects
-        url: /projects/
     design:
       css_class: home-hero-section
       background:
@@ -25,31 +22,6 @@ sections:
           size: cover
           position: right center
           parallax: false
-
-  - block: markdown
-    content:
-      title: "At a glance"
-      subtitle: "A concise overview of research themes, methods, and current focus."
-      text: |-
-        <div class="home-grid home-stats-grid">
-          <div class="home-card home-stat-card">
-            <div class="home-stat-value">3</div>
-            <div class="home-stat-label">Core research axes</div>
-            <p>Model alignment, interface transparency, and human trust perception.</p>
-          </div>
-          <div class="home-card home-stat-card">
-            <div class="home-stat-value">5+</div>
-            <div class="home-stat-label">Application domains</div>
-            <p>Psychotherapy, health support, learning, embodied AI, and multimodal interaction.</p>
-          </div>
-          <div class="home-card home-stat-card">
-            <div class="home-stat-value">10+</div>
-            <div class="home-stat-label">Methods combined</div>
-            <p>LLMs, HCI, behavioral signals, physiology, qualitative study, and data analysis.</p>
-          </div>
-        </div>
-    design:
-      css_class: home-summary-section
 
   - block: markdown
     content:
@@ -77,20 +49,6 @@ sections:
     design:
       css_class: home-focus-section
 
-  - block: collection
-    content:
-      title: "Selected projects"
-      text: "A snapshot of recent work on alignment, trust, and multimodal human-AI interaction."
-      filters:
-        folders:
-          - project
-        featured_only: false
-    design:
-      view: article-grid
-      fill_image: false
-      columns: 3
-      css_class: home-projects-section
-
   - block: markdown
     content:
       title: "Recent highlights"
@@ -117,10 +75,6 @@ sections:
             <span>2024 to 2025</span>
             <p>Ongoing publications and presentations across COLING, CSCW, ICMI, and leading HCI venues.</p>
           </div>
-        </div>
-        <div class="home-actions">
-          <a class="home-button home-button-primary" href="/papers/">View Publications</a>
-          <a class="home-button home-button-secondary" href="/experience/">View Experience</a>
         </div>
     design:
       css_class: home-timeline-section
