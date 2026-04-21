@@ -10,7 +10,7 @@ sections:
   - block: resume-biography-3
     content:
       username: admin
-      text: "Researching trustworthy human-LLM interaction across alignment, interfaces, and human trust perception."
+      text: ""
     design:
       css_class: home-hero-section
       background:
