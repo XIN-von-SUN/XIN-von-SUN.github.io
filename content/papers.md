@@ -26,32 +26,55 @@ sections:
   - block: markdown
     id: papers
     content:
-      title: Conference Publications
+      title: Conference Publications (First Author)
       text: |-
-        **19.** <u>***Xin Sun***</u>, Jan de Wit, Zhuying Li, Jiahuan Pei, Abdallah El Ali, Jos A Bosch. Script-Strategy Aligned Generation: Aligning LLMs with Expert-Crafted Dialogue Scripts and Therapeutic Strategies for Psychotherapy. *ACM Computer-Supported Cooperative Work And Social Computing (CSCW 2025)*
 
-        **18.** <u>***Xin Sun***</u>, Xiao Tang, Abdallah El Ali, Zhuying Li, Pengjie Ren, Jan de Wit, Jiahuan Pei, Jos Bosch. Rethinking the Alignment of Psychotherapy Dialogue Generation with Motivational Interviewing Strategies. *International Conference on Computational Linguistics (COLING 2025)*
+        **15.** <u>***Xin Sun***</u>, Di Wu, Sijing Qin, Isao Echizen, Abdallah El Ali, Saku Sugawara. The ”Label Effect”: Source Bias and Alignment in
+        Trust Assessment by Human and LLM-as-a-Judge. (ACL 2026 Main Conference)*
 
-        **17.** <u>***Xin Sun***</u>, Erkan Basar, Iris Hendrickx, Jan de Wit, Tibor Bosse, Gert-Jan De Bruijn, Jos A.Bosch, Emiel Krahmer. How Well Can LLMs Reflect? A Human Evaluation of LLM-generated Reflections for Motivational Interviewing Dialogues. *International Conference on Computational Linguistics (COLING 2025)*
+        **14.** <u>***Xin Sun***</u>, Shu Wei, Jos A Bosch, Isao Echizen, Abdallah El Ali, Saku Sugawara. Eyes Can’t Always Tell: Fusing Eye Tracking and
+        User Priors for User Modeling under AI Advice Condition. (ACM User Modeling, Adaptation and Personalization UMAP 2026)*
 
-        **16.** <u>***Xin Sun***</u>, Lei Wang, Yue Li, Jie Li, Massimo Poesio, Julian Frommel, Koen Hindriks, Jiahuan Pei. Talking-to-Build: How LLMAssisted Interface Shapes Player Performance and Experience in Minecraft. *ACM International Conference on Multimodal Interaction (ICMI 2025)*
+        **13.** <u>***Xin Sun***</u>, Shu Wei, Jos A Bosch, Isao Echizen, Saku Sugawara, Abdallah El Ali. Seeing the Reasoning: How LLM Rationales
+        Influence User Trust and Decision-Making in Fact-Checking Tasks. (Poster) ACM Conference on Human Factors in Computing
+        Systems (CHI 2026)*
 
-        **15.** <u>***Xin Sun***</u>, Yunjie Liu, Jos A. Bosch, and Zhuying Li. Interface Matters: Exploring Trust Perception in Health Information from Large Language Models via Text, Speech, and Embodiment. *ACM Computer-Supported Cooperative Work And Social Computing (CSCW 2024)*
+        **12.** <u>***Xin Sun***</u>, Jan de Wit, Zhuying Li, Jiahuan Pei, Abdallah El Ali, Jos A Bosch. Script-Strategy Aligned Generation: Aligning LLMs with Expert-Crafted Dialogue Scripts and Therapeutic Strategies for Psychotherapy. *ACM Computer-Supported Cooperative Work And Social Computing (CSCW 2025)*
 
-        **14.** <u>***Xin Sun***</u>, Jiahuan Pei, Jan de Wit, Mohammad Aliannejadi, Emiel Krahmer, Jos TP Dobber, Jos Bosch. Eliciting Motivational Interviewing Skill Codes in Psychotherapy with LLMs: A Bilingual Dataset and Analytical Study. *International Conference on Computational Linguistics (COLING 2024)*
+        **11.** <u>***Xin Sun***</u>, Xiao Tang, Abdallah El Ali, Zhuying Li, Pengjie Ren, Jan de Wit, Jiahuan Pei, Jos Bosch. Rethinking the Alignment of Psychotherapy Dialogue Generation with Motivational Interviewing Strategies. *International Conference on Computational Linguistics (COLING 2025)*
 
-        **13.** <u>***Xin Sun***</u>, Yunjie Liu, Jan De Wit, Jos A. Bosch, and Zhuying Li. Trust by Interface: How Different User Interfaces Shape Human Trust in Health Information from Large Language Model. (Poster) *ACM Conference on Human Factors in Computing Systems (CHI 2024)*
+        **10.** <u>***Xin Sun***</u>, Erkan Basar, Iris Hendrickx, Jan de Wit, Tibor Bosse, Gert-Jan De Bruijn, Jos A.Bosch, Emiel Krahmer. How Well Can LLMs Reflect? A Human Evaluation of LLM-generated Reflections for Motivational Interviewing Dialogues. *International Conference on Computational Linguistics (COLING 2025)*
 
-        **12.** <u>***Xin Sun***</u>, Isabelle Teljeur, Zhuying Li, Jos A. Bosch. Can a Funny Chatbot Make a Difference? Infusing Humor into Conversational Agent for Behavioral Intervention. *ACM Conference on Conversational User Interfaces (CUI 2024)*
+        **9.** <u>***Xin Sun***</u>, Lei Wang, Yue Li, Jie Li, Massimo Poesio, Julian Frommel, Koen Hindriks, Jiahuan Pei. Talking-to-Build: How LLMAssisted Interface Shapes Player Performance and Experience in Minecraft. *ACM International Conference on Multimodal Interaction (ICMI 2025)*
 
-        **11.** <u>***Xin Sun***</u>, Emiel Krahmer, Jan De Wit, Reinout Wiers, and Jos A. Bosch. Plug and Play Conversations: The Micro-Conversation Scheme for Modular Development of Hybrid CA. (Poster) *ACM Computer-Supported Cooperative Work And Social Computing (CSCW 2023)*
+        **8.** <u>***Xin Sun***</u>, Yunjie Liu, Jos A. Bosch, and Zhuying Li. Interface Matters: Exploring Trust Perception in Health Information from Large Language Models via Text, Speech, and Embodiment. *ACM Computer-Supported Cooperative Work And Social Computing (CSCW 2024)*
 
-        **10.** <u>***Xin Sun***</u>, Jos A. Bosch, Jan De Wit, and Emiel Krahmer. Human-in-the-Loop Interaction for Continuously Improving Generative Model in CAs for Behavioral Intervention. (Poster) *ACM Intelligent User Interfaces (IUI 2023)*
+        **7.** <u>***Xin Sun***</u>, Jiahuan Pei, Jan de Wit, Mohammad Aliannejadi, Emiel Krahmer, Jos TP Dobber, Jos Bosch. Eliciting Motivational Interviewing Skill Codes in Psychotherapy with LLMs: A Bilingual Dataset and Analytical Study. *International Conference on Computational Linguistics (COLING 2024)*
 
-        **9.** <u>***Xin Sun***</u>, Boris Schmitz, and Jos A. Bosch. TIMELY: Providing In-Time Support for Cardiovascular Rehabilitation with 'Patients and Practitioners in the Loop’. (Poster) *ACM Intelligent User Interfaces (IUI 2023)*
+        **6.** <u>***Xin Sun***</u>, Yunjie Liu, Jan De Wit, Jos A. Bosch, and Zhuying Li. Trust by Interface: How Different User Interfaces Shape Human Trust in Health Information from Large Language Model. (Poster) *ACM Conference on Human Factors in Computing Systems (CHI 2024)*
 
-        **8.** <u>***Xin Sun***</u> et al. Virtual Support for Real-World Movement: Using Chatbots to Overcome Barriers to Physical Activity. *Frontiers in Artificial Intelligence and Applications (HHAI 2023)*
+        **5.** <u>***Xin Sun***</u>, Isabelle Teljeur, Zhuying Li, Jos A. Bosch. Can a Funny Chatbot Make a Difference? Infusing Humor into Conversational Agent for Behavioral Intervention. *ACM Conference on Conversational User Interfaces (CUI 2024)*
 
+        **4.** <u>***Xin Sun***</u>, Emiel Krahmer, Jan De Wit, Reinout Wiers, and Jos A. Bosch. Plug and Play Conversations: The Micro-Conversation Scheme for Modular Development of Hybrid CA. (Poster) *ACM Computer-Supported Cooperative Work And Social Computing (CSCW 2023)*
+
+        **3.** <u>***Xin Sun***</u>, Jos A. Bosch, Jan De Wit, and Emiel Krahmer. Human-in-the-Loop Interaction for Continuously Improving Generative Model in CAs for Behavioral Intervention. (Poster) *ACM Intelligent User Interfaces (IUI 2023)*
+
+        **2.** <u>***Xin Sun***</u>, Boris Schmitz, and Jos A. Bosch. TIMELY: Providing In-Time Support for Cardiovascular Rehabilitation with 'Patients and Practitioners in the Loop’. (Poster) *ACM Intelligent User Interfaces (IUI 2023)*
+
+        **1.** <u>***Xin Sun***</u> et al. Virtual Support for Real-World Movement: Using Chatbots to Overcome Barriers to Physical Activity. *Frontiers in Artificial Intelligence and Applications (HHAI 2023)*
+
+
+  - block: markdown
+    id: papers
+    content:
+      title: Conference Publications (Co-Author)
+      text: |-
+        **9.** Qingyu Meng, Min Chen, Dingming Liu, Yifan Mo, Yue Su, <u>***Xin Sun***</u>, Koen Hindriks, Jiahuan Pei. StoryMI: Steerable Multi-Agent
+        Therapeutic Dialogue Generation. (ACL 2026)*
+        
+        **8.** Zhuying Li, Yishu Wang, Yan Wang, <u>***Xin Sun***</u>. Zenergy: Designing Taoist-Inspired Transformative Nature Imagery for Everyday
+        Empowerment. ACM Conference on Human Factors in Computing Systems (CHI 2026)*
+       
         **7.** Zhuying Li, Ziteng Zhang, <u>***Xin Sun***</u>, Yan Wang. Digital Spirituality in Mainland China: Understanding Online Practices for Designing Culturally Relevant Spiritual Experiences. *ACM Computer-Supported Cooperative Work And Social Computing (CSCW 2026)*
 
         **6.** Yuto Mandai, Katie Seaborn, Tomoyasu Nakano, <u>***Xin Sun***</u>, Yijia Wang, Jun Kato. Super Kawaii Vocalics: Amplifying the “Cute” Factor in Computer Voice. *ACM Conference on Human Factors in Computing Systems (CHI 2025)*
