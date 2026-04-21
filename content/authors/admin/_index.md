@@ -43,7 +43,7 @@ profiles:
 
 
 interests:
-  - NLP / NLG / LLMs
+  - Natural Language Processing / Generation
   - LLMs Alignment-Evaluation
   - Conversational Agents
   - Cognitive Psychology

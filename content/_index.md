@@ -25,21 +25,20 @@ sections:
 
   - block: markdown
     content:
-      title: "Research overview"
-      subtitle: "Designed to make complex human-AI trust questions measurable and actionable."
+      title: "Research Overview"
       text: |-
         <div class="home-grid home-focus-grid">
           <div class="home-card home-focus-card">
-            <h3>Trustworthy LLM behavior</h3>
-            <p>Building LLM systems that align with expert strategies, domain needs, and sensitive interaction goals.</p>
+            <h3>Human Language Processing</h3>
+            <p>Using language, behavioral and physiological sensing to understand how people perceive AI/LLMs output.</p>
           </div>
           <div class="home-card home-focus-card">
             <h3>Interfaces that shape trust</h3>
-            <p>Examining how text, voice, embodiment, and interaction framing change user confidence and interpretation.</p>
+            <p>Aligning LLMs or AI systems with human needs, domain-specific expertise.</p>
           </div>
           <div class="home-card home-focus-card">
             <h3>Human-centered measurement</h3>
-            <p>Using behavioral and physiological sensing to study how people perceive, rely on, and question AI output.</p>
+            <p>Design interventions and UIs for trustworthy Human-AI Coupling.</p>
           </div>
         </div>
         <div class="home-lead-copy">
@@ -51,7 +50,7 @@ sections:
 
   - block: markdown
     content:
-      title: "Recent highlights"
+      title: "Recent Highlights"
       subtitle: "Selected milestones across publications, funding, and conference activity."
       text: |-
         <div class="home-timeline">
