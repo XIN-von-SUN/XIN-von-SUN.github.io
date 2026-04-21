@@ -54,11 +54,14 @@
 
   .home-hero-section .resume-biography {
     align-items: stretch;
-    gap: clamp(2rem, 4vw, 4rem);
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin: 0 auto;
-    max-width: min(76vw, 1380px);
+    max-width: min(75vw, 1320px);
     padding-inline: 1.5rem;
     position: relative;
+    width: min(75vw, 1320px);
   }
 
   .home-hero-section .resume-biography::after {
@@ -73,7 +76,8 @@
   .home-hero-section .resume-biography > .flex-none {
     display: flex;
     justify-content: center;
-    padding-top: 0.5rem;
+    padding-top: 0;
+    width: 100%;
   }
 
   .home-hero-section #profile {
@@ -85,14 +89,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: 272px;
+    min-width: 0;
+    min-height: 340px;
     padding: 1.6rem 1.35rem 1.3rem;
     text-align: center;
+    width: 100%;
   }
 
   .home-hero-section .resume-biography > .flex-auto {
     flex: 1 1 auto;
     max-width: none;
+    width: 100%;
   }
 
   .home-focus-section > .flex,
@@ -184,6 +191,8 @@
     gap: 1.5rem;
     margin-top: 0;
     max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    height: 100%;
     width: 100%;
   }
 
@@ -422,6 +431,15 @@
     .home-lead-copy {
       max-width: 100%;
       width: 100%;
+    }
+
+    .home-hero-section .resume-biography {
+      grid-template-columns: 1fr;
+    }
+
+    .home-hero-section .grid.grid-cols-1.md\:grid-cols-2 {
+      grid-template-columns: 1fr;
+      height: auto;
     }
 
     .home-hero-section #profile,
