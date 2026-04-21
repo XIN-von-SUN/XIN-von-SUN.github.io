@@ -450,6 +450,45 @@
     text-transform: uppercase;
   }
 
+  .home-timeline-more {
+    margin-top: 1.35rem;
+  }
+
+  .home-timeline-more:not(:has(.home-timeline-item)) {
+    display: none;
+  }
+
+  .home-timeline-more summary {
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(32, 45, 52, 0.07);
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(31, 42, 49, 0.05);
+    color: var(--home-text);
+    cursor: pointer;
+    display: block;
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+    margin: 0 auto;
+    padding: 0.85rem 1.6rem;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    width: fit-content;
+  }
+
+  .home-timeline-more summary:hover {
+    background: rgba(255, 255, 255, 0.96);
+    transform: translateY(-1px);
+  }
+
+  .home-timeline-more summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .home-timeline-extra {
+    margin-top: 1.35rem;
+  }
+
   @media (max-width: 991.98px) {
     .home-focus-grid {
       grid-template-columns: 1fr;

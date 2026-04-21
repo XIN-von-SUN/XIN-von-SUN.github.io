@@ -56,7 +56,8 @@ sections:
       title: "Recent Highlights"
       subtitle: "Selected milestones across publications, funding, and conference activity."
       text: |-
-        <div class="home-timeline">
+        <div class="home-timeline home-timeline-primary">
+          <!-- Keep the first 8 highlight items in this visible section. -->
           <div class="home-timeline-item">
             <span>January 2026</span>
             <p>A full paper and a poster were accepted to CHI 2026 in Barcelona.</p>
@@ -78,6 +79,12 @@ sections:
             <p>Ongoing publications and presentations across COLING, CSCW, ICMI, and leading HCI venues.</p>
           </div>
         </div>
+        <details class="home-timeline-more">
+          <summary>See All</summary>
+          <div class="home-timeline home-timeline-extra">
+            <!-- Add highlight items from the 9th onward here. -->
+          </div>
+        </details>
     design:
       css_class: home-timeline-section
 ---
