@@ -42,18 +42,8 @@ sections:
           </div>
         </div>
         <div class="home-overview-image">
-          <img src="/uploads/research_overview.png">
+          <img src="/uploads/research_overview.png" alt="Research overview visual">
         </div>
-        .home-overview-image {
-          margin-top: 2rem;
-        }
-        .home-overview-image img {
-          border-radius: 24px;
-          display: block;
-          width: 100%;
-          height: auto;
-          box-shadow: 0 12px 30px rgba(31, 42, 49, 0.08);
-        }
         <div class="home-lead-copy">
           <p>My current direction focuses on human-AI coupling that 1) LLMs can align with human processing needs; 2) AI-generated language can support humans with appropriate reliance.</p>
         </div>
