@@ -33,11 +33,11 @@ sections:
             <p>Using language, behavioral and physiological sensing to understand how people perceive AI/LLMs output.</p>
           </div>
           <div class="home-card home-focus-card">
-            <h3>Interfaces that shape trust</h3>
+            <h3>LLM Alignment</h3>
             <p>Aligning LLMs or AI systems with human needs, domain-specific expertise.</p>
           </div>
           <div class="home-card home-focus-card">
-            <h3>Human-centered measurement</h3>
+            <h3>Human Augmentation</h3>
             <p>Design interventions and UIs for trustworthy Human-AI Coupling.</p>
           </div>
         </div>
