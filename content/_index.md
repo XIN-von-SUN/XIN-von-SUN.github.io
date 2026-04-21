@@ -29,7 +29,7 @@ sections:
       text: |-
         <div class="home-grid home-focus-grid">
           <div class="home-card home-focus-card">
-            <h3>Human Language Processing</h3>
+            <h3>Human Language-Processing</h3>
             <p>Using language, behavioral and physiological sensing to understand how people perceive AI/LLMs output.</p>
           </div>
           <div class="home-card home-focus-card">
