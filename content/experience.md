@@ -24,8 +24,25 @@ sections:
       username: admin
     design:
       show_skill_percentage: false
-  - block: resume-languages
+  - block: markdown
     content:
       title: Languages
-      username: admin
+      text: |-
+        <div class="experience-language-grid">
+          <div class="experience-language-card">
+            <div class="experience-language-icon">中</div>
+            <h3>Chinese</h3>
+            <p>Native</p>
+          </div>
+          <div class="experience-language-card">
+            <div class="experience-language-icon">EN</div>
+            <h3>English</h3>
+            <p>Fluent</p>
+          </div>
+          <div class="experience-language-card">
+            <div class="experience-language-icon">DE</div>
+            <h3>German</h3>
+            <p>Basic</p>
+          </div>
+        </div>
 ---

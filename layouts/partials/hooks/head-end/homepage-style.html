@@ -321,6 +321,90 @@
     line-height: 1.9;
   }
 
+  .page-body .blox-resume-experience .w-full + .w-full {
+    margin-top: 4.5rem;
+  }
+
+  .page-body .blox-resume-skills .mb-5.text-xl {
+    display: none;
+  }
+
+  .page-body .blox-resume-skills .w-full.lg\:w-1\/2 {
+    margin-inline: auto;
+    max-width: 980px;
+    width: 100%;
+  }
+
+  .page-body .blox-resume-skills .skills-content {
+    align-items: center;
+    display: flex;
+    gap: 0.85rem;
+    justify-content: center;
+    margin-bottom: 1.1rem;
+    text-align: center;
+  }
+
+  .page-body .blox-resume-skills .skills-name {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .page-body .blox-resume-skills .skills-icon {
+    color: #176b6b;
+    flex: 0 0 auto;
+  }
+
+  .page-body .experience-language-grid {
+    display: grid;
+    gap: 1.35rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .page-body .experience-language-card {
+    align-items: center;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 245, 239, 0.92) 100%);
+    border: 1px solid rgba(26, 74, 74, 0.08);
+    border-radius: 24px;
+    box-shadow: 0 16px 40px rgba(27, 41, 41, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 220px;
+    padding: 1.8rem 1.5rem;
+    text-align: center;
+  }
+
+  .page-body .experience-language-icon {
+    align-items: center;
+    background: linear-gradient(180deg, #e8f5f1 0%, #d7eee6 100%);
+    border: 1px solid rgba(23, 107, 107, 0.08);
+    border-radius: 999px;
+    color: #176b6b;
+    display: inline-flex;
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: 1rem;
+    font-weight: 700;
+    height: 3.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    width: 3.5rem;
+  }
+
+  .page-body .experience-language-card h3 {
+    color: #1b2929;
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: 1.5rem;
+    margin: 0 0 0.45rem;
+  }
+
+  .page-body .experience-language-card p {
+    color: #566666;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
   @media (max-width: 991.98px) {
     .page-body .blox-markdown > .flex.flex-col.items-center.max-w-prose.mx-auto,
     .page-body .blox-resume-experience > .flex.flex-col.items-center.max-w-prose.mx-auto,
@@ -329,6 +413,10 @@
     .page-body .blox-resume-skills > .flex.flex-col.lg\:flex-row.items-center.max-w-prose.mx-auto.gap-3 {
       max-width: 100%;
       width: 100%;
+    }
+
+    .page-body .experience-language-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
