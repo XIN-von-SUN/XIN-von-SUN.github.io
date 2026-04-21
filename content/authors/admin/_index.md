@@ -20,12 +20,12 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: PhD
+role: Specially Appointed Assistant Professor
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: University of Amsterdam
-    url: 'https://www.uva.nl/'
+  - name: National Institute of Informatics (NII), Tokyo, Japan
+    url: 'https://www.nii.ac.jp/en/'
 
 
 # Social network links
@@ -48,7 +48,7 @@ interests:
   - LLMs Alignment-Evaluation
   - User Interfaces 
   - Cognition-Physiology
-  # - Behavioral Tracking
+  - Behavioral Tracking
 
 
 education:
