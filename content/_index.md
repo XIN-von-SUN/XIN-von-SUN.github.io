@@ -74,15 +74,12 @@ sections:
             <span>March 2025</span>
             <p>A full paper and an LBW contribution were accepted to CHI 2025 in Yokohama.</p>
           </div>
-          <div class="home-timeline-item">
-            <span>2024 to 2025</span>
-            <p>Ongoing publications and presentations across COLING, CSCW, ICMI, and leading HCI venues.</p>
-          </div>
         </div>
         <details class="home-timeline-more">
           <summary>See All</summary>
           <div class="home-timeline home-timeline-extra">
-            <!-- Add highlight items from the 9th onward here. -->
+            <span>2024 to 2025</span>
+            <p>Ongoing publications and presentations across COLING, CSCW, ICMI, and leading HCI venues.</p>
           </div>
         </details>
     design:
