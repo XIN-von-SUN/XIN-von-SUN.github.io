@@ -194,11 +194,48 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     min-height: 100%;
-    padding: 1.7rem 1.8rem;
+    padding: 1.9rem 1.9rem;
     box-shadow: 0 10px 24px rgba(31, 42, 49, 0.032);
     backdrop-filter: blur(12px);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     width: 100%;
+  }
+
+  .home-hero-section #profile,
+  .home-hero-section .grid.grid-cols-1.md\:grid-cols-2 > div {
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  }
+
+  .home-hero-section #profile:hover,
+  .home-hero-section .grid.grid-cols-1.md\:grid-cols-2 > div:hover {
+    border-color: rgba(111, 127, 141, 0.22);
+    box-shadow: 0 22px 48px rgba(31, 42, 49, 0.09);
+    transform: translateY(-3px);
+  }
+
+  /* Section title (Education / Interests) sits at the top, content fills below */
+  .home-hero-section .grid.grid-cols-1.md\:grid-cols-2 > div .section-subheading {
+    margin-bottom: 1.5rem;
+  }
+
+  /* More breathing room between education entries */
+  .home-hero-section ul > li.flex.items-start.gap-3 {
+    margin-bottom: 1.6rem;
+  }
+
+  .home-hero-section ul > li.flex.items-start.gap-3:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Interests: roomier, full-width rhythm */
+  .home-hero-section ul.list-disc li {
+    margin-bottom: 0.95rem;
+  }
+
+  .home-hero-section ul.list-disc li:last-child {
+    margin-bottom: 0;
   }
 
   .home-hero-section .grid.grid-cols-1.md\:grid-cols-2 > :first-child {
@@ -437,10 +474,45 @@
   }
 
   .focus-eyebrow {
-    align-items: baseline;
+    align-items: center;
     display: flex;
     gap: 0.7rem;
     margin-bottom: 1.1rem;
+  }
+
+  .focus-flow {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(32, 45, 52, 0.06);
+    border-radius: 999px;
+    display: inline-flex;
+    gap: 0.4rem;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-left: auto;
+    padding: 0.28rem 0.6rem;
+    text-transform: uppercase;
+  }
+
+  .focus-flow .flow-h {
+    color: #8a7bb0;
+  }
+
+  .focus-flow .flow-l {
+    color: #5b86c4;
+  }
+
+  .focus-flow .flow-arrow {
+    color: var(--home-accent);
+    font-size: 0.85rem;
+    font-style: normal;
+    line-height: 1;
+    transition: transform 0.3s ease;
+  }
+
+  .home-focus-card:hover .focus-flow .flow-arrow {
+    transform: translateX(2px) scale(1.12);
   }
 
   .focus-num {
@@ -582,6 +654,37 @@
     margin-top: 1.35rem;
   }
 
+  /* Tasteful scroll reveal (only active when JS is present, so content is never hidden without it) */
+  .js-reveal .home-card,
+  .js-reveal .home-timeline-item,
+  .js-reveal .home-overview-image {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .js-reveal .home-card.is-visible,
+  .js-reveal .home-timeline-item.is-visible,
+  .js-reveal .home-overview-image.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Keep hover transforms snappy after reveal completes */
+  .js-reveal .home-card.is-visible {
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js-reveal .home-card,
+    .js-reveal .home-timeline-item,
+    .js-reveal .home-overview-image {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
   @media (max-width: 991.98px) {
     .home-focus-grid {
       grid-template-columns: 1fr;
@@ -624,6 +727,43 @@
     }
   }
 </style>
+
+<script>
+  (function () {
+    if (!("IntersectionObserver" in window)) return;
+    document.documentElement.classList.add("js-reveal");
+    function start() {
+      var els = document.querySelectorAll(
+        ".home-card, .home-timeline-item, .home-overview-image"
+      );
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              var t = e.target;
+              t.classList.add("is-visible");
+              io.unobserve(t);
+              // Drop the stagger delay once revealed so hover stays snappy.
+              setTimeout(function () {
+                t.style.transitionDelay = "";
+              }, 900);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      );
+      els.forEach(function (el, i) {
+        el.style.transitionDelay = Math.min(i, 5) * 70 + "ms";
+        io.observe(el);
+      });
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", start);
+    } else {
+      start();
+    }
+  })();
+</script>
 {{ end }}
 
 <style>

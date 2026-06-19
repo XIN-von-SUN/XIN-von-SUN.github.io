@@ -26,36 +26,36 @@ sections:
   - block: markdown
     content:
       title: "Research"
-      subtitle: "People and AI increasingly shape how each other think. I study this two-way exchange — and how to make it trustworthy where the stakes are highest, from fact-checking to healthcare."
+      subtitle: "People and AI now shape how each other think. I study this two-way loop — how human signals shape AI, and how AI in turn reshapes human trust and decisions — and how to make that coupling trustworthy where the stakes are highest, from fact-checking to healthcare."
       text: |-
         <div class="home-grid home-focus-grid">
           <div class="home-card home-focus-card">
-            <div class="focus-eyebrow"><span class="focus-num">01</span><span class="focus-label">Mechanism</span></div>
-            <h3>Does AI Think Like Us?</h3>
-            <p class="focus-question">Do AI models inherit not just our words, but our judgment — and our biases?</p>
-            <p>By pairing eye-tracking and physiological signals with a model's inner workings, I show that people and LLMs react to the same hidden cues — like who wrote a text or how authoritative it sounds. This turns "AI is biased like us" from a worry into something we can measure, locate, and fix.</p>
-            <div class="focus-tags"><span>Eye-tracking</span><span>LLM-as-Judge</span><span>Cognitive bias</span></div>
+            <div class="focus-eyebrow"><span class="focus-num">01</span><span class="focus-label">Mechanism</span><span class="focus-flow"><b class="flow-h">Human</b><i class="flow-arrow">⇄</i><b class="flow-l">LLM</b></span></div>
+            <h3>Do Humans and LLMs Think Alike?</h3>
+            <p class="focus-question">On the same task, do people and AI share cognitive patterns — and can biases pass between them?</p>
+            <p>Pairing eye-tracking and physiological signals with a model's inner workings, I find that humans and LLMs lean on the same hidden cues — like who wrote a text or how authoritative it sounds, not just its content. That shared tendency is exactly the channel through which cognitive bias travels between the two sides.</p>
+            <div class="focus-tags"><span>Eye-tracking</span><span>LLM-as-Judge</span><span>Bias transfer</span></div>
           </div>
           <div class="home-card home-focus-card">
-            <div class="focus-eyebrow"><span class="focus-num">02</span><span class="focus-label">Method</span></div>
-            <h3>Teaching AI Expert Judgment</h3>
-            <p class="focus-question">How do we make AI follow an expert's strategy, not just sound fluent?</p>
-            <p>I translate the implicit know-how of clinical therapists into explicit steps an AI can follow — deciding the right strategy first, then speaking. The result is an assistant that is controllable, explainable, and already deployed across 16 clinics in four European countries.</p>
-            <div class="focus-tags"><span>Expert alignment</span><span>Mental-health support</span><span>Controllable generation</span></div>
+            <div class="focus-eyebrow"><span class="focus-num">02</span><span class="focus-label">Method</span><span class="focus-flow"><b class="flow-h">Human</b><i class="flow-arrow">→</i><b class="flow-l">LLM</b></span></div>
+            <h3>Keep the Wisdom, Filter the Bias</h3>
+            <p class="focus-question">Which human signals should enter a model — and which should be kept out?</p>
+            <p>Human data carries both valuable expertise and unwanted cognitive bias. I build alignment that selectively absorbs domain strategy, suppresses data-borne human bias, and adapts to each user's state — yielding AI that is controllable, explainable, and already deployed across 16 European clinics.</p>
+            <div class="focus-tags"><span>Selective alignment</span><span>Bias mitigation</span><span>Controllable generation</span></div>
           </div>
           <div class="home-card home-focus-card">
-            <div class="focus-eyebrow"><span class="focus-num">03</span><span class="focus-label">Modeling</span></div>
-            <h3>Reading the Human in Real Time</h3>
-            <p class="focus-question">Can a system sense, moment to moment, whether you trust it — or are being misled?</p>
-            <p>Using eye movements and body signals, I model a user's trust, mental effort, and confidence as they unfold, so the AI can adapt its response on the fly — closing the loop toward genuine cognitive support instead of one-size-fits-all answers.</p>
-            <div class="focus-tags"><span>Multimodal sensing</span><span>Trust calibration</span><span>Adaptive AI</span></div>
+            <div class="focus-eyebrow"><span class="focus-num">03</span><span class="focus-label">Augmentation</span><span class="focus-flow"><b class="flow-l">LLM</b><i class="flow-arrow">→</i><b class="flow-h">Human</b></span></div>
+            <h3>Closing the Loop to Augment Minds</h3>
+            <p class="focus-question">Can AI sense your trust and effort in real time — and adapt to truly support you?</p>
+            <p>Reading a user's trust, mental effort, and confidence from eye and body signals, I turn those states into intervention tools and interfaces that adapt the AI's response on the fly — closing the human–AI loop so the system augments human cognition instead of quietly misleading it.</p>
+            <div class="focus-tags"><span>User-state sensing</span><span>Adaptive interfaces</span><span>Cognitive augmentation</span></div>
           </div>
         </div>
         <div class="home-overview-image">
-          <img src="/uploads/research_overview.png" alt="Research overview visual">
+          <img src="/uploads/research_overview.png" alt="Bidirectional human–AI coupling: human language processing on the left, LLM alignment on the right, linked by a two-way loop toward calibrated trust and better decisions">
         </div>
         <div class="home-lead-copy">
-          <p>Together these form a single arc — <strong>understand, align, adapt</strong> — toward human–AI collaboration you can trust when it matters most: better-calibrated trust, healthier reliance on AI, and sharper, more confident decisions.</p>
+          <p>Together they form one bidirectional loop — <strong>understand</strong> the shared patterns, <strong>align</strong> AI with the right human signals, and <strong>augment</strong> the human in return — toward collaboration you can trust when it matters most: calibrated trust, appropriate reliance, and sharper decisions.</p>
         </div>
         
     design:
