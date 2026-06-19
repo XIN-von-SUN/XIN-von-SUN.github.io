@@ -34,7 +34,7 @@ sections:
             <h3>Does AI Think Like Humans?</h3>
             <p class="focus-question">Do Humans and AI share "cognitive" patterns and can biases pass between them?</p>
             <p>Humans and LLMs lean on the same hidden cues — <em>who</em> wrote a text, not just <em>what</em> it says. That shared habit is how bias travels between the two sides.</p>
-            <div class="focus-tags"><span>Eye-tracking</span><span>LLM-as-Judge</span><span>Bias transfer</span></div>
+            <div class="focus-tags"><span>Eye-tracking</span><span>Physiological sensing</span><span>Cognitive bias</span></div>
           </div>
           <div class="home-card home-focus-card">
             <div class="focus-eyebrow"><span class="focus-num">02</span><span class="focus-label">Method</span><span class="focus-flow"><b class="flow-h">Human</b><i class="flow-arrow">→</i><b class="flow-l">LLM</b></span></div>
@@ -48,7 +48,7 @@ sections:
             <h3>Adaptive AI for Cognitive Augmentation</h3>
             <p class="focus-question">Can AI sense your trust and effort in real time — and adapt to truly support you?</p>
             <p>AI senses human cognitive states from eye and body signals, then builds a closed-loop adaptive system for cognitive augmentation.</p>
-            <div class="focus-tags"><span>User-state sensing</span><span>Adaptive interfaces</span><span>Cognitive augmentation</span></div>
+            <div class="focus-tags"><span>User-state modeling</span><span>Adaptive LLMs</span><span>Cognitive augmentation</span></div>
           </div>
         </div>
         <div class="home-overview-image">
