@@ -45,7 +45,7 @@ sections:
           </div>
           <div class="home-card home-focus-card">
             <div class="focus-eyebrow"><span class="focus-num">03</span><span class="focus-label">Augmentation</span><span class="focus-flow"><b class="flow-l">LLM</b><i class="flow-arrow">→</i><b class="flow-h">Human</b></span></div>
-            <h3>Close the Loop with Adaptive AI for Cognitive Augmentation</h3>
+            <h3>Adaptive AI for Cognitive Augmentation</h3>
             <p class="focus-question">Can AI sense your trust and effort in real time — and adapt to truly support you?</p>
             <p>I read trust and effort from eye and body signals, then build tools and interfaces that adapt the AI in real time — so it supports your thinking instead of misleading it.</p>
             <div class="focus-tags"><span>User-state sensing</span><span>Adaptive interfaces</span><span>Cognitive augmentation</span></div>
