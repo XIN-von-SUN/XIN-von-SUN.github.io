@@ -33,21 +33,21 @@ sections:
             <div class="focus-eyebrow"><span class="focus-num">01</span><span class="focus-label">Mechanism</span><span class="focus-flow"><b class="flow-h">Human</b><i class="flow-arrow">⇄</i><b class="flow-l">LLM</b></span></div>
             <h3>Do Humans and LLMs Think Alike?</h3>
             <p class="focus-question">On the same task, do people and AI share cognitive patterns — and can biases pass between them?</p>
-            <p>Pairing eye-tracking and physiological signals with a model's inner workings, I find that humans and LLMs lean on the same hidden cues — like who wrote a text or how authoritative it sounds, not just its content. That shared tendency is exactly the channel through which cognitive bias travels between the two sides.</p>
+            <p>Humans and LLMs lean on the same hidden cues — <em>who</em> wrote a text, not just <em>what</em> it says. That shared habit is how bias travels between the two sides.</p>
             <div class="focus-tags"><span>Eye-tracking</span><span>LLM-as-Judge</span><span>Bias transfer</span></div>
           </div>
           <div class="home-card home-focus-card">
             <div class="focus-eyebrow"><span class="focus-num">02</span><span class="focus-label">Method</span><span class="focus-flow"><b class="flow-h">Human</b><i class="flow-arrow">→</i><b class="flow-l">LLM</b></span></div>
             <h3>Keep the Wisdom, Filter the Bias</h3>
             <p class="focus-question">Which human signals should enter a model — and which should be kept out?</p>
-            <p>Human data carries both valuable expertise and unwanted cognitive bias. I build alignment that selectively absorbs domain strategy, suppresses data-borne human bias, and adapts to each user's state — yielding AI that is controllable, explainable, and already deployed across 16 European clinics.</p>
+            <p>Human data holds both expertise and bias. I align AI to keep the expert strategy, filter the bias, and adapt to the user — now live in 16 European clinics.</p>
             <div class="focus-tags"><span>Selective alignment</span><span>Bias mitigation</span><span>Controllable generation</span></div>
           </div>
           <div class="home-card home-focus-card">
             <div class="focus-eyebrow"><span class="focus-num">03</span><span class="focus-label">Augmentation</span><span class="focus-flow"><b class="flow-l">LLM</b><i class="flow-arrow">→</i><b class="flow-h">Human</b></span></div>
             <h3>Closing the Loop to Augment Minds</h3>
             <p class="focus-question">Can AI sense your trust and effort in real time — and adapt to truly support you?</p>
-            <p>Reading a user's trust, mental effort, and confidence from eye and body signals, I turn those states into intervention tools and interfaces that adapt the AI's response on the fly — closing the human–AI loop so the system augments human cognition instead of quietly misleading it.</p>
+            <p>I read trust and effort from eye and body signals, then build tools and interfaces that adapt the AI in real time — so it supports your thinking instead of misleading it.</p>
             <div class="focus-tags"><span>User-state sensing</span><span>Adaptive interfaces</span><span>Cognitive augmentation</span></div>
           </div>
         </div>

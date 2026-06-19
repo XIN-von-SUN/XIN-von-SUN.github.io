@@ -444,7 +444,7 @@
   .home-focus-card {
     display: flex;
     flex-direction: column;
-    min-height: 360px;
+    min-height: 320px;
     overflow: hidden;
     padding: 2rem 1.9rem 1.7rem;
     position: relative;
@@ -540,33 +540,48 @@
     margin: 0;
   }
 
+  /* Tier 1 — headline */
   .home-focus-card h3 {
     font-size: clamp(1.4rem, 1.9vw, 1.7rem);
     line-height: 1.12;
-    margin-bottom: 0.7rem;
-    max-width: 16ch;
+    margin-bottom: 1rem;
+    max-width: 18ch;
   }
 
+  /* Tier 2 — the driving question, set apart by an accent rail */
   .home-focus-card .focus-question {
+    border-left: 2px solid rgba(111, 127, 141, 0.5);
     color: var(--home-text);
     font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-    font-size: 1.04rem;
+    font-size: 1.06rem;
     font-style: italic;
-    line-height: 1.55;
-    margin-bottom: 0.95rem;
-    opacity: 0.92;
+    line-height: 1.5;
+    margin: 0 0 1.25rem;
+    opacity: 0.95;
+    padding-left: 0.85rem;
   }
 
+  /* Tier 3 — plain-language detail, lighter and quieter */
   .home-focus-card > p:not(.focus-question) {
-    font-size: 0.99rem;
+    color: #76828c;
+    font-size: 0.93rem;
+    line-height: 1.68;
   }
 
+  .home-focus-card > p:not(.focus-question) em {
+    color: var(--home-text);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* Tier 4 — tags, divided off from the detail */
   .focus-tags {
+    border-top: 1px solid rgba(32, 45, 52, 0.07);
     display: flex;
     flex-wrap: wrap;
     gap: 0.45rem;
     margin-top: auto;
-    padding-top: 1.4rem;
+    padding-top: 1.25rem;
   }
 
   .focus-tags span {
