@@ -9,3 +9,7 @@ Thumbs.db
 # Local editor and OS files
 .idea/
 .vscode/
+
+# Confidential / local-only files (never publish)
+附件5.优青海外-2026-正文-v6.pdf
+static/uploads/resume-old.pdf

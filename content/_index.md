@@ -25,27 +25,37 @@ sections:
 
   - block: markdown
     content:
-      title: "Research Overview"
+      title: "Research"
+      subtitle: "People and AI increasingly shape how each other think. I study this two-way exchange — and how to make it trustworthy where the stakes are highest, from fact-checking to healthcare."
       text: |-
         <div class="home-grid home-focus-grid">
           <div class="home-card home-focus-card">
-            <h3>Human Understanding</h3>
-            <p>Using language, behavioral and physiological sensing to understand how people perceive AI/LLMs output.</p>
+            <div class="focus-eyebrow"><span class="focus-num">01</span><span class="focus-label">Mechanism</span></div>
+            <h3>Does AI Think Like Us?</h3>
+            <p class="focus-question">Do AI models inherit not just our words, but our judgment — and our biases?</p>
+            <p>By pairing eye-tracking and physiological signals with a model's inner workings, I show that people and LLMs react to the same hidden cues — like who wrote a text or how authoritative it sounds. This turns "AI is biased like us" from a worry into something we can measure, locate, and fix.</p>
+            <div class="focus-tags"><span>Eye-tracking</span><span>LLM-as-Judge</span><span>Cognitive bias</span></div>
           </div>
           <div class="home-card home-focus-card">
-            <h3>LLM Alignment</h3>
-            <p>Aligning LLMs or AI systems with human needs and domain-specific expertise.</p>
+            <div class="focus-eyebrow"><span class="focus-num">02</span><span class="focus-label">Method</span></div>
+            <h3>Teaching AI Expert Judgment</h3>
+            <p class="focus-question">How do we make AI follow an expert's strategy, not just sound fluent?</p>
+            <p>I translate the implicit know-how of clinical therapists into explicit steps an AI can follow — deciding the right strategy first, then speaking. The result is an assistant that is controllable, explainable, and already deployed across 16 clinics in four European countries.</p>
+            <div class="focus-tags"><span>Expert alignment</span><span>Mental-health support</span><span>Controllable generation</span></div>
           </div>
           <div class="home-card home-focus-card">
-            <h3>Human-AI Coupling</h3>
-            <p>Designing interventions and UIs for trustworthy Human-AI Coupling and in turn, to augment humans.</p>
+            <div class="focus-eyebrow"><span class="focus-num">03</span><span class="focus-label">Modeling</span></div>
+            <h3>Reading the Human in Real Time</h3>
+            <p class="focus-question">Can a system sense, moment to moment, whether you trust it — or are being misled?</p>
+            <p>Using eye movements and body signals, I model a user's trust, mental effort, and confidence as they unfold, so the AI can adapt its response on the fly — closing the loop toward genuine cognitive support instead of one-size-fits-all answers.</p>
+            <div class="focus-tags"><span>Multimodal sensing</span><span>Trust calibration</span><span>Adaptive AI</span></div>
           </div>
         </div>
         <div class="home-overview-image">
           <img src="/uploads/research_overview.png" alt="Research overview visual">
         </div>
         <div class="home-lead-copy">
-          <p>My current direction focuses on human-AI reciprocal alignment and bidirectional coupling that 1) LLMs can align with human processing needs; 2) AI-generated language can support humans with appropriate reliance.</p>
+          <p>Together these form a single arc — <strong>understand, align, adapt</strong> — toward human–AI collaboration you can trust when it matters most: better-calibrated trust, healthier reliance on AI, and sharper, more confident decisions.</p>
         </div>
         
     design:

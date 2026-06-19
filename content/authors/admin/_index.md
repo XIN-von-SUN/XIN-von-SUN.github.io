@@ -43,13 +43,12 @@ profiles:
 
 
 interests:
-  - Natural Language Processing / Generation
-  - LLMs Alignment-Evaluation
-  - Conversational Agents
-  - Cognitive Psychology
-  - Physiological Sensing
-  - Behavioral Tracking
-  - User Interfaces 
+  - Human–AI Cognitive Alignment
+  - Trustworthy LLMs & Evaluation
+  - Expert-Aligned Conversational AI
+  - Eye-tracking & Physiological Sensing
+  - Cognitive Psychology of Trust
+  - Human-Centered AI Interfaces
 
 
 education:
@@ -82,7 +81,7 @@ work:
     date_start: 2025-06-01
     # date_end: Present
     summary: |
-      Perception of human language processing and alignment of AI models with intervention design for human augmentation.
+      Bidirectional human–LLM cognitive alignment: how expert knowledge shapes AI, and how AI output shapes human trust and decisions in high-stakes settings.
 
   - position: Guest Postdoctoral Researcher
     company_name: University of Amsterdam, the Netherlands
