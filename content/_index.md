@@ -32,7 +32,7 @@ sections:
           <div class="home-card home-focus-card">
             <div class="focus-eyebrow"><span class="focus-num">01</span><span class="focus-label">Mechanism</span><span class="focus-flow"><b class="flow-h">Human</b><i class="flow-arrow">⇄</i><b class="flow-l">LLM</b></span></div>
             <h3>Does AI Think Like Humans?</h3>
-            <p class="focus-question">On the same task, do people and AI share cognitive patterns — and can biases pass between them?</p>
+            <p class="focus-question">Do Humans and AI share "cognitive" patterns and can biases pass between them?</p>
             <p>Humans and LLMs lean on the same hidden cues — <em>who</em> wrote a text, not just <em>what</em> it says. That shared habit is how bias travels between the two sides.</p>
             <div class="focus-tags"><span>Eye-tracking</span><span>LLM-as-Judge</span><span>Bias transfer</span></div>
           </div>
@@ -47,7 +47,7 @@ sections:
             <div class="focus-eyebrow"><span class="focus-num">03</span><span class="focus-label">Augmentation</span><span class="focus-flow"><b class="flow-l">LLM</b><i class="flow-arrow">→</i><b class="flow-h">Human</b></span></div>
             <h3>Adaptive AI for Cognitive Augmentation</h3>
             <p class="focus-question">Can AI sense your trust and effort in real time — and adapt to truly support you?</p>
-            <p>I read trust and effort from eye and body signals, then build tools and interfaces that adapt the AI in real time — so it supports your thinking instead of misleading it.</p>
+            <p>AI senses human cognitive states from eye and body signals, then builds a closed-loop adaptive system for cognitive augmentation.</p>
             <div class="focus-tags"><span>User-state sensing</span><span>Adaptive interfaces</span><span>Cognitive augmentation</span></div>
           </div>
         </div>
