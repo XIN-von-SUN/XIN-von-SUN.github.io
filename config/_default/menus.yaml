@@ -20,7 +20,7 @@ main:
     url: /uploads/resume.pdf
     weight: 70
     target: _blank
-  - name: Slides
+  - name: Talk
     url: /slides/
     weight: 85
     target: _blank

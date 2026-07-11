@@ -52,7 +52,7 @@ sections:
           </div>
         </div>
         <div class="home-lead-copy">
-          <p>Together they form one bidirectional loop — <strong>understand</strong> the shared patterns, <strong>align</strong> AI with the right human signals, and <strong>augment</strong> the human in return — toward collaboration you can trust when it matters most: calibrated trust, appropriate reliance, and sharper decisions.</p>
+          <p>AI is aligned on human data — but <strong>human signals aren't always ground truth</strong>. I work on LLMs that <strong>learn the right things from humans</strong> and <strong>give the right support back</strong> — one bidirectional loop toward calibrated trust, appropriate reliance, and sharper decisions.</p>
         </div>
         <div class="home-overview-image">
           <img src="/uploads/research_overview.png" alt="Bidirectional human–AI coupling: human language processing on the left, LLM alignment on the right, linked by a two-way loop toward calibrated trust and better decisions">
