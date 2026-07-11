@@ -779,6 +779,326 @@
     }
   })();
 </script>
+
+<!-- Research overview image → animated "Slide 02" poster that zooms out into the full talk -->
+<style>
+  /* The overview image becomes a clickable, gently animated slide poster. */
+  .home-overview-image {
+    position: relative;
+    cursor: zoom-out;
+    border-radius: 24px;
+    outline: none;
+  }
+
+  .home-overview-image img {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+  }
+
+  .home-overview-image:hover img,
+  .home-overview-image:focus-visible img {
+    transform: scale(1.012);
+    box-shadow: 0 24px 56px rgba(31, 42, 49, 0.17);
+  }
+
+  .home-overview-image.is-launching img {
+    transform: scale(1.04);
+  }
+
+  /* Slow animated gradient ring — the "living slide" feel, subtle by default */
+  .home-overview-image::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 27px;
+    padding: 3px;
+    background: linear-gradient(120deg, #8a7bb0, #5b86c4, #4bb3a3, #8a7bb0);
+    background-size: 300% 300%;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: overviewGlow 8s ease infinite;
+    pointer-events: none;
+  }
+
+  .home-overview-image:hover::after,
+  .home-overview-image:focus-visible::after {
+    opacity: 0.95;
+  }
+
+  @keyframes overviewGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .overview-badge {
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(20, 28, 34, 0.72);
+    color: #fff;
+    font: 700 0.66rem/1 "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.42rem 0.72rem;
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+    pointer-events: none;
+  }
+
+  .overview-play {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 74px;
+    height: 74px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 12px 32px rgba(31, 42, 49, 0.3);
+    color: #1f2a31;
+    pointer-events: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .overview-play svg {
+    width: 26px;
+    height: 26px;
+    margin-left: 4px;
+  }
+
+  .overview-play::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    animation: overviewPulse 2.6s ease-out infinite;
+  }
+
+  @keyframes overviewPulse {
+    0% { transform: scale(1); opacity: 0.75; }
+    100% { transform: scale(1.85); opacity: 0; }
+  }
+
+  .home-overview-image:hover .overview-play,
+  .home-overview-image:focus-visible .overview-play {
+    transform: scale(1.06);
+    background: #fff;
+  }
+
+  .overview-hint {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    text-align: center;
+    pointer-events: none;
+    color: #fff;
+    font: 600 0.9rem/1.2 "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .home-overview-image:hover .overview-hint,
+  .home-overview-image:focus-visible .overview-hint {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Fullscreen zoom-out portal that hosts the live slide deck. */
+  .slides-portal {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: none;
+    background: rgba(12, 16, 20, 0.86);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.45s ease;
+  }
+
+  .slides-portal.is-open {
+    opacity: 1;
+  }
+
+  .slides-portal .portal-stage {
+    position: absolute;
+    inset: 3vh 3vw;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.5);
+    transform: scale(0.86);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
+  }
+
+  .slides-portal.is-open .portal-stage {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .slides-portal iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .portal-close {
+    position: fixed;
+    top: 18px;
+    right: 20px;
+    z-index: 3001;
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(20, 28, 34, 0.6);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: none;
+    place-items: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .slides-portal.is-open ~ .portal-close,
+  .portal-close.is-open {
+    display: grid;
+  }
+
+  .portal-close:hover {
+    background: rgba(20, 28, 34, 0.92);
+    transform: scale(1.05);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-overview-image::after,
+    .overview-play::before {
+      animation: none;
+    }
+    .home-overview-image img,
+    .slides-portal .portal-stage {
+      transition: opacity 0.2s ease;
+    }
+    .slides-portal .portal-stage {
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    function init() {
+    var poster = document.querySelector(".home-overview-image");
+    if (!poster) return;
+
+    // --- Turn the static overview image into an accessible, animated poster ---
+    poster.setAttribute("role", "button");
+    poster.setAttribute("tabindex", "0");
+    poster.setAttribute(
+      "aria-label",
+      "Play the research talk slides — zoom out and start from slide 1"
+    );
+
+    var badge = document.createElement("span");
+    badge.className = "overview-badge";
+    badge.textContent = "Slide 02 · Research Talk";
+
+    var play = document.createElement("span");
+    play.className = "overview-play";
+    play.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+    var hint = document.createElement("span");
+    hint.className = "overview-hint";
+    hint.textContent = "Click to zoom out and watch the talk from slide 1";
+
+    poster.appendChild(badge);
+    poster.appendChild(play);
+    poster.appendChild(hint);
+
+    // --- Build the fullscreen zoom-out portal once ---
+    var SLIDES_URL = "/slides/"; // no hash → deck opens on slide 1
+    var portal = document.createElement("div");
+    portal.className = "slides-portal";
+    portal.innerHTML =
+      '<div class="portal-stage">' +
+      '<iframe title="Xin Sun — research talk" allow="fullscreen" allowfullscreen></iframe>' +
+      "</div>";
+
+    var closeBtn = document.createElement("button");
+    closeBtn.type = "button";
+    closeBtn.className = "portal-close";
+    closeBtn.setAttribute("aria-label", "Close slides");
+    closeBtn.innerHTML = "✕";
+
+    document.body.appendChild(portal);
+    document.body.appendChild(closeBtn);
+
+    var frame = portal.querySelector("iframe");
+    var lastFocus = null;
+
+    function openPortal() {
+      lastFocus = document.activeElement;
+      frame.src = SLIDES_URL; // (re)load every time so it always starts at slide 1
+      portal.style.display = "block";
+      void portal.offsetWidth; // force reflow so the transition plays
+      portal.classList.add("is-open");
+      closeBtn.classList.add("is-open");
+      poster.classList.add("is-launching");
+      document.body.style.overflow = "hidden";
+      setTimeout(function () {
+        try { frame.focus(); } catch (e) {}
+      }, 340);
+    }
+
+    function closePortal() {
+      portal.classList.remove("is-open");
+      closeBtn.classList.remove("is-open");
+      poster.classList.remove("is-launching");
+      document.body.style.overflow = "";
+      setTimeout(function () {
+        portal.style.display = "none";
+        frame.src = "about:blank"; // stop the deck; reset for next open
+      }, 460);
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    poster.addEventListener("click", openPortal);
+    poster.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openPortal();
+      }
+    });
+    closeBtn.addEventListener("click", closePortal);
+    portal.addEventListener("click", function (e) {
+      if (e.target === portal) closePortal(); // click the dark margin to close
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && portal.classList.contains("is-open")) closePortal();
+    });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+  })();
+</script>
 {{ end }}
 
 <style>
