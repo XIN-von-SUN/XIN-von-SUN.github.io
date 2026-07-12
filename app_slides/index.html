@@ -76,6 +76,27 @@
     @keyframes spin { to { transform: rotate(360deg); } }
 
     /* ================================================================
+       WORK DOMAIN / USE-CASE TAG — top-right flag on each Work slide.
+       Elegant maroon "app-icon" card; reveals with the slide, glows softly.
+       ================================================================ */
+    .dtag { display: inline-flex; align-items: center; gap: 13px; padding: 9px 20px 9px 11px;
+      border-radius: 16px; pointer-events: none; z-index: 7;
+      background: linear-gradient(180deg, #ffffff 0%, #fbf2f3 100%);
+      border: 1.5px solid rgba(142,27,38,.26);
+      box-shadow: 0 6px 18px rgba(142,27,38,.10), inset 0 1px 0 rgba(255,255,255,.9); }
+    .dtag-ico { width: 40px; height: 40px; flex: none; border-radius: 11px; display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(circle at 50% 32%, rgba(142,27,38,.15), rgba(142,27,38,.05)); }
+    .dtag-ico svg { width: 25px; height: 25px; display: block; }
+    .dtag-tx { display: flex; flex-direction: column; gap: 4px; }
+    .dtag-k { font: 800 13px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #bb6b71; }
+    .dtag-v { font: 800 23px/1 var(--sans); letter-spacing: .004em; color: var(--maroon); white-space: nowrap; }
+    .active .dtag { animation: dtagGlow 5.6s ease-in-out infinite; }
+    @keyframes dtagGlow {
+      0%, 100% { box-shadow: 0 6px 18px rgba(142,27,38,.10), inset 0 1px 0 rgba(255,255,255,.9); }
+      50%      { box-shadow: 0 10px 28px rgba(142,27,38,.20), inset 0 1px 0 rgba(255,255,255,.9); }
+    }
+
+    /* ================================================================
        P1 · TITLE
        ================================================================ */
     .p1-logos { left: 25px; top: 18px; width: 775px; }
@@ -393,6 +414,10 @@
       <section class="slide" id="slideEval" data-title="Work 1 · Evaluation — LLM-as-a-Judge for health information" aria-label="Slide 5 of 11">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p5-title">Work 1&nbsp; - &nbsp;<span class="kw">Evaluation</span>: LLM-as-a-Judge for Health Information</h2>
         <div class="rule rv" style="top:104px"></div>
+        <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Domain: Health Information">
+          <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.4s-6.9-4.2-9.2-8.7C1.1 8.5 2.9 5.1 6.1 5.1c1.9 0 3.4 1.1 4.4 2.6 1-1.5 2.5-2.6 4.4-2.6 3.2 0 5 3.4 3.3 6.6-2.3 4.5-9.2 8.7-9.2 8.7z" fill="#8e1b26" fill-opacity=".16" stroke="#8e1b26" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+          <span class="dtag-tx"><span class="dtag-k">Domain</span><span class="dtag-v">Health Information</span></span>
+        </div>
         <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px" data-edit-id="p5-rq"><span class="tag">Research Question:</span> whether humans and LLM-as-a-Judge can assess the information reliably?</p>
         <div class="abs p5-chip rv d1" style="top:268px"><b data-count="40">40</b><span>human<br>participants</span></div>
         <div class="abs p5-chip rv d2" style="top:330px"><b data-count="8">8</b><span>LLM judges</span></div>
@@ -437,6 +462,10 @@
       <section class="slide" data-title="Work 2 · Alignment — how LLMs learn the bad human signals" aria-label="Slide 7 of 11">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p7-title">Work 2&nbsp; - &nbsp;<span class="kw">Alignment</span>: How LLMs Learn the “Bad” Human Signals</h2>
         <div class="rule rv" style="top:104px"></div>
+        <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Domain: Health Information">
+          <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.4s-6.9-4.2-9.2-8.7C1.1 8.5 2.9 5.1 6.1 5.1c1.9 0 3.4 1.1 4.4 2.6 1-1.5 2.5-2.6 4.4-2.6 3.2 0 5 3.4 3.3 6.6-2.3 4.5-9.2 8.7-9.2 8.7z" fill="#8e1b26" fill-opacity=".16" stroke="#8e1b26" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+          <span class="dtag-tx"><span class="dtag-k">Domain</span><span class="dtag-v">Health Information</span></span>
+        </div>
         <p class="abs rq p7-rq rv d1" data-edit-id="p7-rq"><span class="tag">Research Question:</span> <span style="color:var(--maroon)">whether LLMs carry on the “bad signals” from human annotated preferences?</span></p>
         <button type="button" class="abs p7-fig zoomable rv d2" data-image="assets/figs/fig-bias-install.png" aria-label="Open bias installation charts"><img src="assets/figs/fig-bias-install.png" alt="Installed bias for source cue and relational cue across Pre-train, SFT, and DPO"></button>
         <p class="abs takeaway p7-take rv d3" data-edit-id="p7-take"><span class="tl">Takeaways:</span> LLMs can learn the bias from the explicitly annotated human preferences.<br><span class="stage s1">Pre-train (next-token prediction) has the least effect</span>, <span class="stage s2">SFT comes the second</span>, and <span class="stage s3">DPO can install the bias significantly</span>.</p>
@@ -447,6 +476,10 @@
       <section class="slide" id="slideSSAG" data-title="Work 3 · Alignment — supervise models with domain expertise" aria-label="Slide 8 of 11">
         <h2 class="abs kt p8-t rv" style="left:20px;top:26px" data-edit-id="p8-title">Work 3&nbsp; - &nbsp;<span class="kw">Alignment</span>: How Supervise Models with Domain Expertise, Not Simply Imitate</h2>
         <div class="rule rv" style="top:104px"></div>
+        <div class="abs dtag rv d3" style="top:234px;right:40px" role="note" aria-label="Use case: Psychotherapy and mental health">
+          <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 5.4h15.6c.9 0 1.6.7 1.6 1.6v7.6c0 .9-.7 1.6-1.6 1.6H9.2l-4.3 3.2v-3.2h-.7c-.9 0-1.6-.7-1.6-1.6V7c0-.9.7-1.6 1.6-1.6z" fill="#8e1b26" fill-opacity=".12" stroke="#8e1b26" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 13.8s-2.9-1.7-2.9-3.7c0-1 .8-1.7 1.6-1.7.7 0 1.1.4 1.3.8.2-.4.6-.8 1.3-.8.8 0 1.6.7 1.6 1.7 0 2-2.9 3.7-2.9 3.7z" fill="#8e1b26" stroke="none"/></svg></span>
+          <span class="dtag-tx"><span class="dtag-k">Use Case</span><span class="dtag-v">Psychotherapy · Mental Health</span></span>
+        </div>
         <p class="abs rq p8-rq rv d1" data-edit-id="p8-rq"><span class="tag">Research Question:</span> if human signals transmit bias, what should models actually learn?<br>— Selected domain-specific expert strategies, not raw human imitation.</p>
         <button type="button" class="abs p8-fig zoomable rv d2" data-image="assets/figs/fig-ssag2.png" aria-label="Open SSAG framework"><img src="assets/figs/fig-ssag2.png" alt="SSAG: therapeutic strategy prediction and dialogue generation"></button>
         <div class="abs p8-step rv d2" style="top:302px"><h3>1 · Encoding Represent</h3><p>Encode evidence-based therapeutic expert strategies in tree-structures.</p></div>
@@ -468,6 +501,10 @@
       <section class="slide" id="slideAdapt" data-title="Work 4 · Adaptation — reliable outputs are not enough" aria-label="Slide 9 of 11">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p9-title">Work 4&nbsp; - &nbsp;<span class="kw">Adaptation</span>: Reliable LLM’s Outputs Are Not Enough</h2>
         <div class="rule rv" style="top:104px"></div>
+        <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Use case: Health decision support">
+          <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="#8e1b26" fill-opacity=".10" stroke="#8e1b26" stroke-width="1.6"/><path d="M15.8 8.2l-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1z" fill="#8e1b26" fill-opacity=".5" stroke="#8e1b26" stroke-width="1.3" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.15" fill="#fff"/></svg></span>
+          <span class="dtag-tx"><span class="dtag-k">Use Case</span><span class="dtag-v">Health Decision Support</span></span>
+        </div>
         <p class="abs rq p9-rq rv d1" data-edit-id="p9-rq"><span class="tag">Research Question:</span> How LLMs can adapt to humans during the real-time interaction?</p>
         <div class="abs p9-boxtitle rv d1 p9-spot s1" data-edit-id="p9-boxtitle"><span><span class="kw">Cognitive States Modeling</span> through Sensing Signals</span></div>
         <p class="abs p9-rhead rv d3 p9-spot s3" data-edit-id="p9-rhead"><u>Adaptive generation and UIs</u> based on sensed human states</p>
