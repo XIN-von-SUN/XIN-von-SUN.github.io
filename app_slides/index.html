@@ -34,7 +34,7 @@
     .slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; visibility: hidden; opacity: 0; pointer-events: none; background: #fff; transition: opacity 260ms ease; }
     .slide.active { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
     img { max-width: none; }
-    .deck-controls { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 1000; }
+    .deck-controls { position: fixed; right: 14px; top: 50%; bottom: auto; left: auto; transform: translateY(-50%); z-index: 1000; }
 
     @media print {
       @page { size: 1920px 1080px; margin: 0; }
@@ -324,10 +324,10 @@
     .deck-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
     /* ---------- chrome, overlays, editor ---------- */
-    .deck-controls { display: flex; align-items: center; gap: 11px; padding: 8px 11px; color: #fff; background: rgba(0,0,0,.85); border-radius: 10px; font: 500 12px/1 var(--sans); letter-spacing: .04em; }
+    .deck-controls { display: flex; flex-direction: column; align-items: center; gap: 11px; padding: 11px 8px; color: #fff; background: rgba(0,0,0,.85); border-radius: 10px; font: 500 12px/1 var(--sans); letter-spacing: .04em; }
     .deck-controls button { border: 0; padding: 4px 6px; background: transparent; cursor: pointer; }
-    .progress-track { width: 170px; height: 3px; background: rgba(255,255,255,.22); }
-    .progress-fill { width: 9%; height: 100%; background: #fff; transition: width 260ms var(--ease); }
+    .progress-track { width: 3px; height: 96px; background: rgba(255,255,255,.22); }
+    .progress-fill { width: 100%; height: 9%; background: #fff; transition: height 260ms var(--ease); }
     .edit-hotzone { position: fixed; z-index: 10000; top: 0; left: 0; width: 80px; height: 80px; cursor: pointer; }
     .edit-toggle { position: fixed; z-index: 10001; top: 16px; left: 16px; padding: 9px 12px; opacity: 0; pointer-events: none; border: 0; border-radius: 8px; color: #fff; background: #000; font: 500 12px/1 var(--sans); transition: opacity .3s; cursor: pointer; }
     .edit-toggle.show, .edit-toggle.active { opacity: 1; pointer-events: auto; }
@@ -606,7 +606,7 @@
         this.slides.forEach((s, i) => { s.classList.toggle('active', i === this.current); s.setAttribute('aria-hidden', String(i !== this.current)); });
         const n = String(this.current + 1).padStart(2, '0');
         document.getElementById('counter').textContent = `${n} / ${this.slides.length}`;
-        document.getElementById('progressFill').style.width = `${((this.current + 1) / this.slides.length) * 100}%`;
+        document.getElementById('progressFill').style.height = `${((this.current + 1) / this.slides.length) * 100}%`;
         document.getElementById('liveStatus').textContent = `Slide ${this.current + 1} of ${this.slides.length}: ${this.slides[this.current].dataset.title}`;
         if (updateHash) history.replaceState(null, '', `#${this.current + 1}`);
         runCounters(this.slides[this.current]);
