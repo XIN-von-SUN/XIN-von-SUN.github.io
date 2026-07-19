@@ -8,9 +8,10 @@
   <title>Human Signals × Trustworthy LLMs — Xin Sun</title>
   <style>
     /* ================================================================
-       1:1 CLONE OF "Academic Talk.key" (11 pages)
-       Fonts, colors, and module positions follow the Keynote exactly.
-       Interactivity is layered on top without changing the layout.
+       BASED ON "Academic Talk.key" (11 pages) + 3 web-native slides:
+       P7 trust–truth (EMNLP'26) · P9 benchmark creation · P11 StoryMI.
+       Work slides are numbered by pillar: 1 Evaluate · 2 Align · 3 Adapt.
+       Fonts, colors, and module positions follow the Keynote where cloned.
        ================================================================ */
     :root {
       --maroon: #8e1b26;
@@ -34,7 +35,7 @@
     .slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; visibility: hidden; opacity: 0; pointer-events: none; background: #fff; transition: opacity 260ms ease; }
     .slide.active { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
     img { max-width: none; }
-    .deck-controls { position: fixed; right: 14px; top: 50%; bottom: auto; left: auto; transform: translateY(-50%); z-index: 1000; }
+    .deck-controls { position: fixed; left: 12px; top: 50%; bottom: auto; right: auto; transform: translateY(-50%); z-index: 1000; }
 
     @media print {
       @page { size: 1920px 1080px; margin: 0; }
@@ -102,6 +103,7 @@
     .p1-logos { left: 25px; top: 18px; width: 775px; }
     .p1-title { left: 130px; top: 292px; width: 1660px; text-align: center; font: 700 72px/1.5 var(--serif); color: #000; }
     .p1-line { left: 130px; top: 538px; width: 1660px; text-align: center; font: italic 400 30px/1.3 var(--serif); color: #555; }
+    .p1-line u { color: #333; text-underline-offset: 6px; text-decoration-thickness: 1.5px; }
     .p1-rule { left: 64px; right: 64px; top: 680px; height: 3px; background: var(--maroon); position: absolute; }
     .p1-name { left: 130px; top: 772px; width: 1660px; text-align: center; font: italic 700 35px/1.55 var(--serif); color: #000; }
     .p1-name span { text-decoration: underline; text-underline-offset: 6px; }
@@ -113,17 +115,30 @@
     .p2-title { left: 20px; top: 22px; font: italic 700 44px/1.15 var(--serif); color: #000; }
     .p2-title .kw { text-underline-offset: 6px; }
     .p2-rule { top: 92px; }
-    .p2-col { position: absolute; top: 340px; width: 560px; text-align: center; transition: opacity .35s; }
+    .p2-col { position: absolute; top: 340px; width: 560px; text-align: center; transition: opacity .35s, transform .35s var(--ease); }
     .p2-col h3 { font: 700 40px/1.2 var(--sans); text-decoration: underline; text-underline-offset: 6px; }
     .p2-col p { margin-top: 14px; font: 700 29px/1.35 var(--sans); color: #000; }
-    .p2-col.f1 { left: 0px; } .p2-col.f1 h3 { color: var(--blue-head); }
-    .p2-col.f2 { left: 1348px; } .p2-col.f2 h3 { color: var(--purple-head); }
-    .p2-cycle { left: 882px; top: 366px; width: 100px; height: 100px; filter: drop-shadow(0 5px 12px rgba(96,88,180,.18)); }
+    .p2-col.f1 { left: 110px; } .p2-col.f1 h3 { color: var(--blue-head); }
+    .p2-col.f2 { left: 1250px; } .p2-col.f2 h3 { color: var(--purple-head); }
+    .p2-cycle { left: 910px; top: 366px; width: 100px; height: 100px; filter: drop-shadow(0 5px 12px rgba(96,88,180,.18)); }
     .p2-brace { left: 235px; top: 568px; width: 1430px; }
     .p2-state { left: 60px; top: 722px; width: 1800px; text-align: center; font: 700 37px/1.55 var(--sans); color: #000; }
-    .p2-state em { color: var(--maroon); font-style: italic; transition: opacity .35s; }
+    .p2-state em { color: var(--maroon); font-style: italic; transition: opacity .35s; padding: 2px 10px; border-radius: 9px;
+      text-decoration: underline dotted rgba(142,27,38,.55); text-underline-offset: 6px; }
+    /* standing emphasis: the two halves of the loop softly light up in turn */
+    .active .p2-state em.e1 { animation: emWash 9s ease-in-out infinite; }
+    .active .p2-state em.e2 { animation: emWash 9s ease-in-out infinite 4.5s; }
+    .active .p2-col.f1 h3 { display: inline-block; animation: colLift 9s ease-in-out infinite; }
+    .active .p2-col.f2 h3 { display: inline-block; animation: colLift 9s ease-in-out infinite 4.5s; }
+    @keyframes emWash { 0%, 44%, 100% { background: transparent; } 14%, 30% { background: rgba(142,27,38,.11); } }
+    @keyframes colLift { 0%, 44%, 100% { transform: translateY(0); text-shadow: none; } 14%, 30% { transform: translateY(-4px); text-shadow: 0 8px 22px rgba(0,0,0,.14); } }
+    /* hover pairing: highlight the hovered side + its phrase, dim the other */
     .slide[data-p2="1"] .p2-col.f2, .slide[data-p2="1"] .p2-state em.e2,
     .slide[data-p2="2"] .p2-col.f1, .slide[data-p2="2"] .p2-state em.e1 { opacity: .3; }
+    .slide[data-p2="1"] .p2-state em, .slide[data-p2="2"] .p2-state em,
+    .slide[data-p2="1"] .p2-col h3, .slide[data-p2="2"] .p2-col h3 { animation: none; }
+    .slide[data-p2="1"] .p2-state em.e1, .slide[data-p2="2"] .p2-state em.e2 { background: rgba(142,27,38,.14); }
+    .slide[data-p2="1"] .p2-col.f1, .slide[data-p2="2"] .p2-col.f2 { transform: translateY(-5px); }
 
     /* ================================================================
        P3 · MOTIVATION (signal-flow pills)
@@ -156,23 +171,36 @@
        ================================================================ */
     .p4-card { position: absolute; top: 267px; width: 580px; height: 293px; border: 2px solid var(--blue-head); border-radius: 26px; background: #fff; text-align: left; cursor: pointer; transition: transform 260ms var(--ease), box-shadow 260ms var(--ease); }
     .p4-card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,.10) !important; }
-    .p4-card.k1 { left: 40px; } .p4-card.k2 { left: 677px; } .p4-card.k3 { left: 1297px; }
+    .p4-card.k1 { left: 40px; } .p4-card.k2 { left: 670px; } .p4-card.k3 { left: 1300px; }
     .active .p4-card.k1 { animation: glow1 6.6s ease-in-out infinite; }
     .active .p4-card.k2 { animation: glow2 6.6s ease-in-out infinite 2.2s; }
     .active .p4-card.k3 { animation: glow3 6.6s ease-in-out infinite 4.4s; }
     @keyframes glow1 { 0%, 26%, 100% { box-shadow: 0 0 0 rgba(0,0,0,0); border-color: var(--blue-head); } 11% { box-shadow: 0 12px 34px rgba(139,95,199,.30); border-color: var(--c1); } }
     @keyframes glow2 { 0%, 26%, 100% { box-shadow: 0 0 0 rgba(0,0,0,0); border-color: var(--blue-head); } 11% { box-shadow: 0 12px 34px rgba(47,107,178,.30); border-color: var(--c2); } }
     @keyframes glow3 { 0%, 26%, 100% { box-shadow: 0 0 0 rgba(0,0,0,0); border-color: var(--blue-head); } 11% { box-shadow: 0 12px 34px rgba(217,147,13,.30); border-color: var(--c3); } }
-    .p4-num { position: absolute; left: 26px; top: 30px; width: 46px; height: 46px; border-radius: 50%; color: #fff; font: 700 24px/46px var(--sans); text-align: center; }
-    .p4-head { position: absolute; left: 88px; top: 34px; font: 700 36px/1.1 var(--sans); }
-    .p4-head small { font-size: 30px; font-weight: 700; }
-    .p4-role { position: absolute; left: 30px; top: 116px; right: 30px; font: italic 700 31px/1.2 var(--serif); color: #000; padding-bottom: 16px; border-bottom: 1px solid #ccc; }
-    .p4-out { position: absolute; left: 30px; top: 200px; right: 30px; font: 700 26px/1.3 var(--sans); }
+    .p4-num { position: absolute; left: 26px; top: 32px; width: 46px; height: 46px; border-radius: 50%; color: #fff; font: 700 24px/46px var(--sans); text-align: center; }
+    .p4-head { position: absolute; left: 88px; top: 24px; font: 800 44px/1.05 var(--sans); letter-spacing: .01em; }
+    .p4-sub { position: absolute; left: 90px; top: 78px; font: italic 600 20px/1 var(--sans); color: #8d8d8d; }
+    .p4-llm { position: absolute; right: 24px; top: 34px; padding: 8px 14px; border-radius: 999px; border: 1.5px solid currentColor; font: italic 800 18px/1 var(--sans); }
+    .k1 .p4-llm { color: var(--c1); background: rgba(139,95,199,.07); }
+    .k2 .p4-llm { color: var(--c2); background: rgba(47,107,178,.07); }
+    .k3 .p4-llm { color: var(--c3); background: rgba(217,147,13,.08); }
+    .p4-role { position: absolute; left: 30px; top: 118px; right: 30px; font: italic 700 30px/1.2 var(--serif); color: #000; padding-bottom: 14px; border-bottom: 1px solid #ccc; }
+    .p4-out { position: absolute; left: 30px; top: 196px; right: 30px; font: 700 25px/1.3 var(--sans); }
+    .p4-card::before { content: ""; position: absolute; inset: 0; border-radius: 24px; pointer-events: none; }
+    .k1.p4-card::before { background: linear-gradient(180deg, rgba(139,95,199,.13), rgba(139,95,199,0) 32%); }
+    .k2.p4-card::before { background: linear-gradient(180deg, rgba(47,107,178,.13), rgba(47,107,178,0) 32%); }
+    .k3.p4-card::before { background: linear-gradient(180deg, rgba(217,147,13,.14), rgba(217,147,13,0) 32%); }
+    /* one shared context strip — the application contexts of the whole research, not per-pillar */
+    .p4-ctxbar { left: 0; right: 0; top: 648px; display: flex; justify-content: center; align-items: center; gap: 14px; }
+    .p4-ctxbar em { font: 800 15px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #bb6b71; font-style: normal; margin-right: 6px; }
+    .p4-ctxbar span { display: inline-flex; align-items: center; gap: 9px; padding: 9px 18px; border-radius: 999px; border: 1.5px solid rgba(142,27,38,.22); background: linear-gradient(180deg, #ffffff, #fbf2f3); color: var(--maroon); font: italic 700 20px/1 var(--sans); box-shadow: 0 4px 12px rgba(142,27,38,.07); }
+    .p4-ctxbar span::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: .75; }
     .k1 .p4-num { background: var(--c1); } .k1 .p4-head, .k1 .p4-out { color: var(--c1); }
     .k2 .p4-num { background: var(--c2); } .k2 .p4-head, .k2 .p4-out { color: var(--c2); }
     .k3 .p4-num { background: var(--c3); } .k3 .p4-head, .k3 .p4-out { color: var(--c3); }
-    .p4-chev { position: absolute; top: 394px; display: flex; gap: 1px; font: 700 38px/1 var(--sans); }
-    .p4-chev.a { left: 626px; color: var(--c2); } .p4-chev.b { left: 1252px; color: var(--c3); }
+    .p4-chev { position: absolute; top: 398px; display: flex; gap: 1px; font: 700 34px/1 var(--sans); }
+    .p4-chev.a { left: 626px; color: var(--c2); } .p4-chev.b { left: 1256px; color: var(--c3); }
     .p4-chev i { font-style: normal; opacity: .22; }
     .active .p4-chev i { animation: chevWave 1.9s ease-in-out infinite; }
     .p4-chev i:nth-child(2) { animation-delay: .28s; } .p4-chev i:nth-child(3) { animation-delay: .56s; }
@@ -222,7 +250,25 @@
        P7 · WORK 2 (bias installation, staged takeaway)
        ================================================================ */
     .p7-rq { left: 60px; top: 148px; width: 1800px; }
-    .p7-fig { left: 200px; top: 248px; width: 1562px; height: 604px; }
+    /* training pipeline — Pre-train → SFT → DPO with per-stage "installed bias" meters */
+    .p7-pipe { left: 200px; top: 236px; width: 1562px; display: flex; align-items: stretch; gap: 16px; }
+    .p7-stage { flex: 1; position: relative; border: 2px solid #d5d5d5; border-radius: 16px; background: #fff; padding: 14px 24px 16px; transition: border-color .3s, box-shadow .3s, opacity .3s; }
+    .p7-stage h5 { display: flex; align-items: baseline; gap: 12px; font: 800 26px/1 var(--sans); color: #000; }
+    .p7-stage h5 small { font: italic 600 19px/1 var(--sans); color: #8a8a8a; }
+    .p7-bias { margin-top: 13px; height: 12px; background: #efefef; border-radius: 999px; overflow: hidden; }
+    .p7-bias i { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, #dca6ab, var(--maroon)); transition: width 900ms var(--ease); }
+    .active .p7-bias.w1 i { width: 12%; transition-delay: 400ms; }
+    .active .p7-bias.w2 i { width: 46%; transition-delay: 750ms; }
+    .active .p7-bias.w3 i { width: 88%; transition-delay: 1100ms; }
+    .p7-bias-lab { display: block; margin-top: 9px; font: 700 19px/1 var(--sans); color: var(--maroon); }
+    .active .p7-stage.ps1 { animation: p7glow 7.5s ease-in-out infinite; }
+    .active .p7-stage.ps2 { animation: p7glow 7.5s ease-in-out infinite 2.5s; }
+    .active .p7-stage.ps3 { animation: p7glow 7.5s ease-in-out infinite 5s; }
+    @keyframes p7glow { 0%, 32%, 100% { border-color: #d5d5d5; box-shadow: none; } 13% { border-color: var(--maroon); box-shadow: 0 10px 26px rgba(142,27,38,.16); } }
+    .p7-pipe:hover .p7-stage { opacity: .45; animation-play-state: paused; }
+    .p7-pipe .p7-stage:hover { opacity: 1; border-color: var(--maroon); box-shadow: 0 10px 26px rgba(142,27,38,.16); }
+    .p7-parrow { align-self: center; font: 700 34px/1 var(--sans); color: var(--maroon); opacity: .45; }
+    .p7-fig { left: 200px; top: 368px; width: 1562px; height: 492px; }
     .p7-take { left: 46px; top: 888px; width: 1840px; font-size: 31px; }
     .p7-take .stage { display: inline; border-radius: 6px; padding: 2px 4px; }
     .active .p7-take .stage.s1 { animation: stageWash 7.5s ease-in-out infinite; }
@@ -234,11 +280,20 @@
        P8 · WORK 3 (hover-reveal baselines)
        ================================================================ */
     .p8-t { font-size: 47px; }
-    .p8-rq { left: 60px; top: 138px; width: 1800px; font-size: 34px; }
-    .p8-fig { left: 103px; top: 268px; width: 889px; height: 509px; }
+    .p8-rq { left: 60px; top: 148px; width: 1800px; font-size: 34px; }
+    .p8-fig { left: 90px; top: 252px; width: 940px; height: 476px; }
     .p8-step { position: absolute; left: 1090px; width: 790px; padding-top: 16px; border-top: 1.5px solid #b9cbe8; transition: transform .25s var(--ease); }
     .p8-step:hover { transform: translateX(6px); }
-    .p8-step h3 { font: 700 30px/1.15 var(--sans); color: #2e74b5; }
+    .p8-step h3 { display: flex; align-items: center; justify-content: space-between; gap: 12px; font: 700 30px/1.15 var(--sans); color: #2e74b5; }
+    /* per-step tag — the pipeline node, folded into its step */
+    .p8-tag { flex: none; padding: 7px 14px; border-radius: 999px; border: 1.5px solid; background: #fff; font: italic 700 17.5px/1 var(--sans); }
+    .p8-tag.g1 { color: #2e74b5; border-color: rgba(46,116,181,.45); }
+    .p8-tag.g2 { color: var(--maroon); border-color: rgba(142,27,38,.45); }
+    .p8-tag.g3 { color: var(--navy-verdict); border-color: rgba(31,56,100,.45); }
+    .active .p8-tag.g1 { animation: tagWash 6s ease-in-out infinite; }
+    .active .p8-tag.g2 { animation: tagWash 6s ease-in-out infinite 2s; }
+    .active .p8-tag.g3 { animation: tagWash 6s ease-in-out infinite 4s; }
+    @keyframes tagWash { 0%, 40%, 100% { box-shadow: none; transform: translateY(0); } 15% { box-shadow: 0 7px 18px rgba(0,0,0,.16); transform: translateY(-2px); } }
     .p8-step p { margin-top: 10px; font: 400 25px/1.32 var(--sans); color: #3f3f3f; }
     .p8-band { position: absolute; left: 60px; top: 800px; width: 1800px; height: 112px; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; border-top: 1.5px solid #d5d5d5; border-bottom: 1.5px solid #d5d5d5; }
     .p8-cell { position: relative; display: flex; align-items: center; justify-content: center; padding: 0 20px; border-right: 1px solid #e2e2e2; }
@@ -253,33 +308,60 @@
     .p8-take { left: 40px; top: 932px; width: 1856px; font-size: 30px; }
 
     /* ================================================================
-       P9 · WORK 4 (guided Sense→Predict→Adapt tour)
+       P12 · SENSE & PREDICT + P13 · ADAPT & AUGMENT
        ================================================================ */
-    .p9-rq { left: 60px; top: 145px; width: 1800px; }
-    .p9-boxtitle { position: absolute; left: 110px; top: 278px; width: 672px; height: 68px; border: 2.5px solid var(--maroon); background: #fff; display: flex; align-items: center; justify-content: center; text-align: center; font: 700 26px/1.2 var(--serif); color: #000; padding: 4px 10px; }
-    .p9-boxtitle .kw { text-underline-offset: 4px; }
-    .p9-rhead { position: absolute; left: 940px; top: 232px; width: 960px; text-align: center; font: italic 700 30px/1.2 var(--sans); color: var(--maroon); }
-    .p9-rhead u { text-underline-offset: 5px; }
-    .p9-sense, .p9-predict { position: absolute; font: 700 34px/1 var(--sans); color: var(--maroon); }
-    .p9-sense { left: 34px; top: 452px; }
-    .p9-predict { left: 14px; top: 700px; }
-    .p9-adapt { position: absolute; left: 788px; top: 674px; font: 700 34px/1 var(--sans); color: var(--c3); }
-    .p9-varrow { position: absolute; left: 72px; top: 498px; width: 14px; height: 180px; }
-    .p9-varrow path { stroke: #c0392b; stroke-width: 4; fill: none; }
-    .p9-varrow polygon { fill: #c0392b; }
-    .p9-figA { left: 133px; top: 358px; width: 614px; height: 239px; }
-    .p9-figB { left: 143px; top: 593px; width: 564px; height: 289px; }
-    .p9-sketch { left: 733px; top: 548px; width: 184px; height: 68px; object-fit: contain; }
-    .p9-figC { left: 958px; top: 266px; width: 954px; height: 642px; }
-    .p9-take { left: 46px; top: 894px; width: 1840px; font-size: 28px; }
-    .tour-badge { position: absolute; width: 34px; height: 34px; border-radius: 50%; border: 2px solid #c9c9c9; background: #fff; color: #999; font: 700 18px/30px var(--sans); text-align: center; cursor: pointer; transition: all .3s; z-index: 6; }
-    .tour-badge.tb1 { left: 142px; top: 450px; }
-    .tour-badge.tb2 { left: 152px; top: 698px; }
-    .tour-badge.tb3 { left: 902px; top: 672px; }
-    .tour-badge.on { border-color: var(--maroon); background: var(--maroon); color: #fff; transform: scale(1.15); }
-    .tour-badge.tb3.on { border-color: var(--c3); background: var(--c3); }
-    .p9-spot { transition: opacity .45s var(--ease); }
-    .slide[data-tour="1"] .p9-spot:not(.s1), .slide[data-tour="2"] .p9-spot:not(.s2), .slide[data-tour="3"] .p9-spot:not(.s3) { opacity: .28; }
+    /* --- P12 · SENSE & PREDICT — live behavioral + physiological signals --- */
+    .sn-card { position: absolute; top: 238px; height: 612px; border: 2.5px solid #c9c9c9; border-radius: 22px; background: #fff; padding: 22px 28px; }
+    .sn-card.s { left: 60px; width: 890px; }
+    .sn-card.p { left: 1010px; width: 850px; }
+    .sn-card h3 { font: 700 28px/1.1 var(--sans); color: var(--maroon); }
+    .sn-card h3 .k { color: #000; }
+    .sn-figA { position: absolute; left: 26px; top: 64px; width: 838px; height: 300px; }
+    .sn-chips { position: absolute; left: 28px; top: 476px; display: flex; gap: 10px; }
+    .sn-chips span { padding: 7px 13px; border-radius: 999px; background: #f9f2f2; border: 1px solid #e3cfd1; font: 600 17px/1 var(--sans); color: #8a5a5f; }
+    .sn-lab { position: absolute; left: 28px; font: 700 22px/1.1 var(--sans); color: #333; }
+    .sn-lab i { font-style: normal; color: var(--maroon); }
+    .sn-sig { position: absolute; left: 26px; width: 838px; height: 64px; }
+    .sn-fix { fill: rgba(142,27,38,.10); stroke: rgba(142,27,38,.45); stroke-width: 1.5; }
+    .sn-scan { fill: none; stroke: #d9b3b7; stroke-width: 1.5; stroke-dasharray: 5 6; }
+    .sn-gdot { fill: var(--maroon); }
+    .active .sn-gdot { animation: gazeHop 7s ease-in-out infinite; }
+    @keyframes gazeHop {
+      0%, 9% { transform: translate(60px, 32px); } 18%, 27% { transform: translate(230px, 20px); }
+      36%, 45% { transform: translate(420px, 42px); } 54%, 63% { transform: translate(600px, 18px); }
+      72%, 81% { transform: translate(760px, 34px); } 100% { transform: translate(60px, 32px); }
+    }
+    .sn-ecg-base { fill: none; stroke: #f0dadc; stroke-width: 3; }
+    .sn-ecg-run { fill: none; stroke: #c0392b; stroke-width: 3; stroke-linejoin: round; stroke-dasharray: 170 1500; }
+    .active .sn-ecg-run { animation: ecgRun 3.2s linear infinite; }
+    @keyframes ecgRun { from { stroke-dashoffset: 1670; } to { stroke-dashoffset: 0; } }
+    .sn-eda { fill: none; stroke: #7ea6e0; stroke-width: 2; opacity: .75; }
+    .sn-flow { position: absolute; left: 952px; top: 520px; display: flex; gap: 1px; font: 700 42px/1 var(--sans); color: var(--maroon); }
+    .sn-flow i { font-style: normal; opacity: .22; }
+    .active .sn-flow i { animation: chevWave 1.9s ease-in-out infinite; }
+    .sn-flow i:nth-child(2) { animation-delay: .28s; } .sn-flow i:nth-child(3) { animation-delay: .56s; }
+    .sn-states { position: absolute; left: 30px; top: 70px; display: flex; gap: 14px; }
+    .sn-states span { padding: 11px 20px; border-radius: 999px; border: 2px solid var(--maroon); background: #fff; color: var(--maroon); font: 700 21px/1 var(--sans); }
+    .active .sn-states span:nth-child(1) { animation: statePulse 6s ease-in-out infinite; }
+    .active .sn-states span:nth-child(2) { animation: statePulse 6s ease-in-out infinite 1.5s; }
+    .active .sn-states span:nth-child(3) { animation: statePulse 6s ease-in-out infinite 3s; }
+    .active .sn-states span:nth-child(4) { animation: statePulse 6s ease-in-out infinite 4.5s; }
+    @keyframes statePulse { 0%, 45%, 100% { box-shadow: 0 0 0 0 rgba(142,27,38,0); background: #fff; } 18% { box-shadow: 0 0 0 9px rgba(142,27,38,.12); background: #fbf2f3; } }
+    .sn-figB { position: absolute; left: 34px; top: 148px; width: 782px; height: 400px; }
+    .sn-note { position: absolute; left: 34px; top: 560px; width: 782px; font: italic 600 20px/1.3 var(--serif); color: #8a8a8a; }
+    /* --- P13 · ADAPT & AUGMENT — adapt what → toward outcomes --- */
+    .ad-rh { position: absolute; top: 224px; left: 56px; width: 425px; display: flex; justify-content: center; }
+    .ad-rh b { display: inline-flex; align-items: center; gap: 10px; padding: 11px 22px; border-radius: 999px; border: 1.5px solid rgba(217,147,13,.4); background: linear-gradient(180deg, #fff, #fdf6ea); color: #b47a0b; font: 800 22px/1 var(--sans); letter-spacing: .02em; box-shadow: 0 4px 12px rgba(217,147,13,.10); }
+    .ad-rh b::after { content: "⌄"; font-size: 19px; opacity: .6; }
+    .ad-item { position: absolute; left: 56px; width: 384px; padding: 11px 18px 12px; border: 1.5px solid #d5d5d5; border-left: 5px solid var(--c3); border-radius: 12px; background: #fff; transition: transform .25s var(--ease), box-shadow .25s; }
+    .ad-item:hover { transform: translateX(5px); box-shadow: 0 8px 20px rgba(217,147,13,.14); }
+    .ad-item h4 { font: 700 22px/1.15 var(--sans); color: #b47a0b; }
+    .ad-item p { margin-top: 5px; font: 400 18.5px/1.3 var(--sans); color: #666; }
+    .ad-fig { position: absolute; left: 660px; top: 200px; width: 1030px; height: 672px; }
+    .ad-flow { position: absolute; left: 508px; top: 512px; display: flex; gap: 1px; font: 700 42px/1 var(--sans); color: var(--c3); }
+    .ad-flow i { font-style: normal; opacity: .22; }
+    .active .ad-flow i { animation: chevWave 1.9s ease-in-out infinite; }
+    .ad-flow i:nth-child(2) { animation-delay: .28s; } .ad-flow i:nth-child(3) { animation-delay: .56s; }
 
     /* ================================================================
        P10 · VISION (hover pairing + auto tour)
@@ -307,6 +389,136 @@
     .slide[data-pair="1"] .p10-st:not(.s1), .slide[data-pair="2"] .p10-st:not(.s2), .slide[data-pair="3"] .p10-st:not(.s3) { opacity: .3; }
     .p10-brace { left: 260px; top: 773px; width: 1393px; }
     .p10-close { left: 160px; top: 882px; width: 1600px; text-align: center; font: italic 700 42px/1.3 var(--serif); color: var(--maroon); }
+    .p10-ctxbar { left: 0; right: 0; top: 964px; display: flex; justify-content: center; align-items: center; gap: 12px; }
+    .p10-ctxbar em { font: 800 14px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #bb6b71; font-style: normal; margin-right: 4px; }
+    .p10-ctxbar span { display: inline-flex; align-items: center; gap: 8px; padding: 7px 15px; border-radius: 999px; border: 1.5px solid rgba(142,27,38,.20); background: linear-gradient(180deg, #ffffff, #fbf2f3); color: var(--maroon); font: italic 700 18px/1 var(--sans); }
+    .p10-ctxbar span::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; opacity: .75; }
+
+    /* ================================================================
+       P7 · EVALUATE (EMNLP'26) — trust–truth separability stress test.
+       Flip the source cue: trust AND truth readouts move together.
+       ================================================================ */
+    .tt-card { position: absolute; left: 70px; top: 216px; width: 820px; height: 390px; border: 2.5px solid #c9c9c9; border-radius: 22px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); }
+    .tt-src { position: absolute; left: 34px; top: 24px; display: inline-flex; align-items: center; padding: 11px 20px; border-radius: 12px; font: italic 700 25px/1 var(--sans); transition: background .35s, color .35s; }
+    .tt-src.human { background: rgba(109,63,150,.12); color: #6d3f96; }
+    .tt-src.ai { background: rgba(46,86,164,.12); color: #2e56a4; }
+    .tt-q { position: absolute; left: 34px; top: 96px; right: 34px; font: 700 27px/1.35 var(--sans); color: #000; }
+    .tt-a { position: absolute; left: 34px; top: 152px; right: 34px; padding: 16px 22px; border-left: 4px solid #d9c7c9; background: #faf7f7; border-radius: 0 12px 12px 0; font: 400 24px/1.45 var(--sans); color: #333; }
+    .tt-toggle { position: absolute; left: 34px; bottom: 24px; display: flex; gap: 14px; }
+    .tt-toggle button { padding: 16px 24px; border: 2px solid var(--maroon); border-radius: 10px; background: #fff; color: var(--maroon); font: 700 20px/1 var(--sans); letter-spacing: .03em; cursor: pointer; transition: background .25s, color .25s, transform .25s; }
+    .tt-toggle button:hover { transform: translateY(-2px); }
+    .tt-toggle button.active { background: var(--maroon); color: #fff; }
+    .tt-row-label { position: absolute; font: 700 27px/1.1 var(--sans); color: #000; }
+    .tt-row-label small { font: 600 20px/1 var(--sans); color: #8a8a8a; }
+    .tt-verdict { position: absolute; font: 700 21px/1.2 var(--sans); color: var(--navy-verdict); }
+    .tt-track { position: absolute; width: 425px; height: 17px; background: #e8e8e8; border-radius: 2px; overflow: hidden; }
+    .tt-track i { position: absolute; inset: 0 auto 0 0; width: 50%; background: var(--navy-bar); transition: width 750ms var(--ease); }
+    .tt-track.trust i { background: #6d3f96; }
+    .tt-note { position: absolute; width: 425px; font: 400 21px/1.3 var(--sans); color: #666; }
+    .tt-leak { position: absolute; text-align: center; font: italic 700 23px/1 var(--sans); color: var(--maroon); }
+    .tt-leak i { display: inline-block; font-style: normal; opacity: .25; animation: chevWave 1.9s ease-in-out infinite; }
+    .tt-leak i:nth-child(2) { animation-delay: .28s; }
+    .tt-leak i:nth-child(3) { animation-delay: .56s; }
+    /* confidence line chart (paper Fig. 2b, no caption) — highlights the cue selected on the toggle */
+    .ttc { position: absolute; left: 70px; top: 634px; width: 1790px; }
+    .ttc svg { display: block; width: 100%; }
+    .ttc-line { fill: none; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 2600; stroke-dashoffset: 2600; }
+    .active .ttc-line.l1 { animation: ttcDraw 1.5s var(--ease) .15s forwards; }
+    .active .ttc-line.l2 { animation: ttcDraw 1.5s var(--ease) .4s forwards; }
+    .ttc-line.dash { stroke-width: 3; stroke-dasharray: 9 10; stroke-dashoffset: 0; opacity: 0; }
+    .active .ttc-line.dash { animation: ttcFade .9s ease 1s forwards; }
+    @keyframes ttcDraw { to { stroke-dashoffset: 0; } }
+    @keyframes ttcFade { to { opacity: 1; } }
+    .ttc g { transition: opacity .4s; }
+    .ttc[data-mode="human"] .ai-g { opacity: .32; }
+    .ttc[data-mode="ai"] .hu-g { opacity: .32; }
+
+    /* ================================================================
+       P9 · ALIGN — benchmark creation (expert-annotated dialogue → data).
+       Code chips "stamp" onto therapist turns as experts label them.
+       ================================================================ */
+    .bm-chat { position: absolute; left: 60px; top: 258px; width: 880px; height: 612px; border: 2.5px solid #c9c9c9; border-radius: 22px; background: #fff; padding: 24px 30px; }
+    .bm-cap { font: italic 600 21px/1.35 var(--serif); color: #666; padding-bottom: 14px; border-bottom: 1.5px solid #e3e3e3; }
+    .bm-cap b { color: #2e74b5; font-style: normal; }
+    .bm-turn { position: relative; margin-top: 21px; max-width: 620px; padding: 13px 20px; border-radius: 16px; font: 400 24px/1.35 var(--sans); color: #222; }
+    .bm-turn span { display: block; margin-bottom: 5px; font: 700 15px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: #8a8a8a; }
+    .bm-turn.cl { background: #f1f1f1; border-bottom-left-radius: 4px; }
+    .bm-turn.th { background: #e8f0fa; border-bottom-right-radius: 4px; margin-left: 200px; }
+    .bm-turn.th span { color: #2e74b5; }
+    .bm-code { position: absolute; right: -14px; top: -18px; padding: 7px 14px; border-radius: 999px; background: #2e74b5; color: #fff; font: 700 18px/1 var(--sans); box-shadow: 0 5px 12px rgba(46,116,181,.32); transform: scale(0); }
+    .active .bm-code.c1 { animation: stampIn .5s var(--ease) .9s forwards; }
+    .active .bm-code.c2 { animation: stampIn .5s var(--ease) 1.8s forwards; }
+    @keyframes stampIn { 0% { transform: scale(0) rotate(-10deg); } 70% { transform: scale(1.14) rotate(3deg); } 100% { transform: scale(1) rotate(-2deg); } }
+    .bm-flow { position: absolute; left: 948px; top: 540px; display: flex; gap: 1px; font: 700 42px/1 var(--sans); color: #2e74b5; }
+    .bm-flow i { font-style: normal; opacity: .22; }
+    .active .bm-flow i { animation: chevWave 1.9s ease-in-out infinite; }
+    .bm-flow i:nth-child(2) { animation-delay: .28s; } .bm-flow i:nth-child(3) { animation-delay: .56s; }
+    /* tree-structured expert strategies (SSAG encoding) — hot path = predicted next strategy */
+    .bm-tree { position: absolute; left: 1064px; top: 258px; width: 796px; height: 612px; border: 2.5px solid #2e74b5; border-radius: 22px; background: #fff; padding: 22px 28px; }
+    .bm-tree h3 { font: 700 28px/1.1 var(--sans); color: #2e74b5; }
+    .bmt-sub { margin-top: 6px; font: italic 600 19px/1.2 var(--serif); color: #8a8a8a; }
+    .bmt-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    .bmt-line { stroke: #c9d8ec; stroke-width: 2; }
+    .bmt-hot { stroke: var(--maroon); stroke-width: 3; stroke-dasharray: 7 8; animation: antMarch 1s linear infinite; }
+    @keyframes antMarch { to { stroke-dashoffset: -15; } }
+    .bmt-root { position: absolute; left: 398px; top: 104px; transform: translateX(-50%); padding: 13px 26px; border-radius: 999px; background: #2e74b5; color: #fff; font: 800 22px/1 var(--sans); white-space: nowrap; box-shadow: 0 8px 20px rgba(46,116,181,.25); }
+    .bmt-phase { position: absolute; top: 290px; width: 150px; transform: translateX(-50%); text-align: center; padding: 11px 6px; border: 2px solid #2e74b5; border-radius: 12px; background: #fff; color: #2e74b5; font: 700 21px/1.1 var(--sans); }
+    .bmt-leaf { position: absolute; top: 424px; width: 136px; transform: translateX(-50%); text-align: center; padding: 10px 8px; border: 1.5px solid #c9d8ec; border-radius: 14px; background: #f4f7fb; color: #44618a; font: 600 17.5px/1.2 var(--sans); }
+    .bmt-leaf.hit { border-color: #2e74b5; color: #2e74b5; background: #fff; }
+    .active .bmt-leaf.h1 { animation: leafPing 1s ease 1.15s; }
+    .active .bmt-leaf.h2 { animation: leafPing 1s ease 2.05s; }
+    @keyframes leafPing { 0%, 100% { box-shadow: none; } 40% { box-shadow: 0 8px 18px rgba(46,116,181,.30); } }
+    .bmt-leaf.next { border-color: var(--maroon); color: var(--maroon); background: #fff; animation: nextPulse 2.4s ease-in-out infinite; }
+    @keyframes nextPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(142,27,38,0); } 50% { box-shadow: 0 0 0 8px rgba(142,27,38,.12); } }
+    .bmt-tag { position: absolute; top: 472px; transform: translateX(-50%); font: italic 700 16px/1 var(--sans); color: var(--maroon); white-space: nowrap; }
+    .bmt-note { position: absolute; left: 26px; right: 26px; bottom: 14px; padding: 12px 14px; border: 1.5px dashed #c9c9c9; border-radius: 12px; background: #fff; text-align: center; font: italic 600 20px/1.35 var(--serif); color: #555; cursor: pointer; transition: border-color .25s, color .25s; }
+    .bmt-note b { color: var(--maroon); }
+    .bmt-note:hover { border-color: var(--maroon); color: #000; }
+
+    /* ================================================================
+       P11 · ALIGN — StoryMI agentic simulation. Conductor agent steers
+       the MI strategy; therapist ⇄ client agents exchange coded turns.
+       ================================================================ */
+    .ag-card { position: absolute; top: 300px; width: 430px; height: 440px; border: 2.5px solid #c9c9c9; border-radius: 22px; background: #fff; padding: 24px 28px 26px; }
+    .ag-card h3 { font: 700 27px/1.15 var(--sans); color: #2e74b5; text-align: center; }
+    .ag-in { left: 56px; }
+    .ag-out { left: 1434px; }
+    .ag-q { margin-top: 18px; padding: 14px 18px; border: 1.5px dashed #b9cbe8; border-radius: 12px; font: 600 22px/1.3 var(--sans); color: #333; }
+    .ag-q small { display: block; margin-top: 5px; font: italic 600 18px/1.2 var(--sans); color: #8a8a8a; }
+    .ag-tf { margin: 36px 0 0 6px; font: italic 700 21px/1.3 var(--serif); color: var(--maroon); }
+    .ag-story { margin-top: 18px; padding: 16px 18px; background: #faf7f7; border-left: 4px solid #d9c7c9; border-radius: 0 12px 12px 0; font: italic 400 22px/1.45 var(--serif); color: #444; }
+    .ag-stats { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .ag-stats span { padding: 11px 8px; border-radius: 12px; background: #f4f7fb; border: 1px solid #d9e4f2; text-align: center; font: 600 18px/1.25 var(--sans); color: #44618a; }
+    .ag-stats b { display: block; font: 800 28px/1.1 var(--sans); color: #2e74b5; }
+    .ag-eval { margin: 15px 0 0; list-style: none; }
+    .ag-eval li { padding: 8px 0 8px 34px; position: relative; border-bottom: 1px solid #eee; font: 600 21px/1.3 var(--sans); color: #333; }
+    .ag-eval li:last-child { border-bottom: 0; }
+    .ag-eval li::before { content: "✓"; position: absolute; left: 4px; color: #2e74b5; font-weight: 800; }
+    .ag-stage { position: absolute; left: 540px; top: 290px; width: 840px; height: 540px; }
+    .ag-name { display: inline-block; padding: 13px 26px; border-radius: 999px; border: 2.5px solid var(--maroon); background: #fff; color: var(--maroon); font: 800 24px/1 var(--sans); box-shadow: 0 8px 20px rgba(142,27,38,.12); }
+    .ag-conductor { position: absolute; left: 0; right: 0; top: 4px; text-align: center; }
+    .ag-ctl { margin-top: 10px; font: italic 600 19px/1.2 var(--sans); color: #8a8a8a; }
+    .ag-strat { position: relative; height: 42px; margin-top: 6px; }
+    .ag-strat span { position: absolute; left: 0; right: 0; top: 0; font: italic 700 23px/1.2 var(--sans); color: var(--maroon); opacity: 0; animation: stratCycle 7.5s ease-in-out infinite; }
+    .ag-strat span:nth-child(2) { animation-delay: 2.5s; }
+    .ag-strat span:nth-child(3) { animation-delay: 5s; }
+    @keyframes stratCycle { 0% { opacity: 0; transform: translateY(8px); } 5%, 28% { opacity: 1; transform: translateY(0); } 33.3%, 100% { opacity: 0; transform: translateY(-8px); } }
+    /* interaction agent coordinates BOTH agents — two animated control lines */
+    .ag-ctrl { position: absolute; inset: 0; pointer-events: none; }
+    .ag-ctrl path { fill: none; stroke: var(--maroon); stroke-width: 3; stroke-dasharray: 7 8; opacity: .6; animation: antMarch 1s linear infinite; }
+    .ag-ctrl polygon { fill: var(--maroon); opacity: .6; }
+    .ag-line { position: absolute; left: 195px; top: 412px; width: 450px; height: 3px; background: #dcdcdc; }
+    .ag-agent { position: absolute; top: 330px; width: 170px; height: 170px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font: 700 25px/1.25 var(--sans); color: #fff; box-shadow: 0 10px 24px rgba(0,0,0,.14); }
+    .ag-agent.th { left: 22px; background: radial-gradient(circle at 35% 30%, #5a8fd0, #2e56a4); }
+    .ag-agent.cl { left: 648px; background: radial-gradient(circle at 35% 30%, #9a6fc0, #6d3f96); }
+    .active .ag-agent.th { animation: breathe 5s ease-in-out infinite; }
+    .active .ag-agent.cl { animation: breathe 5s ease-in-out infinite 2.5s; }
+    .ag-msg { position: absolute; top: 404px; width: 18px; height: 18px; border-radius: 50%; opacity: 0; }
+    .ag-msg.m1 { background: #2e74b5; animation: agGo 5s cubic-bezier(.45,.05,.55,.95) infinite; }
+    .ag-msg.m2 { background: #6d3f96; animation: agBack 5s cubic-bezier(.45,.05,.55,.95) infinite 2.5s; }
+    @keyframes agGo { 0% { left: 205px; opacity: 0; } 8% { opacity: 1; } 42% { left: 618px; opacity: 1; } 50%, 100% { left: 618px; opacity: 0; } }
+    @keyframes agBack { 0% { left: 618px; opacity: 0; } 8% { opacity: 1; } 42% { left: 205px; opacity: 1; } 50%, 100% { left: 205px; opacity: 0; } }
+    .ag-stage-t { position: absolute; left: 0; right: 0; top: 516px; text-align: center; font: 700 27px/1.15 var(--sans); color: #2e74b5; }
 
     /* ================================================================
        P11 · THANKS
@@ -324,9 +536,9 @@
     .deck-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
     /* ---------- chrome, overlays, editor ---------- */
-    .deck-controls { display: flex; flex-direction: column; align-items: center; gap: 11px; padding: 11px 8px; color: #fff; background: rgba(0,0,0,.85); border-radius: 10px; font: 500 12px/1 var(--sans); letter-spacing: .04em; }
-    .deck-controls button { border: 0; padding: 4px 6px; background: transparent; cursor: pointer; }
-    .progress-track { width: 3px; height: 96px; background: rgba(255,255,255,.22); }
+    .deck-controls { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 8px 5px; color: #fff; background: rgba(0,0,0,.72); border-radius: 9px; font: 500 10.5px/1 var(--sans); letter-spacing: .04em; }
+    .deck-controls button { border: 0; padding: 3px 5px; background: transparent; cursor: pointer; }
+    .progress-track { width: 2.5px; height: 68px; background: rgba(255,255,255,.22); }
     .progress-fill { width: 100%; height: 9%; background: #fff; transition: height 260ms var(--ease); }
     .edit-hotzone { position: fixed; z-index: 10000; top: 0; left: 0; width: 80px; height: 80px; cursor: pointer; }
     .edit-toggle { position: fixed; z-index: 10001; top: 16px; left: 16px; padding: 9px 12px; opacity: 0; pointer-events: none; border: 0; border-radius: 8px; color: #fff; background: #000; font: 500 12px/1 var(--sans); transition: opacity .3s; cursor: pointer; }
@@ -355,28 +567,28 @@
     <main class="deck-stage" id="deckStage">
 
       <!-- ================= P1 · TITLE ================= -->
-      <section class="slide active" data-title="Bidirectional loop between human signals and trustworthy LLMs" aria-label="Slide 1 of 11">
+      <section class="slide active" data-title="Bidirectional loop between human signals and trustworthy LLMs" aria-label="Slide 1 of 15">
         <img class="abs p1-logos rv" src="assets/figs/logos-strip.png" alt="NII · University of Amsterdam · CWI">
-        <h1 class="abs p1-title rv d1" data-edit-id="p1-title">Bidirectional Loop between:<br>Human Signals and Trustworthy LLMs:</h1>
-        <p class="abs p1-line rv d2" data-edit-id="p1-line">“I turn human signals into evaluation, alignment, and adaptation for LLM-powered AI systems”</p>
+        <h1 class="abs p1-title rv d1" data-edit-id="p1-title">Bidirectional Loop between:<br>Human Signals and Trustworthy LLMs</h1>
+        <p class="abs p1-line rv d2" data-edit-id="p1-line">“I turn human signals into <u>evaluation</u>, <u>alignment</u>, and <u>adaptation</u> for LLM-powered AI systems”</p>
         <div class="p1-rule rv d3"></div>
         <p class="abs p1-name rv d4"><span>Xin Sun</span><br><span id="liveDate">13 July 2026</span></p>
         <p class="abs p1-aff rv d4" data-edit-id="p1-aff">Specially Appointed Assistant Professor · NII, Japan</p>
       </section>
 
       <!-- ================= P2 · RESEARCH CONCEPT ================= -->
-      <section class="slide" id="slideIntro" data-title="Research concept and motivation" aria-label="Slide 2 of 11">
+      <section class="slide" id="slideIntro" data-title="Research concept and motivation" aria-label="Slide 2 of 15">
         <h2 class="abs p2-title rv" data-edit-id="p2-title">Research <span class="kw">Concept</span> and Motivation</h2>
         <div class="rule p2-rule rv"></div>
         <div class="abs p2-col f1 rv d1"><h3 data-edit-id="p2-h1">Human-Centered AI</h3><p data-edit-id="p2-b1">(Natural language processing, NLP &amp;<br>Human-computer interaction, HCI)</p></div>
         <svg class="abs p2-cycle rv d2" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="cgA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4472c4"/><stop offset="1" stop-color="#7d5fb2"/></linearGradient><linearGradient id="cgB" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#7d5fb2"/><stop offset="1" stop-color="#4472c4"/></linearGradient></defs><g class="p2-spin" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5"><path d="M 22.3 34 A 32 32 0 0 1 77.7 34" stroke="url(#cgA)"/><path d="M 77.7 66 A 32 32 0 0 1 22.3 66" stroke="url(#cgB)"/><path d="M 72.5 33 L 79 36.2 L 79.4 29" stroke="#7d5fb2"/><path d="M 27.5 67 L 21 63.8 L 20.6 71" stroke="#4472c4"/></g></svg>
-        <div class="abs p2-col f2 rv d1"><h3 data-edit-id="p2-h2">Cognitive Science</h3><p data-edit-id="p2-b2">(Mixed-methods empirical experiments<br>with behavioral &amp; physiological sensing)</p></div>
+        <div class="abs p2-col f2 rv d1"><h3 data-edit-id="p2-h2">Cognitive Science</h3><p data-edit-id="p2-b2">(Mixed-methods empirical studies<br>with behavioral &amp; physiological sensing)</p></div>
         <img class="abs p2-brace rv d2" src="assets/figs/brace2.png" alt="">
         <p class="abs p2-state rv d3" data-edit-id="p2-state">Study human-centered AI in healthcare and decision-support<br>from bidirectional sides: how <em class="e1">humans align AI</em>, and how <em class="e2">AI augments humans</em>.</p>
       </section>
 
       <!-- ================= P3 · MOTIVATION ================= -->
-      <section class="slide" data-title="Human signals are not always ground truth" aria-label="Slide 3 of 11">
+      <section class="slide" data-title="Human signals are not always ground truth" aria-label="Slide 3 of 15">
         <h2 class="abs kt rv" style="left:20px;top:24px;font-size:46px" data-edit-id="p3-title"><i>Research Concept and </i><span class="kw">Motivation</span>: Human Signals Are Not Always Ground Truth</h2>
         <div class="rule rv" style="top:104px"></div>
         <p class="abs p3-lead rv d1" data-edit-id="p3-lead">LLMs are aligned with humans and trained on human data, <u>however</u> :</p>
@@ -393,26 +605,27 @@
         <span class="pill bot b2" aria-hidden="true">reasoning</span>
         <span class="pill bot b3" aria-hidden="true">explanation</span>
         <span class="pill bot b4" aria-hidden="true">decision-support</span>
-        <span class="pnum">3 / 10</span>
+        <span class="pnum">3 / 14</span>
       </section>
 
       <!-- ================= P4 · LIFECYCLE ================= -->
-      <section class="slide" data-title="Research methods — human signals across the LLM lifecycle" aria-label="Slide 4 of 11">
+      <section class="slide" data-title="Research methods — human signals across the LLM lifecycle" aria-label="Slide 4 of 15">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p4-title"><span class="kw">Research Methods:</span> Human Signals Across the <span class="kw">LLM Lifecycle</span></h2>
         <div class="rule rv" style="top:104px"></div>
-        <button type="button" class="p4-card k1 rv d1" data-jump="5"><span class="p4-num">1</span><span class="p4-head">Evaluate <small>(prior development)</small></span><span class="p4-role">human signals as evaluate protocol</span><span class="p4-out">→ How Humans and LLMs perform tasks</span></button>
+        <button type="button" class="p4-card k1 rv d1" data-jump="5"><span class="p4-num">1</span><span class="p4-head">Evaluate</span><span class="p4-sub">before development</span><span class="p4-llm">LLM as Judge</span><span class="p4-role">human signals as evaluation protocol</span><span class="p4-out">→ How Humans and LLMs perform tasks</span></button>
         <span class="p4-chev a" aria-hidden="true"><i>›</i><i>›</i><i>›</i></span>
-        <button type="button" class="p4-card k2 rv d2" data-jump="7"><span class="p4-num">2</span><span class="p4-head">Align <small>(during development)</small></span><span class="p4-role">human signals as supervision cues</span><span class="p4-out">→ What should LLMs learn from humans</span></button>
+        <button type="button" class="p4-card k2 rv d2" data-jump="8"><span class="p4-num">2</span><span class="p4-head">Align</span><span class="p4-sub">during development</span><span class="p4-llm">LLM as Learner</span><span class="p4-role">human signals as supervision cues</span><span class="p4-out">→ What should LLMs learn from humans</span></button>
         <span class="p4-chev b" aria-hidden="true"><i>›</i><i>›</i><i>›</i></span>
-        <button type="button" class="p4-card k3 rv d3" data-jump="9"><span class="p4-num">3</span><span class="p4-head">Adapt <small>(after development)</small></span><span class="p4-role">human signals as adaptive feedback</span><span class="p4-out">→ How should LLMs respond to humans</span></button>
+        <button type="button" class="p4-card k3 rv d3" data-jump="12"><span class="p4-num">3</span><span class="p4-head">Adapt</span><span class="p4-sub">after development</span><span class="p4-llm">LLM as Partner</span><span class="p4-role">human signals as adaptive feedback</span><span class="p4-out">→ How should LLMs respond to humans</span></button>
         <img class="abs p4-arrow rv d3" src="assets/figs/arrow-hand4.png" alt="">
+        <div class="abs p4-ctxbar rv d4" role="note" aria-label="Health-related application contexts of this research"><em>Contexts</em><span>Healthcare</span><span>Mental Support</span><span>Decision-Making Support</span></div>
         <p class="abs p4-obj rv d4" data-edit-id="p4-obj"><span class="kw">Objective</span>: Learn the right things from humans. Provide the right support to humans.</p>
-        <span class="pnum">4 / 10</span>
+        <span class="pnum">4 / 14</span>
       </section>
 
       <!-- ================= P5 · WORK 1 (live readout) ================= -->
-      <section class="slide" id="slideEval" data-title="Work 1 · Evaluation — LLM-as-a-Judge for health information" aria-label="Slide 5 of 11">
-        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p5-title">Work 1&nbsp; - &nbsp;<span class="kw">Evaluation</span>: LLM-as-a-Judge for Health Information</h2>
+      <section class="slide" id="slideEval" data-title="1 · Evaluate — LLM-as-a-Judge for health information" aria-label="Slide 5 of 15">
+        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p5-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: LLM-as-a-Judge for Health Information</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Domain: Health Information">
           <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.4s-6.9-4.2-9.2-8.7C1.1 8.5 2.9 5.1 6.1 5.1c1.9 0 3.4 1.1 4.4 2.6 1-1.5 2.5-2.6 4.4-2.6 3.2 0 5 3.4 3.3 6.6-2.3 4.5-9.2 8.7-9.2 8.7z" fill="#8e1b26" fill-opacity=".16" stroke="#8e1b26" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
@@ -441,12 +654,12 @@
         <div class="p5-toggle rv d2" id="p5Toggle" role="group" aria-label="Counterfactual source label"><button type="button" class="active" data-label="human">HUMAN LABEL</button><button type="button" data-label="ai">AI LABEL</button></div>
         <p class="abs takeaway p5-take rv d4" data-edit-id="p5-take"><span class="tl">Takeaways:</span> LLM-as-a-Judge and Humans share similar processing patterns in both behavioral and mechanistic level.</p>
         <p class="refs">[a] Sun et al. Label Effects: Shared Heuristic Reliance in Trust Assessment by Humans and LLM-as-a-Judge (ACL 2026) Core A*<br>[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1</p>
-        <span class="pnum">5 / 10</span>
+        <span class="pnum">5 / 14</span>
       </section>
 
       <!-- ================= P6 · MECHANISTIC ================= -->
-      <section class="slide" data-title="Beyond behaviors — mechanistic evaluation for LLMs and humans" aria-label="Slide 6 of 11">
-        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p6-title">Beyond Behaviors: <span class="kw">Mechanistic Evaluation</span> for LLMs and Humans</h2>
+      <section class="slide" data-title="Beyond behaviors — mechanistic evaluation for LLMs and humans" aria-label="Slide 6 of 15">
+        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p6-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Beyond Behaviors - <span class="kw">Mechanistic Evaluation</span> for LLMs and Humans</h2>
         <div class="rule rv" style="top:104px"></div>
         <p class="abs p6-h rv d1" style="left:118px" data-edit-id="p6-h1">Human Gaze-Attention</p>
         <p class="abs p6-h rv d1" style="left:1093px" data-edit-id="p6-h2">Model Self-Attention</p>
@@ -455,36 +668,152 @@
         <button type="button" class="abs p6-fig2 zoomable rv d3" data-image="assets/figs/llm-attention.png" aria-label="Open model attention grids"><img src="assets/figs/llm-attention.png" alt="Attention density across label and content AOIs for six models"></button>
         <p class="abs takeaway p6-take rv d4" data-edit-id="p6-take"><span class="tl">Takeaway:</span> both humans and LLMs over-attend to heuristic cues, rather than objectively focus on content itself.</p>
         <p class="refs">[a] Sun et al. Label Effects (ACL 2026) Core A* — behavioral results, mechanistic analysis across LLM families</p>
-        <span class="pnum">6 / 10</span>
+        <span class="pnum">6 / 14</span>
       </section>
 
-      <!-- ================= P7 · WORK 2 ================= -->
-      <section class="slide" data-title="Work 2 · Alignment — how LLMs learn the bad human signals" aria-label="Slide 7 of 11">
-        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p7-title">Work 2&nbsp; - &nbsp;<span class="kw">Alignment</span>: How LLMs Learn the “Bad” Human Signals</h2>
+      <!-- ================= P7 · EVALUATE · EMNLP'26 (trust–truth separability) ================= -->
+      <section class="slide" id="slideTT" data-title="1 · Evaluate — when trust meets truth in LLM-as-a-Judge" aria-label="Slide 7 of 15">
+        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="tt-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: When Trust Meets Truth in LLM-as-a-Judge</h2>
+        <div class="rule rv" style="top:104px"></div>
+        <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px" data-edit-id="tt-rq"><span class="tag">Research Question:</span> can LLM judges keep trust scoring separate from binary truth verdicts?</p>
+        <div class="abs tt-card rv d1">
+          <span class="tt-src human" data-tt="src">“As human professionals stated …”</span>
+          <p class="tt-q">Q · Do antibiotics help treat a viral cold?</p>
+          <p class="tt-a">Antibiotics treat bacterial infections, not viral infections such as the common cold. Rest and fluids are usually appropriate.</p>
+          <div class="tt-toggle" id="ttToggle" role="group" aria-label="Counterfactual source attribution"><button type="button" class="active" data-src="human">HUMAN SOURCE</button><button type="button" data-src="ai">AI SOURCE</button></div>
+        </div>
+        <p class="tt-row-label rv d2" style="left:960px;top:240px">Scoring Judge <small>(1–7 scale)</small></p>
+        <div class="tt-track trust rv d2" style="left:960px;top:288px"><i data-tt="b-trust" style="width:80%"></i></div>
+        <p class="tt-verdict rv d2" style="left:960px;top:322px" data-tt="v-trust">5.6 / 7 · HIGHER under Human source</p>
+        <p class="tt-note rv d2" style="left:960px;top:356px">Identical content — trust follows the source.</p>
+        <p class="tt-row-label rv d3" style="left:1435px;top:240px">Binary Judge · <small>P(Correct)</small></p>
+        <div class="tt-track rv d3" style="left:1435px;top:288px"><i data-tt="b-pc" style="width:66%"></i></div>
+        <p class="tt-verdict rv d3" style="left:1435px;top:322px" data-tt="v-pc">66% judged CORRECT</p>
+        <p class="tt-note rv d3" style="left:1435px;top:356px" data-tt="n-pc">More CORRECT verdicts — false-accepts incorrect QA.</p>
+        <div class="abs tt-leak rv d3" style="left:960px;top:452px;width:900px">trust by scoring judge&nbsp;&nbsp;<i>›</i><i>›</i><i>›</i>&nbsp;&nbsp;leaks into truth binary judge</div>
+        <div class="abs ttc rv d4" id="ttChart" data-mode="human">
+          <svg viewBox="0 0 1790 232" role="img" aria-label="Correct-judge confidence rises with trust rating for both gold-correct and gold-incorrect QA, under Human and AI source cues">
+            <line x1="60" y1="14" x2="60" y2="196" stroke="#ccc" stroke-width="1.5"/>
+            <line x1="60" y1="196" x2="1750" y2="196" stroke="#ccc" stroke-width="1.5"/>
+            <line x1="60" y1="105" x2="1750" y2="105" stroke="#c9c9c9" stroke-width="1.5" stroke-dasharray="6 7"/>
+            <text x="1745" y="97" text-anchor="end" fill="#999" font-size="15" font-style="italic">50% neutral</text>
+            <text x="52" y="200" text-anchor="end" fill="#999" font-size="15">0%</text>
+            <text x="52" y="109" text-anchor="end" fill="#999" font-size="15">50%</text>
+            <text x="52" y="19" text-anchor="end" fill="#999" font-size="15">100%</text>
+            <text x="60" y="218" text-anchor="middle" fill="#777" font-size="16">2</text>
+            <text x="398" y="218" text-anchor="middle" fill="#777" font-size="16">3</text>
+            <text x="736" y="218" text-anchor="middle" fill="#777" font-size="16">4</text>
+            <text x="1074" y="218" text-anchor="middle" fill="#777" font-size="16">5</text>
+            <text x="1412" y="218" text-anchor="middle" fill="#777" font-size="16">6</text>
+            <text x="1750" y="218" text-anchor="middle" fill="#777" font-size="16">7</text>
+            <text x="905" y="222" text-anchor="middle" fill="#999" font-size="15" font-style="italic">trust rating</text>
+            <text x="66" y="30" fill="#8a8a8a" font-size="19" font-style="italic" font-weight="700">Correct-Judge Confidence (logit-derived)</text>
+            <text x="66" y="58" fill="#c1731a" font-size="16" font-weight="700">— Human cue</text>
+            <text x="196" y="58" fill="#24466e" font-size="16" font-weight="700">— AI cue</text>
+            <text x="1745" y="46" text-anchor="end" fill="#1f3b63" font-size="18" font-weight="700" font-style="italic">higher trust → higher P(true)</text>
+            <g class="ai-g">
+              <polyline class="ttc-line l1" points="60,132 398,161 736,96 1074,32 1412,14 1750,14" stroke="#24466e"/>
+              <polyline class="ttc-line dash l3" points="60,194 398,191 736,145 1074,101 1412,19 1750,14" stroke="#24466e"/>
+              <g fill="#24466e"><circle cx="60" cy="132" r="5"/><circle cx="398" cy="161" r="5"/><circle cx="736" cy="96" r="5"/><circle cx="1074" cy="32" r="5"/><circle cx="1412" cy="14" r="5"/><circle cx="1750" cy="14" r="5"/></g>
+              <g fill="#fff" stroke="#24466e" stroke-width="2.5"><circle cx="60" cy="194" r="5"/><circle cx="398" cy="191" r="5"/><circle cx="736" cy="145" r="5"/><circle cx="1074" cy="101" r="5"/><circle cx="1412" cy="19" r="5"/></g>
+            </g>
+            <g class="hu-g">
+              <polyline class="ttc-line l2" points="60,116 398,165 736,76 1074,45 1412,14 1750,14" stroke="#c1731a"/>
+              <polyline class="ttc-line dash l4" points="60,196 398,192 736,172 1074,109 1412,32 1750,14" stroke="#c1731a"/>
+              <g fill="#c1731a"><circle cx="60" cy="116" r="5"/><circle cx="398" cy="165" r="5"/><circle cx="736" cy="76" r="5"/><circle cx="1074" cy="45" r="5"/><circle cx="1412" cy="14" r="5"/></g>
+              <g fill="#fff" stroke="#c1731a" stroke-width="2.5"><circle cx="60" cy="196" r="5"/><circle cx="398" cy="192" r="5"/><circle cx="736" cy="172" r="5"/><circle cx="1074" cy="109" r="5"/><circle cx="1412" cy="32" r="5"/></g>
+            </g>
+            <text x="1745" y="152" text-anchor="end" fill="#555" font-size="16">● solid — gold-correct QA</text>
+            <text x="1745" y="176" text-anchor="end" fill="#555" font-size="16">○ dashed — gold-incorrect QA</text>
+          </svg>
+        </div>
+        <p class="abs takeaway rv d4" style="left:46px;top:896px;width:1840px;font-size:29px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> one source cue shifts trust, truth verdicts, and logit confidence together — judge outputs are <span class="red">not independent evidence</span>.<br>Higher trust tracks higher correct-judge confidence — trust leaks into the model’s <span class="red">internal truth signal</span>.</p>
+        <p class="refs">[i] Sun et al. When Trust Meets Truth: Trust–Truth Separability in LLM-as-Judge (EMNLP 2026, to appear) Core A*</p>
+        <span class="pnum">7 / 14</span>
+      </section>
+
+      <!-- ================= P8 · WORK 2 ================= -->
+      <section class="slide" data-title="2 · Align — how LLMs learn the bad human signals" aria-label="Slide 8 of 15">
+        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p7-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: How LLMs Learn the “Bad” Human Signals</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Domain: Health Information">
           <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.4s-6.9-4.2-9.2-8.7C1.1 8.5 2.9 5.1 6.1 5.1c1.9 0 3.4 1.1 4.4 2.6 1-1.5 2.5-2.6 4.4-2.6 3.2 0 5 3.4 3.3 6.6-2.3 4.5-9.2 8.7-9.2 8.7z" fill="#8e1b26" fill-opacity=".16" stroke="#8e1b26" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
           <span class="dtag-tx"><span class="dtag-k">Domain</span><span class="dtag-v">Health Information</span></span>
         </div>
-        <p class="abs rq p7-rq rv d1" data-edit-id="p7-rq"><span class="tag">Research Question:</span> <span style="color:var(--maroon)">whether LLMs carry on the “bad signals” from human annotated preferences?</span></p>
-        <button type="button" class="abs p7-fig zoomable rv d2" data-image="assets/figs/fig-bias-install.png" aria-label="Open bias installation charts"><img src="assets/figs/fig-bias-install.png" alt="Installed bias for source cue and relational cue across Pre-train, SFT, and DPO"></button>
+        <p class="abs rq p7-rq rv d1" data-edit-id="p7-rq"><span class="tag">Research Question:</span> whether LLMs carry on the “bad signals” from human annotated preferences?</p>
+        <div class="abs p7-pipe rv d2" aria-label="Training pipeline: bias installed per stage">
+          <div class="p7-stage ps1"><h5>Pre-train <small>next-token prediction</small></h5><div class="p7-bias w1"><i></i></div><span class="p7-bias-lab">bias installed · least</span></div>
+          <span class="p7-parrow" aria-hidden="true">›››</span>
+          <div class="p7-stage ps2"><h5>SFT <small>supervised fine-tuning</small></h5><div class="p7-bias w2"><i></i></div><span class="p7-bias-lab">bias installed · moderate</span></div>
+          <span class="p7-parrow" aria-hidden="true">›››</span>
+          <div class="p7-stage ps3"><h5>DPO <small>preference optimization</small></h5><div class="p7-bias w3"><i></i></div><span class="p7-bias-lab">bias installed · significant</span></div>
+        </div>
+        <button type="button" class="abs p7-fig zoomable rv d2" data-image="assets/figs/fig-bias-full.png" aria-label="Open bias installation charts"><img src="assets/figs/fig-bias-full.png" alt="Installed bias for source cue and relational cue across Pre-train, SFT, and DPO"></button>
         <p class="abs takeaway p7-take rv d3" data-edit-id="p7-take"><span class="tl">Takeaways:</span> LLMs can learn the bias from the explicitly annotated human preferences.<br><span class="stage s1">Pre-train (next-token prediction) has the least effect</span>, <span class="stage s2">SFT comes the second</span>, and <span class="stage s3">DPO can install the bias significantly</span>.</p>
-        <span class="pnum">7 / 10</span>
+        <p class="refs">[j] Sun et al. Installed by Preference, Not by Exposure: Heuristic Cue Biases in LLM Judges (AAAI 2026, under review) Core A*</p>
+    <span class="pnum">8 / 14</span>
       </section>
 
-      <!-- ================= P8 · WORK 3 (hover-reveal baselines) ================= -->
-      <section class="slide" id="slideSSAG" data-title="Work 3 · Alignment — supervise models with domain expertise" aria-label="Slide 8 of 11">
-        <h2 class="abs kt p8-t rv" style="left:20px;top:26px" data-edit-id="p8-title">Work 3&nbsp; - &nbsp;<span class="kw">Alignment</span>: How Supervise Models with Domain Expertise, Not Simply Imitate</h2>
+      <!-- ================= P9 · ALIGN · benchmark creation (COLING'24 → SSAG) ================= -->
+      <section class="slide" id="slideBench" data-title="2 · Align — domain-specific benchmarks" aria-label="Slide 9 of 15">
+        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="bm-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: Domain-Specific Benchmarks Creation</h2>
         <div class="rule rv" style="top:104px"></div>
-        <div class="abs dtag rv d3" style="top:234px;right:40px" role="note" aria-label="Use case: Psychotherapy and mental health">
+        <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Use case: Psychotherapy and mental health">
           <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 5.4h15.6c.9 0 1.6.7 1.6 1.6v7.6c0 .9-.7 1.6-1.6 1.6H9.2l-4.3 3.2v-3.2h-.7c-.9 0-1.6-.7-1.6-1.6V7c0-.9.7-1.6 1.6-1.6z" fill="#8e1b26" fill-opacity=".12" stroke="#8e1b26" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 13.8s-2.9-1.7-2.9-3.7c0-1 .8-1.7 1.6-1.7.7 0 1.1.4 1.3.8.2-.4.6-.8 1.3-.8.8 0 1.6.7 1.6 1.7 0 2-2.9 3.7-2.9 3.7z" fill="#8e1b26" stroke="none"/></svg></span>
           <span class="dtag-tx"><span class="dtag-k">Use Case</span><span class="dtag-v">Psychotherapy · Mental Health</span></span>
         </div>
-        <p class="abs rq p8-rq rv d1" data-edit-id="p8-rq"><span class="tag">Research Question:</span> if human signals transmit bias, what should models actually learn?<br>— Selected domain-specific expert strategies, not raw human imitation.</p>
-        <button type="button" class="abs p8-fig zoomable rv d2" data-image="assets/figs/fig-ssag2.png" aria-label="Open SSAG framework"><img src="assets/figs/fig-ssag2.png" alt="SSAG: therapeutic strategy prediction and dialogue generation"></button>
-        <div class="abs p8-step rv d2" style="top:302px"><h3>1 · Encoding Represent</h3><p>Encode evidence-based therapeutic expert strategies in tree-structures.</p></div>
-        <div class="abs p8-step rv d3" style="top:442px"><h3>2 · LLM Reasoning</h3><p>Predict the next expert strategy by LLM reasoning, as an intermediate control.</p></div>
-        <div class="abs p8-step rv d4" style="top:582px"><h3>3 · LLM Generate</h3><p>Condition the dialogue response generation on the predicted strategy.</p></div>
+        <p class="abs rq rv d1" style="left:60px;top:150px;width:1800px;font-size:32px;white-space:nowrap" data-edit-id="bm-rq"><span class="tag">Research Question:</span> what do expert strategies look like — as these data LLMs can learn from and be tested against?</p>
+        <div class="abs bm-chat rv d1">
+          <p class="bm-cap">Real Psychotherapy · <b>EN + Dutch</b> · every turn labeled by therapist experts / strategies</p>
+          <div class="bm-turn cl"><span>Client</span>I know I should cut down on drinking… but I just can’t.</div>
+          <div class="bm-turn th"><span>Therapist</span>You feel stuck between wanting change and old habits.<b class="bm-code c1">Reflection</b></div>
+          <div class="bm-turn cl"><span>Client</span>Exactly. And I don’t know where to start.</div>
+          <div class="bm-turn th"><span>Therapist</span>What has worked for you, even a little, in the past?<b class="bm-code c2">Open Question</b></div>
+        </div>
+        <span class="abs bm-flow rv d2" aria-hidden="true"><i>›</i><i>›</i><i>›</i></span>
+        <div class="abs bm-tree rv d2" aria-label="Tree-structured expert strategies">
+          <h3>Tree-structured expert strategies</h3>
+          <p class="bmt-sub">evidence-based scripts encoded as a strategy tree</p>
+          <svg class="bmt-svg" viewBox="0 0 796 612" aria-hidden="true">
+            <line class="bmt-line" x1="398" y1="150" x2="140" y2="288"/>
+            <line class="bmt-line" x1="398" y1="150" x2="656" y2="288"/>
+            <line class="bmt-hot" x1="398" y1="150" x2="398" y2="288" fill="none"/>
+            <line class="bmt-line" x1="140" y1="338" x2="75" y2="422"/>
+            <line class="bmt-line" x1="140" y1="338" x2="215" y2="422"/>
+            <line class="bmt-hot" x1="398" y1="338" x2="360" y2="422" fill="none"/>
+            <line class="bmt-line" x1="398" y1="338" x2="505" y2="422"/>
+            <line class="bmt-line" x1="656" y1="338" x2="665" y2="422"/>
+          </svg>
+          <span class="bmt-root">Domain-specific strategy and script</span>
+          <span class="bmt-phase" style="left:140px">Engaging</span>
+          <span class="bmt-phase" style="left:398px">Evoking</span>
+          <span class="bmt-phase" style="left:656px">Planning</span>
+          <span class="bmt-leaf hit h1" style="left:75px">Reflection</span>
+          <span class="bmt-leaf hit h2" style="left:215px">Open Question</span>
+          <span class="bmt-leaf next" style="left:360px">Affirmation</span>
+          <span class="bmt-tag" style="left:360px">▲ next strategy</span>
+          <span class="bmt-leaf" style="left:505px">Elicit Change Talk</span>
+          <span class="bmt-leaf" style="left:665px">Advice w/ Permission</span>
+          <button type="button" class="bmt-note" data-jump="10">LLM reasons over this tree to predict the <b>next strategy</b> → conditions generation (SSAG, next →)</button>
+        </div>
+        <p class="abs takeaway rv d4" style="left:46px;top:914px;width:1840px;font-size:30px" data-edit-id="bm-take"><span class="tl">Takeaways:</span> the benchmark makes expert skills <span class="red">measurable</span> — defining both what to evaluate in LLMs and what to align them to.</p>
+        <p class="refs">[d] Sun et al. Eliciting Motivational Interviewing Skill Codes in Psychotherapy with LLMs: A Bilingual Dataset and Analytical Study (COLING 2024) Core B<br>[c] Sun et al. Script-Strategy Aligned Generation (ACM CSCW 2025) Core A</p>
+        <span class="pnum">9 / 14</span>
+      </section>
+
+      <!-- ================= P10 · ALIGN · SSAG (hover-reveal baselines) ================= -->
+      <section class="slide" id="slideSSAG" data-title="2 · Align — supervise models with domain expertise" aria-label="Slide 10 of 15">
+        <h2 class="abs kt p8-t rv" style="left:20px;top:26px" data-edit-id="p8-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: Supervise Models with Domain Expertise, Not Simply Imitate</h2>
+        <div class="rule rv" style="top:104px"></div>
+        <div class="abs dtag rv d1" style="top:22px;right:26px" role="note" aria-label="Use case: Psychotherapy and mental health">
+          <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 5.4h15.6c.9 0 1.6.7 1.6 1.6v7.6c0 .9-.7 1.6-1.6 1.6H9.2l-4.3 3.2v-3.2h-.7c-.9 0-1.6-.7-1.6-1.6V7c0-.9.7-1.6 1.6-1.6z" fill="#8e1b26" fill-opacity=".12" stroke="#8e1b26" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 13.8s-2.9-1.7-2.9-3.7c0-1 .8-1.7 1.6-1.7.7 0 1.1.4 1.3.8.2-.4.6-.8 1.3-.8.8 0 1.6.7 1.6 1.7 0 2-2.9 3.7-2.9 3.7z" fill="#8e1b26" stroke="none"/></svg></span>
+          <span class="dtag-tx"><span class="dtag-k">Use Case</span><span class="dtag-v">Psychotherapy · Mental Health</span></span>
+        </div>
+        <p class="abs rq p8-rq rv d1" data-edit-id="p8-rq"><span class="tag">Research Question:</span> align LLM to domain-specific expertise and strategies, not only raw human imitation.</p>
+        <button type="button" class="abs p8-fig zoomable rv d2" data-image="assets/figs/fig-ssag-full.png" aria-label="Open SSAG framework"><img src="assets/figs/fig-ssag-full.png" alt="SSAG: therapeutic strategy prediction and dialogue generation"></button>
+        <div class="abs p8-step rv d2" style="top:296px"><h3>1 · Encoding Represent<span class="p8-tag g1">strategy tree</span></h3><p>Encode evidence-based therapeutic expert strategies in tree-structures.</p></div>
+        <div class="abs p8-step rv d3" style="top:440px"><h3>2 · LLM Reasoning<span class="p8-tag g2">CoT → next strategy</span></h3><p>Predict the next expert strategy via chain-of-thought — an interpretable intermediate control.</p></div>
+        <div class="abs p8-step rv d4" style="top:584px"><h3>3 · LLM Generate<span class="p8-tag g3">conditioned · controllable</span></h3><p>Condition the response generation on the predicted strategy.</p></div>
         <span class="abs p8-hint rv d3">hover each method for details ↴</span>
         <div class="p8-band rv d3">
           <div class="p8-cell"><strong>Rule-based dialogue system</strong><span class="p8-pop">Adherence ceiling, but rigid interaction and influent &amp; unnatural interactions</span></div>
@@ -493,54 +822,122 @@
           <div class="p8-cell"><strong>SSAG (our proposed)</strong><span class="p8-pop">Generation with balanced adherence, controllability, and explainability</span></div>
         </div>
         <p class="abs takeaway p8-take rv d4" data-edit-id="p8-take"><span class="tl">Takeaways:</span> stepwise LLM reasoning and generation preserves structured domain expertise while suppressing risky imitation.</p>
-        <p class="refs">[c] Sun et al. Script-Strategy Aligned Generation (ACM CSCW 2025) Core A<br>[d] Sun et al. Eliciting MI Skill Codes in Psychotherapy with LLMs (COLING 2024) Core B<br>[e] Sun et al. Rethinking the Alignment of Psychotherapy Dialogue Generation (COLING 2025) Core B</p>
-        <span class="pnum">8 / 10</span>
+        <p class="refs">[c] Sun et al. Script-Strategy Aligned Generation (ACM CSCW 2025) Core A<br>[e] Sun et al. Rethinking the Alignment of Psychotherapy Dialogue Generation (COLING 2025) Core B</p>
+        <span class="pnum">10 / 14</span>
       </section>
 
-      <!-- ================= P9 · WORK 4 (guided tour) ================= -->
-      <section class="slide" id="slideAdapt" data-title="Work 4 · Adaptation — reliable outputs are not enough" aria-label="Slide 9 of 11">
-        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p9-title">Work 4&nbsp; - &nbsp;<span class="kw">Adaptation</span>: Reliable LLM’s Outputs Are Not Enough</h2>
+      <!-- ================= P11 · ALIGN · StoryMI agentic simulation ================= -->
+      <section class="slide" id="slideAgent" data-title="2 · Align — multi-agent therapeutic dialogue generation" aria-label="Slide 11 of 15">
+        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="ag-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: Multi-Agent Therapeutic Dialogue Generation</h2>
+        <div class="rule rv" style="top:104px"></div>
+        <p class="abs rq rv d1" style="left:60px;top:150px;width:1800px;font-size:32px;white-space:nowrap" data-edit-id="ag-rq"><span class="tag">Research Question:</span> expert data is scarce — can LLM agents generate it, with domain-specific strategies under control?</p>
+        <div class="abs ag-card ag-in rv d1">
+          <h3>① Client profile</h3>
+          <div class="ag-q">Symptom questionnaire<small>13 symptom domains</small></div>
+          <p class="ag-tf">↓ grounded into a situational story</p>
+          <p class="ag-story">“Mia, 34, wants to cut down on drinking, but evenings after work feel impossible …”</p>
+        </div>
+        <div class="abs ag-stage rv d2" aria-label="Multi-agent simulation with strategy control">
+          <div class="ag-conductor">
+            <span class="ag-name">Interaction Agent</span>
+            <p class="ag-ctl">coordinates both agents · sets each turn’s strategy</p>
+            <div class="ag-strat" aria-hidden="true"><span>→ Open Question</span><span>→ Reflection</span><span>→ Affirmation</span></div>
+          </div>
+          <svg class="ag-ctrl" viewBox="0 0 840 540" aria-hidden="true"><path d="M285 44 Q150 140 112 308"/><path d="M555 44 Q690 140 728 308"/><polygon points="104,300 122,304 110,322"/><polygon points="736,300 718,304 730,322"/></svg>
+          <div class="ag-line" aria-hidden="true"></div>
+          <div class="ag-agent th">Therapist<br>Agent</div>
+          <div class="ag-agent cl">Client<br>Agent</div>
+          <span class="ag-msg m1" aria-hidden="true"></span>
+          <span class="ag-msg m2" aria-hidden="true"></span>
+          <h3 class="ag-stage-t">② Multi-agent simulation · coded turn by turn</h3>
+        </div>
+        <div class="abs ag-card ag-out rv d3">
+          <h3>③ Dialogues &amp; evaluation</h3>
+          <div class="ag-stats"><span><b>6K</b>coded dialogues</span><span><b>1K</b>story pairs</span><span><b>12</b>MI code strategies</span><span><b>6</b>LLMs benchmarked</span></div>
+          <ul class="ag-eval"><li>lexical quality</li><li>domain-strategy adherence</li><li>LLM-judge + expert review</li></ul>
+        </div>
+        <p class="abs takeaway rv d4" style="left:46px;top:900px;width:1840px;font-size:30px" data-edit-id="ag-take"><span class="tl">Takeaways:</span> agentic simulation with macro-level strategy control turns scarce expert data into <span class="red">steerable, clinically-plausible</span> alignment supervision at scale.</p>
+        <p class="refs">[j] Sun, et al. StoryMI: Steerable Multi-Agent Therapeutic Dialogue Generation. co-authored (ACL 2026)</p>
+        <span class="pnum">11 / 14</span>
+      </section>
+
+      <!-- ================= P12 · ADAPT I — SENSE & PREDICT ================= -->
+      <section class="slide" id="slideSense" data-title="3 · Adapt — sense and predict human states in real time" aria-label="Slide 12 of 15">
+        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="sn-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Sense &amp; Predict Human States in Real Time</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Use case: Health decision support">
           <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="#8e1b26" fill-opacity=".10" stroke="#8e1b26" stroke-width="1.6"/><path d="M15.8 8.2l-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1z" fill="#8e1b26" fill-opacity=".5" stroke="#8e1b26" stroke-width="1.3" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.15" fill="#fff"/></svg></span>
           <span class="dtag-tx"><span class="dtag-k">Use Case</span><span class="dtag-v">Health Decision Support</span></span>
         </div>
-        <p class="abs rq p9-rq rv d1" data-edit-id="p9-rq"><span class="tag">Research Question:</span> How LLMs can adapt to humans during the real-time interaction?</p>
-        <div class="abs p9-boxtitle rv d1 p9-spot s1" data-edit-id="p9-boxtitle"><span><span class="kw">Cognitive States Modeling</span> through Sensing Signals</span></div>
-        <p class="abs p9-rhead rv d3 p9-spot s3" data-edit-id="p9-rhead"><u>Adaptive generation and UIs</u> based on sensed human states</p>
-        <p class="abs p9-sense rv d1 p9-spot s1">Sense</p>
-        <button type="button" class="tour-badge tb1" data-tour-step="1" aria-label="Tour step 1: Sense">1</button>
-        <svg class="abs p9-varrow rv d2 p9-spot s2" viewBox="0 0 14 180" aria-hidden="true"><path d="M7 0 L7 162"/><polygon points="0,160 14,160 7,180"/></svg>
-        <p class="abs p9-predict rv d2 p9-spot s2">Predict</p>
-        <button type="button" class="tour-badge tb2" data-tour-step="2" aria-label="Tour step 2: Predict">2</button>
-        <button type="button" class="abs p9-figA zoomable rv d1 p9-spot s1" data-image="assets/figs/fig-sensing.png" aria-label="Open sensing setup"><img src="assets/figs/fig-sensing.png" alt="Eye-tracking setup and gaze trials"></button>
-        <button type="button" class="abs p9-figB zoomable rv d2 p9-spot s2" data-image="assets/figs/fig-scatter.png" aria-label="Open trust prediction scatter"><img src="assets/figs/fig-scatter.png" alt="Predicted trust score by regression, MSE 0.23"></button>
-        <img class="abs p9-sketch rv d3 p9-spot s3" src="assets/figs/arrow-sketch2.png" alt="">
-        <p class="abs p9-adapt rv d3 p9-spot s3">Adapt</p>
-        <button type="button" class="tour-badge tb3" data-tour-step="3" aria-label="Tour step 3: Adapt">3</button>
-        <button type="button" class="abs p9-figC zoomable rv d3 p9-spot s3" data-image="assets/figs/fig-adaptive2.png" aria-label="Open adaptive interfaces"><img src="assets/figs/fig-adaptive2.png" alt="Adaptive chat UI with reasoning, confidence cue, answer, and text / speech / embodied interfaces"></button>
-        <p class="abs takeaway p9-take rv d4" data-edit-id="p9-take"><span class="tl">Takeaways:</span> sensing human signals via eye-tracking and ECG/EDA can be used to model human latent states (cognitive load, trust, confidence, etc.), enabling <span class="red">adaptive LLM-powered support</span> toward the user’s real-time states.</p>
-        <p class="refs">[f] Sun et al. Seeing the Reasoning (ACM CHI 2026) Core A*<br>[g] Sun et al. Eyes Can’t Always Tell (ACM UMAP 2026) Core A<br>[h] Sun et al. Interface Matters: Exploring Trust Perception in Health Information from Large Language Models via Text, Speech, and Embodiment (ACM CSCW 2024) Core A</p>
-        <span class="pnum">9 / 10</span>
+        <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px" data-edit-id="sn-rq"><span class="tag">Research Question:</span> How LLMs can adapt to humans during the real-time interaction?</p>
+        <div class="abs sn-card s rv d1">
+          <h3>① Sense · <span class="k">user behavior + physiological signals</span></h3>
+          <button type="button" class="sn-figA zoomable" data-image="assets/figs/fig-sensing.png" aria-label="Open sensing setup"><img src="assets/figs/fig-sensing.png" alt="Eye-tracking setup and gaze trials"></button>
+          <p class="sn-lab" style="top:378px"><i>Behavior</i> — gaze scanpath &amp; interaction traces</p>
+          <svg class="sn-sig" style="top:404px" viewBox="0 0 838 64" aria-hidden="true">
+            <polyline class="sn-scan" points="60,32 230,20 420,42 600,18 760,34"/>
+            <circle class="sn-fix" cx="60" cy="32" r="13"/><circle class="sn-fix" cx="230" cy="20" r="9"/><circle class="sn-fix" cx="420" cy="42" r="15"/><circle class="sn-fix" cx="600" cy="18" r="10"/><circle class="sn-fix" cx="760" cy="34" r="12"/>
+            <circle class="sn-gdot" cx="0" cy="0" r="6"/>
+          </svg>
+          <div class="sn-chips" aria-label="Behavioral metrics"><span>daily steps</span><span>calories burned</span><span>cursor moves</span><span>clicks</span><span>typing pace</span></div>
+          <p class="sn-lab" style="top:520px"><i>Physiology</i> — ECG &amp; EDA</p>
+          <svg class="sn-sig" style="top:546px" viewBox="0 0 838 64" aria-hidden="true">
+            <path class="sn-ecg-base" d="M0,40 L90,40 L104,12 L118,58 L132,40 L260,40 L274,12 L288,58 L302,40 L430,40 L444,12 L458,58 L472,40 L600,40 L614,12 L628,58 L642,40 L838,40"/>
+            <path class="sn-eda" d="M0,54 C120,46 200,60 320,52 C440,44 520,58 640,50 C730,45 790,54 838,51"/>
+            <path class="sn-ecg-run" d="M0,40 L90,40 L104,12 L118,58 L132,40 L260,40 L274,12 L288,58 L302,40 L430,40 L444,12 L458,58 L472,40 L600,40 L614,12 L628,58 L642,40 L838,40"/>
+          </svg>
+        </div>
+        <span class="abs sn-flow rv d2" aria-hidden="true"><i>›</i><i>›</i><i>›</i></span>
+        <div class="abs sn-card p rv d2">
+          <h3>② Predict · <span class="k">latent human states</span></h3>
+          <div class="sn-states" aria-label="Modeled latent states"><span>cognitive load</span><span>trust</span><span>confidence</span><span>behaviors</span></div>
+          <button type="button" class="sn-figB zoomable" data-image="assets/figs/fig-scatter.png" aria-label="Open trust prediction scatter"><img src="assets/figs/fig-scatter.png" alt="Predicted trust score by regression, MSE 0.23"></button>
+          <p class="sn-note">predicted trust vs. ground truth · regression MSE 0.23</p>
+        </div>
+        <p class="abs takeaway rv d4" style="left:46px;top:900px;width:1840px;font-size:29px" data-edit-id="sn-take"><span class="tl">Takeaways:</span> behavioral (gaze, interaction traces) and physiological (ECG / EDA) signals can model the user’s latent states — <span class="red">cognitive load, trust, confidence</span> — in real time.</p>
+        <p class="refs">[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1<br>[g] Sun et al. Eyes Can’t Always Tell (ACM UMAP 2026) Core A</p>
+        <span class="pnum">12 / 14</span>
       </section>
 
-      <!-- ================= P10 · VISION ================= -->
-      <section class="slide" id="slideVision" data-title="Vision — human-grounded, reliable and trustworthy LLM-powered AI systems" aria-label="Slide 10 of 11">
+      <!-- ================= P13 · ADAPT II — ADAPTIVE SUPPORT ================= -->
+      <section class="slide" id="slideAugment" data-title="3 · Adapt — adaptive support that augments humans" aria-label="Slide 13 of 15">
+        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="ad-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Adaptive Support that Augments Humans</h2>
+        <div class="rule rv" style="top:104px"></div>
+        <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Use case: Health decision support">
+          <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="#8e1b26" fill-opacity=".10" stroke="#8e1b26" stroke-width="1.6"/><path d="M15.8 8.2l-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1z" fill="#8e1b26" fill-opacity=".5" stroke="#8e1b26" stroke-width="1.3" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.15" fill="#fff"/></svg></span>
+          <span class="dtag-tx"><span class="dtag-k">Use Case</span><span class="dtag-v">Health Decision Support</span></span>
+        </div>
+        <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px" data-edit-id="ad-rq"><span class="tag">Goal:</span> adapt explanation, information, timing, and modality — to augment human cognition &amp; behavior</p>
+        <span class="abs ad-rh rv d1"><b>How to Adapt</b></span>
+        <div class="abs ad-item rv d1" style="top:291px"><h4>Explanation</h4><p>depth of reasoning to show</p></div>
+        <div class="abs ad-item rv d2" style="top:426px"><h4>Information</h4><p>how much to process at once</p></div>
+        <div class="abs ad-item rv d3" style="top:561px"><h4>Timing &amp; guidance</h4><p>when — and how directively — to support</p></div>
+        <div class="abs ad-item rv d4" style="top:696px"><h4>Modality</h4><p>text · speech · embodied agent</p></div>
+        <span class="abs ad-flow rv d2" aria-hidden="true"><i>›</i><i>›</i><i>›</i></span>
+        <button type="button" class="abs ad-fig zoomable rv d2" data-image="assets/figs/fig-adaptive3.png" aria-label="Open adaptive interfaces"><img src="assets/figs/fig-adaptive3.png" alt="Adaptive chat UI with reasoning, confidence cue, answer, and text / speech / embodied interfaces"></button>
+        <p class="abs takeaway rv d4" style="left:46px;top:900px;width:1840px;font-size:29px" data-edit-id="ad-take"><span class="tl">Takeaways:</span> adapting explanation, information load, timing, and modality to sensed states <span class="red">augments human cognition &amp; behavior</span> — appropriate reliance, calibrated trust, better decisions.</p>
+        <p class="refs">[f] Sun et al. Seeing the Reasoning (ACM CHI 2026) Core A*<br>[h] Sun et al. Interface Matters: Exploring Trust Perception in Health Information from Large Language Models via Text, Speech, and Embodiment (ACM CSCW 2024) Core A</p>
+        <span class="pnum">13 / 14</span>
+      </section>
+
+      <!-- ================= P13 · VISION ================= -->
+      <section class="slide" id="slideVision" data-title="Vision — human-grounded, reliable and trustworthy LLM-powered AI systems" aria-label="Slide 14 of 15">
         <h2 class="abs kt rv" style="left:20px;top:24px;font-size:48px" data-edit-id="p10-title">Vision: Toward <span style="color:var(--maroon);font-style:italic">Human-Grounded, Reliable and Trustworthy</span> LLM-powered AI Systems</h2>
         <div class="rule rv" style="top:104px"></div>
-        <button type="button" class="abs p10-box v1 rv d1" data-pair-step="1" data-jump="5"><span class="n">1</span><h3>Evaluate</h3><p>LLMs &amp; Humans</p></button>
-        <button type="button" class="abs p10-box v2 rv d2" data-pair-step="2" data-jump="7"><span class="n">2</span><h3>Align</h3><p>Behavior &amp; Mechanism</p></button>
-        <button type="button" class="abs p10-box v3 rv d3" data-pair-step="3" data-jump="9"><span class="n">3</span><h3>Adapt</h3><p>Sensing &amp; modeling</p></button>
+        <button type="button" class="abs p10-box v1 rv d1" data-pair-step="1" data-jump="5"><span class="n">1</span><h3>Evaluate</h3><p>LLM as Judge</p></button>
+        <button type="button" class="abs p10-box v2 rv d2" data-pair-step="2" data-jump="8"><span class="n">2</span><h3>Align</h3><p>LLM as Learner</p></button>
+        <button type="button" class="abs p10-box v3 rv d3" data-pair-step="3" data-jump="12"><span class="n">3</span><h3>Adapt</h3><p>LLM as Partner</p></button>
+        <div class="abs p10-ctxbar rv d4" role="note" aria-label="Health-related application contexts of this research"><em>Contexts</em><span>Healthcare</span><span>Mental Support</span><span>Decision-Making Support</span></div>
         <div class="abs p10-st s1 rv d1"><h4 data-edit-id="p10-s1">Not all human signals should be <em>learned</em>:</h4><p>evaluate bidirectional — then align selectively</p></div>
         <div class="abs p10-st s2 rv d2"><h4 data-edit-id="p10-s2">Not all LLM outputs should be <em>relied on</em>:</h4><p>validate the human signals before they supervise models</p></div>
-        <div class="abs p10-st s3 rv d3"><h4 data-edit-id="p10-s3">Not all human needs should be equally <em>supported</em>:</h4><p>adapt to sensed human states to support reliably and personally</p></div>
+        <div class="abs p10-st s3 rv d3"><h4 data-edit-id="p10-s3">Not all needs should be equally <em>supported</em>:</h4><p>adapt to sensed human states to support reliably and personally</p></div>
         <img class="abs p10-brace rv d4" src="assets/figs/brace.png" alt="">
         <p class="abs p10-close rv d4" data-edit-id="p10-close">Learn the right things from humans. Provide the right support to humans.</p>
-        <span class="pnum">10 / 10</span>
+        <span class="pnum">14 / 14</span>
       </section>
 
-      <!-- ================= P11 · THANKS ================= -->
-      <section class="slide" data-title="Thank you" aria-label="Slide 11 of 11">
+      <!-- ================= P15 · THANKS ================= -->
+      <section class="slide" data-title="Thank you" aria-label="Slide 15 of 15">
         <img class="abs p1-logos rv" src="assets/figs/logos-strip.png" alt="NII · University of Amsterdam · CWI">
         <p class="abs p11-text rv d1" data-edit-id="p11-text">Thank you so much<br>for your time and patience!</p>
       </section>
@@ -551,10 +948,10 @@
   </div>
   <div class="deck-toast" id="deckToast" role="status"></div>
 
-  <nav class="deck-controls" aria-label="Presentation controls"><button type="button" id="prevBtn" aria-label="Previous slide">←</button><span id="counter">01 / 11</span><div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div><button type="button" id="nextBtn" aria-label="Next slide">→</button><button type="button" id="overviewBtn" aria-label="Open overview">O</button><button type="button" id="keynoteBtn" aria-label="Toggle Keynote view">K</button><button type="button" id="helpBtn" aria-label="Open help">?</button></nav>
-  <div class="edit-hotzone" title="Edit mode"></div><button type="button" class="edit-toggle" id="editToggle">EDIT · E</button><div class="edit-toolbar" id="editToolbar"><button type="button" id="saveHtmlBtn">SAVE HTML</button><button type="button" id="resetEditsBtn">RESET TEXT</button></div><p class="sr-only" id="liveStatus" aria-live="polite">Slide 1 of 11</p>
+  <nav class="deck-controls" aria-label="Presentation controls"><button type="button" id="prevBtn" aria-label="Previous slide">←</button><span id="counter">01 / 15</span><div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div><button type="button" id="nextBtn" aria-label="Next slide">→</button><button type="button" id="helpBtn" aria-label="Open help">?</button></nav>
+  <div class="edit-hotzone" title="Edit mode"></div><button type="button" class="edit-toggle" id="editToggle">EDIT · E</button><div class="edit-toolbar" id="editToolbar"><button type="button" id="saveHtmlBtn">SAVE HTML</button><button type="button" id="resetEditsBtn">RESET TEXT</button></div><p class="sr-only" id="liveStatus" aria-live="polite">Slide 1 of 15</p>
 
-  <section class="overlay" id="helpOverlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle"><div class="overlay-panel"><button type="button" class="overlay-close" data-close-overlay>ESC</button><h2 id="helpTitle">Presentation controls</h2><div class="help-grid"><div class="help-row"><code>← → / SPACE</code><span>Navigate slides</span></div><div class="help-row"><code>O</code><span>Slide overview</span></div><div class="help-row"><code>K</code><span>Original Keynote view (synced via update-web.command)</span></div><div class="help-row"><code>E</code><span>Edit visible text; saved locally</span></div><div class="help-row"><code>F</code><span>Fullscreen</span></div><div class="help-row"><code>P5 TOGGLE</code><span>Flip the source label — the readout animates</span></div><div class="help-row"><code>P8 BASELINES</code><span>Hover a method title to reveal its details</span></div><div class="help-row"><code>P9 ①②③</code><span>Click to spotlight Sense → Predict → Adapt</span></div><div class="help-row"><code>FIGURE CLICK</code><span>Zoom any research figure</span></div></div></div></section>
+  <section class="overlay" id="helpOverlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle"><div class="overlay-panel"><button type="button" class="overlay-close" data-close-overlay>ESC</button><h2 id="helpTitle">Presentation controls</h2><div class="help-grid"><div class="help-row"><code>← → / SPACE</code><span>Navigate slides</span></div><div class="help-row"><code>O</code><span>Slide overview</span></div><div class="help-row"><code>K</code><span>Original Keynote view (synced via update-web.command)</span></div><div class="help-row"><code>E</code><span>Edit visible text; saved locally</span></div><div class="help-row"><code>F</code><span>Fullscreen</span></div><div class="help-row"><code>P5 TOGGLE</code><span>Flip the source label — the readout animates</span></div><div class="help-row"><code>P7 SOURCE</code><span>Flip Human/AI source — trust and truth move together</span></div><div class="help-row"><code>P10 BASELINES</code><span>Hover a method title to reveal its details</span></div><div class="help-row"><code>P12–P13</code><span>Adapt — gaze &amp; ECG signals animate; outcome cards pulse</span></div><div class="help-row"><code>FIGURE CLICK</code><span>Zoom any research figure</span></div></div></div></section>
   <section class="overlay" id="overviewOverlay" role="dialog" aria-modal="true" aria-labelledby="overviewTitle"><div class="overlay-panel"><button type="button" class="overlay-close" data-close-overlay>ESC</button><h2 id="overviewTitle">Slide overview</h2><div class="overview-grid" id="overviewGrid"></div></div></section>
   <section class="overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Research figure viewer"><button type="button" class="overlay-close" data-close-overlay style="position:fixed;top:24px;right:24px">ESC</button><div class="lightbox-content"><img id="lightboxImage" alt="Expanded research figure"></div></section>
 
@@ -610,10 +1007,10 @@
         document.getElementById('liveStatus').textContent = `Slide ${this.current + 1} of ${this.slides.length}: ${this.slides[this.current].dataset.title}`;
         if (updateHash) history.replaceState(null, '', `#${this.current + 1}`);
         runCounters(this.slides[this.current]);
-        if (this.slides[this.current].id === 'slideAdapt') tour.autoRun();
         if (this.slides[this.current].id === 'slideVision') visionTour.autoRun();
         if (this.slides[this.current].id === 'slideEval') p5HintOn();
         if (this.slides[this.current].id === 'slideSSAG') p8Demo();
+        if (this.slides[this.current].id === 'slideTT') ttDemo();
         if (typeof keynoteView !== 'undefined') keynoteView.sync(this.current);
       }
       buildOverview() { const grid = document.getElementById('overviewGrid'); this.slides.forEach((s, i) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'overview-card'; b.innerHTML = `<span>${String(i + 1).padStart(2, '0')} / ${this.slides.length}</span><strong>${s.dataset.title}</strong>`; b.addEventListener('click', () => { overlays.closeAll(); this.show(i); }); grid.appendChild(b); }); }
@@ -635,9 +1032,7 @@
     const overlays = { open(id) { this.closeAll(); document.getElementById(id).classList.add('open'); }, closeAll() { document.querySelectorAll('.overlay.open').forEach(el => el.classList.remove('open')); } };
     document.querySelectorAll('[data-close-overlay]').forEach(b => b.addEventListener('click', () => overlays.closeAll()));
     document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) overlays.closeAll(); }));
-    document.getElementById('overviewBtn').addEventListener('click', () => overlays.open('overviewOverlay'));
     document.getElementById('helpBtn').addEventListener('click', () => overlays.open('helpOverlay'));
-    document.getElementById('keynoteBtn').addEventListener('click', () => keynoteView.toggle());
     document.querySelectorAll('.zoomable').forEach(b => b.addEventListener('click', () => { const img = document.getElementById('lightboxImage'); img.src = b.dataset.image; img.alt = b.querySelector('img').alt; overlays.open('lightboxOverlay'); }));
 
     /* ================================================================
@@ -693,27 +1088,49 @@
     }
 
     /* ================================================================
-       P9 · GUIDED TOUR — Sense → Predict → Adapt spotlight.
+       P7 · TRUST–TRUTH (EMNLP'26) — flip the source cue: trust AND
+       truth readouts move together. Directions follow the paper’s
+       matched-pair effects; magnitudes illustrative.
        ================================================================ */
-    const tour = {
-      slide: document.getElementById('slideAdapt'),
-      played: false,
-      set(step) {
-        this.slide.dataset.tour = step || '';
-        this.slide.querySelectorAll('.tour-badge').forEach(b => b.classList.toggle('on', b.dataset.tourStep === String(step)));
+    const TT_READOUT = {
+      human: {
+        'b-trust': '80%', 'v-trust': '5.6 / 7 · HIGHER under Human source',
+        'b-pc': '66%', 'v-pc': '66% judged CORRECT',
+        'n-pc': 'More CORRECT verdicts — false-accepts incorrect QA.',
+        'src': '“As human professionals stated …”'
       },
-      autoRun() {
-        if (this.played) return;
-        this.played = true;
-        [[1, 900], [2, 3100], [3, 5300], [null, 7500]].forEach(([step, delay]) => setTimeout(() => this.set(step), delay));
+      ai: {
+        'b-trust': '71%', 'v-trust': '5.0 / 7 · LOWER under AI source',
+        'b-pc': '62%', 'v-pc': '62% judged CORRECT',
+        'n-pc': 'More skeptical — fewer CORRECT verdicts, same content.',
+        'src': '“As generated by AI …”'
       }
     };
-    document.querySelectorAll('.tour-badge').forEach(b => b.addEventListener('click', () => {
-      const step = b.dataset.tourStep;
-      tour.set(tour.slide.dataset.tour === step ? null : step);
-    }));
+    function applyTT(mode) {
+      const state = TT_READOUT[mode];
+      if (!state) return;
+      Object.entries(state).forEach(([key, value]) => {
+        const el = document.querySelector(`[data-tt="${key}"]`);
+        if (!el) return;
+        if (key.startsWith('b-')) { el.style.width = value; return; }
+        el.textContent = value;
+        if (key === 'src') { el.classList.toggle('human', mode === 'human'); el.classList.toggle('ai', mode === 'ai'); }
+      });
+      document.querySelectorAll('#ttToggle button').forEach(b => b.classList.toggle('active', b.dataset.src === mode));
+      const chart = document.getElementById('ttChart');
+      if (chart) chart.dataset.mode = mode;
+    }
+    let ttUser = false, ttPlayed = false;
+    document.querySelectorAll('#ttToggle button').forEach(b => b.addEventListener('click', () => { ttUser = true; applyTT(b.dataset.src); }));
+    function ttDemo() {
+      if (ttPlayed) return;
+      ttPlayed = true;
+      setTimeout(() => { if (!ttUser) applyTT('ai'); }, 1600);
+      setTimeout(() => { if (!ttUser) applyTT('human'); }, 3800);
+    }
+    applyTT('human');
 
-    /* P10 · hover pairing + one-time auto tour. */
+    /* P14 · hover pairing + one-time auto tour. */
     document.querySelectorAll('[data-pair-step]').forEach(box => {
       box.addEventListener('mouseenter', () => { document.getElementById('slideVision').dataset.pair = box.dataset.pairStep; });
       box.addEventListener('mouseleave', () => { document.getElementById('slideVision').dataset.pair = ''; });
