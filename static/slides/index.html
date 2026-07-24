@@ -226,12 +226,12 @@
     .sd[data-pillar="1"] .sd-map span.on { background: var(--c1); border-color: var(--c1); box-shadow: 0 8px 22px rgba(139,95,199,.28); }
     .sd[data-pillar="2"] .sd-map span.on { background: var(--c2); border-color: var(--c2); box-shadow: 0 8px 22px rgba(47,107,178,.28); }
     .sd[data-pillar="3"] .sd-map span.on { background: var(--c3); border-color: var(--c3); box-shadow: 0 8px 22px rgba(217,147,13,.28); }
-    .sd-badge { position: absolute; left: 50%; top: 384px; transform: translateX(-50%); width: 108px; height: 108px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font: 700 54px/1 var(--serif); color: #fff; }
+    .sd-badge { position: absolute; left: 0; right: 0; top: 384px; margin: 0 auto; width: 108px; height: 108px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font: 700 54px/1 var(--serif); color: #fff; }
     .sd[data-pillar="1"] .sd-badge { background: var(--c1); box-shadow: 0 16px 36px rgba(139,95,199,.34); }
     .sd[data-pillar="2"] .sd-badge { background: var(--c2); box-shadow: 0 16px 36px rgba(47,107,178,.34); }
     .sd[data-pillar="3"] .sd-badge { background: var(--c3); box-shadow: 0 16px 36px rgba(217,147,13,.34); }
     .active .sd-badge { animation: sdBadge 5.6s ease-in-out infinite; }
-    @keyframes sdBadge { 0%, 100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.05); } }
+    @keyframes sdBadge { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
     .sd-title { position: absolute; left: 0; right: 0; top: 526px; text-align: center; font: 700 118px/1.08 var(--serif); color: #000; }
     .sd-title em { font-style: normal; }
     .sd[data-pillar="1"] .sd-title em { color: var(--c1); }
@@ -241,7 +241,7 @@
     .sd[data-pillar="1"] .sd-role b { color: var(--c1); }
     .sd[data-pillar="2"] .sd-role b { color: var(--c2); }
     .sd[data-pillar="3"] .sd-role b { color: var(--c3); }
-    .sd-rule { position: absolute; left: 50%; top: 748px; width: 120px; height: 4.5px; border-radius: 3px; transform: translateX(-50%); }
+    .sd-rule { position: absolute; left: 0; right: 0; top: 748px; margin: 0 auto; width: 120px; height: 4.5px; border-radius: 3px; }
     .sd[data-pillar="1"] .sd-rule { background: var(--c1); }
     .sd[data-pillar="2"] .sd-rule { background: var(--c2); }
     .sd[data-pillar="3"] .sd-rule { background: var(--c3); }
@@ -253,7 +253,7 @@
        the source toggle inside) on the left, stacked readout on the
        right, study-scale chips below. Balanced two-column composition.
        ================================================================ */
-    .p5-ex { position: absolute; left: 70px; top: 224px; width: 820px; height: 468px; border: 2.5px solid #c9c9c9; border-radius: 22px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); padding: 26px 32px; }
+    .p5-ex { position: absolute; left: 70px; top: 268px; width: 820px; height: 468px; border: 2.5px solid #c9c9c9; border-radius: 22px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); padding: 26px 32px; }
     .p5-ex-k { font: 800 15px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #bb6b71; }
     .p5-ex-src { display: inline-block; margin-top: 18px; padding: 13px 24px; border-radius: 12px; font: italic 700 27px/1 var(--sans); transition: background .35s, color .35s; }
     .p5-ex-src.human { background: rgba(109,63,150,.12); color: #6d3f96; }
@@ -269,7 +269,7 @@
     @keyframes togglePulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(142,27,38,0); } 50% { box-shadow: 0 0 0 9px rgba(142,27,38,.15); } }
     .p5-toggle.attn button.active { animation: togglePulse 2.2s ease-in-out infinite; }
     /* readout — three stacked result rows on the right */
-    .p5-read-k { position: absolute; left: 940px; top: 232px; font: 800 15px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #7f9cc9; }
+    .p5-read-k { position: absolute; left: 940px; top: 276px; font: 800 15px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #7f9cc9; }
     .p5-row-label { position: absolute; left: 940px; font: 700 28px/1.1 var(--sans); color: #000; }
     .p5-verdict { position: absolute; right: 60px; font: 700 20px/1.2 var(--sans); color: var(--navy-verdict); text-align: right; }
     .p5-verdict.warn { color: var(--maroon); }
@@ -278,11 +278,11 @@
     .p5-track.warn i { background: var(--maroon); }
     .p5-note { position: absolute; left: 940px; width: 920px; font: 400 22px/1.3 var(--sans); color: #666; }
     /* study-scale chips — centered strip below the two columns */
-    .p5-chips { position: absolute; left: 940px; top: 620px; width: 920px; display: flex; gap: 16px; }
+    .p5-chips { position: absolute; left: 940px; top: 700px; width: 920px; display: flex; gap: 16px; }
     .p5-chip { flex: 1; border: 1.5px solid #e6d7d8; border-radius: 14px; background: linear-gradient(180deg,#fff,#fbf6f6); box-shadow: 0 4px 10px rgba(142,27,38,.06); display: flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 8px; }
     .p5-chip b { font: 700 40px/1 var(--sans); color: var(--maroon); }
     .p5-chip span { font: 700 16px/1.2 var(--sans); color: #555; text-align: left; }
-    .p5-take { left: 46px; top: 792px; width: 1840px; }
+    .p5-take { left: 46px; top: 844px; width: 1840px; }
 
     /* ================================================================
        P6 · MECHANISTIC (gaze ⇄ attention, animated cycle)
@@ -329,8 +329,8 @@
        ================================================================ */
     .p8-t { font-size: 47px; }
     .p8-rq { left: 60px; top: 148px; width: 1800px; font-size: 34px; }
-    .p8-fig { left: 90px; top: 252px; width: 940px; height: 476px; }
-    .p8-step { position: absolute; left: 1090px; width: 790px; padding-top: 16px; border-top: 1.5px solid #b9cbe8; transition: transform .25s var(--ease); }
+    .p8-fig { left: 70px; top: 252px; width: 940px; height: 476px; }
+    .p8-step { position: absolute; left: 1070px; width: 780px; padding-top: 16px; border-top: 1.5px solid #b9cbe8; transition: transform .25s var(--ease); }
     .p8-step:hover { transform: translateX(6px); }
     .p8-step h3 { display: flex; align-items: center; justify-content: space-between; gap: 12px; font: 700 30px/1.15 var(--sans); color: #2e74b5; }
     /* per-step tag — the pipeline node, folded into its step */
@@ -342,7 +342,7 @@
     .active .p8-tag.g2 { animation: tagWash 6s ease-in-out infinite 2s; }
     .active .p8-tag.g3 { animation: tagWash 6s ease-in-out infinite 4s; }
     @keyframes tagWash { 0%, 40%, 100% { box-shadow: none; transform: translateY(0); } 15% { box-shadow: 0 7px 18px rgba(0,0,0,.16); transform: translateY(-2px); } }
-    .p8-step p { margin-top: 10px; font: 400 25px/1.32 var(--sans); color: #3f3f3f; }
+    .p8-step p { margin-top: 10px; font: 400 22px/1.3 var(--sans); color: #3f3f3f; white-space: nowrap; }
     .p8-band { position: absolute; left: 60px; top: 820px; width: 1800px; height: 112px; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; border-top: 1.5px solid #d5d5d5; border-bottom: 1.5px solid #d5d5d5; }
     .p8-cell { position: relative; display: flex; align-items: center; justify-content: center; padding: 0 20px; border-right: 1px solid #e2e2e2; }
     .p8-cell:last-child { border-right: 0; background: #dfe9f8; }
@@ -361,7 +361,7 @@
     /* --- P12 · SENSE & PREDICT — live behavioral + physiological signals --- */
     .sn-card { position: absolute; top: 238px; height: 612px; border: 2.5px solid #c9c9c9; border-radius: 22px; background: #fff; padding: 22px 28px; }
     .sn-card.s { left: 60px; width: 890px; }
-    .sn-card.p { left: 1010px; width: 850px; }
+    .sn-card.p { left: 1150px; width: 710px; top: 300px; height: 490px; }
     .sn-card h3 { font: 700 28px/1.1 var(--sans); color: var(--maroon); }
     .sn-card h3 .k { color: #000; }
     .sn-figA { position: absolute; left: 26px; top: 64px; width: 838px; height: 300px; }
@@ -384,14 +384,14 @@
     .active .sn-ecg-run { animation: ecgRun 3.2s linear infinite; }
     @keyframes ecgRun { from { stroke-dashoffset: 1670; } to { stroke-dashoffset: 0; } }
     .sn-eda { fill: none; stroke: #7ea6e0; stroke-width: 2; opacity: .75; }
-    .sn-flow { position: absolute; left: 952px; top: 470px; display: flex; gap: 1px; font: 700 42px/1 var(--sans); color: var(--maroon); }
-    .sn-flow i { font-style: normal; opacity: .22; }
-    .active .sn-flow i { animation: chevWave 1.9s ease-in-out infinite; }
-    .sn-flow i:nth-child(2) { animation-delay: .28s; } .sn-flow i:nth-child(3) { animation-delay: .56s; }
-    .sn-mllab { position: absolute; left: 916px; top: 524px; width: 128px; text-align: center; font: 800 15px/1.25 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: #bb6b71; }
+    /* connector — lives entirely inside the gap between the two cards */
+    .sn-link { position: absolute; left: 954px; top: 506px; width: 192px; display: flex; flex-direction: column; align-items: center; gap: 12px; z-index: 5; }
+    .sn-link .lab { padding: 9px 16px; border-radius: 999px; border: 1.5px solid rgba(142,27,38,.28); background: linear-gradient(180deg, #fff, #fbf2f3); color: var(--maroon); font: 800 14px/1.2 var(--sans); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; box-shadow: 0 4px 10px rgba(142,27,38,.08); }
+    .sn-link svg { width: 100%; height: 26px; display: block; }
+    .active .sn-link line { animation: antMarch 1s linear infinite; }
     /* predict panel — latent states as predicted gauges (no scatter figure) */
     .sn-sub { position: absolute; left: 30px; top: 66px; font: italic 600 21px/1.3 var(--serif); color: #8a8a8a; }
-    .sn-pred { position: absolute; left: 30px; right: 30px; top: 158px; display: flex; flex-direction: column; gap: 30px; }
+    .sn-pred { position: absolute; left: 30px; right: 30px; top: 150px; display: flex; flex-direction: column; gap: 36px; }
     .sn-prow { display: flex; align-items: center; gap: 20px; }
     .sn-plabel { width: 240px; font: 700 26px/1.12 var(--sans); color: #000; }
     .sn-ptrack { flex: 1; height: 22px; background: #eee; border-radius: 5px; overflow: hidden; }
@@ -400,23 +400,25 @@
     .active .sn-prow.r2 .sn-ptrack i { width: 58%; transition-delay: 700ms; }
     .active .sn-prow.r3 .sn-ptrack i { width: 63%; transition-delay: 900ms; }
     .sn-pval { width: 120px; font: 700 22px/1 var(--maroon); color: var(--maroon); }
-    .sn-acc { position: absolute; left: 30px; right: 30px; top: 452px; padding: 15px 18px; border: 1.5px solid #e0d3d4; border-radius: 12px; background: #fbf6f6; text-align: center; font: 600 22px/1.3 var(--sans); color: #555; }
-    .sn-acc b { color: var(--maroon); }
     .sn-purpose { position: absolute; left: 30px; right: 30px; bottom: 26px; padding-top: 20px; border-top: 1.5px dashed #cdddef; text-align: center; font: italic 700 24px/1.32 var(--serif); color: #2e74b5; }
     /* --- P13 · ADAPT & AUGMENT — adapt what → toward outcomes --- */
-    .ad-rh { position: absolute; top: 236px; left: 56px; width: 470px; display: flex; justify-content: center; }
+    .ad-colcap { position: absolute; left: 270px; top: 399px; width: 470px; text-align: center; font: 800 15px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #bb6b71; }
+    .ad-rh { position: absolute; top: 428px; left: 270px; width: 470px; display: flex; justify-content: center; }
+    .ad-spine { position: absolute; left: 503px; top: 476px; width: 3px; height: 325px; background: repeating-linear-gradient(180deg, rgba(217,147,13,.45) 0 8px, transparent 8px 15px); border-radius: 2px; }
     .ad-rh b { display: inline-flex; align-items: center; gap: 10px; padding: 13px 26px; border-radius: 999px; border: 1.5px solid rgba(217,147,13,.42); background: linear-gradient(180deg, #fff, #fdf6ea); color: #b47a0b; font: 800 23px/1 var(--sans); letter-spacing: .02em; box-shadow: 0 5px 14px rgba(217,147,13,.12); }
     .ad-rh b::before { content: "◉ "; color: var(--maroon); font-size: 18px; }
     .ad-rh b::after { content: "⌄"; font-size: 19px; opacity: .6; }
-    .ad-item { position: absolute; left: 56px; width: 470px; padding: 15px 22px 16px; border: 1.5px solid #e4d6bb; border-left: 6px solid var(--c3); border-radius: 14px; background: linear-gradient(180deg,#fff,#fffdf8); box-shadow: 0 4px 12px rgba(217,147,13,.07); transition: transform .25s var(--ease), box-shadow .25s; }
+    .ad-item { position: absolute; left: 270px; width: 470px; padding: 15px 22px 16px; border: 1.5px solid #e4d6bb; border-left: 6px solid var(--c3); border-radius: 14px; background: linear-gradient(180deg,#fff,#fffdf8); box-shadow: 0 4px 12px rgba(217,147,13,.07); transition: transform .25s var(--ease), box-shadow .25s; }
     .ad-item:hover { transform: translateX(6px); box-shadow: 0 10px 24px rgba(217,147,13,.16); }
     .ad-item h4 { font: 800 27px/1.12 var(--sans); color: #b47a0b; }
     .ad-item p { margin-top: 6px; font: 400 21px/1.3 var(--sans); color: #666; }
-    .ad-fig { position: absolute; left: 660px; top: 246px; width: 1050px; height: 640px; }
-    .ad-flow { position: absolute; left: 560px; top: 512px; display: flex; gap: 1px; font: 700 42px/1 var(--sans); color: var(--c3); }
-    .ad-flow i { font-style: normal; opacity: .22; }
-    .active .ad-flow i { animation: chevWave 1.9s ease-in-out infinite; }
-    .ad-flow i:nth-child(2) { animation-delay: .28s; } .ad-flow i:nth-child(3) { animation-delay: .56s; }
+    .ad-figcap { position: absolute; left: 850px; top: 251px; width: 800px; text-align: center; font: 800 15px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #bb6b71; }
+    .ad-fig { position: absolute; left: 850px; top: 282px; width: 800px; height: 677px; }
+    /* connector — labeled dashed arrow, same language as the sense→predict link */
+    .ad-link { position: absolute; left: 741px; top: 588px; width: 108px; display: flex; flex-direction: column; align-items: center; gap: 9px; z-index: 5; }
+    .ad-link .lab { padding: 8px 14px; border-radius: 999px; border: 1.5px solid rgba(217,147,13,.4); background: linear-gradient(180deg, #fff, #fdf6ea); color: #b47a0b; font: 800 13.5px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; box-shadow: 0 4px 10px rgba(217,147,13,.10); }
+    .ad-link svg { width: 100%; height: 24px; display: block; }
+    .active .ad-link line { animation: antMarch 1s linear infinite; }
 
     /* ================================================================
        P10 · VISION (hover pairing + auto tour)
@@ -453,29 +455,33 @@
        P7 · EVALUATE (EMNLP'26) — trust–truth separability stress test.
        Flip the source cue: trust AND truth readouts move together.
        ================================================================ */
-    .tt-card { position: absolute; left: 70px; top: 220px; width: 780px; height: 452px; border: 2.5px solid #c9c9c9; border-radius: 22px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); }
-    .tt-src { position: absolute; left: 34px; top: 24px; display: inline-flex; align-items: center; padding: 11px 20px; border-radius: 12px; font: italic 700 25px/1 var(--sans); transition: background .35s, color .35s; }
+    /* cue strip — one centered control: identical content, flip only the source cue */
+    .tt-cue { position: absolute; left: 210px; top: 226px; width: 1500px; display: flex; align-items: center; justify-content: center; gap: 30px; padding: 20px 30px; border: 1.5px solid #e0e0e0; border-radius: 18px; background: linear-gradient(180deg, #fff, #fafafa); box-shadow: 0 8px 22px rgba(0,0,0,.05); }
+    .tt-cue-k { font: 700 26px/1.2 var(--sans); color: #000; }
+    .tt-cue-k b { color: var(--maroon); }
+    .tt-src { display: inline-flex; align-items: center; padding: 13px 22px; border-radius: 12px; font: italic 700 25px/1 var(--sans); transition: background .35s, color .35s; }
     .tt-src.human { background: rgba(109,63,150,.12); color: #6d3f96; }
     .tt-src.ai { background: rgba(46,86,164,.12); color: #2e56a4; }
-    .tt-q { position: absolute; left: 34px; top: 92px; right: 34px; font: 700 26px/1.35 var(--sans); color: #000; }
-    .tt-a { position: absolute; left: 34px; top: 148px; right: 34px; padding: 15px 22px; border-left: 4px solid #d9c7c9; background: #faf7f7; border-radius: 0 12px 12px 0; font: 400 22px/1.42 var(--sans); color: #333; }
-    .tt-flip { position: absolute; left: 34px; right: 34px; bottom: 96px; font: italic 600 21px/1.3 var(--serif); color: #8a8a8a; }
-    .tt-flip b { color: var(--maroon); font-style: normal; }
-    .tt-toggle { position: absolute; left: 34px; right: 34px; bottom: 24px; display: flex; gap: 14px; }
-    .tt-toggle button { flex: 1; padding: 16px 24px; border: 2px solid var(--maroon); border-radius: 10px; background: #fff; color: var(--maroon); font: 700 20px/1 var(--sans); letter-spacing: .03em; cursor: pointer; transition: background .25s, color .25s, transform .25s; }
+    .tt-toggle { display: flex; gap: 12px; }
+    .tt-toggle button { padding: 15px 24px; border: 2px solid var(--maroon); border-radius: 10px; background: #fff; color: var(--maroon); font: 700 19px/1 var(--sans); letter-spacing: .03em; cursor: pointer; transition: background .25s, color .25s, transform .25s; }
     .tt-toggle button:hover { transform: translateY(-2px); }
     .tt-toggle button.active { background: var(--maroon); color: #fff; }
-    /* readout — two groups of judge signals that SHOULD be independent but move together */
-    .tt-eyebrow { position: absolute; left: 900px; top: 214px; font: 800 15px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #7f9cc9; }
-    .tt-grp { position: absolute; left: 900px; font: italic 700 22px/1.2 var(--serif); color: var(--maroon); }
-    .tt-grp small { font: 600 18px/1 var(--sans); color: #8a8a8a; font-style: normal; }
-    .tt-blabel { position: absolute; left: 900px; width: 340px; font: 700 24px/1.1 var(--sans); color: #000; }
-    .tt-btrack { position: absolute; left: 1258px; width: 402px; height: 17px; background: #e8e8e8; border-radius: 3px; overflow: hidden; }
-    .tt-btrack i { position: absolute; inset: 0 auto 0 0; background: var(--navy-bar); transition: width 750ms var(--ease); }
-    .tt-btrack.dim i { background: #2f6bb2; }
-    .tt-btrack.judge i { background: #6d3f96; }
-    .tt-bval { position: absolute; left: 1684px; width: 176px; font: 700 21px/1.1 var(--sans); color: var(--navy-verdict); }
-    .tt-callout { position: absolute; left: 900px; top: 630px; width: 960px; padding: 15px 22px; border: 1.5px solid rgba(142,27,38,.3); border-radius: 14px; background: linear-gradient(180deg,#fff,#fbf2f3); font: 700 23px/1.3 var(--sans); color: var(--maroon); text-align: center; box-shadow: 0 6px 16px rgba(142,27,38,.08); }
+    /* readout — two panels of judge signals that SHOULD be independent but move together */
+    .tt-panel { position: absolute; top: 356px; width: 830px; padding: 28px 34px 32px; border: 2px solid #e2e2e2; border-radius: 20px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); }
+    .tt-panel.a { left: 110px; }
+    .tt-panel.b { left: 980px; }
+    .tt-panel h3 { font: 700 27px/1.2 var(--sans); }
+    .tt-panel.a h3 { color: #2f6bb2; }
+    .tt-panel.b h3 { color: #6d3f96; }
+    .tt-panel h3 small { font: 600 20px/1 var(--sans); color: #8a8a8a; }
+    .tt-rows { margin-top: 30px; display: flex; flex-direction: column; gap: 34px; }
+    .tt-row { display: flex; align-items: center; gap: 20px; }
+    .tt-row .lb { width: 268px; flex: none; font: 700 24px/1.1 var(--sans); color: #000; }
+    .tt-btrack { flex: 1; position: relative; height: 17px; background: #e8e8e8; border-radius: 4px; overflow: hidden; }
+    .tt-btrack i { position: absolute; inset: 0 auto 0 0; border-radius: 4px; background: #2f6bb2; transition: width 750ms var(--ease); }
+    .tt-panel.b .tt-btrack i { background: #6d3f96; }
+    .tt-row .vl { width: 96px; flex: none; font: 700 21px/1.1 var(--sans); color: var(--navy-verdict); text-align: right; }
+    .tt-callout { position: absolute; left: 260px; top: 700px; width: 1400px; padding: 18px 24px; border: 1.5px solid rgba(142,27,38,.3); border-radius: 16px; background: linear-gradient(180deg,#fff,#fbf2f3); font: 700 26px/1.3 var(--sans); color: var(--maroon); text-align: center; box-shadow: 0 6px 16px rgba(142,27,38,.08); }
     .tt-callout b { color: #000; }
     .tt-callout .chev { display: inline-block; font-style: normal; opacity: .3; }
     .active .tt-callout .chev { animation: chevWave 1.9s ease-in-out infinite; }
@@ -484,32 +490,29 @@
        P9 · ALIGN — benchmark creation (expert-annotated dialogue → data).
        Code chips "stamp" onto therapist turns as experts label them.
        ================================================================ */
-    /* bridge module — eases the jump from LLM-judge (health) to psychotherapy work */
-    .bm-bridge { position: absolute; left: 60px; top: 118px; width: 1800px; display: flex; align-items: center; gap: 26px; padding: 12px 26px; border: 1.5px solid rgba(46,116,181,.26); border-radius: 16px; background: linear-gradient(180deg,#fff,#f3f8fd); box-shadow: 0 5px 14px rgba(46,116,181,.06); }
-    .bm-fig { flex: none; display: flex; align-items: center; gap: 15px; padding-right: 24px; border-right: 1.5px solid #d5e2f1; }
-    .bm-av { display: flex; align-items: center; gap: 10px; font: 700 15px/1.12 var(--sans); color: #4a4a4a; }
-    .bm-av svg { width: 44px; height: 44px; flex: none; }
-    .bm-arrow { font: 700 27px/1 var(--sans); color: #9bb4d4; }
-    .bm-bridge p { font: 600 23px/1.3 var(--sans); color: #3f3f3f; }
-    .bm-bridge b { color: var(--maroon); }
-    .bm-chat { position: absolute; left: 60px; top: 264px; width: 880px; height: 596px; border: 2.5px solid #c9c9c9; border-radius: 22px; background: #fff; padding: 24px 30px; }
+    .bm-chat { position: absolute; left: 60px; top: 242px; width: 880px; height: 596px; border: 2.5px solid #c9c9c9; border-radius: 22px; background: #fff; padding: 24px 30px; }
     .bm-cap { font: italic 600 21px/1.35 var(--serif); color: #666; padding-bottom: 14px; border-bottom: 1.5px solid #e3e3e3; }
     .bm-cap b { color: #2e74b5; font-style: normal; }
     .bm-turn { position: relative; margin-top: 21px; max-width: 620px; padding: 13px 20px; border-radius: 16px; font: 400 24px/1.35 var(--sans); color: #222; }
     .bm-turn span { display: block; margin-bottom: 5px; font: 700 15px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: #8a8a8a; }
-    .bm-turn.cl { background: #f1f1f1; border-bottom-left-radius: 4px; }
-    .bm-turn.th { background: #e8f0fa; border-bottom-right-radius: 4px; margin-left: 200px; }
+    .bm-turn.cl { background: #f1f1f1; border-bottom-left-radius: 4px; margin-left: 66px; }
+    .bm-turn.th { background: #e8f0fa; border-bottom-right-radius: 4px; margin-left: auto; margin-right: 66px; }
     .bm-turn.th span { color: #2e74b5; }
+    /* speaker avatars beside each utterance */
+    .bm-turn .bm-ava { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; margin: 0; padding: 0; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(0,0,0,.10); }
+    .bm-turn.cl .bm-ava { left: -66px; border: 1.5px solid rgba(142,27,38,.30); }
+    .bm-turn.th .bm-ava { right: -66px; border: 1.5px solid rgba(46,116,181,.35); }
+    .bm-turn .bm-ava svg { width: 32px; height: 32px; display: block; }
     .bm-code { position: absolute; right: -14px; top: -18px; padding: 7px 14px; border-radius: 999px; background: #2e74b5; color: #fff; font: 700 18px/1 var(--sans); box-shadow: 0 5px 12px rgba(46,116,181,.32); transform: scale(0); }
     .active .bm-code.c1 { animation: stampIn .5s var(--ease) .9s forwards; }
     .active .bm-code.c2 { animation: stampIn .5s var(--ease) 1.8s forwards; }
     @keyframes stampIn { 0% { transform: scale(0) rotate(-10deg); } 70% { transform: scale(1.14) rotate(3deg); } 100% { transform: scale(1) rotate(-2deg); } }
-    .bm-flow { position: absolute; left: 948px; top: 540px; display: flex; gap: 1px; font: 700 42px/1 var(--sans); color: #2e74b5; }
+    .bm-flow { position: absolute; left: 948px; top: 518px; display: flex; gap: 1px; font: 700 42px/1 var(--sans); color: #2e74b5; }
     .bm-flow i { font-style: normal; opacity: .22; }
     .active .bm-flow i { animation: chevWave 1.9s ease-in-out infinite; }
     .bm-flow i:nth-child(2) { animation-delay: .28s; } .bm-flow i:nth-child(3) { animation-delay: .56s; }
     /* tree-structured expert strategies (SSAG encoding) — hot path = predicted next strategy */
-    .bm-tree { position: absolute; left: 1064px; top: 264px; width: 796px; height: 596px; border: 2.5px solid #2e74b5; border-radius: 22px; background: #fff; padding: 22px 28px; }
+    .bm-tree { position: absolute; left: 1064px; top: 242px; width: 796px; height: 596px; border: 2.5px solid #2e74b5; border-radius: 22px; background: #fff; padding: 22px 28px; }
     .bm-tree h3 { font: 700 28px/1.1 var(--sans); color: #2e74b5; }
     .bmt-sub { margin-top: 6px; font: italic 600 19px/1.2 var(--serif); color: #8a8a8a; }
     .bmt-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
@@ -537,18 +540,20 @@
     .ag-card { position: absolute; top: 300px; width: 430px; height: 440px; border: 2.5px solid #c9c9c9; border-radius: 22px; background: #fff; padding: 24px 28px 26px; }
     .ag-card h3 { font: 700 27px/1.15 var(--sans); color: #2e74b5; text-align: center; }
     .ag-in { left: 56px; }
-    .ag-out { left: 990px; top: 300px; width: 840px; height: 548px; }
+    .ag-out { left: 1130px; top: 374px; width: 620px; height: 400px; padding: 24px 30px; border: 1.5px solid #e6e6e6; border-radius: 20px; box-shadow: 0 10px 28px rgba(0,0,0,.05); }
     .ag-q { margin-top: 18px; padding: 14px 18px; border: 1.5px dashed #b9cbe8; border-radius: 12px; font: 600 22px/1.3 var(--sans); color: #333; }
     .ag-q small { display: block; margin-top: 5px; font: italic 600 18px/1.2 var(--sans); color: #8a8a8a; }
     .ag-tf { margin: 36px 0 0 6px; font: italic 700 21px/1.3 var(--serif); color: var(--maroon); }
     .ag-story { margin-top: 18px; padding: 16px 18px; background: #faf7f7; border-left: 4px solid #d9c7c9; border-radius: 0 12px 12px 0; font: italic 400 22px/1.45 var(--serif); color: #444; }
+    .ag-out h3 { font: 800 14px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: #7f9cc9; padding-bottom: 13px; border-bottom: 1px solid #e9eff7; }
     .ag-stats { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .ag-stats span { padding: 11px 8px; border-radius: 12px; background: #f4f7fb; border: 1px solid #d9e4f2; text-align: center; font: 600 18px/1.25 var(--sans); color: #44618a; }
-    .ag-stats b { display: block; font: 800 28px/1.1 var(--sans); color: #2e74b5; }
-    .ag-eval { margin: 15px 0 0; list-style: none; }
-    .ag-eval li { padding: 8px 0 8px 34px; position: relative; border-bottom: 1px solid #eee; font: 600 21px/1.3 var(--sans); color: #333; }
+    .ag-stats span { padding: 10px 6px 9px; border-radius: 12px; background: linear-gradient(180deg, #f7fafd, #eef4fb); border: 1px solid #dfe8f3; text-align: center; font: 600 16px/1.25 var(--sans); color: #44618a; }
+    .ag-stats b { display: block; margin-bottom: 3px; font: 800 28px/1.05 var(--sans); color: #2e74b5; }
+    .ag-eval-k { margin-top: 16px; text-align: center; font: 800 12.5px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #a9bdd8; }
+    .ag-eval { margin: 8px 0 0; list-style: none; }
+    .ag-eval li { padding: 8px 0 8px 36px; position: relative; border-bottom: 1px solid #f0f4f9; font: 600 18px/1.3 var(--sans); color: #444; }
     .ag-eval li:last-child { border-bottom: 0; }
-    .ag-eval li::before { content: "✓"; position: absolute; left: 4px; color: #2e74b5; font-weight: 800; }
+    .ag-eval li::before { content: "✓"; position: absolute; left: 4px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; border-radius: 50%; background: rgba(46,116,181,.10); color: #2e74b5; font: 800 13px/24px var(--sans); text-align: center; }
     .ag-stage { position: absolute; left: 90px; top: 300px; width: 840px; height: 548px; border: 2.5px solid rgba(142,27,38,.22); border-radius: 22px; background: linear-gradient(180deg,#fff,#fdfafa); }
     .ag-name { display: inline-block; padding: 13px 26px; border-radius: 999px; border: 2.5px solid var(--maroon); background: #fff; color: var(--maroon); font: 800 24px/1 var(--sans); box-shadow: 0 8px 20px rgba(142,27,38,.12); }
     .ag-conductor { position: absolute; left: 0; right: 0; top: 24px; text-align: center; }
@@ -715,18 +720,18 @@
 
         <!-- RIGHT · the readout: what moves when the label flips -->
         <p class="p5-read-k rv d2">Readout · what moves when the label flips</p>
-        <p class="p5-row-label rv d2" style="top:280px">Human trust</p>
-        <p class="p5-verdict rv d2" style="top:283px" data-ro="v-trustH">HIGHER under human label</p>
-        <div class="p5-track rv d2" style="top:318px"><i data-ro="b-trustH"></i></div>
-        <p class="p5-note rv d2" style="top:344px" data-ro="n-trustH">Identical content is trusted more under a human-authored label.</p>
-        <p class="p5-row-label rv d3" style="top:400px">LLM-as-a-Judge trust</p>
-        <p class="p5-verdict rv d3" style="top:403px" data-ro="v-trustJ">HIGHER under human label</p>
-        <div class="p5-track rv d3" style="top:438px"><i data-ro="b-trustJ"></i></div>
-        <p class="p5-note rv d3" style="top:464px" data-ro="n-trustJ">Judges reproduce the same label heuristic on the same task.</p>
-        <p class="p5-row-label rv d4" style="top:520px">Judge decision uncertainty</p>
-        <p class="p5-verdict warn rv d4" style="top:523px" data-ro="v-unc">LOWER under human label · rises under AI</p>
-        <div class="p5-track warn rv d4" style="top:558px"><i data-ro="b-unc"></i></div>
-        <p class="p5-note rv d4" style="top:584px" data-ro="n-unc">Logit uncertainty rises under AI labels; self-attention densifies on the label region.</p>
+        <p class="p5-row-label rv d2" style="top:324px">Human trust</p>
+        <p class="p5-verdict rv d2" style="top:327px" data-ro="v-trustH">HIGHER under human label</p>
+        <div class="p5-track rv d2" style="top:362px"><i data-ro="b-trustH"></i></div>
+        <p class="p5-note rv d2" style="top:388px" data-ro="n-trustH">Identical content is trusted more under a human-authored label.</p>
+        <p class="p5-row-label rv d3" style="top:456px">LLM-as-a-Judge trust</p>
+        <p class="p5-verdict rv d3" style="top:459px" data-ro="v-trustJ">HIGHER under human label</p>
+        <div class="p5-track rv d3" style="top:494px"><i data-ro="b-trustJ"></i></div>
+        <p class="p5-note rv d3" style="top:520px" data-ro="n-trustJ">Judges reproduce the same label heuristic on the same task.</p>
+        <p class="p5-row-label rv d4" style="top:588px">Judge decision uncertainty</p>
+        <p class="p5-verdict warn rv d4" style="top:591px" data-ro="v-unc">LOWER under human label · rises under AI</p>
+        <div class="p5-track warn rv d4" style="top:626px"><i data-ro="b-unc"></i></div>
+        <p class="p5-note rv d4" style="top:652px" data-ro="n-unc">Logit uncertainty rises under AI labels; self-attention densifies on the label region.</p>
 
         <!-- study scale -->
         <div class="p5-chips rv d4" aria-label="Study scale">
@@ -757,38 +762,32 @@
       <section class="slide" id="slideTT" data-title="1 · Evaluate — when trust meets truth in LLM-as-a-Judge" aria-label="Slide 8 of 18">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="tt-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Are LLM-as-a-Judge’s Dimensions Independent — or Correlated?</h2>
         <div class="rule rv" style="top:104px"></div>
-        <p class="abs rq rv d1" style="left:60px;top:146px;width:1800px;font-size:31px;line-height:1.24" data-edit-id="tt-rq"><span class="tag">Research Question:</span> an LLM judge outputs many signals — quality dimensions, a correctness verdict, its own confidence.<br>Are they <u>independent</u> evidence, or <u>correlated</u> like a human rater’s halo effect?</p>
-        <div class="abs tt-card rv d1">
+        <p class="abs rq rv d1" style="left:60px;top:150px;width:1800px;font-size:32px;white-space:nowrap" data-edit-id="tt-rq"><span class="tag">Research Question:</span> an LLM judge outputs many signals — <u>independent</u> evidence, or <u>correlated</u> like a halo effect?</p>
+        <div class="abs tt-cue rv d1" role="group" aria-label="Identical content, flip only the source cue">
+          <span class="tt-cue-k">Identical health answer — flip only <b>the source cue</b>:</span>
           <span class="tt-src human" data-tt="src">“As human professionals stated …”</span>
-          <p class="tt-q">Q · Do antibiotics help treat a viral cold?</p>
-          <p class="tt-a">Antibiotics treat bacterial infections, not viral infections such as the common cold. Rest and fluids are usually appropriate.</p>
-          <p class="tt-flip">Flip only an <b>irrelevant cue</b> — who wrote it. The content stays identical; a reliable judge should not move.</p>
           <div class="tt-toggle" id="ttToggle" role="group" aria-label="Counterfactual source attribution"><button type="button" class="active" data-src="human">HUMAN SOURCE</button><button type="button" data-src="ai">AI SOURCE</button></div>
         </div>
 
-        <p class="tt-grp rv d2" style="top:258px">A · Multi-dimension scoring <small>— should be distinct</small></p>
-        <p class="tt-blabel rv d2" style="top:296px">Helpfulness</p>
-        <div class="tt-btrack dim rv d2" style="top:300px"><i data-tt="b-help" style="width:84%"></i></div>
-        <p class="tt-bval rv d2" style="top:294px" data-tt="v-help">6.0 / 7</p>
-        <p class="tt-blabel rv d2" style="top:344px">Factual accuracy</p>
-        <div class="tt-btrack dim rv d2" style="top:348px"><i data-tt="b-acc" style="width:80%"></i></div>
-        <p class="tt-bval rv d2" style="top:342px" data-tt="v-acc">5.7 / 7</p>
-        <p class="tt-blabel rv d2" style="top:392px">Safety</p>
-        <div class="tt-btrack dim rv d2" style="top:396px"><i data-tt="b-safe" style="width:82%"></i></div>
-        <p class="tt-bval rv d2" style="top:390px" data-tt="v-safe">5.9 / 7</p>
-        <p class="tt-grp rv d3" style="top:446px">B · Across judge types <small>— should be independent</small></p>
-        <p class="tt-blabel rv d3" style="top:492px">Quality score</p>
-        <div class="tt-btrack judge rv d3" style="top:496px"><i data-tt="b-score" style="width:80%"></i></div>
-        <p class="tt-bval rv d3" style="top:490px" data-tt="v-score">5.6 / 7</p>
-        <p class="tt-blabel rv d3" style="top:540px">Correctness · P(true)</p>
-        <div class="tt-btrack judge rv d3" style="top:544px"><i data-tt="b-pcorr" style="width:66%"></i></div>
-        <p class="tt-bval rv d3" style="top:538px" data-tt="v-pcorr">66%</p>
-        <p class="tt-blabel rv d3" style="top:588px">Model confidence</p>
-        <div class="tt-btrack judge rv d3" style="top:592px"><i data-tt="b-conf" style="width:75%"></i></div>
-        <p class="tt-bval rv d3" style="top:586px" data-tt="v-conf">0.75</p>
+        <div class="abs tt-panel a rv d2">
+          <h3>A · Multi-dimension scoring <small>— should be distinct</small></h3>
+          <div class="tt-rows">
+            <div class="tt-row"><span class="lb">Helpfulness</span><div class="tt-btrack"><i data-tt="b-help" style="width:84%"></i></div><span class="vl" data-tt="v-help">6.0 / 7</span></div>
+            <div class="tt-row"><span class="lb">Factual accuracy</span><div class="tt-btrack"><i data-tt="b-acc" style="width:80%"></i></div><span class="vl" data-tt="v-acc">5.7 / 7</span></div>
+            <div class="tt-row"><span class="lb">Safety</span><div class="tt-btrack"><i data-tt="b-safe" style="width:82%"></i></div><span class="vl" data-tt="v-safe">5.9 / 7</span></div>
+          </div>
+        </div>
+        <div class="abs tt-panel b rv d3">
+          <h3>B · Across judge types <small>— should be independent</small></h3>
+          <div class="tt-rows">
+            <div class="tt-row"><span class="lb">Quality score</span><div class="tt-btrack"><i data-tt="b-score" style="width:80%"></i></div><span class="vl" data-tt="v-score">5.6 / 7</span></div>
+            <div class="tt-row"><span class="lb">Correctness · P(true)</span><div class="tt-btrack"><i data-tt="b-pcorr" style="width:66%"></i></div><span class="vl" data-tt="v-pcorr">66%</span></div>
+            <div class="tt-row"><span class="lb">Model confidence</span><div class="tt-btrack"><i data-tt="b-conf" style="width:75%"></i></div><span class="vl" data-tt="v-conf">0.75</span></div>
+          </div>
+        </div>
 
         <div class="abs tt-callout rv d4">Flip one irrelevant cue <span class="chev">›››</span> <b>all six signals shift together</b> · pairwise r ≈ 0.8 &nbsp;(independent ⇒ r ≈ 0)</div>
-        <p class="abs takeaway rv d4" style="left:46px;top:820px;width:1840px;font-size:29px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> one irrelevant cue shifts every quality dimension, the correctness verdict, and the model’s confidence <span class="red">together</span> — the judge’s signals are <span class="red">correlated, not independent evidence</span>.<br>Like the human halo effect, one impression colors all dimensions — so multi-dimensional LLM-judge scores are <span class="red">not reliable</span> as separate evidence.</p>
+        <p class="abs takeaway rv d4" style="left:46px;top:816px;width:1840px;font-size:29px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> flipping one irrelevant cue shifts all six judge signals <span class="red">together</span> — <span class="red">correlated, not independent evidence</span>.<br>Like the human halo effect — multi-dimensional LLM-judge scores are <span class="red">not reliable</span> as separate evidence.</p>
         <p class="refs">[i] Sun et al. When Trust Meets Truth: Trust–Truth Separability in LLM-as-Judge (EMNLP 2026, to appear) Core A*</p>
         <span class="pnum">8 / 17</span>
       </section>
@@ -839,21 +838,13 @@
           <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 5.4h15.6c.9 0 1.6.7 1.6 1.6v7.6c0 .9-.7 1.6-1.6 1.6H9.2l-4.3 3.2v-3.2h-.7c-.9 0-1.6-.7-1.6-1.6V7c0-.9.7-1.6 1.6-1.6z" fill="#8e1b26" fill-opacity=".12" stroke="#8e1b26" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 13.8s-2.9-1.7-2.9-3.7c0-1 .8-1.7 1.6-1.7.7 0 1.1.4 1.3.8.2-.4.6-.8 1.3-.8.8 0 1.6.7 1.6 1.7 0 2-2.9 3.7-2.9 3.7z" fill="#8e1b26" stroke="none"/></svg></span>
           <span class="dtag-tx"><span class="dtag-k">Use Case</span><span class="dtag-v">Psychotherapy · Mental Health</span></span>
         </div>
-        <div class="abs bm-bridge rv d1" role="note" aria-label="Bridge from LLM-judge work to psychotherapy alignment">
-          <span class="bm-fig" aria-hidden="true">
-            <span class="bm-av"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#2e74b5" fill-opacity=".16" stroke="#2e74b5" stroke-width="1.6"/><path d="M4.5 20c0-4.2 3.4-6.8 7.5-6.8s7.5 2.6 7.5 6.8" fill="none" stroke="#2e74b5" stroke-width="1.6" stroke-linecap="round"/></svg>Human<br>therapist</span>
-            <span class="bm-arrow">⇄</span>
-            <span class="bm-av"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="11" rx="3.2" fill="#8e1b26" fill-opacity=".12" stroke="#8e1b26" stroke-width="1.6"/><circle cx="9.4" cy="12.5" r="1.5" fill="#8e1b26"/><circle cx="14.6" cy="12.5" r="1.5" fill="#8e1b26"/><path d="M12 3.4v3.4M7 18l-1.8 2.6M17 18l1.8 2.6" fill="none" stroke="#8e1b26" stroke-width="1.6" stroke-linecap="round"/></svg>LLM<br>agent</span>
-          </span>
-          <p>The other half of <b>Align</b>: not just resisting the <b>bad</b> signals — learning the <b>good</b> ones, a therapist’s hard-won skill. First, make it measurable.</p>
-        </div>
-        <p class="abs rq rv d1" style="left:60px;top:200px;width:1800px;font-size:31px;white-space:nowrap" data-edit-id="bm-rq"><span class="tag">Research Question:</span> what do expert strategies look like — as these data LLMs can learn from and be tested against?</p>
+        <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px;font-size:31px;white-space:nowrap" data-edit-id="bm-rq"><span class="tag">Research Question:</span> what do expert strategies look like — as these data LLMs can learn from and be tested against?</p>
         <div class="abs bm-chat rv d1">
           <p class="bm-cap">Real Psychotherapy · <b>EN + Dutch</b> · every turn labeled by therapist experts / strategies</p>
-          <div class="bm-turn cl"><span>Client</span>I know I should cut down on drinking… but I just can’t.</div>
-          <div class="bm-turn th"><span>Therapist</span>You feel stuck between wanting change and old habits.<b class="bm-code c1">Reflection</b></div>
-          <div class="bm-turn cl"><span>Client</span>Exactly. And I don’t know where to start.</div>
-          <div class="bm-turn th"><span>Therapist</span>What has worked for you, even a little, in the past?<b class="bm-code c2">Open Question</b></div>
+          <div class="bm-turn cl"><span class="bm-ava" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="11" rx="3.2" fill="#8e1b26" fill-opacity=".12" stroke="#8e1b26" stroke-width="1.6"/><circle cx="9.4" cy="12.5" r="1.5" fill="#8e1b26"/><circle cx="14.6" cy="12.5" r="1.5" fill="#8e1b26"/><path d="M12 3.4v3.4M7 18l-1.8 2.6M17 18l1.8 2.6" fill="none" stroke="#8e1b26" stroke-width="1.6" stroke-linecap="round"/></svg></span><span>Client</span>I know I should cut down on drinking… but I just can’t.</div>
+          <div class="bm-turn th"><span class="bm-ava" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#2e74b5" fill-opacity=".16" stroke="#2e74b5" stroke-width="1.6"/><path d="M4.5 20c0-4.2 3.4-6.8 7.5-6.8s7.5 2.6 7.5 6.8" fill="none" stroke="#2e74b5" stroke-width="1.6" stroke-linecap="round"/></svg></span><span>Therapist</span>You feel stuck between wanting change and old habits.<b class="bm-code c1">Reflection</b></div>
+          <div class="bm-turn cl"><span class="bm-ava" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="11" rx="3.2" fill="#8e1b26" fill-opacity=".12" stroke="#8e1b26" stroke-width="1.6"/><circle cx="9.4" cy="12.5" r="1.5" fill="#8e1b26"/><circle cx="14.6" cy="12.5" r="1.5" fill="#8e1b26"/><path d="M12 3.4v3.4M7 18l-1.8 2.6M17 18l1.8 2.6" fill="none" stroke="#8e1b26" stroke-width="1.6" stroke-linecap="round"/></svg></span><span>Client</span>Exactly. And I don’t know where to start.</div>
+          <div class="bm-turn th"><span class="bm-ava" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#2e74b5" fill-opacity=".16" stroke="#2e74b5" stroke-width="1.6"/><path d="M4.5 20c0-4.2 3.4-6.8 7.5-6.8s7.5 2.6 7.5 6.8" fill="none" stroke="#2e74b5" stroke-width="1.6" stroke-linecap="round"/></svg></span><span>Therapist</span>What has worked for you, even a little, in the past?<b class="bm-code c2">Open Question</b></div>
         </div>
         <span class="abs bm-flow rv d2" aria-hidden="true"><i>›</i><i>›</i><i>›</i></span>
         <div class="abs bm-tree rv d2" aria-label="Tree-structured expert strategies">
@@ -895,9 +886,9 @@
         </div>
         <p class="abs rq p8-rq rv d1" data-edit-id="p8-rq"><span class="tag">Research Question:</span> align LLM to domain-specific expertise and strategies, not only raw human imitation.</p>
         <button type="button" class="abs p8-fig zoomable rv d2" data-image="assets/figs/fig-ssag-full.png" aria-label="Open SSAG framework"><img src="assets/figs/fig-ssag-full.png" alt="SSAG: therapeutic strategy prediction and dialogue generation"></button>
-        <div class="abs p8-step rv d2" style="top:300px"><h3>1 · Encode<span class="p8-tag g1">strategy tree</span></h3><p>Expert strategies as a tree — not raw dialogue to imitate.</p></div>
-        <div class="abs p8-step rv d3" style="top:452px"><h3>2 · Reason<span class="p8-tag g2">CoT → next strategy</span></h3><p>Pick the next strategy step-by-step — an interpretable control point.</p></div>
-        <div class="abs p8-step rv d4" style="top:604px"><h3>3 · Generate<span class="p8-tag g3">conditioned · controllable</span></h3><p>Write the reply conditioned on that chosen strategy.</p></div>
+        <div class="abs p8-step rv d2" style="top:262px"><h3>1 · Encode<span class="p8-tag g1">strategy tree</span></h3><p>Expert strategies as a tree — not raw dialogue to imitate.</p></div>
+        <div class="abs p8-step rv d3" style="top:445px"><h3>2 · Reasoning for Strategy<span class="p8-tag g2">CoT → next strategy</span></h3><p>Predict the next strategy step-by-step — an interpretable control point.</p></div>
+        <div class="abs p8-step rv d4" style="top:628px"><h3>3 · Generating Dialogue<span class="p8-tag g3">conditioned · controllable</span></h3><p>Generate the dialogue response conditioned on that predicted strategy.</p></div>
         <span class="abs p8-hint rv d3">hover each method for details ↴</span>
         <div class="p8-band rv d3">
           <div class="p8-cell"><strong>Rule-based dialogue system</strong><span class="p8-pop">Adherence ceiling, but rigid interaction and influent &amp; unnatural interactions</span></div>
@@ -931,6 +922,7 @@
         <div class="abs ag-card ag-out rv d3">
           <h3>Benchmark Results</h3>
           <div class="ag-stats"><span><b>6K</b>coded dialogues</span><span><b>1K</b>story pairs</span><span><b>12</b>MI code strategies</span><span><b>6</b>LLMs benchmarked</span></div>
+          <p class="ag-eval-k">Evaluated on</p>
           <ul class="ag-eval"><li>lexical quality</li><li>domain-strategy adherence</li><li>LLM-judge + expert review</li></ul>
         </div>
         <p class="abs takeaway rv d4" style="left:46px;top:900px;width:1840px;font-size:30px" data-edit-id="ag-take"><span class="tl">Takeaways:</span> with strategy control, LLM agents turn scarce expert data into <span class="red">clinically-plausible</span> alignment supervision — at scale.</p>
@@ -979,8 +971,10 @@
             <path class="sn-ecg-run" d="M0,40 L90,40 L104,12 L118,58 L132,40 L260,40 L274,12 L288,58 L302,40 L430,40 L444,12 L458,58 L472,40 L600,40 L614,12 L628,58 L642,40 L838,40"/>
           </svg>
         </div>
-        <span class="abs sn-flow rv d2" aria-hidden="true"><i>›</i><i>›</i><i>›</i></span>
-        <span class="abs sn-mllab rv d2" aria-hidden="true">machine<br>learning</span>
+        <div class="abs sn-link rv d2" aria-hidden="true">
+          <span class="lab">machine learning</span>
+          <svg viewBox="0 0 192 26"><line x1="4" y1="13" x2="164" y2="13" stroke="#8e1b26" stroke-width="3" stroke-dasharray="7 7"/><polygon points="164,4 188,13 164,22" fill="#8e1b26"/></svg>
+        </div>
         <div class="abs sn-card p rv d2">
           <h3>Predict · <span class="k">latent human states</span></h3>
           <p class="sn-sub">from the sensed signals · via machine learning</p>
@@ -989,7 +983,6 @@
             <div class="sn-prow r2"><span class="sn-plabel">Trust</span><div class="sn-ptrack"><i></i></div><span class="sn-pval">moderate</span></div>
             <div class="sn-prow r3"><span class="sn-plabel">Confidence</span><div class="sn-ptrack"><i></i></div><span class="sn-pval">medium</span></div>
           </div>
-          <div class="sn-acc">predicted vs. ground truth · regression <b>MSE 0.23</b></div>
           <p class="sn-purpose">→ lets the model read each user’s state, and <b>adapt in real time</b></p>
         </div>
         <p class="abs takeaway rv d4" style="left:46px;top:900px;width:1840px;font-size:29px" data-edit-id="sn-take"><span class="tl">Takeaways:</span> humans’ behavioral and physiological signals can be used to predict their latent states (e.g., <span class="red">cognitive load, trust</span>) via machine learning.</p>
@@ -1005,14 +998,19 @@
           <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="#8e1b26" fill-opacity=".10" stroke="#8e1b26" stroke-width="1.6"/><path d="M15.8 8.2l-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1z" fill="#8e1b26" fill-opacity=".5" stroke="#8e1b26" stroke-width="1.3" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.15" fill="#fff"/></svg></span>
           <span class="dtag-tx"><span class="dtag-k">Use Case</span><span class="dtag-v">Health Decision Support</span></span>
         </div>
-        <p class="abs rq rv d1" style="left:60px;top:146px;width:1800px;font-size:30px;line-height:1.28" data-edit-id="ad-rq"><span class="tag">Goal:</span> adapting AI explanation, information load, timing, and interactive modality to the <u>sensed human state</u> — thereby augmenting human cognition &amp; behavior (appropriate reliance, calibrated trust, better decisions).</p>
+        <p class="abs rq rv d1" style="left:60px;top:146px;width:1800px;font-size:30px;line-height:1.28" data-edit-id="ad-rq"><span class="tag">Goal:</span> adapting AI explanation, timing, and interactive modality to the <u>sensed human state</u> — thereby augmenting human cognition &amp; behavior (appropriate reliance, calibrated trust, better decisions).</p>
+        <p class="abs ad-colcap rv d1">Adapt what</p>
         <span class="abs ad-rh rv d1"><b>Driven by sensed state</b></span>
-        <div class="abs ad-item rv d1" style="top:302px"><h4>AI Explanation</h4><p>depth of LLM reasoning to show</p></div>
-        <div class="abs ad-item rv d2" style="top:434px"><h4>Information load</h4></div>
-        <div class="abs ad-item rv d3" style="top:566px"><h4>Timing &amp; guidance</h4><p>when — and how directively — to support</p></div>
-        <div class="abs ad-item rv d4" style="top:698px"><h4>Modality</h4><p>text · speech · embodied agent</p></div>
-        <span class="abs ad-flow rv d2" aria-hidden="true"><i>›</i><i>›</i><i>›</i></span>
-        <button type="button" class="abs ad-fig zoomable rv d2" data-image="assets/figs/fig-adaptive3.png" aria-label="Open adaptive interfaces"><img src="assets/figs/fig-adaptive3.png" alt="Adaptive chat UI with reasoning, confidence cue, answer, and text / speech / embodied interfaces"></button>
+        <span class="abs ad-spine rv d1" aria-hidden="true"></span>
+        <div class="abs ad-item rv d1" style="top:500px"><h4>AI Explanation</h4><p>depth of LLM reasoning to show</p></div>
+        <div class="abs ad-item rv d2" style="top:628px"><h4>Timing &amp; guidance</h4><p>when — and how directively — to support</p></div>
+        <div class="abs ad-item rv d3" style="top:756px"><h4>Modality</h4><p>text · speech · embodied agent</p></div>
+        <div class="abs ad-link rv d2" aria-hidden="true">
+          <span class="lab">adapts</span>
+          <svg viewBox="0 0 108 24"><line x1="4" y1="12" x2="84" y2="12" stroke="#d9930d" stroke-width="3" stroke-dasharray="7 7"/><polygon points="84,4 104,12 84,20" fill="#d9930d"/></svg>
+        </div>
+        <p class="abs ad-figcap rv d2">What the user sees · adapted in real time</p>
+        <button type="button" class="abs ad-fig zoomable rv d2" data-image="assets/figs/fig-adaptive4.png" aria-label="Open adaptive interfaces"><img src="assets/figs/fig-adaptive4.png" alt="Adaptive chat UI with reasoning, confidence cue, answer, and text / speech / embodied interfaces"></button>
         <p class="refs">[f] Sun et al. Seeing the Reasoning (ACM CHI 2026) Core A*<br>[h] Sun et al. Interface Matters: Exploring Trust Perception in Health Information from Large Language Models via Text, Speech, and Embodiment (ACM CSCW 2024) Core A</p>
         <span class="pnum">16 / 17</span>
       </section>
