@@ -1033,7 +1033,7 @@
     poster.setAttribute("tabindex", "0");
     poster.setAttribute(
       "aria-label",
-      "Open the research talk at the vision slide — the human and LLM closed loop"
+      "Play the research talk — zoom out and start from slide 1"
     );
 
     var badge = document.createElement("span");
@@ -1047,14 +1047,14 @@
 
     var hint = document.createElement("span");
     hint.className = "overview-hint";
-    hint.textContent = "Click to open the talk at this slide";
+    hint.textContent = "Click to watch the talk from the start";
 
     poster.appendChild(badge);
     poster.appendChild(play);
     poster.appendChild(hint);
 
     // --- Build the fullscreen zoom-out portal once ---
-    var SLIDES_URL = "/slides/#18"; // opens the deck on the vision slide (slide 18)
+    var SLIDES_URL = "/slides/"; // no hash → the talk always opens from slide 1
     var portal = document.createElement("div");
     portal.className = "slides-portal";
     portal.innerHTML =
@@ -1076,7 +1076,7 @@
 
     function openPortal() {
       lastFocus = document.activeElement;
-      frame.src = SLIDES_URL; // (re)load every time so it always opens at slide 18
+      frame.src = SLIDES_URL; // (re)load every time so it always starts at slide 1
       portal.style.display = "block";
       void portal.offsetWidth; // force reflow so the transition plays
       portal.classList.add("is-open");
