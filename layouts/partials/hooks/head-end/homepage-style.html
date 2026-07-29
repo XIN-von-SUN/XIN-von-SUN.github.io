@@ -1076,7 +1076,9 @@
 
     function openPortal() {
       lastFocus = document.activeElement;
-      frame.src = SLIDES_URL; // (re)load every time so it always starts at slide 1
+      // Cache-bust every open so the deck is always the freshly deployed version
+      // (GitHub Pages caches HTML for 10 min; without this a stale /slides/ can persist).
+      frame.src = SLIDES_URL + "?t=" + Date.now(); // no hash → always starts at slide 1
       portal.style.display = "block";
       void portal.offsetWidth; // force reflow so the transition plays
       portal.classList.add("is-open");

@@ -55,7 +55,7 @@ sections:
           <p>AI is aligned on human data — but <strong>human signals aren't always ground truth</strong>. I work on LLMs that <strong>learn the right things from humans</strong> and <strong>give the right support back</strong> — one bidirectional loop toward calibrated trust, appropriate reliance, and sharper decisions.</p>
         </div>
         <div class="home-overview-image">
-          <iframe class="home-overview-live" src="/slides/?embed#18" title="Research vision — the human ⇄ LLM closed loop (live slide)" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+          <iframe class="home-overview-live" src="/slides/?v=20260729b&embed#18" title="Research vision — the human ⇄ LLM closed loop (live slide)" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
         </div>
         
     design:
