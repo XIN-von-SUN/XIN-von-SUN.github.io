@@ -780,7 +780,7 @@
   })();
 </script>
 
-<!-- Research overview image → animated "Slide 02" poster that zooms out into the full talk -->
+<!-- Research overview → live "Slide 18 · Vision" preview that zooms out into the full talk -->
 <style>
   /* The overview image becomes a clickable, gently animated slide poster. */
   .home-overview-image {
@@ -788,29 +788,53 @@
     cursor: zoom-out;
     border-radius: 24px;
     outline: none;
+    /* Live slide is 16:9; screenshot below paints instantly and is the fallback. */
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #fff url("/uploads/research_overview.png") center / cover no-repeat;
+    box-shadow: 0 18px 44px rgba(31, 42, 49, 0.12);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+  }
+
+  .home-overview-image:hover,
+  .home-overview-image:focus-visible {
+    transform: scale(1.008);
+    box-shadow: 0 24px 56px rgba(31, 42, 49, 0.2);
+  }
+
+  .home-overview-image.is-launching {
+    transform: scale(1.02);
+  }
+
+  /* The live deck, scaled to fill; non-interactive — the poster overlay owns clicks. */
+  .home-overview-live {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    pointer-events: none;
+    opacity: 0;
+    animation: overviewLiveIn 0.8s ease 0.25s forwards;
+  }
+
+  @keyframes overviewLiveIn {
+    to { opacity: 1; }
   }
 
   .home-overview-image img {
     transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
   }
 
-  .home-overview-image:hover img,
-  .home-overview-image:focus-visible img {
-    transform: scale(1.012);
-    box-shadow: 0 24px 56px rgba(31, 42, 49, 0.17);
-  }
-
-  .home-overview-image.is-launching img {
-    transform: scale(1.04);
-  }
-
   /* Slow animated gradient ring — the "living slide" feel, subtle by default */
   .home-overview-image::after {
     content: "";
     position: absolute;
-    inset: -3px;
-    border-radius: 27px;
+    inset: 0;
+    border-radius: 24px;
     padding: 3px;
+    z-index: 2;
     background: linear-gradient(120deg, #8a7bb0, #5b86c4, #4bb3a3, #8a7bb0);
     background-size: 300% 300%;
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -1009,12 +1033,12 @@
     poster.setAttribute("tabindex", "0");
     poster.setAttribute(
       "aria-label",
-      "Play the research talk slides — zoom out and start from slide 1"
+      "Open the research talk at the vision slide — the human and LLM closed loop"
     );
 
     var badge = document.createElement("span");
     badge.className = "overview-badge";
-    badge.textContent = "Slide 02 · Research Talk";
+    badge.textContent = "Slide 18 · Research Vision";
 
     var play = document.createElement("span");
     play.className = "overview-play";
@@ -1023,14 +1047,14 @@
 
     var hint = document.createElement("span");
     hint.className = "overview-hint";
-    hint.textContent = "Click to zoom out and watch the talk from slide 1";
+    hint.textContent = "Click to open the talk at this slide";
 
     poster.appendChild(badge);
     poster.appendChild(play);
     poster.appendChild(hint);
 
     // --- Build the fullscreen zoom-out portal once ---
-    var SLIDES_URL = "/slides/"; // no hash → deck opens on slide 1
+    var SLIDES_URL = "/slides/#18"; // opens the deck on the vision slide (slide 18)
     var portal = document.createElement("div");
     portal.className = "slides-portal";
     portal.innerHTML =
@@ -1052,7 +1076,7 @@
 
     function openPortal() {
       lastFocus = document.activeElement;
-      frame.src = SLIDES_URL; // (re)load every time so it always starts at slide 1
+      frame.src = SLIDES_URL; // (re)load every time so it always opens at slide 18
       portal.style.display = "block";
       void portal.offsetWidth; // force reflow so the transition plays
       portal.classList.add("is-open");
