@@ -475,28 +475,29 @@
     .wa-loop polygon { fill: #d9930d; opacity: .75; }
     .wa-loopk { left: 0; right: 0; top: 938px; text-align: center; font: italic 600 23px/1.3 var(--serif); color: #8a8a8a; }
 
-    /* --- P13 · ADAPT & AUGMENT — one adaptive core → interfaces → scenarios --- */
-    .av-rail { position: absolute; left: 60px; width: 250px; display: flex; align-items: center; gap: 15px; }
-    .av-rail .n { flex: none; width: 46px; height: 46px; border-radius: 50%; background: var(--c3); color: #fff; font: 800 23px/46px var(--sans); text-align: center; }
-    .av-rail b { display: block; font: 800 25px/1.12 var(--sans); color: #000; }
-    .av-rail i { display: block; margin-top: 4px; font: italic 600 16.5px/1.2 var(--sans); color: #8a8a8a; }
-    .av-row { position: absolute; left: 330px; width: 1530px; display: flex; gap: 20px; }
-    .av-card { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; padding: 12px; border: 1.5px solid #e4d6bb; border-radius: 16px; background: linear-gradient(180deg,#fff,#fffdf8); box-shadow: 0 5px 14px rgba(217,147,13,.08); transition: transform .25s var(--ease), box-shadow .25s; }
+    /* --- P13 · ADAPT & AUGMENT — AI generation + user interface } use cases --- */
+    .av-rail { position: absolute; left: 50px; width: 250px; display: flex; align-items: center; gap: 13px; }
+    .av-rail .n { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--c3); color: #fff; font: 800 22px/44px var(--sans); text-align: center; }
+    .av-rail b { font: 800 23px/1.15 var(--sans); color: #000; }
+    .av-row { position: absolute; left: 272px; width: 1056px; display: flex; gap: 16px; }
+    .av-row .av-card { height: 160px; }
+    .av-card { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; padding: 10px; border: 1.5px solid #e4d6bb; border-radius: 16px; background: linear-gradient(180deg,#fff,#fffdf8); box-shadow: 0 5px 14px rgba(217,147,13,.08); transition: transform .25s var(--ease), box-shadow .25s; }
     .av-card:hover, .av-scn:hover { transform: translateY(-4px); box-shadow: 0 12px 26px rgba(217,147,13,.16); }
-    .av-card b { font: 700 23px/1.15 var(--sans); color: #000; text-align: center; }
-    .av-card > span { font: 400 17px/1.25 var(--sans); color: #888; text-align: center; }
-    .av-row.r1 .av-card { height: 158px; }
-    .av-row.r2 .av-card { height: 170px; }
-    .av-vis { height: 54px; display: block; }
-    .av-mdraw { height: 76px; display: flex; align-items: center; }
-    .av-mdraw svg { width: 118px; height: 73px; display: block; }
-    .av-scn { flex: 1; height: 132px; display: flex; align-items: center; gap: 16px; padding: 16px 22px; border: 1.5px solid #e4d6bb; border-radius: 16px; background: linear-gradient(180deg,#fff,#fffdf8); box-shadow: 0 5px 14px rgba(217,147,13,.08); transition: transform .25s var(--ease), box-shadow .25s; }
-    .av-scn .ico { flex: none; width: 56px; height: 56px; border-radius: 16px; background: rgba(217,147,13,.12); display: flex; align-items: center; justify-content: center; }
-    .av-scn .ico svg { width: 34px; height: 34px; display: block; }
-    .av-scn b { display: block; font: 700 23px/1.15 var(--sans); color: #000; }
-    .av-scn span { display: block; margin-top: 5px; font: 400 17px/1.3 var(--sans); color: #777; }
+    .av-card b { font: 700 19.5px/1.15 var(--sans); color: #000; text-align: center; }
+    .av-card > span { font: 400 15px/1.3 var(--sans); color: #888; text-align: center; }
+    .av-vis { height: 46px; display: block; }
+    .av-mdraw { height: 64px; display: flex; align-items: center; justify-content: center; }
+    .av-mdraw svg { width: 100px; height: 62px; display: block; }
+    .av-brace { width: 48px; height: 400px; }
+    .av-uc { position: absolute; width: 440px; display: flex; flex-direction: column; gap: 14px; }
+    .av-uck { text-align: center; font: 800 15px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #bb6b71; margin-bottom: 2px; }
+    .av-scn { height: 104px; display: flex; align-items: center; gap: 15px; padding: 12px 18px; border: 1.5px solid #e4d6bb; border-radius: 16px; background: linear-gradient(180deg,#fff,#fffdf8); box-shadow: 0 5px 14px rgba(217,147,13,.08); transition: transform .25s var(--ease), box-shadow .25s; }
+    .av-scn .ico { flex: none; width: 48px; height: 48px; border-radius: 14px; background: rgba(217,147,13,.12); display: flex; align-items: center; justify-content: center; }
+    .av-scn .ico svg { width: 30px; height: 30px; display: block; }
+    .av-scn b { display: block; font: 700 20px/1.15 var(--sans); color: #000; }
+    .av-scn span { display: block; margin-top: 4px; font: 400 15px/1.3 var(--sans); color: #777; }
     .av-ext { position: relative; border-style: dashed !important; border-color: rgba(217,147,13,.6) !important; }
-    .av-ext::after { content: "extending"; position: absolute; right: 12px; top: 9px; font: italic 700 13px/1 var(--sans); color: #b47a0b; opacity: .85; }
+    .av-ext::after { content: "extending"; position: absolute; right: 12px; top: 8px; font: italic 700 12.5px/1 var(--sans); color: #b47a0b; opacity: .85; }
 
     /* ================================================================
        P10 · VISION (hover pairing + auto tour)
@@ -1170,8 +1171,8 @@
         <div class="rule rv" style="top:104px"></div>
         <p class="abs rq rv d1" style="left:60px;top:146px;width:1800px;font-size:30px;line-height:1.28" data-edit-id="ad-rq"><span class="tag">Goal:</span> adapting AI generation and interaction to the <u>real human state</u> — thereby augmenting human cognition &amp; behavior (appropriate reliance, calibrated trust, better decisions).</p>
 
-        <div class="abs av-rail rv d1" style="top:322px"><span class="n">1</span><div><b>In the response</b><i>what adapts</i></div></div>
-        <div class="abs av-row r1 rv d1" style="top:268px">
+        <div class="abs av-rail rv d1" style="top:448px"><span class="n">1</span><b>AI generation</b></div>
+        <div class="abs av-row rv d1" style="top:390px">
           <div class="av-card">
             <svg class="av-vis" viewBox="0 0 120 56" aria-hidden="true"><rect x="6" y="8" width="86" height="9" rx="4.5" fill="#d5e3f2"/><rect x="6" y="24" width="66" height="9" rx="4.5" fill="#d5e3f2"/><rect x="6" y="40" width="46" height="9" rx="4.5" fill="#e8eef5"/><path d="M106 10v36" stroke="#2e74b5" stroke-width="2.2"/><path d="M101 16l5-7 5 7M101 40l5 7 5-7" fill="none" stroke="#2e74b5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <b>Adaptive reasoning</b><span>depth follows cognitive load</span>
@@ -1190,8 +1191,8 @@
           </div>
         </div>
 
-        <div class="abs av-rail rv d2" style="top:512px"><span class="n">2</span><div><b>Across interfaces</b><i>where it meets you</i></div></div>
-        <div class="abs av-row r2 rv d2" style="top:456px">
+        <div class="abs av-rail rv d2" style="top:688px"><span class="n">2</span><b>User interface</b></div>
+        <div class="abs av-row rv d2" style="top:630px">
           <div class="av-card"><span class="av-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
             <rect x="11" y="5" width="130" height="84" rx="10" fill="#fff" stroke="#c9c9c9" stroke-width="2.5"/>
             <path d="M11 15 a10 10 0 0 1 10 -10 h110 a10 10 0 0 1 10 10 v9 h-130 z" fill="#f3f4f6"/>
@@ -1200,7 +1201,7 @@
             <rect x="22" y="34" width="62" height="13" rx="6.5" fill="#e5e8ec"/>
             <rect x="68" y="53" width="62" height="13" rx="6.5" fill="#2e74b5"/>
             <rect x="22" y="72" width="46" height="9" rx="4.5" fill="#eef0f3"/>
-          </svg></span><b>Web chat</b><span>the adaptive study UI</span></div>
+          </svg></span><b>Text chatbot</b><span>ask by typing · read the answer</span></div>
           <div class="av-card"><span class="av-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
             <ellipse cx="76" cy="84" rx="30" ry="7" fill="rgba(74,144,255,.30)"/>
             <ellipse cx="76" cy="81" rx="21" ry="4.5" fill="#4a90ff"/>
@@ -1210,7 +1211,7 @@
             <path d="M130 26 a29 29 0 0 1 0 44" fill="none" stroke="#4a90ff" stroke-width="3" stroke-linecap="round" opacity=".5"/>
             <path d="M32 34 a19 19 0 0 0 0 28" fill="none" stroke="#4a90ff" stroke-width="3" stroke-linecap="round"/>
             <path d="M22 26 a29 29 0 0 0 0 44" fill="none" stroke="#4a90ff" stroke-width="3" stroke-linecap="round" opacity=".5"/>
-          </svg></span><b>Voice assistant</b><span>hands-free guidance</span></div>
+          </svg></span><b>Voice assistant</b><span>ask by voice · hear the answer</span></div>
           <div class="av-card"><span class="av-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
             <rect x="46" y="8" width="60" height="36" rx="7" fill="#d9b98a" stroke="#8a6b3e" stroke-width="2"/>
             <rect x="52" y="13" width="48" height="26" rx="4" fill="#101826"/>
@@ -1233,23 +1234,23 @@
           </svg></span><b>VR support</b><span>immersive therapy scenes</span></div>
         </div>
 
-        <div class="abs av-rail rv d3" style="top:692px"><span class="n">3</span><div><b>In the world</b><i>application scenarios</i></div></div>
-        <div class="abs av-row rv d3" style="top:646px">
+        <svg class="abs av-brace rv d3" style="left:1348px;top:390px" viewBox="0 0 48 400" aria-hidden="true"><path d="M6 6 Q30 6 30 34 L30 172 Q30 196 46 200 Q30 204 30 228 L30 366 Q30 394 6 394" fill="none" stroke="#d9930d" stroke-width="4.5" stroke-linecap="round" opacity=".75"/></svg>
+        <div class="abs av-uc rv d3" style="left:1424px;top:382px">
+          <p class="av-uck">use cases</p>
           <div class="av-scn">
             <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20.4S5.1 16.2 2.8 11.7C1.1 8.5 2.9 5.1 6.1 5.1c1.9 0 3.4 1.1 4.4 2.6 1-1.5 2.5-2.6 4.4-2.6 3.2 0 5 3.4 3.3 6.6-2.3 4.5-9.2 8.7-9.2 8.7z" fill="none" stroke="#b47a0b" stroke-width="1.7" stroke-linejoin="round"/><path d="M5 11.6h3.6l1.5-2.8 2.3 4.8 1.6-2h4.6" fill="none" stroke="#b47a0b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             <div><b>Health decision support</b><span>clinical info seeking · appropriate reliance</span></div>
           </div>
           <div class="av-scn">
             <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.2 4.4h15.6c.9 0 1.6.7 1.6 1.6v8.6c0 .9-.7 1.6-1.6 1.6H9.6l-4.4 3.6v-3.6h-1c-.9 0-1.6-.7-1.6-1.6V6c0-.9.7-1.6 1.6-1.6z" fill="none" stroke="#b47a0b" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 13.4s-2.7-1.6-2.7-3.4c0-.9.7-1.6 1.5-1.6.6 0 1 .3 1.2.7.2-.4.6-.7 1.2-.7.8 0 1.5.7 1.5 1.6 0 1.8-2.7 3.4-2.7 3.4z" fill="#b47a0b"/></svg></span>
-            <div><b>Mental-support agents</b><span>multimodal sensing + MI strategies — clinic · home · VR</span></div>
+            <div><b>Mental-support agents</b><span>multimodal sensing ·<br>interaction at clinic · home · VR</span></div>
           </div>
           <div class="av-scn av-ext">
             <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#b47a0b" stroke-width="1.7"/><path d="M15.5 8.5l-2.2 5-5 2.2 2.2-5 5-2.2z" fill="#b47a0b" fill-opacity=".55" stroke="#b47a0b" stroke-width="1.3" stroke-linejoin="round"/><circle cx="12" cy="12" r="1" fill="#fff"/></svg></span>
-            <div><b>Everyday decision support</b><span>from health facts to daily choices</span></div>
+            <div><b>Everyday decision support</b><span>what to eat · what to buy · what to believe</span></div>
           </div>
         </div>
 
-        <p class="abs takeaway rv d4" style="left:46px;top:846px;width:1840px;font-size:29px" data-edit-id="ad-take"><span class="tl">Takeaway:</span> one adaptive core — <span class="red">reasoning · confidence · timing · trust</span> — through any interface, into real-world support.</p>
         <p class="refs">[f] Sun et al. Seeing the Reasoning (ACM CHI 2026) Core A*<br>[h] Sun et al. Interface Matters: Exploring Trust Perception in Health Information from Large Language Models via Text, Speech, and Embodiment (ACM CSCW 2024) Core A</p>
         <span class="pnum">17 / 18</span>
       </section>
