@@ -504,6 +504,11 @@
     .av-scn span { display: block; margin-top: 4px; font: 400 15px/1.3 var(--sans); color: #777; }
     .av-ext { position: relative; border-style: dashed !important; border-color: rgba(217,147,13,.6) !important; }
     .av-ext::after { content: "extending"; position: absolute; right: 12px; top: 8px; font: italic 700 12.5px/1 var(--sans); color: #b47a0b; opacity: .85; }
+    .av-eg { left: 210px; top: 852px; width: 1500px; display: flex; align-items: center; justify-content: center; gap: 16px; padding: 15px 30px; border-radius: 999px; border: 1.5px dashed rgba(217,147,13,.4); background: linear-gradient(180deg,#fff,#fffdf6); }
+    .av-eg em { flex: none; font: 800 14px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #b47a0b; font-style: normal; }
+    .av-eg p { font: italic 600 21.5px/1.3 var(--serif); color: #666; }
+    .av-eg p b { color: var(--maroon); font-style: normal; }
+    .av-eg p i { font-style: normal; color: #d9930d; padding: 0 5px; }
 
     /* ================================================================
        P10 · VISION (hover pairing + auto tour)
@@ -552,7 +557,7 @@
        ================================================================ */
     /* cue strip — one centered control: identical content, flip only the source cue */
     /* example strip — de-emphasized source cue */
-    .tt-case { position: absolute; left: 160px; top: 208px; width: 1600px; display: flex; align-items: center; gap: 28px; padding: 15px 32px; border: 1.5px solid #ececec; border-radius: 16px; background: linear-gradient(180deg,#fff,#fbfbfb); box-shadow: 0 6px 16px rgba(0,0,0,.04); }
+    .tt-case { position: absolute; left: 160px; top: 216px; width: 1600px; display: flex; align-items: center; gap: 28px; padding: 15px 32px; border: 1.5px solid #ececec; border-radius: 16px; background: linear-gradient(180deg,#fff,#fbfbfb); box-shadow: 0 6px 16px rgba(0,0,0,.04); }
     .tt-case-l { flex: 1; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
     .tt-case-lead { font: 800 14px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #bb6b71; }
     .tt-case-q { font: 600 27px/1.2 var(--sans); color: #222; }
@@ -566,7 +571,7 @@
     .tt-toggle button.active { background: var(--maroon); border-color: var(--maroon); color: #fff; }
 
     /* the two points — big panels */
-    .tt-panel { position: absolute; top: 322px; width: 830px; height: 384px; padding: 26px 34px; border: 2px solid #e2e2e2; border-radius: 20px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); }
+    .tt-panel { position: absolute; top: 372px; width: 830px; height: 384px; padding: 26px 34px; border: 2px solid #e2e2e2; border-radius: 20px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); }
     .tt-panel.a { left: 100px; border-top: 5px solid #2f6bb2; }
     .tt-panel.b { left: 990px; border-top: 5px solid #6d3f96; }
     .tt-panel h3 { display: flex; align-items: center; gap: 14px; font: 800 28px/1.15 var(--sans); }
@@ -661,6 +666,7 @@
     .ag-eval li:last-child { border-bottom: 0; }
     .ag-eval li::before { content: "✓"; position: absolute; left: 4px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; border-radius: 50%; background: rgba(46,116,181,.10); color: #2e74b5; font: 800 13px/24px var(--sans); text-align: center; }
     .ag-stage { position: absolute; left: 80px; top: 256px; width: 1040px; height: 576px; border: 2.5px solid rgba(142,27,38,.22); border-radius: 22px; background: linear-gradient(180deg,#fff,#fdfafa); }
+    .ag-kick { position: absolute; left: 24px; top: 20px; padding: 8px 15px; border-radius: 999px; border: 1.5px solid rgba(142,27,38,.22); background: linear-gradient(180deg,#fff,#fbf2f3); font: 800 13.5px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #a4494f; }
     .ag-avatar { display: flex; align-items: center; justify-content: center; width: 76px; height: 76px; margin: 0 auto; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #b04b55, var(--maroon)); box-shadow: 0 10px 24px rgba(142,27,38,.28); }
     .ag-avatar svg { width: 44px; height: 44px; display: block; }
     .active .ag-avatar { animation: breathe 5s ease-in-out infinite 1.2s; }
@@ -921,7 +927,7 @@
           <p class="tt-risk">they rise &amp; fall together → <b>false-but-trusted</b> reads as true</p>
         </div>
 
-        <p class="abs takeaway rv d4" style="left:46px;top:786px;width:1840px;font-size:29px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> change only <span class="red">who wrote it</span>, and every score moves the same way — <span class="red">one biased verdict, not separate checks</span>.</p>
+        <p class="abs takeaway rv d4" style="left:46px;top:836px;width:1840px;font-size:29px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> change only <span class="red">who wrote it</span>, and every score moves the same way — <span class="red">one biased verdict, not separate checks</span>.</p>
         <p class="refs">[i] Sun et al. When Trust Meets Truth: Trust–Truth Separability in LLM-as-Judge (EMNLP 2026, to appear) Core A*</p>
         <span class="pnum">8 / 18</span>
       </section>
@@ -1042,6 +1048,7 @@
         <div class="rule rv" style="top:104px"></div>
         <p class="abs rq rv d1" style="left:60px;top:150px;width:1800px;font-size:32px;white-space:nowrap" data-edit-id="ag-rq"><span class="tag">Research Question:</span> expert data is scarce — can LLM agents generate it, with domain-specific strategies under control?</p>
         <div class="abs ag-stage rv d2" aria-label="Multi-agent simulation with strategy control">
+          <span class="ag-kick" aria-hidden="true">conversational agents</span>
           <div class="ag-conductor">
             <span class="ag-avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12 L12 5.6M12 12 L6 15.6M12 12 L18 15.6" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.7" fill="#fff"/><circle cx="12" cy="4.8" r="2.1" fill="#fff"/><circle cx="5.2" cy="16.1" r="2.1" fill="#fff"/><circle cx="18.8" cy="16.1" r="2.1" fill="#fff"/></svg></span>
             <span class="ag-name">Coordinator Agent</span>
@@ -1120,7 +1127,7 @@
         </div>
         <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px" data-edit-id="sn-rq"><span class="tag">Research Question:</span> How LLMs can adapt to individual user’s states during the real-time interaction?</p>
         <div class="abs sn-card s rv d1">
-          <h3><span class="sn-stepn">1</span>Sense · <span class="k">user behavior + physiological signals</span></h3>
+          <h3><span class="sn-stepn">1</span>Sense · <span class="k">multimodal signals — behavior + physiology</span></h3>
           <button type="button" class="sn-figA zoomable" data-image="assets/figs/fig-setup.png" aria-label="Open the multimodal sensing setup"><img src="assets/figs/fig-setup.png" alt="Study setup: monitor, eye-tracker, BioSemi amplifier, EDA electrodes, skin-temperature sensor and ECG electrodes"></button>
           <div class="sn-sub2 b" aria-label="Behavioral signals">
             <h4>Behavior <small>— gaze &amp; interaction traces</small></h4>
@@ -1147,7 +1154,7 @@
         </div>
         <div class="abs sn-card p rv d2">
           <h3><span class="sn-stepn">2</span>Predict · <span class="k">latent states</span></h3>
-          <p class="sn-sub">from the sensed signals · via machine learning</p>
+          <p class="sn-sub">from the multimodal signals · via machine learning</p>
           <div class="sn-pred" aria-label="Predicted latent states">
             <div class="sn-prow r1"><span class="sn-plabel">Cognitive load</span><div class="sn-ptrack"><i></i></div><span class="sn-pval">high</span></div>
             <div class="sn-prow r2"><span class="sn-plabel">Trust</span><div class="sn-ptrack"><i></i></div><span class="sn-pval">moderate</span></div>
@@ -1246,6 +1253,7 @@
           </div>
         </div>
 
+        <div class="abs av-eg rv d4" role="note" aria-label="Example of the adaptive loop in action"><em>e.g.</em><p>gaze drifts &amp; heart rate climbs <i>›</i> the agent senses <b>overload</b> <i>›</i> it explains less, slows its pace <i>›</i> the <b>same care</b> in chat · voice · robot</p></div>
         <p class="refs">[f] Sun et al. Seeing the Reasoning (ACM CHI 2026) Core A*<br>[h] Sun et al. Interface Matters: Exploring Trust Perception in Health Information from Large Language Models via Text, Speech, and Embodiment (ACM CSCW 2024) Core A</p>
         <span class="pnum">17 / 18</span>
       </section>
