@@ -475,52 +475,28 @@
     .wa-loop polygon { fill: #d9930d; opacity: .75; }
     .wa-loopk { left: 0; right: 0; top: 938px; text-align: center; font: italic 600 23px/1.3 var(--serif); color: #8a8a8a; }
 
-    /* --- P13 · ADAPT & AUGMENT — adapt what → live web-UI mock --- */
-    .ad-colcap { position: absolute; left: 130px; top: 334px; width: 480px; text-align: center; font: 800 15px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #bb6b71; }
-    .ad-spine { position: absolute; left: 368px; top: 386px; width: 3px; height: 316px; background: repeating-linear-gradient(180deg, rgba(217,147,13,.45) 0 8px, transparent 8px 15px); border-radius: 2px; }
-    .ad-item { position: absolute; left: 130px; width: 480px; padding: 15px 22px 16px 76px; border: 1.5px solid #e4d6bb; border-left: 6px solid var(--c3); border-radius: 14px; background: linear-gradient(180deg,#fff,#fffdf8); box-shadow: 0 4px 12px rgba(217,147,13,.07); transition: transform .25s var(--ease), box-shadow .25s; }
-    .ad-item::before { content: attr(data-n); position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: var(--c3); color: #fff; font: 800 20px/40px var(--sans); text-align: center; }
-    .ad-item:hover { transform: translateX(6px); box-shadow: 0 10px 24px rgba(217,147,13,.16); }
-    .ad-item h4 { font: 800 27px/1.12 var(--sans); color: #b47a0b; }
-    .ad-item p { margin-top: 6px; font: 400 21px/1.3 var(--sans); color: #666; }
-    .ad-figcap { position: absolute; left: 760px; top: 250px; width: 950px; text-align: center; font: 800 15px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #bb6b71; }
-    /* connector — labeled dashed arrow, same language as the sense→predict link */
-    .ad-link { position: absolute; left: 628px; top: 528px; width: 108px; display: flex; flex-direction: column; align-items: center; gap: 9px; z-index: 5; }
-    .ad-link .lab { padding: 8px 14px; border-radius: 999px; border: 1.5px solid rgba(217,147,13,.4); background: linear-gradient(180deg, #fff, #fdf6ea); color: #b47a0b; font: 800 13.5px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; box-shadow: 0 4px 10px rgba(217,147,13,.10); }
-    .ad-link svg { width: 100%; height: 24px; display: block; }
-    .active .ad-link line { animation: antMarch 1s linear infinite; }
-    /* hand-built web-UI mock — what the user sees, adapted live */
-    .ad-un { position: absolute; right: 16px; top: 12px; width: 34px; height: 34px; border-radius: 50%; background: var(--c3); color: #fff; font: 800 17px/34px var(--sans); text-align: center; box-shadow: 0 3px 8px rgba(217,147,13,.3); }
-    .ad-ui { position: absolute; left: 760px; top: 280px; width: 950px; border: 1.5px solid #d9d9d9; border-radius: 18px; background: #fff; box-shadow: 0 14px 34px rgba(0,0,0,.08); overflow: hidden; }
-    .ad-uibar { display: flex; align-items: center; gap: 8px; height: 46px; padding: 0 18px; background: #f3f4f6; border-bottom: 1.5px solid #e5e5e5; }
-    .ad-uibar i { width: 13px; height: 13px; border-radius: 50%; }
-    .ad-uibar i:nth-child(1) { background: #f26d5f; } .ad-uibar i:nth-child(2) { background: #f2bd4c; } .ad-uibar i:nth-child(3) { background: #5fc46a; }
-    .ad-uibar span { margin: 0 auto; padding: 5px 22px; border-radius: 8px; background: #fff; border: 1px solid #e2e2e2; font: 500 15px/1.2 var(--sans); color: #888; }
-    .ad-uibody { padding: 18px 24px 22px; }
-    .ad-uq { display: block; width: fit-content; max-width: 600px; margin-left: auto; padding: 11px 18px; border-radius: 14px 14px 4px 14px; background: #2e74b5; color: #fff; font: 600 19px/1.35 var(--sans); }
-    .ad-ublk { position: relative; margin-top: 14px; padding: 14px 62px 14px 18px; border: 1.5px solid; border-radius: 12px; }
-    .ad-ublk h5 { font: 700 19px/1.2 var(--sans); }
-    .ad-ublk h5 em { font: italic 600 16px/1.2 var(--sans); color: #8a8a8a; }
-    .ad-ublk.reason { border-color: rgba(46,116,181,.35); background: #f7fafd; }
-    .ad-ublk.reason h5 { color: #2e74b5; }
-    .ad-skel { margin-top: 10px; }
-    .ad-skel i { display: block; height: 11px; margin-top: 8px; border-radius: 6px; background: #d5e3f2; }
-    .ad-fold { display: inline-block; margin-top: 10px; font: 600 15px/1 var(--sans); color: #2e74b5; }
-    .ad-ublk.cue { border-color: rgba(217,147,13,.45); background: #fffaf0; }
-    .ad-ublk.cue h5 { color: #b47a0b; }
-    .ad-cue-line { margin-top: 8px; font: 600 19px/1.35 var(--sans); color: #9a6b00; }
-    .ad-cue-line::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 9px; border-radius: 50%; background: var(--c3); }
-    .ad-ublk.ans { border-color: #d9d9d9; background: #fff; }
-    .ad-ublk.ans h5 { color: #444; }
-    .ad-ublk.ans p { margin-top: 8px; font: 400 19px/1.4 var(--sans); color: #333; }
-    .ad-modes { position: absolute; left: 760px; top: 800px; width: 950px; display: flex; gap: 20px; }
-    .ad-modes > .ad-un { right: 40px; top: -15px; border: 2.5px solid #fff; z-index: 3; }
-    .ad-mode { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 14px 12px; border: 1.5px solid #e4d6bb; border-radius: 16px; background: linear-gradient(180deg,#fff,#fffdf8); box-shadow: 0 5px 14px rgba(217,147,13,.08); transition: transform .25s var(--ease), box-shadow .25s; }
-    .ad-mode:hover { transform: translateY(-4px); box-shadow: 0 12px 26px rgba(217,147,13,.16); }
-    .ad-mdraw { height: 94px; display: flex; align-items: center; justify-content: center; }
-    .ad-mdraw svg { width: 152px; height: 94px; display: block; }
-    .ad-mode b { display: block; font: 700 22px/1.15 var(--sans); color: #000; text-align: center; }
-    .ad-mode .sub { display: block; margin-top: 2px; font: 400 17px/1.2 var(--sans); color: #888; text-align: center; }
+    /* --- P13 · ADAPT & AUGMENT — one adaptive core → interfaces → scenarios --- */
+    .av-rail { position: absolute; left: 60px; width: 250px; display: flex; align-items: center; gap: 15px; }
+    .av-rail .n { flex: none; width: 46px; height: 46px; border-radius: 50%; background: var(--c3); color: #fff; font: 800 23px/46px var(--sans); text-align: center; }
+    .av-rail b { display: block; font: 800 25px/1.12 var(--sans); color: #000; }
+    .av-rail i { display: block; margin-top: 4px; font: italic 600 16.5px/1.2 var(--sans); color: #8a8a8a; }
+    .av-row { position: absolute; left: 330px; width: 1530px; display: flex; gap: 20px; }
+    .av-card { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; padding: 12px; border: 1.5px solid #e4d6bb; border-radius: 16px; background: linear-gradient(180deg,#fff,#fffdf8); box-shadow: 0 5px 14px rgba(217,147,13,.08); transition: transform .25s var(--ease), box-shadow .25s; }
+    .av-card:hover, .av-scn:hover { transform: translateY(-4px); box-shadow: 0 12px 26px rgba(217,147,13,.16); }
+    .av-card b { font: 700 23px/1.15 var(--sans); color: #000; text-align: center; }
+    .av-card > span { font: 400 17px/1.25 var(--sans); color: #888; text-align: center; }
+    .av-row.r1 .av-card { height: 158px; }
+    .av-row.r2 .av-card { height: 170px; }
+    .av-vis { height: 54px; display: block; }
+    .av-mdraw { height: 76px; display: flex; align-items: center; }
+    .av-mdraw svg { width: 118px; height: 73px; display: block; }
+    .av-scn { flex: 1; height: 132px; display: flex; align-items: center; gap: 16px; padding: 16px 22px; border: 1.5px solid #e4d6bb; border-radius: 16px; background: linear-gradient(180deg,#fff,#fffdf8); box-shadow: 0 5px 14px rgba(217,147,13,.08); transition: transform .25s var(--ease), box-shadow .25s; }
+    .av-scn .ico { flex: none; width: 56px; height: 56px; border-radius: 16px; background: rgba(217,147,13,.12); display: flex; align-items: center; justify-content: center; }
+    .av-scn .ico svg { width: 34px; height: 34px; display: block; }
+    .av-scn b { display: block; font: 700 23px/1.15 var(--sans); color: #000; }
+    .av-scn span { display: block; margin-top: 5px; font: 400 17px/1.3 var(--sans); color: #777; }
+    .av-ext { position: relative; border-style: dashed !important; border-color: rgba(217,147,13,.6) !important; }
+    .av-ext::after { content: "extending"; position: absolute; right: 12px; top: 9px; font: italic 700 13px/1 var(--sans); color: #b47a0b; opacity: .85; }
 
     /* ================================================================
        P10 · VISION (hover pairing + auto tour)
@@ -568,9 +544,13 @@
        Flip the source cue: trust AND truth readouts move together.
        ================================================================ */
     /* cue strip — one centered control: identical content, flip only the source cue */
-    .tt-cue { position: absolute; left: 160px; top: 262px; width: 1600px; display: flex; align-items: center; justify-content: center; gap: 30px; padding: 20px 30px; border: 1.5px solid #e0e0e0; border-radius: 18px; background: linear-gradient(180deg, #fff, #fafafa); box-shadow: 0 8px 22px rgba(0,0,0,.05); }
-    .tt-cue-k { font: 700 26px/1.2 var(--sans); color: #000; }
-    .tt-cue-k b { color: var(--maroon); }
+    .tt-case { position: absolute; left: 160px; top: 218px; width: 1600px; display: flex; align-items: center; gap: 44px; padding: 20px 36px; border: 1.5px solid #e0e0e0; border-radius: 18px; background: linear-gradient(180deg, #fff, #fafafa); box-shadow: 0 8px 22px rgba(0,0,0,.05); }
+    .tt-case-l { flex: 1; }
+    .tt-case-k { font: 800 14px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #bb6b71; }
+    .tt-case-q { margin-top: 10px; font: 600 28px/1.25 var(--sans); color: #222; }
+    .tt-case-q em { font-style: inherit; color: var(--maroon); text-decoration: underline wavy rgba(142,27,38,.55); text-underline-offset: 6px; }
+    .tt-case-x { display: inline-block; margin-left: 14px; padding: 6px 13px; border-radius: 999px; border: 1.5px solid rgba(142,27,38,.4); background: rgba(142,27,38,.07); font: 700 16px/1 var(--sans); color: var(--maroon); vertical-align: 4px; }
+    .tt-case-r { flex: none; display: flex; flex-direction: column; align-items: center; gap: 12px; }
     .tt-src { display: inline-flex; align-items: center; padding: 13px 22px; border-radius: 12px; font: italic 700 25px/1 var(--sans); transition: background .35s, color .35s; }
     .tt-src.human { background: rgba(109,63,150,.12); color: #6d3f96; }
     .tt-src.ai { background: rgba(46,86,164,.12); color: #2e56a4; }
@@ -579,11 +559,9 @@
     .tt-toggle button:hover { transform: translateY(-2px); }
     .tt-toggle button.active { background: var(--maroon); color: #fff; }
     /* readout — two panels of judge signals that SHOULD be independent but move together */
-    .tt-panel { position: absolute; top: 432px; width: 830px; padding: 28px 34px 28px; border: 2px solid #e2e2e2; border-radius: 20px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); }
+    .tt-panel { position: absolute; top: 398px; width: 830px; padding: 28px 34px 28px; border: 2px solid #e2e2e2; border-radius: 20px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); }
     .tt-panel.a { left: 100px; }
     .tt-panel.b { left: 990px; }
-    .tt-risk { margin-top: 24px; padding: 12px 16px; border-radius: 10px; border: 1.5px dashed rgba(142,27,38,.4); background: rgba(142,27,38,.06); font: 700 21px/1.3 var(--sans); color: var(--maroon); text-align: center; }
-    .tt-risk b { text-decoration: underline; text-underline-offset: 4px; }
     .tt-panel h3 { font: 700 27px/1.2 var(--sans); }
     .tt-panel.a h3 { color: #2f6bb2; }
     .tt-panel.b h3 { color: #6d3f96; }
@@ -595,6 +573,15 @@
     .tt-btrack i { position: absolute; inset: 0 auto 0 0; border-radius: 4px; background: #2f6bb2; transition: width 750ms var(--ease); }
     .tt-panel.b .tt-btrack i { background: #6d3f96; }
     .tt-row .vl { width: 96px; flex: none; font: 700 21px/1.1 var(--sans); color: var(--navy-verdict); text-align: right; }
+    .tt-vd { position: absolute; top: 708px; width: 860px; display: flex; align-items: center; gap: 24px; padding: 20px 30px; border-radius: 18px; }
+    .tt-vd.exp { left: 80px; border: 2px solid rgba(47,107,178,.4); background: linear-gradient(180deg,#fff,#f6f9fd); }
+    .tt-vd.obs { left: 980px; border: 2px solid rgba(142,27,38,.42); background: linear-gradient(180deg,#fff,#fbf2f3); }
+    .tt-vd-ico { flex: none; width: 62px; height: 62px; }
+    .tt-vd h4 { font: 800 24px/1.2 var(--sans); }
+    .tt-vd.exp h4 { color: #2f6bb2; }
+    .tt-vd.obs h4 { color: var(--maroon); }
+    .tt-vd p { margin-top: 6px; font: 400 20px/1.3 var(--sans); color: #555; }
+    .tt-vd.obs p b { color: var(--maroon); }
 
     /* ================================================================
        P9 · ALIGN — benchmark creation (expert-annotated dialogue → data).
@@ -897,10 +884,15 @@
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="tt-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Are LLM-as-a-Judge’s Dimensions Independent — or Correlated?</h2>
         <div class="rule rv" style="top:104px"></div>
         <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px;font-size:32px;white-space:nowrap" data-edit-id="tt-rq"><span class="tag">Research Question:</span> are LLM judge’s multi-fields judgment <u>independent</u> evidence — or one <u>correlated</u> output?</p>
-        <div class="abs tt-cue rv d1" role="group" aria-label="Identical content, flip only the source cue">
-          <span class="tt-cue-k">Identical answer — flip only <b>the source cue</b>:</span>
-          <span class="tt-src human" data-tt="src">“As human professionals stated …”</span>
-          <div class="tt-toggle" id="ttToggle" role="group" aria-label="Counterfactual source attribution"><button type="button" class="active" data-src="human">HUMAN SOURCE</button><button type="button" data-src="ai">AI SOURCE</button></div>
+        <div class="abs tt-case rv d1" role="group" aria-label="One health answer with a hidden factual error, judged under two source cues">
+          <div class="tt-case-l">
+            <p class="tt-case-k">the case · one answer, one hidden error</p>
+            <p class="tt-case-q" data-edit-id="tt-case-q">“Vitamin C <em>cures</em> a cold — take a double dose.”<span class="tt-case-x">✗ factually wrong</span></p>
+          </div>
+          <div class="tt-case-r">
+            <span class="tt-src human" data-tt="src">“As human professionals stated …”</span>
+            <div class="tt-toggle" id="ttToggle" role="group" aria-label="Counterfactual source attribution"><button type="button" class="active" data-src="human">HUMAN SOURCE</button><button type="button" data-src="ai">AI SOURCE</button></div>
+          </div>
         </div>
 
         <div class="abs tt-panel a rv d2">
@@ -910,7 +902,6 @@
             <div class="tt-row"><span class="lb">Factual accuracy</span><div class="tt-btrack"><i data-tt="b-acc" style="width:80%"></i></div><span class="vl" data-tt="v-acc">5.7 / 7</span></div>
             <div class="tt-row"><span class="lb">Safety</span><div class="tt-btrack"><i data-tt="b-safe" style="width:82%"></i></div><span class="vl" data-tt="v-safe">5.9 / 7</span></div>
           </div>
-          <p class="tt-risk">all three move as one — <b>not independent dimensions</b></p>
         </div>
         <div class="abs tt-panel b rv d3">
           <h3>B · Across judge types <small>— should be independent</small></h3>
@@ -919,10 +910,23 @@
             <div class="tt-row"><span class="lb">Correctness · P(true)</span><div class="tt-btrack"><i data-tt="b-pcorr" style="width:66%"></i></div><span class="vl" data-tt="v-pcorr">66%</span></div>
             <div class="tt-row"><span class="lb">Model confidence</span><div class="tt-btrack"><i data-tt="b-conf" style="width:75%"></i></div><span class="vl" data-tt="v-conf">0.75</span></div>
           </div>
-          <p class="tt-risk">all three sway each other — <b>not independent checks</b></p>
         </div>
 
-        <p class="abs takeaway rv d4" style="left:46px;top:884px;width:1840px;font-size:30px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> all six judge outputs rise and fall <span class="red">together</span> (pairwise r ≈ 0.8) — <span class="red">one correlated signal</span>, not independent evidence.</p>
+        <div class="abs tt-vd exp rv d3">
+          <svg class="tt-vd-ico" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M12 32 L40 14M12 32 L44 32M12 32 L40 50" fill="none" stroke="#2f6bb2" stroke-width="3.5" stroke-linecap="round"/>
+            <polygon points="37,8 49,9 41,19" fill="#2f6bb2"/><polygon points="42,26 54,32 42,38" fill="#2f6bb2"/><polygon points="41,45 49,55 37,56" fill="#2f6bb2"/>
+          </svg>
+          <div><h4>Expected · six independent checks</h4><p>factual accuracy should flag the error on its own — whoever said it</p></div>
+        </div>
+        <div class="abs tt-vd obs rv d4">
+          <svg class="tt-vd-ico" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M10 26 L38 12M10 42 L38 28M10 58 L38 44" fill="none" stroke="#8e1b26" stroke-width="3.5" stroke-linecap="round"/>
+            <polygon points="35,6 47,7 39,17" fill="#8e1b26"/><polygon points="35,22 47,23 39,33" fill="#8e1b26"/><polygon points="35,38 47,39 39,49" fill="#8e1b26"/>
+          </svg>
+          <div><h4>Observed · one halo</h4><p>flip the cue › <b>all six shift together</b> — pairwise r ≈ 0.8</p></div>
+        </div>
+        <p class="abs takeaway rv d4" style="left:46px;top:856px;width:1840px;font-size:30px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> the judge returns <span class="red">one correlated signal, not six safeguards</span> — the wrong answer passes every check.</p>
         <p class="refs">[i] Sun et al. When Trust Meets Truth: Trust–Truth Separability in LLM-as-Judge (EMNLP 2026, to appear) Core A*</p>
         <span class="pnum">8 / 18</span>
       </section>
@@ -1164,43 +1168,31 @@
       <section class="slide" id="slideAugment" data-title="3 · Adapt — adaptive support that augments humans" aria-label="Slide 17 of 19">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="ad-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Adaptive Support that Augments Humans</h2>
         <div class="rule rv" style="top:104px"></div>
-        <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Use case: Health decision support">
-          <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="#8e1b26" fill-opacity=".10" stroke="#8e1b26" stroke-width="1.6"/><path d="M15.8 8.2l-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1z" fill="#8e1b26" fill-opacity=".5" stroke="#8e1b26" stroke-width="1.3" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.15" fill="#fff"/></svg></span>
-          <span class="dtag-tx"><span class="dtag-k">Use Case</span><span class="dtag-v">Health Decision Support</span></span>
-        </div>
         <p class="abs rq rv d1" style="left:60px;top:146px;width:1800px;font-size:30px;line-height:1.28" data-edit-id="ad-rq"><span class="tag">Goal:</span> adapting AI generation and interaction to the <u>real human state</u> — thereby augmenting human cognition &amp; behavior (appropriate reliance, calibrated trust, better decisions).</p>
-        <p class="abs ad-colcap rv d1">Adapt what</p>
-        <span class="abs ad-spine rv d1" aria-hidden="true"></span>
-        <div class="abs ad-item rv d1" data-n="1" style="top:400px"><h4>AI Explanation</h4><p>depth of LLM reasoning to show</p></div>
-        <div class="abs ad-item rv d2" data-n="2" style="top:532px"><h4>Timing &amp; guidance</h4><p>when &amp; how directively to support</p></div>
-        <div class="abs ad-item rv d3" data-n="3" style="top:664px"><h4>Modality</h4><p>text · speech · embodied agent</p></div>
-        <div class="abs ad-link rv d2" aria-hidden="true">
-          <span class="lab">adapts</span>
-          <svg viewBox="0 0 108 24"><line x1="4" y1="12" x2="84" y2="12" stroke="#d9930d" stroke-width="3" stroke-dasharray="7 7"/><polygon points="84,4 104,12 84,20" fill="#d9930d"/></svg>
-        </div>
-        <p class="abs ad-figcap rv d2">What the user sees · adapted in real time</p>
-        <div class="abs ad-ui rv d2" role="img" aria-label="Adaptive web chat UI: reasoning depth, confidence cue and answer adapt to the sensed state">
-          <div class="ad-uibar"><i></i><i></i><i></i><span>health-assistant · adaptive study UI</span></div>
-          <div class="ad-uibody">
-            <span class="ad-uq">“Is this supplement safe with my blood-pressure medication?”</span>
-            <div class="ad-ublk reason"><span class="ad-un">1</span>
-              <h5>Reasoning <em>· depth adapts to cognitive load</em></h5>
-              <div class="ad-skel" aria-hidden="true"><i style="width:88%"></i><i style="width:72%"></i><i style="width:55%"></i></div>
-              <span class="ad-fold">⌄ show more reasoning</span>
-            </div>
-            <div class="ad-ublk cue"><span class="ad-un">2</span>
-              <h5>Confidence &amp; timing <em>· nudges when trust drifts</em></h5>
-              <p class="ad-cue-line">evidence is limited here — double-check the dosage with your GP</p>
-            </div>
-            <div class="ad-ublk ans">
-              <h5>Answer</h5>
-              <p>Generally safe at low doses — but confirm the dosage with your doctor first.</p>
-            </div>
+
+        <div class="abs av-rail rv d1" style="top:322px"><span class="n">1</span><div><b>In the response</b><i>what adapts</i></div></div>
+        <div class="abs av-row r1 rv d1" style="top:268px">
+          <div class="av-card">
+            <svg class="av-vis" viewBox="0 0 120 56" aria-hidden="true"><rect x="6" y="8" width="86" height="9" rx="4.5" fill="#d5e3f2"/><rect x="6" y="24" width="66" height="9" rx="4.5" fill="#d5e3f2"/><rect x="6" y="40" width="46" height="9" rx="4.5" fill="#e8eef5"/><path d="M106 10v36" stroke="#2e74b5" stroke-width="2.2"/><path d="M101 16l5-7 5 7M101 40l5 7 5-7" fill="none" stroke="#2e74b5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <b>Adaptive reasoning</b><span>depth follows cognitive load</span>
+          </div>
+          <div class="av-card">
+            <svg class="av-vis" viewBox="0 0 150 56" aria-hidden="true"><rect x="8" y="14" width="134" height="28" rx="14" fill="#fffaf0" stroke="#d9930d" stroke-width="2"/><circle cx="26" cy="28" r="5" fill="#d9930d"/><rect x="38" y="21.5" width="66" height="5.5" rx="2.75" fill="#e5cfa3"/><rect x="38" y="31" width="44" height="5.5" rx="2.75" fill="#efe0c2"/></svg>
+            <b>Confidence statements</b><span>uncertainty said out loud</span>
+          </div>
+          <div class="av-card">
+            <svg class="av-vis" viewBox="0 0 120 56" aria-hidden="true"><circle cx="32" cy="28" r="20" fill="#fff" stroke="#b47a0b" stroke-width="2.4"/><path d="M32 16v12l9 6" fill="none" stroke="#b47a0b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M66 28h26M84 18l10 10-10 10" fill="none" stroke="#d9930d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="102" y="14" width="4.5" height="28" rx="2.25" fill="#d9930d" opacity=".55"/></svg>
+            <b>Timing &amp; nudges</b><span>support at the right moment</span>
+          </div>
+          <div class="av-card">
+            <svg class="av-vis" viewBox="0 0 120 56" aria-hidden="true"><path d="M18 48a42 42 0 0 1 84 0" fill="none" stroke="#eee3cd" stroke-width="9" stroke-linecap="round"/><path d="M18 48a42 42 0 0 1 42-42" fill="none" stroke="#d9930d" stroke-width="9" stroke-linecap="round"/><line x1="60" y1="48" x2="79" y2="23" stroke="#8a6b3e" stroke-width="3.5" stroke-linecap="round"/><circle cx="60" cy="48" r="5" fill="#8a6b3e"/></svg>
+            <b>Trust calibration</b><span>reliance matched to reliability</span>
           </div>
         </div>
-        <div class="abs ad-modes rv d3" aria-label="Interaction modalities">
-          <span class="ad-un" aria-hidden="true">3</span>
-          <div class="ad-mode"><span class="ad-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
+
+        <div class="abs av-rail rv d2" style="top:512px"><span class="n">2</span><div><b>Across interfaces</b><i>where it meets you</i></div></div>
+        <div class="abs av-row r2 rv d2" style="top:456px">
+          <div class="av-card"><span class="av-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
             <rect x="11" y="5" width="130" height="84" rx="10" fill="#fff" stroke="#c9c9c9" stroke-width="2.5"/>
             <path d="M11 15 a10 10 0 0 1 10 -10 h110 a10 10 0 0 1 10 10 v9 h-130 z" fill="#f3f4f6"/>
             <path d="M12 24 h128" stroke="#dcdcdc" stroke-width="1.5"/>
@@ -1208,8 +1200,8 @@
             <rect x="22" y="34" width="62" height="13" rx="6.5" fill="#e5e8ec"/>
             <rect x="68" y="53" width="62" height="13" rx="6.5" fill="#2e74b5"/>
             <rect x="22" y="72" width="46" height="9" rx="4.5" fill="#eef0f3"/>
-          </svg></span><b>Text</b><span class="sub">web chat UI</span></div>
-          <div class="ad-mode"><span class="ad-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
+          </svg></span><b>Web chat</b><span>the adaptive study UI</span></div>
+          <div class="av-card"><span class="av-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
             <ellipse cx="76" cy="84" rx="30" ry="7" fill="rgba(74,144,255,.30)"/>
             <ellipse cx="76" cy="81" rx="21" ry="4.5" fill="#4a90ff"/>
             <circle cx="76" cy="48" r="33" fill="#eceff1" stroke="#9aa4ad" stroke-width="2.5"/>
@@ -1218,8 +1210,8 @@
             <path d="M130 26 a29 29 0 0 1 0 44" fill="none" stroke="#4a90ff" stroke-width="3" stroke-linecap="round" opacity=".5"/>
             <path d="M32 34 a19 19 0 0 0 0 28" fill="none" stroke="#4a90ff" stroke-width="3" stroke-linecap="round"/>
             <path d="M22 26 a29 29 0 0 0 0 44" fill="none" stroke="#4a90ff" stroke-width="3" stroke-linecap="round" opacity=".5"/>
-          </svg></span><b>Speech</b><span class="sub">voice assistant</span></div>
-          <div class="ad-mode"><span class="ad-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
+          </svg></span><b>Voice assistant</b><span>hands-free guidance</span></div>
+          <div class="av-card"><span class="av-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
             <rect x="46" y="8" width="60" height="36" rx="7" fill="#d9b98a" stroke="#8a6b3e" stroke-width="2"/>
             <rect x="52" y="13" width="48" height="26" rx="4" fill="#101826"/>
             <circle cx="67" cy="25" r="6.5" fill="#3f7bff"/><circle cx="85" cy="25" r="6.5" fill="#3f7bff"/>
@@ -1231,8 +1223,33 @@
             <rect x="101" y="54" width="8" height="20" rx="4" fill="#c7a476" stroke="#8a6b3e" stroke-width="1.5"/>
             <rect x="60" y="80" width="11" height="9" rx="2" fill="#c7a476" stroke="#8a6b3e" stroke-width="1.5"/>
             <rect x="81" y="80" width="11" height="9" rx="2" fill="#c7a476" stroke="#8a6b3e" stroke-width="1.5"/>
-          </svg></span><b>Embodied</b><span class="sub">social robot</span></div>
+          </svg></span><b>Social robot</b><span>embodied presence</span></div>
+          <div class="av-card av-ext"><span class="av-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
+            <rect x="26" y="24" width="100" height="48" rx="17" fill="#fff" stroke="#555" stroke-width="2.5"/>
+            <path d="M26 48H12a6 6 0 0 1 0-12h4M126 48h14a6 6 0 0 0 0-12h-4" fill="none" stroke="#555" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="57" cy="48" r="11" fill="#2e56a4" opacity=".85"/><circle cx="95" cy="48" r="11" fill="#6d3f96" opacity=".85"/>
+            <path d="M68 72a9 9 0 0 1 16 0" fill="#fff" stroke="#555" stroke-width="2.5"/>
+            <path d="M133 8l2.4 6 6 2.4-6 2.4-2.4 6-2.4-6-6-2.4 6-2.4z" fill="#d9930d"/>
+          </svg></span><b>VR support</b><span>immersive therapy scenes</span></div>
         </div>
+
+        <div class="abs av-rail rv d3" style="top:692px"><span class="n">3</span><div><b>In the world</b><i>application scenarios</i></div></div>
+        <div class="abs av-row rv d3" style="top:646px">
+          <div class="av-scn">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20.4S5.1 16.2 2.8 11.7C1.1 8.5 2.9 5.1 6.1 5.1c1.9 0 3.4 1.1 4.4 2.6 1-1.5 2.5-2.6 4.4-2.6 3.2 0 5 3.4 3.3 6.6-2.3 4.5-9.2 8.7-9.2 8.7z" fill="none" stroke="#b47a0b" stroke-width="1.7" stroke-linejoin="round"/><path d="M5 11.6h3.6l1.5-2.8 2.3 4.8 1.6-2h4.6" fill="none" stroke="#b47a0b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div><b>Health decision support</b><span>clinical info seeking · appropriate reliance</span></div>
+          </div>
+          <div class="av-scn">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.2 4.4h15.6c.9 0 1.6.7 1.6 1.6v8.6c0 .9-.7 1.6-1.6 1.6H9.6l-4.4 3.6v-3.6h-1c-.9 0-1.6-.7-1.6-1.6V6c0-.9.7-1.6 1.6-1.6z" fill="none" stroke="#b47a0b" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 13.4s-2.7-1.6-2.7-3.4c0-.9.7-1.6 1.5-1.6.6 0 1 .3 1.2.7.2-.4.6-.7 1.2-.7.8 0 1.5.7 1.5 1.6 0 1.8-2.7 3.4-2.7 3.4z" fill="#b47a0b"/></svg></span>
+            <div><b>Mental-support agents</b><span>multimodal sensing + MI strategies — clinic · home · VR</span></div>
+          </div>
+          <div class="av-scn av-ext">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#b47a0b" stroke-width="1.7"/><path d="M15.5 8.5l-2.2 5-5 2.2 2.2-5 5-2.2z" fill="#b47a0b" fill-opacity=".55" stroke="#b47a0b" stroke-width="1.3" stroke-linejoin="round"/><circle cx="12" cy="12" r="1" fill="#fff"/></svg></span>
+            <div><b>Everyday decision support</b><span>from health facts to daily choices</span></div>
+          </div>
+        </div>
+
+        <p class="abs takeaway rv d4" style="left:46px;top:846px;width:1840px;font-size:29px" data-edit-id="ad-take"><span class="tl">Takeaway:</span> one adaptive core — <span class="red">reasoning · confidence · timing · trust</span> — through any interface, into real-world support.</p>
         <p class="refs">[f] Sun et al. Seeing the Reasoning (ACM CHI 2026) Core A*<br>[h] Sun et al. Interface Matters: Exploring Trust Perception in Health Information from Large Language Models via Text, Speech, and Embodiment (ACM CSCW 2024) Core A</p>
         <span class="pnum">17 / 18</span>
       </section>
