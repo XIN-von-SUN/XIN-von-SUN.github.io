@@ -441,6 +441,12 @@
     .active .sn-prow.r3 .sn-ptrack i { width: 63%; transition-delay: 900ms; }
     .sn-pval { width: 95px; font: 700 20px/1 var(--maroon); color: var(--maroon); }
     .sn-purpose { position: absolute; left: 26px; right: 26px; bottom: 24px; padding-top: 18px; border-top: 1.5px dashed #cdddef; text-align: center; font: italic 700 22px/1.32 var(--serif); color: #2e74b5; }
+    /* slide-17 step marker — this slide = step 3 (Adapt), matching slide 16's red badges */
+    .ad-step { display: flex; align-items: center; gap: 16px; }
+    .ad-step-n { flex: none; width: 42px; height: 42px; border-radius: 50%; background: var(--maroon); color: #fff; font: 800 21px/42px var(--sans); text-align: center; box-shadow: 0 5px 14px rgba(142,27,38,.22); }
+    .ad-step-t { font: 800 33px/1 var(--sans); color: var(--maroon); }
+    .ad-step-x { font: italic 600 19px/1 var(--serif); color: #9a9a9a; }
+    .ad-step-x b { color: var(--maroon); font-style: normal; }
     /* --- WA · WHY ADAPT — bridge: pillars 1–2 done → the adaptation loop --- */
     .wa-lead { left: 60px; top: 168px; width: 1800px; text-align: center; font: 700 33px/1.3 var(--sans); color: #000; white-space: nowrap; }
     .wa-lead .red { color: var(--maroon); }
@@ -915,7 +921,7 @@
           <p class="tt-risk">they rise &amp; fall together → <b>false-but-trusted</b> reads as true</p>
         </div>
 
-        <p class="abs takeaway rv d4" style="left:46px;top:782px;width:1840px;font-size:30px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> flip one irrelevant cue and <span class="red">every signal moves together</span> — the judge gives <span class="red">one correlated verdict, not independent evidence</span>.</p>
+        <p class="abs takeaway rv d4" style="left:46px;top:786px;width:1840px;font-size:29px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> change only <span class="red">who wrote it</span>, and every score moves the same way — <span class="red">one biased verdict, not separate checks</span>.</p>
         <p class="refs">[i] Sun et al. When Trust Meets Truth: Trust–Truth Separability in LLM-as-Judge (EMNLP 2026, to appear) Core A*</p>
         <span class="pnum">8 / 18</span>
       </section>
@@ -1158,6 +1164,7 @@
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="ad-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Adaptive Support that Augments Humans</h2>
         <div class="rule rv" style="top:104px"></div>
         <p class="abs rq rv d1" style="left:60px;top:146px;width:1800px;font-size:30px;line-height:1.28" data-edit-id="ad-rq"><span class="tag">Goal:</span> adapting AI generation and interaction to the <u>real human state</u> — thereby augmenting human cognition &amp; behavior (appropriate reliance, calibrated trust, better decisions).</p>
+        <div class="abs ad-step rv d1" style="left:60px;top:290px"><span class="ad-step-n">3</span><span class="ad-step-t">Adapt</span><span class="ad-step-x">sense › predict › <b>adapt</b> — where the loop closes</span></div>
 
         <div class="abs av-rail rv d1" style="top:448px"><span class="n">1</span><b>AI generation</b></div>
         <div class="abs av-row rv d1" style="top:390px">
@@ -1260,7 +1267,6 @@
         <button type="button" class="abs vs-card v2 rv d3" data-pair-step="2" data-jump="9"><span class="n">2</span><h3>Align</h3><span class="role">LLM as Learner</span><span class="pr">select the good human signals for LLMs to learn</span></button>
         <button type="button" class="abs vs-card v3 rv d4" data-pair-step="3" data-jump="14"><span class="n">3</span><h3>Adapt</h3><span class="role">LLM as Partner</span><span class="pr">adapt LLM supports to real user states</span></button>
         <p class="abs vs-lanek bot rv d3" data-edit-id="vs-lanek-bot">from LLMs back to humans · <b>provide the right support</b></p>
-        <div class="abs p10-ctxbar rv d4" role="note" aria-label="Health-related application contexts of this research"><em>Contexts</em><span>Healthcare</span><span>Mental Support</span><span>Decision-Making Support</span></div>
         <span class="pnum">18 / 18</span>
       </section>
 
