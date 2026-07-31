@@ -504,24 +504,33 @@
     .av-scn span { display: block; margin-top: 4px; font: 400 15px/1.3 var(--sans); color: #777; }
     .av-ext { position: relative; border-style: dashed !important; border-color: rgba(217,147,13,.6) !important; }
     .av-ext::after { content: "extending"; position: absolute; right: 12px; top: 8px; font: italic 700 12.5px/1 var(--sans); color: #b47a0b; opacity: .85; }
-    /* worked example — signals > states > agent > augmentation, animated */
-    .av-eg { left: 160px; top: 852px; width: 1600px; height: 132px; display: flex; align-items: center; gap: 2px; padding: 0 26px; border-radius: 18px; border: 1.5px solid rgba(217,147,13,.3); background: linear-gradient(180deg,#fff,#fffdf6); box-shadow: 0 6px 16px rgba(217,147,13,.05); }
-    .av-eg-tag { flex: none; margin-right: 10px; padding: 7px 13px; border-radius: 999px; background: rgba(217,147,13,.12); color: #b47a0b; font: 800 12.5px/1 var(--sans); letter-spacing: .13em; text-transform: uppercase; }
-    .av-eg-scene { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center; }
-    .av-eg-fig { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
-    .av-eg-fig.h { background: rgba(109,63,150,.1); }
-    .av-eg-fig.a { background: rgba(217,147,13,.14); }
-    .av-eg-fig svg { width: 38px; height: 38px; display: block; }
-    .av-eg-scene p { font: 700 17.5px/1.15 var(--sans); color: #2f2f2f; }
+    /* worked example — compact animated pipeline (auto-play + hover to focus) */
+    .av-eg { left: 300px; top: 858px; width: 1320px; height: 118px; display: flex; align-items: center; gap: 0; padding: 0 22px; border-radius: 18px; border: 1.5px solid rgba(217,147,13,.45); background: linear-gradient(180deg,#fffefb,#fff7e8); box-shadow: 0 8px 22px rgba(217,147,13,.1); }
+    .av-eg-tag { flex: none; margin-right: 6px; padding: 6px 11px; border-radius: 999px; background: var(--maroon); color: #fff; font: 800 11.5px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; box-shadow: 0 3px 8px rgba(142,27,38,.22); }
+    .av-eg-scene { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; transition: opacity .25s, transform .25s var(--ease); }
+    .av-eg-fig { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid; transition: filter .25s; }
+    .av-eg-fig.h { --gl: 109,63,150; background: rgba(109,63,150,.1); border-color: rgba(109,63,150,.42); }
+    .av-eg-fig.a { --gl: 217,147,13; background: rgba(217,147,13,.15); border-color: rgba(217,147,13,.55); }
+    .av-eg-fig svg { width: 35px; height: 35px; display: block; }
+    .av-eg-scene p { font: 700 16.5px/1.12 var(--sans); color: #2a2a2a; }
     .av-eg-scene p b { color: var(--maroon); }
-    .av-eg-scene p span { display: block; margin-top: 3px; font: 400 13.5px/1.2 var(--sans); color: #9a9a9a; }
-    .av-eg-arr { flex: none; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 0 6px; margin-bottom: 26px; }
-    .av-eg-arr em { font: 800 11px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: #c2903a; font-style: normal; }
-    .av-eg-arr svg { width: 44px; height: 12px; display: block; }
-    .active .av-eg-arr svg { animation: egFlow 2.6s ease-in-out infinite; }
-    .av-eg-arr.a2 svg { animation-delay: .45s; } .av-eg-arr.a3 svg { animation-delay: .9s; }
-    @keyframes egFlow { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
-    /* micro-animations */
+    .av-eg-scene p span { display: block; margin-top: 3px; font: 400 12.5px/1.15 var(--sans); color: #9a9a9a; }
+    /* arrows — clear, marching direction of flow */
+    .av-eg-arr { flex: none; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 0 2px; margin-bottom: 22px; }
+    .av-eg-arr em { font: 800 10px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase; color: #b47a0b; font-style: normal; }
+    .av-eg-arr svg { width: 46px; height: 12px; display: block; }
+    .active .av-eg-arr .ln { animation: antMarch 1s linear infinite; }
+    /* auto-play: a wave of pops flows through the four stages */
+    .active .av-eg-fig.st1 { animation: egPop 4.8s ease-in-out infinite 0s; }
+    .active .av-eg-fig.st2 { animation: egPop 4.8s ease-in-out infinite 1.2s; }
+    .active .av-eg-fig.st3 { animation: egPop 4.8s ease-in-out infinite 2.4s; }
+    .active .av-eg-fig.st4 { animation: egPop 4.8s ease-in-out infinite 3.6s; }
+    @keyframes egPop { 0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(var(--gl),0); } 4% { transform: scale(1.13); box-shadow: 0 0 0 8px rgba(var(--gl),.16); } 13% { transform: scale(1); box-shadow: 0 0 0 0 rgba(var(--gl),0); } }
+    /* interaction: hover a stage to focus it, the rest dim */
+    .av-eg:hover .av-eg-scene { opacity: .4; }
+    .av-eg .av-eg-scene:hover { opacity: 1; transform: translateY(-5px); }
+    .av-eg-scene:hover .av-eg-fig { filter: drop-shadow(0 7px 16px rgba(var(--gl),.42)); }
+    /* micro-animations inside each figure */
     .active .av-eg-fig .w1 { animation: egW 2.4s ease-in-out infinite; }
     .active .av-eg-fig .w2 { animation: egW 2.4s ease-in-out infinite .3s; }
     .active .av-eg-fig .w3 { animation: egW 2.4s ease-in-out infinite .6s; }
@@ -1278,15 +1287,15 @@
           </div>
         </div>
 
-        <div class="abs av-eg rv d4" role="note" aria-label="Signals sensed into human states, predicted by an adapting agent, supporting cognitive augmentation">
+        <div class="abs av-eg rv d4" role="note" aria-label="Animated pipeline: multimodal signals sensed into human states, predicted by an adapting AI agent, supporting cognitive augmentation">
           <span class="av-eg-tag">e.g.</span>
-          <div class="av-eg-scene"><span class="av-eg-fig h" aria-hidden="true"><svg viewBox="0 0 48 44" fill="none"><circle cx="16" cy="15" r="7" fill="#6d3f96"/><path d="M4 40c0-8 5.6-12.5 12-12.5S28 32 28 40z" fill="#6d3f96"/><path class="w1" d="M33 18a10 10 0 0 1 0 12" stroke="#b47a0b" stroke-width="2" stroke-linecap="round"/><path class="w2" d="M38 13a17 17 0 0 1 0 22" stroke="#b47a0b" stroke-width="2" stroke-linecap="round" opacity=".55"/><path class="w3" d="M43 8a24 24 0 0 1 0 32" stroke="#b47a0b" stroke-width="2" stroke-linecap="round" opacity=".3"/></svg></span><p><b>multimodal signals</b><span>conscious &amp; subconscious</span></p></div>
-          <span class="av-eg-arr" aria-hidden="true"><em>sense</em><svg viewBox="0 0 44 12" aria-hidden="true"><path d="M2 6h34M31 2l6 4-6 4" fill="none" stroke="#d9930d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div class="av-eg-scene"><span class="av-eg-fig h" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none"><path d="M6 30a16 16 0 0 1 32 0" stroke="#ddccf0" stroke-width="5" stroke-linecap="round"/><path d="M6 30a16 16 0 0 1 16-16" stroke="#6d3f96" stroke-width="5" stroke-linecap="round"/><g class="ndl"><line x1="22" y1="30" x2="31" y2="19" stroke="#4a2b66" stroke-width="2.6" stroke-linecap="round"/><circle cx="22" cy="30" r="2.6" fill="#4a2b66"/></g><circle cx="12" cy="38" r="2" fill="#6d3f96"/><circle cx="22" cy="38" r="2" fill="#9a6fc0"/><circle cx="32" cy="38" r="2" fill="#c9a2e9"/></svg></span><p><b>human states</b><span>cognitive &amp; behavioral</span></p></div>
-          <span class="av-eg-arr a2" aria-hidden="true"><em>predict</em><svg viewBox="0 0 44 12" aria-hidden="true"><path d="M2 6h34M31 2l6 4-6 4" fill="none" stroke="#d9930d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div class="av-eg-scene"><span class="av-eg-fig a" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="#b47a0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="14" width="24" height="19" rx="6" fill="#fff"/><circle class="eye" cx="17.5" cy="23.5" r="2.6" fill="#b47a0b" stroke="none"/><circle class="eye" cx="26.5" cy="23.5" r="2.6" fill="#b47a0b" stroke="none"/><path d="M17.5 28.5h9"/><path d="M22 14V9"/><circle class="ant" cx="22" cy="7" r="2.2" fill="#b47a0b" stroke="none"/><path d="M10 22H6M34 22h4"/></svg></span><p><b>AI agent</b> adapts<span>adaptive generation</span></p></div>
-          <span class="av-eg-arr a3" aria-hidden="true"><em>support</em><svg viewBox="0 0 44 12" aria-hidden="true"><path d="M2 6h34M31 2l6 4-6 4" fill="none" stroke="#d9930d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div class="av-eg-scene"><span class="av-eg-fig h" aria-hidden="true"><svg viewBox="0 0 46 44" fill="none"><circle cx="18" cy="16" r="7" fill="#6d3f96"/><path d="M6 40c0-8 5.6-12.5 12-12.5S30 32 30 40z" fill="#6d3f96"/><circle cx="34" cy="13" r="8.5" fill="#d9930d"/><path d="M34 17.5v-9M30.5 12l3.5-3.5L37.5 12" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path class="spk" d="M42.5 24.6l1 2.4 2.4 1-2.4 1-1 2.4-1-2.4-2.4-1 2.4-1z" fill="#d9930d"/></svg></span><p>cognitive <b>augmentation</b><span>via multimodal interaction</span></p></div>
+          <div class="av-eg-scene"><span class="av-eg-fig h st1" aria-hidden="true"><svg viewBox="0 0 48 44" fill="none"><circle cx="16" cy="15" r="7" fill="#6d3f96"/><path d="M4 40c0-8 5.6-12.5 12-12.5S28 32 28 40z" fill="#6d3f96"/><path class="w1" d="M33 18a10 10 0 0 1 0 12" stroke="#b47a0b" stroke-width="2" stroke-linecap="round"/><path class="w2" d="M38 13a17 17 0 0 1 0 22" stroke="#b47a0b" stroke-width="2" stroke-linecap="round" opacity=".55"/><path class="w3" d="M43 8a24 24 0 0 1 0 32" stroke="#b47a0b" stroke-width="2" stroke-linecap="round" opacity=".3"/></svg></span><p><b>multimodal signals</b><span>conscious &amp; subconscious</span></p></div>
+          <span class="av-eg-arr" aria-hidden="true"><em>sense</em><svg viewBox="0 0 46 12" aria-hidden="true"><line class="ln" x1="2" y1="6" x2="37" y2="6" stroke="#d9930d" stroke-width="2.4" stroke-dasharray="5 5" stroke-linecap="round"/><path d="M35 2l6 4-6 4" fill="none" stroke="#d9930d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="av-eg-scene"><span class="av-eg-fig h st2" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none"><path d="M6 30a16 16 0 0 1 32 0" stroke="#ddccf0" stroke-width="5" stroke-linecap="round"/><path d="M6 30a16 16 0 0 1 16-16" stroke="#6d3f96" stroke-width="5" stroke-linecap="round"/><g class="ndl"><line x1="22" y1="30" x2="31" y2="19" stroke="#4a2b66" stroke-width="2.6" stroke-linecap="round"/><circle cx="22" cy="30" r="2.6" fill="#4a2b66"/></g><circle cx="12" cy="38" r="2" fill="#6d3f96"/><circle cx="22" cy="38" r="2" fill="#9a6fc0"/><circle cx="32" cy="38" r="2" fill="#c9a2e9"/></svg></span><p><b>human states</b><span>cognitive &amp; behavioral</span></p></div>
+          <span class="av-eg-arr" aria-hidden="true"><em>predict</em><svg viewBox="0 0 46 12" aria-hidden="true"><line class="ln" x1="2" y1="6" x2="37" y2="6" stroke="#d9930d" stroke-width="2.4" stroke-dasharray="5 5" stroke-linecap="round"/><path d="M35 2l6 4-6 4" fill="none" stroke="#d9930d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="av-eg-scene"><span class="av-eg-fig a st3" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="#b47a0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="14" width="24" height="19" rx="6" fill="#fff"/><circle class="eye" cx="17.5" cy="23.5" r="2.6" fill="#b47a0b" stroke="none"/><circle class="eye" cx="26.5" cy="23.5" r="2.6" fill="#b47a0b" stroke="none"/><path d="M17.5 28.5h9"/><path d="M22 14V9"/><circle class="ant" cx="22" cy="7" r="2.2" fill="#b47a0b" stroke="none"/><path d="M10 22H6M34 22h4"/></svg></span><p><b>AI agent</b> adapts<span>adaptive generation</span></p></div>
+          <span class="av-eg-arr" aria-hidden="true"><em>support</em><svg viewBox="0 0 46 12" aria-hidden="true"><line class="ln" x1="2" y1="6" x2="37" y2="6" stroke="#d9930d" stroke-width="2.4" stroke-dasharray="5 5" stroke-linecap="round"/><path d="M35 2l6 4-6 4" fill="none" stroke="#d9930d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="av-eg-scene"><span class="av-eg-fig h st4" aria-hidden="true"><svg viewBox="0 0 46 44" fill="none"><circle cx="18" cy="16" r="7" fill="#6d3f96"/><path d="M6 40c0-8 5.6-12.5 12-12.5S30 32 30 40z" fill="#6d3f96"/><circle cx="34" cy="13" r="8.5" fill="#d9930d"/><path d="M34 17.5v-9M30.5 12l3.5-3.5L37.5 12" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path class="spk" d="M42.5 24.6l1 2.4 2.4 1-2.4 1-1 2.4-1-2.4-2.4-1 2.4-1z" fill="#d9930d"/></svg></span><p>cognitive <b>augmentation</b><span>via multimodal interaction</span></p></div>
         </div>
         <p class="refs">[f] Sun et al. Seeing the Reasoning (ACM CHI 2026) Core A*<br>[h] Sun et al. Interface Matters: Exploring Trust Perception in Health Information from Large Language Models via Text, Speech, and Embodiment (ACM CSCW 2024) Core A</p>
         <span class="pnum">17 / 18</span>
