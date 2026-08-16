@@ -393,44 +393,45 @@
     .sd-q em { color: var(--maroon); }
 
     /* ================================================================
-       NEW · EVALUATE — the gap: three open questions that motivate the
-       three Evaluate works. Purple (Evaluate) family; one vivid
-       micro-visual per card; deliberately uncluttered.
+       NEW · EVALUATE — section hub. WHY (top banner) · three CLICKABLE
+       works (WHAT question / HOW method / RESULT finding) · shared-
+       finding synthesis that hands off to Align. High-level by design;
+       the detail lives on each work's own page (jump via the card).
        ================================================================ */
-    .eg-lead { left: 120px; top: 158px; width: 1680px; text-align: center; font: 600 28px/1.42 var(--sans); color: #2f2a38; }
-    .eg-lead b { color: #6d3f96; } .eg-lead em { color: var(--maroon); font-style: italic; font-weight: 700; }
-    .eg-card { position: absolute; top: 300px; width: 556px; height: 648px; border-radius: 22px; background: #fff; border: 1.8px solid rgba(139,95,199,.20); border-top: 5px solid var(--c1); box-shadow: 0 18px 44px rgba(90,60,140,.12); }
-    .eg-card.c1 { left: 80px; } .eg-card.c2 { left: 682px; } .eg-card.c3 { left: 1284px; }
-    .eg-qn { position: absolute; left: 28px; top: 26px; width: 58px; height: 58px; border-radius: 16px; background: linear-gradient(160deg,#9166c0,#6d3f96); color: #fff; display: flex; align-items: center; justify-content: center; font: 800 25px/1 var(--sans); box-shadow: 0 8px 18px rgba(109,63,150,.30); }
-    .eg-kick { position: absolute; left: 100px; top: 30px; font: 800 15px/1.35 var(--sans); letter-spacing: .13em; text-transform: uppercase; color: #9166c0; }
-    .eg-kick small { display: block; font-size: 13px; letter-spacing: .04em; text-transform: none; color: #a99bc0; font-weight: 600; margin-top: 5px; }
-    .eg-q { position: absolute; left: 28px; right: 28px; top: 106px; font: 800 31px/1.16 var(--sans); color: #1e1730; }
-    .eg-g { position: absolute; left: 28px; right: 28px; top: 176px; font: 500 19px/1.42 var(--sans); color: #4c4757; }
-    .eg-g b { color: #6d3f96; } .eg-g em { color: var(--maroon); font-style: italic; font-weight: 700; }
-    .eg-vis { position: absolute; left: 28px; right: 28px; top: 326px; height: 224px; border-radius: 14px; background: linear-gradient(180deg,#faf7fe,#f2ebfa); border: 1.5px solid rgba(139,95,199,.18); }
-    .eg-next { position: absolute; left: 28px; bottom: 24px; display: inline-flex; align-items: center; gap: 9px; padding: 9px 15px; border-radius: 999px; background: rgba(139,95,199,.08); border: 1.4px solid rgba(139,95,199,.22); font: 700 15.5px/1 var(--sans); color: #6d3f96; }
-    .eg-next .ar { font-weight: 900; font-size: 17px; }
-    /* Q1 micro-visual — one claim, two source labels */
-    .egv1-lab { position: absolute; top: 20px; padding: 7px 14px; border-radius: 10px; font: 800 16px/1 var(--sans); }
-    .egv1-lab.a { left: 22px; color: #6d3f96; background: rgba(109,63,150,.12); border: 1.5px solid rgba(109,63,150,.34); }
-    .egv1-lab.b { right: 22px; color: #2e56a4; background: rgba(46,86,164,.12); border: 1.5px solid rgba(46,86,164,.34); }
-    .egv1-txt { position: absolute; left: 24px; right: 24px; top: 84px; text-align: center; font: italic 700 20px/1.3 var(--serif); color: #000; }
-    .egv1-same { position: absolute; left: 0; right: 0; top: 150px; text-align: center; font: 700 13px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: #9a8fb0; }
-    .egv1-ask { position: absolute; left: 0; right: 0; bottom: 20px; text-align: center; font: italic 700 18px/1 var(--sans); color: var(--maroon); }
-    /* Q2 micro-visual — dimensions independent or entangled */
-    .egv2-row { position: absolute; left: 20px; right: 20px; top: 24px; display: flex; justify-content: space-between; }
-    .egv2-dim { padding: 9px 0; width: 31%; text-align: center; border-radius: 9px; font: 800 15px/1 var(--sans); color: #6d3f96; background: rgba(109,63,150,.10); border: 1.5px solid rgba(109,63,150,.30); }
-    .egv2-note { position: absolute; left: 0; right: 0; top: 74px; text-align: center; font: 700 13px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: #9a8fb0; }
-    .egv2-ex { position: absolute; left: 24px; right: 24px; bottom: 24px; text-align: center; font: 600 19px/1.42 var(--sans); color: #2f2a38; }
-    .egv2-ex b.f { color: #2e7d46; } .egv2-ex b.x { color: var(--maroon); }
-    /* Q3 micro-visual — gaze vs attention on the same cue */
-    .egv3-arr { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
-    .egv3-h, .egv3-l { position: absolute; top: 22px; padding: 8px 13px; border-radius: 999px; font: 800 15px/1 var(--sans); }
-    .egv3-h { left: 22px; color: #6d3f96; background: rgba(109,63,150,.12); border: 1.5px solid rgba(109,63,150,.32); }
-    .egv3-l { right: 22px; color: #2e56a4; background: rgba(46,86,164,.12); border: 1.5px solid rgba(46,86,164,.32); }
-    .egv3-word { position: absolute; left: 0; right: 0; top: 116px; text-align: center; }
-    .egv3-word b { padding: 8px 16px; border-radius: 10px; background: rgba(217,147,13,.16); border: 1.5px solid rgba(217,147,13,.42); font: 800 18px/1 var(--sans); color: #a9730a; }
-    .egv3-ask { position: absolute; left: 0; right: 0; bottom: 20px; text-align: center; font: italic 700 18px/1 var(--sans); color: var(--maroon); }
+    .ev-why { left: 120px; top: 146px; width: 1680px; height: 90px; border-radius: 18px; background: linear-gradient(180deg,#faf7fe,#f4eefb); border: 1.6px solid rgba(139,95,199,.22); box-shadow: 0 10px 26px rgba(90,60,140,.08); display: flex; align-items: center; gap: 24px; padding: 0 32px; }
+    .ev-why-k { flex: none; padding: 10px 22px; border-radius: 999px; background: linear-gradient(160deg,#9166c0,#6d3f96); color: #fff; font: 800 20px/1 var(--sans); letter-spacing: .04em; box-shadow: 0 8px 18px rgba(109,63,150,.28); }
+    .ev-why-tx { font: 600 24px/1.36 var(--sans); color: #2f2a38; }
+    .ev-why-tx b { color: #6d3f96; } .ev-why-tx em { color: var(--maroon); font-style: italic; font-weight: 700; }
+    .ev-sub { left: 0; right: 0; top: 252px; text-align: center; font: 600 19px/1 var(--sans); color: #8a8397; }
+    .ev-sub b { color: #6d3f96; }
+
+    .ev-card { position: absolute; top: 300px; width: 556px; height: 468px; padding: 0; border-radius: 22px; background: #fff; border: 1.8px solid rgba(139,95,199,.20); border-top: 5px solid var(--c1); box-shadow: 0 16px 40px rgba(90,60,140,.11); text-align: left; cursor: pointer; font-family: var(--sans); transition: transform .28s var(--ease), box-shadow .28s, border-color .28s; }
+    .ev-card.c1 { left: 80px; } .ev-card.c2 { left: 682px; } .ev-card.c3 { left: 1284px; }
+    .ev-card:hover { transform: translateY(-7px); box-shadow: 0 28px 56px rgba(109,63,150,.22); border-color: rgba(139,95,199,.5); }
+    .ev-card:focus-visible { outline: 3px solid #9166c0; outline-offset: 3px; }
+    .ev-open { position: absolute; right: 22px; top: 20px; width: 34px; height: 34px; border-radius: 50%; background: rgba(139,95,199,.10); color: #9166c0; display: flex; align-items: center; justify-content: center; font: 800 18px/1 var(--sans); transition: background .28s, color .28s; }
+    .ev-card:hover .ev-open { background: #6d3f96; color: #fff; }
+    .ev-eyebrow { position: absolute; left: 30px; top: 30px; display: inline-flex; align-items: center; gap: 11px; font: 800 16px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: #9166c0; }
+    .ev-ic { width: 26px; height: 26px; color: #9166c0; }
+    .ev-ic svg { width: 26px; height: 26px; display: block; }
+    .ev-q { position: absolute; left: 30px; right: 30px; top: 86px; font: 800 31px/1.18 var(--sans); color: #1e1730; }
+    .ev-q em { font-style: normal; color: #6d3f96; }
+    .ev-how { position: absolute; left: 30px; right: 30px; top: 176px; font: 500 19px/1.4 var(--sans); color: #4c4757; }
+    .ev-how .k { display: inline-block; margin-right: 10px; padding: 3px 9px; border-radius: 7px; background: rgba(139,95,199,.10); color: #9166c0; font: 800 12px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; vertical-align: 2px; }
+    .ev-find { position: absolute; left: 26px; right: 26px; top: 264px; height: 130px; border-radius: 14px; background: linear-gradient(180deg,#f7f2fd,#efe6fa); border: 1.5px solid rgba(139,95,199,.24); padding: 15px 20px; }
+    .ev-find-k { display: inline-block; padding: 4px 12px; border-radius: 999px; background: rgba(142,27,38,.10); color: var(--maroon); font: 800 12.5px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+    .ev-find p { margin-top: 12px; font: 700 21px/1.32 var(--sans); color: #241c33; }
+    .ev-find p b { color: var(--maroon); } .ev-find p em { font-style: italic; color: #6d3f96; }
+    .ev-go { position: absolute; left: 30px; bottom: 24px; display: inline-flex; align-items: center; gap: 9px; font: 700 16.5px/1 var(--sans); color: #6d3f96; }
+    .ev-go .pg { padding: 3px 9px; border-radius: 7px; background: rgba(139,95,199,.12); font-weight: 800; font-size: 14px; }
+    .ev-go .ar { font-weight: 900; font-size: 18px; }
+
+    .ev-syn { left: 80px; top: 798px; width: 1760px; height: 122px; border-radius: 18px; background: linear-gradient(100deg,#fbf3f4 0%,#f6eefb 58%,#eef3fb 100%); border: 1.6px solid rgba(142,27,38,.16); box-shadow: 0 12px 30px rgba(90,60,140,.09); display: flex; align-items: center; gap: 26px; padding: 0 34px; }
+    .ev-syn-k { flex: none; padding: 11px 20px; border-radius: 12px; background: #fff; border: 1.6px solid rgba(142,27,38,.24); color: var(--maroon); font: 800 15px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+    .ev-syn-tx { flex: 1; font: 700 26px/1.28 var(--sans); color: #241c33; }
+    .ev-syn-tx b { color: var(--maroon); }
+    .ev-syn-next { flex: none; font: 700 21px/1.3 var(--sans); color: #2e56a4; text-align: right; }
+    .ev-syn-next b { color: #2e56a4; } .ev-syn-next .ar { font-weight: 900; font-size: 25px; vertical-align: -3px; margin-left: 4px; }
 
     /* ================================================================
        P5 · EVALUATE — mirrors the trust–truth slide: example card (with
@@ -1261,59 +1262,51 @@
         <span class="pnum">5 / 20</span>
       </section>
 
-      <!-- ================= P5.5 · EVALUATE · THE GAP (three open questions) ================= -->
-      <section class="slide" id="slideEvalGap" data-title="1 · Evaluate — the gap: three open questions" aria-label="Slide 6 of 21">
-        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="egp-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Before We Trust the Judge — Three Open Questions</h2>
+      <!-- ================= P5.5 · EVALUATE · SECTION HUB (why · what · how · result; cards jump to detail) ================= -->
+      <section class="slide" id="slideEvalGap" data-title="1 · Evaluate — section overview: why, what, how, result" aria-label="Slide 6 of 21">
+        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="egp-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Can We Trust the Judge — Humans and LLMs?</h2>
         <div class="rule rv" style="top:104px"></div>
-        <p class="abs eg-lead rv d1">Humans and LLM judges now assess <b>health information</b> at scale. Before trusting that judgment, <em>three questions</em> stay open:</p>
 
-        <!-- Q1 · source cues -->
-        <div class="abs eg-card c1 rv d2">
-          <span class="eg-qn">Q1</span>
-          <span class="eg-kick">Source cues<small>surface over substance?</small></span>
-          <h3 class="eg-q">Swayed by the label?</h3>
-          <p class="eg-g">The same health claim, tagged <b>human</b> or <b>AI</b>. Does the source cue move the verdict — for people <em>and</em> for the judge?</p>
-          <div class="eg-vis">
-            <span class="egv1-lab a">Label: Human</span>
-            <span class="egv1-lab b">Label: AI</span>
-            <p class="egv1-txt">&ldquo;Daily walking lowers blood pressure.&rdquo;</p>
-            <span class="egv1-same">identical content</span>
-            <span class="egv1-ask">does trust change?</span>
-          </div>
-          <span class="eg-next"><span class="ar">&rarr;</span> tested next: the label effect</span>
+        <!-- WHY · section motivation -->
+        <div class="abs ev-why rv d1">
+          <span class="ev-why-k">Why</span>
+          <p class="ev-why-tx">AI now <b>judges</b> human information at scale — and everything downstream inherits that verdict. So first I ask: <em>where does the judge, human or AI, break?</em></p>
         </div>
+        <p class="abs ev-sub rv d1">Diagnosed from three angles, <b>evaluating both humans and LLMs</b> &nbsp;·&nbsp; click any card to open its study</p>
 
-        <!-- Q2 · judgment structure -->
-        <div class="abs eg-card c2 rv d3">
-          <span class="eg-qn">Q2</span>
-          <span class="eg-kick">Judgment structure<small>independent or entangled?</small></span>
-          <h3 class="eg-q">One verdict, or many?</h3>
-          <p class="eg-g">Fluency, accuracy, safety — does the judge weigh them <b>separately</b>, or collapse them into one <em>correlated</em> score?</p>
-          <div class="eg-vis">
-            <div class="egv2-row"><span class="egv2-dim">Fluency</span><span class="egv2-dim">Accuracy</span><span class="egv2-dim">Safety</span></div>
-            <span class="egv2-note">move as one?</span>
-            <p class="egv2-ex">A <b class="f">fluent</b> yet <b class="x">false</b> answer<br>can still be rated <b class="x">safe</b>.</p>
-          </div>
-          <span class="eg-next"><span class="ar">&rarr;</span> tested next: trust vs. truth</span>
-        </div>
+        <!-- WHAT / HOW / RESULT — three clickable works -->
+        <button type="button" class="abs ev-card c1 rv d2" data-jump="7" aria-label="Open the label-effect study, slide 7">
+          <span class="ev-open" aria-hidden="true">&#8599;</span>
+          <span class="ev-eyebrow"><span class="ev-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.8V4h-6.8L3 14.2 9.8 21 20 10.8Z"/><circle cx="15.6" cy="8.4" r="1.3" fill="currentColor" stroke="none"/></svg></span>Source cue</span>
+          <h3 class="ev-q">Is the verdict swayed by the <em>source label</em>?</h3>
+          <p class="ev-how"><span class="k">How</span>Flip the human / AI label on identical health content.</p>
+          <div class="ev-find"><span class="ev-find-k">Finding</span><p>Both people <em>and</em> the LLM judge trust the <b>&ldquo;human&rdquo;</b> label more.</p></div>
+          <span class="ev-go">Open the study <span class="pg">p.7</span><span class="ar">&#8599;</span></span>
+        </button>
 
-        <!-- Q3 · inner mechanism -->
-        <div class="abs eg-card c3 rv d4">
-          <span class="eg-qn">Q3</span>
-          <span class="eg-kick">Inner mechanism<small>same failure inside?</small></span>
-          <h3 class="eg-q">Do they fail alike?</h3>
-          <p class="eg-g">Human <b>gaze</b> and model <b>attention</b> — do both lock onto the same surface cue, and go <em>blind</em> to the content?</p>
-          <div class="eg-vis">
-            <svg class="egv3-arr" viewBox="0 0 500 224" aria-hidden="true">
-              <path d="M78,60 C132,90 186,98 244,108" fill="none" stroke="#7d5fb2" stroke-width="2.4" stroke-dasharray="5 6" opacity=".8"/>
-              <path d="M422,60 C368,90 314,98 256,108" fill="none" stroke="#2f6bb2" stroke-width="2.4" stroke-dasharray="5 6" opacity=".8"/>
-            </svg>
-            <span class="egv3-h">human gaze</span>
-            <span class="egv3-l">model attention</span>
-            <span class="egv3-word"><b>the source label</b></span>
-            <span class="egv3-ask">same cue, same blind spot?</span>
-          </div>
-          <span class="eg-next"><span class="ar">&rarr;</span> tested next: gaze vs. attention</span>
+        <button type="button" class="abs ev-card c2 rv d3" data-jump="8" aria-label="Open the trust-versus-truth study, slide 8">
+          <span class="ev-open" aria-hidden="true">&#8599;</span>
+          <span class="ev-eyebrow"><span class="ev-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6.5h16M4 12h11M4 17.5h14"/></svg></span>Multi-dimension</span>
+          <h3 class="ev-q">Are its quality scores <em>independent</em>?</h3>
+          <p class="ev-how"><span class="k">How</span>Judge a fluent answer that hides a factual error.</p>
+          <div class="ev-find"><span class="ev-find-k">Finding</span><p>No — every score <b>moves as one</b>; a false answer can still read <b>safe</b>.</p></div>
+          <span class="ev-go">Open the study <span class="pg">p.8</span><span class="ar">&#8599;</span></span>
+        </button>
+
+        <button type="button" class="abs ev-card c3 rv d4" data-jump="9" aria-label="Open the mechanism study, slide 9">
+          <span class="ev-open" aria-hidden="true">&#8599;</span>
+          <span class="ev-eyebrow"><span class="ev-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.6"/></svg></span>Inner mechanism</span>
+          <h3 class="ev-q">Do humans and LLMs <em>fail alike</em>?</h3>
+          <p class="ev-how"><span class="k">How</span>Compare human gaze with the model's attention.</p>
+          <div class="ev-find"><span class="ev-find-k">Finding</span><p>Both <b>fixate on the label</b> and overlook the content.</p></div>
+          <span class="ev-go">Open the study <span class="pg">p.9</span><span class="ar">&#8599;</span></span>
+        </button>
+
+        <!-- RESULT · shared finding -> hands off to Align -->
+        <div class="abs ev-syn rv d4">
+          <span class="ev-syn-k">Across all three</span>
+          <p class="ev-syn-tx"><b>Humans and LLMs fail alike</b> — one shared, identifiable bias in judgment.</p>
+          <span class="ev-syn-next">so the next layer, <b>Align</b>, can fix it<span class="ar">&rarr;</span></span>
         </div>
 
         <span class="pnum">6 / 20</span>
