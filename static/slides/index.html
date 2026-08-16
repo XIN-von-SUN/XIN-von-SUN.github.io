@@ -394,44 +394,40 @@
 
     /* ================================================================
        NEW · EVALUATE — section hub. WHY (top banner) · three CLICKABLE
-       works (WHAT question / HOW method / RESULT finding) · shared-
-       finding synthesis that hands off to Align. High-level by design;
-       the detail lives on each work's own page (jump via the card).
+       parts (question -> finding) that OPEN a full-screen detail modal ·
+       a similar/different synthesis that hands off to Align. Vertically
+       centered and airy; detail lives inside each card's modal.
        ================================================================ */
-    .ev-why { left: 120px; top: 146px; width: 1680px; height: 90px; border-radius: 18px; background: linear-gradient(180deg,#faf7fe,#f4eefb); border: 1.6px solid rgba(139,95,199,.22); box-shadow: 0 10px 26px rgba(90,60,140,.08); display: flex; align-items: center; gap: 24px; padding: 0 32px; }
-    .ev-why-k { flex: none; padding: 10px 22px; border-radius: 999px; background: linear-gradient(160deg,#9166c0,#6d3f96); color: #fff; font: 800 20px/1 var(--sans); letter-spacing: .04em; box-shadow: 0 8px 18px rgba(109,63,150,.28); }
-    .ev-why-tx { font: 600 24px/1.36 var(--sans); color: #2f2a38; }
+    .ev-why { left: 150px; top: 184px; width: 1620px; height: 98px; border-radius: 18px; background: linear-gradient(180deg,#faf7fe,#f4eefb); border: 1.6px solid rgba(139,95,199,.22); box-shadow: 0 10px 26px rgba(90,60,140,.08); display: flex; align-items: center; gap: 26px; padding: 0 34px; }
+    .ev-why-k { flex: none; padding: 11px 24px; border-radius: 999px; background: linear-gradient(160deg,#9166c0,#6d3f96); color: #fff; font: 800 21px/1 var(--sans); letter-spacing: .04em; box-shadow: 0 8px 18px rgba(109,63,150,.28); }
+    .ev-why-tx { font: 600 25px/1.42 var(--sans); color: #2f2a38; }
     .ev-why-tx b { color: #6d3f96; } .ev-why-tx em { color: var(--maroon); font-style: italic; font-weight: 700; }
-    .ev-sub { left: 0; right: 0; top: 252px; text-align: center; font: 600 19px/1 var(--sans); color: #8a8397; }
+    .ev-sub { left: 0; right: 0; top: 308px; text-align: center; font: 600 19px/1 var(--sans); color: #8a8397; }
     .ev-sub b { color: #6d3f96; }
 
-    .ev-card { position: absolute; top: 300px; width: 556px; height: 468px; padding: 0; border-radius: 22px; background: #fff; border: 1.8px solid rgba(139,95,199,.20); border-top: 5px solid var(--c1); box-shadow: 0 16px 40px rgba(90,60,140,.11); text-align: left; cursor: pointer; font-family: var(--sans); transition: transform .28s var(--ease), box-shadow .28s, border-color .28s; }
+    .ev-card { position: absolute; top: 362px; width: 556px; height: 424px; padding: 0; border-radius: 22px; background: #fff; border: 1.8px solid rgba(139,95,199,.20); border-top: 5px solid var(--c1); box-shadow: 0 16px 40px rgba(90,60,140,.11); text-align: left; cursor: pointer; font-family: var(--sans); transition: transform .28s var(--ease), box-shadow .28s, border-color .28s; }
     .ev-card.c1 { left: 80px; } .ev-card.c2 { left: 682px; } .ev-card.c3 { left: 1284px; }
     .ev-card:hover { transform: translateY(-7px); box-shadow: 0 28px 56px rgba(109,63,150,.22); border-color: rgba(139,95,199,.5); }
     .ev-card:focus-visible { outline: 3px solid #9166c0; outline-offset: 3px; }
-    .ev-open { position: absolute; right: 22px; top: 20px; width: 34px; height: 34px; border-radius: 50%; background: rgba(139,95,199,.10); color: #9166c0; display: flex; align-items: center; justify-content: center; font: 800 18px/1 var(--sans); transition: background .28s, color .28s; }
+    .ev-open { position: absolute; right: 22px; top: 22px; width: 34px; height: 34px; border-radius: 50%; background: rgba(139,95,199,.10); color: #9166c0; display: flex; align-items: center; justify-content: center; font: 800 18px/1 var(--sans); transition: background .28s, color .28s; }
     .ev-card:hover .ev-open { background: #6d3f96; color: #fff; }
-    .ev-eyebrow { position: absolute; left: 30px; top: 30px; display: inline-flex; align-items: center; gap: 11px; font: 800 16px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: #9166c0; }
+    .ev-eyebrow { position: absolute; left: 30px; top: 32px; display: inline-flex; align-items: center; gap: 11px; font: 800 17px/1 var(--sans); letter-spacing: .10em; text-transform: uppercase; color: #9166c0; }
     .ev-ic { width: 26px; height: 26px; color: #9166c0; }
     .ev-ic svg { width: 26px; height: 26px; display: block; }
-    .ev-q { position: absolute; left: 30px; right: 30px; top: 86px; font: 800 31px/1.18 var(--sans); color: #1e1730; }
+    .ev-q { position: absolute; left: 30px; right: 30px; top: 100px; font: 800 30px/1.22 var(--sans); color: #1e1730; }
     .ev-q em { font-style: normal; color: #6d3f96; }
-    .ev-how { position: absolute; left: 30px; right: 30px; top: 176px; font: 500 19px/1.4 var(--sans); color: #4c4757; }
-    .ev-how .k { display: inline-block; margin-right: 10px; padding: 3px 9px; border-radius: 7px; background: rgba(139,95,199,.10); color: #9166c0; font: 800 12px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; vertical-align: 2px; }
-    .ev-find { position: absolute; left: 26px; right: 26px; top: 264px; height: 130px; border-radius: 14px; background: linear-gradient(180deg,#f7f2fd,#efe6fa); border: 1.5px solid rgba(139,95,199,.24); padding: 15px 20px; }
+    .ev-find { position: absolute; left: 26px; right: 26px; top: 222px; height: 128px; border-radius: 14px; background: linear-gradient(180deg,#f7f2fd,#efe6fa); border: 1.5px solid rgba(139,95,199,.24); padding: 16px 20px; }
     .ev-find-k { display: inline-block; padding: 4px 12px; border-radius: 999px; background: rgba(142,27,38,.10); color: var(--maroon); font: 800 12.5px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
-    .ev-find p { margin-top: 12px; font: 700 21px/1.32 var(--sans); color: #241c33; }
+    .ev-find p { margin-top: 13px; font: 700 22px/1.34 var(--sans); color: #241c33; }
     .ev-find p b { color: var(--maroon); } .ev-find p em { font-style: italic; color: #6d3f96; }
-    .ev-go { position: absolute; left: 30px; bottom: 24px; display: inline-flex; align-items: center; gap: 9px; font: 700 16.5px/1 var(--sans); color: #6d3f96; }
-    .ev-go .pg { padding: 3px 9px; border-radius: 7px; background: rgba(139,95,199,.12); font-weight: 800; font-size: 14px; }
+    .ev-go { position: absolute; left: 30px; bottom: 22px; display: inline-flex; align-items: center; gap: 8px; font: 800 16.5px/1 var(--sans); color: #6d3f96; }
     .ev-go .ar { font-weight: 900; font-size: 18px; }
 
-    .ev-syn { left: 80px; top: 798px; width: 1760px; height: 122px; border-radius: 18px; background: linear-gradient(100deg,#fbf3f4 0%,#f6eefb 58%,#eef3fb 100%); border: 1.6px solid rgba(142,27,38,.16); box-shadow: 0 12px 30px rgba(90,60,140,.09); display: flex; align-items: center; gap: 26px; padding: 0 34px; }
-    .ev-syn-k { flex: none; padding: 11px 20px; border-radius: 12px; background: #fff; border: 1.6px solid rgba(142,27,38,.24); color: var(--maroon); font: 800 15px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
-    .ev-syn-tx { flex: 1; font: 700 26px/1.28 var(--sans); color: #241c33; }
-    .ev-syn-tx b { color: var(--maroon); }
-    .ev-syn-next { flex: none; font: 700 21px/1.3 var(--sans); color: #2e56a4; text-align: right; }
-    .ev-syn-next b { color: #2e56a4; } .ev-syn-next .ar { font-weight: 900; font-size: 25px; vertical-align: -3px; margin-left: 4px; }
+    .ev-syn { left: 80px; top: 838px; width: 1760px; height: 124px; border-radius: 18px; background: linear-gradient(100deg,#f6eefb 0%,#f2ecfb 52%,#eef3fb 100%); border: 1.6px solid rgba(139,95,199,.22); box-shadow: 0 12px 30px rgba(90,60,140,.09); display: flex; align-items: center; gap: 30px; padding: 0 36px; }
+    .ev-syn-tx { flex: 1; font: 700 25px/1.36 var(--sans); color: #241c33; }
+    .ev-syn-tx .same { color: #2e7d46; } .ev-syn-tx .diff { color: var(--maroon); }
+    .ev-syn-next { flex: none; max-width: 560px; border-left: 2px solid rgba(139,95,199,.28); padding-left: 30px; font: 700 20px/1.34 var(--sans); color: #2e56a4; }
+    .ev-syn-next b { color: #2e56a4; } .ev-syn-next .ar { font-weight: 900; font-size: 24px; vertical-align: -3px; margin-left: 4px; }
 
     /* ================================================================
        P5 · EVALUATE — mirrors the trust–truth slide: example card (with
@@ -1067,6 +1063,15 @@
     .overlay-panel { width: min(1120px, 92vw); max-height: 88vh; overflow: auto; padding: 34px; border: 1px solid rgba(255,255,255,.42); border-radius: 14px; }
     .overlay h2 { font: 700 42px/1.1 var(--serif); }
     .overlay-close { float: right; padding: 8px 11px; border: 1px solid #fff; border-radius: 7px; background: transparent; color: #fff; cursor: pointer; }
+    /* Detail modals — an Evaluate work opened as a floating card from a hub card */
+    #detailBackdrop { position: absolute; inset: 0; z-index: 29000; display: none; background: radial-gradient(130% 130% at 50% 38%, rgba(22,17,36,.60), rgba(6,5,12,.86)); }
+    body.detail-lock #detailBackdrop { display: block; }
+    .slide.detail.detail-open { visibility: visible; opacity: 1; pointer-events: auto; z-index: 30000; transform: scale(.9); transform-origin: center; border-radius: 24px; box-shadow: 0 50px 130px rgba(0,0,0,.55); }
+    body.detail-lock .deck-viewport { background: #06050b; }
+    body.detail-lock .deck-controls, body.detail-lock .edit-toggle, body.detail-lock .edit-hotzone { opacity: 0; pointer-events: none; }
+    .detail-close { position: fixed; top: 20px; right: 22px; z-index: 30020; display: none; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; border: none; background: #1e1730; color: #fff; cursor: pointer; font: 800 22px/1 var(--sans); box-shadow: 0 12px 30px rgba(0,0,0,.45); transition: background .2s, transform .2s; }
+    .detail-close:hover { background: #33265a; transform: scale(1.06); }
+    body.detail-lock .detail-close { display: inline-flex; }
     .help-grid { display: grid; gap: 1px; margin-top: 28px; background: rgba(255,255,255,.22); }
     .help-row { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 17px; background: #000; }
     .overview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 28px; }
@@ -1111,7 +1116,7 @@
 </head>
 <body>
   <div class="deck-viewport" aria-label="Academic talk slide deck">
-    <main class="deck-stage" id="deckStage">
+    <main class="deck-stage" id="deckStage"><div id="detailBackdrop" aria-hidden="true"></div>
 
       <!-- shared arrowhead markers (resolved by url(#mX) from any slide SVG) -->
       <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0">
@@ -1126,7 +1131,7 @@
 
 
       <!-- ================= P1 · TITLE ================= -->
-      <section class="slide active" data-title="Bidirectional loop between human signals and trustworthy LLMs" aria-label="Slide 1 of 21">
+      <section class="slide active" data-title="Bidirectional loop between human signals and trustworthy LLMs" aria-label="Slide 1 of 18">
         <img class="abs p1-logos rv" src="assets/figs/logos-strip.png" alt="NII · University of Amsterdam · CWI">
         <h1 class="abs p1-title rv d1" data-edit-id="p1-title">Bidirectional Loop between:<br>Human Signals and Trustworthy LLMs</h1>
         <p class="abs p1-line rv d2" data-edit-id="p1-line">“I turn human signals into <u>evaluation</u>, <u>alignment</u>, and <u>adaptation</u> for LLM-powered AI systems”</p>
@@ -1136,7 +1141,7 @@
       </section>
 
       <!-- ================= P2 · RESEARCH CONCEPT ================= -->
-      <section class="slide" id="slideIntro" data-title="Research concept and motivation" aria-label="Slide 2 of 21">
+      <section class="slide" id="slideIntro" data-title="Research concept and motivation" aria-label="Slide 2 of 18">
         <h2 class="abs p2-title rv" data-edit-id="p2-title">Research <span class="kw">Background</span></h2>
         <div class="rule p2-rule rv"></div>
         <p class="abs p2-kick k1 rv d1">interdisciplinary background</p>
@@ -1152,7 +1157,7 @@
       </section>
 
       <!-- ================= P3 · MOTIVATION ================= -->
-      <section class="slide" data-title="Human signals are not always ground truth" aria-label="Slide 3 of 21">
+      <section class="slide" data-title="Human signals are not always ground truth" aria-label="Slide 3 of 18">
         <h2 class="abs kt rv" style="left:20px;top:24px;font-size:46px" data-edit-id="p3-title"><i>Research </i><span class="kw">Motivation</span>: Human Signals ⇄ LLM Support — Neither Is Always Right</h2>
         <div class="rule rv" style="top:104px"></div>
         <p class="abs p3-lead rv d1" data-edit-id="p3-lead">LLMs are aligned with humans and trained on human data <b>to support humans</b>, <u>however</u> : </p>
@@ -1185,12 +1190,12 @@
         <div class="abs p3-align rv d3" aria-hidden="true"><span class="dot"></span><span class="lab">ALIGN</span></div>
         <div class="abs p3-core rv d3"><div class="phrase"><span style="color:#8e1b26">Trustworthy</span> <span style="color:#2e56a4">Human–AI Loop</span></div><span class="bar"></span></div>
         <div class="abs p3-adapt rv d3" aria-hidden="true"><span class="dot"></span><span class="lab">ADAPT</span></div>
-        <span class="pnum">3 / 20</span>
+        <span class="pnum">3 / 17</span>
       </section>
 
 
       <!-- ================= P5-NEW · FRAMEWORK (one loop, three layers) ================= -->
-      <section id="slideFramework" class="slide" data-title="The framework — one loop, three layers" aria-label="Slide 4 of 21">
+      <section id="slideFramework" class="slide" data-title="The framework — one loop, three layers" aria-label="Slide 4 of 18">
         <h2 class="abs kt rv" style="left:20px;top:24px;font-size:45px"><span class="kw">The Framework</span>: One Loop, Three Layers — Mechanism · Method · Modeling</h2>
         <div class="rule rv" style="top:104px"></div>
 
@@ -1204,14 +1209,14 @@
           <span class="fw-layer">MECHANISM</span>
           <span class="fw-sig"><span class="l1">EVALUATIVE SIGNALS</span><span class="l2">trust · preferences · judgments</span></span>
         </button>
-        <button type="button" class="abs fw-band f2 rv d3" data-jump="10">
+        <button type="button" class="abs fw-band f2 rv d3" data-jump="7">
           <span class="fw-n">2</span>
           <span class="fw-head"><span class="role">Align</span><span class="sub">LLM as Learner</span></span>
           <span class="fw-def">Selectively learn <b>human expertise</b>, resist bias — at the <b>strategy layer</b>, not tokens.</span>
           <span class="fw-layer">METHOD</span>
           <span class="fw-sig"><span class="l1">EXPERT SIGNALS</span><span class="l2">strategies · annotations · scripts</span></span>
         </button>
-        <button type="button" class="abs fw-band f3 rv d4" data-jump="15">
+        <button type="button" class="abs fw-band f3 rv d4" data-jump="12">
           <span class="fw-n">3</span>
           <span class="fw-head"><span class="role">Adapt</span><span class="sub">LLM as Partner</span></span>
           <span class="fw-def">Model each user's <b>live cognitive + affective state</b> — adapt content · modality · pacing · UI.</span>
@@ -1244,11 +1249,11 @@
           <span class="bar"></span>
         </div>
         <p class="abs fw-coresub rv d4">— with both directions trustworthy —</p>
-        <span class="pnum">4 / 20</span>
+        <span class="pnum">4 / 17</span>
       </section>
 
       <!-- ================= SD1 · SECTION DIVIDER — EVALUATE ================= -->
-      <section class="slide sd" data-pillar="1" data-title="Pillar 1 · Evaluate" aria-label="Slide 5 of 21">
+      <section class="slide sd" data-pillar="1" data-title="Pillar 1 · Evaluate" aria-label="Slide 5 of 18">
         <div class="sd-map rv" aria-hidden="true">
           <span class="on">1 · Evaluate <small>· Mechanism</small></span><i><b>›</b><b>›</b><b>›</b></i>
           <span>2 · Align <small>· Method</small></span><i><b>›</b><b>›</b><b>›</b></i>
@@ -1259,61 +1264,57 @@
         <p class="sd-role rv d2" data-edit-id="sd1-role"><b>LLM as Judge</b></p>
         <div class="sd-rule rv d2"></div>
         <p class="sd-q rv d3" data-edit-id="sd1-q">Diagnose how humans and LLMs judge — <em>and where they fail alike.</em></p>
-        <span class="pnum">5 / 20</span>
+        <span class="pnum">5 / 17</span>
       </section>
 
       <!-- ================= P5.5 · EVALUATE · SECTION HUB (why · what · how · result; cards jump to detail) ================= -->
-      <section class="slide" id="slideEvalGap" data-title="1 · Evaluate — section overview: why, what, how, result" aria-label="Slide 6 of 21">
+      <section class="slide" id="slideEvalGap" data-title="1 · Evaluate — section overview: why, three angles, findings" aria-label="Slide 6 of 18">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="egp-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Can We Trust the Judge — Humans and LLMs?</h2>
         <div class="rule rv" style="top:104px"></div>
 
         <!-- WHY · section motivation -->
         <div class="abs ev-why rv d1">
           <span class="ev-why-k">Why</span>
-          <p class="ev-why-tx">AI now <b>judges</b> human information at scale — and everything downstream inherits that verdict. So first I ask: <em>where does the judge, human or AI, break?</em></p>
+          <p class="ev-why-tx">LLMs are trained on <b>human-labeled data</b> — but do they absorb our <em>good and bad</em> behaviors, and process information the same way? <em>Still unknown.</em></p>
         </div>
-        <p class="abs ev-sub rv d1">Diagnosed from three angles, <b>evaluating both humans and LLMs</b> &nbsp;·&nbsp; click any card to open its study</p>
+        <p class="abs ev-sub rv d1">Three angles, comparing <b>humans and LLMs</b> &nbsp;·&nbsp; click a card for the details</p>
 
-        <!-- WHAT / HOW / RESULT — three clickable works -->
-        <button type="button" class="abs ev-card c1 rv d2" data-jump="7" aria-label="Open the label-effect study, slide 7">
+        <!-- three clickable parts — each opens a full-screen detail modal -->
+        <button type="button" class="abs ev-card c1 rv d2" data-detail="slideEval" aria-label="Open the heuristic-reliance detail">
           <span class="ev-open" aria-hidden="true">&#8599;</span>
-          <span class="ev-eyebrow"><span class="ev-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.8V4h-6.8L3 14.2 9.8 21 20 10.8Z"/><circle cx="15.6" cy="8.4" r="1.3" fill="currentColor" stroke="none"/></svg></span>Source cue</span>
-          <h3 class="ev-q">Is the verdict swayed by the <em>source label</em>?</h3>
-          <p class="ev-how"><span class="k">How</span>Flip the human / AI label on identical health content.</p>
-          <div class="ev-find"><span class="ev-find-k">Finding</span><p>Both people <em>and</em> the LLM judge trust the <b>&ldquo;human&rdquo;</b> label more.</p></div>
-          <span class="ev-go">Open the study <span class="pg">p.7</span><span class="ar">&#8599;</span></span>
+          <span class="ev-eyebrow"><span class="ev-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.8V4h-6.8L3 14.2 9.8 21 20 10.8Z"/><circle cx="15.6" cy="8.4" r="1.3" fill="currentColor" stroke="none"/></svg></span>Heuristic Reliance</span>
+          <h3 class="ev-q">Like people, is the LLM swayed by <em>heuristic cues</em>?</h3>
+          <div class="ev-find"><span class="ev-find-k">Finding</span><p>Yes — like us, it leans on the <b>source label</b>, not the content.</p></div>
+          <span class="ev-go">Details <span class="ar">&#8599;</span></span>
         </button>
 
-        <button type="button" class="abs ev-card c2 rv d3" data-jump="8" aria-label="Open the trust-versus-truth study, slide 8">
+        <button type="button" class="abs ev-card c2 rv d3" data-detail="slideTT" aria-label="Open the multi-dimension-judge detail">
           <span class="ev-open" aria-hidden="true">&#8599;</span>
-          <span class="ev-eyebrow"><span class="ev-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6.5h16M4 12h11M4 17.5h14"/></svg></span>Multi-dimension</span>
-          <h3 class="ev-q">Are its quality scores <em>independent</em>?</h3>
-          <p class="ev-how"><span class="k">How</span>Judge a fluent answer that hides a factual error.</p>
-          <div class="ev-find"><span class="ev-find-k">Finding</span><p>No — every score <b>moves as one</b>; a false answer can still read <b>safe</b>.</p></div>
-          <span class="ev-go">Open the study <span class="pg">p.8</span><span class="ar">&#8599;</span></span>
+          <span class="ev-eyebrow"><span class="ev-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6.5h16M4 12h11M4 17.5h14"/></svg></span>Multi-dimension Judge</span>
+          <h3 class="ev-q">Are its judgments <em>independent</em>, or interdependent?</h3>
+          <div class="ev-find"><span class="ev-find-k">Finding</span><p>Unlike us, they <b>entangle</b> into one correlated verdict.</p></div>
+          <span class="ev-go">Details <span class="ar">&#8599;</span></span>
         </button>
 
-        <button type="button" class="abs ev-card c3 rv d4" data-jump="9" aria-label="Open the mechanism study, slide 9">
+        <button type="button" class="abs ev-card c3 rv d4" data-detail="slideMech" aria-label="Open the inner-mechanism detail">
           <span class="ev-open" aria-hidden="true">&#8599;</span>
-          <span class="ev-eyebrow"><span class="ev-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.6"/></svg></span>Inner mechanism</span>
-          <h3 class="ev-q">Do humans and LLMs <em>fail alike</em>?</h3>
-          <p class="ev-how"><span class="k">How</span>Compare human gaze with the model's attention.</p>
-          <div class="ev-find"><span class="ev-find-k">Finding</span><p>Both <b>fixate on the label</b> and overlook the content.</p></div>
-          <span class="ev-go">Open the study <span class="pg">p.9</span><span class="ar">&#8599;</span></span>
+          <span class="ev-eyebrow"><span class="ev-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.6"/></svg></span>Inner Mechanism</span>
+          <h3 class="ev-q">Do humans and LLMs <em>process information</em> the same way?</h3>
+          <div class="ev-find"><span class="ev-find-k">Finding</span><p>Yes — human gaze and model attention hit the <b>same cue</b>.</p></div>
+          <span class="ev-go">Details <span class="ar">&#8599;</span></span>
         </button>
 
-        <!-- RESULT · shared finding -> hands off to Align -->
+        <!-- synthesis: similar / different -> hands off to Align -->
         <div class="abs ev-syn rv d4">
-          <span class="ev-syn-k">Across all three</span>
-          <p class="ev-syn-tx"><b>Humans and LLMs fail alike</b> — one shared, identifiable bias in judgment.</p>
-          <span class="ev-syn-next">so the next layer, <b>Align</b>, can fix it<span class="ar">&rarr;</span></span>
+          <p class="ev-syn-tx"><span class="same">Like us</span> in heuristic reliance and inner mechanism — but <span class="diff">unlike us</span>, its multi-dimensional judgments <b class="diff">entangle</b> instead of staying independent.</p>
+          <span class="ev-syn-next">so LLMs inherit human bias — next: how to align them to human signals <b>selectively</b><span class="ar">&rarr;</span></span>
         </div>
 
-        <span class="pnum">6 / 20</span>
+        <span class="pnum">6 / 17</span>
       </section>
 
       <!-- ================= P5 · WORK 1 (live readout) ================= -->
-      <section class="slide" id="slideEval" data-title="1 · Evaluate — LLM-as-a-Judge for health information" aria-label="Slide 7 of 21">
+      <section class="slide detail" id="slideEval" data-title="1 · Evaluate — LLM-as-a-Judge for health information" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Detail — Heuristic reliance: LLM-as-a-Judge for health information">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p5-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: LLM-as-a-Judge for Health Information</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Domain: Health Information">
@@ -1352,11 +1353,11 @@
         </div>
         <p class="abs takeaway p5-take rv d4" data-edit-id="p5-take"><span class="tl">Takeaways:</span> Humans and LLM-as-a-Judge shift the same way — identical content is trusted more under a human label.</p>
         <p class="refs">[a] Sun et al. Label Effects: Shared Heuristic Reliance in Trust Assessment by Humans and LLM-as-a-Judge (ACL 2026) Core A*<br>[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1</p>
-        <span class="pnum">7 / 20</span>
+        <!-- detail modal — no deck page number -->
       </section>
 
       <!-- ================= P7 · EVALUATE · EMNLP'26 (trust–truth separability) ================= -->
-      <section class="slide" id="slideTT" data-title="1 · Evaluate — when trust meets truth in LLM-as-a-Judge" aria-label="Slide 8 of 21">
+      <section class="slide detail" id="slideTT" data-title="1 · Evaluate — when trust meets truth in LLM-as-a-Judge" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Detail — Multi-dimension judge: when trust meets truth">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="tt-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Are the Judge’s Signals Independent — or One Correlated Verdict?</h2>
         <div class="rule rv" style="top:104px"></div>
         <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px;font-size:32px;white-space:nowrap" data-edit-id="tt-rq"><span class="tag">Research Question:</span> are LLM judge’s multi-fields judgment <u>independent</u> evidence — or one <u>correlated</u> output?</p>
@@ -1394,11 +1395,11 @@
 
         <p class="abs takeaway rv d4" style="left:46px;top:836px;width:1840px;font-size:29px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> change only <span class="red">who wrote it</span>, and every score moves the same way — <span class="red">one biased verdict, not separate checks</span>.</p>
         <p class="refs">[i] Sun et al. When Trust Meets Truth: Trust–Truth Separability in LLM-as-Judge (EMNLP 2026, to appear) Core A*</p>
-        <span class="pnum">8 / 20</span>
+        <!-- detail modal — no deck page number -->
       </section>
 
       <!-- ================= P6 · MECHANISTIC ================= -->
-      <section class="slide" data-title="Beyond behaviors — mechanistic evaluation for LLMs and humans" aria-label="Slide 9 of 21">
+      <section class="slide detail" id="slideMech" data-title="Beyond behaviors — mechanistic evaluation for LLMs and humans" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Detail — Inner mechanism: gaze versus attention">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p6-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Beyond Behaviors - <span class="kw">Mechanistic Evaluation</span> for LLMs and Humans</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs p6-panel h rv d1">
@@ -1424,11 +1425,11 @@
         </div>
         <p class="abs takeaway p6-take rv d4" data-edit-id="p6-take"><span class="tl">Takeaway:</span> human gaze and LLM attention show the <span class="red">similar mechanistic patterns</span> — both over-attend the label cue, not the content.</p>
         <p class="refs">[a] Sun et al. Label Effects (ACL 2026) Core A* — behavioral results, mechanistic analysis across LLM families</p>
-        <span class="pnum">9 / 20</span>
+        <!-- detail modal — no deck page number -->
       </section>
 
       <!-- ================= SD2 · SECTION DIVIDER — ALIGN ================= -->
-      <section class="slide sd" data-pillar="2" data-title="Pillar 2 · Align" aria-label="Slide 10 of 21">
+      <section class="slide sd" data-pillar="2" data-title="Pillar 2 · Align" aria-label="Slide 7 of 18">
         <div class="sd-map rv" aria-hidden="true">
           <span>1 · Evaluate <small>· Mechanism</small></span><i><b>›</b><b>›</b><b>›</b></i>
           <span class="on">2 · Align <small>· Method</small></span><i><b>›</b><b>›</b><b>›</b></i>
@@ -1439,11 +1440,11 @@
         <p class="sd-role rv d2" data-edit-id="sd2-role"><b>LLM as Learner</b></p>
         <div class="sd-rule rv d2"></div>
         <p class="sd-q rv d3" data-edit-id="sd2-q"><em>Selectively</em> learn human expertise — resist the bias <b style="color:var(--c1)">Evaluate</b> exposed.</p>
-        <span class="pnum">10 / 20</span>
+        <span class="pnum">7 / 17</span>
       </section>
 
       <!-- ================= P9 · ALIGN · benchmark creation (COLING'24 → SSAG) ================= -->
-      <section class="slide" id="slideBench" data-title="2 · Align — domain-specific benchmarks" aria-label="Slide 11 of 21">
+      <section class="slide" id="slideBench" data-title="2 · Align — domain-specific benchmarks" aria-label="Slide 8 of 18">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="bm-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: Domain-Specific Benchmarks Creation</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Use case: Psychotherapy and mental health">
@@ -1487,11 +1488,11 @@
         </div>
         <p class="abs takeaway rv d4" style="left:46px;top:906px;width:1840px;font-size:30px" data-edit-id="bm-take"><span class="tl">Takeaways:</span> the benchmark makes human expertise <span class="red">measurable</span> — defining what to align LLMs to.</p>
         <p class="refs">[d] Sun et al. Eliciting Motivational Interviewing Skill Codes in Psychotherapy with LLMs: A Bilingual Dataset and Analytical Study (COLING 2024) Core B<br>[c] Sun et al. Script-Strategy Aligned Generation (ACM CSCW 2025) Core A</p>
-        <span class="pnum">11 / 20</span>
+        <span class="pnum">8 / 17</span>
       </section>
 
       <!-- ================= P10 · ALIGN · SSAG (hover-reveal baselines) ================= -->
-      <section class="slide" id="slideSSAG" data-title="2 · Align — supervise models with domain expertise" aria-label="Slide 12 of 21">
+      <section class="slide" id="slideSSAG" data-title="2 · Align — supervise models with domain expertise" aria-label="Slide 9 of 18">
         <h2 class="abs kt p8-t rv" style="left:20px;top:26px" data-edit-id="p8-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: Supervise Models with Domain Expertise, Not Simply Imitate</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d1" style="top:22px;right:26px" role="note" aria-label="Use case: Psychotherapy and mental health">
@@ -1511,11 +1512,11 @@
           <div class="p8-cell"><strong>SSAG (our proposed)</strong><span class="p8-pop">Generation with balanced adherence, controllability, and explainability</span></div>
         </div>
         <p class="refs">[c] Sun et al. Script-Strategy Aligned Generation (ACM CSCW 2025) Core A<br>[e] Sun et al. Rethinking the Alignment of Psychotherapy Dialogue Generation (COLING 2025) Core B</p>
-        <span class="pnum">12 / 20</span>
+        <span class="pnum">9 / 17</span>
       </section>
 
       <!-- ================= P11 · ALIGN · StoryMI agentic simulation ================= -->
-      <section class="slide" id="slideAgent" data-title="2 · Align — multi-agent therapeutic dialogue generation" aria-label="Slide 13 of 21">
+      <section class="slide" id="slideAgent" data-title="2 · Align — multi-agent therapeutic dialogue generation" aria-label="Slide 10 of 18">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="ag-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: Multi-Agent Therapeutic Dialogue Generation</h2>
         <div class="rule rv" style="top:104px"></div>
         <p class="abs rq rv d1" style="left:60px;top:150px;width:1800px;font-size:32px;white-space:nowrap" data-edit-id="ag-rq"><span class="tag">Research Question:</span> expert data is scarce — can LLM agents generate it, with domain-specific strategies under control?</p>
@@ -1542,11 +1543,11 @@
         </div>
         <p class="abs takeaway rv d4" style="left:46px;top:912px;width:1840px;font-size:30px" data-edit-id="ag-take"><span class="tl">Takeaways:</span> with strategy control, LLM agents turn scarce expert data into <span class="red">clinically-plausible</span> alignment supervision — at scale.</p>
         <p class="refs">[j] Sun, et al. StoryMI: Steerable Multi-Agent Therapeutic Dialogue Generation. co-authored (ACL 2026)</p>
-        <span class="pnum">13 / 20</span>
+        <span class="pnum">10 / 17</span>
       </section>
 
       <!-- ================= P8 · WORK 2 ================= -->
-      <section class="slide" data-title="2 · Align — how LLMs learn the bad human signals" aria-label="Slide 14 of 21">
+      <section class="slide" data-title="2 · Align — how LLMs learn the bad human signals" aria-label="Slide 11 of 18">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p7-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: How LLMs Learn the “Bad” Human Signals</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Domain: Health Information">
@@ -1565,11 +1566,11 @@
         <button type="button" class="abs p7-fig zoomable rv d2" data-image="assets/figs/fig-bias-full.png" aria-label="Open bias installation charts"><img src="assets/figs/fig-bias-full.png" alt="Installed bias for source cue and relational cue across Pre-train, SFT, and DPO"></button>
         <p class="abs takeaway p7-take rv d3" data-edit-id="p7-take"><span class="tl">Takeaways:</span> alignment training installs the human bias — <span class="stage s1">Pre-train · least</span> › <span class="stage s2">SFT · moderate</span> › <span class="stage s3">DPO · significant</span>.</p>
         <p class="refs">[j] Sun et al. Installed by Preference, Not by Exposure: Heuristic Cue Biases in LLM Judges (AAAI 2026, under review) Core A*</p>
-    <span class="pnum">14 / 20</span>
+    <span class="pnum">11 / 17</span>
       </section>
 
       <!-- ================= SD3 · SECTION DIVIDER — ADAPT ================= -->
-      <section class="slide sd" data-pillar="3" data-title="Pillar 3 · Adapt" aria-label="Slide 15 of 21">
+      <section class="slide sd" data-pillar="3" data-title="Pillar 3 · Adapt" aria-label="Slide 12 of 18">
         <div class="sd-map rv" aria-hidden="true">
           <span>1 · Evaluate <small>· Mechanism</small></span><i><b>›</b><b>›</b><b>›</b></i>
           <span>2 · Align <small>· Method</small></span><i><b>›</b><b>›</b><b>›</b></i>
@@ -1580,11 +1581,11 @@
         <p class="sd-role rv d2" data-edit-id="sd3-role"><b>LLM as Partner</b></p>
         <div class="sd-rule rv d2"></div>
         <p class="sd-q rv d3" data-edit-id="sd3-q">Adapt to each user's <em>live state</em> — support the person, not the average.</p>
-        <span class="pnum">15 / 20</span>
+        <span class="pnum">12 / 17</span>
       </section>
 
       <!-- ================= WA · WHY ADAPT — bridge from pillars 1–2 ================= -->
-      <section class="slide" id="slideWhyAdapt" data-title="3 · Adapt — why adapt: closing the loop" aria-label="Slide 16 of 21">
+      <section class="slide" id="slideWhyAdapt" data-title="3 · Adapt — why adapt: closing the loop" aria-label="Slide 13 of 18">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="wa-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Why Adapt — From an Aligned Model to the Right Support</h2>
         <div class="rule rv" style="top:104px"></div>
         <p class="abs wa-kick rv d2"><span>EVALUATE ✓ + ALIGN ✓ MAKE THE MODEL RIGHT — BUT</span></p>
@@ -1624,11 +1625,11 @@
           <span>the user responds — and the loop runs again, every turn</span>
         </div>
         <p class="abs wa-take rv d3">support tuned to this user, at this moment — not the average user</p>
-        <span class="pnum">16 / 20</span>
+        <span class="pnum">13 / 17</span>
       </section>
 
       <!-- ================= P12 · ADAPT I — SENSE ================= -->
-      <section class="slide" id="slideSense" data-title="3 · Adapt — sense human signals in real time" aria-label="Slide 17 of 21">
+      <section class="slide" id="slideSense" data-title="3 · Adapt — sense human signals in real time" aria-label="Slide 14 of 18">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="sn-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Sense Human Signals in Real Time</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Use case: Health decision support">
@@ -1663,11 +1664,11 @@
 
         <p class="abs sense-note rv d4" data-edit-id="sn-method">behavior shows what people <b>do</b> · physiology reveals what they <b>cannot mask</b> — continuously, not only after the task.</p>
         <p class="refs">[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1</p>
-        <span class="pnum">17 / 20</span>
+        <span class="pnum">14 / 17</span>
       </section>
 
       <!-- ================= P13 · ADAPT II — PREDICT ================= -->
-      <section class="slide" id="slidePredict" data-title="3 · Adapt — predict human states from multimodal signals" aria-label="Slide 18 of 21">
+      <section class="slide" id="slidePredict" data-title="3 · Adapt — predict human states from multimodal signals" aria-label="Slide 15 of 18">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="pr-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Predict Human States from Multimodal Signals</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Use case: Health decision support">
@@ -1705,11 +1706,11 @@
         </div>
         <p class="abs takeaway pr-take rv d4" data-edit-id="pr-take"><span class="tl">Takeaways:</span> fused human signals make moment-to-moment states <span class="red">readable</span> — creating the control signal for adaptation.</p>
         <p class="refs">[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1<br>[g] Sun et al. Eyes Can’t Always Tell (ACM UMAP 2026) Core A</p>
-        <span class="pnum">18 / 20</span>
+        <span class="pnum">15 / 17</span>
       </section>
 
       <!-- ================= P14 · ADAPT III — ADAPTIVE SUPPORT ================= -->
-      <section class="slide" id="slideAugment" data-title="3 · Adapt — adaptive support that augments humans" aria-label="Slide 19 of 21">
+      <section class="slide" id="slideAugment" data-title="3 · Adapt — adaptive support that augments humans" aria-label="Slide 16 of 18">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="ad-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Adaptive Support that Augments Humans</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs ad-step rv d1" style="left:60px;top:132px"><span class="ad-step-n">3</span><span class="ad-step-t">Adapt</span></div>
@@ -1874,11 +1875,11 @@
 
           <span class="vl-arclab" aria-hidden="true"><span class="vl-support-line"><b>Multimodal support</b><i>text · speech · vision · embodiment</i></span><span class="vl-return-line">support back to the person &mdash; loop closes</span></span>
         </div>
-        <span class="pnum">19 / 20</span>
+        <span class="pnum">16 / 17</span>
       </section>
 
       <!-- ================= P13 · VISION ================= -->
-      <section class="slide" id="slideVision" data-title="Vision — human-grounded, reliable and trustworthy LLM-powered AI systems" aria-label="Slide 20 of 21">
+      <section class="slide" id="slideVision" data-title="Vision — human-grounded, reliable and trustworthy LLM-powered AI systems" aria-label="Slide 17 of 18">
         <h2 class="abs kt rv" style="left:20px;top:24px;font-size:48px" data-edit-id="p10-title">Vision: Toward <span style="color:var(--maroon);font-style:italic">Human-Grounded, Reliable and Trustworthy</span> LLM-powered AI Systems</h2>
         <div class="rule rv" style="top:104px"></div>
         <svg class="abs vs-loop rv d2" viewBox="0 0 1920 1080" aria-hidden="true">
@@ -1895,15 +1896,15 @@
         <div class="abs vs-ell h rv d1"><h3>Humans</h3><p>signals — behavior · cognition · physiology</p></div>
         <div class="abs vs-ell l rv d1"><h3>LLMs</h3><p>reliable judge · aligned learner · adaptive partner</p></div>
         <button type="button" class="abs vs-card v1 rv d2" data-pair-step="1" data-jump="5"><span class="n">1</span><span class="vs-layer">MECHANISM</span><h3><span class="verb">Evaluate</span> <span class="arr">&rarr;</span> <span class="noun">Signal Diagnosis</span></h3><span class="role">LLM as Judge</span></button>
-        <button type="button" class="abs vs-card v2 rv d3" data-pair-step="2" data-jump="10"><span class="n">2</span><span class="vs-layer">METHOD</span><h3><span class="verb">Align</span> <span class="arr">&rarr;</span> <span class="noun">Selective Alignment</span></h3><span class="role">LLM as Learner</span></button>
-        <button type="button" class="abs vs-card v3 rv d4" data-pair-step="3" data-jump="15"><span class="n">3</span><span class="vs-layer">MODELING</span><h3><span class="verb">Adapt</span> <span class="arr">&rarr;</span> <span class="noun">Closed-Loop Augmentation</span></h3><span class="role">LLM as Partner</span></button>
+        <button type="button" class="abs vs-card v2 rv d3" data-pair-step="2" data-jump="7"><span class="n">2</span><span class="vs-layer">METHOD</span><h3><span class="verb">Align</span> <span class="arr">&rarr;</span> <span class="noun">Selective Alignment</span></h3><span class="role">LLM as Learner</span></button>
+        <button type="button" class="abs vs-card v3 rv d4" data-pair-step="3" data-jump="12"><span class="n">3</span><span class="vs-layer">MODELING</span><h3><span class="verb">Adapt</span> <span class="arr">&rarr;</span> <span class="noun">Closed-Loop Augmentation</span></h3><span class="role">LLM as Partner</span></button>
         <p class="abs vs-lanek bot rv d3" data-edit-id="vs-lanek-bot">from LLMs back to humans · <b>provide the right support</b></p>
         <button type="button" class="abs vs-impact" id="impactTrigger" aria-label="Open impact overlay" style="right:130px;bottom:14px;left:auto;top:auto">Impact ↗</button>
-        <span class="pnum">20 / 20</span>
+        <span class="pnum">17 / 17</span>
       </section>
 
       <!-- ================= P15 · THANKS ================= -->
-      <section class="slide" data-title="Thank you" aria-label="Slide 21 of 21">
+      <section class="slide" data-title="Thank you" aria-label="Slide 18 of 18">
         <img class="abs p1-logos rv" src="assets/figs/logos-strip.png" alt="NII · University of Amsterdam · CWI">
         <p class="abs p11-text rv d1" data-edit-id="p11-text">Thank you so much<br>for your time and patience!</p>
       </section>
@@ -1916,6 +1917,8 @@
 
   <nav class="deck-controls" aria-label="Presentation controls"><button type="button" id="prevBtn" aria-label="Previous slide">←</button><span id="counter">01 / 15</span><div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div><button type="button" id="nextBtn" aria-label="Next slide">→</button><button type="button" id="helpBtn" aria-label="Open help">?</button></nav>
   <div class="edit-hotzone" title="Edit mode"></div><button type="button" class="edit-toggle" id="editToggle">EDIT · E</button><div class="edit-toolbar" id="editToolbar"><button type="button" id="saveHtmlBtn">SAVE HTML</button><button type="button" id="resetEditsBtn">RESET TEXT</button></div><p class="sr-only" id="liveStatus" aria-live="polite">Slide 1 of 15</p>
+
+  <button type="button" id="detailClose" class="detail-close" data-close-detail aria-label="Close detail (Esc)" title="Close (Esc)"><span aria-hidden="true">&#10005;</span></button>
 
   <section class="overlay" id="helpOverlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle"><div class="overlay-panel"><button type="button" class="overlay-close" data-close-overlay>ESC</button><h2 id="helpTitle">Presentation controls</h2><div class="help-grid"><div class="help-row"><code>← → / SPACE</code><span>Navigate slides</span></div><div class="help-row"><code>O</code><span>Slide overview</span></div><div class="help-row"><code>K</code><span>Original Keynote view (synced via update-web.command)</span></div><div class="help-row"><code>E</code><span>Edit visible text; saved locally</span></div><div class="help-row"><code>F</code><span>Fullscreen</span></div><div class="help-row"><code>P6 LABEL</code><span>Auto-flips Human ⇄ AI once — click to flip the source label yourself</span></div><div class="help-row"><code>P8 SOURCE</code><span>Flip Human/AI source — trust and truth move together</span></div><div class="help-row"><code>P12 BASELINES</code><span>Hover a method title to reveal its details</span></div><div class="help-row"><code>P16–P17</code><span>Adapt — gaze &amp; ECG signals animate; outcome cards pulse</span></div><div class="help-row"><code>FIGURE CLICK</code><span>Zoom any research figure</span></div></div></div></section>
   <section class="overlay" id="overviewOverlay" role="dialog" aria-modal="true" aria-labelledby="overviewTitle"><div class="overlay-panel"><button type="button" class="overlay-close" data-close-overlay>ESC</button><h2 id="overviewTitle">Slide overview</h2><div class="overview-grid" id="overviewGrid"></div></div></section>
@@ -1957,7 +1960,7 @@
       constructor() {
         if (location.search.indexOf('embed') !== -1) document.documentElement.classList.add('is-embed');
         this.stage = document.getElementById('deckStage');
-        this.slides = [...document.querySelectorAll('.slide')];
+        this.slides = [...document.querySelectorAll('.slide:not(.detail)')];
         this.current = this.readHash();
         this.wheelLocked = false;
         this.touchStartX = 0;
@@ -1974,7 +1977,7 @@
         document.getElementById('nextBtn').addEventListener('click', () => this.advance(1));
         document.addEventListener('keydown', e => {
           if (document.body.classList.contains('editing') && e.target.isContentEditable) return;
-          if (document.querySelector('.overlay.open') && e.key !== 'Escape') return;
+          if ((document.querySelector('.overlay.open') || detailView.isOpen()) && e.key !== 'Escape') return;
           if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); this.advance(1); }
           if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); this.advance(-1); }
           if (e.key === 'Home') this.show(0);
@@ -1983,9 +1986,9 @@
           if (e.key === '?') overlays.open('helpOverlay');
           if (e.key.toLowerCase() === 'f') this.toggleFullscreen();
           if (e.key.toLowerCase() === 'k') keynoteView.toggle();
-          if (e.key === 'Escape') overlays.closeAll();
+          if (e.key === 'Escape') { detailView.close(); overlays.closeAll(); }
         });
-        document.addEventListener('wheel', e => { if (document.querySelector('.overlay.open') || this.wheelLocked || Math.abs(e.deltaY) < 18) return; this.wheelLocked = true; this.advance(e.deltaY > 0 ? 1 : -1); setTimeout(() => { this.wheelLocked = false; }, 720); }, { passive: true });
+        document.addEventListener('wheel', e => { if (document.querySelector('.overlay.open') || detailView.isOpen() || this.wheelLocked || Math.abs(e.deltaY) < 18) return; this.wheelLocked = true; this.advance(e.deltaY > 0 ? 1 : -1); setTimeout(() => { this.wheelLocked = false; }, 720); }, { passive: true });
         document.addEventListener('touchstart', e => { this.touchStartX = e.changedTouches[0].screenX; }, { passive: true });
         document.addEventListener('touchend', e => { const d = e.changedTouches[0].screenX - this.touchStartX; if (Math.abs(d) > 55) this.advance(d < 0 ? 1 : -1); }, { passive: true });
         window.addEventListener('hashchange', () => this.show(this.readHash(), false));
@@ -2024,6 +2027,31 @@
        ================================================================ */
     const overlays = { open(id) { this.closeAll(); document.getElementById(id).classList.add('open'); }, closeAll() { document.querySelectorAll('.overlay.open').forEach(el => el.classList.remove('open')); } };
     document.querySelectorAll('[data-close-overlay]').forEach(b => b.addEventListener('click', () => overlays.closeAll()));
+
+    /* Detail modals — the Evaluate works (7/8/9) live off the linear flow and
+       open full-screen from the hub cards, then close back to the hub. */
+    const detailView = {
+      open(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        this.close();
+        el.classList.add('active', 'detail-open');
+        el.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('detail-lock');
+        runCounters(el);
+        if (id === 'slideEval' && typeof p5Demo === 'function') p5Demo();
+        if (id === 'slideTT' && typeof ttDemo === 'function') ttDemo();
+        const c = document.getElementById('detailClose'); if (c) c.focus();
+      },
+      close() {
+        document.querySelectorAll('.slide.detail.detail-open').forEach(el => { el.classList.remove('active', 'detail-open'); el.setAttribute('aria-hidden', 'true'); });
+        document.body.classList.remove('detail-lock');
+      },
+      isOpen() { return !!document.querySelector('.slide.detail.detail-open'); }
+    };
+    document.querySelectorAll('[data-detail]').forEach(b => b.addEventListener('click', () => detailView.open(b.dataset.detail)));
+    document.querySelectorAll('[data-close-detail]').forEach(b => b.addEventListener('click', () => detailView.close()));
+    { const _db = document.getElementById('detailBackdrop'); if (_db) _db.addEventListener('click', () => detailView.close()); }
     document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) overlays.closeAll(); }));
     document.getElementById('helpBtn').addEventListener('click', () => overlays.open('helpOverlay'));
     document.querySelectorAll('.zoomable').forEach(b => b.addEventListener('click', () => { const img = document.getElementById('lightboxImage'); img.src = b.dataset.image; img.alt = b.querySelector('img').alt; overlays.open('lightboxOverlay'); }));
