@@ -21,8 +21,8 @@
       --blue-head: #4472c4;
       --purple-head: #7d5fb2;
       --c1: #8b5fc7;  --c2: #2f6bb2;  --c3: #d9930d;
-      --ellipse-purple: #c9a2e9;
-      --ellipse-blue: #7ea6e0;
+      --ellipse-purple: radial-gradient(120% 120% at 32% 26%, #e2cdf5 0%, #cda6ec 46%, #b98ce2 100%);
+      --ellipse-blue: radial-gradient(120% 120% at 32% 26%, #b6d0f1 0%, #8bb0e5 46%, #6f97d6 100%);
       --stage-bg: #ececec;
       --serif: "Times New Roman", Georgia, serif;
       --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -135,8 +135,8 @@
     .p2-x { position: absolute; left: 904px; top: 319px; width: 112px; height: 112px; border-radius: 50%; background: #fff; border: 1.5px solid #e3e0ee; box-shadow: 0 10px 26px rgba(96,88,180,.14); display: flex; align-items: center; justify-content: center; z-index: 3; }
     .p2-cycle { width: 66px; height: 66px; filter: drop-shadow(0 5px 12px rgba(96,88,180,.18)); }
     .p2-conv { left: 130px; top: 508px; width: 1660px; height: 150px; pointer-events: none; }
-    .p2-plate { left: 160px; top: 712px; width: 1600px; height: 168px; border-radius: 24px; border: 1.5px solid rgba(142,27,38,.14); background: linear-gradient(180deg,#fffdfd,#fbf7f7); box-shadow: 0 14px 36px rgba(142,27,38,.06); display: flex; align-items: center; justify-content: center; }
-    .p2-state { padding: 26px 60px; text-align: center; font: 700 36px/1.55 var(--sans); color: #000; }
+    .p2-plate { left: 160px; top: 728px; width: 1600px; height: 146px; border-radius: 24px; border: 1.5px solid rgba(142,27,38,.14); background: linear-gradient(180deg,#fffdfd,#fbf7f7); box-shadow: 0 14px 36px rgba(142,27,38,.06); display: flex; align-items: center; justify-content: center; }
+    .p2-state { padding: 20px 60px; text-align: center; font: 700 31px/1.5 var(--sans); color: #000; }
     .p2-state em { color: var(--maroon); font-style: italic; transition: opacity .35s; padding: 2px 10px; border-radius: 9px;
       text-decoration: underline dotted rgba(142,27,38,.55); text-underline-offset: 6px; }
     /* standing emphasis: the two halves of the loop softly light up in turn */
@@ -159,7 +159,7 @@
        ================================================================ */
     .p3-lead { left: 160px; top: 150px; width: 1600px; text-align: center; font: 700 40px/1.25 var(--sans); color: #000; }
     .p3-lead u { font-style: italic; text-underline-offset: 5px; }
-    .p3-ell { position: absolute; top: 580px; width: 460px; height: 300px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 18px 46px rgba(40,30,60,.13); }
+    .p3-ell { position: absolute; top: 610px; width: 460px; height: 300px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 18px 46px rgba(40,30,60,.13); }
     .p3-ell h3 { font: italic 700 31px/1.4 var(--serif); color: #000; }
     .p3-ell p { font: italic 600 24px/1.35 var(--serif); color: #2c2c2c; margin-top: 2px; }
     .p3-ell.h { left: 51px; background: var(--ellipse-purple); }
@@ -198,31 +198,31 @@
     .p3-tag .what { display:block; margin-top:6px; font:italic 700 22px/1.2 var(--sans); color:#000; }
     .p3-tag .x { font-style:normal; font-weight:900; margin-right:6px; color:#8e1b26; }
     .p3-tag .what em { color:#8e1b26; text-decoration:underline; text-underline-offset:4px; font-style:inherit; }
-    .p3-tag.h { left:111px; top:452px; border:1.5px solid rgba(109,63,150,.30); border-left:6px solid #6d3f96; }
+    .p3-tag.h { left:111px; top:482px; border:1.5px solid rgba(109,63,150,.30); border-left:6px solid #6d3f96; }
     .p3-tag.h .who { color:#6d3f96; }
-    .p3-tag.l { left:1464px; top:452px; border:1.5px solid rgba(46,86,164,.30); border-left:6px solid #2e56a4; }
+    .p3-tag.l { left:1464px; top:482px; border:1.5px solid rgba(46,86,164,.30); border-left:6px solid #2e56a4; }
     .p3-tag.l .who { color:#2e56a4; }
     /* center essence pill */
-    .p3-core { left: 580px; top: 678px; width: 760px; height: 104px; border-radius: 999px; background: linear-gradient(180deg,#fffdfc,#f8f1f0); border: 2px solid rgba(142,27,38,.22); box-shadow: 0 20px 50px rgba(40,30,60,.16), inset 0 1px 0 #fff; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+    .p3-core { left: 580px; top: 708px; width: 760px; height: 104px; border-radius: 999px; background: linear-gradient(180deg,#fffdfc,#f8f1f0); border: 2px solid rgba(142,27,38,.22); box-shadow: 0 20px 50px rgba(40,30,60,.16), inset 0 1px 0 #fff; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
     .p3-core .phrase { font: italic 800 30px/1 var(--serif); }
     .p3-core .bar { width: 460px; height: 3.5px; border-radius: 2px; background: linear-gradient(90deg,#8e1b26,#2e56a4); opacity: .85; }
     @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.012); } }
     .active .p3-ell { animation: breathe 6s ease-in-out infinite; }
     .active .p3-ell.l { animation-delay: 3s; }
     /* redesigned motivation loop — evaluate node · align/adapt pills · sightlines */
-    .p3-loop { left: 0; top: 0; width: 1920px; height: 1080px; pointer-events: none; }
+    .p3-loop { left: 0; top: 30px; width: 1920px; height: 1080px; pointer-events: none; }
     .active .p3-loop path.sight { animation: antMarch 1s linear infinite; }
-    .p3-eval { left: 865px; top: 306px; width: 190px; height: 64px; padding: 0; border-radius: 999px; background: #fff; border: 2px solid #7d5fb2; box-shadow: 0 10px 26px rgba(125,95,178,.18); display: inline-flex; align-items: center; justify-content: center; z-index: 4; }
+    .p3-eval { left: 865px; top: 336px; width: 190px; height: 64px; padding: 0; border-radius: 999px; background: #fff; border: 2px solid #7d5fb2; box-shadow: 0 10px 26px rgba(125,95,178,.18); display: inline-flex; align-items: center; justify-content: center; z-index: 4; }
     .p3-eval .lab { font: 800 24px/1 var(--sans); color: #7d5fb2; }
     .p3-eval svg { width: 32px; height: 20px; display: block; }
-    .p3-eval-cap { left: 710px; top: 380px; width: 500px; text-align: center; font: italic 600 18px/1.25 var(--serif); color: #8a8a8a; }
+    .p3-eval-cap { left: 710px; top: 410px; width: 500px; text-align: center; font: italic 600 18px/1.25 var(--serif); color: #8a8a8a; }
     .p3-align-cap, .p3-adapt-cap { left: 0; right: 0; text-align: center; font: 600 16px/1.2 var(--sans); color: #777; }
-    .p3-align-cap { top: 532px; } .p3-adapt-cap { top: 874px; }
+    .p3-align-cap { top: 562px; } .p3-adapt-cap { top: 904px; }
     .p3-align, .p3-adapt { height: 46px; border-radius: 999px; background: #fff; display: inline-flex; align-items: center; justify-content: center; gap: 10px; z-index: 4; }
     .p3-align .dot, .p3-adapt .dot { flex: none; width: 24px; height: 24px; border-radius: 50%; }
-    .p3-align { left: 885px; top: 561px; width: 150px; border: 2px solid #2f6bb2; box-shadow: 0 8px 20px rgba(47,107,178,.16); }
+    .p3-align { left: 885px; top: 591px; width: 150px; border: 2px solid #2f6bb2; box-shadow: 0 8px 20px rgba(47,107,178,.16); }
     .p3-align .dot { background: #2f6bb2; } .p3-align .lab { font: 800 23px/1 var(--sans); color: #2f6bb2; }
-    .p3-adapt { left: 880px; top: 853px; width: 160px; border: 2px solid #d9930d; box-shadow: 0 8px 20px rgba(217,147,13,.16); }
+    .p3-adapt { left: 880px; top: 883px; width: 160px; border: 2px solid #d9930d; box-shadow: 0 8px 20px rgba(217,147,13,.16); }
     .p3-adapt .dot { background: #d9930d; } .p3-adapt .lab { font: 800 23px/1 var(--sans); color: #b47a0b; }
 
     /* ================================================================
@@ -337,7 +337,7 @@
     .f2 .fw-sig .l1 { color: var(--c2); }
     .f3 .fw-sig .l1 { color: var(--c3); }
     /* loop emblem */
-    .fw-emk { left: 1420px; width: 460px; top: 240px; text-align: center; font: 800 14px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #bb6b71; }
+    .fw-point { left: 0; top: 0; width: 1920px; height: 1080px; pointer-events: none; }
     .fw-emell { width: 240px; height: 130px; border-radius: 50%; box-shadow: 0 12px 30px rgba(40,30,60,.13); display: flex; align-items: center; justify-content: center; text-align: center; font: italic 700 30px/1.1 var(--serif); color: #000; }
     .fw-emell.h { left: 1530px; top: 291px; background: var(--ellipse-purple); }
     .fw-emell.l { left: 1530px; top: 635px; background: var(--ellipse-blue); }
@@ -380,16 +380,57 @@
     .sd[data-pillar="1"] .sd-title em { color: var(--c1); }
     .sd[data-pillar="2"] .sd-title em { color: var(--c2); }
     .sd[data-pillar="3"] .sd-title em { color: var(--c3); }
-    .sd-role { position: absolute; left: 0; right: 0; top: 682px; text-align: center; font: 700 22px/1 var(--sans); letter-spacing: .24em; text-transform: uppercase; color: #a5a5a5; }
-    .sd[data-pillar="1"] .sd-role b { color: var(--c1); }
-    .sd[data-pillar="2"] .sd-role b { color: var(--c2); }
-    .sd[data-pillar="3"] .sd-role b { color: var(--c3); }
+    .sd-role { position: absolute; left: 0; right: 0; top: 676px; text-align: center; font: 700 22px/1 var(--sans); letter-spacing: .01em; text-transform: none; color: #a5a5a5; }
+    .sd-role b { display: inline-block; padding: 10px 26px; border-radius: 999px; font-weight: 700; font-size: 31px; letter-spacing: .005em; }
+    .sd[data-pillar="1"] .sd-role b { color: var(--c1); background: rgba(139,95,199,.09); border: 1.6px solid rgba(139,95,199,.30); box-shadow: 0 8px 20px rgba(139,95,199,.13); }
+    .sd[data-pillar="2"] .sd-role b { color: var(--c2); background: rgba(47,107,178,.09); border: 1.6px solid rgba(47,107,178,.30); box-shadow: 0 8px 20px rgba(47,107,178,.13); }
+    .sd[data-pillar="3"] .sd-role b { color: #b47a0b; background: rgba(217,147,13,.10); border: 1.6px solid rgba(217,147,13,.32); box-shadow: 0 8px 20px rgba(217,147,13,.14); }
     .sd-rule { position: absolute; left: 0; right: 0; top: 748px; margin: 0 auto; width: 120px; height: 4.5px; border-radius: 3px; }
     .sd[data-pillar="1"] .sd-rule { background: var(--c1); }
     .sd[data-pillar="2"] .sd-rule { background: var(--c2); }
     .sd[data-pillar="3"] .sd-rule { background: var(--c3); }
     .sd-q { position: absolute; left: 200px; right: 200px; top: 812px; text-align: center; font: 700 41px/1.35 var(--serif); color: #000; }
     .sd-q em { color: var(--maroon); }
+
+    /* ================================================================
+       NEW · EVALUATE — the gap: three open questions that motivate the
+       three Evaluate works. Purple (Evaluate) family; one vivid
+       micro-visual per card; deliberately uncluttered.
+       ================================================================ */
+    .eg-lead { left: 120px; top: 158px; width: 1680px; text-align: center; font: 600 28px/1.42 var(--sans); color: #2f2a38; }
+    .eg-lead b { color: #6d3f96; } .eg-lead em { color: var(--maroon); font-style: italic; font-weight: 700; }
+    .eg-card { position: absolute; top: 300px; width: 556px; height: 648px; border-radius: 22px; background: #fff; border: 1.8px solid rgba(139,95,199,.20); border-top: 5px solid var(--c1); box-shadow: 0 18px 44px rgba(90,60,140,.12); }
+    .eg-card.c1 { left: 80px; } .eg-card.c2 { left: 682px; } .eg-card.c3 { left: 1284px; }
+    .eg-qn { position: absolute; left: 28px; top: 26px; width: 58px; height: 58px; border-radius: 16px; background: linear-gradient(160deg,#9166c0,#6d3f96); color: #fff; display: flex; align-items: center; justify-content: center; font: 800 25px/1 var(--sans); box-shadow: 0 8px 18px rgba(109,63,150,.30); }
+    .eg-kick { position: absolute; left: 100px; top: 30px; font: 800 15px/1.35 var(--sans); letter-spacing: .13em; text-transform: uppercase; color: #9166c0; }
+    .eg-kick small { display: block; font-size: 13px; letter-spacing: .04em; text-transform: none; color: #a99bc0; font-weight: 600; margin-top: 5px; }
+    .eg-q { position: absolute; left: 28px; right: 28px; top: 106px; font: 800 31px/1.16 var(--sans); color: #1e1730; }
+    .eg-g { position: absolute; left: 28px; right: 28px; top: 176px; font: 500 19px/1.42 var(--sans); color: #4c4757; }
+    .eg-g b { color: #6d3f96; } .eg-g em { color: var(--maroon); font-style: italic; font-weight: 700; }
+    .eg-vis { position: absolute; left: 28px; right: 28px; top: 326px; height: 224px; border-radius: 14px; background: linear-gradient(180deg,#faf7fe,#f2ebfa); border: 1.5px solid rgba(139,95,199,.18); }
+    .eg-next { position: absolute; left: 28px; bottom: 24px; display: inline-flex; align-items: center; gap: 9px; padding: 9px 15px; border-radius: 999px; background: rgba(139,95,199,.08); border: 1.4px solid rgba(139,95,199,.22); font: 700 15.5px/1 var(--sans); color: #6d3f96; }
+    .eg-next .ar { font-weight: 900; font-size: 17px; }
+    /* Q1 micro-visual — one claim, two source labels */
+    .egv1-lab { position: absolute; top: 20px; padding: 7px 14px; border-radius: 10px; font: 800 16px/1 var(--sans); }
+    .egv1-lab.a { left: 22px; color: #6d3f96; background: rgba(109,63,150,.12); border: 1.5px solid rgba(109,63,150,.34); }
+    .egv1-lab.b { right: 22px; color: #2e56a4; background: rgba(46,86,164,.12); border: 1.5px solid rgba(46,86,164,.34); }
+    .egv1-txt { position: absolute; left: 24px; right: 24px; top: 84px; text-align: center; font: italic 700 20px/1.3 var(--serif); color: #000; }
+    .egv1-same { position: absolute; left: 0; right: 0; top: 150px; text-align: center; font: 700 13px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: #9a8fb0; }
+    .egv1-ask { position: absolute; left: 0; right: 0; bottom: 20px; text-align: center; font: italic 700 18px/1 var(--sans); color: var(--maroon); }
+    /* Q2 micro-visual — dimensions independent or entangled */
+    .egv2-row { position: absolute; left: 20px; right: 20px; top: 24px; display: flex; justify-content: space-between; }
+    .egv2-dim { padding: 9px 0; width: 31%; text-align: center; border-radius: 9px; font: 800 15px/1 var(--sans); color: #6d3f96; background: rgba(109,63,150,.10); border: 1.5px solid rgba(109,63,150,.30); }
+    .egv2-note { position: absolute; left: 0; right: 0; top: 74px; text-align: center; font: 700 13px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: #9a8fb0; }
+    .egv2-ex { position: absolute; left: 24px; right: 24px; bottom: 24px; text-align: center; font: 600 19px/1.42 var(--sans); color: #2f2a38; }
+    .egv2-ex b.f { color: #2e7d46; } .egv2-ex b.x { color: var(--maroon); }
+    /* Q3 micro-visual — gaze vs attention on the same cue */
+    .egv3-arr { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    .egv3-h, .egv3-l { position: absolute; top: 22px; padding: 8px 13px; border-radius: 999px; font: 800 15px/1 var(--sans); }
+    .egv3-h { left: 22px; color: #6d3f96; background: rgba(109,63,150,.12); border: 1.5px solid rgba(109,63,150,.32); }
+    .egv3-l { right: 22px; color: #2e56a4; background: rgba(46,86,164,.12); border: 1.5px solid rgba(46,86,164,.32); }
+    .egv3-word { position: absolute; left: 0; right: 0; top: 116px; text-align: center; }
+    .egv3-word b { padding: 8px 16px; border-radius: 10px; background: rgba(217,147,13,.16); border: 1.5px solid rgba(217,147,13,.42); font: 800 18px/1 var(--sans); color: #a9730a; }
+    .egv3-ask { position: absolute; left: 0; right: 0; bottom: 20px; text-align: center; font: italic 700 18px/1 var(--sans); color: var(--maroon); }
 
     /* ================================================================
        P5 · EVALUATE — mirrors the trust–truth slide: example card (with
@@ -1084,7 +1125,7 @@
 
 
       <!-- ================= P1 · TITLE ================= -->
-      <section class="slide active" data-title="Bidirectional loop between human signals and trustworthy LLMs" aria-label="Slide 1 of 20">
+      <section class="slide active" data-title="Bidirectional loop between human signals and trustworthy LLMs" aria-label="Slide 1 of 21">
         <img class="abs p1-logos rv" src="assets/figs/logos-strip.png" alt="NII · University of Amsterdam · CWI">
         <h1 class="abs p1-title rv d1" data-edit-id="p1-title">Bidirectional Loop between:<br>Human Signals and Trustworthy LLMs</h1>
         <p class="abs p1-line rv d2" data-edit-id="p1-line">“I turn human signals into <u>evaluation</u>, <u>alignment</u>, and <u>adaptation</u> for LLM-powered AI systems”</p>
@@ -1094,7 +1135,7 @@
       </section>
 
       <!-- ================= P2 · RESEARCH CONCEPT ================= -->
-      <section class="slide" id="slideIntro" data-title="Research concept and motivation" aria-label="Slide 2 of 20">
+      <section class="slide" id="slideIntro" data-title="Research concept and motivation" aria-label="Slide 2 of 21">
         <h2 class="abs p2-title rv" data-edit-id="p2-title">Research <span class="kw">Background</span></h2>
         <div class="rule p2-rule rv"></div>
         <p class="abs p2-kick k1 rv d1">interdisciplinary background</p>
@@ -1110,7 +1151,7 @@
       </section>
 
       <!-- ================= P3 · MOTIVATION ================= -->
-      <section class="slide" data-title="Human signals are not always ground truth" aria-label="Slide 3 of 20">
+      <section class="slide" data-title="Human signals are not always ground truth" aria-label="Slide 3 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px;font-size:46px" data-edit-id="p3-title"><i>Research </i><span class="kw">Motivation</span>: Human Signals ⇄ LLM Support — Neither Is Always Right</h2>
         <div class="rule rv" style="top:104px"></div>
         <p class="abs p3-lead rv d1" data-edit-id="p3-lead">LLMs are aligned with humans and trained on human data <b>to support humans</b>, <u>however</u> : </p>
@@ -1143,12 +1184,12 @@
         <div class="abs p3-align rv d3" aria-hidden="true"><span class="dot"></span><span class="lab">ALIGN</span></div>
         <div class="abs p3-core rv d3"><div class="phrase"><span style="color:#8e1b26">Trustworthy</span> <span style="color:#2e56a4">Human–AI Loop</span></div><span class="bar"></span></div>
         <div class="abs p3-adapt rv d3" aria-hidden="true"><span class="dot"></span><span class="lab">ADAPT</span></div>
-        <span class="pnum">3 / 19</span>
+        <span class="pnum">3 / 20</span>
       </section>
 
 
       <!-- ================= P5-NEW · FRAMEWORK (one loop, three layers) ================= -->
-      <section id="slideFramework" class="slide" data-title="The framework — one loop, three layers" aria-label="Slide 4 of 20">
+      <section id="slideFramework" class="slide" data-title="The framework — one loop, three layers" aria-label="Slide 4 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px;font-size:45px"><span class="kw">The Framework</span>: One Loop, Three Layers — Mechanism · Method · Modeling</h2>
         <div class="rule rv" style="top:104px"></div>
 
@@ -1162,14 +1203,14 @@
           <span class="fw-layer">MECHANISM</span>
           <span class="fw-sig"><span class="l1">EVALUATIVE SIGNALS</span><span class="l2">trust · preferences · judgments</span></span>
         </button>
-        <button type="button" class="abs fw-band f2 rv d3" data-jump="9">
+        <button type="button" class="abs fw-band f2 rv d3" data-jump="10">
           <span class="fw-n">2</span>
           <span class="fw-head"><span class="role">Align</span><span class="sub">LLM as Learner</span></span>
           <span class="fw-def">Selectively learn <b>human expertise</b>, resist bias — at the <b>strategy layer</b>, not tokens.</span>
           <span class="fw-layer">METHOD</span>
           <span class="fw-sig"><span class="l1">EXPERT SIGNALS</span><span class="l2">strategies · annotations · scripts</span></span>
         </button>
-        <button type="button" class="abs fw-band f3 rv d4" data-jump="14">
+        <button type="button" class="abs fw-band f3 rv d4" data-jump="15">
           <span class="fw-n">3</span>
           <span class="fw-head"><span class="role">Adapt</span><span class="sub">LLM as Partner</span></span>
           <span class="fw-def">Model each user's <b>live cognitive + affective state</b> — adapt content · modality · pacing · UI.</span>
@@ -1178,7 +1219,10 @@
         </button>
 
         <!-- loop emblem (right) -->
-        <p class="abs fw-emk rv d2">THE LOOP</p>
+        <svg class="abs fw-point rv d2" viewBox="0 0 1920 1080" aria-hidden="true">
+          <path d="M1440,196 C1496,234 1518,268 1549,299" fill="none" stroke="#8e1b26" stroke-width="3.2" stroke-linecap="round" opacity=".5"/>
+          <polygon points="1560,311 1536,306 1551,286" fill="#8e1b26" opacity=".5"/>
+        </svg>
         <div class="abs fw-emell h rv d2">Humans</div>
         <div class="abs fw-emell l rv d2">LLMs</div>
         <svg class="abs fw-emloop rv d2" viewBox="0 0 1920 1080" aria-hidden="true">
@@ -1199,11 +1243,11 @@
           <span class="bar"></span>
         </div>
         <p class="abs fw-coresub rv d4">— with both directions trustworthy —</p>
-        <span class="pnum">4 / 19</span>
+        <span class="pnum">4 / 20</span>
       </section>
 
       <!-- ================= SD1 · SECTION DIVIDER — EVALUATE ================= -->
-      <section class="slide sd" data-pillar="1" data-title="Pillar 1 · Evaluate" aria-label="Slide 5 of 20">
+      <section class="slide sd" data-pillar="1" data-title="Pillar 1 · Evaluate" aria-label="Slide 5 of 21">
         <div class="sd-map rv" aria-hidden="true">
           <span class="on">1 · Evaluate <small>· Mechanism</small></span><i><b>›</b><b>›</b><b>›</b></i>
           <span>2 · Align <small>· Method</small></span><i><b>›</b><b>›</b><b>›</b></i>
@@ -1214,11 +1258,69 @@
         <p class="sd-role rv d2" data-edit-id="sd1-role"><b>LLM as Judge</b></p>
         <div class="sd-rule rv d2"></div>
         <p class="sd-q rv d3" data-edit-id="sd1-q">Diagnose how humans and LLMs judge — <em>and where they fail alike.</em></p>
-        <span class="pnum">5 / 19</span>
+        <span class="pnum">5 / 20</span>
+      </section>
+
+      <!-- ================= P5.5 · EVALUATE · THE GAP (three open questions) ================= -->
+      <section class="slide" id="slideEvalGap" data-title="1 · Evaluate — the gap: three open questions" aria-label="Slide 6 of 21">
+        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="egp-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Before We Trust the Judge — Three Open Questions</h2>
+        <div class="rule rv" style="top:104px"></div>
+        <p class="abs eg-lead rv d1">Humans and LLM judges now assess <b>health information</b> at scale. Before trusting that judgment, <em>three questions</em> stay open:</p>
+
+        <!-- Q1 · source cues -->
+        <div class="abs eg-card c1 rv d2">
+          <span class="eg-qn">Q1</span>
+          <span class="eg-kick">Source cues<small>surface over substance?</small></span>
+          <h3 class="eg-q">Swayed by the label?</h3>
+          <p class="eg-g">The same health claim, tagged <b>human</b> or <b>AI</b>. Does the source cue move the verdict — for people <em>and</em> for the judge?</p>
+          <div class="eg-vis">
+            <span class="egv1-lab a">Label: Human</span>
+            <span class="egv1-lab b">Label: AI</span>
+            <p class="egv1-txt">&ldquo;Daily walking lowers blood pressure.&rdquo;</p>
+            <span class="egv1-same">identical content</span>
+            <span class="egv1-ask">does trust change?</span>
+          </div>
+          <span class="eg-next"><span class="ar">&rarr;</span> tested next: the label effect</span>
+        </div>
+
+        <!-- Q2 · judgment structure -->
+        <div class="abs eg-card c2 rv d3">
+          <span class="eg-qn">Q2</span>
+          <span class="eg-kick">Judgment structure<small>independent or entangled?</small></span>
+          <h3 class="eg-q">One verdict, or many?</h3>
+          <p class="eg-g">Fluency, accuracy, safety — does the judge weigh them <b>separately</b>, or collapse them into one <em>correlated</em> score?</p>
+          <div class="eg-vis">
+            <div class="egv2-row"><span class="egv2-dim">Fluency</span><span class="egv2-dim">Accuracy</span><span class="egv2-dim">Safety</span></div>
+            <span class="egv2-note">move as one?</span>
+            <p class="egv2-ex">A <b class="f">fluent</b> yet <b class="x">false</b> answer<br>can still be rated <b class="x">safe</b>.</p>
+          </div>
+          <span class="eg-next"><span class="ar">&rarr;</span> tested next: trust vs. truth</span>
+        </div>
+
+        <!-- Q3 · inner mechanism -->
+        <div class="abs eg-card c3 rv d4">
+          <span class="eg-qn">Q3</span>
+          <span class="eg-kick">Inner mechanism<small>same failure inside?</small></span>
+          <h3 class="eg-q">Do they fail alike?</h3>
+          <p class="eg-g">Human <b>gaze</b> and model <b>attention</b> — do both lock onto the same surface cue, and go <em>blind</em> to the content?</p>
+          <div class="eg-vis">
+            <svg class="egv3-arr" viewBox="0 0 500 224" aria-hidden="true">
+              <path d="M78,60 C132,90 186,98 244,108" fill="none" stroke="#7d5fb2" stroke-width="2.4" stroke-dasharray="5 6" opacity=".8"/>
+              <path d="M422,60 C368,90 314,98 256,108" fill="none" stroke="#2f6bb2" stroke-width="2.4" stroke-dasharray="5 6" opacity=".8"/>
+            </svg>
+            <span class="egv3-h">human gaze</span>
+            <span class="egv3-l">model attention</span>
+            <span class="egv3-word"><b>the source label</b></span>
+            <span class="egv3-ask">same cue, same blind spot?</span>
+          </div>
+          <span class="eg-next"><span class="ar">&rarr;</span> tested next: gaze vs. attention</span>
+        </div>
+
+        <span class="pnum">6 / 20</span>
       </section>
 
       <!-- ================= P5 · WORK 1 (live readout) ================= -->
-      <section class="slide" id="slideEval" data-title="1 · Evaluate — LLM-as-a-Judge for health information" aria-label="Slide 6 of 20">
+      <section class="slide" id="slideEval" data-title="1 · Evaluate — LLM-as-a-Judge for health information" aria-label="Slide 7 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p5-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: LLM-as-a-Judge for Health Information</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Domain: Health Information">
@@ -1257,11 +1359,11 @@
         </div>
         <p class="abs takeaway p5-take rv d4" data-edit-id="p5-take"><span class="tl">Takeaways:</span> Humans and LLM-as-a-Judge shift the same way — identical content is trusted more under a human label.</p>
         <p class="refs">[a] Sun et al. Label Effects: Shared Heuristic Reliance in Trust Assessment by Humans and LLM-as-a-Judge (ACL 2026) Core A*<br>[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1</p>
-        <span class="pnum">6 / 19</span>
+        <span class="pnum">7 / 20</span>
       </section>
 
       <!-- ================= P7 · EVALUATE · EMNLP'26 (trust–truth separability) ================= -->
-      <section class="slide" id="slideTT" data-title="1 · Evaluate — when trust meets truth in LLM-as-a-Judge" aria-label="Slide 7 of 20">
+      <section class="slide" id="slideTT" data-title="1 · Evaluate — when trust meets truth in LLM-as-a-Judge" aria-label="Slide 8 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="tt-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Are the Judge’s Signals Independent — or One Correlated Verdict?</h2>
         <div class="rule rv" style="top:104px"></div>
         <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px;font-size:32px;white-space:nowrap" data-edit-id="tt-rq"><span class="tag">Research Question:</span> are LLM judge’s multi-fields judgment <u>independent</u> evidence — or one <u>correlated</u> output?</p>
@@ -1299,11 +1401,11 @@
 
         <p class="abs takeaway rv d4" style="left:46px;top:836px;width:1840px;font-size:29px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> change only <span class="red">who wrote it</span>, and every score moves the same way — <span class="red">one biased verdict, not separate checks</span>.</p>
         <p class="refs">[i] Sun et al. When Trust Meets Truth: Trust–Truth Separability in LLM-as-Judge (EMNLP 2026, to appear) Core A*</p>
-        <span class="pnum">7 / 19</span>
+        <span class="pnum">8 / 20</span>
       </section>
 
       <!-- ================= P6 · MECHANISTIC ================= -->
-      <section class="slide" data-title="Beyond behaviors — mechanistic evaluation for LLMs and humans" aria-label="Slide 8 of 20">
+      <section class="slide" data-title="Beyond behaviors — mechanistic evaluation for LLMs and humans" aria-label="Slide 9 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p6-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Beyond Behaviors - <span class="kw">Mechanistic Evaluation</span> for LLMs and Humans</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs p6-panel h rv d1">
@@ -1329,11 +1431,11 @@
         </div>
         <p class="abs takeaway p6-take rv d4" data-edit-id="p6-take"><span class="tl">Takeaway:</span> human gaze and LLM attention show the <span class="red">similar mechanistic patterns</span> — both over-attend the label cue, not the content.</p>
         <p class="refs">[a] Sun et al. Label Effects (ACL 2026) Core A* — behavioral results, mechanistic analysis across LLM families</p>
-        <span class="pnum">8 / 19</span>
+        <span class="pnum">9 / 20</span>
       </section>
 
       <!-- ================= SD2 · SECTION DIVIDER — ALIGN ================= -->
-      <section class="slide sd" data-pillar="2" data-title="Pillar 2 · Align" aria-label="Slide 9 of 20">
+      <section class="slide sd" data-pillar="2" data-title="Pillar 2 · Align" aria-label="Slide 10 of 21">
         <div class="sd-map rv" aria-hidden="true">
           <span>1 · Evaluate <small>· Mechanism</small></span><i><b>›</b><b>›</b><b>›</b></i>
           <span class="on">2 · Align <small>· Method</small></span><i><b>›</b><b>›</b><b>›</b></i>
@@ -1344,11 +1446,11 @@
         <p class="sd-role rv d2" data-edit-id="sd2-role"><b>LLM as Learner</b></p>
         <div class="sd-rule rv d2"></div>
         <p class="sd-q rv d3" data-edit-id="sd2-q"><em>Selectively</em> learn human expertise — resist the bias <b style="color:var(--c1)">Evaluate</b> exposed.</p>
-        <span class="pnum">9 / 19</span>
+        <span class="pnum">10 / 20</span>
       </section>
 
       <!-- ================= P9 · ALIGN · benchmark creation (COLING'24 → SSAG) ================= -->
-      <section class="slide" id="slideBench" data-title="2 · Align — domain-specific benchmarks" aria-label="Slide 10 of 20">
+      <section class="slide" id="slideBench" data-title="2 · Align — domain-specific benchmarks" aria-label="Slide 11 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="bm-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: Domain-Specific Benchmarks Creation</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Use case: Psychotherapy and mental health">
@@ -1392,11 +1494,11 @@
         </div>
         <p class="abs takeaway rv d4" style="left:46px;top:906px;width:1840px;font-size:30px" data-edit-id="bm-take"><span class="tl">Takeaways:</span> the benchmark makes human expertise <span class="red">measurable</span> — defining what to align LLMs to.</p>
         <p class="refs">[d] Sun et al. Eliciting Motivational Interviewing Skill Codes in Psychotherapy with LLMs: A Bilingual Dataset and Analytical Study (COLING 2024) Core B<br>[c] Sun et al. Script-Strategy Aligned Generation (ACM CSCW 2025) Core A</p>
-        <span class="pnum">10 / 19</span>
+        <span class="pnum">11 / 20</span>
       </section>
 
       <!-- ================= P10 · ALIGN · SSAG (hover-reveal baselines) ================= -->
-      <section class="slide" id="slideSSAG" data-title="2 · Align — supervise models with domain expertise" aria-label="Slide 11 of 20">
+      <section class="slide" id="slideSSAG" data-title="2 · Align — supervise models with domain expertise" aria-label="Slide 12 of 21">
         <h2 class="abs kt p8-t rv" style="left:20px;top:26px" data-edit-id="p8-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: Supervise Models with Domain Expertise, Not Simply Imitate</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d1" style="top:22px;right:26px" role="note" aria-label="Use case: Psychotherapy and mental health">
@@ -1416,11 +1518,11 @@
           <div class="p8-cell"><strong>SSAG (our proposed)</strong><span class="p8-pop">Generation with balanced adherence, controllability, and explainability</span></div>
         </div>
         <p class="refs">[c] Sun et al. Script-Strategy Aligned Generation (ACM CSCW 2025) Core A<br>[e] Sun et al. Rethinking the Alignment of Psychotherapy Dialogue Generation (COLING 2025) Core B</p>
-        <span class="pnum">11 / 19</span>
+        <span class="pnum">12 / 20</span>
       </section>
 
       <!-- ================= P11 · ALIGN · StoryMI agentic simulation ================= -->
-      <section class="slide" id="slideAgent" data-title="2 · Align — multi-agent therapeutic dialogue generation" aria-label="Slide 12 of 20">
+      <section class="slide" id="slideAgent" data-title="2 · Align — multi-agent therapeutic dialogue generation" aria-label="Slide 13 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="ag-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: Multi-Agent Therapeutic Dialogue Generation</h2>
         <div class="rule rv" style="top:104px"></div>
         <p class="abs rq rv d1" style="left:60px;top:150px;width:1800px;font-size:32px;white-space:nowrap" data-edit-id="ag-rq"><span class="tag">Research Question:</span> expert data is scarce — can LLM agents generate it, with domain-specific strategies under control?</p>
@@ -1447,11 +1549,11 @@
         </div>
         <p class="abs takeaway rv d4" style="left:46px;top:912px;width:1840px;font-size:30px" data-edit-id="ag-take"><span class="tl">Takeaways:</span> with strategy control, LLM agents turn scarce expert data into <span class="red">clinically-plausible</span> alignment supervision — at scale.</p>
         <p class="refs">[j] Sun, et al. StoryMI: Steerable Multi-Agent Therapeutic Dialogue Generation. co-authored (ACL 2026)</p>
-        <span class="pnum">12 / 19</span>
+        <span class="pnum">13 / 20</span>
       </section>
 
       <!-- ================= P8 · WORK 2 ================= -->
-      <section class="slide" data-title="2 · Align — how LLMs learn the bad human signals" aria-label="Slide 13 of 20">
+      <section class="slide" data-title="2 · Align — how LLMs learn the bad human signals" aria-label="Slide 14 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p7-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: How LLMs Learn the “Bad” Human Signals</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Domain: Health Information">
@@ -1470,11 +1572,11 @@
         <button type="button" class="abs p7-fig zoomable rv d2" data-image="assets/figs/fig-bias-full.png" aria-label="Open bias installation charts"><img src="assets/figs/fig-bias-full.png" alt="Installed bias for source cue and relational cue across Pre-train, SFT, and DPO"></button>
         <p class="abs takeaway p7-take rv d3" data-edit-id="p7-take"><span class="tl">Takeaways:</span> alignment training installs the human bias — <span class="stage s1">Pre-train · least</span> › <span class="stage s2">SFT · moderate</span> › <span class="stage s3">DPO · significant</span>.</p>
         <p class="refs">[j] Sun et al. Installed by Preference, Not by Exposure: Heuristic Cue Biases in LLM Judges (AAAI 2026, under review) Core A*</p>
-    <span class="pnum">13 / 19</span>
+    <span class="pnum">14 / 20</span>
       </section>
 
       <!-- ================= SD3 · SECTION DIVIDER — ADAPT ================= -->
-      <section class="slide sd" data-pillar="3" data-title="Pillar 3 · Adapt" aria-label="Slide 14 of 20">
+      <section class="slide sd" data-pillar="3" data-title="Pillar 3 · Adapt" aria-label="Slide 15 of 21">
         <div class="sd-map rv" aria-hidden="true">
           <span>1 · Evaluate <small>· Mechanism</small></span><i><b>›</b><b>›</b><b>›</b></i>
           <span>2 · Align <small>· Method</small></span><i><b>›</b><b>›</b><b>›</b></i>
@@ -1485,11 +1587,11 @@
         <p class="sd-role rv d2" data-edit-id="sd3-role"><b>LLM as Partner</b></p>
         <div class="sd-rule rv d2"></div>
         <p class="sd-q rv d3" data-edit-id="sd3-q">Adapt to each user's <em>live state</em> — support the person, not the average.</p>
-        <span class="pnum">14 / 19</span>
+        <span class="pnum">15 / 20</span>
       </section>
 
       <!-- ================= WA · WHY ADAPT — bridge from pillars 1–2 ================= -->
-      <section class="slide" id="slideWhyAdapt" data-title="3 · Adapt — why adapt: closing the loop" aria-label="Slide 15 of 20">
+      <section class="slide" id="slideWhyAdapt" data-title="3 · Adapt — why adapt: closing the loop" aria-label="Slide 16 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="wa-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Why Adapt — From an Aligned Model to the Right Support</h2>
         <div class="rule rv" style="top:104px"></div>
         <p class="abs wa-kick rv d2"><span>EVALUATE ✓ + ALIGN ✓ MAKE THE MODEL RIGHT — BUT</span></p>
@@ -1529,11 +1631,11 @@
           <span>the user responds — and the loop runs again, every turn</span>
         </div>
         <p class="abs wa-take rv d3">support tuned to this user, at this moment — not the average user</p>
-        <span class="pnum">15 / 19</span>
+        <span class="pnum">16 / 20</span>
       </section>
 
       <!-- ================= P12 · ADAPT I — SENSE ================= -->
-      <section class="slide" id="slideSense" data-title="3 · Adapt — sense human signals in real time" aria-label="Slide 16 of 20">
+      <section class="slide" id="slideSense" data-title="3 · Adapt — sense human signals in real time" aria-label="Slide 17 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="sn-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Sense Human Signals in Real Time</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Use case: Health decision support">
@@ -1568,11 +1670,11 @@
 
         <p class="abs sense-note rv d4" data-edit-id="sn-method">behavior shows what people <b>do</b> · physiology reveals what they <b>cannot mask</b> — continuously, not only after the task.</p>
         <p class="refs">[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1</p>
-        <span class="pnum">16 / 19</span>
+        <span class="pnum">17 / 20</span>
       </section>
 
       <!-- ================= P13 · ADAPT II — PREDICT ================= -->
-      <section class="slide" id="slidePredict" data-title="3 · Adapt — predict human states from multimodal signals" aria-label="Slide 17 of 20">
+      <section class="slide" id="slidePredict" data-title="3 · Adapt — predict human states from multimodal signals" aria-label="Slide 18 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="pr-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Predict Human States from Multimodal Signals</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Use case: Health decision support">
@@ -1610,11 +1712,11 @@
         </div>
         <p class="abs takeaway pr-take rv d4" data-edit-id="pr-take"><span class="tl">Takeaways:</span> fused human signals make moment-to-moment states <span class="red">readable</span> — creating the control signal for adaptation.</p>
         <p class="refs">[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1<br>[g] Sun et al. Eyes Can’t Always Tell (ACM UMAP 2026) Core A</p>
-        <span class="pnum">17 / 19</span>
+        <span class="pnum">18 / 20</span>
       </section>
 
       <!-- ================= P14 · ADAPT III — ADAPTIVE SUPPORT ================= -->
-      <section class="slide" id="slideAugment" data-title="3 · Adapt — adaptive support that augments humans" aria-label="Slide 18 of 20">
+      <section class="slide" id="slideAugment" data-title="3 · Adapt — adaptive support that augments humans" aria-label="Slide 19 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="ad-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Adaptive Support that Augments Humans</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs ad-step rv d1" style="left:60px;top:132px"><span class="ad-step-n">3</span><span class="ad-step-t">Adapt</span></div>
@@ -1779,11 +1881,11 @@
 
           <span class="vl-arclab" aria-hidden="true"><span class="vl-support-line"><b>Multimodal support</b><i>text · speech · vision · embodiment</i></span><span class="vl-return-line">support back to the person &mdash; loop closes</span></span>
         </div>
-        <span class="pnum">18 / 19</span>
+        <span class="pnum">19 / 20</span>
       </section>
 
       <!-- ================= P13 · VISION ================= -->
-      <section class="slide" id="slideVision" data-title="Vision — human-grounded, reliable and trustworthy LLM-powered AI systems" aria-label="Slide 19 of 20">
+      <section class="slide" id="slideVision" data-title="Vision — human-grounded, reliable and trustworthy LLM-powered AI systems" aria-label="Slide 20 of 21">
         <h2 class="abs kt rv" style="left:20px;top:24px;font-size:48px" data-edit-id="p10-title">Vision: Toward <span style="color:var(--maroon);font-style:italic">Human-Grounded, Reliable and Trustworthy</span> LLM-powered AI Systems</h2>
         <div class="rule rv" style="top:104px"></div>
         <svg class="abs vs-loop rv d2" viewBox="0 0 1920 1080" aria-hidden="true">
@@ -1800,15 +1902,15 @@
         <div class="abs vs-ell h rv d1"><h3>Humans</h3><p>signals — behavior · cognition · physiology</p></div>
         <div class="abs vs-ell l rv d1"><h3>LLMs</h3><p>reliable judge · aligned learner · adaptive partner</p></div>
         <button type="button" class="abs vs-card v1 rv d2" data-pair-step="1" data-jump="5"><span class="n">1</span><span class="vs-layer">MECHANISM</span><h3><span class="verb">Evaluate</span> <span class="arr">&rarr;</span> <span class="noun">Signal Diagnosis</span></h3><span class="role">LLM as Judge</span></button>
-        <button type="button" class="abs vs-card v2 rv d3" data-pair-step="2" data-jump="9"><span class="n">2</span><span class="vs-layer">METHOD</span><h3><span class="verb">Align</span> <span class="arr">&rarr;</span> <span class="noun">Selective Alignment</span></h3><span class="role">LLM as Learner</span></button>
-        <button type="button" class="abs vs-card v3 rv d4" data-pair-step="3" data-jump="14"><span class="n">3</span><span class="vs-layer">MODELING</span><h3><span class="verb">Adapt</span> <span class="arr">&rarr;</span> <span class="noun">Closed-Loop Augmentation</span></h3><span class="role">LLM as Partner</span></button>
+        <button type="button" class="abs vs-card v2 rv d3" data-pair-step="2" data-jump="10"><span class="n">2</span><span class="vs-layer">METHOD</span><h3><span class="verb">Align</span> <span class="arr">&rarr;</span> <span class="noun">Selective Alignment</span></h3><span class="role">LLM as Learner</span></button>
+        <button type="button" class="abs vs-card v3 rv d4" data-pair-step="3" data-jump="15"><span class="n">3</span><span class="vs-layer">MODELING</span><h3><span class="verb">Adapt</span> <span class="arr">&rarr;</span> <span class="noun">Closed-Loop Augmentation</span></h3><span class="role">LLM as Partner</span></button>
         <p class="abs vs-lanek bot rv d3" data-edit-id="vs-lanek-bot">from LLMs back to humans · <b>provide the right support</b></p>
         <button type="button" class="abs vs-impact" id="impactTrigger" aria-label="Open impact overlay" style="right:130px;bottom:14px;left:auto;top:auto">Impact ↗</button>
-        <span class="pnum">19 / 19</span>
+        <span class="pnum">20 / 20</span>
       </section>
 
       <!-- ================= P15 · THANKS ================= -->
-      <section class="slide" data-title="Thank you" aria-label="Slide 20 of 20">
+      <section class="slide" data-title="Thank you" aria-label="Slide 21 of 21">
         <img class="abs p1-logos rv" src="assets/figs/logos-strip.png" alt="NII · University of Amsterdam · CWI">
         <p class="abs p11-text rv d1" data-edit-id="p11-text">Thank you so much<br>for your time and patience!</p>
       </section>
