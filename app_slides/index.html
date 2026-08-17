@@ -378,10 +378,6 @@
     .sd[data-pillar="3"] .sd-badge { background: radial-gradient(120% 120% at 34% 24%, #e6ab3f, #b47a0b); box-shadow: 0 18px 40px rgba(217,147,13,.36), 0 0 0 13px rgba(217,147,13,.08), inset 0 2px 7px rgba(255,255,255,.4); }
     .active .sd-badge { animation: sdBadge 5.6s ease-in-out infinite; }
     @keyframes sdBadge { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-    .sd-ghost { position: absolute; left: 0; right: 0; top: 300px; text-align: center; font: 900 500px/1 var(--serif); letter-spacing: -.04em; z-index: 0; pointer-events: none; }
-    .sd[data-pillar="1"] .sd-ghost { color: rgba(139,95,199,.045); }
-    .sd[data-pillar="2"] .sd-ghost { color: rgba(47,107,178,.045); }
-    .sd[data-pillar="3"] .sd-ghost { color: rgba(217,147,13,.05); }
     .sd-title { position: absolute; left: 0; right: 0; top: 526px; text-align: center; font: 700 118px/1.08 var(--serif); color: #000; z-index: 1; }
     .sd-title em { font-style: normal; }
     .sd[data-pillar="1"] .sd-title em { color: var(--c1); }
@@ -720,6 +716,11 @@
     .wa-sub { left: 0; right: 0; top: 322px; text-align: center; font: italic 600 22px/1.3 var(--sans); color: #555; }
     .wa-chips { left: 0; right: 0; top: 378px; display: flex; justify-content: center; gap: 13px; }
     .wa-chips span { padding: 9px 18px; border-radius: 999px; border: 1.5px solid rgba(142,27,38,.25); background: linear-gradient(180deg,#fff,#fbf2f3); font: italic 700 20px/1 var(--sans); color: var(--maroon); }
+    .wa-states { left: 0; right: 0; top: 336px; display: flex; justify-content: center; align-items: center; gap: 13px; }
+    .wa-states-lbl { font: italic 600 23px/1.3 var(--sans); color: #555; margin-right: 5px; }
+    .wa-chip { padding: 8px 18px; border-radius: 999px; border: 1.5px solid rgba(142,27,38,.25); background: linear-gradient(180deg,#fff,#fbf2f3); font: italic 700 20px/1 var(--sans); color: var(--maroon); }
+    .adapt-loc { left: 1632px; top: 118px; width: 232px; height: 130px; }
+    .adapt-loc svg { width: 100%; height: 100%; display: block; }
     .wa-anskick { left: 0; right: 0; top: 546px; text-align: center; font: 800 16px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #b47a0b; }
     .wa-node { position: absolute; top: 538px; width: 400px; height: 140px; border: 1.8px solid rgba(217,147,13,.45); border-radius: 16px; background: linear-gradient(180deg,#fff,#fffdf6); box-shadow: 0 8px 20px rgba(217,147,13,.10), inset 0 1px 0 #fff; text-align: center; }
     .wa-node.n1 { left: 140px; } .wa-node.n2 { left: 760px; } .wa-node.n3 { left: 1380px; }
@@ -1310,7 +1311,6 @@
           <span>2 · Align <small>· Method</small></span><i><b>›</b><b>›</b><b>›</b></i>
           <span>3 · Adapt <small>· Modeling</small></span>
         </div>
-        <span class="sd-ghost rv" aria-hidden="true">1</span>
         <span class="sd-badge rv d1" aria-hidden="true">1</span>
         <h2 class="sd-title rv d1"><em>Evaluate</em></h2>
         <p class="sd-role rv d2" data-edit-id="sd1-role"><b>LLM as Judge</b></p>
@@ -1488,7 +1488,6 @@
           <span class="on">2 · Align <small>· Method</small></span><i><b>›</b><b>›</b><b>›</b></i>
           <span>3 · Adapt <small>· Modeling</small></span>
         </div>
-        <span class="sd-ghost rv" aria-hidden="true">2</span>
         <span class="sd-badge rv d1" aria-hidden="true">2</span>
         <h2 class="sd-title rv d1"><em>Align</em></h2>
         <p class="sd-role rv d2" data-edit-id="sd2-role"><b>LLM as Learner</b></p>
@@ -1682,7 +1681,6 @@
           <span>2 · Align <small>· Method</small></span><i><b>›</b><b>›</b><b>›</b></i>
           <span class="on">3 · Adapt <small>· Modeling</small></span>
         </div>
-        <span class="sd-ghost rv" aria-hidden="true">3</span>
         <span class="sd-badge rv d1" aria-hidden="true">3</span>
         <h2 class="sd-title rv d1"><em>Adapt</em></h2>
         <p class="sd-role rv d2" data-edit-id="sd3-role"><b>LLM as Partner</b></p>
@@ -1693,6 +1691,22 @@
 
       <!-- ================= WA · WHY ADAPT — bridge from pillars 1–2 ================= -->
                         <section class="slide" id="slideWhyAdapt" data-title="3 · Adapt — why adapt: closing the loop" aria-label="Slide 10 of 12">
+        <svg class="abs adapt-loc rv d1" viewBox="0 0 200 112" aria-hidden="true">
+          <defs>
+            <radialGradient id="locH3" cx="34%" cy="26%" r="82%"><stop offset="0" stop-color="#e4d0f6"/><stop offset="1" stop-color="#b98ce2"/></radialGradient>
+            <radialGradient id="locL3" cx="34%" cy="26%" r="82%"><stop offset="0" stop-color="#bcd5f3"/><stop offset="1" stop-color="#6f97d6"/></radialGradient>
+            <linearGradient id="adaptArr" x1="130" y1="80" x2="70" y2="80" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f6bb2"/><stop offset="1" stop-color="#8b5fc7"/></linearGradient>
+          </defs>
+          <text x="100" y="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="12" letter-spacing="2" fill="#b47a0b">ADAPT</text>
+          <path d="M92,22 Q74,36 61,52" fill="none" stroke="#d9930d" stroke-width="1.6" stroke-dasharray="2.5 4" stroke-linecap="round" opacity=".55"/>
+          <path d="M108,22 Q126,36 139,52" fill="none" stroke="#d9930d" stroke-width="1.6" stroke-dasharray="2.5 4" stroke-linecap="round" opacity=".55"/>
+          <circle cx="40" cy="80" r="28" fill="url(#locH3)"/>
+          <circle cx="160" cy="80" r="28" fill="url(#locL3)"/>
+          <text x="40" y="85" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="14" fill="#241c33">Human</text>
+          <text x="160" y="85" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="14" fill="#241c33">LLM</text>
+          <path d="M128,80 H82" fill="none" stroke="url(#adaptArr)" stroke-width="3.8" stroke-linecap="round"/>
+          <polygon points="71,80 83,74.5 83,85.5" fill="#8b5fc7"/>
+        </svg>
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="wa-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Why Adapt — From an Aligned Model to the Right Support</h2>
         <div class="rule rv" style="top:104px"></div>
 
@@ -1700,8 +1714,10 @@
           <span class="wa-eyebrow">Evaluate &#10003; + Align &#10003; make the model right &mdash; but</span>
           <span class="phrase">a &ldquo;good&rdquo; model is still <span class="hl">one-size-fits-all</span></span>
         </div>
-        <p class="abs wa-sub rv d2">real users differ — and their latent states change minute to minute:</p>
-        <div class="abs wa-chips rv d2" aria-label="Latent states that keep changing"><span>cognitive load ↑</span><span>trust ↓</span><span>confidence ~</span></div>
+        <div class="abs wa-states rv d2" aria-label="Latent states that keep changing">
+          <span class="wa-states-lbl">but real users differ &mdash; their state shifts minute to minute:</span>
+          <span class="wa-chip">load &#8593;</span><span class="wa-chip">trust &#8595;</span><span class="wa-chip">confidence ~</span>
+        </div>
 
         <svg class="abs wa-flow rv d3" viewBox="0 0 1920 1080" style="left:0;top:-72px;width:1920px;height:1080px;pointer-events:none" aria-hidden="true">
           <defs>
