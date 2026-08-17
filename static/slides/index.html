@@ -708,21 +708,42 @@
     .ml-chips { display: flex; flex-direction: column; align-items: stretch; gap: 7px; width: 100%; }
     .ml-chips span { padding: 7px 10px; border-radius: 9px; background: #f9f2f2; border: 1px solid #e3cfd1; font: 700 14px/1.15 var(--sans); color: #8a5a5f; text-align: center; }
     .pr-panel { position: absolute; border: 2.5px solid #c9c9c9; border-radius: 20px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); padding: 18px 20px; }
-    .pr-stack { height: 100%; display: grid; grid-template-rows: repeat(3, min-content); align-content: space-between; }
+    .pr-stack { height: calc(100% - 52px); display: grid; grid-template-rows: repeat(3, min-content); align-content: space-between; }
     .pr-box { border: 1.5px solid #e8e0e1; border-radius: 13px; background: #fdfcfc; padding: 16px 18px; }
     .pr-k { display: block; font: 800 13px/1.15 var(--sans); letter-spacing: .11em; text-transform: uppercase; color: #bb6b71; }
     .pr-bars { margin-top: 14px; display: grid; gap: 18px; }
-    .pr-row { display: grid; grid-template-columns: 205px 1fr 84px; align-items: center; gap: 13px; }
+    .pr-row { display: grid; grid-template-columns: 205px 1fr 128px; align-items: center; gap: 13px; }
     .pr-name { font: 700 19px/1.1 var(--sans); color: #111; }
     .pr-track { height: 13px; border-radius: 999px; background: #ece8e9; overflow: hidden; }
     .pr-track i { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg,#dca6ab,var(--maroon)); transition: width 950ms var(--ease); }
     .active .pr-track i { width: var(--v); transition-delay: var(--delay); }
-    .pr-val { font: 800 16px/1 var(--sans); color: var(--maroon); text-align: right; }
+    .pr-val { font: 800 15px/1 var(--sans); color: var(--maroon); text-align: right; }
     .pr-compact { display: grid; grid-template-columns: 180px 195px 1fr; align-items: center; gap: 15px; }
     .pr-compact .pr-name { font-size: 20px; }
     .pr-res { justify-self: end; font: 700 16.5px/1.15 var(--sans); color: var(--maroon); white-space: nowrap; }
     .pr-res em { color: #c98a90; font-style: normal; font-weight: 800; }
     .pr-take { left: 46px; top: 818px; width: 1840px; text-align: center; font-size: 28px; }
+    /* fusion upgrade — signals ⊕ user characteristics stabilize the prediction */
+    .pr-sigc .chip { padding: 7px 14px; }
+    .pr-sigc .chip .cl b { font-size: 18px; } .pr-sigc .chip .cl small { font-size: 12.5px; }
+    .pr-fuse { left: 318px; top: 584px; width: 34px; height: 34px; border-radius: 50%; background: #fff; border: 2px solid var(--maroon); color: var(--maroon); display: flex; align-items: center; justify-content: center; font: 800 20px/1 var(--sans); box-shadow: 0 6px 14px rgba(142,27,38,.16); z-index: 3; }
+    .pr-fuse::before, .pr-fuse::after { content: ""; position: absolute; left: 50%; width: 0; border-left: 2px dashed rgba(142,27,38,.4); }
+    .pr-fuse::before { top: -13px; height: 12px; } .pr-fuse::after { bottom: -13px; height: 12px; }
+    .pr-user { left: 160px; top: 630px; width: 350px; height: 100px; border: 2.5px solid rgba(142,27,38,.35); border-radius: 20px; background: linear-gradient(180deg,#fff,#fdf6f6); box-shadow: 0 10px 26px rgba(142,27,38,.08); padding: 17px 24px; }
+    .pr-user h4 { font: 800 15px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #bb6b71; }
+    .pr-user-chips { margin-top: 12px; display: flex; gap: 8px; }
+    .pr-user-chips span { padding: 7px 13px; border-radius: 999px; background: rgba(142,27,38,.07); border: 1.4px solid rgba(142,27,38,.25); font: 700 14.5px/1 var(--sans); color: #8e1b26; white-space: nowrap; }
+    .pr-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 13px; }
+    .pr-toggle { display: inline-flex; border: 1.5px solid rgba(142,27,38,.35); border-radius: 999px; overflow: hidden; }
+    .pr-toggle button { appearance: none; -webkit-appearance: none; border: none; background: #fff; padding: 10px 17px; font: 800 14.5px/1 var(--sans); color: #8e1b26; cursor: pointer; transition: background .25s, color .25s; }
+    .pr-toggle button.active { background: var(--maroon); color: #fff; }
+    .pr-stab { font: 800 16px/1 var(--sans); color: #b0727a; }
+    .pr-stab .v-fused { display: none; color: #2e7d46; }
+    .pr-panel.fused .pr-stab .v-solo { display: none; } .pr-panel.fused .pr-stab .v-fused { display: inline; }
+    .pr-val .v-fused { display: none; } .pr-panel.fused .pr-val .v-solo { display: none; } .pr-panel.fused .pr-val .v-fused { display: inline; }
+    @keyframes prWobble { 0%, 100% { width: var(--v); opacity: 1; } 50% { width: calc(var(--v) - 8%); opacity: .82; } }
+    .active .pr-panel:not(.fused) .pr-track i { animation: prWobble 2.1s ease-in-out calc(var(--delay) + 1100ms) infinite; }
+    .active .pr-panel.fused .pr-track i { width: var(--vf); animation: none; background: linear-gradient(90deg,#b23842,var(--maroon)); }
 
     /* slide-17 step marker — this slide = step 3 (Adapt), matching slide 16's red badges */
     .ad-step { display: flex; align-items: center; gap: 16px; }
@@ -1892,33 +1913,42 @@
         <p class="abs rq rv d1" style="left:60px;top:198px;width:1800px;font-size:29px" data-edit-id="pr-rq"><span class="tag">Research Question:</span> can the fused signals predict a user’s hidden states — load, trust, confidence — in real time?</p>
         <p class="abs rv d1" style="left:60px;top:256px;width:1800px;text-align:center;font:italic 600 21px/1.3 var(--sans);color:#8a8a8a" data-edit-id="pr-method">ML models trained per state · validated against self-reports</p>
 
-        <div class="abs sb-sig rv d1" style="left:160px;top:366px;height:344px" aria-label="Multimodal signals">
+        <div class="abs sb-sig pr-sigc rv d1" style="left:160px;top:300px;height:272px" aria-label="Multimodal signals">
           <h4>Multimodal signals</h4>
           <div class="chip" style="margin-top:15px"><i></i><span class="cl"><b>Gaze behaviors</b><small>fixations · saccades · dwell</small></span></div>
           <div class="chip" style="margin-top:12px"><i></i><span class="cl"><b>Pupil</b><small>pupil diameter</small></span></div>
           <div class="chip" style="margin-top:12px"><i></i><span class="cl"><b>ECG</b><small>BPM · HRV (RMSSD)</small></span></div>
           <div class="chip" style="margin-top:12px"><i></i><span class="cl"><b>EDA</b><small>skin conductance</small></span></div>
         </div>
-        <div class="abs sb-arrow rv d2" style="left:550px;top:418px;width:170px" aria-hidden="true">
+        <div class="abs pr-fuse rv d2" aria-hidden="true">&#8853;</div>
+        <div class="abs pr-user rv d2" aria-label="User characteristics">
+          <h4>User characteristics</h4>
+          <div class="pr-user-chips"><span>traits</span><span>demographics</span><span>AI literacy</span></div>
+        </div>
+        <div class="abs sb-arrow rv d2" style="left:550px;top:430px;width:170px" aria-hidden="true">
           <span class="lab">machine learning</span>
           <svg viewBox="0 0 150 30"><line x1="4" y1="15" x2="120" y2="15" stroke="#8e1b26" stroke-width="3.4" stroke-dasharray="7 7"/><polygon points="120,4 146,15 120,26" fill="#8e1b26"/></svg>
           <div class="ml-chips"><span>Random Forest</span><span>XGBoost</span><span>SVM · MLP</span><span>Linear / Logistic Regression</span></div>
         </div>
-        <div class="abs pr-panel rv d2" style="left:780px;top:366px;width:980px;height:344px" aria-label="States predicted from fused multimodal signals">
+        <div class="abs pr-panel rv d2" id="prPanel" style="left:780px;top:300px;width:980px;height:430px" aria-label="States predicted from multimodal signals, optionally fused with user characteristics">
+          <div class="pr-head">
+            <div class="pr-toggle" id="prToggle" role="group" aria-label="Prediction input mode"><button type="button" class="active" data-mode="solo">signals only</button><button type="button" data-mode="fused">&#8853; + user characteristics</button></div>
+            <span class="pr-stab"><span class="v-solo">prediction fluctuates ~</span><span class="v-fused">robust &#10003;</span></span>
+          </div>
           <div class="pr-stack">
             <div class="pr-box">
               <span class="pr-k">Cognitive states · model output</span>
               <div class="pr-bars">
-                <div class="pr-row"><span class="pr-name">Cognitive load</span><span class="pr-track"><i style="--v:74%;--delay:450ms"></i></span><span class="pr-val">high</span></div>
-                <div class="pr-row"><span class="pr-name">Trust</span><span class="pr-track"><i style="--v:58%;--delay:650ms"></i></span><span class="pr-val">moderate</span></div>
-                <div class="pr-row"><span class="pr-name">Decision confidence</span><span class="pr-track"><i style="--v:63%;--delay:850ms"></i></span><span class="pr-val">medium</span></div>
+                <div class="pr-row"><span class="pr-name">Cognitive load</span><span class="pr-track"><i style="--v:74%;--vf:86%;--delay:450ms"></i></span><span class="pr-val"><span class="v-solo">high &middot; noisy</span><span class="v-fused">high &middot; stable</span></span></div>
+                <div class="pr-row"><span class="pr-name">Trust</span><span class="pr-track"><i style="--v:58%;--vf:72%;--delay:650ms"></i></span><span class="pr-val"><span class="v-solo">moderate &middot; noisy</span><span class="v-fused">moderate &middot; stable</span></span></div>
+                <div class="pr-row"><span class="pr-name">Decision confidence</span><span class="pr-track"><i style="--v:63%;--vf:78%;--delay:850ms"></i></span><span class="pr-val"><span class="v-solo">medium &middot; noisy</span><span class="v-fused">medium &middot; stable</span></span></div>
               </div>
             </div>
             <div class="pr-box"><div class="pr-compact"><span class="pr-k">Affective states</span><span class="pr-name">Arousal</span><span class="pr-res"><em>→</em> correlated with physiology</span></div></div>
             <div class="pr-box"><div class="pr-compact"><span class="pr-k">Behaviors</span><span class="pr-name">Source perception</span><span class="pr-res"><em>→</em> gaze ↔ trust: highly correlated</span></div></div>
           </div>
         </div>
-        <p class="abs takeaway pr-take rv d4" data-edit-id="pr-take"><span class="tl">Takeaways:</span> fused human signals make moment-to-moment states <span class="red">readable</span> — creating the control signal for adaptation.</p>
+        <p class="abs takeaway pr-take rv d4" data-edit-id="pr-take"><span class="tl">Takeaways:</span> signals alone <span class="red">fluctuate</span> — fused with <b>user characteristics</b>, states become <span class="red">readable &amp; stable</span> — the control signal for adaptation.</p>
         <p class="refs">[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1<br>[g] Sun et al. Eyes Can’t Always Tell (ACM UMAP 2026) Core A</p>
         <!-- detail modal — no deck page number -->
       </section>
@@ -2258,6 +2288,7 @@
         if (id === 'slideEval' && typeof p5Demo === 'function') p5Demo();
         if (id === 'slideTT' && typeof ttDemo === 'function') ttDemo();
         if (id === 'slideSSAG' && typeof p8Demo === 'function') p8Demo();
+        if (id === 'slidePredict' && typeof prDemo === 'function') prDemo();
         const c = document.getElementById('detailClose'); if (c) c.focus();
       },
       close() {
@@ -2310,6 +2341,14 @@
     }));
     applyReadout('human');
     let p8DemoPlayed = false;
+    /* Predict modal — auto-demo the signals-only -> fused switch once; toggle stays clickable. */
+    function prDemo() {
+      const p = document.getElementById('prPanel'); if (!p) return;
+      const tg = document.getElementById('prToggle');
+      const set = m => { p.classList.toggle('fused', m === 'fused'); tg.querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.mode === m)); };
+      set('solo'); clearTimeout(prDemo._t); prDemo._t = setTimeout(() => set('fused'), 2000);
+      if (!prDemo._wired) { prDemo._wired = true; tg.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { clearTimeout(prDemo._t); set(b.dataset.mode); })); }
+    }
     function p8Demo() {
       if (p8DemoPlayed) return;
       p8DemoPlayed = true;
