@@ -358,7 +358,7 @@
        pillar-colored badge, big serif title, one guiding question.
        ================================================================ */
     .sd-map { position: absolute; left: 0; right: 0; top: 250px; display: flex; justify-content: center; align-items: center; gap: 22px; }
-    .sd-map span { padding: 12px 26px; border-radius: 999px; border: 2px solid #dcdcdc; background: #fff; color: #a5a5a5; font: 700 22px/1 var(--sans); }
+    .sd-map span { padding: 12px 26px; border-radius: 999px; border: 1.6px solid #e4e2ea; background: #fff; color: #9a95a6; font: 700 22px/1 var(--sans); box-shadow: 0 3px 10px rgba(40,30,60,.05); }
     .sd-map i { display: flex; gap: 1px; font: 700 26px/1 var(--sans); color: #cfcfcf; font-style: normal; }
     .sd-map i b { opacity: .3; }
     .active .sd-map i b { animation: chevWave 1.9s ease-in-out infinite; }
@@ -370,12 +370,19 @@
     .sd[data-pillar="2"] .sd-map span.on { background: var(--c2); border-color: var(--c2); box-shadow: 0 8px 22px rgba(47,107,178,.28); }
     .sd[data-pillar="3"] .sd-map span.on { background: var(--c3); border-color: var(--c3); box-shadow: 0 8px 22px rgba(217,147,13,.28); }
     .sd-badge { position: absolute; left: 0; right: 0; top: 384px; margin: 0 auto; width: 108px; height: 108px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font: 700 54px/1 var(--serif); color: #fff; }
-    .sd[data-pillar="1"] .sd-badge { background: var(--c1); box-shadow: 0 16px 36px rgba(139,95,199,.34); }
-    .sd[data-pillar="2"] .sd-badge { background: var(--c2); box-shadow: 0 16px 36px rgba(47,107,178,.34); }
-    .sd[data-pillar="3"] .sd-badge { background: var(--c3); box-shadow: 0 16px 36px rgba(217,147,13,.34); }
+    .sd[data-pillar="1"] { background: radial-gradient(1150px 680px at 50% 30%, rgba(139,95,199,.07), #ffffff 60%); }
+    .sd[data-pillar="1"] .sd-badge { background: radial-gradient(120% 120% at 34% 24%, #a985d9, #6d3f96); box-shadow: 0 18px 40px rgba(139,95,199,.38), 0 0 0 13px rgba(139,95,199,.07), inset 0 2px 7px rgba(255,255,255,.35); }
+    .sd[data-pillar="2"] { background: radial-gradient(1150px 680px at 50% 30%, rgba(47,107,178,.07), #ffffff 60%); }
+    .sd[data-pillar="2"] .sd-badge { background: radial-gradient(120% 120% at 34% 24%, #4f8bce, #24568f); box-shadow: 0 18px 40px rgba(47,107,178,.38), 0 0 0 13px rgba(47,107,178,.07), inset 0 2px 7px rgba(255,255,255,.35); }
+    .sd[data-pillar="3"] { background: radial-gradient(1150px 680px at 50% 30%, rgba(217,147,13,.08), #ffffff 60%); }
+    .sd[data-pillar="3"] .sd-badge { background: radial-gradient(120% 120% at 34% 24%, #e6ab3f, #b47a0b); box-shadow: 0 18px 40px rgba(217,147,13,.36), 0 0 0 13px rgba(217,147,13,.08), inset 0 2px 7px rgba(255,255,255,.4); }
     .active .sd-badge { animation: sdBadge 5.6s ease-in-out infinite; }
     @keyframes sdBadge { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-    .sd-title { position: absolute; left: 0; right: 0; top: 526px; text-align: center; font: 700 118px/1.08 var(--serif); color: #000; }
+    .sd-ghost { position: absolute; left: 0; right: 0; top: 300px; text-align: center; font: 900 500px/1 var(--serif); letter-spacing: -.04em; z-index: 0; pointer-events: none; }
+    .sd[data-pillar="1"] .sd-ghost { color: rgba(139,95,199,.045); }
+    .sd[data-pillar="2"] .sd-ghost { color: rgba(47,107,178,.045); }
+    .sd[data-pillar="3"] .sd-ghost { color: rgba(217,147,13,.05); }
+    .sd-title { position: absolute; left: 0; right: 0; top: 526px; text-align: center; font: 700 118px/1.08 var(--serif); color: #000; z-index: 1; }
     .sd-title em { font-style: normal; }
     .sd[data-pillar="1"] .sd-title em { color: var(--c1); }
     .sd[data-pillar="2"] .sd-title em { color: var(--c2); }
@@ -398,43 +405,6 @@
        a similar/different synthesis that hands off to Align. Vertically
        centered and airy; detail lives inside each card's modal.
        ================================================================ */
-    /* Theme per hub (Evaluate purple · Align blue · Adapt gold) */
-    .hub-eval  { --hue: #8b5fc7; --hue-d: #6d3f96; --hue-rgb: 139,95,199; --next: #2e56a4; }
-    .hub-align { --hue: #2f6bb2; --hue-d: #24568f; --hue-rgb: 47,107,178; --next: #a9730a; }
-    .hub-adapt { --hue: #d9930d; --hue-d: #a9730a; --hue-rgb: 217,147,13; --next: #8e1b26; }
-
-    .ev-why { left: 150px; top: 194px; width: 1620px; height: 100px; border-radius: 18px; background: linear-gradient(180deg, rgba(var(--hue-rgb),.045), rgba(var(--hue-rgb),.10)); border: 1.6px solid rgba(var(--hue-rgb),.22); box-shadow: 0 10px 26px rgba(40,30,60,.07); display: flex; align-items: center; justify-content: center; gap: 24px; padding: 0 40px; }
-    .ev-why-k { flex: none; padding: 11px 24px; border-radius: 999px; background: linear-gradient(160deg, var(--hue), var(--hue-d)); color: #fff; font: 800 21px/1 var(--sans); letter-spacing: .04em; box-shadow: 0 8px 18px rgba(var(--hue-rgb),.30); }
-    .ev-why-tx { font: 600 25px/1.42 var(--sans); color: #2f2a38; text-align: center; }
-    .ev-why-tx b { color: var(--hue-d); } .ev-why-tx em { color: var(--maroon); font-style: italic; font-weight: 700; }
-
-    .ev-card { position: absolute; top: 384px; width: 556px; height: 332px; padding: 0; border-radius: 22px; background: #fff; border: 1.8px solid rgba(var(--hue-rgb),.18); border-top: 5px solid var(--hue); box-shadow: 0 18px 44px rgba(40,30,60,.10); text-align: left; cursor: pointer; font-family: var(--sans); overflow: hidden; transition: transform .28s var(--ease), box-shadow .28s, border-color .28s; }
-    .ev-card.c1 { left: 80px; } .ev-card.c2 { left: 682px; } .ev-card.c3 { left: 1284px; }
-    .ev-card:hover { transform: translateY(-8px); box-shadow: 0 30px 62px rgba(var(--hue-rgb),.24); border-color: rgba(var(--hue-rgb),.55); }
-    .ev-card:focus-visible { outline: 3px solid var(--hue); outline-offset: 3px; }
-    .ev-ico { position: absolute; left: 34px; top: 36px; width: 62px; height: 62px; border-radius: 18px; background: linear-gradient(160deg, rgba(var(--hue-rgb),.16), rgba(var(--hue-rgb),.07)); color: var(--hue); display: flex; align-items: center; justify-content: center; }
-    .ev-ico svg { width: 32px; height: 32px; display: block; }
-    .ev-eyebrow { position: absolute; left: 116px; top: 58px; font: 800 16px/1.3 var(--sans); letter-spacing: .10em; text-transform: uppercase; color: var(--hue); }
-    .ev-q { position: absolute; left: 34px; right: 34px; top: 138px; font: 800 28px/1.26 var(--sans); color: #1a1526; }
-    .ev-q em { font-style: normal; color: var(--hue-d); }
-    .ev-go { position: absolute; left: 34px; bottom: 26px; display: inline-flex; align-items: center; gap: 8px; font: 800 16.5px/1 var(--sans); color: var(--hue-d); opacity: .8; }
-    .ev-card:hover .ev-go { opacity: 1; }
-
-    /* 4-column variant (Align hub: Motivation · Benchmark · Approach · Scaling) */
-    .hub4 .ev-card { width: 428px; height: 332px; }
-    .hub4 .ev-card.c1 { left: 60px; } .hub4 .ev-card.c2 { left: 512px; } .hub4 .ev-card.c3 { left: 964px; } .hub4 .ev-card.c4 { left: 1416px; }
-    .hub4 .ev-ico { left: 28px; top: 32px; width: 54px; height: 54px; border-radius: 15px; }
-    .hub4 .ev-ico svg { width: 28px; height: 28px; }
-    .hub4 .ev-eyebrow { left: 94px; top: 50px; font-size: 14px; letter-spacing: .06em; }
-    .hub4 .ev-q { left: 28px; right: 28px; top: 50%; transform: translateY(-46%); font-size: 24px; }
-    .hub4 .ev-go { left: 28px; font-size: 15.5px; }
-
-    .ev-syn { left: 80px; top: 808px; width: 1760px; height: 124px; border-radius: 18px; background: linear-gradient(100deg, rgba(var(--hue-rgb),.10) 0%, rgba(var(--hue-rgb),.05) 60%, rgba(40,30,60,.03) 100%); border: 1.6px solid rgba(var(--hue-rgb),.22); box-shadow: 0 12px 30px rgba(40,30,60,.09); display: flex; align-items: center; gap: 30px; padding: 0 36px; }
-    .ev-syn-tx { flex: 1; font: 700 25px/1.36 var(--sans); color: #241c33; }
-    .ev-syn-tx .same { color: #2e7d46; } .ev-syn-tx .diff { color: var(--maroon); } .ev-syn-tx b { color: var(--hue-d); }
-    .ev-syn-next { flex: none; max-width: 620px; border-left: 2px solid rgba(var(--hue-rgb),.28); padding-left: 30px; font: 700 20px/1.34 var(--sans); color: var(--next); }
-    .ev-syn-next b { color: var(--next); } .ev-syn-next .ar { font-weight: 900; font-size: 24px; vertical-align: -3px; margin-left: 4px; }
-
     /* ================================================================
        EVALUATE HUB — "the mirror": humans vs LLMs across three probes.
        The rhythm ALIKE · UNLIKE · ALIKE (green · maroon · green) is the
@@ -460,7 +430,7 @@
     .mir-aha { left: 200px; top: 872px; width: 1520px; text-align: center; font: italic 700 31px/1.3 var(--serif); color: #1a1526; }
     .mir-aha .g { color: #2e7d46; font-style: normal; } .mir-aha .m { color: var(--maroon); font-style: normal; }
     /* small loop locator — Evaluate = the eye watching both Humans & LLMs */
-    .eval-loc { left: 1636px; top: 110px; width: 224px; height: 138px; }
+    .eval-loc { left: 1632px; top: 118px; width: 232px; height: 130px; }
     .eval-loc svg { width: 100%; height: 100%; display: block; }
 
     /* ================================================================
@@ -493,7 +463,7 @@
     .cap-ico { width: 34px; height: 34px; margin-bottom: 2px; }
     .fun-step .st-ic { position: absolute; left: 50%; top: 96px; transform: translateX(-50%); width: 44px; height: 44px; color: #2f6bb2; }
     .fun-step .st-ic svg { width: 44px; height: 44px; display: block; }
-    .align-loc { left: 1636px; top: 110px; width: 224px; height: 138px; }
+    .align-loc { left: 1632px; top: 118px; width: 232px; height: 130px; }
     .align-loc svg, .eval-loc svg { width: 100%; height: 100%; display: block; }
 
     /* ================================================================
@@ -1340,6 +1310,7 @@
           <span>2 · Align <small>· Method</small></span><i><b>›</b><b>›</b><b>›</b></i>
           <span>3 · Adapt <small>· Modeling</small></span>
         </div>
+        <span class="sd-ghost rv" aria-hidden="true">1</span>
         <span class="sd-badge rv d1" aria-hidden="true">1</span>
         <h2 class="sd-title rv d1"><em>Evaluate</em></h2>
         <p class="sd-role rv d2" data-edit-id="sd1-role"><b>LLM as Judge</b></p>
@@ -1349,25 +1320,22 @@
       </section>
 
       <!-- ================= P5.5 · EVALUATE · SECTION HUB (why · what · how · result; cards jump to detail) ================= -->
-            <section class="slide hub-eval" id="slideEvalGap" data-title="1 · Evaluate — the mirror: humans vs LLMs across three probes" aria-label="Slide 6 of 12">
+            <section class="slide" id="slideEvalGap" data-title="1 · Evaluate — the mirror: humans vs LLMs across three probes" aria-label="Slide 6 of 12">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="egp-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Can We Trust the Judge — Humans and LLMs?</h2>
         <div class="rule rv" style="top:104px"></div>
 
-        <svg class="abs eval-loc rv d1" viewBox="0 0 224 138" aria-hidden="true">
+        <svg class="abs eval-loc rv d1" viewBox="0 0 200 112" aria-hidden="true">
           <defs>
-            <radialGradient id="locH" cx="34%" cy="28%" r="80%"><stop offset="0" stop-color="#e2cdf5"/><stop offset="1" stop-color="#b98ce2"/></radialGradient>
-            <radialGradient id="locL" cx="34%" cy="28%" r="80%"><stop offset="0" stop-color="#b6d0f1"/><stop offset="1" stop-color="#6f97d6"/></radialGradient>
+            <radialGradient id="locH" cx="34%" cy="26%" r="82%"><stop offset="0" stop-color="#e4d0f6"/><stop offset="1" stop-color="#b98ce2"/></radialGradient>
+            <radialGradient id="locL" cx="34%" cy="26%" r="82%"><stop offset="0" stop-color="#bcd5f3"/><stop offset="1" stop-color="#6f97d6"/></radialGradient>
           </defs>
-          <text x="112" y="13" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="12" letter-spacing="1.6" fill="#8b5fc7">EVALUATE</text>
-          <circle cx="52" cy="100" r="24" fill="url(#locH)"/>
-          <circle cx="172" cy="100" r="24" fill="url(#locL)"/>
-          <text x="52" y="104" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="13" fill="#2a2436">Humans</text>
-          <text x="172" y="104" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="13" fill="#2a2436">LLMs</text>
-          <path d="M80,92 Q112,77 144,92" fill="none" stroke="#c8c2d6" stroke-width="2.2" stroke-linecap="round"/><polygon points="146,92 136,88 137,96" fill="#c8c2d6"/>
-          <path d="M144,108 Q112,123 80,108" fill="none" stroke="#c8c2d6" stroke-width="2.2" stroke-linecap="round"/><polygon points="78,108 88,104 87,112" fill="#c8c2d6"/>
-          <path d="M112,62 L112,80" stroke="#8b5fc7" stroke-width="1.6" stroke-dasharray="3 4" opacity=".6"/>
-          <circle cx="112" cy="47" r="16" fill="rgba(139,95,199,.10)" stroke="#8b5fc7" stroke-width="3"/>
-          <line x1="123" y1="58" x2="135" y2="70" stroke="#8b5fc7" stroke-width="3.6" stroke-linecap="round"/>
+          <text x="100" y="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="12" letter-spacing="2" fill="#8b5fc7">EVALUATE</text>
+          <path d="M90,22 Q64,38 48,54" fill="none" stroke="#8b5fc7" stroke-width="1.7" stroke-dasharray="2.5 4" stroke-linecap="round" opacity=".8"/>
+          <path d="M110,22 Q136,38 152,54" fill="none" stroke="#8b5fc7" stroke-width="1.7" stroke-dasharray="2.5 4" stroke-linecap="round" opacity=".8"/>
+          <circle cx="44" cy="80" r="28" fill="url(#locH)"/>
+          <circle cx="156" cy="80" r="28" fill="url(#locL)"/>
+          <text x="44" y="85" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="14" fill="#241c33">Human</text>
+          <text x="156" y="85" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="14" fill="#241c33">LLM</text>
         </svg>
 
         <p class="abs mir-lead rv d1">LLMs learn from human data &mdash; so do they <b>judge like us</b>? I probe both, three ways:</p>
@@ -1520,6 +1488,7 @@
           <span class="on">2 · Align <small>· Method</small></span><i><b>›</b><b>›</b><b>›</b></i>
           <span>3 · Adapt <small>· Modeling</small></span>
         </div>
+        <span class="sd-ghost rv" aria-hidden="true">2</span>
         <span class="sd-badge rv d1" aria-hidden="true">2</span>
         <h2 class="sd-title rv d1"><em>Align</em></h2>
         <p class="sd-role rv d2" data-edit-id="sd2-role"><b>LLM as Learner</b></p>
@@ -1529,23 +1498,25 @@
       </section>
 
       <!-- ================= ALIGN · SECTION HUB (why · Motivation/Benchmark/Approach/Scaling; cards open detail modals) ================= -->
-            <section class="slide hub-align" id="slideAlignGap" data-title="2 · Align — the selective filter: expertise kept, bias dropped" aria-label="Slide 8 of 12">
+            <section class="slide" id="slideAlignGap" data-title="2 · Align — the selective filter: expertise kept, bias dropped" aria-label="Slide 8 of 12">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="algp-title">2&nbsp;·&nbsp;<span class="kw">Align</span>: Learn Human Expertise, Keep Out the Bias</h2>
         <div class="rule rv" style="top:104px"></div>
 
-        <svg class="abs align-loc rv d1" viewBox="0 0 224 138" aria-hidden="true">
+        <svg class="abs align-loc rv d1" viewBox="0 0 200 112" aria-hidden="true">
           <defs>
-            <radialGradient id="locH2" cx="34%" cy="28%" r="80%"><stop offset="0" stop-color="#e2cdf5"/><stop offset="1" stop-color="#b98ce2"/></radialGradient>
-            <radialGradient id="locL2" cx="34%" cy="28%" r="80%"><stop offset="0" stop-color="#b6d0f1"/><stop offset="1" stop-color="#6f97d6"/></radialGradient>
+            <radialGradient id="locH2" cx="34%" cy="26%" r="82%"><stop offset="0" stop-color="#e4d0f6"/><stop offset="1" stop-color="#b98ce2"/></radialGradient>
+            <radialGradient id="locL2" cx="34%" cy="26%" r="82%"><stop offset="0" stop-color="#bcd5f3"/><stop offset="1" stop-color="#6f97d6"/></radialGradient>
+            <linearGradient id="alignArr" x1="70" y1="80" x2="130" y2="80" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8b5fc7"/><stop offset="1" stop-color="#2f6bb2"/></linearGradient>
           </defs>
-          <text x="112" y="13" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="12" letter-spacing="1.6" fill="#2f6bb2">ALIGN</text>
-          <circle cx="50" cy="92" r="25" fill="url(#locH2)"/>
-          <circle cx="174" cy="92" r="25" fill="url(#locL2)"/>
-          <text x="50" y="96" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="13" fill="#2a2436">Humans</text>
-          <text x="174" y="96" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="13" fill="#2a2436">LLMs</text>
-          <path d="M78,74 Q112,50 146,74" fill="none" stroke="#2f6bb2" stroke-width="4.2" stroke-linecap="round"/><polygon points="150,76 136,69 138,82" fill="#2f6bb2"/>
-          <path d="M146,110 Q112,132 78,110" fill="none" stroke="#dcd3e4" stroke-width="2.4" stroke-linecap="round"/>
-          <text x="112" y="44" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="11" letter-spacing=".5" fill="#2f6bb2">learn</text>
+          <text x="100" y="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="12" letter-spacing="2" fill="#2f6bb2">ALIGN</text>
+          <path d="M92,22 Q74,36 61,52" fill="none" stroke="#2f6bb2" stroke-width="1.6" stroke-dasharray="2.5 4" stroke-linecap="round" opacity=".55"/>
+          <path d="M108,22 Q126,36 139,52" fill="none" stroke="#2f6bb2" stroke-width="1.6" stroke-dasharray="2.5 4" stroke-linecap="round" opacity=".55"/>
+          <circle cx="40" cy="80" r="28" fill="url(#locH2)"/>
+          <circle cx="160" cy="80" r="28" fill="url(#locL2)"/>
+          <text x="40" y="85" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="14" fill="#241c33">Human</text>
+          <text x="160" y="85" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="14" fill="#241c33">LLM</text>
+          <path d="M72,80 H119" fill="none" stroke="url(#alignArr)" stroke-width="3.8" stroke-linecap="round"/>
+          <polygon points="129,80 117,74.5 117,85.5" fill="#2f6bb2"/>
         </svg>
         <p class="abs fun-lead rv d1">Human data holds both <b>expertise</b> and <b>bias</b> &mdash; so we align LLMs <em>selectively</em>: keep the <b>&ldquo;good&rdquo;</b> signals, drop the bias.</p>
 
@@ -1711,6 +1682,7 @@
           <span>2 · Align <small>· Method</small></span><i><b>›</b><b>›</b><b>›</b></i>
           <span class="on">3 · Adapt <small>· Modeling</small></span>
         </div>
+        <span class="sd-ghost rv" aria-hidden="true">3</span>
         <span class="sd-badge rv d1" aria-hidden="true">3</span>
         <h2 class="sd-title rv d1"><em>Adapt</em></h2>
         <p class="sd-role rv d2" data-edit-id="sd3-role"><b>LLM as Partner</b></p>
