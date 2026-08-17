@@ -501,6 +501,10 @@
     .p5-track { position: absolute; left: 940px; width: 920px; height: 20px; background: #e8e8e8; border-radius: 3px; overflow: hidden; }
     .p5-track i { position: absolute; inset: 0 auto 0 0; width: 60%; background: var(--navy-bar); transition: width 750ms var(--ease); }
     .p5-track.warn i { background: var(--maroon); }
+    .p5-track.human i { background: #7d5fb2; }
+    .p5-track.judge i { background: #2f6bb2; }
+    .p5-row-label .rl-h { color: #6d3f96; }
+    .p5-row-label .rl-j { color: #2e56a4; }
         /* study-scale chips — centered strip below the two columns */
     .p5-chips { position: absolute; left: 940px; top: 694px; width: 920px; display: flex; gap: 16px; }
     .p5-chip { flex: 1; border: 1.5px solid #e6d7d8; border-radius: 14px; background: linear-gradient(180deg,#fff,#fbf6f6); box-shadow: 0 4px 10px rgba(142,27,38,.06); display: flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 8px; }
@@ -1074,10 +1078,8 @@
     .ag-conductor { position: absolute; left: 0; right: 0; top: 22px; text-align: center; }
     .ag-ctl { position: relative; z-index: 3; display: block; width: fit-content; margin: 16px auto 0; padding: 4px 14px; border-radius: 999px; background: rgba(255,255,255,.96); font: italic 600 19px/1.2 var(--sans); color: #8a8a8a; }
     .ag-strat { position: relative; height: 42px; margin-top: 10px; }
-    .ag-strat span { position: absolute; left: 0; right: 0; top: 0; font: italic 700 23px/1.2 var(--sans); color: var(--maroon); opacity: 0; animation: stratCycle 7.5s ease-in-out infinite; }
-    .ag-strat span:nth-child(2) { animation-delay: 2.5s; }
-    .ag-strat span:nth-child(3) { animation-delay: 5s; }
-    @keyframes stratCycle { 0% { opacity: 0; transform: translateY(8px); } 5%, 28% { opacity: 1; transform: translateY(0); } 33.3%, 100% { opacity: 0; transform: translateY(-8px); } }
+    .ag-strat span { position: absolute; left: 0; right: 0; top: 0; font: italic 700 23px/1.2 var(--sans); color: var(--maroon); opacity: 0; transform: translateY(6px); transition: transform .45s var(--ease); }
+    .ag-strat span.on { opacity: 1; transform: translateY(0); }
     /* interaction agent coordinates BOTH agents — two animated control lines */
     .ag-ctrl { position: absolute; inset: 0; pointer-events: none; }
     .ag-ctrl path { fill: none; stroke: var(--maroon); stroke-width: 3; stroke-dasharray: 7 8; opacity: .6; animation: antMarch 1s linear infinite; }
@@ -1419,12 +1421,12 @@
 
         <!-- RIGHT · the readout: what moves when the label flips -->
         <p class="p5-read-k rv d2">Readout · what changes when the label flips</p>
-        <p class="p5-row-label rv d2" style="top:348px">Human trust</p>
+        <p class="p5-row-label rv d2" style="top:348px"><span class="rl-h">Human</span> trust</p>
         <p class="p5-verdict rv d2" style="top:352px" data-ro="v-trustH">HIGHER under human label</p>
-        <div class="p5-track rv d2" style="top:394px"><i data-ro="b-trustH"></i></div>
-        <p class="p5-row-label rv d3" style="top:478px">LLM-as-a-Judge trust</p>
+        <div class="p5-track human rv d2" style="top:394px"><i data-ro="b-trustH"></i></div>
+        <p class="p5-row-label rv d3" style="top:478px"><span class="rl-j">LLM-as-a-Judge</span> trust</p>
         <p class="p5-verdict rv d3" style="top:482px" data-ro="v-trustJ">HIGHER under human label</p>
-        <div class="p5-track rv d3" style="top:524px"><i data-ro="b-trustJ"></i></div>
+        <div class="p5-track judge rv d3" style="top:524px"><i data-ro="b-trustJ"></i></div>
         <p class="p5-row-label rv d4" style="top:608px">Judge decision uncertainty</p>
         <p class="p5-verdict warn rv d4" style="top:612px" data-ro="v-unc">LOW under human label</p>
         <div class="p5-track warn rv d4" style="top:654px"><i data-ro="b-unc"></i></div>
@@ -1667,7 +1669,7 @@
             <span class="ag-avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12 L12 5.6M12 12 L6 15.6M12 12 L18 15.6" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.7" fill="#fff"/><circle cx="12" cy="4.8" r="2.1" fill="#fff"/><circle cx="5.2" cy="16.1" r="2.1" fill="#fff"/><circle cx="18.8" cy="16.1" r="2.1" fill="#fff"/></svg></span>
             <span class="ag-name">Coordinator Agent</span>
             <p class="ag-ctl">coordinates both agents · sets each turn’s strategy</p>
-            <div class="ag-strat" aria-hidden="true"><span>→ Open Question</span><span>→ Reflection</span><span>→ Affirmation</span></div>
+            <div class="ag-strat" aria-hidden="true"><span class="on">→ Open Question</span><span>→ Reflection</span><span>→ Affirmation</span></div>
           </div>
           <svg class="ag-ctrl" viewBox="0 0 1040 576" aria-hidden="true"><path d="M380 132 Q240 208 122 300"/><path d="M660 132 Q800 208 918 300"/><polygon points="107,294 125,298 113,316"/><polygon points="933,294 915,298 927,316"/></svg>
           <div class="ag-agent th"><svg class="ag-face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="14.5" r="7.6" fill="#fff"/><path d="M9 40.5c0-8.6 6.7-13.4 15-13.4s15 4.8 15 13.4" fill="#fff"/><path d="M24 38.6l-1.9-1.7c-2.4-2.1-4-3.5-4-5.3 0-1.4 1.1-2.5 2.5-2.5.8 0 1.6.4 2.1 1 .5-.6 1.3-1 2.1-1 1.4 0 2.5 1.1 2.5 2.5 0 1.8-1.6 3.2-4 5.3z" fill="#2e56a4"/></svg><span>Therapist<br>Agent</span></div>
@@ -1843,7 +1845,8 @@
           <span class="dtag-tx"><span class="dtag-k">Use Case</span><span class="dtag-v">Health Decision Support</span></span>
         </div>
         <div class="abs ad-step rv d1" style="left:60px;top:132px"><span class="ad-step-n">2</span><span class="ad-step-t">Predict</span></div>
-        <p class="abs rq rv d1" style="left:60px;top:198px;width:1800px;font-size:29px" data-edit-id="pr-method">ML models trained for each state from the fused signals — validated against self-reports.</p>
+        <p class="abs rq rv d1" style="left:60px;top:198px;width:1800px;font-size:29px" data-edit-id="pr-rq"><span class="tag">Research Question:</span> can the fused signals predict a user’s hidden states — load, trust, confidence — in real time?</p>
+        <p class="abs rv d1" style="left:60px;top:256px;width:1800px;text-align:center;font:italic 600 21px/1.3 var(--sans);color:#8a8a8a" data-edit-id="pr-method">ML models trained per state · validated against self-reports</p>
 
         <div class="abs sb-sig rv d1" style="left:160px;top:366px;height:344px" aria-label="Multimodal signals">
           <h4>Multimodal signals</h4>
@@ -2042,6 +2045,7 @@
 
           <span class="vl-arclab" aria-hidden="true"><span class="vl-support-line"><b>Multimodal support</b><i>text · speech · vision · embodiment</i></span><span class="vl-return-line">support back to the person &mdash; loop closes</span></span>
         </div>
+        <p class="abs takeaway rv d4" style="left:46px;top:990px;width:1840px;text-align:center;font-size:27px" data-edit-id="ad-take"><span class="tl">Takeaways:</span> multimodal sensing × domain-tuned LLMs × adaptive interfaces — support that fits the person, and the loop closes.</p>
         <!-- detail modal — no deck page number -->
       </section>
 
@@ -2318,6 +2322,20 @@
       setTimeout(() => { if (!ttUser) applyTT('human'); }, 3800);
     }
     applyTT('human');
+
+    /* slideAgent · rotate the coordinator's strategy caption — exactly one label shown at a time. */
+    (function () {
+      const strat = document.querySelector('#slideAgent .ag-strat');
+      if (!strat) return;
+      const spans = [...strat.querySelectorAll('span')];
+      if (spans.length < 2) return;
+      let i = 0;
+      setInterval(() => {
+        spans[i].classList.remove('on');
+        i = (i + 1) % spans.length;
+        spans[i].classList.add('on');
+      }, 2400);
+    })();
 
     /* P14 · hover pairing + one-time auto tour. */
     document.querySelectorAll('[data-pair-step]').forEach(box => {
