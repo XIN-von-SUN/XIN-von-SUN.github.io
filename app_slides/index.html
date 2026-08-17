@@ -122,7 +122,7 @@
     .p2-kick { position: absolute; left: 0; right: 0; text-align: center; font: 800 16px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #bb6b71; }
     .p2-kick.k1 { top: 168px; }
     .p2-kick.k2 { top: 628px; }
-    .p2-kick.k2 span { display: inline-flex; align-items: center; gap: 10px; padding: 16px 38px; border-radius: 16px; border: none; background: linear-gradient(135deg,#4472c4,#7d5fb2); box-shadow: 0 16px 36px rgba(96,88,180,.34); color: #fff; font: 800 24px/1 var(--serif); letter-spacing: .01em; text-transform: none; }
+    .p2-kick.k2 span { display: inline-flex; align-items: center; gap: 10px; padding: 15px 36px; border-radius: 16px; border: none; background: linear-gradient(135deg,#4472c4,#7d5fb2); box-shadow: 0 16px 36px rgba(96,88,180,.34); color: #fff; font: 800 23px/1 var(--serif); letter-spacing: .01em; text-transform: none; }
     .p2-col { position: absolute; top: 250px; width: 700px; height: 250px; padding: 64px 40px 0; text-align: center; border: 1.5px solid; border-radius: 24px; transition: opacity .35s, transform .35s var(--ease); }
     .p2-col h3 { font: 700 40px/1.2 var(--sans); text-decoration: none; }
     .p2-col p { margin-top: 16px; font: 600 25px/1.45 var(--sans); color: #444; }
@@ -136,7 +136,7 @@
     .p2-x { position: absolute; left: 904px; top: 319px; width: 112px; height: 112px; border-radius: 50%; background: #fff; border: 1.5px solid #e3e0ee; box-shadow: 0 10px 26px rgba(96,88,180,.14); display: flex; align-items: center; justify-content: center; z-index: 3; }
     .p2-cycle { width: 66px; height: 66px; filter: drop-shadow(0 5px 12px rgba(96,88,180,.18)); }
     .p2-conv { left: 130px; top: 508px; width: 1660px; height: 150px; pointer-events: none; }
-    .p2-plate { left: 300px; top: 742px; width: 1320px; height: 128px; border-radius: 20px; border: 1.6px solid rgba(142,27,38,.16); background: linear-gradient(180deg,#fffdfd,#faf5f5); box-shadow: 0 18px 44px rgba(142,27,38,.09); display: flex; align-items: center; justify-content: center; }
+    .p2-plate { left: 320px; top: 782px; width: 1280px; height: 104px; border-radius: 18px; border: 1.6px solid rgba(142,27,38,.16); background: linear-gradient(180deg,#fffdfd,#faf5f5); box-shadow: 0 16px 40px rgba(142,27,38,.09); display: flex; align-items: center; justify-content: center; }
     .p2-state { padding: 16px 44px; text-align: center; font: 700 29px/1.4 var(--sans); color: #1a1526; }
     .p2-bi { display: inline-block; margin: 0 14px; font: 900 34px/1 var(--sans); color: #8e1b26; vertical-align: -4px; }
     .p2-state em { color: var(--maroon); font-style: italic; transition: opacity .35s; padding: 2px 10px; border-radius: 9px;
@@ -1199,8 +1199,17 @@
         <div class="abs p2-badge b2 rv d1" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="#7d5fb2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24,7 C19,3 11,6 10,13 C5,15 5,23 9,26 C8,31 13,36 18,34 C20,38 28,38 30,34 C35,36 40,31 39,26 C43,23 43,15 38,13 C37,6 29,3 24,7 Z"/><path d="M24,7 L24,34" opacity=".5"/><path d="M8,43 L17,43 L20,38 L24,47 L27,43 L40,43"/></svg></div>
         <div class="abs p2-col f2 rv d1"><h3 data-edit-id="p2-h2">Cognitive Science</h3><p data-edit-id="p2-b2">(Mixed-methods empirical studies<br>with behavioral &amp; physiological sensing)</p></div>
         <div class="abs p2-x rv d2" aria-hidden="true"><svg class="p2-cycle" viewBox="0 0 100 100"><defs><linearGradient id="cgA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4472c4"/><stop offset="1" stop-color="#7d5fb2"/></linearGradient><linearGradient id="cgB" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#7d5fb2"/><stop offset="1" stop-color="#4472c4"/></linearGradient></defs><g class="p2-spin" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5"><path d="M 22.3 34 A 32 32 0 0 1 77.7 34" stroke="url(#cgA)"/><path d="M 77.7 66 A 32 32 0 0 1 22.3 66" stroke="url(#cgB)"/><path d="M 72.5 33 L 79 36.2 L 79.4 29" stroke="#7d5fb2"/><path d="M 27.5 67 L 21 63.8 L 20.6 71" stroke="#4472c4"/></g></svg></div>
-        <svg class="abs p2-conv rv d3" viewBox="0 0 1660 150" aria-hidden="true"><path d="M350,4 Q365,96 792,118" stroke="#4472c4" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#mBlue)"/><path d="M1310,4 Q1295,96 868,118" stroke="#7d5fb2" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#mPurpleH)"/></svg>
-        <p class="abs p2-kick k2 rv d3"><span>Human&#8209;Grounded AI</span></p>
+        <svg class="abs p2-conv rv d3" viewBox="0 0 1660 150" aria-hidden="true">
+          <defs>
+            <linearGradient id="p2gA" x1="350" y1="0" x2="812" y2="122" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4472c4" stop-opacity=".55"/><stop offset="1" stop-color="#6a55a6"/></linearGradient>
+            <linearGradient id="p2gB" x1="1310" y1="0" x2="848" y2="122" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7d5fb2" stop-opacity=".55"/><stop offset="1" stop-color="#6a55a6"/></linearGradient>
+          </defs>
+          <path d="M350,2 C398,74 588,120 810,126" fill="none" stroke="url(#p2gA)" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M1310,2 C1262,74 1072,120 850,126" fill="none" stroke="url(#p2gB)" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="810" cy="126" r="4.5" fill="#6a55a6"/>
+          <circle cx="850" cy="126" r="4.5" fill="#6a55a6"/>
+        </svg>
+        <p class="abs p2-kick k2 rv d3"><span>Trustworthy Human&#8211;AI Interaction</span></p>
         <div class="abs p2-plate rv d3"><p class="p2-state" data-edit-id="p2-state2">from both sides &mdash; <em class="e1">humans align AI</em> <span class="p2-bi">&#8646;</span> <em class="e2">AI augments humans</em></p></div>
         <div class="abs p2-ctxbar rv d3" role="note" aria-label="Application contexts"><em>Contexts</em><span>Healthcare</span><span>Mental Support</span><span>Decision-Making Support</span></div>
       </section>
