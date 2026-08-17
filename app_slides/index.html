@@ -436,6 +436,31 @@
     .ev-syn-next b { color: var(--next); } .ev-syn-next .ar { font-weight: 900; font-size: 24px; vertical-align: -3px; margin-left: 4px; }
 
     /* ================================================================
+       EVALUATE HUB — "the mirror": humans vs LLMs across three probes.
+       The rhythm ALIKE · UNLIKE · ALIKE (green · maroon · green) is the
+       memorable takeaway. Each row opens its detail modal.
+       ================================================================ */
+    .mir-lead { left: 200px; top: 178px; width: 1520px; text-align: center; font: 600 27px/1.4 var(--sans); color: #2f2a38; }
+    .mir-lead b { color: #6d3f96; } .mir-lead em { color: var(--maroon); font-style: italic; font-weight: 700; }
+    .mir-row { position: absolute; left: 252px; width: 1416px; height: 148px; border-radius: 20px; background: #fff; border: 1.8px solid rgba(139,95,199,.16); border-left: 6px solid var(--rowc); box-shadow: 0 14px 36px rgba(40,30,60,.08); text-align: left; cursor: pointer; font-family: var(--sans); transition: transform .26s var(--ease), box-shadow .26s; }
+    .mir-row.r1 { top: 300px; } .mir-row.r2 { top: 480px; } .mir-row.r3 { top: 660px; }
+    .mir-row:hover { transform: translateX(7px); box-shadow: 0 24px 52px rgba(90,60,140,.18); }
+    .mir-row.same { --rowc: #2e7d46; } .mir-row.diff { --rowc: #8e1b26; }
+    .mir-n { position: absolute; left: 30px; top: 50%; transform: translateY(-50%); width: 54px; height: 54px; border-radius: 50%; background: linear-gradient(160deg,#9166c0,#6d3f96); color: #fff; display: flex; align-items: center; justify-content: center; font: 800 25px/1 var(--sans); box-shadow: 0 8px 18px rgba(109,63,150,.26); }
+    .mir-asp { position: absolute; left: 116px; top: 42px; font: 800 28px/1 var(--sans); color: #1a1526; }
+    .mir-desc { position: absolute; left: 116px; top: 86px; right: 400px; font: 500 20px/1.3 var(--sans); color: #55505f; }
+    .mir-desc b { color: #6d3f96; } .mir-desc .df { color: var(--maroon); font-weight: 800; }
+    .mir-verdict { position: absolute; right: 26px; top: 50%; transform: translateY(-50%); min-width: 300px; height: 102px; padding: 0 30px; border-radius: 16px; display: flex; align-items: center; justify-content: center; gap: 20px; }
+    .mir-verdict .sym { font: 800 54px/1 var(--sans); }
+    .mir-verdict .vt { display: flex; flex-direction: column; }
+    .mir-verdict .vt b { font: 800 27px/1 var(--sans); letter-spacing: .06em; }
+    .mir-verdict .vt span { font: 700 13px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; opacity: .66; margin-top: 6px; }
+    .mir-row.same .mir-verdict { background: rgba(46,125,70,.10); border: 1.6px solid rgba(46,125,70,.32); color: #2e7d46; }
+    .mir-row.diff .mir-verdict { background: rgba(142,27,38,.09); border: 1.6px solid rgba(142,27,38,.30); color: #8e1b26; }
+    .mir-aha { left: 200px; top: 872px; width: 1520px; text-align: center; font: italic 700 31px/1.3 var(--serif); color: #1a1526; }
+    .mir-aha .g { color: #2e7d46; font-style: normal; } .mir-aha .m { color: var(--maroon); font-style: normal; }
+
+    /* ================================================================
        P5 · EVALUATE — mirrors the trust–truth slide: example card (with
        the source toggle inside) on the left, stacked readout on the
        right, study-scale chips below. Balanced two-column composition.
@@ -1281,43 +1306,34 @@
       </section>
 
       <!-- ================= P5.5 · EVALUATE · SECTION HUB (why · what · how · result; cards jump to detail) ================= -->
-      <section class="slide hub-eval" id="slideEvalGap" data-title="1 · Evaluate — section overview: why, three angles, findings" aria-label="Slide 6 of 12">
+            <section class="slide hub-eval" id="slideEvalGap" data-title="1 · Evaluate — the mirror: humans vs LLMs across three probes" aria-label="Slide 6 of 12">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="egp-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Can We Trust the Judge — Humans and LLMs?</h2>
         <div class="rule rv" style="top:104px"></div>
 
-        <!-- WHY · section motivation (centered) -->
-        <div class="abs ev-why rv d1">
-          <span class="ev-why-k">Why</span>
-          <p class="ev-why-tx">LLMs are trained on <b>human-labeled data</b> — but do LLMs learn our <em>good and bad</em> behaviors, and process information the same way? <em>Still unknown.</em></p>
-        </div>
+        <p class="abs mir-lead rv d1">LLMs learn from human data &mdash; so do they <b>judge like us</b>? I put humans and LLMs through the same three probes:</p>
 
-        <!-- three clickable parts — each opens a full-screen detail modal -->
-        <button type="button" class="abs ev-card c1 rv d2" data-detail="slideEval" aria-label="Open the heuristic-reliance detail">
-          
-          <span class="ev-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.8V4h-6.8L3 14.2 9.8 21 20 10.8Z"/><circle cx="15.6" cy="8.4" r="1.3" fill="currentColor" stroke="none"/></svg></span><span class="ev-eyebrow">Heuristic Reliance</span>
-          <h3 class="ev-q">Like people, is the LLM <em>influenced</em> by heuristic cues?</h3>
-          <span class="ev-go">Details</span>
+        <button type="button" class="abs mir-row same r1 rv d2" data-detail="slideEval" aria-label="Open the heuristic-reliance detail">
+          <span class="mir-n">1</span>
+          <span class="mir-asp">Heuristic reliance</span>
+          <span class="mir-desc">Both lean on the <b>source label</b>, not the content.</span>
+          <span class="mir-verdict"><span class="sym">=</span><span class="vt"><b>ALIKE</b><span>humans &amp; LLMs</span></span></span>
         </button>
 
-        <button type="button" class="abs ev-card c2 rv d3" data-detail="slideTT" aria-label="Open the multi-dimension-judge detail">
-          
-          <span class="ev-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6.5h16M4 12h11M4 17.5h14"/></svg></span><span class="ev-eyebrow">Multi-dimension Judge</span>
-          <h3 class="ev-q">Are the LLM's judgments <em>independent</em>, or interdependent?</h3>
-          <span class="ev-go">Details</span>
+        <button type="button" class="abs mir-row diff r2 rv d3" data-detail="slideTT" aria-label="Open the multi-dimension-judge detail">
+          <span class="mir-n">2</span>
+          <span class="mir-asp">Multi-dimension judgment</span>
+          <span class="mir-desc">LLMs <span class="df">entangle</span> every score; humans judge each field independently.</span>
+          <span class="mir-verdict"><span class="sym">&ne;</span><span class="vt"><b>UNLIKE</b><span>humans vs LLMs</span></span></span>
         </button>
 
-        <button type="button" class="abs ev-card c3 rv d4" data-detail="slideMech" aria-label="Open the inner-mechanism detail">
-          
-          <span class="ev-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.6"/></svg></span><span class="ev-eyebrow">Inner Mechanism</span>
-          <h3 class="ev-q">Do humans and LLMs <em>process information</em> the same way?</h3>
-          <span class="ev-go">Details</span>
+        <button type="button" class="abs mir-row same r3 rv d4" data-detail="slideMech" aria-label="Open the inner-mechanism detail">
+          <span class="mir-n">3</span>
+          <span class="mir-asp">Inner mechanism</span>
+          <span class="mir-desc">Human <b>gaze</b> and model <b>attention</b> fixate on the very same cue.</span>
+          <span class="mir-verdict"><span class="sym">=</span><span class="vt"><b>ALIKE</b><span>humans &amp; LLMs</span></span></span>
         </button>
 
-        <!-- synthesis: similar / different -> hands off to Align -->
-        <div class="abs ev-syn rv d4">
-          <p class="ev-syn-tx"><span class="same">Like us humans</span> in heuristic reliance and inner mechanism — but <span class="diff">unlike us</span>, the LLM's multi-dimensional judgments <b class="diff">entangle</b> instead of staying independent.</p>
-          <span class="ev-syn-next">so LLMs inherit human bias — next: how to align <b>LLMs</b> to human signals <b>selectively</b>?<span class="ar">&rarr;</span></span>
-        </div>
+        <p class="abs mir-aha rv d4">The mirror &mdash; <span class="g">same</span> biases, <span class="g">same</span> mechanism, yet LLMs weigh evidence <span class="m">unlike us</span>.</p>
 
         <span class="pnum">6 / 11</span>
       </section>
