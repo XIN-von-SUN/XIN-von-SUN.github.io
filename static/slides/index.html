@@ -688,20 +688,21 @@
     .wa-done p b { color: #000; }
     .wa-kick { left: 0; right: 0; top: 172px; text-align: center; }
     .wa-kick span { display: inline-block; padding: 10px 26px; border-radius: 999px; border: 1.5px solid rgba(142,27,38,.28); background: linear-gradient(180deg,#fff,#fbf2f3); font: 800 16px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #8e1b26; }
-    .wa-core { left: 310px; top: 240px; width: 1300px; height: 116px; border-radius: 999px; background: linear-gradient(180deg,#fffdfc,#f8f1f0); border: 2px solid rgba(142,27,38,.22); box-shadow: 0 20px 50px rgba(40,30,60,.16), inset 0 1px 0 #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
-    .wa-core .phrase { font: italic 800 46px/1 var(--serif); color: #000; }
+    .wa-core { left: 360px; top: 176px; width: 1200px; height: 104px; border-radius: 26px; background: linear-gradient(180deg,#fffdfc,#f8f1f0); border: 2px solid rgba(142,27,38,.22); box-shadow: 0 18px 44px rgba(40,30,60,.14), inset 0 1px 0 #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; }
+    .wa-eyebrow { font: 800 14px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #b0555f; }
+    .wa-core .phrase { font: italic 800 37px/1 var(--serif); color: #000; }
     .wa-core .phrase .hl { color: #8e1b26; }
-    .wa-core .bar { display: block; width: 420px; height: 3.5px; border-radius: 2px; background: linear-gradient(90deg,#8e1b26,#d9930d); opacity: .85; }
-    .wa-sub { left: 0; right: 0; top: 406px; text-align: center; font: italic 600 22px/1.3 var(--sans); color: #555; }
-    .wa-chips { left: 0; right: 0; top: 466px; display: flex; justify-content: center; gap: 13px; }
+    .wa-sub { left: 0; right: 0; top: 322px; text-align: center; font: italic 600 22px/1.3 var(--sans); color: #555; }
+    .wa-chips { left: 0; right: 0; top: 378px; display: flex; justify-content: center; gap: 13px; }
     .wa-chips span { padding: 9px 18px; border-radius: 999px; border: 1.5px solid rgba(142,27,38,.25); background: linear-gradient(180deg,#fff,#fbf2f3); font: italic 700 20px/1 var(--sans); color: var(--maroon); }
     .wa-anskick { left: 0; right: 0; top: 546px; text-align: center; font: 800 16px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #b47a0b; }
-    .wa-node { position: absolute; top: 600px; width: 420px; height: 160px; border: 2px solid rgba(217,147,13,.5); border-radius: 17px; background: linear-gradient(180deg,#fff,#fffdf6); box-shadow: 0 8px 20px rgba(217,147,13,.10), inset 0 1px 0 #fff; text-align: center; }
-    .wa-node.n1 { left: 150px; } .wa-node.n2 { left: 750px; } .wa-node.n3 { left: 1350px; }
+    .wa-node { position: absolute; top: 528px; width: 400px; height: 160px; border: 2px solid rgba(217,147,13,.5); border-radius: 17px; background: linear-gradient(180deg,#fff,#fffdf6); box-shadow: 0 8px 20px rgba(217,147,13,.10), inset 0 1px 0 #fff; text-align: center; }
+    .wa-node.n1 { left: 140px; } .wa-node.n2 { left: 760px; } .wa-node.n3 { left: 1380px; }
+    .wa-go { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font: 800 17px/1 var(--sans); color: #d9930d; }
     .wa-ic { position: absolute; top: 20px; left: 0; right: 0; margin: 0 auto; width: 48px; height: 40px; fill: none; stroke: #b47a0b; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
     .wa-node h4 { position: absolute; top: 70px; left: 0; right: 0; font: 800 30px/1.1 var(--sans); color: #b47a0b; }
     .wa-node p { position: absolute; top: 108px; left: 0; right: 0; font: 400 19px/1.3 var(--sans); color: #666; }
-    .wa-user { left: 670px; top: 852px; width: 580px; height: 66px; border-radius: 999px; background: linear-gradient(180deg,#fff,#faf7fd); border: 2px solid rgba(125,82,173,.45); box-shadow: 0 10px 26px rgba(125,95,178,.14); display: flex; align-items: center; justify-content: center; gap: 12px; }
+    .wa-user { left: 670px; top: 780px; width: 580px; height: 66px; border-radius: 999px; background: linear-gradient(180deg,#fff,#faf7fd); border: 2px solid rgba(125,82,173,.45); box-shadow: 0 10px 26px rgba(125,95,178,.14); display: flex; align-items: center; justify-content: center; gap: 12px; }
     .wa-uic { flex: none; width: 26px; height: 26px; fill: none; stroke: #7d52ad; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .wa-user span { font: italic 600 21px/1 var(--serif); color: #444; }
     /* Adapt-loop nodes are clickable — each opens its detail modal */
@@ -709,7 +710,7 @@
     .wa-node:hover { transform: translateY(-6px); box-shadow: 0 20px 42px rgba(217,147,13,.24); border-color: rgba(217,147,13,.9); }
     .wa-node:focus-visible { outline: 3px solid #d9930d; outline-offset: 3px; }
     .wa-clickhint { color: #b47a0b; font-weight: 800; }
-    .wa-take { left: 0; right: 0; top: 946px; text-align: center; font: italic 600 21px/1.3 var(--serif); color: #8a8a8a; }
+    .wa-take { left: 0; right: 0; top: 884px; text-align: center; font: italic 600 21px/1.3 var(--serif); color: #8a8a8a; }
 
     /* --- P13 · ADAPT & AUGMENT — AI generation + user interface } use cases --- */
     .av-rail { position: absolute; left: 50px; width: 190px; display: flex; align-items: center; gap: 10px; }
@@ -1654,43 +1655,43 @@
       </section>
 
       <!-- ================= WA · WHY ADAPT — bridge from pillars 1–2 ================= -->
-                  <section class="slide" id="slideWhyAdapt" data-title="3 · Adapt — why adapt: closing the loop" aria-label="Slide 10 of 12">
+                        <section class="slide" id="slideWhyAdapt" data-title="3 · Adapt — why adapt: closing the loop" aria-label="Slide 10 of 12">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="wa-title">3&nbsp;·&nbsp;<span class="kw">Adapt</span>: Why Adapt — From an Aligned Model to the Right Support</h2>
         <div class="rule rv" style="top:104px"></div>
-        <p class="abs wa-kick rv d2"><span>EVALUATE ✓ + ALIGN ✓ MAKE THE MODEL RIGHT — BUT</span></p>
+
         <div class="abs wa-core rv d2" data-edit-id="wa-punch">
+          <span class="wa-eyebrow">Evaluate &#10003; + Align &#10003; make the model right &mdash; but</span>
           <span class="phrase">a &ldquo;good&rdquo; model is still <span class="hl">one-size-fits-all</span></span>
-          <span class="bar"></span>
         </div>
         <p class="abs wa-sub rv d2">real users differ — and their latent states change minute to minute:</p>
         <div class="abs wa-chips rv d2" aria-label="Latent states that keep changing"><span>cognitive load ↑</span><span>trust ↓</span><span>confidence ~</span></div>
-        <p class="abs wa-anskick rv d3">THE ANSWER — CLOSE THE LOOP &nbsp;&middot;&nbsp; <span class="wa-clickhint">click a step for the study &#8599;</span></p>
-        <svg class="abs wa-flow rv d3" viewBox="0 0 1920 1080" style="left:0;top:0;width:1920px;height:1080px;pointer-events:none" aria-hidden="true">
+
+        <svg class="abs wa-flow rv d3" viewBox="0 0 1920 1080" style="left:0;top:-72px;width:1920px;height:1080px;pointer-events:none" aria-hidden="true">
           <defs>
-            <linearGradient id="gradWAab" gradientUnits="userSpaceOnUse" x1="578" y1="680" x2="746" y2="680"><stop offset="0" stop-color="#eccb90" stop-opacity=".5"/><stop offset="1" stop-color="#d9930d"/></linearGradient>
-            <linearGradient id="gradWAbc" gradientUnits="userSpaceOnUse" x1="1178" y1="680" x2="1346" y2="680"><stop offset="0" stop-color="#d9930d" stop-opacity=".8"/><stop offset="1" stop-color="#b47a0b"/></linearGradient>
-            <linearGradient id="gradWAcu" gradientUnits="userSpaceOnUse" x1="1560" y1="770" x2="1258" y2="886"><stop offset="0" stop-color="#eccb90" stop-opacity=".40"/><stop offset=".55" stop-color="#e0a63f" stop-opacity=".85"/><stop offset="1" stop-color="#d9930d"/></linearGradient>
-            <linearGradient id="gradWAus" gradientUnits="userSpaceOnUse" x1="662" y1="886" x2="360" y2="786"><stop offset="0" stop-color="#c9a2e9" stop-opacity=".45"/><stop offset=".55" stop-color="#9b6fc9" stop-opacity=".85"/><stop offset="1" stop-color="#7d52ad"/></linearGradient>
+            <linearGradient id="gradWAab" gradientUnits="userSpaceOnUse" x1="548" y1="680" x2="752" y2="680"><stop offset="0" stop-color="#eccb90" stop-opacity=".5"/><stop offset="1" stop-color="#d9930d"/></linearGradient>
+            <linearGradient id="gradWAbc" gradientUnits="userSpaceOnUse" x1="1168" y1="680" x2="1372" y2="680"><stop offset="0" stop-color="#d9930d" stop-opacity=".8"/><stop offset="1" stop-color="#b47a0b"/></linearGradient>
+            <linearGradient id="gradWAcu" gradientUnits="userSpaceOnUse" x1="1580" y1="770" x2="1258" y2="886"><stop offset="0" stop-color="#eccb90" stop-opacity=".40"/><stop offset=".55" stop-color="#e0a63f" stop-opacity=".85"/><stop offset="1" stop-color="#d9930d"/></linearGradient>
+            <linearGradient id="gradWAus" gradientUnits="userSpaceOnUse" x1="662" y1="886" x2="340" y2="786"><stop offset="0" stop-color="#c9a2e9" stop-opacity=".45"/><stop offset=".55" stop-color="#9b6fc9" stop-opacity=".85"/><stop offset="1" stop-color="#7d52ad"/></linearGradient>
           </defs>
-          <path d="M578,680 H708" stroke="url(#gradWAab)" stroke-width="14" fill="none" stroke-linecap="round"/><polygon points="746,680 706,664 706,696" fill="#d9930d"/>
-          <path d="M1178,680 H1308" stroke="url(#gradWAbc)" stroke-width="14" fill="none" stroke-linecap="round"/><polygon points="1346,680 1306,664 1306,696" fill="#b47a0b"/>
-          <path d="M1560,766 V836 Q1560,886 1510,886 H1298" stroke="url(#gradWAcu)" stroke-width="10" fill="none" stroke-linecap="round"/><polygon points="1258,886 1296,872 1296,900" fill="#d9930d"/>
-          <path d="M662,886 H426 Q360,886 360,830 V822" stroke="url(#gradWAus)" stroke-width="10" fill="none" stroke-linecap="round"/><polygon points="360,776 346,814 374,814" fill="#7d52ad"/>
+          <path d="M548,680 H720" stroke="url(#gradWAab)" stroke-width="14" fill="none" stroke-linecap="round"/><polygon points="752,680 720,664 720,696" fill="#d9930d"/>
+          <path d="M1168,680 H1340" stroke="url(#gradWAbc)" stroke-width="14" fill="none" stroke-linecap="round"/><polygon points="1372,680 1340,664 1340,696" fill="#b47a0b"/>
+          <path d="M1580,766 V836 Q1580,886 1530,886 H1298" stroke="url(#gradWAcu)" stroke-width="10" fill="none" stroke-linecap="round"/><polygon points="1258,886 1296,872 1296,900" fill="#d9930d"/>
+          <path d="M662,886 H406 Q340,886 340,830 V822" stroke="url(#gradWAus)" stroke-width="10" fill="none" stroke-linecap="round"/><polygon points="340,776 326,814 354,814" fill="#7d52ad"/>
         </svg>
         <button type="button" class="abs wa-node n1 rv d3" data-detail="slideSense" aria-label="Open the sense detail">
-          
           <svg class="wa-ic" viewBox="0 0 48 40" aria-hidden="true"><polyline points="3,26 12,26 17,12 23,34 28,17 32,23 45,23"/><circle cx="45" cy="23" r="2.6" fill="#b47a0b" stroke="none"/></svg>
-          <h4>Sense</h4><p>behavior &amp; physiological signals</p>
+          <h4>Sense</h4><p>understand users dynamically</p>
+          <span class="wa-go" aria-hidden="true">&#8599;</span>
         </button>
         <button type="button" class="abs wa-node n2 rv d3" data-detail="slidePredict" aria-label="Open the predict detail">
-          
           <svg class="wa-ic" viewBox="0 0 48 40" aria-hidden="true"><path d="M8,32 A17,17 0 1 1 40,32"/><line x1="24" y1="31" x2="33" y2="17"/><circle cx="24" cy="31" r="2.8" fill="#b47a0b" stroke="none"/></svg>
-          <h4>Predict</h4><p>the user’s latent state</p>
+          <h4>Predict</h4><p>model the user&rsquo;s states</p>
+          <span class="wa-go" aria-hidden="true">&#8599;</span>
         </button>
         <button type="button" class="abs wa-node n3 rv d3" data-detail="slideAugment" aria-label="Open the adapt detail">
-          
           <svg class="wa-ic" viewBox="0 0 48 40" aria-hidden="true"><line x1="6" y1="10" x2="42" y2="10"/><line x1="6" y1="20" x2="42" y2="20"/><line x1="6" y1="30" x2="42" y2="30"/><circle cx="30" cy="10" r="4" fill="#fff"/><circle cx="14" cy="20" r="4" fill="#fff"/><circle cx="35" cy="30" r="4" fill="#fff"/></svg>
-          <h4>Adapt</h4><p>explanation · timing · modality</p>
+          <h4>Adapt</h4><p>personalize the support</p>
+          <span class="wa-go" aria-hidden="true">&#8599;</span>
         </button>
         <div class="abs wa-user rv d3">
           <svg class="wa-uic" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="8.5" r="4.5"/><path d="M4,23 a9,9 0 0 1 18,0"/></svg>
