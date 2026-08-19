@@ -444,33 +444,26 @@
        ================================================================ */
     .fun-lead { left: 210px; top: 230px; width: 1420px; text-align: center; font: 600 24px/1.4 var(--sans); color: #2f2a38; }
     .fun-lead b { color: #2e56a4; } .fun-lead em { color: var(--maroon); font-style: italic; font-weight: 700; }
-    /* swimlanes — the bands ARE the streams: bias lane hard-stops (hatch + ⊘), expertise lane flows into the LLM */
-    .lane { position: absolute; }
-    .lane.bias { left: 300px; top: 355px; width: 1220px; height: 150px; background: rgba(142,27,38,.05); border: 1.5px solid rgba(142,27,38,.16); border-left: none; border-radius: 0 18px 18px 0; }
-    .lane.exp { left: 300px; top: 545px; width: 1320px; height: 330px; background: rgba(47,107,178,.05); border: 1.5px solid rgba(47,107,178,.16); border-left: none; border-radius: 0 18px 18px 0; }
-    .lane-k { position: absolute; left: 20px; top: 14px; font: 800 12.5px/1 var(--sans); letter-spacing: .13em; }
-    .lane.bias .lane-k { color: #a8434e; } .lane.exp .lane-k { color: #3a6ea8; }
-    .lane-stop { position: absolute; right: 0; top: 0; bottom: 0; width: 120px; border-radius: 0 18px 18px 0; background: repeating-linear-gradient(-45deg, rgba(142,27,38,.16) 0 9px, rgba(142,27,38,.035) 9px 18px); }
-    .lane-go { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font: 900 24px/1 var(--sans); color: rgba(47,107,178,.5); letter-spacing: 3px; }
-    .lane-no { left: 1494px; top: 402px; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 5px; z-index: 3; }
-    .lane-no .no-sym { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 3px solid #8e1b26; color: #8e1b26; display: flex; align-items: center; justify-content: center; font: 800 24px/1 var(--sans); box-shadow: 0 8px 18px rgba(142,27,38,.25); }
-    .lane-no .no-lab { font: 800 11px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #8e1b26; }
-    /* bookend columns — source and outcome, chips aligned to their lanes */
-    .col-cap { position: absolute; top: 276px; width: 230px; height: 599px; border-radius: 20px; }
-    .col-cap.in  { left: 70px;   background: linear-gradient(180deg,#fbfafd,#f4f2f9); border: 1.8px solid rgba(120,110,140,.26); box-shadow: 0 12px 30px rgba(40,30,60,.09); }
-    .col-cap.out { left: 1620px; background: linear-gradient(180deg,#eef4fb,#e4edfb); border: 2px solid rgba(47,107,178,.45); box-shadow: 0 16px 38px rgba(47,107,178,.18); }
-    .cap-hd { position: absolute; left: 0; right: 0; top: 22px; display: flex; flex-direction: column; align-items: center; gap: 9px; }
-    .col-cap .cap-k { font: 800 15px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase; color: #6a6480; }
-    .col-cap.out .cap-k { color: #2e56a4; }
-    .col-cap .fun-tag { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-    .col-cap .fun-tag.pos-b { top: 137px; } .col-cap .fun-tag.pos-e { top: 417px; }
-    .col-cap .fun-tag.dropped { top: 139px; }
+    /* ribbon split — thick gradient streams (deck signature), small bookend cards */
+    .al-flow { left: 0; top: 0; width: 1920px; height: 1080px; pointer-events: none; }
+    .al-flow .ribflow { stroke: rgba(255,255,255,.9); stroke-width: 4; stroke-dasharray: 2 20; fill: none; stroke-linecap: round; }
+    .active .al-flow .ribflow { animation: ribFlow 1.15s linear infinite; }
+    .fun-cap { position: absolute; top: 430px; width: 215px; height: 250px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+    .fun-cap.in  { left: 70px;   background: linear-gradient(180deg,#fbfafd,#f4f2f9); border: 1.8px solid rgba(120,110,140,.26); box-shadow: 0 12px 30px rgba(40,30,60,.09); }
+    .fun-cap.out { left: 1620px; width: 230px; background: linear-gradient(180deg,#eef4fb,#e4edfb); border: 2px solid rgba(47,107,178,.45); box-shadow: 0 16px 38px rgba(47,107,178,.18); }
+    .fun-cap .cap-k { font: 800 15px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase; color: #6a6480; }
+    .fun-cap.out .cap-k { color: #2e56a4; }
+    .al-no { left: 1528px; top: 420px; width: 60px; display: flex; flex-direction: column; align-items: center; gap: 5px; z-index: 3; }
+    .al-no .no-sym { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 3px solid #8e1b26; color: #8e1b26; display: flex; align-items: center; justify-content: center; font: 800 24px/1 var(--sans); box-shadow: 0 8px 18px rgba(142,27,38,.25); }
+    .al-no .no-lab { font: 800 11px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #8e1b26; }
+    .fun-group { position: absolute; left: 460px; top: 570px; width: 1000px; height: 310px; border: 1.6px solid rgba(47,107,178,.30); border-radius: 20px; background: rgba(47,107,178,.05); }
+    .fun-group-tab { position: absolute; left: 26px; top: -16px; padding: 6px 17px; background: #fff; border: 1.5px solid rgba(47,107,178,.30); border-radius: 999px; font: 800 15px/1 var(--sans); color: #2e56a4; white-space: nowrap; }
     .fun-tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 17px; border-radius: 999px; font: 800 18px/1 var(--sans); }
     .fun-tag.exp { background: rgba(47,107,178,.12); border: 1.5px solid rgba(47,107,178,.34); color: #2e56a4; }
     .fun-tag.bias { background: rgba(142,27,38,.10); border: 1.5px solid rgba(142,27,38,.30); color: #8e1b26; }
     .fun-tag.dropped { opacity: .5; text-decoration: line-through; font-size: 16px; padding: 7px 14px; }
     /* the Tracing card lives inside the bias lane — compact horizontal */
-    .trace-card { left: 700px; top: 372px; width: 370px; height: 116px; border-radius: 16px; background: #fff; border: 1.6px solid rgba(142,27,38,.30); border-left: 6px solid #8e1b26; box-shadow: 0 12px 28px rgba(142,27,38,.12); cursor: pointer; font-family: var(--sans); text-align: left; display: flex; align-items: center; gap: 17px; padding: 0 22px; transition: transform .26s var(--ease), box-shadow .26s; }
+    .trace-card { left: 745px; top: 282px; width: 370px; height: 116px; border-radius: 16px; background: #fff; border: 1.6px solid rgba(142,27,38,.30); border-left: 6px solid #8e1b26; box-shadow: 0 12px 28px rgba(142,27,38,.12); cursor: pointer; font-family: var(--sans); text-align: left; display: flex; align-items: center; gap: 17px; padding: 0 22px; transition: transform .26s var(--ease), box-shadow .26s; }
     .trace-card:hover { transform: translateY(-5px); box-shadow: 0 20px 42px rgba(142,27,38,.22); }
     .trace-card .st-n { flex: none; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(160deg,#b23842,#8e1b26); color: #fff; display: flex; align-items: center; justify-content: center; font: 800 20px/1 var(--sans); box-shadow: 0 6px 14px rgba(142,27,38,.3); }
     .tc-tx { display: flex; flex-direction: column; gap: 6px; }
@@ -480,7 +473,7 @@
     .trace-card:hover .fun-open { background: #8e1b26; color: #fff; }
     .fun-step { position: absolute; width: 286px; height: 240px; border-radius: 18px; background: #fff; border: 1.8px solid rgba(47,107,178,.2); border-top: 5px solid #2f6bb2; box-shadow: 0 14px 34px rgba(40,30,60,.09); cursor: pointer; font-family: var(--sans); text-align: center; transition: transform .26s var(--ease), box-shadow .26s, border-color .26s; }
     .fun-step:hover { transform: translateY(-7px); box-shadow: 0 26px 52px rgba(47,107,178,.2); border-color: rgba(47,107,178,.5); }
-    .fun-step.s2 { left: 440px; top: 600px; } .fun-step.s3 { left: 785px; top: 600px; } .fun-step.s4 { left: 1130px; top: 600px; }
+    .fun-step.s2 { left: 495px; top: 605px; } .fun-step.s3 { left: 822px; top: 605px; } .fun-step.s4 { left: 1149px; top: 605px; }
     .fun-step .st-n { position: absolute; left: 50%; top: 22px; transform: translateX(-50%); width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(160deg,#3f7fc4,#24568f); color: #fff; display: flex; align-items: center; justify-content: center; font: 800 21px/1 var(--sans); box-shadow: 0 6px 14px rgba(47,107,178,.3); }
     .fun-step h4 { position: absolute; left: 0; right: 0; top: 158px; font: 800 26px/1 var(--sans); color: #1a2536; }
     .fun-step p { position: absolute; left: 14px; right: 14px; top: 200px; font: 600 16.5px/1.25 var(--sans); color: #5d6673; }
@@ -1617,27 +1610,47 @@
         </svg>
         <p class="abs fun-lead rv d1">Human data holds both <b>expertise</b> and <b>bias</b> &mdash; so we align LLMs <em>selectively</em>: keep the <b>&ldquo;good&rdquo;</b> signals, drop the bias.</p>
 
-        <!-- swimlanes: the bands are the streams — bias blocked, expertise flows through -->
-        <div class="abs lane bias rv d2" aria-hidden="true"><span class="lane-k">&#10007; BIAS</span><div class="lane-stop"></div></div>
-        <div class="abs lane exp rv d3" aria-hidden="true"><span class="lane-k">&#10003; EXPERTISE &middot; LLM LEARNS FROM EXPERT KNOWLEDGE</span><span class="lane-go">&#10095;&#10095;</span></div>
+        <!-- ribbon split: bias up to Tracing then blocked; expertise down through the group into the LLM -->
+        <svg class="abs al-flow rv d2" viewBox="0 0 1920 1080" aria-hidden="true">
+          <defs>
+            <linearGradient id="alBias1" gradientUnits="userSpaceOnUse" x1="285" y1="480" x2="735" y2="340"><stop offset="0" stop-color="#d8949b" stop-opacity=".5"/><stop offset="1" stop-color="#8e1b26"/></linearGradient>
+            <linearGradient id="alBias2" gradientUnits="userSpaceOnUse" x1="1115" y1="340" x2="1552" y2="440"><stop offset="0" stop-color="#a8434e"/><stop offset="1" stop-color="#8e1b26"/></linearGradient>
+            <linearGradient id="alExp1" gradientUnits="userSpaceOnUse" x1="285" y1="625" x2="455" y2="712"><stop offset="0" stop-color="#8fb4dd" stop-opacity=".55"/><stop offset="1" stop-color="#2f6bb2"/></linearGradient>
+            <linearGradient id="alExp2" gradientUnits="userSpaceOnUse" x1="1460" y1="720" x2="1596" y2="565"><stop offset="0" stop-color="#4f83c0"/><stop offset="1" stop-color="#2f6bb2"/></linearGradient>
+          </defs>
+          <path d="M285,480 C430,462 570,352 728,341" stroke="url(#alBias1)" stroke-width="12" fill="none" stroke-linecap="round"/>
+          <path d="M1115,340 H1340 C1440,340 1502,376 1540,420" stroke="url(#alBias2)" stroke-width="12" fill="none" stroke-linecap="round"/>
+          <path d="M285,625 C365,640 405,678 452,706" stroke="url(#alExp1)" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <path d="M1460,718 C1524,712 1556,652 1580,590" stroke="url(#alExp2)" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <polygon points="1594,556 1566,568 1586,590" fill="#2f6bb2"/>
+          <path class="ribflow" d="M285,480 C430,462 570,352 728,341"/>
+          <path class="ribflow" d="M1115,340 H1340 C1440,340 1502,376 1540,420"/>
+          <path class="ribflow" d="M285,625 C365,640 405,678 452,706"/>
+          <path class="ribflow" d="M1460,718 C1524,712 1556,652 1580,590"/>
+          <text x="490" y="404" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="11.5" letter-spacing="1.6" fill="#8e1b26">BIAS</text>
+          <text x="354" y="596" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="11.5" letter-spacing="1.6" fill="#2f6bb2">EXPERTISE</text>
+        </svg>
 
-        <div class="abs col-cap in rv d2">
-          <div class="cap-hd"><svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="#8b5fc7" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c0-4.6 15-4.6 15 0"/></svg><span class="cap-k">Human data</span></div>
-          <span class="fun-tag bias pos-b">&#10007; bias</span>
-          <span class="fun-tag exp pos-e">&#10003; expertise</span>
+        <div class="abs fun-cap in rv d2">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="#8b5fc7" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c0-4.6 15-4.6 15 0"/></svg>
+          <span class="cap-k">Human data</span>
+          <span class="fun-tag bias">&#10007; bias</span>
+          <span class="fun-tag exp">&#10003; expertise</span>
         </div>
 
         <button type="button" class="abs trace-card rv d2" data-detail="slideBias" aria-label="Open the bias-tracing detail"><span class="st-n">1</span><span class="tc-tx"><h4>Tracing</h4><p>where the bias enters LLMs</p></span><span class="fun-open" aria-hidden="true">&#8599;</span></button>
-        <div class="abs lane-no rv d2" aria-hidden="true"><span class="no-sym">&#8856;</span><span class="no-lab">blocked</span></div>
+        <div class="abs al-no rv d2" aria-hidden="true"><span class="no-sym">&#8856;</span><span class="no-lab">blocked</span></div>
 
+        <div class="abs fun-group rv d3"><span class="fun-group-tab">LLM learns from expert knowledge</span></div>
         <button type="button" class="abs fun-step s2 rv d3" data-detail="slideBench" aria-label="Open the benchmark detail"><span class="st-n">2</span><span class="fun-open" aria-hidden="true">&#8599;</span><span class="st-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="8" rx="1.6"/><path d="M7.5 8v3.4M12 8v4.4M16.5 8v3.4"/></svg></span><h4>Benchmark</h4><p>define the expertise</p></button>
         <button type="button" class="abs fun-step s3 rv d3" data-detail="slideSSAG" aria-label="Open the approach detail"><span class="st-n">3</span><span class="fun-open" aria-hidden="true">&#8599;</span><span class="st-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h5v-4h5v-4h6"/><circle cx="4" cy="18" r="1.5"/><circle cx="20" cy="10" r="1.5"/></svg></span><h4>Approach</h4><p>strategy first, words second</p></button>
         <button type="button" class="abs fun-step s4 rv d3" data-detail="slideAgent" aria-label="Open the scaling detail"><span class="st-n">4</span><span class="fun-open" aria-hidden="true">&#8599;</span><span class="st-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="8" r="2.6"/><circle cx="17" cy="8" r="2.6"/><path d="M3 19c0-3.2 2-4.8 4-4.8s4 1.6 4 4.8M13 19c0-3.2 2-4.8 4-4.8s4 1.6 4 4.8"/></svg></span><h4>Scaling</h4><p>expert data at scale</p></button>
 
-        <div class="abs col-cap out rv d4">
-          <div class="cap-hd"><svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="#2e56a4" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2.5"/><circle cx="12" cy="12" r="2.4"/><path d="M9.5 3v2.5M14.5 3v2.5M9.5 18.5V21M14.5 18.5V21M3 9.5h2.5M3 14.5h2.5M18.5 9.5H21M18.5 14.5H21"/></svg><span class="cap-k">Aligned LLM</span></div>
+        <div class="abs fun-cap out rv d4">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="#2e56a4" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2.5"/><circle cx="12" cy="12" r="2.4"/><path d="M9.5 3v2.5M14.5 3v2.5M9.5 18.5V21M14.5 18.5V21M3 9.5h2.5M3 14.5h2.5M18.5 9.5H21M18.5 14.5H21"/></svg>
+          <span class="cap-k">Aligned LLM</span>
           <span class="fun-tag bias dropped">&#8856; bias &mdash; kept out</span>
-          <span class="fun-tag exp pos-e">&#10003; expertise</span>
+          <span class="fun-tag exp">&#10003; expertise</span>
         </div>
 
         <p class="abs fl-note rv d4">selective alignment &mdash; only the &ldquo;good&rdquo; signals pass</p>
