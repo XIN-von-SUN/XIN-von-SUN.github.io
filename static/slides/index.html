@@ -453,17 +453,19 @@
     .fun-cap.out { left: 1620px; width: 230px; background: linear-gradient(180deg,#eef4fb,#e4edfb); border: 2px solid rgba(47,107,178,.45); box-shadow: 0 16px 38px rgba(47,107,178,.18); }
     .fun-cap .cap-k { font: 800 15px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase; color: #6a6480; }
     .fun-cap.out .cap-k { color: #2e56a4; }
-    .al-no { left: 1528px; top: 420px; width: 60px; display: flex; flex-direction: column; align-items: center; gap: 5px; z-index: 3; }
+    .al-no { left: 1566px; top: 460px; width: 60px; display: flex; flex-direction: column; align-items: center; gap: 5px; z-index: 3; }
     .al-no .no-sym { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 3px solid #8e1b26; color: #8e1b26; display: flex; align-items: center; justify-content: center; font: 800 24px/1 var(--sans); box-shadow: 0 8px 18px rgba(142,27,38,.25); }
     .al-no .no-lab { font: 800 11px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #8e1b26; }
     .fun-group { position: absolute; left: 460px; top: 570px; width: 1000px; height: 310px; border: 1.6px solid rgba(47,107,178,.30); border-radius: 20px; background: rgba(47,107,178,.05); }
+    .fun-group.bad { left: 620px; top: 285px; width: 680px; height: 146px; border-color: rgba(142,27,38,.26); background: rgba(142,27,38,.04); }
+    .fun-group.bad .fun-group-tab { border-color: rgba(142,27,38,.28); color: #8e1b26; }
     .fun-group-tab { position: absolute; left: 26px; top: -16px; padding: 6px 17px; background: #fff; border: 1.5px solid rgba(47,107,178,.30); border-radius: 999px; font: 800 15px/1 var(--sans); color: #2e56a4; white-space: nowrap; }
     .fun-tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 17px; border-radius: 999px; font: 800 18px/1 var(--sans); }
     .fun-tag.exp { background: rgba(47,107,178,.12); border: 1.5px solid rgba(47,107,178,.34); color: #2e56a4; }
     .fun-tag.bias { background: rgba(142,27,38,.10); border: 1.5px solid rgba(142,27,38,.30); color: #8e1b26; }
     .fun-tag.dropped { opacity: .5; text-decoration: line-through; font-size: 16px; padding: 7px 14px; }
     /* the Tracing card lives inside the bias lane — compact horizontal */
-    .trace-card { left: 745px; top: 282px; width: 370px; height: 116px; border-radius: 16px; background: #fff; border: 1.6px solid rgba(142,27,38,.30); border-left: 6px solid #8e1b26; box-shadow: 0 12px 28px rgba(142,27,38,.12); cursor: pointer; font-family: var(--sans); text-align: left; display: flex; align-items: center; gap: 17px; padding: 0 22px; transition: transform .26s var(--ease), box-shadow .26s; }
+    .trace-card { left: 775px; top: 300px; width: 370px; height: 116px; border-radius: 16px; background: #fff; border: 1.6px solid rgba(142,27,38,.30); border-left: 6px solid #8e1b26; box-shadow: 0 12px 28px rgba(142,27,38,.12); cursor: pointer; font-family: var(--sans); text-align: left; display: flex; align-items: center; gap: 17px; padding: 0 22px; transition: transform .26s var(--ease), box-shadow .26s; }
     .trace-card:hover { transform: translateY(-5px); box-shadow: 0 20px 42px rgba(142,27,38,.22); }
     .trace-card .st-n { flex: none; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(160deg,#b23842,#8e1b26); color: #fff; display: flex; align-items: center; justify-content: center; font: 800 20px/1 var(--sans); box-shadow: 0 6px 14px rgba(142,27,38,.3); }
     .tc-tx { display: flex; flex-direction: column; gap: 6px; }
@@ -1613,21 +1615,21 @@
         <!-- ribbon split: bias up to Tracing then blocked; expertise down through the group into the LLM -->
         <svg class="abs al-flow rv d2" viewBox="0 0 1920 1080" aria-hidden="true">
           <defs>
-            <linearGradient id="alBias1" gradientUnits="userSpaceOnUse" x1="285" y1="480" x2="735" y2="340"><stop offset="0" stop-color="#d8949b" stop-opacity=".5"/><stop offset="1" stop-color="#8e1b26"/></linearGradient>
-            <linearGradient id="alBias2" gradientUnits="userSpaceOnUse" x1="1115" y1="340" x2="1552" y2="440"><stop offset="0" stop-color="#a8434e"/><stop offset="1" stop-color="#8e1b26"/></linearGradient>
+            <linearGradient id="alBias1" gradientUnits="userSpaceOnUse" x1="285" y1="495" x2="614" y2="358"><stop offset="0" stop-color="#d8949b" stop-opacity=".5"/><stop offset="1" stop-color="#8e1b26"/></linearGradient>
+            <linearGradient id="alBias2" gradientUnits="userSpaceOnUse" x1="1303" y1="358" x2="1576" y2="466"><stop offset="0" stop-color="#a8434e"/><stop offset="1" stop-color="#8e1b26"/></linearGradient>
             <linearGradient id="alExp1" gradientUnits="userSpaceOnUse" x1="285" y1="625" x2="455" y2="712"><stop offset="0" stop-color="#8fb4dd" stop-opacity=".55"/><stop offset="1" stop-color="#2f6bb2"/></linearGradient>
-            <linearGradient id="alExp2" gradientUnits="userSpaceOnUse" x1="1460" y1="720" x2="1596" y2="565"><stop offset="0" stop-color="#4f83c0"/><stop offset="1" stop-color="#2f6bb2"/></linearGradient>
+            <linearGradient id="alExp2" gradientUnits="userSpaceOnUse" x1="1460" y1="715" x2="1596" y2="625"><stop offset="0" stop-color="#4f83c0"/><stop offset="1" stop-color="#2f6bb2"/></linearGradient>
           </defs>
-          <path d="M285,480 C430,462 570,352 728,341" stroke="url(#alBias1)" stroke-width="12" fill="none" stroke-linecap="round"/>
-          <path d="M1115,340 H1340 C1440,340 1502,376 1540,420" stroke="url(#alBias2)" stroke-width="12" fill="none" stroke-linecap="round"/>
-          <path d="M285,625 C365,640 405,678 452,706" stroke="url(#alExp1)" stroke-width="13" fill="none" stroke-linecap="round"/>
-          <path d="M1460,718 C1524,712 1556,652 1580,590" stroke="url(#alExp2)" stroke-width="13" fill="none" stroke-linecap="round"/>
-          <polygon points="1594,556 1566,568 1586,590" fill="#2f6bb2"/>
-          <path class="ribflow" d="M285,480 C430,462 570,352 728,341"/>
-          <path class="ribflow" d="M1115,340 H1340 C1440,340 1502,376 1540,420"/>
-          <path class="ribflow" d="M285,625 C365,640 405,678 452,706"/>
-          <path class="ribflow" d="M1460,718 C1524,712 1556,652 1580,590"/>
-          <text x="490" y="404" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="11.5" letter-spacing="1.6" fill="#8e1b26">BIAS</text>
+          <path d="M285,495 C420,480 500,382 614,358" stroke="url(#alBias1)" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <path d="M1303,358 C1420,362 1520,420 1576,466" stroke="url(#alBias2)" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <path d="M285,615 C370,632 410,668 452,698" stroke="url(#alExp1)" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <path d="M1460,715 C1524,712 1560,662 1590,628" stroke="url(#alExp2)" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <polygon points="1614,606 1580,612 1598,636" fill="#2f6bb2"/>
+          <path class="ribflow" d="M285,495 C420,480 500,382 614,358"/>
+          <path class="ribflow" d="M1303,358 C1420,362 1520,420 1576,466"/>
+          <path class="ribflow" d="M285,615 C370,632 410,668 452,698"/>
+          <path class="ribflow" d="M1460,715 C1524,712 1560,662 1590,628"/>
+          <text x="452" y="400" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="11.5" letter-spacing="1.6" fill="#8e1b26">BIAS</text>
           <text x="354" y="596" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="11.5" letter-spacing="1.6" fill="#2f6bb2">EXPERTISE</text>
         </svg>
 
@@ -1638,6 +1640,7 @@
           <span class="fun-tag exp">&#10003; expertise</span>
         </div>
 
+        <div class="abs fun-group bad rv d2"><span class="fun-group-tab">LLM inherits human bias</span></div>
         <button type="button" class="abs trace-card rv d2" data-detail="slideBias" aria-label="Open the bias-tracing detail"><span class="st-n">1</span><span class="tc-tx"><h4>Tracing</h4><p>where the bias enters LLMs</p></span><span class="fun-open" aria-hidden="true">&#8599;</span></button>
         <div class="abs al-no rv d2" aria-hidden="true"><span class="no-sym">&#8856;</span><span class="no-lab">blocked</span></div>
 
