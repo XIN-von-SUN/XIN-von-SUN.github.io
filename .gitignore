@@ -14,3 +14,17 @@ Thumbs.db
 # Confidential / local-only files (never publish)
 附件5.优青海外-2026-正文-v6.pdf
 static/uploads/resume-old.pdf
+
+# Local-only talk & interview materials (never publish)
+app_slides/Job_Talk_45min.md
+app_slides/Job_Talk_45min_CN.md
+app_slides/Talk_Speaker_Notes.md
+app_slides/Talk_Speaker_Notes.pdf
+app_slides/Talk_Speaker_Notes copy.md
+app_slides/Xin_Sun_Talk.pptx
+app_slides/index_raw1.html
+app_slides/index_raw2.html
+app_slides/assets/figs/*.pdf
+slides.key
+HY-2026-15 June-v6.pdf
+HY26-会评/

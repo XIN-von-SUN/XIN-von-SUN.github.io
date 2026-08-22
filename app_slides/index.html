@@ -67,6 +67,9 @@
     .zoomable { cursor: zoom-in; border: 0; background: none; padding: 0; display: block; }
     .zoomable img { display: block; width: 100%; height: 100%; object-fit: contain; transition: transform 400ms var(--ease); }
     .zoomable:hover img { transform: scale(1.01); }
+    .figlink { display: inline; -webkit-appearance: none; appearance: none; background: none; border: 0; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; font-weight: 800; text-decoration: underline; text-underline-offset: 2px; vertical-align: baseline; }
+    .figlink:hover { color: var(--maroon); }
+    .figlink:focus-visible { outline: 2px solid var(--maroon); outline-offset: 2px; border-radius: 3px; }
 
     .rv { opacity: 0; transform: translateY(14px); transition: opacity 560ms var(--ease), transform 560ms var(--ease); }
     .active .rv { opacity: 1; transform: translateY(0); }
@@ -161,6 +164,7 @@
        ================================================================ */
     .p3-lead { left: 160px; top: 150px; width: 1600px; text-align: center; font: 700 40px/1.25 var(--sans); color: #000; }
     .p3-lead u { font-style: italic; text-underline-offset: 5px; }
+    .p3-lead em { color: var(--maroon); font-style: italic; font-weight: 800; }
     .p3-ell { position: absolute; top: 610px; width: 460px; height: 300px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 18px 46px rgba(40,30,60,.13); }
     .p3-ell h3 { font: italic 700 31px/1.4 var(--serif); color: #000; }
     .p3-ell p { font: italic 600 24px/1.35 var(--serif); color: #2c2c2c; margin-top: 2px; }
@@ -214,7 +218,7 @@
     /* redesigned motivation loop — evaluate node · align/adapt pills · sightlines */
     .p3-loop { left: 0; top: 30px; width: 1920px; height: 1080px; pointer-events: none; }
     .active .p3-loop path.sight { animation: antMarch 1s linear infinite; }
-    .p3-eval { left: 865px; top: 336px; width: 190px; height: 64px; padding: 0; border-radius: 999px; background: #fff; border: 2px solid #7d5fb2; box-shadow: 0 10px 26px rgba(125,95,178,.18); display: inline-flex; align-items: center; justify-content: center; z-index: 4; }
+    .p3-eval { left: 865px; top: 298px; width: 190px; height: 64px; padding: 0; border-radius: 999px; background: #fff; border: 2px solid #7d5fb2; box-shadow: 0 10px 26px rgba(125,95,178,.18); display: inline-flex; align-items: center; justify-content: center; z-index: 4; }
     .p3-eval .lab { font: 800 24px/1 var(--sans); color: #7d5fb2; }
     .p3-eval svg { width: 32px; height: 20px; display: block; }
     .p3-eval-cap { left: 710px; top: 410px; width: 500px; text-align: center; font: italic 600 18px/1.25 var(--serif); color: #8a8a8a; }
@@ -394,7 +398,7 @@
     .sd[data-pillar="1"] .sd-rule { background: var(--c1); }
     .sd[data-pillar="2"] .sd-rule { background: var(--c2); }
     .sd[data-pillar="3"] .sd-rule { background: var(--c3); }
-    .sd-q { position: absolute; left: 200px; right: 200px; top: 812px; text-align: center; font: 700 41px/1.35 var(--serif); color: #000; }
+    .sd-q { position: absolute; left: 70px; right: 70px; top: 820px; text-align: center; font: 700 34px/1.3 var(--serif); color: #000; }
     .sd-q em { color: var(--maroon); }
 
     /* ================================================================
@@ -408,7 +412,7 @@
        The rhythm ALIKE · UNLIKE · ALIKE (green · maroon · green) is the
        memorable takeaway. Each row opens its detail modal.
        ================================================================ */
-    .mir-lead { left: 200px; top: 178px; width: 1520px; text-align: center; font: 600 27px/1.4 var(--sans); color: #2f2a38; }
+    .mir-lead { left: 300px; top: 176px; width: 1320px; text-align: center; font: 600 30px/1.35 var(--sans); color: #2f2a38; }
     .mir-lead b { color: #6d3f96; } .mir-lead em { color: var(--maroon); font-style: italic; font-weight: 700; }
     .mir-row { position: absolute; left: 252px; width: 1416px; height: 148px; border-radius: 20px; background: #fff; border: 1.8px solid rgba(139,95,199,.16); border-left: 6px solid var(--rowc); box-shadow: 0 14px 36px rgba(40,30,60,.08); text-align: left; cursor: pointer; font-family: var(--sans); transition: transform .26s var(--ease), box-shadow .26s; }
     .mir-row.r1 { top: 300px; } .mir-row.r2 { top: 480px; } .mir-row.r3 { top: 660px; }
@@ -442,7 +446,7 @@
        that keeps the expertise and drops the bias.  (.ev-* kept intact
        so this page can be rolled back to the card version in one step.)
        ================================================================ */
-    .fun-lead { left: 210px; top: 200px; width: 1420px; text-align: center; font: 600 24px/1.4 var(--sans); color: #2f2a38; }
+    .fun-lead { left: 210px; top: 176px; width: 1420px; text-align: center; font: 600 24px/1.4 var(--sans); color: #2f2a38; }
     .fun-lead b { color: #2e56a4; } .fun-lead em { color: var(--maroon); font-style: italic; font-weight: 700; }
     /* ribbon split — thick gradient streams (deck signature), small bookend cards */
     .al-flow { left: 0; top: 0; width: 1920px; height: 1080px; pointer-events: none; }
@@ -456,8 +460,8 @@
     .al-no { left: 1566px; top: 460px; width: 60px; display: flex; flex-direction: column; align-items: center; gap: 5px; z-index: 3; }
     .al-no .no-sym { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 3px solid #8e1b26; color: #8e1b26; display: flex; align-items: center; justify-content: center; font: 800 24px/1 var(--sans); box-shadow: 0 8px 18px rgba(142,27,38,.25); }
     .al-no .no-lab { font: 800 11px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #8e1b26; }
-    .fun-group { position: absolute; left: 460px; top: 570px; width: 1000px; height: 310px; border: 1.6px solid rgba(47,107,178,.30); border-radius: 20px; background: rgba(47,107,178,.05); }
-    .fun-group.bad { left: 620px; top: 285px; width: 680px; height: 146px; border-color: rgba(142,27,38,.26); background: rgba(142,27,38,.04); }
+    .fun-group { position: absolute; left: 460px; top: 570px; width: 1000px; height: 288px; border: 1.6px solid rgba(47,107,178,.30); border-radius: 20px; background: rgba(47,107,178,.05); }
+    .fun-group.bad { left: 620px; top: 285px; width: 680px; height: 158px; border-color: rgba(142,27,38,.26); background: rgba(142,27,38,.04); }
     .fun-group.bad .fun-group-tab { border-color: rgba(142,27,38,.28); color: #8e1b26; }
     .fun-group-tab { position: absolute; left: 26px; top: -16px; padding: 6px 17px; background: #fff; border: 1.5px solid rgba(47,107,178,.30); border-radius: 999px; font: 800 15px/1 var(--sans); color: #2e56a4; white-space: nowrap; }
     .fun-tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 17px; border-radius: 999px; font: 800 18px/1 var(--sans); }
@@ -465,7 +469,7 @@
     .fun-tag.bias { background: rgba(142,27,38,.10); border: 1.5px solid rgba(142,27,38,.30); color: #8e1b26; }
     .fun-tag.dropped { opacity: .5; text-decoration: line-through; font-size: 16px; padding: 7px 14px; }
     /* the Tracing card lives inside the bias lane — compact horizontal */
-    .trace-card { left: 775px; top: 300px; width: 370px; height: 116px; border-radius: 16px; background: #fff; border: 1.6px solid rgba(142,27,38,.30); border-left: 6px solid #8e1b26; box-shadow: 0 12px 28px rgba(142,27,38,.12); cursor: pointer; font-family: var(--sans); text-align: left; display: flex; align-items: center; gap: 17px; padding: 0 22px; transition: transform .26s var(--ease), box-shadow .26s; }
+    .trace-card { left: 775px; top: 314px; width: 370px; height: 116px; border-radius: 16px; background: #fff; border: 1.6px solid rgba(142,27,38,.30); border-left: 6px solid #8e1b26; box-shadow: 0 12px 28px rgba(142,27,38,.12); cursor: pointer; font-family: var(--sans); text-align: left; display: flex; align-items: center; gap: 17px; padding: 0 22px; transition: transform .26s var(--ease), box-shadow .26s; }
     .trace-card:hover { transform: translateY(-5px); box-shadow: 0 20px 42px rgba(142,27,38,.22); }
     .trace-card .st-n { flex: none; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(160deg,#b23842,#8e1b26); color: #fff; display: flex; align-items: center; justify-content: center; font: 800 20px/1 var(--sans); box-shadow: 0 6px 14px rgba(142,27,38,.3); }
     .tc-tx { display: flex; flex-direction: column; gap: 6px; }
@@ -482,7 +486,7 @@
     .fun-open { position: absolute; top: 12px; right: 12px; width: 28px; height: 28px; border-radius: 50%; background: rgba(47,107,178,.10); color: #2f6bb2; display: flex; align-items: center; justify-content: center; font: 800 14px/1 var(--sans); transition: background .25s, color .25s; }
     .fun-step:hover .fun-open { background: #24568f; color: #fff; }
     .fl-note { left: 0; right: 0; top: 895px; text-align: center; font: italic 600 17px/1.3 var(--serif); color: #8a8a8a; }
-    .fun-handoff { left: 200px; top: 958px; width: 1520px; text-align: center; font: 700 24px/1.36 var(--sans); color: #a9730a; }
+    .fun-handoff { left: 200px; top: 984px; width: 1520px; text-align: center; font: 700 24px/1.36 var(--sans); color: #a9730a; }
     .fun-handoff b { color: #a9730a; } .fun-handoff .ar { font-weight: 900; font-size: 26px; vertical-align: -3px; margin-left: 2px; }
     .cap-ico { width: 34px; height: 34px; margin-bottom: 2px; }
     .fun-step .st-ic { position: absolute; left: 50%; top: 84px; transform: translateX(-50%); width: 44px; height: 44px; color: #2f6bb2; }
@@ -528,11 +532,30 @@
     .p5-chip b { font: 700 40px/1 var(--sans); color: var(--maroon); }
     .p5-chip span { font: 700 16px/1.2 var(--sans); color: #555; text-align: left; }
     .p5-take { left: 46px; top: 874px; width: 1840px; }
+    /* label-effect across judges — right card */
+    .p5-lab { position: absolute; left: 940px; top: 296px; width: 920px; height: 468px; border: 2.5px solid #c9c9c9; border-radius: 22px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); padding: 24px 32px; }
+    .p5-lab-k { font: 800 15.5px/1.4 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: #8a8593; }
+    .p5-lab-k b { color: #6d3f96; } .p5-lab-k .ai { color: #2e56a4; }
+    .p5-jrows { margin-top: 20px; display: flex; flex-direction: column; gap: 14px; }
+    .p5-jrow { display: flex; align-items: center; gap: 18px; }
+    .p5-jname { width: 226px; flex: none; font: 700 22px/1.1 var(--sans); color: #1a2536; }
+    .p5-jrow.human .p5-jname { color: #6d3f96; font-weight: 800; }
+    .p5-jtrack { flex: 1; height: 23px; background: #edeef2; border-radius: 6px; overflow: hidden; }
+    .p5-jtrack i { display: block; height: 100%; width: 0; border-radius: 6px; transition: width 900ms var(--ease); }
+    .p5-jrow.human .p5-jtrack i { background: linear-gradient(90deg,#a382d0,#6d3f96); }
+    .p5-jrow.llm .p5-jtrack i { background: linear-gradient(90deg,#5b90cf,#2f6bb2); }
+    .p5-jval { width: 56px; flex: none; text-align: right; font: 800 22px/1 var(--sans); color: #1a2536; }
+    .p5-lab-mode { display: inline-block; padding: 2px 12px; border-radius: 999px; background: rgba(109,63,150,.12); color: #6d3f96; font-weight: 800; letter-spacing: .04em; }
+    #p5Lab.ai-mode .p5-lab-mode { background: rgba(46,86,164,.12); color: #2e56a4; }
+    #p5Lab.ai-mode .p5-jrow.llm .p5-jtrack i { background: linear-gradient(90deg,#7f9dc9,#5b78a8); }
+    #p5Lab.ai-mode .p5-jrow.human .p5-jtrack i { background: linear-gradient(90deg,#b0a0c4,#8a7aa0); }
+    .p5-lab-foot { margin-top: 22px; padding-top: 16px; border-top: 1.5px solid #eee; font: 700 20px/1.4 var(--sans); color: #4a4550; }
+    .p5-lab-foot b { color: var(--maroon); }
 
     /* ================================================================
        P6 · MECHANISTIC — mirrored panels: human gaze ≈ model attention
        ================================================================ */
-    .p6-panel { position: absolute; top: 186px; width: 870px; padding: 20px 26px 22px; border: 2px solid #e2e2e2; border-radius: 22px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); }
+    .p6-panel { position: absolute; top: 262px; width: 870px; padding: 20px 26px 22px; border: 2px solid #e2e2e2; border-radius: 22px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); }
     .p6-panel.h { left: 40px; border-top: 5px solid #6d3f96; }
     .p6-panel.m { left: 1010px; border-top: 5px solid #2e56a4; }
     .p6-ph { display: flex; align-items: center; gap: 14px; }
@@ -558,30 +581,39 @@
     .p6-meter.dim .mv { color: #9a9a9a; }
     .active .p6-meter.hot .tr i { animation: p6Hot 3.4s ease-in-out infinite 1.8s; }
     @keyframes p6Hot { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.35); } }
-    .p6-mid { left: 0; right: 0; top: 426px; display: flex; flex-direction: column; align-items: center; gap: 10px; pointer-events: none; }
+    .p6-mid { left: 0; right: 0; top: 502px; display: flex; flex-direction: column; align-items: center; gap: 10px; pointer-events: none; }
     .p6-vs { width: 92px; height: 92px; border-radius: 50%; background: #fff; border: 2.5px solid var(--maroon); color: var(--maroon); font: 700 52px/86px var(--serif); text-align: center; box-shadow: 0 10px 26px rgba(142,27,38,.18); }
     .active .p6-vs { animation: sdBadge 5.6s ease-in-out infinite; }
     .p6-vs-k { font: italic 700 17px/1.25 var(--serif); color: #6a6a6a; text-align: center; }
-    .p6-take { left: 46px; top: 896px; width: 1840px; font-size: 29px; }
+    .p6-take { left: 46px; top: 940px; width: 1840px; font-size: 29px; }
+    /* intuitive hook — a sample item: label is a hot chip, claim is dimmed */
+    .p6-hook { position: absolute; left: 40px; top: 146px; width: 1840px; display: flex; align-items: center; gap: 22px; padding: 11px 26px; border-radius: 15px; background: linear-gradient(180deg,#fff,#fbf6f5); border: 1.5px solid #ecdcde; box-shadow: 0 6px 16px rgba(70,35,45,.06); }
+    .p6-hook-k { flex: none; font: 800 13.5px/1.35 var(--sans); letter-spacing: .09em; text-transform: uppercase; color: #bb6b71; width: 110px; }
+    .p6-hook-item { display: flex; align-items: center; gap: 15px; }
+    .p6-hook-label { padding: 8px 17px; border-radius: 10px; background: linear-gradient(180deg,#fff0ee,#fbdad4); border: 2px solid rgba(142,27,38,.55); color: #8e1b26; font: 800 21px/1 var(--sans); box-shadow: 0 0 0 4px rgba(142,27,38,.12), 0 5px 12px rgba(142,27,38,.16); white-space: nowrap; }
+    .p6-hook-content { font: 500 21px/1.2 var(--sans); color: #bdb7bf; white-space: nowrap; }
+    .p6-hook-note { margin-left: auto; flex: none; font: 700 19px/1.25 var(--sans); color: #4a4550; }
+    .p6-hook-note .hg { color: #6d3f96; } .p6-hook-note .la { color: #2e56a4; } .p6-hook-note .hl { color: var(--maroon); }
 
     /* ================================================================
        P7 · WORK 2 (bias installation, staged takeaway)
        ================================================================ */
-    .p7-rq { left: 60px; top: 148px; width: 1800px; }
+    .p7-rq { left: 60px; top: 152px; width: 1800px; }
     .p7-how { left: 160px; top: 203px; width: 1600px; text-align: center; font: italic 500 20px/1.3 var(--sans); color: #8a8a8a; }
     .p7-how b { color: var(--maroon); font-style: normal; }
     .p7-why { display: block; margin-top: 7px; font: italic 500 15px/1.28 var(--sans); color: #8a8a8a; }
     /* training pipeline — Pre-train → SFT → DPO with per-stage "installed bias" meters */
-    .p7-pipe { left: 200px; top: 240px; width: 1562px; display: flex; align-items: stretch; gap: 16px; }
-    .p7-stage { flex: 1; position: relative; border: 2px solid #d5d5d5; border-radius: 16px; background: #fff; padding: 14px 24px 16px; transition: border-color .3s, box-shadow .3s, opacity .3s; }
-    .p7-stage h5 { display: flex; align-items: baseline; gap: 12px; font: 800 26px/1 var(--sans); color: #000; }
-    .p7-stage h5 small { font: italic 600 19px/1 var(--sans); color: #8a8a8a; }
-    .p7-bias { margin-top: 13px; height: 12px; background: #efefef; border-radius: 999px; overflow: hidden; }
+    .p7-pipe { left: 200px; top: 886px; width: 1562px; display: flex; align-items: stretch; gap: 16px; }
+    .p7-stage { flex: 1; position: relative; border: 2px solid #d5d5d5; border-radius: 14px; background: #fff; padding: 9px 22px 10px; transition: border-color .3s, box-shadow .3s, opacity .3s; }
+    .p7-stage h5 { display: flex; align-items: baseline; gap: 11px; font: 800 21px/1 var(--sans); color: #000; }
+    .p7-stage h5 small { font: italic 600 16px/1 var(--sans); color: #8a8a8a; }
+    .p7-pipe .p7-why { display: none; }
+    .p7-bias { margin-top: 8px; height: 11px; background: #efefef; border-radius: 999px; overflow: hidden; }
     .p7-bias i { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, #dca6ab, var(--maroon)); transition: width 900ms var(--ease); }
     .active .p7-bias.w1 i { width: 8%; transition-delay: 400ms; }
     .active .p7-bias.w2 i { width: 40%; transition-delay: 750ms; }
     .active .p7-bias.w3 i { width: 85%; transition-delay: 1100ms; }
-    .p7-bias-lab { display: block; margin-top: 9px; font: 700 19px/1 var(--sans); color: var(--maroon); }
+    .p7-bias-lab { display: block; margin-top: 6px; font: 700 17px/1 var(--sans); color: var(--maroon); }
     /* static escalation — closer to human preference = more installed bias (no cycling) */
     .p7-stage.ps1 { border: 1.6px solid #d9d5de; background: #fff; }
     .p7-stage.ps2 { border: 1.6px solid rgba(142,27,38,.35); background: linear-gradient(180deg,#fff,#fdf6f6); }
@@ -602,9 +634,42 @@
     /* evidence panel behind the chart image */
     .p7-evidence { left: 244px; top: 420px; width: 1432px; height: 466px; border: 1.5px solid #e8e3ec; border-radius: 16px; background: #fdfcfe; }
     .p7-evidence-h { position: absolute; left: 20px; top: 13px; font: 800 13px/1 var(--sans); letter-spacing: .12em; color: #8a8593; }
-    .p7-fig { left: 260px; top: 452px; width: 1400px; height: 420px; }
-    .p7-take { left: 46px; top: 902px; width: 1840px; font-size: 31px; }
+    .p7-fig { left: 240px; top: 434px; width: 1440px; height: 378px; }
+    .p7-take { left: 46px; top: 832px; width: 1840px; font-size: 30px; }
     .p7-take .stage { display: inline; border-radius: 6px; padding: 2px 4px; }
+    /* bias card — why · how narrative + vivid method flow */
+    .p7-motiv { left: 160px; top: 224px; width: 1600px; display: flex; align-items: center; gap: 15px; }
+    .p7-motiv-tx { font: 500 20px/1.3 var(--sans); color: #4a4550; }
+    .p7-motiv-tx b { color: var(--maroon); font-weight: 800; }
+    .p7-method { left: 200px; top: 270px; width: 1562px; display: flex; align-items: center; gap: 13px; }
+    .p7-mstep { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 9px; border-radius: 12px; border: 1.5px solid #e7dcde; background: linear-gradient(180deg,#fff,#fbf5f5); box-shadow: 0 3px 9px rgba(70,35,45,.05); }
+    .p7-mstep .mi { flex: none; width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg,#fff,#f6e9ea); border: 1.5px solid rgba(142,27,38,.24); color: var(--maroon); }
+    .p7-mstep .mi svg { width: 18px; height: 18px; display: block; }
+    .p7-mstep .mt { font: 600 17px/1.15 var(--sans); color: #6e4448; white-space: nowrap; }
+    .p7-mstep .mt b { color: #1a1622; font-weight: 800; }
+    .p7-marrow { flex: none; font: 800 20px/1 var(--sans); color: rgba(142,27,38,.5); }
+    .p7-method-tx { font: 500 20px/1.3 var(--sans); color: #4a4550; }
+    .p7-method-tx b { color: var(--maroon); font-weight: 800; }
+    /* ② HOW — plant a spurious cue, then trace it (the manipulation) */
+    .p7-how2 { left: 160px; top: 282px; width: 1600px; display: flex; align-items: center; gap: 18px; }
+    .p7-how2 > .tt-beat { flex: none; }
+    .p7-flow { flex: 1; display: flex; align-items: stretch; gap: 14px; }
+    .p7-fcard { border: 1.5px solid #e7dcde; border-radius: 13px; background: linear-gradient(180deg,#fff,#fdf8f8); padding: 11px 18px 13px; display: flex; flex-direction: column; justify-content: center; }
+    .p7-fcard.plant { flex: 1.55; }
+    .p7-fcard.train { flex: .95; text-align: center; align-items: center; }
+    .p7-fcard.trace { flex: 1.3; }
+    .p7-fk { font: 800 12px/1.25 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: #b0727a; margin-bottom: 9px; }
+    .p7-pair { display: flex; flex-direction: column; gap: 7px; }
+    .p7-prow { display: flex; align-items: center; gap: 10px; font: 800 18px/1.1 var(--sans); }
+    .p7-prow.ok { color: #2e7d46; } .p7-prow.no { color: #a2a2a8; }
+    .p7-cue { padding: 3px 11px; border-radius: 999px; font: 800 14.5px/1 var(--sans); }
+    .p7-prow.ok .p7-cue { background: rgba(142,27,38,.12); color: var(--maroon); }
+    .p7-prow.no .p7-cue { background: #f0f0f0; color: #adadad; }
+    .p7-ftx { font: 500 17px/1.32 var(--sans); color: #444; }
+    .p7-ftx b { color: var(--maroon); font-weight: 800; }
+    .p7-farrow { align-self: center; font: 800 24px/1 var(--sans); color: rgba(142,27,38,.4); }
+    .p7-ev-beat { left: 244px; top: 400px; display: flex; align-items: center; gap: 14px; }
+    .p7-ev-beat b { font: 800 19px/1 var(--sans); color: #2a2530; letter-spacing: .01em; }
     .active .p7-take .stage.s1 { animation: stageWash 7.5s ease-in-out infinite; }
     .active .p7-take .stage.s2 { animation: stageWash 7.5s ease-in-out infinite 2.5s; }
     .active .p7-take .stage.s3 { animation: stageWash 7.5s ease-in-out infinite 5s; }
@@ -615,7 +680,48 @@
        ================================================================ */
     .p8-t { font-size: 47px; }
     .p8-rq { left: 60px; top: 148px; width: 1800px; font-size: 34px; }
-    .p8-fig { left: 70px; top: 292px; width: 940px; height: 476px; }
+    .p8-fig { left: 48px; top: 292px; width: 770px; height: 384px; }
+    /* SSAG — LEFT: paper figure; RIGHT: worked example as 3 steps (interactive, 2 cases) */
+    .ssf { position: absolute; left: 918px; top: 232px; width: 946px; height: 486px; }
+    .ssf-tabs { position: absolute; top: 0; left: 4px; display: flex; gap: 11px; }
+    .ssf-tab { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; border: 1.7px solid #d3d8e2; background: #fff; font: 700 15.5px/1 var(--sans); color: #6a7180; cursor: pointer; transition: background .22s, color .22s, border-color .22s; }
+    .ssf-tab .dot { width: 10px; height: 10px; border-radius: 50%; background: #c3c8d2; }
+    .ssf-tab.on { border-color: var(--maroon); background: var(--maroon); color: #fff; }
+    .ssf-tab.on .dot { background: #fff; }
+    .ssf-steps { position: absolute; top: 54px; left: 0; right: 0; display: flex; flex-direction: column; gap: 34px; }
+    .ssf-step { position: relative; border-radius: 15px; padding: 13px 22px 15px 76px; border: 1.5px solid #d9e3f0; background: linear-gradient(180deg,#fff,#f9fbfe); }
+    .ssf-step::before { content: attr(data-n); position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; color: #fff; font: 800 24px/46px var(--sans); text-align: center; }
+    .ssf-step.s1::before { background: #2e74b5; }
+    .ssf-step.s2 { border: 2px solid rgba(142,27,38,.42); background: linear-gradient(180deg,#fff,#fdf4f4); box-shadow: 0 9px 24px rgba(142,27,38,.1); }
+    .ssf-step.s2::before { background: var(--maroon); }
+    .ssf-step.s3 { border-color: #d3cbe4; background: linear-gradient(180deg,#fff,#faf8fd); } .ssf-step.s3::before { background: #5a4a8a; }
+    .ssf-shead { display: flex; align-items: baseline; gap: 12px; margin-bottom: 11px; }
+    .ssf-sname { font: 800 24px/1 var(--sans); }
+    .ssf-step.s1 .ssf-sname { color: #2e74b5; } .ssf-step.s2 .ssf-sname { color: var(--maroon); } .ssf-step.s3 .ssf-sname { color: #5a4a8a; }
+    .ssf-stag { font: italic 700 16px/1 var(--sans); color: #8a8a8a; }
+    /* ① domain-adaptation flow */
+    .ssf-adapt { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .ssf-pill { display: inline-flex; align-items: center; padding: 9px 16px; border-radius: 11px; font: 700 18px/1.15 var(--sans); }
+    .ssf-pill.base { background: #eef4fb; color: #44618a; border: 1.5px solid #d7e3f2; }
+    .ssf-pill.bench { background: #fff6ea; color: #a5710f; border: 1.5px solid #ecd8b3; }
+    .ssf-pill.adapted { background: #eef7f0; color: #2e7d46; border: 1.5px solid #cde8d5; font-weight: 800; }
+    .ssf-op { font: 800 22px/1 var(--sans); color: #b6b6be; }
+    /* ② prediction / ③ generation content */
+    .ssf-line { display: flex; align-items: center; gap: 12px; }
+    .ssf-line + .ssf-line { margin-top: 10px; }
+    .ssf-mini { flex: none; width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(0,0,0,.12); }
+    .ssf-mini.cl { background: radial-gradient(circle at 35% 30%, #9a6fc0, #6d3f96); }
+    .ssf-mini.ai { background: radial-gradient(circle at 35% 30%, #5a8fd0, #2e56a4); }
+    .ssf-mini.br { background: linear-gradient(180deg,#fff,#fbeeef); border: 1.5px solid rgba(142,27,38,.35); color: var(--maroon); }
+    .active .ssf-mini.br { animation: nextPulse 2.6s ease-in-out infinite; }
+    .ssf-mini svg { width: 21px; height: 21px; }
+    .ssf-tx { font: 500 20px/1.3 var(--sans); color: #333; }
+    .ssf-tx.cot { font: italic 700 19px/1.3 var(--sans); color: #7a3f44; }
+    .ssf-pick { font-style: normal; font-weight: 800; color: #fff; background: var(--maroon); padding: 3px 12px; border-radius: 7px; }
+    .ssf-code { display: inline-block; margin-left: 9px; padding: 4px 13px; border-radius: 999px; background: var(--maroon); color: #fff; font: 800 16px/1 var(--sans); vertical-align: 2px; }
+    /* connector: paper framework → worked example */
+    .ss-link { position: absolute; left: 838px; top: 458px; width: 60px; text-align: center; z-index: 3; }
+    .ss-link .chev { font: 800 44px/1 var(--sans); color: #b47a0b; opacity: .78; }
     .p8-step { position: absolute; left: 1070px; width: 780px; padding: 20px 26px 22px 92px; border: 1.5px solid #d9e3f0; border-radius: 16px; background: linear-gradient(180deg,#fff,#f9fbfe); box-shadow: 0 6px 16px rgba(46,116,181,.06); transition: transform .25s var(--ease), box-shadow .25s; }
     .p8-step::before { content: attr(data-n); position: absolute; left: 26px; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: #2e74b5; color: #fff; font: 800 23px/46px var(--sans); text-align: center; }
     .p8-step:hover { transform: translateX(6px); box-shadow: 0 12px 26px rgba(46,116,181,.14); }
@@ -630,16 +736,19 @@
     .active .p8-tag.g3 { animation: tagWash 6s ease-in-out infinite 4s; }
     @keyframes tagWash { 0%, 40%, 100% { box-shadow: none; transform: translateY(0); } 15% { box-shadow: 0 7px 18px rgba(0,0,0,.16); transform: translateY(-2px); } }
     .p8-step p { margin-top: 10px; font: 400 20px/1.3 var(--sans); color: #3f3f3f; white-space: nowrap; }
-    .p8-band { position: absolute; left: 60px; top: 856px; width: 1800px; height: 112px; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; border-top: 1.5px solid #d5d5d5; border-bottom: 1.5px solid #d5d5d5; }
-    .p8-cell { position: relative; display: flex; align-items: center; justify-content: center; padding: 0 20px; border-right: 1px solid #e2e2e2; }
-    .p8-cell:last-child { border-right: 0; background: #dfe9f8; }
-    .p8-cell strong { font: 700 26px/1.2 var(--sans); color: #000; text-align: center; }
-    .p8-cell strong::after { content: " ⓘ"; font-size: 17px; color: #7f9cc9; vertical-align: 6px; }
-    .p8-hint { position: absolute; right: 64px; top: 824px; font: italic 400 20px/1 var(--serif); color: #999; }
-    .p8-cell.demo .p8-pop { opacity: 1; transform: translateY(0); }
-    .p8-cell:last-child strong { color: #2e74b5; }
-    .p8-pop { position: absolute; left: 14px; right: 14px; bottom: calc(100% + 10px); padding: 16px 18px; background: #fff; border: 1.5px solid #c9c9c9; border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,.14); font: 400 21px/1.35 var(--sans); color: #444; opacity: 0; transform: translateY(8px); transition: opacity .25s, transform .25s; pointer-events: none; z-index: 8; }
-    .p8-cell:hover .p8-pop { opacity: 1; transform: translateY(0); }
+    .p8-chdr { position: absolute; left: 60px; top: 724px; font: 800 15px/1 var(--sans); letter-spacing: .05em; text-transform: uppercase; color: #8a8593; }
+    .p8-chdr b { color: #2e74b5; } .p8-chdr .m { color: var(--maroon); }
+    .p8-cmp { position: absolute; left: 60px; top: 758px; width: 1800px; display: grid; grid-template-columns: repeat(4, 1fr); border: 1.5px solid #e2e2e2; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 22px rgba(40,30,60,.05); }
+    .p8-cc { padding: 14px 26px 15px; border-right: 1px solid #eee; display: flex; flex-direction: column; gap: 9px; }
+    .p8-cc:last-child { border-right: 0; background: linear-gradient(180deg,#eef6fd,#dfeaf7); }
+    .p8-cn { font: 700 21px/1.15 var(--sans); color: #444; margin-bottom: 3px; }
+    .p8-cc.best .p8-cn { color: #2e74b5; } .p8-cc.best .p8-cn::after { content: " ★"; color: #d9930d; }
+    .p8-pr { display: flex; align-items: center; gap: 12px; }
+    .p8-pk { width: 114px; flex: none; font: 600 15.5px/1 var(--sans); color: #8a8a8a; }
+    .p8-dots { display: flex; gap: 6px; }
+    .p8-dt { width: 12px; height: 12px; border-radius: 50%; background: #dcdce2; }
+    .p8-dt.on { background: #9aa7b8; }
+    .p8-cc.best .p8-dt.on { background: #2e74b5; }
     .p8-take { left: 40px; top: 932px; width: 1856px; font-size: 30px; }
 
     /* ================================================================
@@ -694,23 +803,34 @@
     .sn-purpose { position: absolute; left: 26px; right: 26px; bottom: 24px; padding-top: 18px; border-top: 1.5px dashed #cdddef; text-align: center; font: italic 700 22px/1.32 var(--serif); color: #2e74b5; }
 
     /* --- ADAPT · SENSE — source-matched signal-family layout from hri-xin slide 6 --- */
-    .sf-card { position: absolute; border: 1.5px solid #e2e2e2; border-radius: 18px; background: linear-gradient(180deg,#fff,#fafafa); box-shadow: 0 6px 16px rgba(0,0,0,.05); padding: 15px 26px; }
-    .sf-card h4 { font: 800 26px/1.1 var(--sans); color: var(--maroon); }
-    .sf-card h4 small { font: 600 19px/1 var(--sans); color: #888; }
-    .sf-chips { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .sf-chips span { padding: 7px 14px; border-radius: 999px; background: #f9f2f2; border: 1px solid #e3cfd1; font: 600 18px/1 var(--sans); color: #8a5a5f; }
-    .sf-cap { margin-top: 9px; font: italic 600 18px/1.2 var(--serif); color: #999; }
-    .sf-divider { position: absolute; left: 1050px; width: 750px; height: 2px; background: repeating-linear-gradient(90deg,#bfbfbf 0 10px,transparent 10px 18px); opacity: .72; }
+    .sf-card { position: absolute; overflow: hidden; border: 1.5px solid #ebdfe0; border-radius: 18px; background: linear-gradient(180deg,#fff,#fcf9f9); box-shadow: 0 8px 22px rgba(70,35,45,.07); padding: 13px 26px 12px 30px; }
+    .sf-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--maroon); opacity: .92; }
+    .sf-card.fam-phys::before { background: #c0392b; }
+    .sf-card.fam-beh::before { background: #b57f2a; }
+    .sf-head { display: flex; align-items: center; gap: 13px; }
+    .sf-ic { flex: none; width: 38px; height: 38px; border-radius: 11px; display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg,#fff,#f6e9ea); border: 1.5px solid rgba(142,27,38,.26); color: var(--maroon); box-shadow: 0 3px 9px rgba(142,27,38,.10); }
+    .sf-card.fam-phys .sf-ic { background: linear-gradient(180deg,#fff,#fbe9e7); border-color: rgba(192,57,43,.30); color: #c0392b; }
+    .sf-card.fam-beh .sf-ic { background: linear-gradient(180deg,#fff,#f8f0e2); border-color: rgba(181,127,42,.34); color: #b57f2a; }
+    .sf-ic svg { width: 23px; height: 23px; display: block; }
+    .sf-card h4 { font: 800 25px/1.1 var(--sans); color: var(--maroon); }
+    .sf-card.fam-phys h4 { color: #b5322b; }
+    .sf-card.fam-beh h4 { color: #a5711f; }
+    .sf-card h4 small { font: 600 18px/1 var(--sans); color: #9a9296; }
+    .sf-chips { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .sf-chips span { padding: 7px 14px; border-radius: 999px; background: linear-gradient(180deg,#fff,#fbf4f4); border: 1.5px solid #ecd9db; font: 700 17px/1 var(--sans); color: #8a4a50; box-shadow: 0 2px 5px rgba(142,27,38,.05); }
+    .sf-cap { margin-top: 7px; font: italic 600 17.5px/1.2 var(--serif); color: #9a8f8f; }
+    .sf-divider { display: none; }
     .sg-svg { flex: 1; height: 56px; display: block; }
     .sense-note { left: 60px; top: 884px; width: 1800px; text-align: center; font: italic 600 22px/1.35 var(--serif); color: #2e74b5; }
 
     /* --- ADAPT · PREDICT — source-matched signals → ML → states layout from hri-xin slide 7 --- */
-    .sb-sig { position: absolute; width: 350px; border: 2.5px solid #c9c9c9; border-radius: 20px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); padding: 22px 24px; display: flex; flex-direction: column; justify-content: center; }
-    .sb-sig h4 { font: 800 15px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #bb6b71; }
-    .sb-sig .chip { display: flex; align-items: center; gap: 12px; padding: 9px 16px; border-radius: 12px; background: #f9f2f2; border: 1.5px solid #e3cfd1; color: #8a5a5f; }
-    .sb-sig .chip i { flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--maroon); opacity: .7; font-style: normal; }
-    .sb-sig .chip .cl { display: flex; flex-direction: column; gap: 3px; }
-    .sb-sig .chip .cl b { font: 700 20px/1 var(--sans); color: #8a5a5f; }
+    .sb-sig { position: absolute; width: 350px; border: 2.5px solid #c9c9c9; border-radius: 20px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); padding: 16px 22px; display: flex; flex-direction: column; justify-content: center; }
+    .sb-sig h4 { font: 800 15px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #bb6b71; text-align: center; }
+    .sb-sig .chip { display: flex; align-items: center; justify-content: center; gap: 13px; padding: 9px 16px; border-radius: 12px; background: #f9f2f2; border: 1.5px solid #e3cfd1; color: #8a5a5f; }
+    .sb-sig .chip .ic { flex: none; width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(180deg,#fff,#f6e9ea); border: 1.5px solid rgba(142,27,38,.28); color: var(--maroon); display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(142,27,38,.10); }
+    .sb-sig .chip .ic svg { width: 19px; height: 19px; display: block; }
+    .sb-sig .chip .cl { display: flex; flex-direction: column; gap: 3px; width: 168px; }
+    .sb-sig .chip .cl b { font: 800 19px/1 var(--sans); color: #7a3f44; }
     .sb-sig .chip .cl small { font: 600 13.5px/1.1 var(--sans); color: #b3888d; }
     .sb-arrow { position: absolute; display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 5; }
     .sb-arrow .lab { font: 800 14px/1.25 var(--sans); letter-spacing: .07em; text-transform: uppercase; color: var(--maroon); text-align: center; }
@@ -733,16 +853,17 @@
     .pr-compact .pr-name { font-size: 20px; }
     .pr-res { justify-self: end; font: 700 16.5px/1.15 var(--sans); color: var(--maroon); white-space: nowrap; }
     .pr-res em { color: #c98a90; font-style: normal; font-weight: 800; }
-    .pr-take { left: 46px; top: 818px; width: 1840px; text-align: center; font-size: 28px; }
+    .pr-take { left: 46px; top: 858px; width: 1840px; text-align: center; font-size: 28px; }
     /* fusion upgrade — signals ⊕ user characteristics stabilize the prediction */
+    .pr-sigc { gap: 9px; }
     .pr-sigc .chip { padding: 7px 14px; }
-    .pr-sigc .chip .cl b { font-size: 18px; } .pr-sigc .chip .cl small { font-size: 12.5px; }
-    .pr-fuse { left: 318px; top: 584px; width: 34px; height: 34px; border-radius: 50%; background: #fff; border: 2px solid var(--maroon); color: var(--maroon); display: flex; align-items: center; justify-content: center; font: 800 20px/1 var(--sans); box-shadow: 0 6px 14px rgba(142,27,38,.16); z-index: 3; }
+    .pr-sigc .chip .cl b { font-size: 17px; } .pr-sigc .chip .cl small { font-size: 12px; }
+    .pr-fuse { left: 318px; top: 657px; width: 34px; height: 34px; border-radius: 50%; background: #fff; border: 2px solid var(--maroon); color: var(--maroon); display: flex; align-items: center; justify-content: center; font: 800 20px/1 var(--sans); box-shadow: 0 6px 14px rgba(142,27,38,.16); z-index: 3; }
     .pr-fuse::before, .pr-fuse::after { content: ""; position: absolute; left: 50%; width: 0; border-left: 2px dashed rgba(142,27,38,.4); }
     .pr-fuse::before { top: -13px; height: 12px; } .pr-fuse::after { bottom: -13px; height: 12px; }
-    .pr-user { left: 160px; top: 630px; width: 350px; height: 100px; border: 2.5px solid rgba(142,27,38,.35); border-radius: 20px; background: linear-gradient(180deg,#fff,#fdf6f6); box-shadow: 0 10px 26px rgba(142,27,38,.08); padding: 17px 24px; }
-    .pr-user h4 { font: 800 15px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #bb6b71; }
-    .pr-user-chips { margin-top: 12px; display: flex; gap: 8px; }
+    .pr-user { left: 160px; top: 704px; width: 350px; height: 82px; border: 2.5px solid rgba(142,27,38,.35); border-radius: 20px; background: linear-gradient(180deg,#fff,#fdf6f6); box-shadow: 0 10px 26px rgba(142,27,38,.08); padding: 12px 24px; }
+    .pr-user h4 { font: 800 15px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #bb6b71; text-align: center; }
+    .pr-user-chips { margin-top: 10px; display: flex; gap: 8px; justify-content: center; }
     .pr-user-chips span { padding: 7px 13px; border-radius: 999px; background: rgba(142,27,38,.07); border: 1.4px solid rgba(142,27,38,.25); font: 700 14.5px/1 var(--sans); color: #8e1b26; white-space: nowrap; }
     .pr-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 13px; }
     .pr-toggle { display: inline-flex; border: 1.5px solid rgba(142,27,38,.35); border-radius: 999px; overflow: hidden; }
@@ -784,20 +905,38 @@
     .wa-sub { left: 0; right: 0; top: 322px; text-align: center; font: italic 600 22px/1.3 var(--sans); color: #555; }
     .wa-chips { left: 0; right: 0; top: 378px; display: flex; justify-content: center; gap: 13px; }
     .wa-chips span { padding: 9px 18px; border-radius: 999px; border: 1.5px solid rgba(142,27,38,.25); background: linear-gradient(180deg,#fff,#fbf2f3); font: italic 700 20px/1 var(--sans); color: var(--maroon); }
-    .wa-states { left: 0; right: 0; top: 336px; display: flex; justify-content: center; align-items: center; gap: 13px; }
-    .wa-states-lbl { font: italic 600 23px/1.3 var(--sans); color: #555; margin-right: 5px; }
+    .wa-states { left: 0; right: 0; top: 330px; display: flex; justify-content: center; align-items: center; gap: 12px; }
+    .wa-states-lbl { font: italic 600 22px/1.3 var(--sans); color: #555; margin-right: 4px; }
     .wa-chip { padding: 8px 18px; border-radius: 999px; border: 1.5px solid rgba(142,27,38,.25); background: linear-gradient(180deg,#fff,#fbf2f3); font: italic 700 20px/1 var(--sans); color: var(--maroon); }
+    .wa-persona { display: inline-flex; align-items: center; gap: 9px; padding: 9px 20px; border-radius: 999px; cursor: pointer; -webkit-appearance: none; appearance: none; border: 1.6px solid rgba(217,147,13,.5); background: linear-gradient(180deg,#fff,#fffdf6); font: 800 18px/1 var(--sans); color: #9a7412; transition: background .22s, border-color .22s, box-shadow .22s, color .22s; }
+    .wa-persona .wa-pdot { width: 10px; height: 10px; border-radius: 50%; background: #d9930d; opacity: .35; transition: opacity .22s, box-shadow .22s; }
+    .wa-persona.on { background: linear-gradient(180deg,#fff7e6,#f6e4bf); border-color: #d9930d; color: #8a5e00; box-shadow: 0 6px 16px rgba(217,147,13,.22); }
+    .wa-persona.on .wa-pdot { opacity: 1; transform: scale(1.15); }
+    .wa-persona[data-state="strained"] .wa-pdot { background: #b5202b; }
+    .wa-persona[data-state="atease"] .wa-pdot { background: #2e7d46; }
+    .wa-persona:hover { border-color: #d9930d; }
+    .wa-persona:focus-visible { outline: 3px solid #d9930d; outline-offset: 3px; }
     .adapt-loc { left: 1632px; top: 118px; width: 232px; height: 130px; }
     .adapt-loc svg { width: 100%; height: 100%; display: block; }
     .wa-anskick { left: 0; right: 0; top: 546px; text-align: center; font: 800 16px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #b47a0b; }
-    .wa-node { position: absolute; top: 538px; width: 400px; height: 140px; border: 1.8px solid rgba(217,147,13,.45); border-radius: 16px; background: linear-gradient(180deg,#fff,#fffdf6); box-shadow: 0 8px 20px rgba(217,147,13,.10), inset 0 1px 0 #fff; text-align: center; }
+    .wa-node { position: absolute; top: 450px; width: 400px; height: 182px; border: 1.8px solid rgba(217,147,13,.45); border-radius: 18px; background: linear-gradient(180deg,#fff,#fffdf6); box-shadow: 0 8px 20px rgba(217,147,13,.10), inset 0 1px 0 #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; padding: 20px 22px 18px; }
     .wa-node.n1 { left: 140px; } .wa-node.n2 { left: 760px; } .wa-node.n3 { left: 1380px; }
-    .wa-go { position: absolute; top: 12px; right: 13px; width: 29px; height: 29px; border-radius: 50%; background: rgba(217,147,13,.12); color: #b47a0b; display: flex; align-items: center; justify-content: center; font: 800 14px/1 var(--sans); transition: background .26s, color .26s; }
+    .wa-step { position: absolute; top: 13px; left: 14px; width: 26px; height: 26px; border-radius: 50%; background: #d9930d; color: #fff; display: flex; align-items: center; justify-content: center; font: 800 15px/1 var(--sans); box-shadow: 0 3px 8px rgba(217,147,13,.3); }
+    .wa-go { position: absolute; top: 13px; right: 14px; width: 29px; height: 29px; border-radius: 50%; background: rgba(217,147,13,.12); color: #b47a0b; display: flex; align-items: center; justify-content: center; font: 800 14px/1 var(--sans); transition: background .26s, color .26s; }
     .wa-node:hover .wa-go { background: #d9930d; color: #fff; }
-    .wa-ic { position: absolute; top: 16px; left: 0; right: 0; margin: 0 auto; width: 44px; height: 37px; fill: none; stroke: #b47a0b; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
-    .wa-node h4 { position: absolute; top: 58px; left: 0; right: 0; font: 800 27px/1.08 var(--sans); letter-spacing: -.01em; color: #b47a0b; }
-    .wa-node p { position: absolute; top: 96px; left: 0; right: 0; font: 500 17.5px/1.3 var(--sans); color: #7c7468; }
-    .wa-user { left: 670px; top: 780px; width: 580px; height: 66px; border-radius: 999px; background: linear-gradient(180deg,#fff,#faf7fd); border: 2px solid rgba(125,82,173,.45); box-shadow: 0 10px 26px rgba(125,95,178,.14); display: flex; align-items: center; justify-content: center; gap: 12px; }
+    .wa-head { display: flex; align-items: center; gap: 11px; }
+    .wa-ic { width: 34px; height: 29px; fill: none; stroke: #b47a0b; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+    .wa-node h4 { margin: 0; font: 800 27px/1 var(--sans); letter-spacing: -.01em; color: #b47a0b; }
+    .wa-role { margin: 0; font: 500 16px/1.2 var(--sans); color: #7c7468; }
+    .wa-read { display: flex; align-items: center; justify-content: center; gap: 7px; flex-wrap: wrap; width: 100%; }
+    .wa-sig { padding: 5px 11px; border-radius: 999px; border: 1.3px solid rgba(217,147,13,.34); background: rgba(217,147,13,.07); font: 600 15px/1 var(--sans); color: #9a7412; white-space: nowrap; transition: background .25s, border-color .25s, color .25s; }
+    .wa-node.n3 .wa-sig { border-color: rgba(217,147,13,.5); background: linear-gradient(180deg,#fff7e6,#f7e7c4); color: #8a5e00; }
+    .wa-bars { flex-direction: column; gap: 9px; }
+    .wa-bar { display: flex; align-items: center; gap: 10px; width: 100%; }
+    .wa-bl { flex: none; width: 92px; text-align: right; font: 600 13px/1 var(--sans); color: #6f6a62; }
+    .wa-bt { flex: 1; height: 9px; border-radius: 999px; background: rgba(120,110,95,.16); overflow: hidden; }
+    .wa-bf { display: block; height: 100%; width: 0; border-radius: 999px; transition: width .55s var(--ease); }
+    .wa-user { left: 670px; top: 712px; width: 580px; height: 66px; border-radius: 999px; background: linear-gradient(180deg,#fff,#faf7fd); border: 2px solid rgba(125,82,173,.45); box-shadow: 0 10px 26px rgba(125,95,178,.14); display: flex; align-items: center; justify-content: center; gap: 12px; }
     .wa-uic { flex: none; width: 26px; height: 26px; fill: none; stroke: #7d52ad; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .wa-user span { font: italic 600 21px/1 var(--serif); color: #444; }
     /* Adapt-loop nodes are clickable — each opens its detail modal */
@@ -807,9 +946,9 @@
     .wa-clickhint { color: #b47a0b; font-weight: 800; }
     .wa-flow .ribflow { stroke: rgba(255,255,255,.92); stroke-width: 3.4; stroke-dasharray: 1.5 15; fill: none; stroke-linecap: round; }
     .active .wa-flow .ribflow { animation: ribFlow 1.05s linear infinite; }
-    .wa-take { left: 0; right: 0; top: 880px; text-align: center; font: italic 700 27px/1.3 var(--serif); color: #1a1526; }
+    .wa-take { left: 0; right: 0; top: 838px; text-align: center; font: italic 700 27px/1.3 var(--serif); color: #1a1526; }
     .wa-take b { color: var(--maroon); font-style: inherit; }
-    .wa-next { left: 0; right: 0; top: 936px; text-align: center; font: 700 20px/1 var(--sans); color: var(--maroon); }
+    .wa-next { left: 0; right: 0; top: 894px; text-align: center; font: 700 20px/1 var(--sans); color: var(--maroon); }
     .wa-next b { color: var(--maroon); } .wa-next .ar { font-weight: 900; font-size: 22px; vertical-align: -2px; }
 
     /* --- P13 · ADAPT & AUGMENT — AI generation + user interface } use cases --- */
@@ -838,6 +977,39 @@
     .av-divider { left: 60px; right: 60px; display: flex; align-items: center; gap: 16px; color: #b47a0b; }
     .av-divider::before, .av-divider::after { content: ""; flex: 1; height: 1.5px; background: repeating-linear-gradient(90deg,rgba(217,147,13,.48) 0 8px,transparent 8px 15px); }
     .av-divider span { flex: none; padding: 6px 13px; border-radius: 999px; border: 1px solid rgba(217,147,13,.28); background: #fffdf8; font: 800 12px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: #a96f08; }
+    /* Adapt detail — "AI adapts X -> so the human gains Y" augmentation pairs */
+    .aug-thesis { font: italic 600 22px/1.4 var(--serif); color: #5a5450; }
+    .aug-thesis b { color: var(--maroon); font-style: normal; }
+    .aug-row { display: flex; gap: 20px; }
+    .aug-pair { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 15px 16px; border: 1.5px solid #e4d6bb; border-radius: 16px; background: linear-gradient(180deg,#fff,#fffdf8); box-shadow: 0 6px 16px rgba(217,147,13,.08); transition: transform .25s var(--ease), box-shadow .25s; }
+    .aug-pair:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(217,147,13,.16); }
+    .aug-ey { font: 800 11px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #b0555f; }
+    .aug-ey.adapts { color: #a96f08; }
+    .aug-ic { height: 36px; display: flex; align-items: center; justify-content: center; }
+    .augi { height: 34px; width: auto; fill: none; stroke: #b47a0b; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .aug-dim { font: 800 21px/1.1 var(--sans); color: #000; text-align: center; }
+    .aug-sub { font: 400 13.5px/1.22 var(--sans); color: #8a8378; text-align: center; }
+    .aug-arrow { font: 800 22px/1 var(--sans); color: #d9930d; margin: 1px 0; }
+    .aug-gain { width: 100%; text-align: center; padding: 10px 8px; border-radius: 11px; background: linear-gradient(180deg,#fff7e6,#f7e7c4); border: 1px solid rgba(217,147,13,.4); font: 800 16px/1.18 var(--sans); color: #8a5e00; }
+    .aug-dim { min-height: 44px; display: flex; align-items: center; justify-content: center; }
+    /* clickable sensing nodes -> open the source figure in the lightbox */
+    .vl-clickfig { cursor: zoom-in; }
+    .vl-clickfig::after { content: "\2922"; position: absolute; top: 7px; right: 10px; font: 700 15px/1 var(--sans); color: #8b5fc7; opacity: .5; }
+    .vl-clickfig:hover { border-color: #8b5fc7 !important; box-shadow: 0 12px 26px rgba(139,95,199,.22) !important; }
+    /* paper references — compact footer */
+    .aug-refs { display: flex; flex-direction: column; gap: 4px; text-align: center; }
+    .aug-ref { font: 500 12.5px/1.35 var(--sans); color: #8a8378; }
+    .aug-ref .rtag { font-weight: 800; color: #a96f08; margin-right: 7px; }
+    /* loop stage tags — Sense / Predict / Adapt captions over the closed-loop diagram */
+    .vl-stage { text-align: center; pointer-events: none; z-index: 6; }
+    .vl-stage-pill { display: inline-flex; align-items: center; gap: 8px; padding: 5px 15px 5px 6px; border-radius: 999px; background: #fff; font: 800 13.5px/1 var(--sans); letter-spacing: .03em; box-shadow: 0 5px 14px rgba(40,30,60,.14); }
+    .vl-stage-pill::before { content: attr(data-n); flex: none; display: flex; align-items: center; justify-content: center; width: 21px; height: 21px; border-radius: 50%; color: #fff; font: 800 12px/1 var(--sans); }
+    .vl-stage-pill.sense { color: #6d3f96; border: 1.6px solid rgba(139,95,199,.55); }
+    .vl-stage-pill.sense::before { background: #8b5fc7; }
+    .vl-stage-pill.predict { color: #2f6bb2; border: 1.6px solid rgba(47,107,178,.5); }
+    .vl-stage-pill.predict::before { background: #2f6bb2; }
+    .vl-stage-pill.adapt { color: #b47a0b; border: 1.6px solid rgba(217,147,13,.6); }
+    .vl-stage-pill.adapt::before { background: #d9930d; }
     /* Honda closed adaptive VR loop — migrated from the Honda deck. */
     .vl { position: absolute; }
     .vl-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
@@ -1013,12 +1185,44 @@
        ================================================================ */
     /* cue strip — one centered control: identical content, flip only the source cue */
     /* example strip — de-emphasized source cue */
-    .tt-case { position: absolute; left: 160px; top: 240px; width: 1600px; display: flex; align-items: center; gap: 28px; padding: 15px 32px; border: 1.5px solid #ececec; border-radius: 16px; background: linear-gradient(180deg,#fff,#fbfbfb); box-shadow: 0 6px 16px rgba(0,0,0,.04); }
+    .tt-case { position: absolute; left: 160px; top: 320px; width: 1600px; display: flex; align-items: center; gap: 24px; padding: 15px 26px; border: 1.5px solid #ececec; border-radius: 16px; background: linear-gradient(180deg,#fff,#fbfbfb); box-shadow: 0 6px 16px rgba(0,0,0,.04); }
+    /* narrative spine — why · how · result */
+    .tt-beat { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px 5px 6px; border-radius: 999px; border: 1.5px solid rgba(142,27,38,.32); background: linear-gradient(180deg,#fff,#fbf1f2); font: 800 13px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--maroon); white-space: nowrap; }
+    .tt-beat .n { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--maroon); color: #fff; display: flex; align-items: center; justify-content: center; font: 800 13px/1 var(--sans); }
+    .tt-beat.res { background: var(--maroon); border-color: var(--maroon); color: #fff; }
+    .tt-beat.res .n { background: #fff; color: var(--maroon); }
+    .tt-why { left: 160px; top: 257px; width: 1600px; display: flex; align-items: center; gap: 16px; }
+    .tt-why-tx { font: 500 20px/1.3 var(--sans); color: #4a4550; }
+    .tt-why-tx b { color: var(--maroon); font-weight: 800; }
+    .tt-result-label { left: 100px; top: 428px; display: flex; align-items: center; gap: 15px; }
+    .tt-result-label b { font: 800 21px/1 var(--sans); color: #1a1622; }
+    .tt-result-label b span { color: #8a8a8a; font-weight: 600; }
+    /* "a fair judge would score here" marker on the correctness bar (answer is false) */
+    .tt-fair { position: absolute; top: -7px; bottom: -7px; left: 15%; width: 3px; background: #1a1622; border-radius: 2px; box-shadow: 0 0 0 1.6px #fff; z-index: 5; }
+    .tt-fair::after { content: "a fair judge"; position: absolute; bottom: calc(100% + 4px); left: 0; transform: translateX(-18%); white-space: nowrap; font: 800 12px/1 var(--sans); color: #1a1622; }
+    .tt-fair::before { content: ""; position: absolute; left: 3px; top: 50%; width: 8px; height: 0; border-top: 2px dashed #1a1622; }
+    /* Human vs LLM mini-bar comparison */
+    .tt-cmp { margin-top: 20px; display: flex; flex-direction: column; gap: 18px; }
+    .tt-crow { display: flex; align-items: flex-end; gap: 20px; }
+    .tt-who { flex: none; width: 120px; display: flex; align-items: center; gap: 10px; font: 800 21px/1.05 var(--sans); padding-bottom: 20px; }
+    .tt-who .ic { flex: none; width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .tt-who .ic svg { width: 23px; height: 23px; }
+    .tt-crow.human .tt-who { color: #2e7d46; } .tt-crow.human .ic { background: rgba(46,125,70,.12); border: 1.5px solid rgba(46,125,70,.32); color: #2e7d46; }
+    .tt-crow.llm .tt-who { color: var(--maroon); } .tt-crow.llm .ic { background: rgba(142,27,38,.09); border: 1.5px solid rgba(142,27,38,.30); color: var(--maroon); }
+    .tt-mini { flex: none; display: flex; align-items: flex-end; gap: 20px; }
+    .tt-mcol { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+    .tt-mbar { width: 42px; border-radius: 6px 6px 0 0; }
+    .tt-crow.human .tt-mbar { background: linear-gradient(180deg,#5cbd86,#2e7d46); }
+    .tt-crow.llm .tt-mbar { background: linear-gradient(180deg,#c34b56,#8e1b26); }
+    .tt-mlab { font: 700 14.5px/1 var(--sans); color: #8a8590; }
+    .tt-cnote { flex: 1; padding-bottom: 20px; font: 700 19px/1.28 var(--sans); }
+    .tt-crow.human .tt-cnote { color: #2e7d46; } .tt-crow.llm .tt-cnote { color: var(--maroon); }
+    .tt-cnote b { text-decoration: underline; text-underline-offset: 3px; }
     .tt-case-l { flex: 1; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
     .tt-case-lead { font: 800 14px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #bb6b71; }
     .tt-case-q { font: 600 27px/1.2 var(--sans); color: #222; }
     .tt-case-q em { font-style: inherit; color: var(--maroon); text-decoration: underline wavy rgba(142,27,38,.55); text-underline-offset: 6px; }
-    .tt-case-x { display: inline-block; margin-left: 8px; padding: 5px 12px; border-radius: 999px; background: rgba(142,27,38,.09); font: 700 16px/1 var(--sans); color: var(--maroon); vertical-align: 3px; }
+    .tt-case-x { display: inline-block; margin-left: 12px; padding: 8px 15px; border-radius: 999px; background: var(--maroon); font: 800 19px/1 var(--sans); color: #fff; vertical-align: 3px; box-shadow: 0 5px 13px rgba(142,27,38,.28); }
     .tt-case-r { flex: none; display: flex; align-items: center; gap: 10px; opacity: .55; }
     .tt-case-srck { font: 600 12px/1.2 var(--sans); letter-spacing: .04em; color: #9a9a9a; }
     .tt-src { display: none; }
@@ -1027,12 +1231,12 @@
     .tt-toggle button.active { background: var(--maroon); border-color: var(--maroon); color: #fff; }
 
     /* the two points — big panels */
-    .tt-panel { position: absolute; top: 372px; width: 830px; height: 384px; padding: 26px 34px; border: 2px solid #e2e2e2; border-radius: 20px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); }
+    .tt-panel { position: absolute; top: 468px; width: 830px; height: 384px; padding: 26px 34px; border: 2px solid #e2e2e2; border-radius: 20px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.05); }
     .tt-panel.a { left: 100px; border-top: 5px solid #2f6bb2; }
     .tt-panel.b { left: 990px; border-top: 5px solid #6d3f96; }
     .tt-panel h3 { display: flex; align-items: center; gap: 14px; font: 800 28px/1.15 var(--sans); }
-    .tt-panel.a h3 { color: #2f6bb2; }
-    .tt-panel.b h3 { color: #6d3f96; }
+    .tt-panel.a h3 { color: #1a1622; }
+    .tt-panel.b h3 { color: #1a1622; }
     .tt-pn { flex: none; width: 42px; height: 42px; border-radius: 50%; color: #fff; font: 800 22px/42px var(--sans); text-align: center; }
     .tt-panel.a .tt-pn { background: #2f6bb2; } .tt-panel.b .tt-pn { background: #6d3f96; }
     .tt-should { margin-top: 8px; font: italic 600 19px/1.3 var(--serif); color: #8a8a8a; }
@@ -1042,14 +1246,15 @@
     .tt-row { display: flex; align-items: center; gap: 20px; }
     .tt-row .lb { width: 270px; flex: none; font: 700 24px/1.1 var(--sans); color: #000; }
     .tt-row .lb i { display: block; margin-top: 5px; font: 400 16px/1.1 var(--sans); color: #8a8a8a; font-style: normal; }
-    .tt-btrack { flex: 1; position: relative; height: 17px; background: #e8e8e8; border-radius: 4px; overflow: hidden; }
+    .tt-btrack { flex: 1; position: relative; height: 17px; background: #e8e8e8; border-radius: 4px; overflow: visible; }
     .tt-btrack i { position: absolute; inset: 0 auto 0 0; border-radius: 4px; background: #2f6bb2; transition: width 750ms var(--ease); }
     .tt-panel.b .tt-btrack i { background: #6d3f96; }
     .tt-row .vl { position: static; width: 96px; flex: none; font: 700 21px/1.1 var(--sans); color: var(--navy-verdict); text-align: right; }
-    .tt-risk { position: absolute; left: 34px; right: 34px; bottom: 22px; padding: 12px 16px; border-radius: 12px; border: 1.5px dashed rgba(142,27,38,.4); background: rgba(142,27,38,.06); font: 700 21px/1.3 var(--sans); color: var(--maroon); text-align: center; }
+    .tt-risk { position: absolute; left: 34px; right: 34px; bottom: 14px; padding: 12px 16px; border-radius: 12px; border: 1.5px dashed rgba(142,27,38,.4); background: rgba(142,27,38,.06); font: 700 21px/1.3 var(--sans); color: var(--maroon); text-align: center; }
     .tt-risk b { text-decoration: underline; text-underline-offset: 4px; }
-    .tt-link-band { left: 360px; top: 772px; width: 1200px; height: 46px; display: flex; align-items: center; justify-content: center; border: 1.5px dashed rgba(142,27,38,.55); border-radius: 14px; background: linear-gradient(180deg,#fdf6f2,#fbeee8); box-shadow: 0 4px 14px rgba(142,27,38,.06); }
-    .tt-link-tx { font: 600 20px/1.2 var(--sans); color: #5a4a45; letter-spacing: .005em; }
+    .tt-link-band { left: 300px; top: 772px; width: 1320px; height: 54px; display: flex; align-items: center; justify-content: center; gap: 12px; border: 1.5px solid rgba(142,27,38,.5); border-radius: 14px; background: linear-gradient(180deg,#fbe9e5,#f7dcd4); box-shadow: 0 8px 20px rgba(142,27,38,.11); }
+    .tt-link-band::before { content: "\2193\2193"; font: 800 15px/1 var(--sans); color: var(--maroon); letter-spacing: -1px; opacity: .7; }
+    .tt-link-tx { font: 700 21px/1.2 var(--sans); color: #7a2b28; letter-spacing: .005em; }
     .tt-link-tx b { color: var(--maroon); font-weight: 800; }
     .tt-link-stub { border-left: 1.5px dashed rgba(142,27,38,.55); width: 0; }
 
@@ -1266,7 +1471,7 @@
 
       <!-- ================= P2 · RESEARCH CONCEPT ================= -->
       <section class="slide" id="slideIntro" data-title="Research concept and motivation" aria-label="Slide 2 of 12">
-        <h2 class="abs p2-title rv" data-edit-id="p2-title">Research <span class="kw">Background</span></h2>
+        <h2 class="abs p2-title rv" data-edit-id="p2-title"><span class="kw">Research Background</span></h2>
         <div class="rule p2-rule rv"></div>
         <p class="abs p2-kick k1 rv d1">interdisciplinary background</p>
         <div class="abs p2-badge b1 rv d1" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="#4472c4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="14" r="6"/><path d="M5,35 C5,26.5 25,26.5 25,35"/><circle cx="36" cy="11" r="3"/><circle cx="41" cy="23" r="3"/><circle cx="32" cy="31" r="3"/><path d="M37.5,13.5 L40,20.2"/><path d="M39,25.5 L34.3,29"/><path d="M25,19 L33.2,13.2"/></svg></div>
@@ -1291,9 +1496,9 @@
 
       <!-- ================= P3 · MOTIVATION ================= -->
       <section class="slide" data-title="Human signals are not always ground truth" aria-label="Slide 3 of 12">
-        <h2 class="abs kt rv" style="left:20px;top:24px;font-size:46px" data-edit-id="p3-title"><i>Research </i><span class="kw">Motivation</span>: Human Signals ⇄ LLM Support — Neither Is Always Right</h2>
+        <h2 class="abs kt rv" style="left:20px;top:24px;font-size:46px" data-edit-id="p3-title"><span class="kw">Research Motivation</span>: Human Signals ⇄ LLM Support — Neither Is Always Right</h2>
         <div class="rule rv" style="top:104px"></div>
-        <p class="abs p3-lead rv d1" data-edit-id="p3-lead">LLMs are aligned with humans and trained on human data <b>to support humans</b>, <u>however</u> : </p>
+        <p class="abs p3-lead rv d1" data-edit-id="p3-lead">LLMs are trained on human data <b>to support humans</b>, <em><u>however</u>:</em>  </p>
         <div class="abs p3-ell h rv d2"><h3>Humans</h3><p>(cognition &amp; behavior)</p></div>
         <div class="abs p3-ell l rv d2"><h3>LLMs</h3><p>(behavior &amp; mechanism)</p></div>
         <svg class="abs p3-loop rv d2" viewBox="0 0 1920 1080" aria-hidden="true">
@@ -1319,7 +1524,7 @@
         <div class="abs p3-eval rv d2" aria-hidden="true"><span class="lab">EVALUATE</span></div>
         <p class="abs p3-eval-cap rv d2">evaluates both humans &amp; LLMs</p>
         <div class="abs p3-tag h rv d3" data-edit-id="p3-box-h"><span class="who">Human signals</span><span class="what"><i class="x">✗</i> not always <em>ground truth</em></span></div>
-        <div class="abs p3-tag l rv d3" data-edit-id="p3-box-p"><span class="who">LLM support</span><span class="what"><i class="x">✗</i> not always <em>reliable</em></span></div>
+        <div class="abs p3-tag l rv d3" data-edit-id="p3-box-p"><span class="who">LLM support</span><span class="what"><i class="x">✗</i> not always <em>appropriate</em></span></div>
         <div class="abs p3-align rv d3" aria-hidden="true"><span class="dot"></span><span class="lab">ALIGN</span></div>
         <div class="abs p3-core rv d3"><div class="phrase"><span style="color:#8e1b26">Trustworthy</span> <span style="color:#2e56a4">Human–AI Loop</span></div><span class="bar"></span></div>
         <div class="abs p3-adapt rv d3" aria-hidden="true"><span class="dot"></span><span class="lab">ADAPT</span></div>
@@ -1329,7 +1534,7 @@
 
       <!-- ================= P5-NEW · FRAMEWORK (one loop, three layers) ================= -->
       <section id="slideFramework" class="slide" data-title="The framework — one loop, three layers" aria-label="Slide 4 of 12">
-        <h2 class="abs kt rv" style="left:20px;top:24px;font-size:45px"><span class="kw">The Framework</span>: One Loop, Three Layers — Mechanism · Method · Modeling</h2>
+        <h2 class="abs kt rv" style="left:20px;top:24px;font-size:45px"><span class="kw">Research Framework</span>: One Loop, Three Layers — Mechanism · Method · Modeling</h2>
         <div class="rule rv" style="top:104px"></div>
 
         <p class="abs fw-thesis rv d1">Turn human signals into a <b style="color:var(--maroon)">trustworthy</b> <span style="color:#6d3f96">Human</span> ⇄ <span style="color:#2e56a4">LLM</span> loop.</p>
@@ -1345,7 +1550,7 @@
         <button type="button" class="abs fw-band f2 rv d3" data-jump="7">
           <span class="fw-n">2</span>
           <span class="fw-head"><span class="role">Align</span><span class="sub">LLM as Learner</span></span>
-          <span class="fw-def">Selectively learn <b>human expertise</b>, resist bias — at the <b>strategy layer</b>, not tokens.</span>
+          <span class="fw-def">Selectively learn <b>human expertise</b>, resist bias — for <b>controllable and explainable</b> generation.</span>
           <span class="fw-layer">METHOD</span>
           <span class="fw-sig"><span class="l1">EXPERT SIGNALS</span><span class="l2">strategies · annotations · scripts</span></span>
         </button>
@@ -1383,7 +1588,7 @@
 
         <!-- essence pill -->
         <div class="abs fw-core rv d4">
-          <span class="phrase">Learn the <span style="color:var(--maroon)">right things</span> from humans · provide the <span style="color:#2e56a4">right support</span> back</span>
+          <span class="phrase">Objective: Learn the <span style="color:var(--maroon)">right things</span> from humans · provide the <span style="color:#2e56a4">right support</span> back to humans</span>
           <span class="bar"></span>
         </div>
         <p class="abs fw-coresub rv d4">— with both directions trustworthy —</p>
@@ -1424,7 +1629,7 @@
           <text x="156" y="85" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="14" fill="#241c33">LLM</text>
         </svg>
 
-        <p class="abs mir-lead rv d1">LLMs learn from human data &mdash; so do they <b>judge like us</b>? We probe both, three ways:</p>
+        <p class="abs mir-lead rv d1">LLMs learn from humans, so do they &ldquo;<b>think</b>&rdquo; like us? We probe both of them <br>in evaluation tasks via <b>three steps</b>:</p>
 
         <button type="button" class="abs mir-row same r1 rv d2" data-detail="slideEval" aria-label="Open the heuristic-reliance detail">
           <span class="mir-n">1</span>
@@ -1434,23 +1639,23 @@
           <span class="mir-open" aria-hidden="true">&#8599;</span>
         </button>
 
-        <button type="button" class="abs mir-row diff r2 rv d3" data-detail="slideTT" aria-label="Open the multi-dimension-judge detail">
-          <span class="mir-n">2</span>
+        <button type="button" class="abs mir-row diff r3 rv d4" data-detail="slideTT" aria-label="Open the multi-dimension-judge detail">
+          <span class="mir-n">3</span>
           <span class="mir-asp">Multi-dimension judgment<i class="mir-how">multi&#8209;fields scoring vs ranking</i></span>
           <span class="mir-desc">LLMs <span class="df">entangle</span> every score; humans judge each field independently.</span>
           <span class="mir-verdict"><span class="sym">&ne;</span><span class="vt"><b>UNLIKE</b><span>humans vs LLMs</span></span></span>
           <span class="mir-open" aria-hidden="true">&#8599;</span>
         </button>
 
-        <button type="button" class="abs mir-row same r3 rv d4" data-detail="slideMech" aria-label="Open the inner-mechanism detail">
-          <span class="mir-n">3</span>
+        <button type="button" class="abs mir-row same r2 rv d3" data-detail="slideMech" aria-label="Open the inner-mechanism detail">
+          <span class="mir-n">2</span>
           <span class="mir-asp">Inner mechanism<i class="mir-how">gaze &#8596; attention</i></span>
-          <span class="mir-desc">Human <b>gaze</b> and model <b>attention</b> fixate on the very same cue.</span>
+          <span class="mir-desc">Human <b>gaze</b> and model <b>attention</b> fixate on the very same cues.</span>
           <span class="mir-verdict"><span class="sym">=</span><span class="vt"><b>ALIKE</b><span>humans &amp; LLMs</span></span></span>
           <span class="mir-open" aria-hidden="true">&#8599;</span>
         </button>
 
-        <p class="abs mir-aha rv d4">The mirror &mdash; <span class="g">same</span> biases, <span class="g">same</span> mechanism, yet LLMs weigh evidence <span class="m">unlike us</span>.</p>
+        <p class="abs mir-aha rv d4"><span class="g">Same heuristic reliance</span>, <span class="g">same mechanism</span> &mdash; but LLMs weigh evidence <span class="m">not fully as we humans do</span>.</p>
         <p class="abs mir-next rv d4">next &middot; <b>Align</b> &mdash; teach LLMs to learn from humans <b>selectively</b> <span class="ar">&rarr;</span></p>
 
         <span class="pnum">6 / 11</span>
@@ -1458,17 +1663,17 @@
 
       <!-- ================= P5 · WORK 1 (live readout) ================= -->
       <section class="slide detail" id="slideEval" data-title="1 · Evaluate — LLM-as-a-Judge for health information" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Detail — Heuristic reliance: LLM-as-a-Judge for health information">
-        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p5-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: LLM-as-a-Judge for Health Information</h2>
+        <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p5-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: LLM-as-a-Judge vs. Human Judge</h2>
         <div class="rule rv" style="top:104px"></div>
         <div class="abs dtag rv d2" style="top:26px;right:40px" role="note" aria-label="Domain: Health Information">
           <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.4s-6.9-4.2-9.2-8.7C1.1 8.5 2.9 5.1 6.1 5.1c1.9 0 3.4 1.1 4.4 2.6 1-1.5 2.5-2.6 4.4-2.6 3.2 0 5 3.4 3.3 6.6-2.3 4.5-9.2 8.7-9.2 8.7z" fill="#8e1b26" fill-opacity=".16" stroke="#8e1b26" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
           <span class="dtag-tx"><span class="dtag-k">Domain</span><span class="dtag-v">Health Information</span></span>
         </div>
-        <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px" data-edit-id="p5-rq"><span class="tag">Research Question:</span> whether humans and LLM-as-a-Judge evaluate the information differently?</p>
+        <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px" data-edit-id="p5-rq"><span class="tag">Research Question:</span> when the same content is labeled &lsquo;human&rsquo; vs &lsquo;AI&rsquo;-written, do humans and LLM judges shift their trust the same way?</p>
 
         <!-- LEFT · the interactive stimulus: one trial, source label flips, toggle inside -->
         <div class="abs p5-ex rv d1" role="group" aria-label="Example trial: identical health content, only the source label flips">
-          <p class="p5-ex-k">Example · one trial</p>
+          <p class="p5-ex-k">Experimental Example</p>
           <span class="p5-ex-src human" data-ro="src">Label: Human-written</span>
           <p class="p5-ex-q" data-edit-id="p5-ex-q">“Daily walking helps lower blood pressure.”</p>
           <p class="p5-ex-fix" data-edit-id="p5-ex-fix">identical content — only the source label flips.</p>
@@ -1476,26 +1681,22 @@
           <div class="p5-toggle" id="p5Toggle" role="group" aria-label="Counterfactual source label"><button type="button" class="active" data-label="human">HUMAN LABEL</button><button type="button" data-label="ai">AI LABEL</button></div>
         </div>
 
-        <!-- RIGHT · the readout: what moves when the label flips -->
-        <p class="p5-read-k rv d2">Readout · what changes when the label flips</p>
-        <p class="p5-row-label rv d2" style="top:348px"><span class="rl-h">Human</span> trust</p>
-        <p class="p5-verdict rv d2" style="top:352px" data-ro="v-trustH">HIGHER under human label</p>
-        <div class="p5-track human rv d2" style="top:394px"><i data-ro="b-trustH"></i></div>
-        <p class="p5-row-label rv d3" style="top:478px"><span class="rl-j">LLM-as-a-Judge</span> trust</p>
-        <p class="p5-verdict rv d3" style="top:482px" data-ro="v-trustJ">HIGHER under human label</p>
-        <div class="p5-track judge rv d3" style="top:524px"><i data-ro="b-trustJ"></i></div>
-        <p class="p5-row-label rv d4" style="top:608px">Judge decision uncertainty</p>
-        <p class="p5-verdict warn rv d4" style="top:612px" data-ro="v-unc">LOW under human label</p>
-        <div class="p5-track warn rv d4" style="top:654px"><i data-ro="b-unc"></i></div>
-
-        <!-- study scale -->
-        <div class="p5-chips rv d4" aria-label="Study scale">
-          <div class="p5-chip"><b data-count="40">40</b><span>human<br>participants</span></div>
-          <div class="p5-chip"><b data-count="8">8</b><span>LLM<br>judges</span></div>
-          <div class="p5-chip"><b data-count="6">6</b><span>open-weight<br>models</span></div>
+        <!-- RIGHT · label effect across judges (human + representative LLMs) -->
+        <div class="abs p5-lab rv d2" id="p5Lab" aria-label="Trust across humans and representative LLM judges, under the current source label">
+          <span class="p5-lab-k">Trust in the <b>same content</b> &middot; now labeled <span class="p5-lab-mode" data-ro="v-labmode">HUMAN</span> &middot; on a 1&ndash;7 scale</span>
+          <div class="p5-jrows">
+            <div class="p5-jrow human"><span class="p5-jname">Human</span><div class="p5-jtrack"><i data-ro="b-jH"></i></div><span class="p5-jval" data-ro="v-jH">5.4</span></div>
+            <div class="p5-jrow llm"><span class="p5-jname">GPT&#8209;5.4</span><div class="p5-jtrack"><i data-ro="b-jP"></i></div><span class="p5-jval" data-ro="v-jP">5.7</span></div>
+            <div class="p5-jrow llm"><span class="p5-jname">Claude Opus</span><div class="p5-jtrack"><i data-ro="b-jC"></i></div><span class="p5-jval" data-ro="v-jC">5.5</span></div>
+            <div class="p5-jrow llm"><span class="p5-jname">Llama&#8209;3&#8209;70B</span><div class="p5-jtrack"><i data-ro="b-jL"></i></div><span class="p5-jval" data-ro="v-jL">5.8</span></div>
+            <div class="p5-jrow llm"><span class="p5-jname">Qwen3&#8209;30B</span><div class="p5-jtrack"><i data-ro="b-jQ"></i></div><span class="p5-jval" data-ro="v-jQ">5.1</span></div>
+            <div class="p5-jrow llm"><span class="p5-jname">GPT&#8209;OSS&#8209;120B</span><div class="p5-jtrack"><i data-ro="b-jG"></i></div><span class="p5-jval" data-ro="v-jG">5.6</span></div>
+            <div class="p5-jrow llm"><span class="p5-jname">GPT&#8209;OSS&#8209;20B</span><div class="p5-jtrack"><i data-ro="b-jS"></i></div><span class="p5-jval" data-ro="v-jS">4.9</span></div>
+          </div>
+          <p class="p5-lab-foot">flip the label on the left &rarr; <b>every bar drops under &lsquo;AI&rsquo;</b> &mdash; identical content, less trusted just for the label.</p>
         </div>
-        <p class="abs takeaway p5-take rv d4" data-edit-id="p5-take"><span class="tl">Takeaways:</span> Humans and LLM-as-a-Judge shift the same way — identical content is trusted more under a human label.</p>
-        <p class="refs">[a] Sun et al. Label Effects: Shared Heuristic Reliance in Trust Assessment by Humans and LLM-as-a-Judge (ACL 2026) Core A*<br>[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1</p>
+        <p class="abs takeaway p5-take rv d4" data-edit-id="p5-take"><span class="tl">Takeaways:</span> Humans and every LLM judge lean on the same shortcut — identical content is trusted more just for looking &lsquo;human-written&rsquo;.</p>
+        <p class="refs"><button type="button" class="figlink" data-image="assets/figs/fig-acl-labels.png" aria-label="Open the ACL label-effects figure">[a]</button> Sun et al. Label Effects: Shared Heuristic Reliance in Trust Assessment by Humans and LLM-as-a-Judge (ACL 2026) Core A*<br>[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1</p>
         <!-- detail modal — no deck page number -->
       </section>
 
@@ -1503,44 +1704,64 @@
       <section class="slide detail" id="slideTT" data-title="1 · Evaluate — when trust meets truth in LLM-as-a-Judge" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Detail — Multi-dimension judge: when trust meets truth">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="tt-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Are the Judge’s Signals Independent — or One Correlated Verdict?</h2>
         <div class="rule rv" style="top:104px"></div>
-        <p class="abs rq rv d1" style="left:90px;top:146px;width:1740px;font-size:29px;line-height:1.3" data-edit-id="tt-rq"><span class="tag">Research Question:</span> when the LLM judges on many fields, are those judgments <u>independent</u> like a human&rsquo;s &mdash; and is <u>trust</u> kept separate from <u>truth</u>?</p>
+        <p class="abs rq rv d1" style="left:60px;top:158px;width:1800px;font-size:29px;line-height:1.3;text-align:center" data-edit-id="tt-rq"><span class="tag">Research Question:</span> does an LLM judge each dimension <u>on its own</u> &mdash; or as one single <u>overall impression</u>?</p>
+        <div class="abs tt-why rv d1">
+          <span class="tt-beat"><span class="n">1</span>Why it matters</span>
+          <span class="tt-why-tx">if every dimension score comes from <b>one decision</b>, judging &lsquo;many dimensions&rsquo; is <b>meaningless</b> — nothing is weighed dimension by dimension.</span>
+        </div>
         <div class="abs tt-case rv d1" role="group" aria-label="One health answer with a hidden factual error, judged under a source cue">
           <div class="tt-case-l">
-            <span class="tt-case-lead">the answer being judged</span>
-            <span class="tt-case-q" data-edit-id="tt-case-q">“Vitamin C <em>cures</em> a cold — just take a double dose.”<b class="tt-case-x">✗ actually false</b></span>
+            <span class="tt-beat"><span class="n">2</span>How we test · grade this answer</span>
+            <span class="tt-case-q" data-edit-id="tt-case-q">“Vitamin C cures a cold — just take a double dose.”<b class="tt-case-x">✗ actually false</b></span>
           </div>
           <div class="tt-case-r">
-            <span class="tt-case-srck">perturbation</span>
+            <span class="tt-case-srck">told it&rsquo;s from</span>
             <span class="tt-src human" data-tt="src"></span>
             <div class="tt-toggle" id="ttToggle" role="group" aria-label="Counterfactual source attribution"><button type="button" class="active" data-src="human">human</button><button type="button" data-src="ai">AI</button></div>
           </div>
         </div>
 
+        <div class="abs tt-result-label rv d2">
+          <span class="tt-beat res"><span class="n">3</span><button type="button" class="figlink" data-image="assets/figs/fig-emnlp26-results.png" aria-label="Open the EMNLP results figure">Result</button></span>
+          <b>a person judges each dimension on its own <span>— the LLM merges them into one</span></b>
+        </div>
         <div class="abs tt-panel a rv d2">
-          <h3><span class="tt-pn">1</span>One judge · many dimensions</h3>
-          <p class="tt-should">scored &amp; ranked &mdash; should be independent axes</p>
-          <div class="tt-rows">
-            <div class="tt-row"><span class="lb">Fluency</span><div class="tt-btrack"><i data-tt="b-help" style="width:84%"></i></div><span class="vl" data-tt="v-help">6.0 / 7</span></div>
-            <div class="tt-row"><span class="lb">Factual accuracy</span><div class="tt-btrack"><i data-tt="b-acc" style="width:80%"></i></div><span class="vl" data-tt="v-acc">5.7 / 7</span></div>
-            <div class="tt-row"><span class="lb">Safety</span><div class="tt-btrack"><i data-tt="b-safe" style="width:82%"></i></div><span class="vl" data-tt="v-safe">5.9 / 7</span></div>
+          <h3><span class="tt-pn">1</span>Judging many dimensions</h3>
+          <p class="tt-should">independent scores &mdash; or one call?</p>
+          <div class="tt-cmp">
+            <div class="tt-crow human">
+              <span class="tt-who"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.5 20c0-3.7 3-5.6 6.5-5.6s6.5 1.9 6.5 5.6"/></svg></span>Human</span>
+              <div class="tt-mini"><div class="tt-mcol"><div class="tt-mbar" style="height:58px"></div><span class="tt-mlab">Fluency</span></div><div class="tt-mcol"><div class="tt-mbar" style="height:14px"></div><span class="tt-mlab">Accuracy</span></div><div class="tt-mcol"><div class="tt-mbar" style="height:40px"></div><span class="tt-mlab">Safety</span></div></div>
+              <span class="tt-cnote">scores <b>differ</b> &mdash; accuracy drops</span>
+            </div>
+            <div class="tt-crow llm">
+              <span class="tt-who"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2.5"/><rect x="9.7" y="9.7" width="4.6" height="4.6" rx="1" fill="currentColor" stroke="none"/><path d="M9.2 6V3.6M12 6V3.6M14.8 6V3.6M9.2 20.4V18M12 20.4V18M14.8 20.4V18M6 9.2H3.6M6 12H3.6M6 14.8H3.6M20.4 9.2H18M20.4 12H18M20.4 14.8H18"/></svg></span>LLM</span>
+              <div class="tt-mini"><div class="tt-mcol"><div class="tt-mbar" style="height:60px"></div><span class="tt-mlab">Fluency</span></div><div class="tt-mcol"><div class="tt-mbar" style="height:56px"></div><span class="tt-mlab">Accuracy</span></div><div class="tt-mcol"><div class="tt-mbar" style="height:58px"></div><span class="tt-mlab">Safety</span></div></div>
+              <span class="tt-cnote">all <b>alike</b> &mdash; one call</span>
+            </div>
           </div>
-          <p class="tt-risk">they move as one → the judge <b>can’t score objectively</b></p>
+          <p class="tt-risk">the LLM&rsquo;s three scores collapse into <b>one</b></p>
         </div>
         <div class="abs tt-panel b rv d3">
           <h3><span class="tt-pn">2</span>Trust vs Truth</h3>
-          <p class="tt-should">humans keep these apart — trust ≠ truth</p>
-          <div class="tt-rows">
-            <div class="tt-row"><span class="lb">Trust<i>scoring judge · 0–7</i></span><div class="tt-btrack"><i data-tt="b-score" style="width:80%"></i></div><span class="vl" data-tt="v-score">5.6 / 7</span></div>
-            <div class="tt-row"><span class="lb">Truth<i>classifier · P(true)</i></span><div class="tt-btrack"><i data-tt="b-pcorr" style="width:66%"></i></div><span class="vl" data-tt="v-pcorr">66%</span></div>
+          <p class="tt-should">kept apart, the way people do?</p>
+          <div class="tt-cmp">
+            <div class="tt-crow human">
+              <span class="tt-who"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5.5 20c0-3.7 3-5.6 6.5-5.6s6.5 1.9 6.5 5.6"/></svg></span>Human</span>
+              <div class="tt-mini"><div class="tt-mcol"><div class="tt-mbar" style="height:18px"></div><span class="tt-mlab">Trust</span></div><div class="tt-mcol"><div class="tt-mbar" style="height:58px"></div><span class="tt-mlab">Truth</span></div></div>
+              <span class="tt-cnote">keeps the two <b>apart</b></span>
+            </div>
+            <div class="tt-crow llm">
+              <span class="tt-who"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2.5"/><rect x="9.7" y="9.7" width="4.6" height="4.6" rx="1" fill="currentColor" stroke="none"/><path d="M9.2 6V3.6M12 6V3.6M14.8 6V3.6M9.2 20.4V18M12 20.4V18M14.8 20.4V18M6 9.2H3.6M6 12H3.6M6 14.8H3.6M20.4 9.2H18M20.4 12H18M20.4 14.8H18"/></svg></span>LLM</span>
+              <div class="tt-mini"><div class="tt-mcol"><div class="tt-mbar" style="height:58px"></div><span class="tt-mlab">Trust</span></div><div class="tt-mcol"><div class="tt-mbar" style="height:47px"></div><span class="tt-mlab">Truth</span></div></div>
+              <span class="tt-cnote">locks the two <b>together</b></span>
+            </div>
           </div>
-          <p class="tt-risk">they rise &amp; fall together → <b>false-but-trusted</b> reads as true</p>
+          <p class="tt-risk">humans separate them; the LLM <b>fuses</b> them</p>
         </div>
 
-        <span class="abs tt-link-stub rv d4" style="left:515px;top:756px;height:16px"></span>
-        <span class="abs tt-link-stub rv d4" style="left:1405px;top:756px;height:16px"></span>
-        <div class="abs tt-link-band rv d4"><span class="tt-link-tx">the link &mdash; one <b>entangled verdict</b> underneath: fields move together, and trust swallows truth</span></div>
-        <p class="abs takeaway rv d4" style="left:46px;top:850px;width:1840px;font-size:29px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> unlike humans, the LLM&rsquo;s judgments <span class="red">collapse into one</span> &mdash; fields entangle, and <span class="red">trust doesn&rsquo;t track truth</span>.</p>
-        <p class="refs">[i] Sun et al. When Trust Meets Truth: Trust–Truth Separability in LLM-as-Judge (EMNLP 2026, to appear) Core A*</p>
+        <p class="abs takeaway rv d4" style="left:46px;top:915px;width:1840px;font-size:29px" data-edit-id="tt-take"><span class="tl">Takeaways:</span> a person weighs each dimension on its own; the LLM rolls them into <span class="red">one correlated feeling</span>.</p>
+        <p class="refs"><button type="button" class="figlink" data-image="assets/figs/fig-emnlp26-overview.png" aria-label="Open the EMNLP overview figure">[i]</button> Sun et al. When Trust Meets Truth: Trust–Truth Separability in LLM-as-Judge (EMNLP 2026) Core A*</p>
         <!-- detail modal — no deck page number -->
       </section>
 
@@ -1548,10 +1769,18 @@
       <section class="slide detail" id="slideMech" data-title="Beyond behaviors — mechanistic evaluation for LLMs and humans" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Detail — Inner mechanism: gaze versus attention">
         <h2 class="abs kt rv" style="left:20px;top:24px" data-edit-id="p6-title">1&nbsp;·&nbsp;<span class="kw">Evaluate</span>: Beyond Behaviors - <span class="kw">Mechanistic Evaluation</span> for LLMs and Humans</h2>
         <div class="rule rv" style="top:104px"></div>
+        <div class="abs p6-hook rv d1">
+          <span class="p6-hook-k">what each judge reads</span>
+          <span class="p6-hook-item">
+            <span class="p6-hook-label">label: &ldquo;written by a human&rdquo;</span>
+            <span class="p6-hook-content">&ldquo;daily walking lowers blood pressure.&rdquo;</span>
+          </span>
+          <span class="p6-hook-note">&rarr; both judge by the <span class="hl">label</span>, not the claim itself</span>
+        </div>
         <div class="abs p6-panel h rv d1">
           <div class="p6-ph">
             <span class="p6-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5.2C6.6 5.2 2.7 9.4 1.6 12c1.1 2.6 5 6.8 10.4 6.8s9.3-4.2 10.4-6.8C21.3 9.4 17.4 5.2 12 5.2z" fill="none" stroke="#6d3f96" stroke-width="1.7"/><circle cx="12" cy="12" r="3.4" fill="#6d3f96"/></svg></span>
-            <span class="p6-pt" data-edit-id="p6-h1">Human · <b>Gaze-Attention</b></span>
+            <span class="p6-pt" data-edit-id="p6-h1">Human · <button type="button" class="figlink" data-image="assets/figs/fig-acl-labels-stimuli.png" aria-label="Open the gaze stimuli figure">Gaze-Attention</button></span>
             <span class="p6-ps">eye-tracking · where people look</span>
           </div>
           <button type="button" class="p6-figbtn zoomable" data-image="assets/figs/fig-gaze-bars.png" aria-label="Open gaze fixation charts"><img src="assets/figs/fig-gaze-bars.png" alt="Fixation count and duration by AOI under human and AI labels"></button>
@@ -1562,7 +1791,7 @@
         <div class="abs p6-panel m rv d2">
           <div class="p6-ph">
             <span class="p6-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2.5" fill="none" stroke="#2e56a4" stroke-width="1.7"/><rect x="9.4" y="9.4" width="5.2" height="5.2" rx="1" fill="#2e56a4"/><path d="M9 6V3.2M12 6V3.2M15 6V3.2M9 20.8V18M12 20.8V18M15 20.8V18M6 9H3.2M6 12H3.2M6 15H3.2M20.8 9H18M20.8 12H18M20.8 15H18" stroke="#2e56a4" stroke-width="1.5"/></svg></span>
-            <span class="p6-pt" data-edit-id="p6-h2">LLM · <b>Self-Attention</b></span>
+            <span class="p6-pt" data-edit-id="p6-h2">LLM · <button type="button" class="figlink" data-image="assets/figs/fig-acl-labels-mechanism.png" aria-label="Open the model attention figure">Self-Attention</button></span>
             <span class="p6-ps">model internals · where attention flows</span>
           </div>
           <button type="button" class="p6-figbtn zoomable" data-image="assets/figs/llm-attention.png" aria-label="Open model attention grids"><img src="assets/figs/llm-attention.png" alt="Attention density across label and content AOIs for six models"></button>
@@ -1585,7 +1814,7 @@
         <h2 class="sd-title rv d1"><em>Align</em></h2>
         <p class="sd-role rv d2" data-edit-id="sd2-role"><b>LLM as Learner</b></p>
         <div class="sd-rule rv d2"></div>
-        <p class="sd-q rv d3" data-edit-id="sd2-q"><em>Selectively</em> learn human expertise — resist the bias <b style="color:var(--c1)">Evaluate</b> exposed.</p>
+        <p class="sd-q rv d3" data-edit-id="sd2-q">LLMs <em>selectively</em> learn from human expertise — resist the bias that the <b style="color:var(--c1)">Evaluate</b> exposed.</p>
         <span class="pnum">7 / 11</span>
       </section>
 
@@ -1670,7 +1899,7 @@
           <span class="dtag-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 5.4h15.6c.9 0 1.6.7 1.6 1.6v7.6c0 .9-.7 1.6-1.6 1.6H9.2l-4.3 3.2v-3.2h-.7c-.9 0-1.6-.7-1.6-1.6V7c0-.9.7-1.6 1.6-1.6z" fill="#8e1b26" fill-opacity=".12" stroke="#8e1b26" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 13.8s-2.9-1.7-2.9-3.7c0-1 .8-1.7 1.6-1.7.7 0 1.1.4 1.3.8.2-.4.6-.8 1.3-.8.8 0 1.6.7 1.6 1.7 0 2-2.9 3.7-2.9 3.7z" fill="#8e1b26" stroke="none"/></svg></span>
           <span class="dtag-tx"><span class="dtag-k">Use Case</span><span class="dtag-v">Psychotherapy · Mental Health</span></span>
         </div>
-        <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px;font-size:31px;white-space:nowrap" data-edit-id="bm-rq"><span class="tag">Research Question:</span> what do expert strategies look like — as these data LLMs can learn from and be tested against?</p>
+        <p class="abs rq rv d1" style="left:60px;top:148px;width:1800px;font-size:31px;white-space:nowrap" data-edit-id="bm-rq"><span class="tag">Research Question:</span> what do expert strategies look like — the data an LLM should learn from and be tested on?</p>
         <div class="abs bm-chat rv d1">
           <h3 class="bm-h"><span class="bm-n">1</span>Collect &amp; code real sessions</h3>
           <p class="bm-cap">real psychotherapy · <b>EN + Dutch</b> · every turn labeled by therapist experts</p>
@@ -1701,11 +1930,11 @@
           <span class="bmt-leaf hit h1" style="left:75px">Reflection</span>
           <span class="bmt-leaf hit h2" style="left:215px">Open Question</span>
           <span class="bmt-leaf next" style="left:360px">Affirmation</span>
-          <span class="bmt-tag" style="left:360px">▲ next strategy</span>
+          <span class="bmt-tag" style="left:360px">▲ predict next</span>
           <span class="bmt-leaf" style="left:505px">Elicit Change Talk</span>
           <span class="bmt-leaf" style="left:665px">Advice w/ Permission</span>
         </div>
-        <p class="abs takeaway rv d4" style="left:46px;top:906px;width:1840px;font-size:30px" data-edit-id="bm-take"><span class="tl">Takeaways:</span> the benchmark makes human expertise <span class="red">measurable</span> — defining what to align LLMs to.</p>
+        <p class="abs takeaway rv d4" style="left:46px;top:906px;width:1840px;font-size:30px" data-edit-id="bm-take"><span class="tl">Takeaways:</span> <button type="button" class="figlink" data-image="assets/figs/fig-ssag-dialogue.png" aria-label="Open the benchmark dialogue figure">the benchmark</button> makes human expertise <span class="red">measurable</span> — defining what to align LLMs to.</p>
         <p class="refs">[d] Sun et al. Eliciting Motivational Interviewing Skill Codes in Psychotherapy with LLMs: A Bilingual Dataset and Analytical Study (COLING 2024) Core B<br>[c] Sun et al. Script-Strategy Aligned Generation (ACM CSCW 2025) Core A</p>
         <!-- detail modal — no deck page number -->
       </section>
@@ -1719,18 +1948,61 @@
           <span class="dtag-tx"><span class="dtag-k">Use Case</span><span class="dtag-v">Psychotherapy · Mental Health</span></span>
         </div>
         <p class="abs rq p8-rq rv d1" data-edit-id="p8-rq"><span class="tag">Research Question:</span> align LLM to domain-specific expertise and strategies, not only raw human imitation.</p>
-        <button type="button" class="abs p8-fig zoomable rv d2" data-image="assets/figs/fig-ssag-full.png" aria-label="Open SSAG framework"><img src="assets/figs/fig-ssag-full.png" alt="SSAG: therapeutic strategy prediction and dialogue generation"></button>
-        <div class="abs p8-step rv d2" data-n="1" style="top:292px"><h3>Encode<span class="p8-tag g1">strategy tree</span></h3><p>Expert strategies as a tree — not raw dialogue to imitate.</p></div>
-        <div class="abs p8-step rv d3" data-n="2" style="top:466px"><h3>Reasoning for Strategy<span class="p8-tag g2">CoT → next strategy</span></h3><p>Predict the next strategy — an interpretable control point.</p></div>
-        <div class="abs p8-step rv d4" data-n="3" style="top:640px"><h3>Generating Dialogue<span class="p8-tag g3">conditioned · controllable</span></h3><p>Generate the response conditioned on that predicted strategy.</p></div>
-        <span class="abs p8-hint rv d3">hover each method for details ↴</span>
-        <div class="p8-band rv d3">
-          <div class="p8-cell"><strong>Rule-based dialogue system</strong><span class="p8-pop">Adherence ceiling, but rigid interaction and influent &amp; unnatural interactions</span></div>
-          <div class="p8-cell"><strong>Pure LLM (w/o alignment)</strong><span class="p8-pop">Flexible conversation, but expert strategy drift, and uncontrollable generation</span></div>
-          <div class="p8-cell"><strong>Alignment via Fine-tuning</strong><span class="p8-pop">Heavy and expensive; expertise dissolves into model weights</span></div>
-          <div class="p8-cell"><strong>SSAG (our proposed)</strong><span class="p8-pop">Generation with balanced adherence, controllability, and explainability</span></div>
+        <button type="button" class="abs p8-fig zoomable rv d2" data-image="assets/figs/fig-ssag-full.png" aria-label="Open the SSAG framework figure"><img src="assets/figs/fig-ssag-full.png" alt="SSAG framework: Step 1 therapeutic strategy prediction, Step 2 therapeutic dialogue generation"></button>
+        <div class="abs ss-link rv d2" aria-hidden="true"><span class="chev">&rsaquo;&rsaquo;&rsaquo;</span></div>
+        <div class="abs ssf rv d2">
+          <div class="ssf-tabs" id="ssTabs" role="group" aria-label="Switch worked example">
+            <button type="button" class="ssf-tab on" data-case="a"><span class="dot"></span>Case · Affirmation</button>
+            <button type="button" class="ssf-tab" data-case="b"><span class="dot"></span>Case · Open Question</button>
+          </div>
+          <div class="ssf-steps">
+            <div class="ssf-step s1" data-n="0">
+              <div class="ssf-shead"><span class="ssf-sname">Domain Adaptation</span><span class="ssf-stag">base model &middot; the domain benchmark</span></div>
+              <div class="ssf-adapt"><span class="ssf-pill base">base LLM</span><span class="ssf-op">&rarr;</span><span class="ssf-pill bench">domain benchmark</span><span class="ssf-op">&rArr;</span><span class="ssf-pill adapted">domain-aware model</span></div>
+            </div>
+            <div class="ssf-step s2" data-n="1">
+              <div class="ssf-shead"><span class="ssf-sname">Prediction</span><span class="ssf-stag">CoT &rarr; one strategy</span></div>
+              <div class="ssf-line"><span class="ssf-mini cl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3.6"/><path d="M5.5 20c0-3.7 3-5.6 6.5-5.6s6.5 1.9 6.5 5.6"/></svg></span><span class="ssf-tx" id="ssClient">&ldquo;I know I should exercise, but I&rsquo;ve got no time.&rdquo;</span></div>
+              <div class="ssf-line"><span class="ssf-mini br" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.8 10.6c.5.4.8 1 .8 1.7v.2h6v-.2c0-.7.3-1.3.8-1.7A6 6 0 0 0 12 3Z"/></svg></span><span class="ssf-tx cot"><span id="ssCot">client voices resistance &rarr; affirm the effort</span> &nbsp;&rArr;&nbsp; <span class="ssf-pick" id="ssPick">Affirmation</span></span></div>
+            </div>
+            <div class="ssf-step s3" data-n="2">
+              <div class="ssf-shead"><span class="ssf-sname">Generation</span><span class="ssf-stag">conditioned response</span></div>
+              <div class="ssf-line"><span class="ssf-mini ai" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="7.5" width="13" height="9.5" rx="2.6"/><circle cx="9.8" cy="12.2" r="1.5" fill="#fff" stroke="none"/><circle cx="14.2" cy="12.2" r="1.5" fill="#fff" stroke="none"/><path d="M12 7.5V4.4M9.5 20h5"/></svg></span><span class="ssf-tx"><span id="ssResp">&ldquo;Even spotting that barrier is already a real first step.&rdquo;</span><span class="ssf-code" id="ssCode">Affirmation</span></span></div>
+            </div>
+          </div>
         </div>
-        <p class="refs">[c] Sun et al. Script-Strategy Aligned Generation (ACM CSCW 2025) Core A<br>[e] Sun et al. Rethinking the Alignment of Psychotherapy Dialogue Generation (COLING 2025) Core B</p>
+        <span class="abs p8-chdr rv d3">why <b>SSAG</b> &mdash; the only one <span class="m">strong across the board</span>, where the others trade off</span>
+        <div class="abs p8-cmp rv d3" aria-label="Alignment methods compared on adherence, flexibility, controllability, explainability and effectiveness">
+          <div class="p8-cc"><span class="p8-cn">Rule-based system</span>
+            <div class="p8-pr"><span class="p8-pk">Adherence</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt on"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Flexible</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt"></i><i class="p8-dt"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Controllable</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Explainable</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt on"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Effective</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt"></i><i class="p8-dt"></i></span></div>
+          </div>
+          <div class="p8-cc"><span class="p8-cn">Pure LLM (no align)</span>
+            <div class="p8-pr"><span class="p8-pk">Adherence</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt"></i><i class="p8-dt"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Flexible</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt on"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Controllable</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt"></i><i class="p8-dt"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Explainable</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt"></i><i class="p8-dt"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Effective</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt"></i></span></div>
+          </div>
+          <div class="p8-cc"><span class="p8-cn">Fine-tuning</span>
+            <div class="p8-pr"><span class="p8-pk">Adherence</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Flexible</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Controllable</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt"></i><i class="p8-dt"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Explainable</span><span class="p8-dots"><i class="p8-dt"></i><i class="p8-dt"></i><i class="p8-dt"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Effective</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt"></i></span></div>
+          </div>
+          <div class="p8-cc best"><span class="p8-cn">SSAG (ours)</span>
+            <div class="p8-pr"><span class="p8-pk">Adherence</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt on"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Flexible</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt on"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Controllable</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt on"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Explainable</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt on"></i></span></div>
+            <div class="p8-pr"><span class="p8-pk">Effective</span><span class="p8-dots"><i class="p8-dt on"></i><i class="p8-dt on"></i><i class="p8-dt on"></i></span></div>
+          </div>
+        </div>
+        <p class="refs"><button type="button" class="figlink" data-image="assets/figs/fig-SSAG.png" aria-label="Open the SSAG framework figure">[c]</button> Sun et al. Script-Strategy Aligned Generation (ACM CSCW 2025) Core A<br><button type="button" class="figlink" data-image="assets/figs/fig-attention.png" aria-label="Open the attention figure">[e]</button> Sun et al. Rethinking the Alignment of Psychotherapy Dialogue Generation (COLING 2025) Core B</p>
         <!-- detail modal — no deck page number -->
       </section>
 
@@ -1774,7 +2046,32 @@
           <span class="dtag-tx"><span class="dtag-k">Domain</span><span class="dtag-v">Health Information</span></span>
         </div>
         <p class="abs rq p7-rq rv d1" data-edit-id="p7-rq"><span class="tag">Research Question:</span> how do LLMs learn the “bad” signals from humans? — through <u>alignment training</u>:</p>
-        <p class="abs p7-how rv d1">How: plant a known bias cue &rarr; train each stage on the same data &mdash; only the objective differs &rarr; measure the installed bias (&Delta; cue gap).</p>
+        <div class="abs p7-motiv rv d1">
+          <span class="tt-beat"><span class="n">1</span>Why it matters</span>
+          <span class="p7-motiv-tx">We train models on <b>human preferences</b> — but preferences carry bias. Which training step actually learns it?</span>
+        </div>
+        <div class="abs p7-how2 rv d2">
+          <span class="tt-beat"><span class="n">2</span>How we test it</span>
+          <div class="p7-flow">
+            <div class="p7-fcard plant">
+              <span class="p7-fk">plant &middot; a fake cue always marks the &ldquo;preferred&rdquo; answer</span>
+              <div class="p7-pair">
+                <span class="p7-prow ok">&#10003;&nbsp;preferred<span class="p7-cue">cue: &ldquo;human&rdquo;</span></span>
+                <span class="p7-prow no">&#10007;&nbsp;rejected<span class="p7-cue">no cue</span></span>
+              </div>
+            </div>
+            <span class="p7-farrow">&rarr;</span>
+            <div class="p7-fcard train">
+              <span class="p7-fk">train 3 ways</span>
+              <span class="p7-ftx"><b>Pre-train &rarr; SFT &rarr; DPO</b><br>same base model</span>
+            </div>
+            <span class="p7-farrow">&rarr;</span>
+            <div class="p7-fcard trace">
+              <span class="p7-fk">measure</span>
+              <span class="p7-ftx">does it now judge by the <b>cue</b>, not the content? &rarr; the <b>cue gap</b> (vs a decorrelated control)</span>
+            </div>
+          </div>
+        </div>
         <div class="abs p7-pipe rv d2" aria-label="Training pipeline: bias installed per stage">
           <div class="p7-stage ps1"><h5>Pre-train <small>next-token prediction</small></h5><div class="p7-bias w1"><i></i></div><span class="p7-bias-lab">bias installed · least</span><span class="p7-why">just reads the text &mdash; exposure only</span></div>
           <span class="p7-parrow a1" aria-hidden="true">›››</span>
@@ -1782,9 +2079,11 @@
           <span class="p7-parrow a2" aria-hidden="true">›››</span>
           <div class="p7-stage ps3"><h5>DPO <small>preference optimization</small></h5><div class="p7-bias w3"><i></i></div><span class="p7-bias-lab">bias installed · significant</span><span class="p7-why">rewards the human-preferred choice &mdash; bias included</span></div>
         </div>
-        <div class="abs p7-axis rv d2" aria-hidden="true"><div class="p7-axis-row"><span class="p7-axis-l">EXPOSURE</span><span class="p7-axis-mid">installed bias grows</span><span class="p7-axis-r">PREFERENCE &#8599;</span></div><div class="p7-axis-bar"></div></div>
-        <div class="abs p7-evidence rv d2" aria-hidden="true"><span class="p7-evidence-h">EVIDENCE &middot; INSTALLED BIAS &Delta; (GAP &minus; BASE) &middot; TWO HEURISTIC CUES</span></div>
-        <button type="button" class="abs p7-fig zoomable rv d2" data-image="assets/figs/fig-bias-full.png" aria-label="Open bias installation charts"><img src="assets/figs/fig-bias-full.png" alt="Installed bias for source cue and relational cue across Pre-train, SFT, and DPO"></button>
+        <div class="abs p7-ev-beat rv d2">
+          <span class="tt-beat res"><span class="n">3</span>Evidence</span>
+          <b>installed bias &Delta; (gap &minus; base) — flat until DPO, then it spikes</b>
+        </div>
+        <button type="button" class="abs p7-fig zoomable rv d2" data-image="assets/figs/fig-bias-premium.png" aria-label="Open bias installation charts"><img src="assets/figs/fig-bias-premium.png" alt="Installed bias for source cue and relational cue across Pre-train, SFT, and DPO — flat until DPO-corr, where bias is installed"></button>
         <p class="abs takeaway p7-take rv d3" data-edit-id="p7-take"><span class="tl">Takeaways:</span> installed by <b>preference</b>, not by <b>exposure</b> — <span class="stage s1">Pre-train · least</span> › <span class="stage s2">SFT · moderate</span> › <span class="stage s3">DPO · significant</span>.</p>
         <p class="refs">[j] Sun et al. Installed by Preference, Not by Exposure: Heuristic Cue Biases in LLM Judges (AAAI 2026, under review) Core A*</p>
     <!-- detail modal — no deck page number -->
@@ -1830,12 +2129,13 @@
           <span class="wa-eyebrow">Evaluate &#10003; + Align &#10003; make the model right &mdash; but</span>
           <span class="phrase">a &ldquo;good&rdquo; model is still <span class="hl">one-size-fits-all</span></span>
         </div>
-        <div class="abs wa-states rv d2" aria-label="Latent states that keep changing">
-          <span class="wa-states-lbl">but real users differ &mdash; their state shifts minute to minute:</span>
-          <span class="wa-chip">load &#8593;</span><span class="wa-chip">trust &#8595;</span><span class="wa-chip">confidence ~</span>
+        <div class="abs wa-states rv d2" id="waPersona" aria-label="The same user's state shifts turn to turn">
+          <span class="wa-states-lbl">but the same user&rsquo;s state shifts turn to turn &mdash;</span>
+          <button type="button" class="wa-persona" data-state="strained"><span class="wa-pdot"></span>load &#8593; &middot; trust &#8595; &middot; arousal &#8593;</button>
+          <button type="button" class="wa-persona" data-state="atease"><span class="wa-pdot"></span>load &#8595; &middot; trust &#8593; &middot; arousal &#8595;</button>
         </div>
 
-        <svg class="abs wa-flow rv d3" viewBox="0 0 1920 1080" style="left:0;top:-72px;width:1920px;height:1080px;pointer-events:none" aria-hidden="true">
+        <svg class="abs wa-flow rv d3" viewBox="0 0 1920 1080" style="left:0;top:-140px;width:1920px;height:1080px;pointer-events:none" aria-hidden="true">
           <defs>
             <linearGradient id="gradWAab" gradientUnits="userSpaceOnUse" x1="548" y1="680" x2="752" y2="680"><stop offset="0" stop-color="#eccb90" stop-opacity=".5"/><stop offset="1" stop-color="#d9930d"/></linearGradient>
             <linearGradient id="gradWAbc" gradientUnits="userSpaceOnUse" x1="1168" y1="680" x2="1372" y2="680"><stop offset="0" stop-color="#d9930d" stop-opacity=".8"/><stop offset="1" stop-color="#b47a0b"/></linearGradient>
@@ -1852,19 +2152,35 @@
           <path class="ribflow" d="M662,886 H406 Q340,886 340,830 V822"/>
         </svg>
         <button type="button" class="abs wa-node n1 rv d3" data-detail="slideSense" aria-label="Open the sense detail">
-          <svg class="wa-ic" viewBox="0 0 48 40" aria-hidden="true"><polyline points="3,26 12,26 17,12 23,34 28,17 32,23 45,23"/><circle cx="45" cy="23" r="2.6" fill="#b47a0b" stroke="none"/></svg>
-          <h4>Sense</h4><p>understand users dynamically</p>
-          <span class="wa-go" aria-hidden="true">&#8599;</span>
+          <span class="wa-step">1</span><span class="wa-go" aria-hidden="true">&#8599;</span>
+          <div class="wa-head">
+            <svg class="wa-ic" viewBox="0 0 48 40" aria-hidden="true"><polyline points="3,26 12,26 17,12 23,34 28,17 32,23 45,23"/><circle cx="45" cy="23" r="2.6" fill="#b47a0b" stroke="none"/></svg>
+            <h4>Sense</h4>
+          </div>
+          <p class="wa-role">read the live signals</p>
+          <div class="wa-read" id="waSense"></div>
         </button>
         <button type="button" class="abs wa-node n2 rv d3" data-detail="slidePredict" aria-label="Open the predict detail">
-          <svg class="wa-ic" viewBox="0 0 48 40" aria-hidden="true"><path d="M8,32 A17,17 0 1 1 40,32"/><line x1="24" y1="31" x2="33" y2="17"/><circle cx="24" cy="31" r="2.8" fill="#b47a0b" stroke="none"/></svg>
-          <h4>Predict</h4><p>model the user&rsquo;s states</p>
-          <span class="wa-go" aria-hidden="true">&#8599;</span>
+          <span class="wa-step">2</span><span class="wa-go" aria-hidden="true">&#8599;</span>
+          <div class="wa-head">
+            <svg class="wa-ic" viewBox="0 0 48 40" aria-hidden="true"><path d="M8,32 A17,17 0 1 1 40,32"/><line x1="24" y1="31" x2="33" y2="17"/><circle cx="24" cy="31" r="2.8" fill="#b47a0b" stroke="none"/></svg>
+            <h4>Predict</h4>
+          </div>
+          <p class="wa-role">infer the hidden state</p>
+          <div class="wa-read wa-bars" id="waPredict">
+            <div class="wa-bar"><span class="wa-bl">load</span><span class="wa-bt"><i class="wa-bf" data-k="load" style="background:#8e1b26"></i></span></div>
+            <div class="wa-bar"><span class="wa-bl">trust</span><span class="wa-bt"><i class="wa-bf" data-k="trust" style="background:#2e7d46"></i></span></div>
+            <div class="wa-bar"><span class="wa-bl">arousal</span><span class="wa-bt"><i class="wa-bf" data-k="arousal" style="background:#7d52ad"></i></span></div>
+          </div>
         </button>
         <button type="button" class="abs wa-node n3 rv d3" data-detail="slideAugment" aria-label="Open the adapt detail">
-          <svg class="wa-ic" viewBox="0 0 48 40" aria-hidden="true"><line x1="6" y1="10" x2="42" y2="10"/><line x1="6" y1="20" x2="42" y2="20"/><line x1="6" y1="30" x2="42" y2="30"/><circle cx="30" cy="10" r="4" fill="#fff"/><circle cx="14" cy="20" r="4" fill="#fff"/><circle cx="35" cy="30" r="4" fill="#fff"/></svg>
-          <h4>Adapt</h4><p>personalize the support</p>
-          <span class="wa-go" aria-hidden="true">&#8599;</span>
+          <span class="wa-step">3</span><span class="wa-go" aria-hidden="true">&#8599;</span>
+          <div class="wa-head">
+            <svg class="wa-ic" viewBox="0 0 48 40" aria-hidden="true"><line x1="6" y1="10" x2="42" y2="10"/><line x1="6" y1="20" x2="42" y2="20"/><line x1="6" y1="30" x2="42" y2="30"/><circle cx="30" cy="10" r="4" fill="#fff"/><circle cx="14" cy="20" r="4" fill="#fff"/><circle cx="35" cy="30" r="4" fill="#fff"/></svg>
+            <h4>Adapt</h4>
+          </div>
+          <p class="wa-role">reshape the support</p>
+          <div class="wa-read" id="waAdapt"></div>
         </button>
         <div class="abs wa-user rv d3">
           <svg class="wa-uic" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="8.5" r="4.5"/><path d="M4,23 a9,9 0 0 1 18,0"/></svg>
@@ -1888,24 +2204,24 @@
 
         <button type="button" class="abs zoomable rv d2" style="left:60px;top:286px;width:880px;height:554px;border:2.5px solid #c9c9c9;border-radius:22px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.05)" data-image="assets/figs/fig-setup.png" aria-label="Open the multimodal sensing setup"><img src="assets/figs/fig-setup.png" alt="Study setup: monitor, eye-tracker, BioSemi amplifier, EDA electrodes, skin-temperature sensor and ECG electrodes" style="width:100%;height:100%;object-fit:cover"></button>
 
-        <div class="sf-card rv d2" style="left:990px;top:286px;width:870px;height:176px" aria-label="Gaze signals">
-          <h4>Gaze <small>— the eye-tracker</small></h4>
+        <div class="sf-card fam-gaze rv d2" style="left:990px;top:286px;width:870px;height:176px" aria-label="Gaze signals">
+          <div class="sf-head"><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.4 12S6 5.6 12 5.6 21.6 12 21.6 12 18 18.4 12 18.4 2.4 12 2.4 12Z"/><circle cx="12" cy="12" r="3.1"/></svg></span><h4>Gaze <small>— the eye-tracker</small></h4></div>
           <div class="sf-chips"><span>fixation count</span><span>fixation duration</span><span>dwell per region (AOI)</span><span>scanpath</span></div>
-          <svg class="sg-svg" viewBox="0 0 838 64" preserveAspectRatio="none" style="width:100%;height:36px;margin-top:5px" aria-hidden="true"><polyline class="sn-scan" points="60,32 230,20 420,42 600,18 760,34"/><circle class="sn-fix" cx="60" cy="32" r="13"/><circle class="sn-fix" cx="230" cy="20" r="9"/><circle class="sn-fix" cx="420" cy="42" r="15"/><circle class="sn-fix" cx="600" cy="18" r="10"/><circle class="sn-fix" cx="760" cy="34" r="12"/><circle class="sn-gdot" cx="0" cy="0" r="6"/></svg>
+          <svg class="sg-svg" viewBox="0 0 838 64" preserveAspectRatio="none" style="width:100%;height:33px;margin-top:3px" aria-hidden="true"><polyline class="sn-scan" points="60,32 230,20 420,42 600,18 760,34"/><circle class="sn-fix" cx="60" cy="32" r="13"/><circle class="sn-fix" cx="230" cy="20" r="9"/><circle class="sn-fix" cx="420" cy="42" r="15"/><circle class="sn-fix" cx="600" cy="18" r="10"/><circle class="sn-fix" cx="760" cy="34" r="12"/><circle class="sn-gdot" cx="0" cy="0" r="6"/></svg>
           <p class="sf-cap">where attention goes, moment to moment</p>
         </div>
         <span class="sf-divider rv d3" style="top:468px" aria-hidden="true"></span>
-        <div class="sf-card rv d3" style="left:990px;top:474px;width:870px;height:176px" aria-label="Physiology signals">
-          <h4>Physiology <small>— ECG · EDA · skin temp</small></h4>
+        <div class="sf-card fam-phys rv d3" style="left:990px;top:474px;width:870px;height:176px" aria-label="Physiology signals">
+          <div class="sf-head"><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h4l1.7-4.6L11 17.4l2.2-6 1.5 2.2h5.3"/></svg></span><h4>Physiology <small>— ECG · EDA · skin temp</small></h4></div>
           <div class="sf-chips"><span>heart rate</span><span>HRV</span><span>skin conductance</span><span>skin temperature</span></div>
-          <svg class="sg-svg" viewBox="0 0 838 64" preserveAspectRatio="none" style="width:100%;height:36px;margin-top:5px" aria-hidden="true"><path class="sn-ecg-base" d="M0,40 L90,40 L104,12 L118,58 L132,40 L260,40 L274,12 L288,58 L302,40 L430,40 L444,12 L458,58 L472,40 L600,40 L614,12 L628,58 L642,40 L838,40"/><path class="sn-eda" d="M0,54 C120,46 200,60 320,52 C440,44 520,58 640,50 C730,45 790,54 838,51"/><path class="sn-ecg-run" d="M0,40 L90,40 L104,12 L118,58 L132,40 L260,40 L274,12 L288,58 L302,40 L430,40 L444,12 L458,58 L472,40 L600,40 L614,12 L628,58 L642,40 L838,40"/></svg>
+          <svg class="sg-svg" viewBox="0 0 838 64" preserveAspectRatio="none" style="width:100%;height:33px;margin-top:3px" aria-hidden="true"><path class="sn-ecg-base" d="M0,40 L90,40 L104,12 L118,58 L132,40 L260,40 L274,12 L288,58 L302,40 L430,40 L444,12 L458,58 L472,40 L600,40 L614,12 L628,58 L642,40 L838,40"/><path class="sn-eda" d="M0,54 C120,46 200,60 320,52 C440,44 520,58 640,50 C730,45 790,54 838,51"/><path class="sn-ecg-run" d="M0,40 L90,40 L104,12 L118,58 L132,40 L260,40 L274,12 L288,58 L302,40 L430,40 L444,12 L458,58 L472,40 L600,40 L614,12 L628,58 L642,40 L838,40"/></svg>
           <p class="sf-cap">arousal &amp; effort — signals people cannot mask</p>
         </div>
         <span class="sf-divider rv d4" style="top:656px" aria-hidden="true"></span>
-        <div class="sf-card rv d4" style="left:990px;top:662px;width:870px;height:176px" aria-label="Behavioral signals">
-          <h4>Behavior <small>— interaction logs</small></h4>
+        <div class="sf-card fam-beh rv d4" style="left:990px;top:662px;width:870px;height:176px" aria-label="Behavioral signals">
+          <div class="sf-head"><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M5.5 3.2l13 7-5.6 1.5-1.4 5.6-6-14.1Z"/></svg></span><h4>Behavior <small>— interaction logs</small></h4></div>
           <div class="sf-chips"><span>cursor &amp; clicks</span><span>typing pace</span><span>daily steps</span></div>
-          <svg class="sg-svg" viewBox="0 0 838 64" preserveAspectRatio="none" style="width:100%;height:36px;margin-top:5px" aria-hidden="true"><rect x="40" y="16" width="240" height="10" rx="5" fill="#e3cfd1"/><rect x="40" y="38" width="170" height="10" rx="5" fill="#eee"/><rect x="330" y="18" width="120" height="26" rx="6" fill="none" stroke="#d9b3b7" stroke-width="2"/><path d="M478 12 L478 54 L490 44 L498 60 L506 56 L499 42 L513 42 Z" fill="#8a5a5f"/><circle class="sn-fix" cx="640" cy="32" r="9"/><circle class="sn-fix" cx="700" cy="32" r="7"/><circle class="sn-fix" cx="752" cy="32" r="11"/></svg>
+          <svg class="sg-svg" viewBox="0 0 838 64" preserveAspectRatio="none" style="width:100%;height:33px;margin-top:3px" aria-hidden="true"><rect x="40" y="16" width="240" height="10" rx="5" fill="#e3cfd1"/><rect x="40" y="38" width="170" height="10" rx="5" fill="#eee"/><rect x="330" y="18" width="120" height="26" rx="6" fill="none" stroke="#d9b3b7" stroke-width="2"/><path d="M478 12 L478 54 L490 44 L498 60 L506 56 L499 42 L513 42 Z" fill="#8a5a5f"/><circle class="sn-fix" cx="640" cy="32" r="9"/><circle class="sn-fix" cx="700" cy="32" r="7"/><circle class="sn-fix" cx="752" cy="32" r="11"/></svg>
           <p class="sf-cap">overt actions in the task</p>
         </div>
 
@@ -1926,24 +2242,24 @@
         <p class="abs rq rv d1" style="left:60px;top:198px;width:1800px;font-size:29px" data-edit-id="pr-rq"><span class="tag">Research Question:</span> can the fused signals predict a user’s hidden states — load, trust, confidence — in real time?</p>
         <p class="abs rv d1" style="left:60px;top:256px;width:1800px;text-align:center;font:italic 600 21px/1.3 var(--sans);color:#8a8a8a" data-edit-id="pr-method">ML models trained per state · validated against self-reports</p>
 
-        <div class="abs sb-sig pr-sigc rv d1" style="left:160px;top:300px;height:272px" aria-label="Multimodal signals">
+        <div class="abs sb-sig pr-sigc rv d1" style="left:160px;top:356px;height:288px" aria-label="Multimodal signals">
           <h4>Multimodal signals</h4>
-          <div class="chip" style="margin-top:15px"><i></i><span class="cl"><b>Gaze behaviors</b><small>fixations · saccades · dwell</small></span></div>
-          <div class="chip" style="margin-top:12px"><i></i><span class="cl"><b>Pupil</b><small>pupil diameter</small></span></div>
-          <div class="chip" style="margin-top:12px"><i></i><span class="cl"><b>ECG</b><small>BPM · HRV (RMSSD)</small></span></div>
-          <div class="chip" style="margin-top:12px"><i></i><span class="cl"><b>EDA</b><small>skin conductance</small></span></div>
+          <div class="chip"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.4 12S6 5.6 12 5.6 21.6 12 21.6 12 18 18.4 12 18.4 2.4 12 2.4 12Z"/><circle cx="12" cy="12" r="3.1"/></svg></span><span class="cl"><b>Gaze behaviors</b><small>fixations · saccades · dwell</small></span></div>
+          <div class="chip"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/></svg></span><span class="cl"><b>Pupil</b><small>pupil diameter</small></span></div>
+          <div class="chip"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 13h4l1.7-4.5L11 17l2.2-6 1.5 2h4.8"/></svg></span><span class="cl"><b>ECG</b><small>BPM · HRV (RMSSD)</small></span></div>
+          <div class="chip"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.6s5.9 6.2 5.9 10.1a5.9 5.9 0 0 1-11.8 0C6.1 9.8 12 3.6 12 3.6Z"/></svg></span><span class="cl"><b>EDA</b><small>skin conductance</small></span></div>
         </div>
         <div class="abs pr-fuse rv d2" aria-hidden="true">&#8853;</div>
         <div class="abs pr-user rv d2" aria-label="User characteristics">
           <h4>User characteristics</h4>
           <div class="pr-user-chips"><span>traits</span><span>demographics</span><span>AI literacy</span></div>
         </div>
-        <div class="abs sb-arrow rv d2" style="left:550px;top:430px;width:170px" aria-hidden="true">
+        <div class="abs sb-arrow rv d2" style="left:550px;top:460px;width:170px" aria-hidden="true">
           <span class="lab">machine learning</span>
           <svg viewBox="0 0 150 30"><line x1="4" y1="15" x2="120" y2="15" stroke="#8e1b26" stroke-width="3.4" stroke-dasharray="7 7"/><polygon points="120,4 146,15 120,26" fill="#8e1b26"/></svg>
           <div class="ml-chips"><span>Random Forest</span><span>XGBoost</span><span>SVM · MLP</span><span>Linear / Logistic Regression</span></div>
         </div>
-        <div class="abs pr-panel rv d2" id="prPanel" style="left:780px;top:300px;width:980px;height:430px" aria-label="States predicted from multimodal signals, optionally fused with user characteristics">
+        <div class="abs pr-panel rv d2" id="prPanel" style="left:780px;top:356px;width:980px;height:430px" aria-label="States predicted from multimodal signals, optionally fused with user characteristics">
           <div class="pr-head">
             <div class="pr-toggle" id="prToggle" role="group" aria-label="Prediction input mode"><button type="button" class="active" data-mode="solo">signals only</button><button type="button" data-mode="fused">&#8853; + user characteristics</button></div>
             <span class="pr-stab"><span class="v-solo">prediction fluctuates ~</span><span class="v-fused">robust &#10003;</span></span>
@@ -1962,7 +2278,7 @@
           </div>
         </div>
         <p class="abs takeaway pr-take rv d4" data-edit-id="pr-take"><span class="tl">Takeaways:</span> signals alone <span class="red">fluctuate</span> — fused with <b>user characteristics</b>, states become <span class="red">readable &amp; stable</span> — the control signal for adaptation.</p>
-        <p class="refs">[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1<br>[g] Sun et al. Eyes Can’t Always Tell (ACM UMAP 2026) Core A</p>
+        <p class="refs">[b] Sun et al. Understanding Trust Perception in AI-Generated Information with Behavioral and Physiological Sensing (IJHCS 2026) Top Tier JCR-1<br><button type="button" class="figlink" data-image="assets/figs/fig-umap.png" aria-label="Open the UMAP figure">[g]</button> Sun et al. Eyes Can’t Always Tell (ACM UMAP 2026) Core A</p>
         <!-- detail modal — no deck page number -->
       </section>
 
@@ -1972,88 +2288,53 @@
         <div class="rule rv" style="top:104px"></div>
         <div class="abs ad-step rv d1" style="left:60px;top:132px"><span class="ad-step-n">3</span><span class="ad-step-t">Adapt</span></div>
 
-        <div class="abs av-rail rv d1" style="top:232px"><span class="n">1</span><b>AI generation</b></div>
-        <div class="abs av-row rv d1" style="top:202px">
-          <div class="av-card">
-            <svg class="av-vis" viewBox="0 0 120 56" aria-hidden="true"><rect x="6" y="8" width="86" height="9" rx="4.5" fill="#d5e3f2"/><rect x="6" y="24" width="66" height="9" rx="4.5" fill="#d5e3f2"/><rect x="6" y="40" width="46" height="9" rx="4.5" fill="#e8eef5"/><path d="M106 10v36" stroke="#2e74b5" stroke-width="2.2"/><path d="M101 16l5-7 5 7M101 40l5 7 5-7" fill="none" stroke="#2e74b5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <b>Adaptive reasoning</b><span>depth follows cognitive load</span>
+        <div class="abs aug-thesis rv d1" style="left:280px;top:134px;width:1580px">Adaptive support <b>fits each individual, not the average</b> &mdash; multimodal sensing &times; domain-tuned LLMs &times; adaptive interfaces close the loop.</div>
+
+        <div class="abs aug-row rv d2" style="left:60px;top:212px;width:1800px">
+          <div class="aug-pair">
+            <span class="aug-ey adapts">AI adapts</span>
+            <span class="aug-ic"><svg class="augi" viewBox="0 0 48 40" aria-hidden="true"><line x1="6" y1="12" x2="34" y2="12"/><line x1="6" y1="22" x2="27" y2="22"/><line x1="6" y1="32" x2="20" y2="32"/><path d="M42 9 V31"/><path d="M38 13 l4 -4 4 4"/><path d="M38 27 l4 4 4 -4"/></svg></span>
+            <span class="aug-dim"><button type="button" class="figlink" data-image="assets/figs/fig-adaptive4.png" aria-label="Open the adaptive support example figure">AI explanation / LLM reasoning</button></span>
+            <span class="aug-sub">shown, and scaled to your load</span>
+            <span class="aug-arrow" aria-hidden="true">&#8595;</span>
+            <span class="aug-ey">so you</span>
+            <span class="aug-gain">trust it &mdash; not overwhelmed</span>
           </div>
-          <div class="av-card">
-            <svg class="av-vis" viewBox="0 0 150 56" aria-hidden="true"><rect x="8" y="14" width="134" height="28" rx="14" fill="#fffaf0" stroke="#d9930d" stroke-width="2"/><circle cx="26" cy="28" r="5" fill="#d9930d"/><rect x="38" y="21.5" width="66" height="5.5" rx="2.75" fill="#e5cfa3"/><rect x="38" y="31" width="44" height="5.5" rx="2.75" fill="#efe0c2"/></svg>
-            <b>Confidence statements</b><span>uncertainty said out loud</span>
+          <div class="aug-pair">
+            <span class="aug-ey adapts">AI adapts</span>
+            <span class="aug-ic"><svg class="augi" viewBox="0 0 48 40" aria-hidden="true"><path d="M8 7 H40 A4 4 0 0 1 44 11 V25 A4 4 0 0 1 40 29 H21 L12 37 V29 H8 A4 4 0 0 1 4 25 V11 A4 4 0 0 1 8 7 Z"/><line x1="12" y1="15" x2="32" y2="15"/><line x1="12" y1="22" x2="26" y2="22"/></svg></span>
+            <span class="aug-dim">disclosed confidence</span>
+            <span class="aug-sub">says its uncertainty out loud</span>
+            <span class="aug-arrow" aria-hidden="true">&#8595;</span>
+            <span class="aug-ey">so you</span>
+            <span class="aug-gain">trust it the right amount</span>
           </div>
-          <div class="av-card">
-            <svg class="av-vis" viewBox="0 0 120 56" aria-hidden="true"><circle cx="32" cy="28" r="20" fill="#fff" stroke="#b47a0b" stroke-width="2.4"/><path d="M32 16v12l9 6" fill="none" stroke="#b47a0b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M66 28h26M84 18l10 10-10 10" fill="none" stroke="#d9930d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="102" y="14" width="4.5" height="28" rx="2.25" fill="#d9930d" opacity=".55"/></svg>
-            <b>Timing &amp; nudges</b><span>support at the right moment</span>
+          <div class="aug-pair">
+            <span class="aug-ey adapts">AI adapts</span>
+            <span class="aug-ic"><svg class="augi" viewBox="0 0 48 40" aria-hidden="true"><circle cx="19" cy="20" r="14"/><path d="M19 12 v8 l6 4"/><path d="M37 20 h8"/><path d="M40 15 l5 5 -5 5"/></svg></span>
+            <span class="aug-dim">timing &amp; nudges</span>
+            <span class="aug-sub">support at the right moment</span>
+            <span class="aug-arrow" aria-hidden="true">&#8595;</span>
+            <span class="aug-ey">so you</span>
+            <span class="aug-gain">act in time</span>
           </div>
-          <div class="av-card">
-            <svg class="av-vis" viewBox="0 0 120 56" aria-hidden="true"><path d="M18 48a42 42 0 0 1 84 0" fill="none" stroke="#eee3cd" stroke-width="9" stroke-linecap="round"/><path d="M18 48a42 42 0 0 1 42-42" fill="none" stroke="#d9930d" stroke-width="9" stroke-linecap="round"/><line x1="60" y1="48" x2="79" y2="23" stroke="#8a6b3e" stroke-width="3.5" stroke-linecap="round"/><circle cx="60" cy="48" r="5" fill="#8a6b3e"/></svg>
-            <b>Trust calibration</b><span>reliance matched to reliability</span>
+          <div class="aug-pair">
+            <span class="aug-ey adapts">AI adapts</span>
+            <span class="aug-ic"><svg class="augi" viewBox="0 0 48 40" aria-hidden="true"><rect x="5" y="7" width="16" height="12" rx="2.5"/><rect x="27" y="7" width="16" height="12" rx="2.5"/><rect x="5" y="23" width="16" height="12" rx="2.5"/><rect x="27" y="23" width="16" height="12" rx="2.5"/></svg></span>
+            <span class="aug-dim"><button type="button" class="figlink" data-image="assets/figs/fig-interfaces.png" aria-label="Open the three interfaces figure">modality</button></span>
+            <span class="aug-sub">text &middot; voice &middot; robot &middot; VR</span>
+            <span class="aug-arrow" aria-hidden="true">&#8595;</span>
+            <span class="aug-ey">so you</span>
+            <span class="aug-gain">engage the way that fits</span>
           </div>
         </div>
 
-        <div class="abs av-rail rv d2" style="top:360px"><span class="n">2</span><b>User interface</b></div>
-        <div class="abs av-row rv d2" style="top:330px">
-          <div class="av-card"><span class="av-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
-            <rect x="11" y="5" width="130" height="84" rx="10" fill="#fff" stroke="#c9c9c9" stroke-width="2.5"/>
-            <path d="M11 15 a10 10 0 0 1 10 -10 h110 a10 10 0 0 1 10 10 v9 h-130 z" fill="#f3f4f6"/>
-            <path d="M12 24 h128" stroke="#dcdcdc" stroke-width="1.5"/>
-            <circle cx="24" cy="14.5" r="3.2" fill="#f26d5f"/><circle cx="35" cy="14.5" r="3.2" fill="#f2bd4c"/><circle cx="46" cy="14.5" r="3.2" fill="#5fc46a"/>
-            <rect x="22" y="34" width="62" height="13" rx="6.5" fill="#e5e8ec"/>
-            <rect x="68" y="53" width="62" height="13" rx="6.5" fill="#2e74b5"/>
-            <rect x="22" y="72" width="46" height="9" rx="4.5" fill="#eef0f3"/>
-          </svg></span><b>Text chatbot</b><span>ask by typing · read the answer</span></div>
-          <div class="av-card"><span class="av-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
-            <ellipse cx="76" cy="84" rx="30" ry="7" fill="rgba(74,144,255,.30)"/>
-            <ellipse cx="76" cy="81" rx="21" ry="4.5" fill="#4a90ff"/>
-            <circle cx="76" cy="48" r="33" fill="#eceff1" stroke="#9aa4ad" stroke-width="2.5"/>
-            <circle cx="66" cy="39" r="1.8" fill="#c3cbd2"/><circle cx="76" cy="37" r="1.8" fill="#c3cbd2"/><circle cx="86" cy="39" r="1.8" fill="#c3cbd2"/>
-            <path d="M120 34 a19 19 0 0 1 0 28" fill="none" stroke="#4a90ff" stroke-width="3" stroke-linecap="round"/>
-            <path d="M130 26 a29 29 0 0 1 0 44" fill="none" stroke="#4a90ff" stroke-width="3" stroke-linecap="round" opacity=".5"/>
-            <path d="M32 34 a19 19 0 0 0 0 28" fill="none" stroke="#4a90ff" stroke-width="3" stroke-linecap="round"/>
-            <path d="M22 26 a29 29 0 0 0 0 44" fill="none" stroke="#4a90ff" stroke-width="3" stroke-linecap="round" opacity=".5"/>
-          </svg></span><b>Voice assistant</b><span>ask by voice · hear the answer</span></div>
-          <div class="av-card"><span class="av-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
-            <rect x="46" y="8" width="60" height="36" rx="7" fill="#d9b98a" stroke="#8a6b3e" stroke-width="2"/>
-            <rect x="52" y="13" width="48" height="26" rx="4" fill="#101826"/>
-            <circle cx="67" cy="25" r="6.5" fill="#3f7bff"/><circle cx="85" cy="25" r="6.5" fill="#3f7bff"/>
-            <circle cx="69" cy="23" r="2.2" fill="#bcd6ff"/><circle cx="87" cy="23" r="2.2" fill="#bcd6ff"/>
-            <path d="M71 34 q5 4 10 0" fill="none" stroke="#3f7bff" stroke-width="2" stroke-linecap="round"/>
-            <rect x="72" y="44" width="8" height="6" fill="#8a6b3e"/>
-            <rect x="53" y="50" width="46" height="30" rx="5" fill="#d9b98a" stroke="#8a6b3e" stroke-width="2"/>
-            <rect x="43" y="54" width="8" height="20" rx="4" fill="#c7a476" stroke="#8a6b3e" stroke-width="1.5"/>
-            <rect x="101" y="54" width="8" height="20" rx="4" fill="#c7a476" stroke="#8a6b3e" stroke-width="1.5"/>
-            <rect x="60" y="80" width="11" height="9" rx="2" fill="#c7a476" stroke="#8a6b3e" stroke-width="1.5"/>
-            <rect x="81" y="80" width="11" height="9" rx="2" fill="#c7a476" stroke="#8a6b3e" stroke-width="1.5"/>
-          </svg></span><b>Social robot</b><span>embodied presence</span></div>
-          <div class="av-card av-ext"><span class="av-mdraw" aria-hidden="true"><svg viewBox="0 0 152 94">
-            <rect x="26" y="24" width="100" height="48" rx="17" fill="#fff" stroke="#555" stroke-width="2.5"/>
-            <path d="M26 48H12a6 6 0 0 1 0-12h4M126 48h14a6 6 0 0 0 0-12h-4" fill="none" stroke="#555" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="57" cy="48" r="11" fill="#2e56a4" opacity=".85"/><circle cx="95" cy="48" r="11" fill="#6d3f96" opacity=".85"/>
-            <path d="M68 72a9 9 0 0 1 16 0" fill="#fff" stroke="#555" stroke-width="2.5"/>
-            <path d="M133 8l2.4 6 6 2.4-6 2.4-2.4 6-2.4-6-6-2.4 6-2.4z" fill="#d9930d"/>
-          </svg></span><b>VR support</b><span>immersive therapy scenes</span></div>
-        </div>
 
-        <svg class="abs av-brace rv d3" style="left:1360px;top:194px" viewBox="0 0 48 400" aria-hidden="true"><path d="M6 6 Q30 6 30 34 L30 172 Q30 196 46 200 Q30 204 30 228 L30 366 Q30 394 6 394" fill="none" stroke="#d9930d" stroke-width="4.5" stroke-linecap="round" opacity=".75"/></svg>
-        <div class="abs av-uc rv d3" style="left:1430px;top:198px">
-          <p class="av-uck">use cases</p>
-          <div class="av-scn">
-            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20.4S5.1 16.2 2.8 11.7C1.1 8.5 2.9 5.1 6.1 5.1c1.9 0 3.4 1.1 4.4 2.6 1-1.5 2.5-2.6 4.4-2.6 3.2 0 5 3.4 3.3 6.6-2.3 4.5-9.2 8.7-9.2 8.7z" fill="none" stroke="#b47a0b" stroke-width="1.7" stroke-linejoin="round"/><path d="M5 11.6h3.6l1.5-2.8 2.3 4.8 1.6-2h4.6" fill="none" stroke="#b47a0b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <div><b>Health decision support</b><span>clinical info seeking · appropriate reliance</span></div>
-          </div>
-          <div class="av-scn">
-            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.2 4.4h15.6c.9 0 1.6.7 1.6 1.6v8.6c0 .9-.7 1.6-1.6 1.6H9.6l-4.4 3.6v-3.6h-1c-.9 0-1.6-.7-1.6-1.6V6c0-.9.7-1.6 1.6-1.6z" fill="none" stroke="#b47a0b" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 13.4s-2.7-1.6-2.7-3.4c0-.9.7-1.6 1.5-1.6.6 0 1 .3 1.2.7.2-.4.6-.7 1.2-.7.8 0 1.5.7 1.5 1.6 0 1.8-2.7 3.4-2.7 3.4z" fill="#b47a0b"/></svg></span>
-            <div><b>Mental-support agents</b><span>multimodal sensing ·<br>interaction at clinic · home · VR</span></div>
-          </div>
-          <div class="av-scn">
-            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#b47a0b" stroke-width="1.7"/><path d="M15.5 8.5l-2.2 5-5 2.2 2.2-5 5-2.2z" fill="#b47a0b" fill-opacity=".55" stroke="#b47a0b" stroke-width="1.3" stroke-linejoin="round"/><circle cx="12" cy="12" r="1" fill="#fff"/></svg></span>
-            <div><b>Everyday decision support</b><span>what to eat · what to buy · what to believe</span></div>
-          </div>
-        </div>
-
-        <div class="abs av-divider rv d3" style="top:470px" aria-hidden="true"><span>example · closed adaptive VR loop</span></div>
-        <div class="abs vl vl-compact rv d4" style="left:60px;top:522px;width:1800px;height:440px" aria-label="Closed adaptive VR loop: the VR system senses the person through body signals, speech, and movement; the signals are fused into affective and cognitive state prediction; a user-conditioned LLM adapts domain-specific dialogue with safeguards; multimodal support returns to the person and closes the loop">
+        <div class="abs av-divider rv d3" style="top:490px" aria-hidden="true"><span>example · closed adaptive VR loop</span></div>
+        <div class="abs vl-stage rv d3" style="left:451px;top:532px;width:220px"><span class="vl-stage-pill sense" data-n="1">Sense</span></div>
+        <div class="abs vl-stage rv d3" style="left:826px;top:532px;width:220px"><span class="vl-stage-pill predict" data-n="2">Predict</span></div>
+        <div class="abs vl-stage rv d3" style="left:1361px;top:532px;width:240px"><span class="vl-stage-pill adapt" data-n="3">Adapt</span></div>
+        <div class="abs vl vl-compact rv d4" style="left:60px;top:538px;width:1800px;height:440px" aria-label="Closed adaptive VR loop: the VR system senses the person through body signals, speech, and movement; the signals are fused into affective and cognitive state prediction; a user-conditioned LLM adapts domain-specific dialogue with safeguards; multimodal support returns to the person and closes the loop">
           <svg class="vl-svg" viewBox="0 0 1800 440" aria-hidden="true">
             <path class="a1" d="M274 160 C304 140 326 72 346 72"/><polygon class="h1" points="346,72 332,65 332,79"/>
             <path class="a1" d="M274 182 L346 182"/><polygon class="h1" points="346,182 332,175 332,189"/>
@@ -2072,7 +2353,7 @@
             <b>Adaptive LLM System</b>
           </div>
 
-          <div class="vl-node vl-sense" style="left:346px;top:28px;width:310px;height:88px">
+          <div class="vl-node vl-sense vl-clickfig" data-image="assets/figs/fig-setup.png" aria-label="Open the multimodal sensing setup figure" style="left:346px;top:28px;width:310px;height:88px">
             <span class="ic"><svg class="vl-body-icon" viewBox="0 0 70 76" aria-hidden="true">
               <path d="M5 24 C17 9 53 9 65 24 C53 39 17 39 5 24 Z" fill="#faf7fd" stroke="#8b5fc7" stroke-width="2.5"/>
               <circle cx="35" cy="24" r="8" fill="#8b5fc7" fill-opacity=".2" stroke="#8b5fc7" stroke-width="2.5"/>
@@ -2085,12 +2366,12 @@
             <span class="vl-sense-copy"><span class="tx">Body sensing</span><span class="vl-sense-sub">Gaze · Physiological signals · HR · ECG · Pupil</span></span>
           </div>
 
-          <div class="vl-node vl-sense" style="left:346px;top:138px;width:310px;height:88px">
+          <div class="vl-node vl-sense vl-clickfig" data-image="assets/figs/fig-interfaces.png" aria-label="Open the three interfaces figure — text, speech, embodiment" style="left:346px;top:138px;width:310px;height:88px">
             <span class="ic"><span class="vl-bubble"><span class="spk-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span></span>
-            <span class="tx compact">Speech &mdash; content + pause + tone &rarr; emotion</span>
+            <span class="tx compact">Multimodal signals: speech + vision</span>
           </div>
 
-          <div class="vl-node vl-sense" style="left:346px;top:248px;width:310px;height:88px">
+          <div class="vl-node vl-sense vl-clickfig" data-image="assets/figs/fig-ssag-app.png" aria-label="Open the self-developed app — menu, chat, and activity-tracking interfaces" style="left:346px;top:248px;width:310px;height:88px">
             <span class="ic"><svg class="vl-move" viewBox="0 0 60 52" aria-hidden="true">
               <line x1="6" y1="46" x2="54" y2="46" stroke="#c9b8e6" stroke-width="2"/>
               <rect x="11" y="24" width="9" height="22" rx="2.5" fill="#8b5fc7"/>
@@ -2132,7 +2413,7 @@
 
           <span class="vl-arclab" aria-hidden="true"><span class="vl-support-line"><b>Multimodal support</b><i>text · speech · vision · embodiment</i></span><span class="vl-return-line">support back to the person &mdash; loop closes</span></span>
         </div>
-        <p class="abs takeaway rv d4" style="left:46px;top:990px;width:1840px;text-align:center;font-size:27px" data-edit-id="ad-take"><span class="tl">Takeaways:</span> multimodal sensing × domain-tuned LLMs × adaptive interfaces — support that fits the person, and the loop closes.</p>
+        <p class="refs">[f] Sun et al. Interface Matters: Exploring Human Trust in Health Information from LLMs via Text, Speech, and Embodiment (ACM CSCW 2025) Core A<br>[h] Sun et al. From Search Agents to Dissemination Interfaces: Understanding Human Trust in Health Information from Conversational Search (BIT 2026) JCR-1<br>[k] Sun et al. When LLM Rationales Become User-Facing: Effects on Trust Perception, Decision-Making, and Gaze Behaviors (IJHCS 2026, under review) Top Tier JCR-1</p>
         <!-- detail modal — no deck page number -->
       </section>
 
@@ -2299,6 +2580,7 @@
         document.body.classList.add('detail-lock');
         runCounters(el);
         if (id === 'slideEval' && typeof p5Demo === 'function') p5Demo();
+        if (id === 'slideSSAG' && typeof ssagDemo === 'function') ssagDemo();
         if (id === 'slideTT' && typeof ttDemo === 'function') ttDemo();
         if (id === 'slideSSAG' && typeof p8Demo === 'function') p8Demo();
         if (id === 'slidePredict' && typeof prDemo === 'function') prDemo();
@@ -2316,6 +2598,15 @@
     document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) overlays.closeAll(); }));
     document.getElementById('helpBtn').addEventListener('click', () => overlays.open('helpOverlay'));
     document.querySelectorAll('.zoomable').forEach(b => b.addEventListener('click', () => { const img = document.getElementById('lightboxImage'); img.src = b.dataset.image; img.alt = b.querySelector('img').alt; overlays.open('lightboxOverlay'); }));
+    document.querySelectorAll('.figlink[data-image]').forEach(el => {
+      el.addEventListener('click', e => { e.stopPropagation(); const img = document.getElementById('lightboxImage'); img.src = el.dataset.image; img.alt = el.getAttribute('aria-label') || el.textContent || 'figure'; overlays.open('lightboxOverlay'); });
+    });
+    document.querySelectorAll('#slideAugment .vl-clickfig[data-image]').forEach(el => {
+      el.setAttribute('role', 'button'); el.setAttribute('tabindex', '0');
+      const openFig = () => { const img = document.getElementById('lightboxImage'); img.src = el.dataset.image; img.alt = el.getAttribute('aria-label') || 'figure'; overlays.open('lightboxOverlay'); };
+      el.addEventListener('click', openFig);
+      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFig(); } });
+    });
 
     /* ================================================================
        P5 · LIVE READOUT — flip the source label, the readout animates.
@@ -2323,14 +2614,14 @@
        ================================================================ */
     const READOUT = {
       human: {
-        'src': 'Label: Human-written',
-        'b-trustH': '61%', 'b-trustJ': '58%', 'b-unc': '22%',
-        'v-trustH': 'HIGHER under human label', 'v-trustJ': 'HIGHER under human label', 'v-unc': 'LOW under human label'
+        'src': 'Label: Human-written', 'v-labmode': 'HUMAN',
+        'b-jH': '77%', 'v-jH': '5.4', 'b-jP': '81%', 'v-jP': '5.7', 'b-jC': '79%', 'v-jC': '5.5', 'b-jL': '83%', 'v-jL': '5.8', 'b-jQ': '73%', 'v-jQ': '5.1',
+        'b-jG': '80%', 'v-jG': '5.6', 'b-jS': '70%', 'v-jS': '4.9'
       },
       ai: {
-        'src': 'Label: AI-generated',
-        'b-trustH': '42%', 'b-trustJ': '39%', 'b-unc': '55%',
-        'v-trustH': 'LOWER under AI label', 'v-trustJ': 'LOWER under AI label', 'v-unc': 'HIGHER under AI label'
+        'src': 'Label: AI-generated', 'v-labmode': 'AI',
+        'b-jH': '66%', 'v-jH': '4.6', 'b-jP': '70%', 'v-jP': '4.9', 'b-jC': '69%', 'v-jC': '4.8', 'b-jL': '67%', 'v-jL': '4.7', 'b-jQ': '63%', 'v-jQ': '4.4',
+        'b-jG': '67%', 'v-jG': '4.7', 'b-jS': '63%', 'v-jS': '4.4'
       }
     };
     function applyReadout(mode) {
@@ -2343,6 +2634,7 @@
         el.textContent = value;
         if (key === 'src') { el.classList.toggle('human', mode === 'human'); el.classList.toggle('ai', mode === 'ai'); }
       });
+      { const lab = document.getElementById('p5Lab'); if (lab) lab.classList.toggle('ai-mode', mode === 'ai'); }
       document.querySelectorAll('#p5Toggle button').forEach(b => b.classList.toggle('active', b.dataset.label === mode));
     }
     let p5Interacted = false, p5Played = false;
@@ -2353,6 +2645,60 @@
       document.getElementById('p5Toggle').classList.remove('attn');
     }));
     applyReadout('human');
+
+    /* Adapt overview — one user, state shifts turn to turn: the Sense -> Predict -> Adapt loop reacts live */
+    const WA_STATE = {
+      strained: { sense: ['long pauses', 're-reads', 'hesitant'], bars: { load: 82, trust: 30, arousal: 80 }, adapt: ['plain words', 'step-by-step', 'reassure'] },
+      atease:   { sense: ['quick scan', 'few edits', 'direct'],   bars: { load: 30, trust: 80, arousal: 24 }, adapt: ['concise', 'evidence + refs', 'let them lead'] }
+    };
+    function waState(name) {
+      const p = WA_STATE[name]; if (!p) return;
+      const sig = arr => arr.map(t => `<span class="wa-sig">${t}</span>`).join('');
+      const se = document.getElementById('waSense'); if (se) se.innerHTML = sig(p.sense);
+      const ad = document.getElementById('waAdapt'); if (ad) ad.innerHTML = sig(p.adapt);
+      Object.entries(p.bars).forEach(([k, v]) => { const f = document.querySelector(`#waPredict [data-k="${k}"]`); if (f) f.style.width = v + '%'; });
+      document.querySelectorAll('#waPersona .wa-persona').forEach(b => b.classList.toggle('on', b.dataset.state === name));
+    }
+    (function () {
+      const sl = document.getElementById('slideWhyAdapt'); if (!sl) return;
+      let waInteracted = false, waPlayed = false;
+      document.querySelectorAll('#waPersona .wa-persona').forEach(b => b.addEventListener('click', () => { waInteracted = true; waState(b.dataset.state); }));
+      waState('strained');
+      const play = () => {
+        if (waPlayed || waInteracted) return; waPlayed = true;
+        setTimeout(() => { if (!waInteracted) waState('atease'); }, 1700);
+        setTimeout(() => { if (!waInteracted) waState('strained'); }, 3800);
+      };
+      if (sl.classList.contains('active')) play();
+      new MutationObserver(() => { if (sl.classList.contains('active')) play(); }).observe(sl, { attributes: true, attributeFilter: ['class'] });
+    })();
+
+    /* SSAG — two worked examples, click to switch; light auto-demo on open */
+    const SS_CASES = {
+      a: { client: '“I know I should exercise, but I’ve got no time.”',
+           cot: 'client voices resistance → affirm the effort, don’t push advice',
+           stratId: 'affirm', strat: 'Affirmation',
+           resp: '“Even spotting that barrier is already a real first step.”' },
+      b: { client: '“My doctor keeps telling me to change my diet…”',
+           cot: 'explore the client’s own view first → ask an open question',
+           stratId: 'openq', strat: 'Open Question',
+           resp: '“What would eating a bit better look like for you?”' }
+    };
+    let ssInteracted = false, ssPlayed = false;
+    function ssSwitch(id) {
+      const c = SS_CASES[id]; if (!c) return;
+      const set = (el, t) => { const e = document.getElementById(el); if (e) e.textContent = t; };
+      set('ssClient', c.client); set('ssCot', c.cot); set('ssResp', c.resp); set('ssCode', c.strat); set('ssPick', c.strat);
+      document.querySelectorAll('.ssf-tl').forEach(l => l.classList.toggle('lit', l.dataset.strat === c.stratId));
+      document.querySelectorAll('#ssTabs .ssf-tab').forEach(t => t.classList.toggle('on', t.dataset.case === id));
+    }
+    document.querySelectorAll('#ssTabs .ssf-tab').forEach(t => t.addEventListener('click', () => { ssInteracted = true; ssSwitch(t.dataset.case); }));
+    if (document.getElementById('ssClient')) ssSwitch('a');
+    function ssagDemo() {
+      if (ssPlayed) return; ssPlayed = true;
+      setTimeout(() => { if (!ssInteracted) ssSwitch('b'); }, 2400);
+      setTimeout(() => { if (!ssInteracted) ssSwitch('a'); }, 4800);
+    }
     let p8DemoPlayed = false;
     /* Predict modal — auto-demo the signals-only -> fused switch once; toggle stays clickable. */
     function prDemo() {
@@ -2496,9 +2842,9 @@
         document.getElementById('resetEditsBtn').addEventListener('click', () => this.reset());
       }
       toggleMode() { this.active = !this.active; document.body.classList.toggle('editing', this.active); this.toggle.classList.toggle('active', this.active); this.toolbar.classList.toggle('active', this.active); this.elements.forEach(el => el.contentEditable = String(this.active)); }
-      saveToStorage() { localStorage.setItem('kn-clone-v2-edits', JSON.stringify(Object.fromEntries(this.elements.map(el => [el.dataset.editId, el.innerHTML])))); }
-      load() { try { const v = JSON.parse(localStorage.getItem('kn-clone-v2-edits') || '{}'); this.elements.forEach(el => { if (v[el.dataset.editId] !== undefined) el.innerHTML = v[el.dataset.editId]; }); } catch { /* keep source text */ } }
-      reset() { localStorage.removeItem('kn-clone-v2-edits'); location.reload(); }
+      saveToStorage() { localStorage.setItem('kn-clone-v3-edits', JSON.stringify(Object.fromEntries(this.elements.map(el => [el.dataset.editId, el.innerHTML])))); }
+      load() { try { const v = JSON.parse(localStorage.getItem('kn-clone-v3-edits') || '{}'); this.elements.forEach(el => { if (v[el.dataset.editId] !== undefined) el.innerHTML = v[el.dataset.editId]; }); } catch { /* keep source text */ } }
+      reset() { localStorage.removeItem('kn-clone-v3-edits'); location.reload(); }
       exportHtml() { this.saveToStorage(); const clone = document.documentElement.cloneNode(true); clone.querySelectorAll('[data-edit-id]').forEach(el => { const src = document.querySelector(`[data-edit-id="${el.dataset.editId}"]`); el.innerHTML = src.innerHTML; el.removeAttribute('contenteditable'); }); clone.querySelector('body').classList.remove('editing'); const blob = new Blob(['<!doctype html>\n' + clone.outerHTML], { type: 'text/html' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'human-signals-talk.html'; a.click(); URL.revokeObjectURL(url); }
     }
 
