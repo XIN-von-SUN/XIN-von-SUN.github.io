@@ -70,6 +70,20 @@
     .figlink { display: inline; -webkit-appearance: none; appearance: none; background: none; border: 0; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; font-weight: 800; text-decoration: underline; text-underline-offset: 2px; vertical-align: baseline; }
     .figlink:hover { color: var(--maroon); }
     .figlink:focus-visible { outline: 2px solid var(--maroon); outline-offset: 2px; border-radius: 3px; }
+    /* CV / background detail card — one calm maroon accent, symmetric two columns */
+    #slideCV .cv-sub { position: absolute; left: 100px; top: 122px; width: 1720px; font: italic 500 23px/1.4 var(--serif); color: #6a6a6a; }
+    #slideCV .cv-sub b { color: var(--maroon); font-style: normal; }
+    #slideCV .cv-sec { display: block; font: 800 15px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #b0555f; margin-bottom: 26px; }
+    #slideCV .cv-list { position: relative; }
+    #slideCV .cv-list::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: 24px; width: 2px; background: #ece6dc; }
+    #slideCV .cv-item { position: relative; padding: 0 0 34px 42px; }
+    #slideCV .cv-item::before { content: ""; position: absolute; left: 0; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: #fff; border: 2.5px solid #cda6aa; box-sizing: content-box; }
+    #slideCV .cv-item.now::before { background: #8e1b26; border-color: #8e1b26; box-shadow: 0 0 0 4px rgba(142,27,38,.13); }
+    #slideCV .cv-item:last-child { padding-bottom: 0; }
+    #slideCV .cv-when { display: inline-block; font: 700 13.5px/1 var(--sans); letter-spacing: .03em; color: #9a8f86; margin-bottom: 7px; }
+    #slideCV .cv-org { display: block; font: 800 23px/1.28 var(--sans); color: #1a1526; }
+    #slideCV .cv-item.now .cv-org { color: #8e1b26; }
+    #slideCV .cv-role { display: block; font: 500 16.5px/1.4 var(--sans); color: #6f6b64; margin-top: 3px; }
 
     .rv { opacity: 0; transform: translateY(14px); transition: opacity 560ms var(--ease), transform 560ms var(--ease); }
     .active .rv { opacity: 1; transform: translateY(0); }
@@ -1473,7 +1487,7 @@
       <section class="slide" id="slideIntro" data-title="Research concept and motivation" aria-label="Slide 2 of 12">
         <h2 class="abs p2-title rv" data-edit-id="p2-title"><span class="kw">Research Background</span></h2>
         <div class="rule p2-rule rv"></div>
-        <p class="abs p2-kick k1 rv d1">interdisciplinary background</p>
+        <p class="abs p2-kick k1 rv d1" data-detail="slideCV" role="button" tabindex="0" style="cursor:pointer" aria-label="Open education and experience background">interdisciplinary background</p>
         <div class="abs p2-badge b1 rv d1" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="#4472c4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="14" r="6"/><path d="M5,35 C5,26.5 25,26.5 25,35"/><circle cx="36" cy="11" r="3"/><circle cx="41" cy="23" r="3"/><circle cx="32" cy="31" r="3"/><path d="M37.5,13.5 L40,20.2"/><path d="M39,25.5 L34.3,29"/><path d="M25,19 L33.2,13.2"/></svg></div>
         <div class="abs p2-col f1 rv d1"><h3 data-edit-id="p2-h1">Human-Centered AI</h3><p data-edit-id="p2-b1">(Natural language processing, NLP &amp;<br>Human-computer interaction, HCI)</p></div>
         <div class="abs p2-badge b2 rv d1" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="#7d5fb2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24,7 C19,3 11,6 10,13 C5,15 5,23 9,26 C8,31 13,36 18,34 C20,38 28,38 30,34 C35,36 40,31 39,26 C43,23 43,15 38,13 C37,6 29,3 24,7 Z"/><path d="M24,7 L24,34" opacity=".5"/><path d="M8,43 L17,43 L20,38 L24,47 L27,43 L40,43"/></svg></div>
@@ -1492,6 +1506,35 @@
         <p class="abs p2-kick k2 rv d3"><span>Trustworthy Human&#8211;AI Interaction</span></p>
         <div class="abs p2-plate rv d3"><p class="p2-state" data-edit-id="p2-state2">from both sides &mdash; <em class="e1">humans align AI</em> <span class="p2-bi">&#8646;</span> <em class="e2">AI augments humans</em></p></div>
         <div class="abs p2-ctxbar rv d3" role="note" aria-label="Application contexts"><em>Contexts</em><span>Healthcare</span><span>Mental Support</span><span>Decision-Making Support</span></div>
+      </section>
+
+      <!-- ================= CV · BACKGROUND (education & experience) ================= -->
+      <section class="slide detail" id="slideCV" data-title="Background — education and experience" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Detail — Background: education and experience">
+        <h2 class="abs kt rv" style="left:20px;top:24px">Background: <span class="kw">Education &amp; Experience</span></h2>
+        <div class="rule rv" style="top:104px"></div>
+        <p class="abs cv-sub rv d1">An interdisciplinary path &mdash; <b>computer science, NLP &amp; cognitive science</b>, across four countries.</p>
+
+        <div class="abs cv-col rv d2" style="left:100px;top:200px;width:800px">
+          <span class="cv-sec">Appointments &amp; Education</span>
+          <div class="cv-list">
+            <div class="cv-item now"><span class="cv-when">2025.05 &ndash; now</span><b class="cv-org">National Institute of Informatics (NII)</b><span class="cv-role">Assistant Professor &middot; Tokyo, Japan</span></div>
+            <div class="cv-item now"><span class="cv-when">2026.03 &ndash; now</span><b class="cv-org">Amsterdam University Medical Center</b><span class="cv-role">Technical Advisor (part-time) &middot; Netherlands</span></div>
+            <div class="cv-item"><span class="cv-when">2021.04 &ndash; 2025.05</span><b class="cv-org">University of Amsterdam</b><span class="cv-role">Ph.D. &middot; Netherlands</span></div>
+            <div class="cv-item"><span class="cv-when">2017.11 &ndash; 2020.12</span><b class="cv-org">Heidelberg University</b><span class="cv-role">M.Sc. in Computer Science (NLP) &middot; Germany</span></div>
+            <div class="cv-item"><span class="cv-when">2011.09 &ndash; 2015.07</span><b class="cv-org">Xidian University</b><span class="cv-role">B.Sc. in Computational Mathematics &middot; China</span></div>
+          </div>
+        </div>
+
+        <div class="abs cv-col rv d3" style="left:1010px;top:200px;width:820px">
+          <span class="cv-sec">Research &amp; Industry Experience</span>
+          <div class="cv-list">
+            <div class="cv-item"><span class="cv-when">2023.08 &ndash; 2025.04</span><b class="cv-org">CWI &mdash; Institute for Mathematics &amp; Computer Science</b><span class="cv-role">Ph.D. Researcher &middot; Netherlands</span></div>
+            <div class="cv-item"><span class="cv-when">2020.05 &ndash; 2020.10</span><b class="cv-org">Alibaba Group</b><span class="cv-role">NLP Algorithm Engineer Intern &middot; Hangzhou, China</span></div>
+            <div class="cv-item"><span class="cv-when">2019.04 &ndash; 2019.10</span><b class="cv-org">SAP</b><span class="cv-role">Data Scientist Intern &middot; Walldorf, Germany</span></div>
+            <div class="cv-item"><span class="cv-when">2018.07 &ndash; 2018.09</span><b class="cv-org">Machine Learning Researcher</b><span class="cv-role">Research Intern &middot; China</span></div>
+            <div class="cv-item"><span class="cv-when">2015.08 &ndash; 2016.04</span><b class="cv-org">Data Analyst</b><span class="cv-role">China</span></div>
+          </div>
+        </div>
       </section>
 
       <!-- ================= P3 · MOTIVATION ================= -->
@@ -2843,7 +2886,7 @@
       }
       toggleMode() { this.active = !this.active; document.body.classList.toggle('editing', this.active); this.toggle.classList.toggle('active', this.active); this.toolbar.classList.toggle('active', this.active); this.elements.forEach(el => el.contentEditable = String(this.active)); }
       saveToStorage() { localStorage.setItem('kn-clone-v3-edits', JSON.stringify(Object.fromEntries(this.elements.map(el => [el.dataset.editId, el.innerHTML])))); }
-      load() { try { const v = JSON.parse(localStorage.getItem('kn-clone-v3-edits') || '{}'); this.elements.forEach(el => { if (v[el.dataset.editId] !== undefined) el.innerHTML = v[el.dataset.editId]; }); } catch { /* keep source text */ } }
+      load() { /* Disabled: the source HTML is the single source of truth. We no longer override elements with localStorage, so stale local edits can never hide newly added/updated content (e.g. new cards). Edit mode + Export still work for authoring. */ }
       reset() { localStorage.removeItem('kn-clone-v3-edits'); location.reload(); }
       exportHtml() { this.saveToStorage(); const clone = document.documentElement.cloneNode(true); clone.querySelectorAll('[data-edit-id]').forEach(el => { const src = document.querySelector(`[data-edit-id="${el.dataset.editId}"]`); el.innerHTML = src.innerHTML; el.removeAttribute('contenteditable'); }); clone.querySelector('body').classList.remove('editing'); const blob = new Blob(['<!doctype html>\n' + clone.outerHTML], { type: 'text/html' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'human-signals-talk.html'; a.click(); URL.revokeObjectURL(url); }
     }

@@ -16,8 +16,7 @@ Thumbs.db
 static/uploads/resume-old.pdf
 
 # Local-only talk & interview materials (never publish)
-app_slides/Job_Talk_45min.md
-app_slides/Job_Talk_45min_CN.md
+app_slides/Job_Talk_45min*
 app_slides/Talk_Speaker_Notes.md
 app_slides/Talk_Speaker_Notes.pdf
 app_slides/Talk_Speaker_Notes copy.md
